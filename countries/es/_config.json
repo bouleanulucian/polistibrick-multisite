@@ -4,8 +4,8 @@
   "country_name": "Spain",
   "country_name_native": "España",
   "country_flag": "🇪🇸",
-  "domain": "polistibrick.es",
-  "domain_url": "https://polistibrick.es",
+  "domain": "polistibrick.com",
+  "domain_url": "https://polistibrick.com",
 
   "company": {
     "name_legal": "Polistibrick España S.L.",
@@ -22,9 +22,9 @@
     "phone": "+34 642 777 216",
     "phone_raw": "+34642777216",
     "phone_display": "+34 642 777 216",
-    "email_general": "info@polistibrick.es",
-    "email_offer": "presupuesto@polistibrick.es",
-    "email_press": "prensa@polistibrick.es",
+    "email_general": "info@polistibrick.com",
+    "email_offer": "presupuesto@polistibrick.com",
+    "email_press": "prensa@polistibrick.com",
     "hours": "Lun–Vie 09:00–18:00 CET",
     "social": {
       "facebook": "",
@@ -38,7 +38,7 @@
     {
       "name": "[Nombre Manager]",
       "role": "Director comercial España",
-      "email": "[email]@polistibrick.es",
+      "email": "[email]@polistibrick.com",
       "phone": "[teléfono]",
       "languages": ["ES", "EN"],
       "photo": "team/manager-es.jpg",
@@ -51,7 +51,7 @@
   "currency_display_format": "{value} €",
   "vat_rate": 21,
 
-  "form_submit_email": "info@polistibrick.es",
+  "form_submit_email": "info@polistibrick.com",
   "form_cc_email": "info@polistibrick.eu",
 
   "factory": {
