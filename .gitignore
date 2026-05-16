@@ -1,5 +1,7 @@
-# Build output (regenerated from source)
-build/
+# Build output (regenerated from source) — but keep build.py
+build/*
+!build/build.py
+!build/.gitkeep
 
 # OS
 .DS_Store
