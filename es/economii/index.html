@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ro">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calculator economii · Cât economisești cu Polistibrick — 25 ani</title>
-  <meta name="description" content="Calculator dinamic care arată cât economisești cu Polistibrick vs cărămidă clasică pe 25 de ani. Introdu m², climă, preț energie și vezi diferența reală.">
+  <title>Calculadora economii · Cât economisești cu Polistibrick — 25 años</title>
+  <meta name="description" content="Calculadora dinamic care arată cât economisești cu Polistibrick vs ladrillo clasică pe 25 de años. Introdu m², climă, preț energie și vezi diferența reală.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -116,9 +116,9 @@
       <div class="wm-stage">
 
         <div class="wm-intro">
-          <span class="bubble-tag">Cât economisești în 25 ani</span>
-          <h2>Polistibrick vs cărămidă: <em>cifrele tale.</em></h2>
-          <p>Calculator dinamic care îți arată EXACT cât economisești pe energie, mentenanță și costuri totale pe 25 de ani, pentru casa pe care vrei să o construiești. Introdu cifrele tale, vezi rezultatul în timp real.</p>
+          <span class="bubble-tag">Cât economisești în 25 años</span>
+          <h2>Polistibrick vs ladrillo: <em>cifrele tale.</em></h2>
+          <p>Calculadora dinamic care îți arată EXACT cât economisești pe energie, mentenanță și costuri totale pe 25 de años, pentru casa pe care vrei să o construiești. Introdu cifrele tale, vezi rezultatul în timp real.</p>
         </div>
 
         <div class="comp-grid">
@@ -128,20 +128,20 @@
             <h3>Datele casei tale.</h3>
 
             <div class="form-row">
-              <label class="form-label" for="cSurface">Suprafață casă (m²)</label>
+              <label class="form-label" for="cSurface">Suprafață casa (m²)</label>
               <input class="form-input" type="number" id="cSurface" value="150" min="50" max="1000" step="10">
             </div>
 
             <div class="form-row">
               <label class="form-label" for="cYears">Ani de locuit luați în calcul</label>
               <select class="form-select" id="cYears">
-                <option value="10">10 ani</option>
-                <option value="15">15 ani</option>
-                <option value="20">20 ani</option>
-                <option value="25" selected>25 ani (recomandat)</option>
-                <option value="30">30 ani</option>
-                <option value="40">40 ani</option>
-                <option value="50">50 ani</option>
+                <option value="10">10 años</option>
+                <option value="15">15 años</option>
+                <option value="20">20 años</option>
+                <option value="25" selected>25 años (recomandat)</option>
+                <option value="30">30 años</option>
+                <option value="40">40 años</option>
+                <option value="50">50 años</option>
               </select>
             </div>
 
@@ -149,10 +149,10 @@
               <label class="form-label" for="cClimate">Climă</label>
               <select class="form-select" id="cClimate">
                 <option value="cold" data-brick-energy="180" data-poli-energy="45">Rece (zone montane, nord — &lt; 8°C medie)</option>
-                <option value="temperate" data-brick-energy="130" data-poli-energy="35" selected>Temperat (Europa centrală — 8-14°C medie)</option>
+                <option value="temperate" data-brick-energy="130" data-poli-energy="35" selected>Temperat (Europa caldera — 8-14°C medie)</option>
                 <option value="warm" data-brick-energy="100" data-poli-energy="25">Cald (sud, mediteranean — &gt; 14°C medie)</option>
               </select>
-              <p style="font-size:11px;color:var(--gray);margin-top:6px;">Calculul include atât încălzirea (iarna) cât și răcirea (vara).</p>
+              <p style="font-size:11px;color:var(--gray);margin-top:6px;">Calculul include atât încălzirea (invierno) cât și răcirea (verano).</p>
             </div>
 
             <div class="form-row">
@@ -175,7 +175,7 @@
 
             <p style="font-size:12.5px;color:var(--gray);margin-bottom:12px;">💡 Calculul include:</p>
             <ul style="display:flex;flex-direction:column;gap:5px;font-size:12.5px;color:var(--ink-soft);padding-left:4px;list-style:none;">
-              <li>✓ Cost construcție (panouri + manoperă, fără finisaje)</li>
+              <li>✓ Cost construcción (panouri + manoperă, fără finisaje)</li>
               <li>✓ Cost energie pe anii selectați</li>
               <li>✓ Cost mentenanță estimată</li>
               <li>✓ Toate proiectate la inflația aleasă</li>
@@ -188,12 +188,12 @@
             <div class="comp-savings">
               <span class="eyebrow" style="color:rgba(247,244,237,0.55);">Economie totală cu Polistibrick</span>
               <div class="comp-savings-big" id="totalSavings">— <small>€</small></div>
-              <p style="font-size:13.5px;color:rgba(247,244,237,0.75);">pe <span id="yearsLabel">25</span> de ani, pentru o casă de <span id="surfaceLabel">150</span> m²</p>
+              <p style="font-size:13.5px;color:rgba(247,244,237,0.75);">pe <span id="yearsLabel">25</span> de años, pentru o casa de <span id="surfaceLabel">150</span> m²</p>
             </div>
 
             <div class="comp-bar-container">
               <div class="comp-bar-label">
-                <span>Cărămidă clasică</span>
+                <span>Ladrillo clasică</span>
                 <strong id="brickTotalLabel">— €</strong>
               </div>
               <div class="comp-bar"><div class="comp-bar-fill" id="brickBar" style="width:100%;"></div></div>
@@ -208,7 +208,7 @@
             <div style="background:white;border:1px solid var(--border);border-radius:14px;margin-top:18px;overflow:hidden;">
               <div class="comp-row is-header">
                 <span>Cost</span>
-                <span class="num">Cărămidă</span>
+                <span class="num">Ladrillo</span>
                 <span class="num">Polistibrick</span>
               </div>
               <div class="comp-row">
@@ -233,7 +233,7 @@
               </div>
             </div>
 
-            <a href="../oferta/" class="btn btn-primary btn-large btn-arrow" style="width:100%;justify-content:center;margin-top:18px;">Cere ofertă personalizată</a>
+            <a href="../oferta/" class="btn btn-primary btn-large btn-arrow" style="width:100%;justify-content:center;margin-top:18px;">Pide un presupuesto personalizado</a>
 
           </div>
 
@@ -251,20 +251,20 @@
     </div>
     <div class="grid grid-2 reveal" style="max-width:980px;margin:0 auto;">
       <div class="card">
-        <h4 style="margin-bottom:12px;">Cost construcție</h4>
-        <p style="font-size:14px;line-height:1.6;">Cărămidă: ~1.000 €/m² standard nonconform. Polistibrick: ~1.050 €/m² (+5%) pentru casă pasivă A+++. Include materiale și manoperă, fără finisaje interioare sau exterioare.</p>
+        <h4 style="margin-bottom:12px;">Cost construcción</h4>
+        <p style="font-size:14px;line-height:1.6;">Ladrillo: ~1.000 €/m² standard nonconform. Polistibrick: ~1.050 €/m² (+5%) pentru casa pasiva A+++. Include materiale și manoperă, fără finisaje interioare sau exterioare.</p>
       </div>
       <div class="card">
         <h4 style="margin-bottom:12px;">Cost energie</h4>
-        <p style="font-size:14px;line-height:1.6;">Bazat pe consumul tipic per climă: cărămidă consumă în medie 100-180 kWh/m²/an pentru încălzire + răcire. Polistibrick (pasivă) consumă 25-45 kWh/m²/an. Reducere medie de 70%.</p>
+        <p style="font-size:14px;line-height:1.6;">Bazat pe consumul tipic per climă: ladrillo consumă în medie 100-180 kWh/m²/año pentru calefacción + răcire. Polistibrick (pasivă) consumă 25-45 kWh/m²/año. Reducere medie de 70%.</p>
       </div>
       <div class="card">
-        <h4 style="margin-bottom:12px;">Mentenanță 25 ani</h4>
-        <p style="font-size:14px;line-height:1.6;">Cărămidă: refresh termo la 15 ani (~5.000€), reparații umiditate, refresh fațadă. Polistibrick: niciuna din astea — EPS-ul nu absorbe apă, nu se degradează, structura monolit nu fisurează.</p>
+        <h4 style="margin-bottom:12px;">Mentenanță 25 años</h4>
+        <p style="font-size:14px;line-height:1.6;">Ladrillo: refresh termo la 15 años (~5.000€), reparații umiditate, refresh fațadă. Polistibrick: niciuna din astea — EPS-ul nu absorbe apă, nu se degradează, structura monolit nu fisurează.</p>
       </div>
       <div class="card">
         <h4 style="margin-bottom:12px;">Inflație energie</h4>
-        <p style="font-size:14px;line-height:1.6;">În ultimii 14 ani prețul energiei electrice în UE a crescut cu ~4% pe an. Calculul nostru include compoundarea anuală — economia reală pe 25 ani e mai mare decât diferența de azi × 25.</p>
+        <p style="font-size:14px;line-height:1.6;">În ultimii 14 años prețul energiei electrice în UE a crescut cu ~4% pe año. Calculul nostru include compoundarea anuală — economia reală pe 25 años e mai mare decât diferența de azi × 25.</p>
       </div>
     </div>
   </div>
@@ -273,10 +273,10 @@
 <section class="section section--tight">
   <div class="cta-band reveal">
     <h2>Convins de <em>cifrele tale?</em></h2>
-    <p>Cere o ofertă personalizată Polistibrick — calcul exact pentru proiectul tău, fără obligație, fără costuri ascunse.</p>
+    <p>Pide un presupuesto personalizado Polistibrick — calcul exact pentru proiectul tău, fără obligație, fără costuri ascunse.</p>
     <div class="cta-band-actions">
-      <a href="../oferta/" class="btn btn-on-dark btn-large btn-arrow">Cere ofertă personalizată</a>
-      <a href="../contact/" class="btn btn-on-dark-ghost btn-large">Vorbește cu un specialist</a>
+      <a href="../oferta/" class="btn btn-on-dark btn-large btn-arrow">Pide un presupuesto personalizado</a>
+      <a href="../contact/" class="btn btn-on-dark-ghost btn-large">Habla con un especialista</a>
     </div>
   </div>
 </section>

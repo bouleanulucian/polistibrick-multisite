@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ro">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calculator cost · Estimează prețul casei tale Polistibrick</title>
-  <meta name="description" content="Calculator interactiv Polistibrick: introdu m², etaje și locație și primești instant o estimare de cost pentru panourile MBK, PBK și TBK + livrare.">
+  <title>Calculateur de coût · Estimează prețul casei tale Polistibrick</title>
+  <meta name="description" content="Calculateur interactiv Polistibrick: introdu m², etaje și locație și primești instant o estimare de cost pentru panourile MBK, PBK și TBK + livrare.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -207,8 +207,8 @@
   <div class="container">
     <div class="wm-stage-wrap reveal">
       <div class="wm-watermark" aria-hidden="true">
-        <span class="wm-half wm-top">Calculator</span>
-        <span class="wm-half wm-bottom">Calculator</span>
+        <span class="wm-half wm-top">Calculateur</span>
+        <span class="wm-half wm-bottom">Calculateur</span>
       </div>
 
       <div class="wm-stage">
@@ -217,7 +217,7 @@
         <div class="wm-intro">
           <span class="bubble-tag">Estimare instant</span>
           <h2>Cât te costă <em>casa ta Polistibrick?</em></h2>
-          <p>Introdu dimensiunile aproximative ale proiectului tău și primești instant o estimare. Pentru deviz exact, trimitem inginerul nostru să-ți calculeze pe planul real în 48 ore.</p>
+          <p>Introdu dimensiunile aproximative ale proiectului tău și primești instant o estimare. Pentru deviz exact, trimitem inginerul nostru să-ți calculeze pe planul real în 48 heures.</p>
         </div>
 
         <!-- CALCULATOR -->
@@ -256,16 +256,16 @@
               <label class="form-label">Componente incluse</label>
               <div style="display:flex;flex-direction:column;gap:10px;">
                 <label style="display:flex;align-items:center;gap:10px;font-size:13px;cursor:pointer;">
-                  <input type="checkbox" id="incMBK" checked> <span>Pereți MBK (<span id="wallPrice">90</span> €/m²)</span>
+                  <input type="checkbox" id="incMBK" checked> <span>Murs MBK (<span id="wallPrice">90</span> €/m²)</span>
                 </label>
                 <label style="display:flex;align-items:center;gap:10px;font-size:13px;cursor:pointer;">
-                  <input type="checkbox" id="incPBK" checked> <span>Planșee PBK 250 (80 €/m²)</span>
+                  <input type="checkbox" id="incPBK" checked> <span>Planchers PBK 250 (80 €/m²)</span>
                 </label>
                 <label style="display:flex;align-items:center;gap:10px;font-size:13px;cursor:pointer;">
-                  <input type="checkbox" id="incTBK" checked> <span>Acoperiș TBK 250 (95 €/m²)</span>
+                  <input type="checkbox" id="incTBK" checked> <span>Toit TBK 250 (95 €/m²)</span>
                 </label>
                 <label style="display:flex;align-items:center;gap:10px;font-size:13px;cursor:pointer;">
-                  <input type="checkbox" id="incAccessories" checked> <span>Accesorii (colțare, capete, profile ferestre)</span>
+                  <input type="checkbox" id="incAccessories" checked> <span>Accessoires (colțare, capete, profile ferestre)</span>
                 </label>
               </div>
             </div>
@@ -286,25 +286,25 @@
           <!-- RESULT (right, sticky) -->
           <div class="calc-result">
             <span class="eyebrow" style="color:rgba(247,244,237,0.6);">Estimare cost panouri</span>
-            <h3>Casa ta Polistibrick</h3>
+            <h3>La Maison ta Polistibrick</h3>
             <div class="calc-result-total" id="totalCost">— <small>€</small></div>
             <p style="font-size:12.5px;color:rgba(247,244,237,0.65);">Materiale + livrare estimativă. Fără TVA, fără montaj, fără finisaje.</p>
 
             <div class="calc-result-breakdown">
               <div class="calc-result-row">
-                <span>Pereți MBK <span id="wallArea">—</span> m²</span>
+                <span>Murs MBK <span id="wallArea">—</span> m²</span>
                 <strong id="wallCost">— €</strong>
               </div>
               <div class="calc-result-row">
-                <span>Planșee PBK <span id="floorArea">—</span> m²</span>
+                <span>Planchers PBK <span id="floorArea">—</span> m²</span>
                 <strong id="floorCost">— €</strong>
               </div>
               <div class="calc-result-row">
-                <span>Acoperiș TBK <span id="roofArea">—</span> m²</span>
+                <span>Toit TBK <span id="roofArea">—</span> m²</span>
                 <strong id="roofCost">— €</strong>
               </div>
               <div class="calc-result-row">
-                <span>Accesorii (~3%)</span>
+                <span>Accessoires (~3%)</span>
                 <strong id="accCost">— €</strong>
               </div>
               <div class="calc-result-row">
@@ -315,7 +315,7 @@
 
             <div class="calc-disclaimer">
               <strong style="color:var(--cream);display:block;margin-bottom:4px;">⚠️ Doar estimare</strong>
-              Calculul folosește metrice medii (pereți ≈ 1.8× footprint, planșee = m² casă, acoperiș ≈ 1.2× footprint). Pentru deviz exact cere ofertă personalizată — un inginer calculează pe planul real al casei tale.
+              Calculul folosește metrice medii (murs ≈ 1.8× footprint, planchers = m² maison, toit ≈ 1.2× footprint). Pentru deviz exact cere ofertă personalizată — un inginer calculează pe planul real al casei tale.
             </div>
 
             <a href="../oferta/" class="btn btn-on-dark btn-large btn-arrow" style="width:100%;justify-content:center;margin-top:20px;">Cere deviz exact</a>
@@ -331,7 +331,7 @@
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 40px;">
       <span class="eyebrow">Ce nu include estimarea</span>
-      <h2>Ce contează să mai bugetezi <em>pentru o casă completă.</em></h2>
+      <h2>Ce contează să mai bugetezi <em>pentru o maison complète.</em></h2>
     </div>
     <div class="grid grid-3 reveal">
       <div class="card">
@@ -340,15 +340,15 @@
       </div>
       <div class="card">
         <h4 style="margin-bottom:10px;">Tâmplărie (ferestre + uși)</h4>
-        <p style="font-size:14px;">Pentru Casa Pasivă: triplu strat, low-e, cadru izolat termic. Buget mediu 350-600 €/m² fereastră (montaj inclus).</p>
+        <p style="font-size:14px;">Pentru La Maison Pasivă: triplu strat, low-e, cadru izolat termic. Buget mediu 350-600 €/m² fereastră (montaj inclus).</p>
       </div>
       <div class="card">
         <h4 style="margin-bottom:10px;">Instalații</h4>
-        <p style="font-size:14px;">Electrică, sanitară, încălzire, ventilație cu recuperare (VMC). Buget mediu 80-150 €/m² casă, în funcție de nivelul de tehnologie.</p>
+        <p style="font-size:14px;">Electrică, sanitară, chauffage, ventilație cu recuperare (VMC). Buget mediu 80-150 €/m² maison, în funcție de nivelul de tehnologie.</p>
       </div>
       <div class="card">
         <h4 style="margin-bottom:10px;">Finisaje interioare</h4>
-        <p style="font-size:14px;">Tencuieli, vopsire, gresie, parchet, mobilier de bucătărie. Buget mediu 200-500 €/m² casă, depending de standardul tău.</p>
+        <p style="font-size:14px;">Tencuieli, vopsire, gresie, parchet, mobilier de bucătărie. Buget mediu 200-500 €/m² maison, depending de standardul tău.</p>
       </div>
       <div class="card">
         <h4 style="margin-bottom:10px;">Fațadă (învelitoare)</h4>
@@ -356,7 +356,7 @@
       </div>
       <div class="card">
         <h4 style="margin-bottom:10px;">Manoperă montaj</h4>
-        <p style="font-size:14px;">Constructor partener certificat: ~20-30 €/m² perete + planșeu (instalare panouri și turnare beton). Mult mai puțin decât cărămidă.</p>
+        <p style="font-size:14px;">Constructor partener certificat: ~20-30 €/m² perete + planșeu (instalare panouri și turnare béton). Mult mai puțin decât brique.</p>
       </div>
     </div>
   </div>
@@ -365,10 +365,10 @@
 <section class="section section--tight">
   <div class="cta-band reveal">
     <h2>Vrei <em>cifrele exacte</em> pentru proiectul tău?</h2>
-    <p>Trimite-ne planul (chiar și o schiță) și un inginer Polistibrick calculează totul exact — panouri, livrare, montaj, accesorii speciale. Răspuns în 48 ore.</p>
+    <p>Trimite-ne planul (chiar și o schiță) și un inginer Polistibrick calculează totul exact — panouri, livrare, montaj, accesorii speciale. Răspuns în 48 heures.</p>
     <div class="cta-band-actions">
-      <a href="../oferta/" class="btn btn-on-dark btn-large btn-arrow">Cere ofertă personalizată</a>
-      <a href="../contact/" class="btn btn-on-dark-ghost btn-large">Vorbește cu un specialist</a>
+      <a href="../oferta/" class="btn btn-on-dark btn-large btn-arrow">Demander un devis personnalisé</a>
+      <a href="../contact/" class="btn btn-on-dark-ghost btn-large">Parler à un spécialiste</a>
     </div>
   </div>
 </section>
