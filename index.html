@@ -66,13 +66,12 @@
     display: flex; justify-content: space-between; color: var(--muted); font-size: 12px;
   }
   .meta .arrow { color: var(--accent); font-weight: 700; }
-  .ro-tag, .own-tag {
-    display: inline-block; padding: 2px 8px; border-radius: 999px;
-    font-size: 10px; font-weight: 700;
+  .own-tag, .ro-tag {
+    display: inline-block; padding: 2px 8px;
+    background: rgba(0,135,90,0.15); color: var(--green);
+    border-radius: 999px; font-size: 10px; font-weight: 700;
     text-transform: uppercase; letter-spacing: 0.05em;
   }
-  .ro-tag { background: rgba(0,135,90,0.15); color: var(--green); }
-  .own-tag { background: rgba(0,135,90,0.15); color: var(--green); }
   .shared-tag {
     display: inline-block; padding: 2px 8px;
     background: rgba(255,255,255,0.08); color: var(--muted);
@@ -98,8 +97,8 @@
 <div class="wrap">
   <header>
     <span class="badge">Multi-site preview</span>
-    <h1>Polistibrick <span class="red">×</span> 7 țări</h1>
-    <p class="sub">Un singur cod sursă → 7 site-uri.<br>Doar <strong style="color:var(--green)">.ro</strong> și <strong style="color:var(--green)">.fr</strong> au domeniu propriu — restul folosesc <strong>.com</strong>.</p>
+    <h1>Polistibrick <span class="red">×</span> 8 țări</h1>
+    <p class="sub">Un singur cod sursă → 8 site-uri pe 8 țări.<br>6 cu domeniu propriu, 2 pe <strong>.com</strong> (UK + CH).</p>
   </header>
 
   <div class="grid">
@@ -107,7 +106,7 @@
       <div class="flag">🇷🇴</div>
       <div class="country">România</div>
       <div class="domain has-domain">polistibrick.ro</div>
-      <div class="phone">+40 371 550 550<br>contact@polistibrick.ro</div>
+      <div class="phone">+40 371 550 550</div>
       <div class="meta"><span class="ro-tag">canonical</span><span class="arrow">→</span></div>
     </a>
 
@@ -115,7 +114,39 @@
       <div class="flag">🇫🇷</div>
       <div class="country">France</div>
       <div class="domain has-domain">polistibrick.fr</div>
-      <div class="phone">+33<br>contact@polistibrick.fr</div>
+      <div class="phone">+33</div>
+      <div class="meta"><span class="own-tag">domeniu propriu</span><span class="arrow">→</span></div>
+    </a>
+
+    <a class="card" href="./it/polistibrick-mercury-style.html">
+      <div class="flag">🇮🇹</div>
+      <div class="country">Italia</div>
+      <div class="domain has-domain">polistibrick.it</div>
+      <div class="phone">+39</div>
+      <div class="meta"><span class="own-tag">domeniu propriu</span><span class="arrow">→</span></div>
+    </a>
+
+    <a class="card" href="./es/polistibrick-mercury-style.html">
+      <div class="flag">🇪🇸</div>
+      <div class="country">España</div>
+      <div class="domain has-domain">polistibrick.es</div>
+      <div class="phone">+34 642 777 216</div>
+      <div class="meta"><span class="own-tag">domeniu propriu</span><span class="arrow">→</span></div>
+    </a>
+
+    <a class="card" href="./nl/polistibrick-mercury-style.html">
+      <div class="flag">🇧🇪</div>
+      <div class="country">België</div>
+      <div class="domain has-domain">polistibrick.be</div>
+      <div class="phone">+32</div>
+      <div class="meta"><span class="own-tag">domeniu propriu</span><span class="arrow">→</span></div>
+    </a>
+
+    <a class="card" href="./ie/polistibrick-mercury-style.html">
+      <div class="flag">🇮🇪</div>
+      <div class="country">Ireland</div>
+      <div class="domain has-domain">polistibrick.ie</div>
+      <div class="phone">+353</div>
       <div class="meta"><span class="own-tag">domeniu propriu</span><span class="arrow">→</span></div>
     </a>
 
@@ -123,31 +154,7 @@
       <div class="flag">🇬🇧</div>
       <div class="country">United Kingdom</div>
       <div class="domain">polistibrick.com</div>
-      <div class="phone">+44<br>contact@polistibrick.com</div>
-      <div class="meta"><span class="shared-tag">.com</span><span class="arrow">→</span></div>
-    </a>
-
-    <a class="card" href="./it/polistibrick-mercury-style.html">
-      <div class="flag">🇮🇹</div>
-      <div class="country">Italia</div>
-      <div class="domain">polistibrick.com</div>
-      <div class="phone">+39<br>contact@polistibrick.com</div>
-      <div class="meta"><span class="shared-tag">.com</span><span class="arrow">→</span></div>
-    </a>
-
-    <a class="card" href="./es/polistibrick-mercury-style.html">
-      <div class="flag">🇪🇸</div>
-      <div class="country">España</div>
-      <div class="domain">polistibrick.com</div>
-      <div class="phone">+34 642 777 216<br>info@polistibrick.com</div>
-      <div class="meta"><span class="shared-tag">.com</span><span class="arrow">→</span></div>
-    </a>
-
-    <a class="card" href="./nl/polistibrick-mercury-style.html">
-      <div class="flag">🇧🇪</div>
-      <div class="country">België</div>
-      <div class="domain">polistibrick.com</div>
-      <div class="phone">+32<br>contact@polistibrick.com</div>
+      <div class="phone">+44</div>
       <div class="meta"><span class="shared-tag">.com</span><span class="arrow">→</span></div>
     </a>
 
@@ -155,23 +162,23 @@
       <div class="flag">🇨🇭</div>
       <div class="country">Schweiz</div>
       <div class="domain">polistibrick.com</div>
-      <div class="phone">+41<br>contact@polistibrick.com</div>
+      <div class="phone">+41</div>
       <div class="meta"><span class="shared-tag">.com</span><span class="arrow">→</span></div>
     </a>
   </div>
 
   <div class="info-box">
-    <strong>Domenii curente:</strong><br>
-    🟢 <strong style="color:var(--green)">polistibrick.ro</strong> · <strong style="color:var(--green)">polistibrick.fr</strong> — domenii proprii<br>
-    ⚪ <strong>polistibrick.com</strong> — comun pentru UK, IT, ES, BE, CH (până cumperi domeniile locale)
+    <strong>Domenii configurate:</strong><br>
+    🟢 <strong style="color:var(--green)">polistibrick.ro</strong> · <strong style="color:var(--green)">.fr</strong> · <strong style="color:var(--green)">.it</strong> · <strong style="color:var(--green)">.es</strong> · <strong style="color:var(--green)">.be</strong> · <strong style="color:var(--green)">.ie</strong> — domenii proprii (6)<br>
+    ⚪ <strong>polistibrick.com</strong> — pentru UK și Elveția (2)
     <br><br>
-    <strong>Cum funcționează:</strong> Toate 7 site-uri sunt generate din același cod sursă.
+    <strong>Cum funcționează:</strong> Toate 8 site-uri sunt generate din același cod sursă.
     Doar fișierul <code>countries/[țară]/_config.json</code> diferă — telefon, email, adresă, TVA.
-    Când vrei să adaugi <strong>polistibrick.it</strong> ca domeniu propriu, schimbi 2 linii în <code>countries/it/_config.json</code> și rulezi build-ul din nou.
+    Modifici o dată CSS-ul sau o pagină → se aplică pe toate 8 site-urile.
   </div>
 
   <footer>
-    Polistibrick Multi-site · Preview build<br>
+    Polistibrick Multi-site · Preview build · 8 țări<br>
     Repo: <a style="color:var(--accent);text-decoration:none" href="https://github.com/bouleanulucian/polistibrick-multisite">github.com/bouleanulucian/polistibrick-multisite</a>
   </footer>
 </div>
