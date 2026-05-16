@@ -22,6 +22,16 @@
   }
   .wrap { max-width: 1180px; margin: 0 auto; padding: 64px 32px 96px; }
   header { text-align: center; margin-bottom: 64px; }
+  .brand-logo {
+    display: block;
+    margin: 0 auto 32px;
+    height: 56px;
+    width: auto;
+    filter: brightness(1.2);
+  }
+  @media (max-width: 640px) {
+    .brand-logo { height: 44px; margin-bottom: 24px; }
+  }
   .badge {
     display: inline-block; padding: 6px 14px;
     background: rgba(196,0,31,0.12); color: var(--accent);
@@ -96,9 +106,10 @@
 <body>
 <div class="wrap">
   <header>
+    <img src="./ro/images/logo.png" alt="Polistibrick" class="brand-logo">
     <span class="badge">Multi-site preview</span>
-    <h1>Polistibrick <span class="red">×</span> 8 țări</h1>
-    <p class="sub">Un singur cod sursă → 8 site-uri pe 8 țări.<br>6 cu domeniu propriu, 2 pe <strong>.com</strong> (UK + CH).</p>
+    <h1>8 țări <span class="red">·</span> 1 brand</h1>
+    <p class="sub">Un singur cod sursă → 8 site-uri pe 8 țări.<br>7 cu domeniu propriu, doar Elveția pe <strong>.com</strong>.</p>
   </header>
 
   <div class="grid">
@@ -153,9 +164,9 @@
     <a class="card" href="./en/polistibrick-mercury-style.html">
       <div class="flag">🇬🇧</div>
       <div class="country">United Kingdom</div>
-      <div class="domain">polistibrick.com</div>
+      <div class="domain has-domain">polistibrick.uk</div>
       <div class="phone">+44</div>
-      <div class="meta"><span class="shared-tag">.com</span><span class="arrow">→</span></div>
+      <div class="meta"><span class="own-tag">domeniu propriu</span><span class="arrow">→</span></div>
     </a>
 
     <a class="card" href="./de/polistibrick-mercury-style.html">
@@ -169,8 +180,8 @@
 
   <div class="info-box">
     <strong>Domenii configurate:</strong><br>
-    🟢 <strong style="color:var(--green)">polistibrick.ro</strong> · <strong style="color:var(--green)">.fr</strong> · <strong style="color:var(--green)">.it</strong> · <strong style="color:var(--green)">.es</strong> · <strong style="color:var(--green)">.be</strong> · <strong style="color:var(--green)">.ie</strong> — domenii proprii (6)<br>
-    ⚪ <strong>polistibrick.com</strong> — pentru UK și Elveția (2)
+    🟢 <strong style="color:var(--green)">.ro</strong> · <strong style="color:var(--green)">.fr</strong> · <strong style="color:var(--green)">.it</strong> · <strong style="color:var(--green)">.es</strong> · <strong style="color:var(--green)">.be</strong> · <strong style="color:var(--green)">.ie</strong> · <strong style="color:var(--green)">.uk</strong> — domenii proprii (7)<br>
+    ⚪ <strong>polistibrick.com</strong> — doar Elveția (până cumperi .ch)
     <br><br>
     <strong>Cum funcționează:</strong> Toate 8 site-uri sunt generate din același cod sursă.
     Doar fișierul <code>countries/[țară]/_config.json</code> diferă — telefon, email, adresă, TVA.
