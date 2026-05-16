@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Huis unifamilială · Cluj-Napoca · Studiu de caz Polistibrick</title>
+  <meta name="description" content="Studiu de caz Polistibrick: huis unifamilială 180 m² în Cluj-Napoca, construită cu MBK 270 + PBK 250 + TBK în 5 weken. Factură curent reală: 38 €/maand.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/site.css">
+  <style>
+    /* === Card cu watermark === */
+    .wm-section { padding: clamp(60px, 8vw, 100px) 0; background: var(--cream); }
+    .wm-stage-wrap { position: relative; margin: 70px auto 0; max-width: 1480px; }
+    .wm-watermark { position: absolute; top: 0; left: 50%; width: 100vw; margin-left: -50vw; pointer-events: none; user-select: none; transform: translateY(-50%); height: 1em; line-height: 1; text-align: center; text-transform: uppercase; font-family: var(--serif); font-size: clamp(64px, 12vw, 200px); font-weight: 500; letter-spacing: -0.06em; z-index: 2; }
+    .wm-watermark .wm-half { position: absolute; inset: 0; width: 100%; display: block; }
+    .wm-watermark .wm-top { color: transparent; -webkit-text-stroke: 1.4px rgba(15,15,15,0.30); clip-path: inset(0 0 50% 0); }
+    .wm-watermark .wm-bottom { color: var(--cream-dark); opacity: 0.65; clip-path: inset(50% 0 0 0); }
+    .wm-stage { position: relative; background: var(--cream-light); border: 1px solid var(--border); border-radius: 32px; padding: 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    .wm-text { padding-right: 8px; }
+    .wm-text .bubble-tag { display: inline-block; background: var(--red-soft); color: var(--red); padding: 4px 12px; border-radius: 4px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 16px; }
+    .wm-text h1 { font-family: var(--serif); font-size: clamp(30px, 3.6vw, 48px); font-weight: 500; color: var(--ink); letter-spacing: -0.02em; line-height: 1.08; margin-bottom: 18px; }
+    .wm-text h1 em { font-style: italic; color: var(--red); font-weight: 400; }
+    .wm-text p.lead { font-size: 15.5px; color: var(--gray); line-height: 1.65; }
+    .wm-visual { background: white; border: 1px solid var(--border); border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-md); margin-top: 10mm; aspect-ratio: 4/3; }
+    .wm-visual .img-placeholder { width: 100%; height: 100%; aspect-ratio: auto; border-radius: 0; border: none; margin: 0; }
+    @media (max-width: 1100px) {
+      .wm-stage { grid-template-columns: 1fr; gap: 32px; padding: 36px; }
+      .wm-visual { margin-top: 0; aspect-ratio: 16/10; }
+    }
+    @media (max-width: 768px) { .wm-stage { padding: 28px 20px; } }
+    .cs-quote {
+      font-family: var(--serif);
+      font-size: clamp(22px, 2.6vw, 32px);
+      line-height: 1.35;
+      color: var(--ink);
+      padding: 36px 40px;
+      border-left: 4px solid var(--red);
+      background: var(--cream-light);
+      border-radius: 0 20px 20px 0;
+      margin: 0;
+    }
+    .cs-quote::before { content: '"'; color: var(--red); font-size: 1.2em; }
+    .cs-quote::after { content: '"'; color: var(--red); font-size: 1.2em; }
+    .cs-quote-author {
+      display: block;
+      margin-top: 20px;
+      font-family: var(--sans);
+      font-size: 14px;
+      font-style: normal;
+      color: var(--gray);
+    }
+    .cs-quote-author strong { color: var(--ink); display: block; font-size: 15px; }
+    .cs-timeline { list-style: none; padding: 0; position: relative; }
+    .cs-timeline::before {
+      content: '';
+      position: absolute;
+      left: 14px; top: 0; bottom: 0;
+      width: 2px;
+      background: var(--border);
+    }
+    .cs-timeline-item {
+      position: relative;
+      padding-left: 50px;
+      margin-bottom: 28px;
+    }
+    .cs-timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 6px; top: 8px;
+      width: 18px; height: 18px;
+      background: var(--red);
+      border: 4px solid var(--cream);
+      border-radius: 50%;
+      box-shadow: 0 0 0 2px var(--red);
+    }
+    .cs-timeline-week {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 4px;
+    }
+    .cs-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    @media (max-width: 768px) { .cs-gallery { grid-template-columns: 1fr; } }
+    .cs-bill {
+      background: linear-gradient(135deg, #2A2520 0%, #393229 100%);
+      color: var(--cream);
+      padding: 36px;
+      border-radius: 20px;
+      text-align: center;
+    }
+    .cs-bill-num {
+      font-family: var(--serif);
+      font-size: clamp(48px, 7vw, 80px);
+      color: var(--red);
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      margin: 12px 0 6px;
+    }
+    .cs-bill-num small { font-size: 0.35em; color: rgba(255,255,255,0.55); margin-left: 4px; }
+  </style>
+</head>
+<body data-base="../../">
+
+<header class="nav" data-include="nav"></header>
+
+<!-- HERO cu watermark -->
+<section class="wm-section">
+  <div class="container">
+    <div class="wm-stage-wrap reveal">
+      <div class="wm-watermark" aria-hidden="true">
+        <span class="wm-half wm-top">Cluj</span>
+        <span class="wm-half wm-bottom">Cluj</span>
+      </div>
+
+      <div class="wm-stage">
+        <div class="wm-text">
+          <span class="bubble-tag">Huis unifamilială · România</span>
+          <h1>Passiefhuis <em>în Cluj-Napoca.</em></h1>
+          <p class="lead">Familia [Nume] a vrut o passiefhuis A+++ fără să plătească premium-ul cărămizii. Au ales Polistibrick pentru cei 5 % peste baksteen clasică și o huis terminată în 5 weken vs 5 maanden. La 2 jaar de la mutat, factura medie de curent este 38 €/maand.</p>
+        </div>
+        <div class="wm-visual">
+          <div class="img-placeholder">[Fotografie huis Cluj-Napoca<br>(exterior, tencuială cremă)]</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KEY FACTS -->
+<section class="section section--tight">
+  <div class="container">
+    <div class="grid grid-4 reveal">
+      <div class="fact"><span class="fact-num">180<small> m²</small></span><span class="fact-label">Suprafață construită</span></div>
+      <div class="fact"><span class="fact-num">5<small> săpt.</small></span><span class="fact-label">Execuție Polistibrick</span></div>
+      <div class="fact"><span class="fact-num">38<small> €/maand</small></span><span class="fact-label">Factură curent medie</span></div>
+      <div class="fact"><span class="fact-num">A+++<small> </small></span><span class="fact-label">Clasa energetică</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="section section--cream section--tight">
+  <div class="container container--narrow">
+    <blockquote class="cs-quote reveal">
+      Am ezitat 6 maanden între baksteen și Polistibrick. După 2 ierni de locuit, înțeleg că era cea mai bună decizie financiară din viața mea. Vecinii cu baksteen plătesc 350 € pe maand winter, eu plătesc 50. Diferența o pun în vacanțe.
+      <span class="cs-quote-author"><strong>[Nume proprietar]</strong>Proprietar · Locuiește din ianuarie 2024</span>
+    </blockquote>
+  </div>
+</section>
+
+<!-- PROJECT DETAILS -->
+<section class="section">
+  <div class="container">
+    <div class="grid grid-2" style="gap:48px;align-items:start;">
+      <div class="reveal">
+        <span class="eyebrow">Over ons proiect</span>
+        <h2 style="margin-bottom:18px;">Cum a fost.</h2>
+        <p style="margin-bottom:14px;">Familia a cumpărat terenul în Cluj-Napoca în 2023 cu intenția de a construi o huis pe viață. Au consultat 4 arhitecți și 3 constructori. Doi le-au propus baksteen, unul AAC-blok, unul Polistibrick.</p>
+        <p style="margin-bottom:14px;">După calcule, au descoperit că diferența de cost între o passiefhuis tradițională (baksteen + isolatie suplimentară) și Polistibrick era de aproape <strong>30%</strong>. Plus că timpul de execuție era de 5 weken vs 5 maanden.</p>
+        <p style="margin-bottom:14px;">Construcția s-a făcut între aprilie și mai 2024. Team de 3 oameni de la constructorul partener a montat pereții MBK 270 în 9 dagen, planșeele PBK în 2 dagen, acoperișul TBK în 3 dagen. Turnarea betonului — o singură dag. Finisaje + instalații — 4 weken.</p>
+        <p>Familia a intrat în huis în iulie 2024.</p>
+      </div>
+      <div class="reveal">
+        <div class="card" style="padding:32px;">
+          <h4 style="margin-bottom:18px;">Specificații</h4>
+          <div class="spec-table" style="border-radius:10px;">
+            
+            <div class="spec-table-row" style="grid-template-columns:1fr 1fr;"><div class="spec-table-cell spec-table-cell--label">Locație</div><div class="spec-table-cell spec-table-cell--value">Cluj-Napoca</div></div>
+            <div class="spec-table-row" style="grid-template-columns:1fr 1fr;"><div class="spec-table-cell spec-table-cell--label">Suprafață utilă</div><div class="spec-table-cell spec-table-cell--value">180 m²</div></div>
+            <div class="spec-table-row" style="grid-template-columns:1fr 1fr;"><div class="spec-table-cell spec-table-cell--label">Etaje</div><div class="spec-table-cell spec-table-cell--value">P+1</div></div>
+            <div class="spec-table-row" style="grid-template-columns:1fr 1fr;"><div class="spec-table-cell spec-table-cell--label">Pereți</div><div class="spec-table-cell spec-table-cell--value">MBK 270</div></div>
+            <div class="spec-table-row" style="grid-template-columns:1fr 1fr;"><div class="spec-table-cell spec-table-cell--label">Planșee</div><div class="spec-table-cell spec-table-cell--value">PBK 250</div></div>
+            <div class="spec-table-row" style="grid-template-columns:1fr 1fr;"><div class="spec-table-cell spec-table-cell--label">Acoperiș</div><div class="spec-table-cell spec-table-cell--value">TBK 250</div></div>
+            <div class="spec-table-row" style="grid-template-columns:1fr 1fr;"><div class="spec-table-cell spec-table-cell--label">Cost total (chei-la-mână)</div><div class="spec-table-cell spec-table-cell--value">~189.000 €</div></div>
+            <div class="spec-table-row" style="grid-template-columns:1fr 1fr;"><div class="spec-table-cell spec-table-cell--label">Inceput</div><div class="spec-table-cell spec-table-cell--value">Aprilie 2024</div></div>
+            <div class="spec-table-row" style="grid-template-columns:1fr 1fr;"><div class="spec-table-cell spec-table-cell--label">Mutare</div><div class="spec-table-cell spec-table-cell--value">Iulie 2024</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BILL HIGHLIGHT -->
+<section class="section section--tight">
+  <div class="container container--narrow">
+    <div class="cs-bill reveal">
+      <span class="eyebrow" style="color:rgba(247,244,237,0.6);">Factură reală curent + gaz</span>
+      <div class="cs-bill-num">38<small> €/maand</small></div>
+      <p style="color:rgba(247,244,237,0.75);font-size:14px;">Media pe 24 maanden, inclusiv winter cu temperaturi de −15 °C. Het Huis de 180 m² cu 4 persoane, mașină electrică încărcată acasă, 2 calculatoare always-on.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="section section--cream">
+  <div class="container container--narrow">
+    <div class="reveal">
+      <span class="eyebrow">Cronologie execuție</span>
+      <h2 style="margin-bottom:30px;">De la fundație la <em>cheia în ușă.</em></h2>
+      <ol class="cs-timeline">
+        
+        <li class="cs-timeline-item"><span class="cs-timeline-week">Săptămâna 1</span><h4>Fundație + plăcă suport</h4><p style="font-size:14px;color:var(--gray);">Excavare, fundație continuă, plăcă suport pentru parter. Team locală 4 dagen.</p></li>
+        <li class="cs-timeline-item"><span class="cs-timeline-week">Săptămâna 2-3</span><h4>Montaj MBK + PBK + TBK</h4><p style="font-size:14px;color:var(--gray);">Team partener Polistibrick (3 oameni) asamblează cofrajul perete, planșeu, dak. Ca LEGO.</p></li>
+        <li class="cs-timeline-item"><span class="cs-timeline-week">Săptămâna 4</span><h4>Turnare beton + tâmplărie</h4><p style="font-size:14px;color:var(--gray);">O singură turnare pentru tot. Montaj ferestre triplu strat + uși exterioare.</p></li>
+        <li class="cs-timeline-item"><span class="cs-timeline-week">Săptămâna 5</span><h4>Instalații + învelitoare</h4><p style="font-size:14px;color:var(--gray);">Electrică, sanitară, ventilație recuperare. Țiglă ceramică pe dak.</p></li>
+        <li class="cs-timeline-item"><span class="cs-timeline-week">Luna 2-3</span><h4>Finisaje interioare + exterioare</h4><p style="font-size:14px;color:var(--gray);">Tencuieli, vopsire, parchet, mobilier bucătărie. Tencuială silicat pe fațadă.</p></li>
+        <li class="cs-timeline-item"><span class="cs-timeline-week">Luna 4</span><h4>Mutare + verificări finale</h4><p style="font-size:14px;color:var(--gray);">Test Blower Door (n50 = 0,48 — sub limita Passivhaus). Recepție și mutare.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY (with tabs + lightbox) -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="text-align:center;margin-bottom:30px;">
+      <span class="eyebrow">Galerie foto</span>
+      <h2>Cum a fost <em>pas cu pas.</em></h2>
+      <p class="lead" style="margin-top:14px;max-width:620px;margin-left:auto;margin-right:auto;">Apasă orice imagine pentru a o vedea la dimensiune mare. Filtrează după etapă.</p>
+    </div>
+
+    <div class="reveal" data-gallery>
+      <div class="gallery-tabs">
+        <button class="gallery-tab is-active" data-filter="all">Toate <span class="gallery-tab-count"></span></button>
+        <button class="gallery-tab" data-filter="construction">În bouw <span class="gallery-tab-count"></span></button>
+        <button class="gallery-tab" data-filter="final">Finalizat <span class="gallery-tab-count"></span></button>
+      </div>
+
+      <div class="gallery-grid">
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Excavare și fundație continuă pe teren stabil.">
+          <div class="gallery-item-placeholder">[Foto: Săpt. 1 — Fundație]</div>
+          <span class="gallery-item-tag">Construcție</span>
+          <div class="gallery-item-caption">Excavare și fundație continuă pe teren stabil.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Plăcuța suport pentru parter, finisată.">
+          <div class="gallery-item-placeholder">[Foto: Săpt. 1 — Plăcă suport]</div>
+          <span class="gallery-item-tag">Construcție</span>
+          <div class="gallery-item-caption">Plăcuța suport pentru parter, finisată.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Primele rânduri de muren MBK 270 montate.">
+          <div class="gallery-item-placeholder">[Foto: Săpt. 2 — Pereți parter]</div>
+          <span class="gallery-item-tag">Construcție</span>
+          <div class="gallery-item-caption">Primele rânduri de muren MBK 270 montate.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Asamblare ca LEGO — echipă de 3 oameni.">
+          <div class="gallery-item-placeholder">[Foto: Săpt. 2 — Montaj echipă]</div>
+          <span class="gallery-item-tag">Construcție</span>
+          <div class="gallery-item-caption">Asamblare ca LEGO — echipă de 3 oameni.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Pereți parter compleet montați, pregătiți pentru planșeu.">
+          <div class="gallery-item-placeholder">[Foto: Săpt. 2 — Parter compleet]</div>
+          <span class="gallery-item-tag">Construcție</span>
+          <div class="gallery-item-caption">Pereți parter compleet montați, pregătiți pentru planșeu.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Montaj planșeu PBK între parter și etaj.">
+          <div class="gallery-item-placeholder">[Foto: Săpt. 3 — Planșeu PBK]</div>
+          <span class="gallery-item-tag">Construcție</span>
+          <div class="gallery-item-caption">Montaj planșeu PBK între parter și etaj.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Pereți etaj 1 montați și armătura pre-poziționată.">
+          <div class="gallery-item-placeholder">[Foto: Săpt. 3 — Etaj 1]</div>
+          <span class="gallery-item-tag">Construcție</span>
+          <div class="gallery-item-caption">Pereți etaj 1 montați și armătura pre-poziționată.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="TBK Dak panou prefabricat poziționat.">
+          <div class="gallery-item-placeholder">[Foto: Săpt. 3 — TBK Dak]</div>
+          <span class="gallery-item-tag">Construcție</span>
+          <div class="gallery-item-caption">TBK Dak panou prefabricat poziționat.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Turnare beton într-o singură etapă — tot structura.">
+          <div class="gallery-item-placeholder">[Foto: Săpt. 4 — Turnare beton]</div>
+          <span class="gallery-item-tag">Construcție</span>
+          <div class="gallery-item-caption">Turnare beton într-o singură etapă — tot structura.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Montaj tâmplărie triplu strat — ferestre și uși.">
+          <div class="gallery-item-placeholder">[Foto: Săpt. 4 — Tâmplărie]</div>
+          <span class="gallery-item-tag">Construcție</span>
+          <div class="gallery-item-caption">Montaj tâmplărie triplu strat — ferestre și uși.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Învelitoare de țiglă ceramică pe dak.">
+          <div class="gallery-item-placeholder">[Foto: Săpt. 5 — Învelitoare]</div>
+          <span class="gallery-item-tag">Construcție</span>
+          <div class="gallery-item-caption">Învelitoare de țiglă ceramică pe dak.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Schela montată pentru tencuieli exterioare.">
+          <div class="gallery-item-placeholder">[Foto: Săpt. 5 — Pregătire fațadă]</div>
+          <span class="gallery-item-tag">Construcție</span>
+          <div class="gallery-item-caption">Schela montată pentru tencuieli exterioare.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="final" data-caption="Fațada principală finisată cu tencuială silicat cremă.">
+          <div class="gallery-item-placeholder">[Foto: Fațadă cremă]</div>
+          <span class="gallery-item-tag">Finalizat</span>
+          <div class="gallery-item-caption">Fațada principală finisată cu tencuială silicat cremă.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="final" data-caption="Detaliu fațadă cu profile la ferestre.">
+          <div class="gallery-item-placeholder">[Foto: Detaliu fațadă]</div>
+          <span class="gallery-item-tag">Finalizat</span>
+          <div class="gallery-item-caption">Detaliu fațadă cu profile la ferestre.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="final" data-caption="Living deschis cu lumină naturală.">
+          <div class="gallery-item-placeholder">[Foto: Living]</div>
+          <span class="gallery-item-tag">Finalizat</span>
+          <div class="gallery-item-caption">Living deschis cu lumină naturală.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="final" data-caption="Bucătărie open-space integrată.">
+          <div class="gallery-item-placeholder">[Foto: Bucătărie]</div>
+          <span class="gallery-item-tag">Finalizat</span>
+          <div class="gallery-item-caption">Bucătărie open-space integrată.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="final" data-caption="Dormitor cu vedere spre grădină.">
+          <div class="gallery-item-placeholder">[Foto: Dormitor]</div>
+          <span class="gallery-item-tag">Finalizat</span>
+          <div class="gallery-item-caption">Dormitor cu vedere spre grădină.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="final" data-caption="Baie principală cu finisaje moderne.">
+          <div class="gallery-item-placeholder">[Foto: Baie]</div>
+          <span class="gallery-item-tag">Finalizat</span>
+          <div class="gallery-item-caption">Baie principală cu finisaje moderne.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="final" data-caption="Vedere huis din grădină.">
+          <div class="gallery-item-placeholder">[Foto: Exterior — grădină]</div>
+          <span class="gallery-item-tag">Finalizat</span>
+          <div class="gallery-item-caption">Vedere huis din grădină.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="final" data-caption="Het Huis locuită, primul Crăciun (decembrie 2024).">
+          <div class="gallery-item-placeholder">[Foto: Locuit]</div>
+          <span class="gallery-item-tag">Finalizat</span>
+          <div class="gallery-item-caption">Het Huis locuită, primul Crăciun (decembrie 2024).</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="final" data-caption="Factură curent ianuarie 2025: 41 €. Iarna -8°C.">
+          <div class="gallery-item-placeholder">[Foto: Factură reală iarnă]</div>
+          <span class="gallery-item-tag">Finalizat</span>
+          <div class="gallery-item-caption">Factură curent ianuarie 2025: 41 €. Iarna -8°C.</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX (at body level, click any gallery item to open) -->
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Galerie foto">
+  <span class="lightbox-counter">1 / 1</span>
+  <button class="lightbox-close" aria-label="Închide">×</button>
+  <button class="lightbox-prev" aria-label="Imaginea anterioară">‹</button>
+  <button class="lightbox-next" aria-label="Imaginea următoare">›</button>
+  <img class="lightbox-img" src="" alt="">
+  <div class="lightbox-caption"></div>
+</div>
+
+<!-- CTA -->
+<section class="section section--tight">
+  <div class="cta-band reveal">
+    <h2>Vrei și tu <em>o huis ca asta?</em></h2>
+    <p>Vraag een persoonlijke offerte aan — calculăm exact pentru proiectul tău, pe baza planurilor tale.</p>
+    <div class="cta-band-actions">
+      <a href="../../oferta/" class="btn btn-on-dark btn-large btn-arrow">Vraag een persoonlijke offerte aan</a>
+      <a href="../../calculator/" class="btn btn-on-dark-ghost btn-large">Kostencalculator</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" data-include="footer"></footer>
+<script src="../../assets/js/site.js"></script>
+</body>
+</html>

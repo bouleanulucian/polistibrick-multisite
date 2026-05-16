@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Témoignages · Proprietarii Polistibrick vorbesc — factures reale, povești reale</title>
+  <meta name="description" content="Video-uri cu proprietari Polistibrick care vorbesc despre experiența lor: factures reale de energie, ce s-a schimbat, ce ar fi făcut diferit.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <style>
+    /* === Card cu watermark === */
+    .wm-section { padding: clamp(60px, 8vw, 100px) 0; background: var(--cream); }
+    .wm-stage-wrap { position: relative; margin: 70px auto 0; max-width: 1480px; }
+    .wm-watermark {
+      position: absolute; top: 0; left: 50%; width: 100vw; margin-left: -50vw;
+      pointer-events: none; user-select: none; transform: translateY(-50%);
+      height: 1em; line-height: 1; text-align: center; text-transform: uppercase;
+      font-family: var(--serif); font-size: clamp(64px, 12vw, 200px);
+      font-weight: 500; letter-spacing: -0.06em; z-index: 2;
+    }
+    .wm-watermark .wm-half { position: absolute; inset: 0; width: 100%; display: block; }
+    .wm-watermark .wm-top { color: transparent; -webkit-text-stroke: 1.4px rgba(15,15,15,0.30); clip-path: inset(0 0 50% 0); }
+    .wm-watermark .wm-bottom { color: var(--cream-dark); opacity: 0.65; clip-path: inset(50% 0 0 0); }
+    .wm-stage {
+      position: relative; background: var(--cream-light); border: 1px solid var(--border);
+      border-radius: 32px; padding: 56px; display: flex; flex-direction: column; gap: 40px;
+    }
+    .wm-content { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 48px; align-items: center; }
+    .wm-text { padding-right: 8px; }
+    .wm-text .bubble-tag {
+      display: inline-block; background: var(--red-soft); color: var(--red);
+      padding: 4px 12px; border-radius: 4px; font-size: 11px; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 16px;
+    }
+    .wm-text h2 {
+      font-family: var(--serif); font-size: clamp(28px, 3.2vw, 44px); font-weight: 500;
+      color: var(--ink); letter-spacing: -0.02em; line-height: 1.05; margin-bottom: 14px;
+    }
+    .wm-text h2 em { font-style: italic; color: var(--red); font-weight: 400; }
+    .wm-text p { font-size: 15px; color: var(--gray); line-height: 1.65; }
+    .wm-visual { background: white; border: 1px solid var(--border); border-radius: 20px; padding: 24px; box-shadow: var(--shadow-md); margin-top: 10mm; aspect-ratio: 4/5; display: flex; align-items: center; justify-content: center; color: var(--gray); text-align: center; font-size: 13px; }
+
+    /* Video cards */
+    .video-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+    .video-card {
+      background: white; border: 1px solid var(--border); border-radius: 20px;
+      overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .video-card:hover { transform: translateY(-4px); box-shadow: 0 24px 50px rgba(0,0,0,0.08); }
+    .video-thumb {
+      position: relative; aspect-ratio: 16/9;
+      background: linear-gradient(135deg, var(--cream-dark) 0%, var(--cream-light) 100%);
+      display: flex; align-items: center; justify-content: center; cursor: pointer; overflow: hidden;
+    }
+    .video-thumb-placeholder { color: var(--gray); font-size: 14px; text-align: center; padding: 24px; }
+    .video-play-btn {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      width: 72px; height: 72px; background: rgba(200, 16, 46, 0.92); color: white;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      transition: transform 0.25s ease, background 0.25s ease;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.20);
+    }
+    .video-card:hover .video-play-btn { transform: translate(-50%, -50%) scale(1.08); background: var(--red); }
+    .video-play-btn svg { width: 28px; height: 28px; margin-left: 4px; }
+    .video-meta { padding: 22px 24px; }
+    .video-quote {
+      font-family: var(--serif); font-size: 17px; line-height: 1.4; color: var(--ink);
+      margin-bottom: 16px; letter-spacing: -0.01em;
+    }
+    .video-quote::before { content: '"'; color: var(--red); font-size: 1.2em; }
+    .video-quote::after { content: '"'; color: var(--red); font-size: 1.2em; }
+    .video-author { display: flex; align-items: center; gap: 12px; padding-top: 16px; border-top: 1px solid var(--border); }
+    .video-author-avatar {
+      width: 42px; height: 42px; border-radius: 50%; background: var(--cream-dark);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+      color: var(--gray); font-size: 10.5px;
+    }
+    .video-author-info strong { display: block; font-size: 13.5px; color: var(--ink); font-weight: 600; line-height: 1.2; }
+    .video-author-info span { display: block; font-size: 11.5px; color: var(--gray); margin-top: 2px; }
+    .video-stats { display: flex; gap: 16px; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); }
+    .video-stat { flex: 1; }
+    .video-stat-num {
+      display: block; font-family: var(--serif); font-size: 20px;
+      color: var(--red); font-weight: 500; line-height: 1;
+    }
+    .video-stat-label {
+      display: block; font-size: 10px; color: var(--gray); letter-spacing: 0.08em;
+      text-transform: uppercase; margin-top: 4px; font-weight: 600;
+    }
+
+    .video-cta-note {
+      text-align: center; padding: 32px;
+      background: var(--cream); border-radius: 16px; border: 1px dashed var(--border-strong);
+    }
+    .video-cta-note p { font-size: 14px; color: var(--gray); margin: 0; }
+    .video-cta-note p + p { margin-top: 8px; }
+    .video-cta-note a { color: var(--red); }
+
+    @media (max-width: 1100px) {
+      .video-grid { grid-template-columns: 1fr; }
+      .wm-content { grid-template-columns: 1fr; gap: 32px; }
+      .wm-visual { margin-top: 0; aspect-ratio: 16/10; }
+      .wm-stage { padding: 36px; }
+    }
+    @media (max-width: 768px) {
+      .wm-stage { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body data-base="../">
+
+<header class="nav" data-include="nav"></header>
+
+<!-- ============ CARDUL PRINCIPAL CU WATERMARK ============ -->
+<section class="wm-section">
+  <div class="container">
+    <div class="wm-stage-wrap reveal">
+      <div class="wm-watermark" aria-hidden="true">
+        <span class="wm-half wm-top">Povești</span>
+        <span class="wm-half wm-bottom">Povești</span>
+      </div>
+
+      <div class="wm-stage">
+
+        <div class="wm-content">
+          <div class="wm-text">
+            <span class="bubble-tag">Proprietarii vorbesc</span>
+            <h2>Povești reale, <em>cifre reale.</em></h2>
+            <p>Nu vrem să te convingem noi că Polistibrick funcționează. Vrem să-i asculți pe cei care locuiesc deja în case construite cu sistemul nostru. Video-uri scurte cu factures reale, schimbări reale, lecții reale.</p>
+          </div>
+          <div class="wm-visual">
+            [Video featured · proprietar arătând<br>factura energie pe telefon · 60 sec]
+          </div>
+        </div>
+
+        <div class="video-grid">
+
+          <article class="video-card">
+            <div class="video-thumb">
+              <div class="video-thumb-placeholder">[Video player · 90 sec<br>Proprietar 1]</div>
+              <div class="video-play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+            </div>
+            <div class="video-meta">
+              <p class="video-quote">După 2 ans de iarnă în casa Polistibrick, n-am mai pornit niciodată centrala. Plătesc 38 €/mois, iar vecinii cu brique plătesc 300+.</p>
+              <div class="video-author">
+                <div class="video-author-avatar">[Foto]</div>
+                <div class="video-author-info">
+                  <strong>[Nume proprietar]</strong>
+                  <span>Cluj-Napoca, RO · Maison 180 m² · Locuită din 2024</span>
+                </div>
+              </div>
+              <div class="video-stats">
+                <div class="video-stat"><span class="video-stat-num">38€</span><span class="video-stat-label">Factură curent/mois</span></div>
+                <div class="video-stat"><span class="video-stat-num">5</span><span class="video-stat-label">Săptămâni execuție</span></div>
+                <div class="video-stat"><span class="video-stat-num">A+++</span><span class="video-stat-label">Clasa energetică</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <div class="video-thumb">
+              <div class="video-thumb-placeholder">[Video player · 75 sec<br>Proprietar 2]</div>
+              <div class="video-play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+            </div>
+            <div class="video-meta">
+              <p class="video-quote">Construitorul meu m-a sfătuit brique. Bine că nu l-am ascultat. La 2 ans de la mutat, casa e tăcută, e caldă, și pot să dorm fără să mă trezesc cu calorifere.</p>
+              <div class="video-author">
+                <div class="video-author-avatar">[Foto]</div>
+                <div class="video-author-info">
+                  <strong>[Nume proprietar]</strong>
+                  <span>Valencia, ES · Villa 280 m² · Locuită din 2023</span>
+                </div>
+              </div>
+              <div class="video-stats">
+                <div class="video-stat"><span class="video-stat-num">0h</span><span class="video-stat-label">AC pornit été</span></div>
+                <div class="video-stat"><span class="video-stat-num">7</span><span class="video-stat-label">Săptămâni execuție</span></div>
+                <div class="video-stat"><span class="video-stat-num">−72%</span><span class="video-stat-label">Energie vs vecin</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <div class="video-thumb">
+              <div class="video-thumb-placeholder">[Video player · 60 sec<br>Proprietar 3]</div>
+              <div class="video-play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+            </div>
+            <div class="video-meta">
+              <p class="video-quote">Am ezitat mois întregi din cauza polistirenului. Ziceam: "Va fi umiditate, mucegai, dezastru." După 3 ans — nimic. Pereții sunt uscați, casa respiră, nu am mai prins niciodată sezon greu.</p>
+              <div class="video-author">
+                <div class="video-author-avatar">[Foto]</div>
+                <div class="video-author-info">
+                  <strong>[Nume proprietar]</strong>
+                  <span>Lyon, FR · Maison 150 m² · Locuită din 2022</span>
+                </div>
+              </div>
+              <div class="video-stats">
+                <div class="video-stat"><span class="video-stat-num">42€</span><span class="video-stat-label">Factură medie/mois</span></div>
+                <div class="video-stat"><span class="video-stat-num">3</span><span class="video-stat-label">Ani de locuit</span></div>
+                <div class="video-stat"><span class="video-stat-num">0</span><span class="video-stat-label">Probleme umiditate</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <div class="video-thumb">
+              <div class="video-thumb-placeholder">[Video player · 80 sec<br>Arhitect partener]</div>
+              <div class="video-play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+            </div>
+            <div class="video-meta">
+              <p class="video-quote">Pour architectes, Polistibrick e un cadou. Deschideri 9 m fără șarpantă, fără punți termice de calculat. Trec PHPP la prima încercare, fără adăugări. Și clienții îi plac prețul.</p>
+              <div class="video-author">
+                <div class="video-author-avatar">[Foto]</div>
+                <div class="video-author-info">
+                  <strong>[Nume arhitect]</strong>
+                  <span>Arhitect partener · 12 proiecte Polistibrick finalizate</span>
+                </div>
+              </div>
+              <div class="video-stats">
+                <div class="video-stat"><span class="video-stat-num">12</span><span class="video-stat-label">Projets livrate</span></div>
+                <div class="video-stat"><span class="video-stat-num">100%</span><span class="video-stat-label">Certificate Passivhaus</span></div>
+                <div class="video-stat"><span class="video-stat-num">9m</span><span class="video-stat-label">Deschideri max.</span></div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="video-cta-note">
+          <p>🎬 Video-urile reale vor înlocui aceste placeholders pe măsură ce le filmăm cu proprietarii noștri.</p>
+          <p>Locuiești într-o maison Polistibrick? <a href="../contact/">Hai să-ți filmăm povestea</a> — 30 minute pe șantier, postări sociale gratuite, ofertă pentru următorul tău proiect.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--cream">
+  <div class="container">
+    <div class="grid grid-2 reveal" style="gap:48px;align-items:center;">
+      <div>
+        <span class="eyebrow">De ce video?</span>
+        <h2 style="margin-bottom:18px;">Pentru că <em>nu te poți minți cu ochii.</em></h2>
+        <p style="font-size:15px;line-height:1.65;color:var(--gray);">Pe internet, oricine poate scrie orice. Dar nu poți falsifica o facture de 38€/mois arătată pe ecranul telefonului, fața unui om care s-a săturat să dea bani pe gaz, sau bucuria unei familii care a construit fără stres.</p>
+        <p style="font-size:15px;line-height:1.65;color:var(--gray);margin-top:14px;">Vrem să fii sigur că ce-ți promitem se vede în viața reală a celor care au cumpărat înaintea ta.</p>
+      </div>
+      <div>
+        <div class="img-placeholder img-placeholder--wide">
+          [Imagine: proprietar arătând facture<br>energie pe telefon, casa în fundal]
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="cta-band reveal">
+    <h2>Vrei <em>și tu</em> să fii într-un astfel de video?</h2>
+    <p>Demander un devis personnalisé, construiește cu Polistibrick, și peste 2 ans povestea ta apare aici pentru a inspira alți oameni.</p>
+    <div class="cta-band-actions">
+      <a href="../oferta/" class="btn btn-on-dark btn-large btn-arrow">Demander un devis personnalisé</a>
+      <a href="../economii/" class="btn btn-on-dark-ghost btn-large">Calculează economiile</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" data-include="footer"></footer>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

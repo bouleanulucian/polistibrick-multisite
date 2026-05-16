@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para arquitectos · Detalii constructive, BIM, PHPP — Polistibrick</title>
+  <meta name="description" content="Recursos pentru arhitecți: detalii constructive DWG, familii BIM Revit, rapoarte PHPP. Libertate arhitecturală totală cu sistemul Polistibrick.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/site.css">
+  <style>
+    .wm-section { padding: clamp(60px, 8vw, 100px) 0; background: var(--cream); }
+    .wm-stage-wrap { position: relative; margin: 70px auto 0; max-width: 1480px; }
+    .wm-watermark { position: absolute; top: 0; left: 50%; width: 100vw; margin-left: -50vw; pointer-events: none; user-select: none; transform: translateY(-50%); height: 1em; line-height: 1; text-align: center; text-transform: uppercase; font-family: var(--serif); font-size: clamp(64px, 12vw, 200px); font-weight: 500; letter-spacing: -0.06em; z-index: 2; }
+    .wm-watermark .wm-half { position: absolute; inset: 0; width: 100%; display: block; }
+    .wm-watermark .wm-top { color: transparent; -webkit-text-stroke: 1.4px rgba(15,15,15,0.30); clip-path: inset(0 0 50% 0); }
+    .wm-watermark .wm-bottom { color: var(--cream-dark); opacity: 0.65; clip-path: inset(50% 0 0 0); }
+    .wm-stage { position: relative; background: var(--cream-light); border: 1px solid var(--border); border-radius: 32px; padding: 56px; }
+    .wm-content { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 48px; align-items: center; }
+    .wm-text { padding-right: 8px; }
+    .wm-text .bubble-tag { display: inline-block; background: var(--red-soft); color: var(--red); padding: 4px 12px; border-radius: 4px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 16px; }
+    .wm-text h1 { font-family: var(--serif); font-size: clamp(34px, 4vw, 56px); font-weight: 500; color: var(--ink); letter-spacing: -0.02em; line-height: 1.05; margin-bottom: 18px; }
+    .wm-text h1 em { font-style: italic; color: var(--red); font-weight: 400; }
+    .wm-text p.lead { font-size: 16px; color: var(--gray); line-height: 1.65; margin-bottom: 26px; }
+    .wm-visual { background: white; border: 1px solid var(--border); border-radius: 20px; padding: 24px; box-shadow: var(--shadow-md); margin-top: 10mm; aspect-ratio: 4/5; display: flex; align-items: center; justify-content: center; color: var(--gray); text-align: center; font-size: 13px; }
+    @media (max-width: 1100px) {
+      .wm-content { grid-template-columns: 1fr; gap: 32px; }
+      .wm-stage { padding: 36px; }
+      .wm-visual { margin-top: 0; aspect-ratio: 16/10; }
+    }
+    @media (max-width: 768px) { .wm-stage { padding: 28px 20px; } }
+  </style>
+</head>
+<body data-base="../../">
+
+<header class="nav" data-include="nav"></header>
+
+<section class="wm-section">
+  <div class="container">
+    <div class="wm-stage-wrap reveal">
+      <div class="wm-watermark" aria-hidden="true">
+        <span class="wm-half wm-top">Arhitecți</span>
+        <span class="wm-half wm-bottom">Arhitecți</span>
+      </div>
+      <div class="wm-stage">
+        <div class="wm-content">
+          <div class="wm-text">
+            <span class="bubble-tag">Para arquitectos și proiectanți</span>
+            <h1>Detalii constructive <em>sin compromisosuri.</em></h1>
+            <p class="lead">Polistibrick îți oferă libertate arhitecturală maximă: deschideri 9 m, geometrii custom fără cost suplimentar, BIM gratuit, fișe tehnice complete și suport tehnic dedicat pe proiect.</p>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;">
+              <a href="../../produse/pereti-mbk/#downloads" class="btn btn-primary btn-arrow">Descarcă fișele tehnice</a>
+              <a href="#bim" class="btn btn-ghost">Modele BIM</a>
+            </div>
+          </div>
+          <div class="wm-visual">
+            [Render BIM 3D · detaliu constructiv<br>perete-planseu-acoperis Polistibrick]
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 50px;">
+      <span class="eyebrow">Ce ai la dispoziție</span>
+      <h2>Recursos pentru <em>proiectul tău.</em></h2>
+    </div>
+    <div class="grid grid-3 reveal">
+      <div class="card card-hover">
+        <span class="card-tag">CAD</span>
+        <h3 style="margin:8px 0;">Detalii constructive DWG</h3>
+        <p style="font-size:14.5px;margin-bottom:18px;">Detalii complete pentru toate îmbinările: colțuri, forjados, ferestre, fundație, tejado. Format AutoCAD 2018+.</p>
+        <a href="#" style="color:var(--red);font-weight:600;font-size:13px;">Descarcă DWG →</a>
+      </div>
+      <div class="card card-hover" id="bim">
+        <span class="card-tag">BIM</span>
+        <h3 style="margin:8px 0;">Familii Revit + ArchiCAD</h3>
+        <p style="font-size:14.5px;margin-bottom:18px;">Familii parametrice pentru toate produsele MBK, PBK, TBK cu proprietățile termice integrate.</p>
+        <a href="#" style="color:var(--red);font-weight:600;font-size:13px;">Descarcă BIM →</a>
+      </div>
+      <div class="card card-hover">
+        <span class="card-tag">PHPP</span>
+        <h3 style="margin:8px 0;">Rapoarte higrotermice</h3>
+        <p style="font-size:14.5px;margin-bottom:18px;">Calcule oficiale PHPP pentru certificarea Passivhaus a proiectelor tale. Suportăm submisia.</p>
+        <a href="#" style="color:var(--red);font-weight:600;font-size:13px;">Solicită calcul →</a>
+      </div>
+      <div class="card card-hover">
+        <span class="card-tag">3D</span>
+        <h3 style="margin:8px 0;">Modele 3D SketchUp</h3>
+        <p style="font-size:14.5px;margin-bottom:18px;">Pentru schițe rapide și prezentări către clienți. Texturi și materiale realiste.</p>
+        <a href="#" style="color:var(--red);font-weight:600;font-size:13px;">Descarcă SKP →</a>
+      </div>
+      <div class="card card-hover">
+        <span class="card-tag">Catalog</span>
+        <h3 style="margin:8px 0;">Catalog completo</h3>
+        <p style="font-size:14.5px;margin-bottom:18px;">120 pagini cu toate produsele, accesoriile, detaliile de execuție și exemple de aplicare.</p>
+        <a href="#" style="color:var(--red);font-weight:600;font-size:13px;">Descarcă PDF →</a>
+      </div>
+      <div class="card card-hover">
+        <span class="card-tag">Suport</span>
+        <h3 style="margin:8px 0;">Inginer dedicat pe proiect</h3>
+        <p style="font-size:14.5px;margin-bottom:18px;">Un specialist Polistibrick lucrează direct cu tine pe detalii constructive, calcul aislamiento, devize.</p>
+        <a href="../../contact/" style="color:var(--red);font-weight:600;font-size:13px;">Cere consultant →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--cream">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 50px;">
+      <span class="eyebrow">Libertate arhitecturală</span>
+      <h2>Ce poți face cu <em>Polistibrick.</em></h2>
+    </div>
+    <div class="grid grid-2 reveal" style="gap:48px;align-items:start;">
+      <div>
+        <ul class="bullets">
+          <li class="bullet"><span><strong>Deschideri până la 9 m</strong> fără șarpantă sau grinzi vizibile (PBK + TBK)</span></li>
+          <li class="bullet"><span><strong>Pereți curbi</strong> realizabili cu MBK secționat și asamblat pe loc</span></li>
+          <li class="bullet"><span><strong>Cantilever-uri</strong> de până la 2.5 m cu armătură suplimentară</span></li>
+          <li class="bullet"><span><strong>Ferestre full-height</strong> cu profile speciale brevetate</span></li>
+          <li class="bullet"><span><strong>Zone vitrate mari</strong> fără punți termice (datorită EPS continuu)</span></li>
+          <li class="bullet"><span><strong>Etajeri</strong> P+1, P+2, P+3 — sistem certificat pentru clădiri rezidențiale înalte</span></li>
+        </ul>
+      </div>
+      <div>
+        <ul class="bullets">
+          <li class="bullet"><span><strong>Subsol pasiv</strong> cu MBK adaptat pentru terenul în pantă</span></li>
+          <li class="bullet"><span><strong>Acoperiș vegetal</strong> (green roof) compatibil — TBK suportă 200 kg/m² extra</span></li>
+          <li class="bullet"><span><strong>Acoperiș plat</strong> sau cu pantă oricât de mică/mare</span></li>
+          <li class="bullet"><span><strong>Geometrii custom</strong> fabricate la cerere fără cost suplimentar</span></li>
+          <li class="bullet"><span><strong>Renovare adiacentă</strong> — MBK se conectează cu structuri existente</span></li>
+          <li class="bullet"><span><strong>Modulare</strong> — perfect pentru ansambluri rezidențiale, locuințe sociale, hoteluri</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="cta-band reveal">
+    <h2>Ai un <em>proiect provocator?</em></h2>
+    <p>Vorbește cu echipa tehnică Polistibrick. Răspundem în 24 horas cu soluții concrete pentru orice scenariu arhitectural.</p>
+    <div class="cta-band-actions">
+      <a href="../../contact/" class="btn btn-on-dark btn-large btn-arrow">Contactează un inginer</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" data-include="footer"></footer>
+<script src="../../assets/js/site.js"></script>
+</body>
+</html>
