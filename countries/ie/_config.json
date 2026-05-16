@@ -1,0 +1,67 @@
+{
+  "lang": "en",
+  "country": "IE",
+  "country_name": "Ireland",
+  "country_name_native": "Ireland",
+  "country_flag": "🇮🇪",
+  "domain": "polistibrick.ie",
+  "domain_url": "https://polistibrick.ie",
+
+  "company": {
+    "name_legal": "Polistibrick Ireland Ltd.",
+    "name_short": "Polistibrick Ireland",
+    "vat": "IE[to fill in]",
+    "registration": "[to fill in]",
+    "address_street": "[to fill in]",
+    "address_city": "Dublin",
+    "address_zip": "[to fill in]",
+    "address_country": "Ireland"
+  },
+
+  "contact": {
+    "phone": "+353 [to fill in]",
+    "phone_raw": "+353[to fill in]",
+    "phone_display": "+353 [to fill in]",
+    "email_general": "contact@polistibrick.ie",
+    "email_offer": "quote@polistibrick.ie",
+    "email_press": "press@polistibrick.ie",
+    "hours": "Mon–Fri 09:00–18:00 GMT/IST",
+    "social": {
+      "facebook": "",
+      "instagram": "",
+      "linkedin": "",
+      "youtube": ""
+    }
+  },
+
+  "team": [
+    {
+      "name": "[Manager Name]",
+      "role": "Sales Director Ireland",
+      "email": "[email]@polistibrick.ie",
+      "phone": "[phone]",
+      "languages": ["EN"],
+      "photo": "team/manager-ie.jpg",
+      "linkedin": ""
+    }
+  ],
+
+  "currency": "EUR",
+  "currency_symbol": "€",
+  "currency_display_format": "€{value}",
+  "vat_rate": 23,
+
+  "form_submit_email": "contact@polistibrick.ie",
+  "form_cc_email": "info@polistibrick.eu",
+
+  "factory": {
+    "name": "Valencia",
+    "address": "[Spain]",
+    "year_built": 2014
+  },
+
+  "metadata": {
+    "og_locale": "en_IE",
+    "hreflang": "en-IE"
+  }
+}
