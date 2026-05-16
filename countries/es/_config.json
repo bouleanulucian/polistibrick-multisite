@@ -1,0 +1,67 @@
+{
+  "lang": "es",
+  "country": "ES",
+  "country_name": "Spain",
+  "country_name_native": "España",
+  "country_flag": "🇪🇸",
+  "domain": "polistibrick.es",
+  "domain_url": "https://polistibrick.es",
+
+  "company": {
+    "name_legal": "Polistibrick España S.L.",
+    "name_short": "Polistibrick España",
+    "vat": "ES[a completar]",
+    "registration": "[a completar]",
+    "address_street": "[a completar]",
+    "address_city": "Valencia",
+    "address_zip": "[a completar]",
+    "address_country": "España"
+  },
+
+  "contact": {
+    "phone": "+34 642 777 216",
+    "phone_raw": "+34642777216",
+    "phone_display": "+34 642 777 216",
+    "email_general": "info@polistibrick.es",
+    "email_offer": "presupuesto@polistibrick.es",
+    "email_press": "prensa@polistibrick.es",
+    "hours": "Lun–Vie 09:00–18:00 CET",
+    "social": {
+      "facebook": "",
+      "instagram": "",
+      "linkedin": "https://linkedin.com/company/polistibrick-spain",
+      "youtube": ""
+    }
+  },
+
+  "team": [
+    {
+      "name": "[Nombre Manager]",
+      "role": "Director comercial España",
+      "email": "[email]@polistibrick.es",
+      "phone": "[teléfono]",
+      "languages": ["ES", "EN"],
+      "photo": "team/manager-es.jpg",
+      "linkedin": ""
+    }
+  ],
+
+  "currency": "EUR",
+  "currency_symbol": "€",
+  "currency_display_format": "{value} €",
+  "vat_rate": 21,
+
+  "form_submit_email": "info@polistibrick.es",
+  "form_cc_email": "info@polistibrick.eu",
+
+  "factory": {
+    "name": "Valencia",
+    "address": "[direccion fabrica Valencia]",
+    "year_built": 2014
+  },
+
+  "metadata": {
+    "og_locale": "es_ES",
+    "hreflang": "es-ES"
+  }
+}

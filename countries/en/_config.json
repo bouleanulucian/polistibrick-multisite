@@ -1,0 +1,67 @@
+{
+  "lang": "en",
+  "country": "GB",
+  "country_name": "United Kingdom",
+  "country_name_native": "United Kingdom",
+  "country_flag": "🇬🇧",
+  "domain": "polistibrick.com",
+  "domain_url": "https://polistibrick.com",
+
+  "company": {
+    "name_legal": "Polistibrick Ltd",
+    "name_short": "Polistibrick",
+    "vat": "GB[fill]",
+    "registration": "[fill]",
+    "address_street": "[fill]",
+    "address_city": "London",
+    "address_zip": "[fill]",
+    "address_country": "United Kingdom"
+  },
+
+  "contact": {
+    "phone": "+44 [fill]",
+    "phone_raw": "+44[fill]",
+    "phone_display": "+44 [fill]",
+    "email_general": "contact@polistibrick.com",
+    "email_offer": "quote@polistibrick.com",
+    "email_press": "press@polistibrick.com",
+    "hours": "Mon–Fri 09:00–18:00 GMT",
+    "social": {
+      "facebook": "",
+      "instagram": "",
+      "linkedin": "https://linkedin.com/company/polistibrick",
+      "youtube": ""
+    }
+  },
+
+  "team": [
+    {
+      "name": "[Name Manager]",
+      "role": "Sales Director UK & International",
+      "email": "[email]@polistibrick.com",
+      "phone": "[phone]",
+      "languages": ["EN"],
+      "photo": "team/manager-uk.jpg",
+      "linkedin": ""
+    }
+  ],
+
+  "currency": "GBP",
+  "currency_symbol": "£",
+  "currency_display_format": "£{value}",
+  "vat_rate": 20,
+
+  "form_submit_email": "contact@polistibrick.com",
+  "form_cc_email": "info@polistibrick.eu",
+
+  "factory": {
+    "name": "Valencia",
+    "address": "[fill]",
+    "year_built": 2014
+  },
+
+  "metadata": {
+    "og_locale": "en_GB",
+    "hreflang": "en-GB"
+  }
+}

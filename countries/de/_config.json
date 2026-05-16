@@ -1,0 +1,67 @@
+{
+  "lang": "de",
+  "country": "CH",
+  "country_name": "Switzerland",
+  "country_name_native": "Schweiz",
+  "country_flag": "🇨🇭",
+  "domain": "polistibrick.ch",
+  "domain_url": "https://polistibrick.ch",
+
+  "company": {
+    "name_legal": "Polistibrick Schweiz GmbH",
+    "name_short": "Polistibrick Schweiz",
+    "vat": "CHE-[ausfüllen]",
+    "registration": "[ausfüllen]",
+    "address_street": "[ausfüllen]",
+    "address_city": "Zürich",
+    "address_zip": "[ausfüllen]",
+    "address_country": "Schweiz"
+  },
+
+  "contact": {
+    "phone": "+41 [ausfüllen]",
+    "phone_raw": "+41[ausfüllen]",
+    "phone_display": "+41 [ausfüllen]",
+    "email_general": "contact@polistibrick.com",
+    "email_offer": "angebot@polistibrick.com",
+    "email_press": "presse@polistibrick.com",
+    "hours": "Mo–Fr 09:00–18:00 CET",
+    "social": {
+      "facebook": "",
+      "instagram": "",
+      "linkedin": "",
+      "youtube": ""
+    }
+  },
+
+  "team": [
+    {
+      "name": "[Name Manager]",
+      "role": "Verkaufsleiter Schweiz",
+      "email": "[email]@polistibrick.com",
+      "phone": "[Telefon]",
+      "languages": ["DE", "FR", "IT", "EN"],
+      "photo": "team/manager-ch.jpg",
+      "linkedin": ""
+    }
+  ],
+
+  "currency": "CHF",
+  "currency_symbol": "CHF",
+  "currency_display_format": "CHF {value}",
+  "vat_rate": 8.1,
+
+  "form_submit_email": "contact@polistibrick.com",
+  "form_cc_email": "info@polistibrick.eu",
+
+  "factory": {
+    "name": "Valencia",
+    "address": "[Spanien]",
+    "year_built": 2014
+  },
+
+  "metadata": {
+    "og_locale": "de_CH",
+    "hreflang": "de-CH"
+  }
+}

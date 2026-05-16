@@ -1,0 +1,67 @@
+{
+  "lang": "nl",
+  "country": "BE",
+  "country_name": "Belgium",
+  "country_name_native": "België",
+  "country_flag": "🇧🇪",
+  "domain": "polistibrick.be",
+  "domain_url": "https://polistibrick.be",
+
+  "company": {
+    "name_legal": "Polistibrick België BVBA",
+    "name_short": "Polistibrick België",
+    "vat": "BE[in te vullen]",
+    "registration": "[in te vullen]",
+    "address_street": "[in te vullen]",
+    "address_city": "Brussel",
+    "address_zip": "[in te vullen]",
+    "address_country": "België"
+  },
+
+  "contact": {
+    "phone": "+32 [in te vullen]",
+    "phone_raw": "+32[in te vullen]",
+    "phone_display": "+32 [in te vullen]",
+    "email_general": "contact@polistibrick.com",
+    "email_offer": "offerte@polistibrick.com",
+    "email_press": "pers@polistibrick.com",
+    "hours": "Ma–Vr 09:00–18:00 CET",
+    "social": {
+      "facebook": "",
+      "instagram": "",
+      "linkedin": "",
+      "youtube": ""
+    }
+  },
+
+  "team": [
+    {
+      "name": "[Naam Manager]",
+      "role": "Commercieel directeur België",
+      "email": "[email]@polistibrick.com",
+      "phone": "[telefoon]",
+      "languages": ["NL", "FR", "EN"],
+      "photo": "team/manager-be.jpg",
+      "linkedin": ""
+    }
+  ],
+
+  "currency": "EUR",
+  "currency_symbol": "€",
+  "currency_display_format": "€ {value}",
+  "vat_rate": 21,
+
+  "form_submit_email": "contact@polistibrick.com",
+  "form_cc_email": "info@polistibrick.eu",
+
+  "factory": {
+    "name": "Valencia",
+    "address": "[Spanje]",
+    "year_built": 2014
+  },
+
+  "metadata": {
+    "og_locale": "nl_BE",
+    "hreflang": "nl-BE"
+  }
+}
