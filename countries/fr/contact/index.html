@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact · Polistibrick — 9 pays européens</title>
-  <meta name="description" content="Contactează echipa Polistibrick din țara ta. Sélectionner steagul țării unde construiești și primește contactul direct.">
+  <meta name="description" content="Contactez l'équipe Polistibrick de votre pays. Sélectionnez le drapeau du pays où vous construisez et recevez le contact direct.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -222,16 +222,16 @@
       <div class="wm-stage">
 
         <!-- FLAGS ROW SELECTOR -->
-        <div class="country-flags" role="tablist" aria-label="Sélectionner țara">
+        <div class="country-flags" role="tablist" aria-label="Sélectionnez le pays">
           <button class="country-flag-btn" data-country="RO" role="tab"><span class="country-flag-emoji">🇷🇴</span><span>Roumanie</span></button>
-          <button class="country-flag-btn" data-country="ES" role="tab"><span class="country-flag-emoji">🇪🇸</span><span>Spania</span></button>
+          <button class="country-flag-btn" data-country="ES" role="tab"><span class="country-flag-emoji">🇪🇸</span><span>Espagne</span></button>
           <button class="country-flag-btn" data-country="FR" role="tab"><span class="country-flag-emoji">🇫🇷</span><span>France</span></button>
-          <button class="country-flag-btn" data-country="BE" role="tab"><span class="country-flag-emoji">🇧🇪</span><span>Belgia</span></button>
-          <button class="country-flag-btn" data-country="IT" role="tab"><span class="country-flag-emoji">🇮🇹</span><span>Italia</span></button>
-          <button class="country-flag-btn" data-country="AT" role="tab"><span class="country-flag-emoji">🇦🇹</span><span>Austria</span></button>
-          <button class="country-flag-btn" data-country="GB" role="tab"><span class="country-flag-emoji">🇬🇧</span><span>UK</span></button>
-          <button class="country-flag-btn" data-country="IE" role="tab"><span class="country-flag-emoji">🇮🇪</span><span>Irlanda</span></button>
-          <button class="country-flag-btn" data-country="ME" role="tab"><span class="country-flag-emoji">🇲🇪</span><span>Muntenegru</span></button>
+          <button class="country-flag-btn" data-country="BE" role="tab"><span class="country-flag-emoji">🇧🇪</span><span>Belgique</span></button>
+          <button class="country-flag-btn" data-country="IT" role="tab"><span class="country-flag-emoji">🇮🇹</span><span>Italie</span></button>
+          <button class="country-flag-btn" data-country="AT" role="tab"><span class="country-flag-emoji">🇦🇹</span><span>Autriche</span></button>
+          <button class="country-flag-btn" data-country="GB" role="tab"><span class="country-flag-emoji">🇬🇧</span><span>Royaume-Uni</span></button>
+          <button class="country-flag-btn" data-country="IE" role="tab"><span class="country-flag-emoji">🇮🇪</span><span>Irlande</span></button>
+          <button class="country-flag-btn" data-country="ME" role="tab"><span class="country-flag-emoji">🇲🇪</span><span>Monténégro</span></button>
         </div>
 
         <div class="wm-content">
@@ -239,9 +239,9 @@
           <!-- LEFT -->
           <div class="wm-text">
             <span class="bubble-tag">Parlons-en</span>
-            <h2>Spécialistes <em>à un clic d'ici.</em></h2>
-            <p>Nous répondons aux questions techniques, préparons des devis personnalisés et offrons une consultation gratuite pour tout projet.</p>
-            <p>Sélectionner țara unde construiești pentru a vedea contactul echipei locale și a trimite mesajul direct către ea.</p>
+            <h2>Des spécialistes <em>à un clic.</em></h2>
+            <p>Nous répondons à vos questions techniques, préparons des devis personnalisés et offrons un conseil gratuit pour tout projet.</p>
+            <p>Sélectionnez le pays où vous construisez pour voir le contact de l'équipe locale et lui envoyer votre message directement.</p>
 
             <div class="country-office-card" id="activeOfficeCard"></div>
           </div>
@@ -252,43 +252,43 @@
               <span id="formTargetFlag">🇷🇴</span>
               <span>Message à <strong id="formTargetCountry">Roumanie</strong></span>
             </div>
-            <h3>Scrie-ne direct.</h3>
-            <p>Le message arrive directement à l'équipe du pays sélectionné.</p>
+            <h3>Écrivez-nous directement.</h3>
+            <p>Votre message arrive directement à l'équipe du pays sélectionné.</p>
 
-            <form id="contactForm" onsubmit="alert('Demo: mesajul va fi trimis către ' + document.getElementById('formTargetCountry').textContent + '. Conectare la backend necesară.'); return false;">
+            <form id="contactForm" onsubmit="alert('Démo : le message sera envoyé à ' + document.getElementById('formTargetCountry').textContent + '. Connexion au backend requise.'); return false;">
               <input type="hidden" name="country" id="formCountryHidden" value="RO">
 
               <div class="form-row form-row--split">
                 <div>
-                  <label class="form-label" for="cname">Nume *</label>
-                  <input class="form-input" type="text" id="cname" required placeholder="Numele tău">
+                  <label class="form-label" for="cname">Nom *</label>
+                  <input class="form-input" type="text" id="cname" required placeholder="Votre nom">
                 </div>
                 <div>
                   <label class="form-label" for="cemail">Email *</label>
-                  <input class="form-input" type="email" id="cemail" required placeholder="email@exemplu.ro">
+                  <input class="form-input" type="email" id="cemail" required placeholder="email@exemple.fr">
                 </div>
               </div>
 
               <div class="form-row form-row--split">
                 <div>
                   <label class="form-label" for="cphone">Téléphone (facultatif)</label>
-                  <input class="form-input" type="tel" id="cphone" placeholder="+40 7XX XXX XXX">
+                  <input class="form-input" type="tel" id="cphone" placeholder="+33 6 XX XX XX XX">
                 </div>
                 <div>
-                  <label class="form-label" for="csubject">Subiect</label>
+                  <label class="form-label" for="csubject">Sujet</label>
                   <select class="form-select" id="csubject">
                     <option>Question technique</option>
-                    <option>Suport produs</option>
+                    <option>Support produit</option>
                     <option>Devenez partenaire</option>
                     <option>Presse / Médias</option>
-                    <option>Altceva</option>
+                    <option>Autre</option>
                   </select>
                 </div>
               </div>
 
               <div class="form-row">
-                <label class="form-label" for="cmsg">Mesaj *</label>
-                <textarea class="form-textarea" id="cmsg" required placeholder="Cum te putem ajuta?"></textarea>
+                <label class="form-label" for="cmsg">Message *</label>
+                <textarea class="form-textarea" id="cmsg" required placeholder="Comment pouvons-nous vous aider ?"></textarea>
               </div>
 
               <div class="form-row">
@@ -297,16 +297,16 @@
                   <span class="form-file-icon">📎</span>
                   <div class="form-file-text">
                     <strong>Joignez plans, croquis ou documents</strong>
-                    <span>PDF · DWG · DXF · JPG · PNG · ZIP — max 10 Mo / fichier</span>
+                    <span>PDF · DWG · DXF · JPG · PNG · ZIP — max 10 MB / fichier</span>
                   </div>
                   <input type="file" id="cfiles" name="files" accept=".pdf,.dwg,.dxf,.jpg,.jpeg,.png,.zip" multiple style="display:none;">
                 </label>
                 <div class="form-file-list" id="filesList"></div>
               </div>
 
-              <button type="submit" class="btn btn-primary btn-large btn-arrow" style="width:100%;justify-content:center;">Trimite mesajul</button>
+              <button type="submit" class="btn btn-primary btn-large btn-arrow" style="width:100%;justify-content:center;">Envoyer le message</button>
 
-              <p style="font-size:11.5px;color:var(--gray);text-align:center;margin-top:12px;">Răspundem în maxim 24 heures lucrătoare. Vos données sont confidentielles.</p>
+              <p style="font-size:11.5px;color:var(--gray);text-align:center;margin-top:12px;">Nous répondons sous 24 heures ouvrées maximum. Vos données restent confidentielles.</p>
             </form>
           </div>
 
@@ -320,15 +320,15 @@
 <script src="../assets/js/site.js"></script>
 <script>
   const COUNTRIES = {
-    RO: { flag: '🇷🇴', name: 'România', city: 'Craiova', phone: '+40 371 550 550', phoneRaw: '+40371550550', email: 'romania@polistibrick.eu', address: 'Prelungirea Ghencea 281,<br>sector 6, București', site: 'polistibrick.ro', langs: 'RO · EN', badge: 'Sediu RO' },
-    ES: { flag: '🇪🇸', name: 'Spania', city: 'Valencia', phone: '+34 642 777 216', phoneRaw: '+34642777216', email: 'lucian@polistibrick.es', address: 'Pol. 24, 106,<br>Santa Eulalia del Rio', site: 'polistibrick.es', langs: 'ES · EN', badge: 'Sediu ES' },
-    FR: { flag: '🇫🇷', name: 'Franța', city: 'Croissy-sur-Seine', phone: '+33 1 61 30 40 09', phoneRaw: '+33161304009', email: 'contact@polistibrick.fr', address: '4 Rue Hans List,<br>78290 Croissy-sur-Seine', site: 'polistibrick.fr', langs: 'FR · EN', badge: 'Sediu FR' },
-    BE: { flag: '🇧🇪', name: 'Belgia', city: 'Lessines', phone: '+32 471 693 531', phoneRaw: '+32471693531', email: null, address: 'Profond Chemin 2,<br>7860 Lessines', site: 'polistibrick.be', langs: 'FR · NL · EN', badge: 'Sediu BE' },
-    IT: { flag: '🇮🇹', name: 'Italia', city: "Città Sant'Angelo", phone: '+39 328 164 8085', phoneRaw: '+393281648085', email: null, address: "Città Sant'Angelo (PE),<br>Via Magliano del Gioco 16", site: 'polistibrick.it', langs: 'IT · EN', badge: 'Sediu IT' },
-    AT: { flag: '🇦🇹', name: 'Austria', city: '—', phone: null, phoneRaw: null, email: null, address: 'Contact prin formular online<br>sau prin polistibrick.at', site: 'polistibrick.at', langs: 'DE · EN', badge: 'Online' },
-    GB: { flag: '🇬🇧', name: 'United Kingdom', city: 'Deservit din România', phone: '+40 371 550 550', phoneRaw: '+40371550550', email: null, address: 'Contact prin polistibrick.uk<br>sau direct din România', site: 'polistibrick.uk', langs: 'EN', badge: 'Online · RO support' },
-    IE: { flag: '🇮🇪', name: 'Irlanda', city: 'Dublin', phone: '[completați telefon IE]', phoneRaw: '#', email: '[completați email IE]', address: '[Adresă Irlanda]', site: 'polistibrick.ie', langs: 'EN', badge: 'Sediu IE' },
-    ME: { flag: '🇲🇪', name: 'Muntenegru', city: 'Podgorica', phone: '[completați telefon ME]', phoneRaw: '#', email: '[completați email ME]', address: '[Adresă Muntenegru]', site: 'polistibrick.me', langs: 'EN', badge: 'Sediu ME' },
+    RO: { flag: '🇷🇴', name: 'Roumanie', city: 'Craiova', phone: '+40 371 550 550', phoneRaw: '+40371550550', email: 'romania@polistibrick.eu', address: 'Prelungirea Ghencea 281,<br>sector 6, Bucarest', site: 'polistibrick.ro', langs: 'RO · EN', badge: 'Siège RO' },
+    ES: { flag: '🇪🇸', name: 'Espagne', city: 'Valencia', phone: '+34 642 777 216', phoneRaw: '+34642777216', email: 'lucian@polistibrick.es', address: 'Pol. 24, 106,<br>Santa Eulalia del Rio', site: 'polistibrick.es', langs: 'ES · EN', badge: 'Siège ES' },
+    FR: { flag: '🇫🇷', name: 'France', city: 'Croissy-sur-Seine', phone: '+33 1 61 30 40 09', phoneRaw: '+33161304009', email: 'contact@polistibrick.fr', address: '4 Rue Hans List,<br>78290 Croissy-sur-Seine', site: 'polistibrick.fr', langs: 'FR · EN', badge: 'Siège FR' },
+    BE: { flag: '🇧🇪', name: 'Belgique', city: 'Lessines', phone: '+32 471 693 531', phoneRaw: '+32471693531', email: null, address: 'Profond Chemin 2,<br>7860 Lessines', site: 'polistibrick.be', langs: 'FR · NL · EN', badge: 'Siège BE' },
+    IT: { flag: '🇮🇹', name: 'Italie', city: "Città Sant'Angelo", phone: '+39 328 164 8085', phoneRaw: '+393281648085', email: null, address: "Città Sant'Angelo (PE),<br>Via Magliano del Gioco 16", site: 'polistibrick.it', langs: 'IT · EN', badge: 'Siège IT' },
+    AT: { flag: '🇦🇹', name: 'Autriche', city: '—', phone: null, phoneRaw: null, email: null, address: 'Contact via formulaire en ligne<br>ou via polistibrick.at', site: 'polistibrick.at', langs: 'DE · EN', badge: 'En ligne' },
+    GB: { flag: '🇬🇧', name: 'Royaume-Uni', city: 'Servi depuis la Roumanie', phone: '+40 371 550 550', phoneRaw: '+40371550550', email: null, address: 'Contact via polistibrick.uk<br>ou directement depuis la Roumanie', site: 'polistibrick.uk', langs: 'EN', badge: 'En ligne · Support RO' },
+    IE: { flag: '🇮🇪', name: 'Irlande', city: 'Dublin', phone: '[téléphone IE à compléter]', phoneRaw: '#', email: '[email IE à compléter]', address: '[Adresse Irlande]', site: 'polistibrick.ie', langs: 'EN', badge: 'Siège IE' },
+    ME: { flag: '🇲🇪', name: 'Monténégro', city: 'Podgorica', phone: '[téléphone ME à compléter]', phoneRaw: '#', email: '[email ME à compléter]', address: '[Adresse Monténégro]', site: 'polistibrick.me', langs: 'EN', badge: 'Siège ME' },
   };
 
   const FALLBACK_MAP = {
@@ -428,7 +428,7 @@
       item.className = 'form-file-item';
       item.innerHTML = `
         <span class="form-file-item-name">📄 ${file.name} <small>${sizeMB} MB</small></span>
-        <button type="button" class="form-file-item-remove" data-idx="${idx}" aria-label="Șterge">×</button>
+        <button type="button" class="form-file-item-remove" data-idx="${idx}" aria-label="Supprimer">×</button>
       `;
       filesList.appendChild(item);
     });
@@ -441,7 +441,7 @@
   function addFiles(newFiles) {
     Array.from(newFiles).forEach(file => {
       if (file.size > MAX_FILE_SIZE) {
-        alert(`Fișierul "${file.name}" este prea mare (${(file.size/1024/1024).toFixed(1)} MB). Maxim 10 MB per fișier.`);
+        alert(`Le fichier "${file.name}" est trop volumineux (${(file.size/1024/1024).toFixed(1)} MB). Maximum 10 MB par fichier.`);
         return;
       }
       // Avoid duplicates
