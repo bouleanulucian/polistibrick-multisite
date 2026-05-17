@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pentru proprietari · Casă pasivă fără facturi mari — Polistibrick</title>
-  <meta name="description" content="Vrei o casă pasivă fără facturi mari? Polistibrick reduce consumul energetic cu 70% la prețul casei clasice. Calcul economic complet.">
+  <title>Pentru proprietari · Casa pe viață, fără facturi — Polistibrick</title>
+  <meta name="description" content="Construiește o casă pasivă certificată, fără facturi de energie, garantată 50 ani. Calculator de cost, comparație transparentă, arhitecți certificați în zona ta.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../assets/css/site.css">
   <style>
+    /* HERO watermark */
     .wm-section { padding: clamp(60px, 8vw, 100px) 0; background: var(--cream); }
     .wm-stage-wrap { position: relative; margin: 70px auto 0; max-width: 1480px; }
     .wm-watermark { position: absolute; top: 0; left: 50%; width: 100vw; margin-left: -50vw; pointer-events: none; user-select: none; transform: translateY(-50%); height: 1em; line-height: 1; text-align: center; text-transform: uppercase; font-family: var(--serif); font-size: clamp(64px, 12vw, 200px); font-weight: 500; letter-spacing: -0.06em; z-index: 2; }
@@ -23,19 +24,140 @@
     .wm-text h1 { font-family: var(--serif); font-size: clamp(34px, 4vw, 56px); font-weight: 500; color: var(--ink); letter-spacing: -0.02em; line-height: 1.05; margin-bottom: 18px; }
     .wm-text h1 em { font-style: italic; color: var(--red); font-weight: 400; }
     .wm-text p.lead { font-size: 16px; color: var(--gray); line-height: 1.65; margin-bottom: 26px; }
-    .wm-visual { background: white; border: 1px solid var(--border); border-radius: 20px; padding: 24px; box-shadow: var(--shadow-md); margin-top: 10mm; aspect-ratio: 4/5; display: flex; align-items: center; justify-content: center; color: var(--gray); text-align: center; font-size: 13px; }
-    @media (max-width: 1100px) {
-      .wm-content { grid-template-columns: 1fr; gap: 32px; }
-      .wm-stage { padding: 36px; }
-      .wm-visual { margin-top: 0; aspect-ratio: 16/10; }
-    }
+    .wm-visual { background: linear-gradient(180deg, var(--cream-light) 0%, var(--cream-dark) 100%); border: 1px solid var(--border); border-radius: 20px; padding: 0; box-shadow: var(--shadow-md); margin-top: 10mm; aspect-ratio: 4/5; overflow: hidden; position: relative; }
+    .wm-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .wm-visual-caption { position: absolute; bottom: 0; left: 0; right: 0; padding: 16px 20px; background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 100%); color: white; font-size: 12.5px; font-weight: 500; }
+    .wm-visual-caption strong { display: block; font-size: 13.5px; font-weight: 600; margin-bottom: 2px; }
+    @media (max-width: 1100px) { .wm-content { grid-template-columns: 1fr; gap: 32px; } .wm-stage { padding: 36px; } .wm-visual { margin-top: 0; aspect-ratio: 16/10; } }
     @media (max-width: 768px) { .wm-stage { padding: 28px 20px; } }
+
+    .fears-section { background: white; padding: 80px 0; }
+    .fears-intro { max-width: 760px; margin: 0 auto 50px; text-align: center; }
+    .fears-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 980px; margin: 0 auto; }
+    .fear-card { background: var(--cream); border-left: 4px solid var(--red); border-radius: 8px; padding: 24px 28px; }
+    .fear-card .fear-q { font-family: var(--serif); font-size: 17px; font-style: italic; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
+    .fear-card .fear-a { font-size: 14px; color: var(--gray); line-height: 1.55; }
+    .fear-card .fear-a strong { color: var(--ink); font-weight: 600; }
+    @media (max-width: 768px) { .fears-grid { grid-template-columns: 1fr; } }
+
+    .calc-section { background: white; padding: 80px 0; }
+    .calc-intro { max-width: 760px; margin: 0 auto 40px; text-align: center; }
+    .calc-stage { max-width: 1000px; margin: 0 auto; background: linear-gradient(135deg, var(--cream) 0%, var(--cream-light) 100%); border: 1px solid var(--border); border-radius: 24px; padding: 48px; }
+    .calc-input-row { display: flex; align-items: center; gap: 24px; max-width: 600px; margin: 0 auto 40px; flex-wrap: wrap; }
+    .calc-input-row label { font-size: 14px; font-weight: 600; color: var(--ink); min-width: 220px; }
+    .calc-input-row input[type="number"] { flex: 1; min-width: 120px; padding: 12px 18px; font-size: 18px; font-weight: 600; border: 1px solid var(--border); border-radius: 10px; background: white; font-family: inherit; color: var(--ink); text-align: center; }
+    .calc-input-row input[type="number"]:focus { outline: 2px solid var(--red); outline-offset: 2px; }
+    .calc-slider { width: 100%; max-width: 600px; margin: 0 auto 40px; display: block; }
+    .calc-results { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 32px; }
+    .calc-card { background: white; border-radius: 16px; padding: 28px 24px; text-align: center; border: 2px solid transparent; }
+    .calc-card--good { border-color: #1a7d3a; background: linear-gradient(180deg, white 60%, rgba(26,125,58,0.04) 100%); }
+    .calc-card--bad { border-color: rgba(200,16,46,0.4); background: linear-gradient(180deg, white 60%, rgba(200,16,46,0.04) 100%); }
+    .calc-card-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gray); margin-bottom: 14px; }
+    .calc-card-system { font-family: var(--serif); font-size: 18px; font-weight: 500; color: var(--ink); margin-bottom: 18px; }
+    .calc-card-value { font-family: var(--serif); font-size: 42px; font-weight: 500; line-height: 1.1; margin-bottom: 6px; }
+    .calc-card--good .calc-card-value { color: #1a7d3a; }
+    .calc-card--bad .calc-card-value { color: #c8102e; }
+    .calc-card-unit { font-size: 13px; color: var(--gray); margin-bottom: 14px; }
+    .calc-card-sub { font-size: 12px; color: var(--gray); line-height: 1.4; padding-top: 12px; border-top: 1px solid rgba(15,15,15,0.06); }
+    .calc-savings { background: linear-gradient(135deg, rgba(26,125,58,0.10), rgba(26,125,58,0.04)); border: 1px solid rgba(26,125,58,0.25); border-radius: 16px; padding: 28px 32px; text-align: center; }
+    .calc-savings .savings-yearly { font-size: 16px; color: var(--ink); margin-bottom: 8px; }
+    .calc-savings .savings-yearly strong { color: #1a7d3a; font-weight: 700; font-size: 22px; }
+    .calc-savings .savings-total { font-family: var(--serif); font-size: 28px; font-weight: 500; color: #156a30; }
+    .calc-savings .savings-total strong { color: #1a7d3a; font-weight: 700; }
+    .calc-note { max-width: 760px; margin: 24px auto 0; text-align: center; font-size: 12px; color: var(--gray); line-height: 1.5; }
+    @media (max-width: 768px) { .calc-stage { padding: 32px 20px; } .calc-input-row { flex-direction: column; align-items: stretch; } .calc-input-row label { min-width: 0; text-align: center; } .calc-results { grid-template-columns: 1fr; } .calc-card-value { font-size: 32px; } }
+
+    .spec-table-quali { max-width: 1100px !important; }
+    .pill { display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px; border-radius: 999px; font-size: 11.5px; font-weight: 600; line-height: 1.2; white-space: nowrap; }
+    .pill::before { content: ''; width: 7px; height: 7px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+    .pill--good { background: rgba(26,125,58,0.10); color: #1a7d3a; }
+    .pill--good::before { background: #1a7d3a; }
+    .pill--medium { background: rgba(200,145,16,0.12); color: #a8740e; }
+    .pill--medium::before { background: #d49920; }
+    .pill--bad { background: rgba(200,16,46,0.10); color: #c8102e; }
+    .pill--bad::before { background: #c8102e; }
+    .pill--star { background: linear-gradient(135deg, rgba(26,125,58,0.18), rgba(26,125,58,0.08)); color: #156a30; font-weight: 700; }
+    .pill--star::before { background: #1a7d3a; box-shadow: 0 0 0 3px rgba(26,125,58,0.20); }
+    .comparison-expanded { max-height: 0; overflow: hidden; transition: max-height 0.6s cubic-bezier(0.22, 1, 0.36, 1); }
+    .comparison-expanded.is-open { max-height: 3500px; }
+    .comparison-expanded-inner { padding-top: 40px; }
+    .spec-12-row { grid-template-columns: 1.8fr 1fr 1fr 1fr 1fr !important; }
+    @media (max-width: 900px) { .spec-12-row { grid-template-columns: 1.5fr 0.9fr 0.9fr 0.9fr 0.9fr !important; font-size: 10.5px !important; } .spec-12-row .spec-table-cell { padding: 8px 6px !important; } .spec-12-row .pill { font-size: 10px !important; padding: 3px 7px !important; } }
+
+    .case-carousel { max-width: 1000px; margin: 0 auto; position: relative; }
+    .case-track { overflow: hidden; border-radius: 20px; }
+    .case-slides { display: flex; transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1); will-change: transform; }
+    .case-slide { flex: 0 0 100%; width: 100%; display: grid; grid-template-columns: 1.2fr 1fr; gap: 0; align-items: stretch; background: white; border: 1px solid var(--border); border-radius: 20px; overflow: hidden; }
+    .case-slide-img { aspect-ratio: 4/3; overflow: hidden; background: var(--cream); }
+    .case-slide-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .case-slide-content { padding: 32px 36px; display: flex; flex-direction: column; justify-content: center; }
+    .case-slide-meta { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--red); margin-bottom: 10px; }
+    .case-slide-title { font-family: var(--serif); font-size: 24px; font-weight: 500; color: var(--ink); margin-bottom: 14px; line-height: 1.2; }
+    .case-slide-desc { font-size: 14px; color: var(--gray); line-height: 1.6; margin-bottom: 20px; }
+    .case-slide-stats { display: flex; gap: 18px; flex-wrap: wrap; margin-bottom: 24px; }
+    .case-slide-stat { font-size: 12px; color: var(--gray); }
+    .case-slide-stat strong { display: block; font-size: 16px; font-weight: 600; color: var(--ink); }
+    .case-arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 48px; height: 48px; border-radius: 50%; background: white; border: 1px solid var(--border); color: var(--ink); font-size: 18px; cursor: pointer; display: none; align-items: center; justify-content: center; box-shadow: 0 6px 16px rgba(0,0,0,0.10); transition: background .2s, border-color .2s, transform .2s; z-index: 5; font-family: inherit; padding: 0; }
+    .case-arrow:hover { background: var(--red); color: white; border-color: var(--red); transform: translateY(-50%) scale(1.06); }
+    .case-arrow:disabled { opacity: 0.3; cursor: not-allowed; }
+    .case-arrow:disabled:hover { background: white; color: var(--ink); border-color: var(--border); transform: translateY(-50%); }
+    .case-arrow--prev { left: -24px; }
+    .case-arrow--next { right: -24px; }
+    .case-carousel.has-multiple .case-arrow { display: flex; }
+    .case-dots { display: none; justify-content: center; gap: 8px; margin-top: 24px; }
+    .case-carousel.has-multiple .case-dots { display: flex; }
+    .case-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); border: none; cursor: pointer; padding: 0; transition: background .2s, transform .2s; }
+    .case-dot.is-active { background: var(--red); transform: scale(1.3); }
+    @media (max-width: 768px) { .case-slide { grid-template-columns: 1fr; } .case-slide-content { padding: 28px 24px; } .case-arrow { width: 40px; height: 40px; font-size: 16px; } .case-arrow--prev { left: 8px; } .case-arrow--next { right: 8px; } }
+
+    .collab-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; max-width: 1200px; margin: 0 auto; }
+    .collab-card { background: white; border: 1px solid var(--border); border-radius: 18px; padding: 32px 28px; transition: transform .25s, box-shadow .25s, border-color .25s; display: flex; flex-direction: column; }
+    .collab-card:hover { transform: translateY(-4px); box-shadow: 0 18px 36px rgba(0,0,0,0.06); border-color: var(--red); }
+    .collab-icon { width: 56px; height: 56px; background: var(--red-soft); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 18px; }
+    .collab-tag { display: inline-block; background: var(--cream); color: var(--gray); padding: 3px 10px; border-radius: 4px; font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px; width: fit-content; }
+    .collab-card h3 { font-family: var(--serif); font-size: 21px; font-weight: 500; color: var(--ink); line-height: 1.25; margin-bottom: 14px; }
+    .collab-card h3 em { font-style: italic; color: var(--red); font-weight: 400; }
+    .collab-card p { font-size: 14px; color: var(--gray); line-height: 1.65; margin: 0; flex: 1; }
+    .collab-card p strong { color: var(--ink); font-weight: 600; }
+    .collab-fallback { max-width: 920px; margin: 44px auto 0; padding: 32px 36px; background: linear-gradient(135deg, var(--cream-dark) 0%, var(--cream) 100%); border: 1px solid var(--border); border-radius: 18px; display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center; }
+    .collab-fallback-text { font-size: 14.5px; color: var(--ink-soft); line-height: 1.6; }
+    .collab-fallback-text strong { color: var(--ink); font-weight: 600; }
+    @media (max-width: 968px) { .collab-grid { grid-template-columns: 1fr; } .collab-fallback { grid-template-columns: 1fr; text-align: center; } }
+
+    .faq-section { background: white; padding: 80px 0; }
+    .faq-list { max-width: 860px; margin: 0 auto; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-q { display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 22px 0; background: none; border: none; cursor: pointer; font-family: inherit; font-size: 16px; font-weight: 600; color: var(--ink); text-align: left; gap: 16px; line-height: 1.4; }
+    .faq-q:hover { color: var(--red); }
+    .faq-q .faq-icon { width: 26px; height: 26px; flex-shrink: 0; border: 1.5px solid var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 400; transition: transform .2s, background .2s, color .2s; }
+    .faq-item.is-open .faq-q .faq-icon { transform: rotate(45deg); background: var(--red); color: white; border-color: var(--red); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height .3s, padding .3s; padding: 0 0; font-size: 14.5px; color: var(--gray); line-height: 1.65; }
+    .faq-item.is-open .faq-a { max-height: 500px; padding: 0 0 24px; }
+    .faq-a p { margin-bottom: 10px; }
+    .faq-a p:last-child { margin-bottom: 0; }
+
+    .cta-escalated-section { background: var(--cream); padding: 80px 0; }
+    .cta-esc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; max-width: 1100px; margin: 0 auto; }
+    .cta-esc-card { background: white; border: 1px solid var(--border); border-radius: 18px; padding: 32px 28px; text-align: center; transition: transform .25s, box-shadow .25s, border-color .25s; text-decoration: none; color: inherit; display: flex; flex-direction: column; }
+    .cta-esc-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); border-color: var(--red); }
+    .cta-esc-card--primary { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+    .cta-esc-card--primary:hover { background: #1a1a1a; border-color: var(--red); }
+    .cta-esc-stage { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--red); margin-bottom: 14px; }
+    .cta-esc-card--primary .cta-esc-stage { color: rgba(247,244,237,0.6); }
+    .cta-esc-icon { font-size: 32px; margin-bottom: 16px; }
+    .cta-esc-title { font-family: var(--serif); font-size: 21px; font-weight: 500; margin-bottom: 10px; line-height: 1.2; }
+    .cta-esc-desc { font-size: 13.5px; line-height: 1.55; color: var(--gray); margin-bottom: 18px; flex: 1; }
+    .cta-esc-card--primary .cta-esc-desc { color: rgba(247,244,237,0.75); }
+    .cta-esc-btn { display: inline-block; padding: 10px 18px; border-radius: 999px; background: var(--red); color: white; font-size: 13px; font-weight: 600; }
+    .cta-esc-card--primary .cta-esc-btn { background: white; color: var(--ink); }
+    @media (max-width: 968px) { .cta-esc-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body data-base="../../">
 
 <header class="nav" data-include="nav"></header>
 
+<!-- 1. HERO -->
 <section class="wm-section">
   <div class="container">
     <div class="wm-stage-wrap reveal">
@@ -47,15 +169,19 @@
         <div class="wm-content">
           <div class="wm-text">
             <span class="bubble-tag">Pentru cei care își construiesc casa</span>
-            <h1>Casa pe viață, <em>fără facturi mari.</em></h1>
-            <p class="lead">Dacă vrei o casă pasivă care nu funcționează pe gaz, lemne sau curent — și totuși costă cât una clasică — Polistibrick este alegerea ta. Iată ce înseamnă concret pentru tine.</p>
+            <h1>Construcția unei case — <em>și mai ales a unei case premium</em> — este cea mai importantă decizie din viața dumneavoastră.</h1>
+            <p class="lead">Polistibrick vă oferă seninătatea unei case pasive certificate: silențioasă, rezistentă la foc, antiseismică, durabilă peste generații, fără întreținere.</p>
             <div style="display:flex;gap:12px;flex-wrap:wrap;">
-              <a href="../../oferta/" class="btn btn-primary btn-arrow">Cere o ofertă</a>
-              <a href="#beneficii" class="btn btn-ghost">Vezi beneficiile</a>
+              <a href="#calculator" class="btn btn-primary btn-arrow">Calculați economiile</a>
+              <a href="../../oferta/" class="btn btn-ghost">Cereți o ofertă</a>
             </div>
           </div>
           <div class="wm-visual">
-            [Imagine: familie fericită în interior<br>de casă Polistibrick · lumină naturală]
+            <img src="../../images/maison-ile-de-france.jpg" alt="Casă Polistibrick în finisare" loading="eager">
+            <div class="wm-visual-caption">
+              <strong>Casă Polistibrick</strong>
+              Île-de-France · livrare 2025
+            </div>
           </div>
         </div>
       </div>
@@ -63,96 +189,407 @@
   </div>
 </section>
 
+<!-- 2. FRICILE proprietarului premium -->
+<section class="fears-section">
+  <div class="container">
+    <div class="fears-intro reveal">
+      <span class="eyebrow">Adevăratele dumneavoastră îngrijorări</span>
+      <h2 style="font-family:var(--serif);font-size:clamp(28px,3.2vw,42px);font-weight:500;color:var(--ink);letter-spacing:-0.02em;margin-bottom:14px;">Știm ce <em style="font-style:italic;color:var(--red);font-weight:400;">vă îngrijorează cu adevărat.</em></h2>
+      <p class="lead" style="font-size:15.5px;color:var(--gray);line-height:1.65;">Construirea unei case premium este un angajament pentru o viață. Iată cele 4 întrebări reale ale cumpărătorilor ca dumneavoastră — și răspunsurile noastre oneste.</p>
+    </div>
+    <div class="fears-grid reveal">
+      <div class="fear-card">
+        <div class="fear-q">„Și dacă regret alegerea peste 10 ani?"</div>
+        <div class="fear-a">Polistibrick este folosit pentru <strong>mii de case în Europa de 15 ani</strong>. Primele familii încă locuiesc în casele lor, cu aceleași performanțe ca în ziua 1. Structura este <strong>garantată 50 ani</strong>.</div>
+      </div>
+      <div class="fear-card">
+        <div class="fear-q">„Arhitectul meu nu va cunoaște sistemul."</div>
+        <div class="fear-a">Avem o <strong>rețea de arhitecți formați Polistibrick</strong> în toată România. Dacă arhitectul dumneavoastră nu cunoaște sistemul, <strong>îl formăm gratuit</strong>.</div>
+      </div>
+      <div class="fear-card">
+        <div class="fear-q">„Facturile la energie vor exploda în viitor."</div>
+        <div class="fear-a">Tocmai pentru asta Polistibrick este o <strong>asigurare împotriva inflației energetice</strong>. Consumul rămâne la <strong>15 kWh/m²/an</strong> indiferent de prețul energiei. Calculați mai jos.</div>
+      </div>
+      <div class="fear-card">
+        <div class="fear-q">„Cine îmi va repara casa în 2045?"</div>
+        <div class="fear-a">Polistibrick este <strong>o structură clasică din beton armat</strong> — orice zidar, instalator sau electrician poate interveni. Izolația EPS nu se degradează, structura nu necesită întreținere specială.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. AVANTAJE 6 carduri -->
 <section class="section" id="beneficii">
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 60px;">
-      <span class="eyebrow">Beneficii pentru tine</span>
-      <h2>Ce primești <em>concret.</em></h2>
+      <span class="eyebrow">Ce înseamnă pentru dumneavoastră</span>
+      <h2>Concret, <em>în viața de zi cu zi.</em></h2>
     </div>
     <div class="grid grid-3 reveal" style="gap:32px;">
       <div class="feature">
         <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
-        <div class="feature-body"><h4>Factură curent sub 50 €/lună</h4><p>Polistibrick reduce consumul energetic cu 70%. Nu mai dai 300-500 €/lună pe gaz iarna și aer condiționat vara.</p></div>
+        <div class="feature-body"><h4>Factură energie sub 250 lei/lună</h4><p>Polistibrick consumă 15 kWh/m²/an pentru încălzire (vs 90-120 la o casă clasică). Economisiți 70-80% la facturi, pe viață.</p></div>
       </div>
       <div class="feature">
         <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-        <div class="feature-body"><h4>Construcție în 1 lună</h4><p>Casa ta e gata în 4-6 săptămâni vs 4-5 luni cu cărămidă. Mai puțin stres, mai puține întârzieri, mai puține surprize.</p></div>
+        <div class="feature-body"><h4>Construită în 4-6 săptămâni</h4><p>Structura se ridică de 3× mai rapid decât cu cărămidă. Vă mutați în câteva luni, nu în câțiva ani.</p></div>
       </div>
       <div class="feature">
         <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg></div>
-        <div class="feature-body"><h4>Liniște și siguranță</h4><p>Pereți de beton armat 15 cm + EPS 20-25 cm: izolație fonică &gt; 50 dB, rezistență la cutremure și foc A1.</p></div>
+        <div class="feature-body"><h4>Liniște, siguranță, seninătate</h4><p>52 dB izolație acustică, A1 antifoc, antiseismic Eurocode 8. Casa vă protejează familia de tot — zgomot, foc, cutremure.</p></div>
       </div>
       <div class="feature">
         <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7S2 12 2 12z"/><line x1="2" y1="12" x2="22" y2="12"/></svg></div>
-        <div class="feature-body"><h4>Hidrofugat, fără mucegai</h4><p>EPS-ul închis nu absoarbe apa. Nu vei avea niciodată probleme cu umiditate, mucegai sau condens în pereți.</p></div>
+        <div class="feature-body"><h4>Niciodată mucegai</h4><p>EPS cu celule închise nu absoarbe apa. Pereții rămân uscați, copiii respiră aer curat, fără probleme de umiditate.</p></div>
       </div>
       <div class="feature">
         <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-        <div class="feature-body"><h4>Investiție pe viață</h4><p>Garanție 50+ ani pe structură. Valoarea casei crește odată cu prețul energiei. O casă pasivă se vinde cu 15-25% mai mult decât una clasică.</p></div>
+        <div class="feature-body"><h4>+15-25% la revânzare</h4><p>O casă pasivă certificată se revinde cu 15-25% mai scump decât una clasică. Polistibrick = investiție care își crește valoarea în timp.</p></div>
       </div>
       <div class="feature">
         <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></div>
-        <div class="feature-body"><h4>Confort termic constant</h4><p>Iarna 21°C, vara 24°C. Inerția termică a betonului + EPS-ul mențin temperatura naturală, fără radiator sau aer condiționat.</p></div>
+        <div class="feature-body"><h4>Constant 21°C, fără efort</h4><p>Inerția termică a betonului + EPS-ul mențin temperatura constantă. Fără frig brusc iarna, fără caniculă vara.</p></div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- 4. CALCULATOR INTERACTIV -->
+<section class="calc-section" id="calculator">
+  <div class="container">
+    <div class="calc-intro reveal">
+      <span class="eyebrow">Calculator de economii</span>
+      <h2 style="font-family:var(--serif);font-size:clamp(28px,3.2vw,42px);font-weight:500;color:var(--ink);letter-spacing:-0.02em;margin-bottom:14px;">Cât vă va economisi <em style="font-style:italic;color:var(--red);font-weight:400;">casa dumneavoastră?</em></h2>
+      <p class="lead" style="font-size:15.5px;color:var(--gray);line-height:1.65;">Indicați suprafața casei viitoare. Calculăm factura de încălzire anuală cu Polistibrick MBK 300 vs o casă clasică din cărămidă.</p>
+    </div>
+
+    <div class="calc-stage reveal">
+      <div class="calc-input-row">
+        <label for="surface">Suprafața locuibilă:</label>
+        <input type="number" id="surface" min="80" max="500" step="10" value="150">
+        <span style="font-weight:600;font-size:18px;color:var(--gray);">m²</span>
+      </div>
+      <input type="range" id="surface-slider" class="calc-slider" min="80" max="500" step="10" value="150">
+
+      <div class="calc-results">
+        <div class="calc-card calc-card--good">
+          <div class="calc-card-label">Cu Polistibrick MBK 300</div>
+          <div class="calc-card-system">Casă pasivă certificată</div>
+          <div class="calc-card-value" id="polistibrick-yearly">1.688 lei</div>
+          <div class="calc-card-unit">încălzire pe an</div>
+          <div class="calc-card-sub">15 kWh/m²/an · U = 0,10 W/m²K · Standard Passivhaus</div>
+        </div>
+        <div class="calc-card calc-card--bad">
+          <div class="calc-card-label">Cu cărămidă clasică</div>
+          <div class="calc-card-system">Construcție standard RO</div>
+          <div class="calc-card-value" id="classique-yearly">10.125 lei</div>
+          <div class="calc-card-unit">încălzire pe an</div>
+          <div class="calc-card-sub">90 kWh/m²/an · U ≈ 0,40 W/m²K · Construcție obișnuită</div>
+        </div>
+      </div>
+
+      <div class="calc-savings">
+        <div class="savings-yearly">Economisiți <strong id="yearly-savings">8.438 lei</strong> în fiecare an</div>
+        <div class="savings-total">Pe 25 ani: <strong id="total-savings">210.938 lei</strong> economii</div>
+      </div>
+    </div>
+
+    <p class="calc-note">Calcul bazat pe prețul mediu al energiei în România 2025 (0,75 lei/kWh, mix gaz + electricitate). Consum Polistibrick MBK 300 = 15 kWh/m²/an pentru încălzire (standard Passivhaus). Consum cărămidă clasică = 90 kWh/m²/an. Polistibrick are 3 grosimi (MBK 210 / 270 / 300) — arhitectul alege în funcție de proiect. Cifrele exacte sunt calculate în oferta personalizată.</p>
+  </div>
+</section>
+
+<!-- 5. TEASER COMPARAȚIE -->
 <section class="section section--cream">
   <div class="container">
-    <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 50px;">
-      <span class="eyebrow">Calcul economic real</span>
-      <h2>Cât economisești <em>în 25 ani.</em></h2>
-      <p class="lead" style="margin-top:14px;">O casă de 150 m². Calcul comparativ Polistibrick vs cărămidă clasică.</p>
+    <div class="reveal" style="text-align:center;max-width:780px;margin:0 auto 40px;">
+      <span class="eyebrow">Polistibrick vs alte sisteme</span>
+      <h2>Când este Polistibrick <em>alegerea potrivită pentru dumneavoastră?</em></h2>
+      <p class="lead" style="margin-top:14px;">Comparat cu cărămida clasică, pasivul clasic și lemnul — iată cele 3 criterii unde Polistibrick face toată diferența.</p>
     </div>
-    <div class="reveal spec-table" style="max-width:880px;margin:0 auto;">
-      <div class="spec-table-row is-header">
-        <div class="spec-table-cell">Cost</div>
-        <div class="spec-table-cell">Polistibrick</div>
-        <div class="spec-table-cell">Cărămidă clasică</div>
-        <div class="spec-table-cell">Diferență</div>
+
+    <div class="reveal" style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:1000px;margin:0 auto 32px;">
+      <div style="background:white;border:1px solid var(--border);border-radius:16px;padding:28px 24px;text-align:center;">
+        <div style="font-size:32px;margin-bottom:14px;">🔥</div>
+        <h4 style="font-family:var(--serif);font-size:18px;font-weight:500;color:var(--ink);margin-bottom:8px;">Siguranță totală</h4>
+        <p style="font-size:13.5px;color:var(--gray);line-height:1.55;">Foc A1 + antiseismic Excelent. Lemnul nu rezistă nici la foc, nici la cutremure.</p>
       </div>
-      <div class="spec-table-row">
-        <div class="spec-table-cell spec-table-cell--label">Construcție inițială</div>
-        <div class="spec-table-cell spec-table-cell--value">~157.500 €</div>
-        <div class="spec-table-cell spec-table-cell--value">~150.000 €</div>
-        <div class="spec-table-cell spec-table-cell--value">+5%</div>
+      <div style="background:white;border:1px solid var(--border);border-radius:16px;padding:28px 24px;text-align:center;">
+        <div style="font-size:32px;margin-bottom:14px;">💰</div>
+        <h4 style="font-family:var(--serif);font-size:18px;font-weight:500;color:var(--ink);margin-bottom:8px;">Cost total optim</h4>
+        <p style="font-size:13.5px;color:var(--gray);line-height:1.55;">Puțin mai scump la construcție decât cărămida, mult mai ieftin la trai. Pe 25 ani: cel mai ieftin.</p>
       </div>
-      <div class="spec-table-row">
-        <div class="spec-table-cell spec-table-cell--label">Energie 25 ani (gaz + curent)</div>
-        <div class="spec-table-cell spec-table-cell--value">~18.000 €</div>
-        <div class="spec-table-cell spec-table-cell--value">~60.000 €</div>
-        <div class="spec-table-cell spec-table-cell--value" style="color:#1a7d3a;">−70%</div>
+      <div style="background:white;border:1px solid var(--border);border-radius:16px;padding:28px 24px;text-align:center;">
+        <div style="font-size:32px;margin-bottom:14px;">⚡</div>
+        <h4 style="font-family:var(--serif);font-size:18px;font-weight:500;color:var(--ink);margin-bottom:8px;">Construcție rapidă</h4>
+        <p style="font-size:13.5px;color:var(--gray);line-height:1.55;">Structură în 4-6 săptămâni vs 4-5 luni la cărămidă. Vă mutați de 3× mai rapid.</p>
       </div>
-      <div class="spec-table-row">
-        <div class="spec-table-cell spec-table-cell--label">Mentenanță 25 ani</div>
-        <div class="spec-table-cell spec-table-cell--value">~3.000 €</div>
-        <div class="spec-table-cell spec-table-cell--value">~12.000 €</div>
-        <div class="spec-table-cell spec-table-cell--value" style="color:#1a7d3a;">−75%</div>
-      </div>
-      <div class="spec-table-row" style="background:rgba(200,16,46,0.05);">
-        <div class="spec-table-cell spec-table-cell--label" style="font-weight:700;">TOTAL 25 ANI</div>
-        <div class="spec-table-cell spec-table-cell--value" style="color:var(--red);">~178.500 €</div>
-        <div class="spec-table-cell spec-table-cell--value">~222.000 €</div>
-        <div class="spec-table-cell spec-table-cell--value" style="color:#1a7d3a;">Economisești 43.500 €</div>
+    </div>
+
+    <div style="text-align:center;" class="reveal">
+      <button type="button" id="toggleComparison" class="btn btn-primary btn-arrow" aria-expanded="false">
+        <span class="toggle-text-show">Vezi comparația completă pe 12 criterii</span>
+        <span class="toggle-text-hide" style="display:none;">Ascunde comparația</span>
+      </button>
+    </div>
+
+    <div id="comparisonExpanded" class="comparison-expanded">
+      <div class="comparison-expanded-inner">
+        <div class="reveal spec-table" style="margin:0 auto;max-width:1200px;">
+          <div class="spec-table-row spec-12-row is-header">
+            <div class="spec-table-cell">Criteriu</div>
+            <div class="spec-table-cell">Polistibrick</div>
+            <div class="spec-table-cell">Clasic</div>
+            <div class="spec-table-cell">Clasic pasiv</div>
+            <div class="spec-table-cell">Lemn</div>
+          </div>
+          <div class="spec-table-row spec-12-row"><div class="spec-table-cell spec-table-cell--label">5 materiale integrate într-unul</div><div class="spec-table-cell"><span class="pill pill--good">Da</span></div><div class="spec-table-cell"><span class="pill pill--bad">Nu</span></div><div class="spec-table-cell"><span class="pill pill--bad">Nu</span></div><div class="spec-table-cell"><span class="pill pill--bad">Nu</span></div></div>
+          <div class="spec-table-row spec-12-row"><div class="spec-table-cell spec-table-cell--label">Plan armătură antiseismic integrat</div><div class="spec-table-cell"><span class="pill pill--good">Integrat</span></div><div class="spec-table-cell"><span class="pill pill--bad">Niciunul</span></div><div class="spec-table-cell"><span class="pill pill--medium">De adăugat</span></div><div class="spec-table-cell"><span class="pill pill--medium">De adăugat</span></div></div>
+          <div class="spec-table-row spec-12-row"><div class="spec-table-cell spec-table-cell--label">Rezistență la cutremure</div><div class="spec-table-cell"><span class="pill pill--good">Excelent</span></div><div class="spec-table-cell"><span class="pill pill--bad">Scăzut</span></div><div class="spec-table-cell"><span class="pill pill--medium">Mediu</span></div><div class="spec-table-cell"><span class="pill pill--good">Bun</span></div></div>
+          <div class="spec-table-row spec-12-row"><div class="spec-table-cell spec-table-cell--label">Echipe necesare</div><div class="spec-table-cell"><span class="pill pill--good">1 echipă</span></div><div class="spec-table-cell"><span class="pill pill--bad">5-6 meserii</span></div><div class="spec-table-cell"><span class="pill pill--bad">5-6 meserii</span></div><div class="spec-table-cell"><span class="pill pill--medium">3-4 meserii</span></div></div>
+          <div class="spec-table-row spec-12-row"><div class="spec-table-cell spec-table-cell--label">Timp construcție (structura)</div><div class="spec-table-cell"><span class="pill pill--good">4-6 săpt.</span></div><div class="spec-table-cell"><span class="pill pill--bad">4-5 luni</span></div><div class="spec-table-cell"><span class="pill pill--bad">5-6 luni</span></div><div class="spec-table-cell"><span class="pill pill--medium">6-8 săpt.</span></div></div>
+          <div class="spec-table-row spec-12-row"><div class="spec-table-cell spec-table-cell--label">Izolație continuă (fără punți)</div><div class="spec-table-cell"><span class="pill pill--good">Turnată în panou</span></div><div class="spec-table-cell"><span class="pill pill--medium">Adăugată separat</span></div><div class="spec-table-cell"><span class="pill pill--medium">Adăugată separat</span></div><div class="spec-table-cell"><span class="pill pill--medium">Adăugată separat</span></div></div>
+          <div class="spec-table-row spec-12-row"><div class="spec-table-cell spec-table-cell--label">Siguranță foc</div><div class="spec-table-cell"><span class="pill pill--good">A1 (incombustibil)</span></div><div class="spec-table-cell"><span class="pill pill--good">A1</span></div><div class="spec-table-cell"><span class="pill pill--good">A1</span></div><div class="spec-table-cell"><span class="pill pill--bad">B-s2 (inflamabil)</span></div></div>
+          <div class="spec-table-row spec-12-row"><div class="spec-table-cell spec-table-cell--label">Hidrofug / fără mucegai</div><div class="spec-table-cell"><span class="pill pill--good">Nu absoarbe</span></div><div class="spec-table-cell"><span class="pill pill--medium">Risc umiditate</span></div><div class="spec-table-cell"><span class="pill pill--medium">Risc umiditate</span></div><div class="spec-table-cell"><span class="pill pill--bad">Risc putrezire</span></div></div>
+          <div class="spec-table-row spec-12-row"><div class="spec-table-cell spec-table-cell--label">Izolație acustică</div><div class="spec-table-cell"><span class="pill pill--good">52 dB</span></div><div class="spec-table-cell"><span class="pill pill--medium">42 dB</span></div><div class="spec-table-cell"><span class="pill pill--medium">42 dB</span></div><div class="spec-table-cell"><span class="pill pill--bad">32 dB</span></div></div>
+          <div class="spec-table-row spec-12-row"><div class="spec-table-cell spec-table-cell--label">Clasa energetică</div><div class="spec-table-cell"><span class="pill pill--good">A+++</span></div><div class="spec-table-cell"><span class="pill pill--bad">B-C</span></div><div class="spec-table-cell"><span class="pill pill--good">A+</span></div><div class="spec-table-cell"><span class="pill pill--good">A+</span></div></div>
+          <div class="spec-table-row spec-12-row"><div class="spec-table-cell spec-table-cell--label">Cost construcție inițial</div><div class="spec-table-cell"><span class="pill pill--medium">Standard</span></div><div class="spec-table-cell"><span class="pill pill--good">Scăzut</span></div><div class="spec-table-cell"><span class="pill pill--bad">Foarte ridicat</span></div><div class="spec-table-cell"><span class="pill pill--medium">Standard</span></div></div>
+          <div class="spec-table-row spec-12-row" style="background:rgba(15,15,15,0.03);"><div class="spec-table-cell spec-table-cell--label" style="font-weight:700;">Economii pe 25 ani</div><div class="spec-table-cell"><span class="pill pill--star">Maxime</span></div><div class="spec-table-cell"><span class="pill pill--bad">Minime</span></div><div class="spec-table-cell"><span class="pill pill--good">Bune</span></div><div class="spec-table-cell"><span class="pill pill--good">Bune</span></div></div>
+        </div>
+        <p style="max-width:780px;margin:24px auto 0;text-align:center;font-size:13px;color:var(--gray);line-height:1.6;">Pentru <strong>detaliul complet</strong> al fiecărui criteriu → <a href="../../comparatie/" style="color:var(--red);font-weight:600;">vezi comparația detaliată</a></p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section section--tight">
-  <div class="cta-band reveal">
-    <span class="eyebrow" style="color:rgba(247,244,237,0.6);">Pasul următor</span>
-    <h2>Vrei să-ți construiești <em>casa pe viață?</em></h2>
-    <p>Trimite-ne planul tău sau doar ideea generală — un specialist Polistibrick îți pregătește deviz personalizat în 48 de ore.</p>
-    <div class="cta-band-actions">
-      <a href="../../oferta/" class="btn btn-on-dark btn-large btn-arrow">Cere o ofertă</a>
-      <a href="../../proiecte/" class="btn btn-on-dark-ghost btn-large">Vezi case construite</a>
+<!-- 6. CASE CONSTRUITE — carousel scalabil -->
+<section class="section" style="background:var(--cream);padding:80px 0;">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:760px;margin:0 auto 50px;">
+      <span class="eyebrow">Case Polistibrick</span>
+      <h2>Familii care au făcut deja această alegere. <em>Iată ultimele construite.</em></h2>
+    </div>
+
+    <div class="case-carousel reveal" id="caseCarousel">
+      <div class="case-track">
+        <div class="case-slides" id="caseSlides">
+          <article class="case-slide">
+            <div class="case-slide-img"><img src="../../images/maison-ile-de-france-thumb.jpg" alt="Vilă Polistibrick — Île-de-France" loading="lazy"></div>
+            <div class="case-slide-content">
+              <div class="case-slide-meta">Île-de-France · livrare 2025</div>
+              <h3 class="case-slide-title">Vilă contemporană · 220 m²</h3>
+              <p class="case-slide-desc">Arhitectură modernă pe 2 niveluri (P+1), zonă rezidențială premium lângă Paris. Pereți Polistibrick MBK 300, performanță Passivhaus certificată, livrare vara 2025.</p>
+              <div class="case-slide-stats">
+                <div class="case-slide-stat"><strong>220 m²</strong>locuibili</div>
+                <div class="case-slide-stat"><strong>MBK 300</strong>U = 0,10</div>
+                <div class="case-slide-stat"><strong>P+1</strong>2 niveluri</div>
+              </div>
+              <a href="../../proiecte/" class="btn btn-ghost btn-arrow">Vezi proiectul</a>
+            </div>
+          </article>
+        </div>
+      </div>
+      <button class="case-arrow case-arrow--prev" id="casePrev" aria-label="Precedent">←</button>
+      <button class="case-arrow case-arrow--next" id="caseNext" aria-label="Următor">→</button>
+      <div class="case-dots" id="caseDots"></div>
+    </div>
+
+    <div style="text-align:center;margin-top:36px;" class="reveal">
+      <a href="../../proiecte/" class="btn btn-primary btn-arrow">Vezi toate casele construite</a>
+    </div>
+  </div>
+</section>
+
+<!-- 7. COLABORARE CU ARHITECT + BET -->
+<section class="section" style="background:white;padding:80px 0;">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:780px;margin:0 auto 50px;">
+      <span class="eyebrow">Colaborare cu arhitectul dumneavoastră</span>
+      <h2>Lucrăm cu arhitectul dumneavoastră — <em>în interesul dumneavoastră.</em></h2>
+      <p class="lead" style="margin-top:14px;">Nu trebuie să schimbați arhitectul. Furnizăm toată documentația tehnică și suportul necesar echipei dumneavoastră — pentru a realiza casa visurilor cu seninătate.</p>
+    </div>
+
+    <div class="collab-grid reveal">
+      <div class="collab-card">
+        <div class="collab-icon">🤝</div>
+        <span class="collab-tag">Cu arhitectul dumneavoastră</span>
+        <h3>Punem la dispoziție <em>tot materialul necesar.</em></h3>
+        <p>Puneți-ne în legătură cu arhitectul care vă desenează casa. Îi furnizăm <strong>toată documentația tehnică</strong> — fișiere CAD, BIM, certificate, detalii constructive, calcule termice — pentru a putea concepe casa visurilor în deplină seninătate. Dacă arhitectul dumneavoastră nu are interese ascunse, va colabora cu noi — <strong>în interesul dumneavoastră.</strong></p>
+      </div>
+      <div class="collab-card">
+        <div class="collab-icon">🏗️</div>
+        <span class="collab-tag">Un sistem pe care îl cunoaște deja</span>
+        <h3>Polistibrick se comportă <em>ca un cofraj clasic.</em></h3>
+        <p>Un arhitect înțelege în 2 secunde: se montează armătura înăuntru, se toarnă betonul — exact ca pe un șantier tradițional. Vilele premium de pe Coasta de Azur sunt deja din <strong>beton armat</strong>. Polistibrick este același beton armat, dar turnat într-un <strong>cofraj termoizolant</strong> care integrează ingenios cele 5 materiale necesare construcției.</p>
+      </div>
+      <div class="collab-card">
+        <div class="collab-icon">📐</div>
+        <span class="collab-tag">Cu inginerul dumneavoastră structurist</span>
+        <h3>Dialogăm <em>cu inginerul structurist.</em></h3>
+        <p>Dacă inginerul structurist întâlnește întrebări, intrăm în contact cu el — <strong>în interesul dumneavoastră</strong>. Îi explicăm clar că Polistibrick este un cofraj clasic: se montează armătura, se toarnă betonul. A nu se confunda cu <strong>cofrajele „tip Lego"</strong> care au inundat piața fără a aduce o valoare reală — în timp ce Polistibrick oferă o adevărată <strong>tehnologie 5-în-1</strong> integrată.</p>
+      </div>
+    </div>
+
+    <div class="collab-fallback reveal">
+      <div class="collab-fallback-text">
+        <strong>Dacă totuși arhitectul dumneavoastră refuză să colaboreze în interesul dumneavoastră</strong> și doriți totuși să construiți casa cu Polistibrick, vă putem îndruma către un arhitect cu care am mai colaborat pe proiecte similare.
+      </div>
+      <a href="../../contact/" class="btn btn-primary btn-arrow">Contactați-ne</a>
+    </div>
+  </div>
+</section>
+
+<!-- 8. FAQ -->
+<section class="faq-section">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:760px;margin:0 auto 50px;">
+      <span class="eyebrow">Întrebări frecvente</span>
+      <h2>Întrebările reale <em>pe care vi le puneți.</em></h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-q">Polistirenul este ecologic?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>EPS (polistirenul expandat) este <strong>compus 90% din aer</strong> și 10% polistiren. Este <strong>100% reciclabil</strong> și nu emite gaze nocive. Pe ciclul de viață complet (50 ani), are o amprentă de carbon mai mică decât structura din lemn pentru că evită decenii de încălzire.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Cât durează construcția casei mele?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>Structura durează <strong>4-6 săptămâni</strong> pentru 150-200 m² (vs 4-5 luni la cărămidă). În total, vă mutați în <strong>5-7 luni</strong> (în funcție de finisaje și autorizație). De 2-3× mai rapid decât construcția clasică.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Dacă vreau să modific casa peste 10 ani?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>Polistibrick este <strong>structură clasică din beton armat</strong>. Modificările (deschiderea unui perete, extindere) se fac cu aceleași unelte și tehnici ca pe orice casă tradițională. Arhitectul sau o firmă locală pot interveni.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Sistemul se poate adapta la arhitectură tradițională?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>Da. Polistibrick este <strong>nucleul structural</strong> al casei — alegeți finisajul exterior (tencuială, piatră, cărămidă aparentă, placare lemn) și interior (gips-carton, var, vopsea). Nu veți vedea niciodată betonul sau EPS-ul. Casa arată cum vreți.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Cât costă o casă Polistibrick?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>Costul variază cu regiunea, suprafața și nivelul de finisaj. În medie în România, contați pe <strong>+5% față de o casă clasică</strong>. Pe o casă de 300.000 €, înseamnă +15.000 € — recuperați complet în 8-12 ani prin economiile la energie. Cifrele exacte → oferta personalizată în 48h.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Cum obțin finanțarea pentru acest surplus?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>O casă pasivă este eligibilă pentru <strong>programul Casa Verde Plus</strong> + credite verzi la dobândă preferențială oferite de mai multe bănci. Consilierul bancar ia în calcul economiile la energie pentru a vă crește capacitatea de împrumut.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Cine este responsabil dacă ceva nu merge bine?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><p><strong>Constructorul certificat Polistibrick</strong> este juridic responsabil pentru șantier (garanție decenală obligatorie în RO). Polistibrick furnizează materialul și suportul tehnic. 2 niveluri de responsabilitate = siguranță juridică maximă.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Și dacă regret peste 10 ani?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>Polistibrick a fost folosit pentru <strong>mii de case în Europa</strong> în ultimii 15 ani. Primele familii încă locuiesc în casele lor cu aceleași performanțe. Structura este garantată 50 ani.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. CTA ESCALAT -->
+<section class="cta-escalated-section">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 50px;">
+      <span class="eyebrow">Următorul pas</span>
+      <h2>Alegeți următorul pas <em>spre casa dumneavoastră.</em></h2>
+    </div>
+    <div class="cta-esc-grid reveal">
+      <a href="../../resurse/" class="cta-esc-card">
+        <div class="cta-esc-stage">Vă informați</div>
+        <div class="cta-esc-icon">📥</div>
+        <div class="cta-esc-title">Descărcați ghidul</div>
+        <div class="cta-esc-desc">PDF 24 pagini: ce este o casă pasivă, cum funcționează Polistibrick, sfaturi pentru autorizație.</div>
+        <span class="cta-esc-btn">Descarcă ghidul</span>
+      </a>
+      <a href="#calculator" class="cta-esc-card">
+        <div class="cta-esc-stage">Comparați</div>
+        <div class="cta-esc-icon">🧮</div>
+        <div class="cta-esc-title">Calculați proiectul</div>
+        <div class="cta-esc-desc">Suprafața casei → cost construcție, economii pe 25 ani, comparație cu alte sisteme.</div>
+        <span class="cta-esc-btn">Lansează calculul</span>
+      </a>
+      <a href="../../contact/" class="cta-esc-card cta-esc-card--primary">
+        <div class="cta-esc-stage">Sunteți gata</div>
+        <div class="cta-esc-icon">📞</div>
+        <div class="cta-esc-title">Vorbiți direct cu noi</div>
+        <div class="cta-esc-desc">Echipa Polistibrick vă răspunde personal. Consiliere pe măsură, răspuns garantat în 48h.<br><br><strong style="color:rgba(247,244,237,0.95);">📞 +40 371 550 550</strong></div>
+        <span class="cta-esc-btn">Contactați-ne</span>
+      </a>
     </div>
   </div>
 </section>
 
 <footer class="site-footer" data-include="footer"></footer>
 <script src="../../assets/js/site.js"></script>
+
+<script>
+(function(){
+  // Calculator
+  var surfaceInput = document.getElementById('surface');
+  var surfaceSlider = document.getElementById('surface-slider');
+  var pEl = document.getElementById('polistibrick-yearly');
+  var cEl = document.getElementById('classique-yearly');
+  var yEl = document.getElementById('yearly-savings');
+  var tEl = document.getElementById('total-savings');
+  var ENERGY = 0.75; var P_CONS = 15; var C_CONS = 90;
+  function formatLei(a) { return Math.round(a).toLocaleString('ro-RO') + ' lei'; }
+  function calc() {
+    var s = parseInt(surfaceInput.value, 10);
+    if (isNaN(s) || s < 80) s = 80; if (s > 500) s = 500;
+    var p = s * P_CONS * ENERGY; var c = s * C_CONS * ENERGY;
+    var sv = c - p; var tot = sv * 25;
+    pEl.textContent = formatLei(p); cEl.textContent = formatLei(c);
+    yEl.textContent = formatLei(sv); tEl.textContent = formatLei(tot);
+  }
+  if (surfaceInput && surfaceSlider) {
+    surfaceInput.addEventListener('input', function(){ surfaceSlider.value = surfaceInput.value; calc(); });
+    surfaceSlider.addEventListener('input', function(){ surfaceInput.value = surfaceSlider.value; calc(); });
+    calc();
+  }
+
+  // Toggle comparison
+  var toggleBtn = document.getElementById('toggleComparison');
+  var expandPanel = document.getElementById('comparisonExpanded');
+  if (toggleBtn && expandPanel) {
+    var showL = toggleBtn.querySelector('.toggle-text-show');
+    var hideL = toggleBtn.querySelector('.toggle-text-hide');
+    toggleBtn.addEventListener('click', function(){
+      var isOpen = expandPanel.classList.toggle('is-open');
+      toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      if (showL && hideL) { showL.style.display = isOpen ? 'none' : ''; hideL.style.display = isOpen ? '' : 'none'; }
+      if (isOpen) { setTimeout(function(){ expandPanel.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 200); }
+    });
+  }
+
+  // Case carousel
+  var carousel = document.getElementById('caseCarousel');
+  var slidesTrack = document.getElementById('caseSlides');
+  var prevBtn = document.getElementById('casePrev');
+  var nextBtn = document.getElementById('caseNext');
+  var dotsContainer = document.getElementById('caseDots');
+  if (carousel && slidesTrack) {
+    var slides = slidesTrack.querySelectorAll('.case-slide');
+    var total = slides.length; var idx = 0;
+    if (total > 1) {
+      carousel.classList.add('has-multiple');
+      for (var i = 0; i < total; i++) {
+        var dot = document.createElement('button');
+        dot.className = 'case-dot' + (i === 0 ? ' is-active' : '');
+        dot.dataset.idx = i;
+        dot.addEventListener('click', function(e){ goTo(parseInt(e.currentTarget.dataset.idx, 10)); });
+        dotsContainer.appendChild(dot);
+      }
+    }
+    function updateDots() { dotsContainer.querySelectorAll('.case-dot').forEach(function(d, i){ d.classList.toggle('is-active', i === idx); }); }
+    function updateBtns() { if (prevBtn) prevBtn.disabled = (idx === 0); if (nextBtn) nextBtn.disabled = (idx === total - 1); }
+    function goTo(n) { if (n < 0) n = 0; if (n >= total) n = total - 1; idx = n; slidesTrack.style.transform = 'translateX(-' + (idx * 100) + '%)'; updateDots(); updateBtns(); }
+    if (prevBtn) prevBtn.addEventListener('click', function(){ goTo(idx - 1); });
+    if (nextBtn) nextBtn.addEventListener('click', function(){ goTo(idx + 1); });
+    updateBtns();
+  }
+
+  // FAQ
+  document.querySelectorAll('.faq-q').forEach(function(btn){
+    btn.addEventListener('click', function(){ btn.closest('.faq-item').classList.toggle('is-open'); });
+  });
+})();
+</script>
+
 </body>
 </html>
