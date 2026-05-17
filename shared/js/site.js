@@ -15,84 +15,67 @@
     return depth <= 1 ? '' : '../'.repeat(depth - 1);
   })();
 
+  // NAV_HTML — identical structure to homepage (uses .nav-menu-item / .nav-menu-link / .nav-menu-dropdown classes)
   const NAV_HTML = `
     <div class="nav-inner">
-      <a href="${BASE}" class="nav-logo" aria-label="{{ui.home_aria}}">
-        <img src="${BASE}images/logo.png" alt="Polistibrick" loading="eager">
+      <a href="${BASE}" class="logo" aria-label="{{ui.home_aria}}">
+        <img src="${BASE}images/logo.png" alt="Polistibrick" class="logo-img">
       </a>
-      <nav class="nav-menu" aria-label="{{ui.nav_aria}}">
-        <div class="nav-item">
-          <button class="nav-link" aria-haspopup="true" aria-expanded="false">
-            {{ui.produse}}
-            <svg class="nav-link-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5l3 3 3-3"/></svg>
-          </button>
-          <div class="nav-dropdown">
-            <a class="nav-dropdown-item" href="${BASE}produse/pereti-mbk/">{{ui.pereti_mbk}}<span class="nav-dropdown-item-sub">{{ui.pereti_mbk_sub}}</span></a>
-            <a class="nav-dropdown-item" href="${BASE}produse/planseu-pbk/">{{ui.planseu_pbk}}<span class="nav-dropdown-item-sub">{{ui.planseu_pbk_sub}}</span></a>
-            <a class="nav-dropdown-item" href="${BASE}produse/acoperis-tbk/">{{ui.acoperis_tbk}}<span class="nav-dropdown-item-sub">{{ui.acoperis_tbk_sub}}</span></a>
-            <a class="nav-dropdown-item" href="${BASE}produse/accesorii/">{{ui.accesorii}}<span class="nav-dropdown-item-sub">{{ui.accesorii_sub}}</span></a>
+      <div class="nav-menu" aria-label="{{ui.nav_aria}}">
+        <div class="nav-menu-item">
+          <a href="${BASE}produse/pereti-mbk/" class="nav-menu-link">{{ui.produse}} <span class="nav-menu-caret">▾</span></a>
+          <div class="nav-menu-dropdown">
+            <a href="${BASE}produse/pereti-mbk/">{{ui.pereti_mbk}}</a>
+            <a href="${BASE}produse/planseu-pbk/">{{ui.planseu_pbk}}</a>
+            <a href="${BASE}produse/acoperis-tbk/">{{ui.acoperis_tbk}}</a>
+            <a href="${BASE}produse/accesorii/">{{ui.accesorii}}</a>
           </div>
         </div>
-        <div class="nav-item">
-          <button class="nav-link" aria-haspopup="true" aria-expanded="false">
-            {{ui.solutii}}
-            <svg class="nav-link-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5l3 3 3-3"/></svg>
-          </button>
-          <div class="nav-dropdown">
-            <a class="nav-dropdown-item" href="${BASE}pentru/proprietari/">{{ui.pentru_proprietari}}<span class="nav-dropdown-item-sub">{{ui.pentru_proprietari_sub}}</span></a>
-            <a class="nav-dropdown-item" href="${BASE}pentru/arhitecti/">{{ui.pentru_arhitecti}}<span class="nav-dropdown-item-sub">{{ui.pentru_arhitecti_sub}}</span></a>
-            <a class="nav-dropdown-item" href="${BASE}pentru/constructori/">{{ui.pentru_constructori}}<span class="nav-dropdown-item-sub">{{ui.pentru_constructori_sub}}</span></a>
-            <a class="nav-dropdown-item" href="${BASE}pentru/investitori/">{{ui.pentru_investitori}}<span class="nav-dropdown-item-sub">{{ui.pentru_investitori_sub}}</span></a>
-            <a class="nav-dropdown-item" href="${BASE}devino-partener/" style="color:var(--red);font-weight:600;">{{ui.devino_partener}}<span class="nav-dropdown-item-sub" style="color:rgba(200,16,46,0.7);">{{ui.devino_partener_sub}}</span></a>
+        <div class="nav-menu-item">
+          <a href="${BASE}pentru/proprietari/" class="nav-menu-link">{{ui.solutii}} <span class="nav-menu-caret">▾</span></a>
+          <div class="nav-menu-dropdown">
+            <a href="${BASE}pentru/proprietari/">{{ui.pentru_proprietari}}</a>
+            <a href="${BASE}pentru/arhitecti/">{{ui.pentru_arhitecti}}</a>
+            <a href="${BASE}pentru/constructori/">{{ui.pentru_constructori}}</a>
+            <a href="${BASE}pentru/investitori/">{{ui.pentru_investitori}}</a>
+            <a href="${BASE}devino-partener/" style="color:var(--red);font-weight:600;">{{ui.devino_partener}}</a>
           </div>
         </div>
-        <div class="nav-item">
-          <button class="nav-link" aria-haspopup="true" aria-expanded="false">
-            {{ui.proiecte}}
-            <svg class="nav-link-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5l3 3 3-3"/></svg>
-          </button>
-          <div class="nav-dropdown">
-            <a class="nav-dropdown-item" href="${BASE}proiecte/">{{ui.case_construite}}<span class="nav-dropdown-item-sub">{{ui.case_construite_sub}}</span></a>
-            <a class="nav-dropdown-item" href="${BASE}testimoniale/">{{ui.testimoniale}}<span class="nav-dropdown-item-sub">{{ui.testimoniale_sub}}</span></a>
+        <div class="nav-menu-item">
+          <a href="${BASE}proiecte/" class="nav-menu-link">{{ui.proiecte}} <span class="nav-menu-caret">▾</span></a>
+          <div class="nav-menu-dropdown">
+            <a href="${BASE}proiecte/">{{ui.case_construite}}</a>
+            <a href="${BASE}testimoniale/">{{ui.testimoniale}}</a>
           </div>
         </div>
-        <div class="nav-item">
-          <button class="nav-link" aria-haspopup="true" aria-expanded="false">
-            {{ui.calculator}}
-            <svg class="nav-link-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5l3 3 3-3"/></svg>
-          </button>
-          <div class="nav-dropdown">
-            <a class="nav-dropdown-item" href="${BASE}calculator/">{{ui.calc_cost}}<span class="nav-dropdown-item-sub">{{ui.calc_cost_sub}}</span></a>
-            <a class="nav-dropdown-item" href="${BASE}economii/">{{ui.calc_econ}}<span class="nav-dropdown-item-sub">{{ui.calc_econ_sub}}</span></a>
+        <div class="nav-menu-item">
+          <a href="${BASE}calculator/" class="nav-menu-link">{{ui.calculator}} <span class="nav-menu-caret">▾</span></a>
+          <div class="nav-menu-dropdown">
+            <a href="${BASE}calculator/">{{ui.calc_cost}}</a>
+            <a href="${BASE}economii/">{{ui.calc_econ}}</a>
           </div>
         </div>
-        <div class="nav-item">
-          <button class="nav-link" aria-haspopup="true" aria-expanded="false">
-            {{ui.resurse}}
-            <svg class="nav-link-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5l3 3 3-3"/></svg>
-          </button>
-          <div class="nav-dropdown">
-            <a class="nav-dropdown-item" href="${BASE}comparatie/">{{ui.comparaison}}<span class="nav-dropdown-item-sub">{{ui.comparaison_sub}}</span></a>
-            <a class="nav-dropdown-item" href="${BASE}resurse/blog/">{{ui.blog}}<span class="nav-dropdown-item-sub">{{ui.blog_sub}}</span></a>
-            <a class="nav-dropdown-item" href="${BASE}resurse/faq/">{{ui.faq}}<span class="nav-dropdown-item-sub">{{ui.faq_sub}}</span></a>
+        <div class="nav-menu-item">
+          <a href="${BASE}resurse/" class="nav-menu-link">{{ui.resurse}} <span class="nav-menu-caret">▾</span></a>
+          <div class="nav-menu-dropdown">
+            <a href="${BASE}comparatie/">{{ui.comparaison}}</a>
+            <a href="${BASE}resurse/blog/">{{ui.blog}}</a>
+            <a href="${BASE}resurse/faq/">{{ui.faq}}</a>
           </div>
         </div>
-        <div class="nav-item">
-          <button class="nav-link" aria-haspopup="true" aria-expanded="false">
-            {{ui.despre}}
-            <svg class="nav-link-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5l3 3 3-3"/></svg>
-          </button>
-          <div class="nav-dropdown">
-            <a class="nav-dropdown-item" href="${BASE}despre/">{{ui.compania}}<span class="nav-dropdown-item-sub">{{ui.compania_sub}}</span></a>
-            <a class="nav-dropdown-item" href="${BASE}despre/patent/">{{ui.patent}}<span class="nav-dropdown-item-sub">{{ui.patent_sub}}</span></a>
-            <a class="nav-dropdown-item" href="${BASE}despre/certificari/">{{ui.certificari}}<span class="nav-dropdown-item-sub">{{ui.certificari_sub}}</span></a>
-            <a class="nav-dropdown-item" href="${BASE}despre/fabrici/">{{ui.fabrici}}<span class="nav-dropdown-item-sub">{{ui.fabrici_sub}}</span></a>
-            <a class="nav-dropdown-item" href="${BASE}despre/echipa/">{{ui.echipa}}<span class="nav-dropdown-item-sub">{{ui.echipa_sub}}</span></a>
+        <div class="nav-menu-item">
+          <a href="${BASE}despre/" class="nav-menu-link">{{ui.despre}} <span class="nav-menu-caret">▾</span></a>
+          <div class="nav-menu-dropdown">
+            <a href="${BASE}despre/">{{ui.compania}}</a>
+            <a href="${BASE}despre/patent/">{{ui.patent}}</a>
+            <a href="${BASE}despre/certificari/">{{ui.certificari}}</a>
+            <a href="${BASE}despre/fabrici/">{{ui.fabrici}}</a>
+            <a href="${BASE}despre/echipa/">{{ui.echipa}}</a>
           </div>
         </div>
-      </nav>
+      </div>
       <div class="nav-cta">
-        <!-- COUNTRY SWITCHER — identique à celui du homepage -->
+        <!-- COUNTRY SWITCHER (identique au homepage) -->
         <div class="country-switcher" data-country-switcher>
           <button class="country-switcher-trigger" type="button" aria-label="{{ui.cp_label}}" aria-expanded="false">
             <span class="country-switcher-flag">{{country_flag}}</span>
@@ -112,7 +95,7 @@
           </div>
         </div>
         <a href="${BASE}contact/" class="btn btn-ghost">{{ui.contact}}</a>
-        <a href="${BASE}oferta/" class="btn btn-primary btn-arrow">{{ui.cere_oferta}}</a>
+        <a href="${BASE}oferta/" class="btn btn-primary">{{ui.cere_oferta}} →</a>
       </div>
     </div>
   `;
