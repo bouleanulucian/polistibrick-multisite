@@ -15,84 +15,67 @@
     return depth <= 1 ? '' : '../'.repeat(depth - 1);
   })();
 
+  // NAV_HTML — identical structure to homepage (uses .nav-menu-item / .nav-menu-link / .nav-menu-dropdown classes)
   const NAV_HTML = `
     <div class="nav-inner">
-      <a href="${BASE}" class="nav-logo" aria-label="Polistibrick — home">
-        <img src="${BASE}images/logo.png" alt="Polistibrick" loading="eager">
+      <a href="${BASE}" class="logo" aria-label="Polistibrick — home">
+        <img src="${BASE}images/logo.png" alt="Polistibrick" class="logo-img">
       </a>
-      <nav class="nav-menu" aria-label="Hoofdnavigatie">
-        <div class="nav-item">
-          <button class="nav-link" aria-haspopup="true" aria-expanded="false">
-            Producten
-            <svg class="nav-link-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5l3 3 3-3"/></svg>
-          </button>
-          <div class="nav-dropdown">
-            <a class="nav-dropdown-item" href="${BASE}produse/pereti-mbk/">MBK-muren<span class="nav-dropdown-item-sub">Isolerende bekisting voor dragende muren</span></a>
-            <a class="nav-dropdown-item" href="${BASE}produse/planseu-pbk/">PBK-vloeren<span class="nav-dropdown-item-sub">Geprefabriceerde panelen met faseverschuiving 10,8 u</span></a>
-            <a class="nav-dropdown-item" href="${BASE}produse/acoperis-tbk/">TBK-dak<span class="nav-dropdown-item-sub">Passivhaus-systeem uit de fabriek</span></a>
-            <a class="nav-dropdown-item" href="${BASE}produse/accesorii/">Accessoires<span class="nav-dropdown-item-sub">Hoekstukken, eindstukken, trappen, ramen</span></a>
+      <div class="nav-menu" aria-label="Hoofdnavigatie">
+        <div class="nav-menu-item">
+          <a href="${BASE}produse/pereti-mbk/" class="nav-menu-link">Producten <span class="nav-menu-caret">▾</span></a>
+          <div class="nav-menu-dropdown">
+            <a href="${BASE}produse/pereti-mbk/">MBK-muren</a>
+            <a href="${BASE}produse/planseu-pbk/">PBK-vloeren</a>
+            <a href="${BASE}produse/acoperis-tbk/">TBK-dak</a>
+            <a href="${BASE}produse/accesorii/">Accessoires</a>
           </div>
         </div>
-        <div class="nav-item">
-          <button class="nav-link" aria-haspopup="true" aria-expanded="false">
-            Oplossingen
-            <svg class="nav-link-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5l3 3 3-3"/></svg>
-          </button>
-          <div class="nav-dropdown">
-            <a class="nav-dropdown-item" href="${BASE}pentru/proprietari/">Voor eigenaren<span class="nav-dropdown-item-sub">Passiefhuis zonder hoge rekeningen</span></a>
-            <a class="nav-dropdown-item" href="${BASE}pentru/arhitecti/">Voor architecten<span class="nav-dropdown-item-sub">Bouwdetails, BIM, fiches</span></a>
-            <a class="nav-dropdown-item" href="${BASE}pentru/constructori/">Voor bouwers<span class="nav-dropdown-item-sub">Montage, certificering, partnership</span></a>
-            <a class="nav-dropdown-item" href="${BASE}pentru/investitori/">Voor investeerders<span class="nav-dropdown-item-sub">ROI, uitvoeringssnelheid, projecten</span></a>
-            <a class="nav-dropdown-item" href="${BASE}devino-partener/" style="color:var(--red);font-weight:600;">→ Word partner<span class="nav-dropdown-item-sub" style="color:rgba(200,16,46,0.7);">Aanvraag gecertificeerde bouwers</span></a>
+        <div class="nav-menu-item">
+          <a href="${BASE}pentru/proprietari/" class="nav-menu-link">Oplossingen <span class="nav-menu-caret">▾</span></a>
+          <div class="nav-menu-dropdown">
+            <a href="${BASE}pentru/proprietari/">Voor eigenaren</a>
+            <a href="${BASE}pentru/arhitecti/">Voor architecten</a>
+            <a href="${BASE}pentru/constructori/">Voor bouwers</a>
+            <a href="${BASE}pentru/investitori/">Voor investeerders</a>
+            <a href="${BASE}devino-partener/" style="color:var(--red);font-weight:600;">→ Word partner</a>
           </div>
         </div>
-        <div class="nav-item">
-          <button class="nav-link" aria-haspopup="true" aria-expanded="false">
-            Projecten
-            <svg class="nav-link-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5l3 3 3-3"/></svg>
-          </button>
-          <div class="nav-dropdown">
-            <a class="nav-dropdown-item" href="${BASE}proiecte/">Gebouwde huizen<span class="nav-dropdown-item-sub">Galerij + kaart van projecten</span></a>
-            <a class="nav-dropdown-item" href="${BASE}testimoniale/">Getuigenissen (video)<span class="nav-dropdown-item-sub">Eigenaren spreken, met echte cijfers</span></a>
+        <div class="nav-menu-item">
+          <a href="${BASE}proiecte/" class="nav-menu-link">Projecten <span class="nav-menu-caret">▾</span></a>
+          <div class="nav-menu-dropdown">
+            <a href="${BASE}proiecte/">Gebouwde huizen</a>
+            <a href="${BASE}testimoniale/">Getuigenissen (video)</a>
           </div>
         </div>
-        <div class="nav-item">
-          <button class="nav-link" aria-haspopup="true" aria-expanded="false">
-            Calculator
-            <svg class="nav-link-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5l3 3 3-3"/></svg>
-          </button>
-          <div class="nav-dropdown">
-            <a class="nav-dropdown-item" href="${BASE}calculator/">Kostencalculator<span class="nav-dropdown-item-sub">Schat de paneelprijs voor uw huis</span></a>
-            <a class="nav-dropdown-item" href="${BASE}economii/">Besparingscalculator<span class="nav-dropdown-item-sub">Polistibrick vs baksteen over 25 jaar</span></a>
+        <div class="nav-menu-item">
+          <a href="${BASE}calculator/" class="nav-menu-link">Calculator <span class="nav-menu-caret">▾</span></a>
+          <div class="nav-menu-dropdown">
+            <a href="${BASE}calculator/">Kostencalculator</a>
+            <a href="${BASE}economii/">Besparingscalculator</a>
           </div>
         </div>
-        <div class="nav-item">
-          <button class="nav-link" aria-haspopup="true" aria-expanded="false">
-            Bronnen
-            <svg class="nav-link-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5l3 3 3-3"/></svg>
-          </button>
-          <div class="nav-dropdown">
-            <a class="nav-dropdown-item" href="${BASE}comparatie/">Vergelijking<span class="nav-dropdown-item-sub">Polistibrick vs klassiek systeem vs andere ICF</span></a>
-            <a class="nav-dropdown-item" href="${BASE}resurse/blog/">Blog<span class="nav-dropdown-item-sub">Artikelen over Passiefhuis, ICF</span></a>
-            <a class="nav-dropdown-item" href="${BASE}resurse/faq/">Veelgestelde vragen<span class="nav-dropdown-item-sub">Antwoorden op de meest gestelde vragen</span></a>
+        <div class="nav-menu-item">
+          <a href="${BASE}resurse/" class="nav-menu-link">Bronnen <span class="nav-menu-caret">▾</span></a>
+          <div class="nav-menu-dropdown">
+            <a href="${BASE}comparatie/">Vergelijking</a>
+            <a href="${BASE}resurse/blog/">Blog</a>
+            <a href="${BASE}resurse/faq/">Veelgestelde vragen</a>
           </div>
         </div>
-        <div class="nav-item">
-          <button class="nav-link" aria-haspopup="true" aria-expanded="false">
-            Over ons
-            <svg class="nav-link-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5l3 3 3-3"/></svg>
-          </button>
-          <div class="nav-dropdown">
-            <a class="nav-dropdown-item" href="${BASE}despre/">Het bedrijf<span class="nav-dropdown-item-sub">Wie wij zijn, visie, missie</span></a>
-            <a class="nav-dropdown-item" href="${BASE}despre/patent/">Het Polistibrick-octrooi<span class="nav-dropdown-item-sub">Het octrooi dat ons uniek maakt</span></a>
-            <a class="nav-dropdown-item" href="${BASE}despre/certificari/">Certificeringen<span class="nav-dropdown-item-sub">CE, ISO, Passivhaus, technische goedkeuringen</span></a>
-            <a class="nav-dropdown-item" href="${BASE}despre/fabrici/">Onze fabrieken<span class="nav-dropdown-item-sub">Valencia (ES) en Craiova (RO)</span></a>
-            <a class="nav-dropdown-item" href="${BASE}despre/echipa/">Het team<span class="nav-dropdown-item-sub">Oprichters en onze mensen</span></a>
+        <div class="nav-menu-item">
+          <a href="${BASE}despre/" class="nav-menu-link">Over ons <span class="nav-menu-caret">▾</span></a>
+          <div class="nav-menu-dropdown">
+            <a href="${BASE}despre/">Het bedrijf</a>
+            <a href="${BASE}despre/patent/">Het Polistibrick-octrooi</a>
+            <a href="${BASE}despre/certificari/">Certificeringen</a>
+            <a href="${BASE}despre/fabrici/">Onze fabrieken</a>
+            <a href="${BASE}despre/echipa/">Het team</a>
           </div>
         </div>
-      </nav>
+      </div>
       <div class="nav-cta">
-        <!-- COUNTRY SWITCHER — identique à celui du homepage -->
+        <!-- COUNTRY SWITCHER (identique au homepage) -->
         <div class="country-switcher" data-country-switcher>
           <button class="country-switcher-trigger" type="button" aria-label="Kies uw land" aria-expanded="false">
             <span class="country-switcher-flag">🇧🇪</span>
@@ -112,7 +95,7 @@
           </div>
         </div>
         <a href="${BASE}contact/" class="btn btn-ghost">Contact</a>
-        <a href="${BASE}oferta/" class="btn btn-primary btn-arrow">Vraag een offerte</a>
+        <a href="${BASE}oferta/" class="btn btn-primary">Vraag een offerte →</a>
       </div>
     </div>
   `;

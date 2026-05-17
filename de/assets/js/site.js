@@ -15,84 +15,67 @@
     return depth <= 1 ? '' : '../'.repeat(depth - 1);
   })();
 
+  // NAV_HTML — identical structure to homepage (uses .nav-menu-item / .nav-menu-link / .nav-menu-dropdown classes)
   const NAV_HTML = `
     <div class="nav-inner">
-      <a href="${BASE}" class="nav-logo" aria-label="Polistibrick — Startseite">
-        <img src="${BASE}images/logo.png" alt="Polistibrick" loading="eager">
+      <a href="${BASE}" class="logo" aria-label="Polistibrick — Startseite">
+        <img src="${BASE}images/logo.png" alt="Polistibrick" class="logo-img">
       </a>
-      <nav class="nav-menu" aria-label="Hauptnavigation">
-        <div class="nav-item">
-          <button class="nav-link" aria-haspopup="true" aria-expanded="false">
-            Produkte
-            <svg class="nav-link-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5l3 3 3-3"/></svg>
-          </button>
-          <div class="nav-dropdown">
-            <a class="nav-dropdown-item" href="${BASE}produse/pereti-mbk/">MBK-Wände<span class="nav-dropdown-item-sub">Wärmedämmschalung für tragende Wände</span></a>
-            <a class="nav-dropdown-item" href="${BASE}produse/planseu-pbk/">PBK-Decken<span class="nav-dropdown-item-sub">Fertigplatten mit Phasenverschiebung 10,8 h</span></a>
-            <a class="nav-dropdown-item" href="${BASE}produse/acoperis-tbk/">TBK-Dach<span class="nav-dropdown-item-sub">Passivhaus-System aus dem Werk</span></a>
-            <a class="nav-dropdown-item" href="${BASE}produse/accesorii/">Zubehör<span class="nav-dropdown-item-sub">Ecken, Abschlüsse, Treppen, Fenster</span></a>
+      <div class="nav-menu" aria-label="Hauptnavigation">
+        <div class="nav-menu-item">
+          <a href="${BASE}produse/pereti-mbk/" class="nav-menu-link">Produkte <span class="nav-menu-caret">▾</span></a>
+          <div class="nav-menu-dropdown">
+            <a href="${BASE}produse/pereti-mbk/">MBK-Wände</a>
+            <a href="${BASE}produse/planseu-pbk/">PBK-Decken</a>
+            <a href="${BASE}produse/acoperis-tbk/">TBK-Dach</a>
+            <a href="${BASE}produse/accesorii/">Zubehör</a>
           </div>
         </div>
-        <div class="nav-item">
-          <button class="nav-link" aria-haspopup="true" aria-expanded="false">
-            Lösungen
-            <svg class="nav-link-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5l3 3 3-3"/></svg>
-          </button>
-          <div class="nav-dropdown">
-            <a class="nav-dropdown-item" href="${BASE}pentru/proprietari/">Für Eigentümer<span class="nav-dropdown-item-sub">Passivhaus ohne hohe Rechnungen</span></a>
-            <a class="nav-dropdown-item" href="${BASE}pentru/arhitecti/">Für Architekten<span class="nav-dropdown-item-sub">Konstruktive Details, BIM, Datenblätter</span></a>
-            <a class="nav-dropdown-item" href="${BASE}pentru/constructori/">Für Bauunternehmen<span class="nav-dropdown-item-sub">Montage, Zertifizierung, Partnerschaft</span></a>
-            <a class="nav-dropdown-item" href="${BASE}pentru/investitori/">Für Investoren<span class="nav-dropdown-item-sub">ROI, Ausführungstempo, Wohnanlagen</span></a>
-            <a class="nav-dropdown-item" href="${BASE}devino-partener/" style="color:var(--red);font-weight:600;">→ Partner werden<span class="nav-dropdown-item-sub" style="color:rgba(200,16,46,0.7);">Bewerbung zertifizierte Bauunternehmen</span></a>
+        <div class="nav-menu-item">
+          <a href="${BASE}pentru/proprietari/" class="nav-menu-link">Lösungen <span class="nav-menu-caret">▾</span></a>
+          <div class="nav-menu-dropdown">
+            <a href="${BASE}pentru/proprietari/">Für Eigentümer</a>
+            <a href="${BASE}pentru/arhitecti/">Für Architekten</a>
+            <a href="${BASE}pentru/constructori/">Für Bauunternehmen</a>
+            <a href="${BASE}pentru/investitori/">Für Investoren</a>
+            <a href="${BASE}devino-partener/" style="color:var(--red);font-weight:600;">→ Partner werden</a>
           </div>
         </div>
-        <div class="nav-item">
-          <button class="nav-link" aria-haspopup="true" aria-expanded="false">
-            Projekte
-            <svg class="nav-link-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5l3 3 3-3"/></svg>
-          </button>
-          <div class="nav-dropdown">
-            <a class="nav-dropdown-item" href="${BASE}proiecte/">Realisierte Häuser<span class="nav-dropdown-item-sub">Galerie + Karte mit Projekten</span></a>
-            <a class="nav-dropdown-item" href="${BASE}testimoniale/">Erfahrungsberichte (Video)<span class="nav-dropdown-item-sub">Eigentümer sprechen, mit echten Zahlen</span></a>
+        <div class="nav-menu-item">
+          <a href="${BASE}proiecte/" class="nav-menu-link">Projekte <span class="nav-menu-caret">▾</span></a>
+          <div class="nav-menu-dropdown">
+            <a href="${BASE}proiecte/">Realisierte Häuser</a>
+            <a href="${BASE}testimoniale/">Erfahrungsberichte (Video)</a>
           </div>
         </div>
-        <div class="nav-item">
-          <button class="nav-link" aria-haspopup="true" aria-expanded="false">
-            Rechner
-            <svg class="nav-link-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5l3 3 3-3"/></svg>
-          </button>
-          <div class="nav-dropdown">
-            <a class="nav-dropdown-item" href="${BASE}calculator/">Kostenrechner<span class="nav-dropdown-item-sub">Schätzen Sie den Paneelpreis für Ihr Haus</span></a>
-            <a class="nav-dropdown-item" href="${BASE}economii/">Einsparrechner<span class="nav-dropdown-item-sub">Polistibrick vs. Ziegel über 25 Jahre</span></a>
+        <div class="nav-menu-item">
+          <a href="${BASE}calculator/" class="nav-menu-link">Rechner <span class="nav-menu-caret">▾</span></a>
+          <div class="nav-menu-dropdown">
+            <a href="${BASE}calculator/">Kostenrechner</a>
+            <a href="${BASE}economii/">Einsparrechner</a>
           </div>
         </div>
-        <div class="nav-item">
-          <button class="nav-link" aria-haspopup="true" aria-expanded="false">
-            Ressourcen
-            <svg class="nav-link-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5l3 3 3-3"/></svg>
-          </button>
-          <div class="nav-dropdown">
-            <a class="nav-dropdown-item" href="${BASE}comparatie/">Vergleich<span class="nav-dropdown-item-sub">Polistibrick vs. klassisches System vs. anderes ICF</span></a>
-            <a class="nav-dropdown-item" href="${BASE}resurse/blog/">Blog<span class="nav-dropdown-item-sub">Artikel über Passivhaus, ICF</span></a>
-            <a class="nav-dropdown-item" href="${BASE}resurse/faq/">Häufige Fragen<span class="nav-dropdown-item-sub">Antworten auf die häufigsten Fragen</span></a>
+        <div class="nav-menu-item">
+          <a href="${BASE}resurse/" class="nav-menu-link">Ressourcen <span class="nav-menu-caret">▾</span></a>
+          <div class="nav-menu-dropdown">
+            <a href="${BASE}comparatie/">Vergleich</a>
+            <a href="${BASE}resurse/blog/">Blog</a>
+            <a href="${BASE}resurse/faq/">Häufige Fragen</a>
           </div>
         </div>
-        <div class="nav-item">
-          <button class="nav-link" aria-haspopup="true" aria-expanded="false">
-            Über uns
-            <svg class="nav-link-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5l3 3 3-3"/></svg>
-          </button>
-          <div class="nav-dropdown">
-            <a class="nav-dropdown-item" href="${BASE}despre/">Das Unternehmen<span class="nav-dropdown-item-sub">Wer wir sind, Vision, Mission</span></a>
-            <a class="nav-dropdown-item" href="${BASE}despre/patent/">Das Polistibrick-Patent<span class="nav-dropdown-item-sub">Das Patent, das uns einzigartig macht</span></a>
-            <a class="nav-dropdown-item" href="${BASE}despre/certificari/">Zertifizierungen<span class="nav-dropdown-item-sub">CE, ISO, Passivhaus, technische Zulassungen</span></a>
-            <a class="nav-dropdown-item" href="${BASE}despre/fabrici/">Unsere Werke<span class="nav-dropdown-item-sub">Valencia (ES) und Craiova (RO)</span></a>
-            <a class="nav-dropdown-item" href="${BASE}despre/echipa/">Das Team<span class="nav-dropdown-item-sub">Gründer und unsere Mitarbeiter</span></a>
+        <div class="nav-menu-item">
+          <a href="${BASE}despre/" class="nav-menu-link">Über uns <span class="nav-menu-caret">▾</span></a>
+          <div class="nav-menu-dropdown">
+            <a href="${BASE}despre/">Das Unternehmen</a>
+            <a href="${BASE}despre/patent/">Das Polistibrick-Patent</a>
+            <a href="${BASE}despre/certificari/">Zertifizierungen</a>
+            <a href="${BASE}despre/fabrici/">Unsere Werke</a>
+            <a href="${BASE}despre/echipa/">Das Team</a>
           </div>
         </div>
-      </nav>
+      </div>
       <div class="nav-cta">
-        <!-- COUNTRY SWITCHER — identique à celui du homepage -->
+        <!-- COUNTRY SWITCHER (identique au homepage) -->
         <div class="country-switcher" data-country-switcher>
           <button class="country-switcher-trigger" type="button" aria-label="Wählen Sie Ihr Land" aria-expanded="false">
             <span class="country-switcher-flag">🇨🇭</span>
@@ -112,7 +95,7 @@
           </div>
         </div>
         <a href="${BASE}contact/" class="btn btn-ghost">Kontakt</a>
-        <a href="${BASE}oferta/" class="btn btn-primary btn-arrow">Angebot anfordern</a>
+        <a href="${BASE}oferta/" class="btn btn-primary">Angebot anfordern →</a>
       </div>
     </div>
   `;
