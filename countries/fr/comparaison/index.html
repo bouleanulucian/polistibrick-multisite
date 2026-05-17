@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Comparaison · Polistibrick vs brique vs brique passive — la vérité en 9 critères</title>
-  <meta name="description" content="Comparaison détaillée Polistibrick vs brique classique vs brique passive. Matériaux, équipes, temps, isolation, classe énergétique, coût — 9 critères, des chiffres concrets.">
+  <title>Comparaison · Polistibrick — le seul système ICF premium intégré</title>
+  <meta name="description" content="Polistibrick est le système ICF premium intégré. Comparé à la brique classique et à la brique passive. Plus simple, plus rapide, mieux pensé — dès la conception.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/site.css">
   <style>
     /* ============================================================
-       COMPARISON V2 — vertical scroll, one criterion per section
+       COMPARISON V3 — Polistibrick first, simpler, premium-led
        ============================================================ */
 
     /* HERO */
@@ -20,13 +20,15 @@
     .cmp-hero .eyebrow { display: inline-block; background: var(--red-soft); color: var(--red); padding: 6px 14px; border-radius: 100px; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 22px; }
     .cmp-hero h1 { font-family: var(--serif); font-size: clamp(38px, 5.5vw, 72px); font-weight: 500; color: var(--ink); letter-spacing: -0.025em; line-height: 1.02; margin-bottom: 22px; }
     .cmp-hero h1 em { font-style: italic; color: var(--red); font-weight: 400; }
-    .cmp-hero p.lead { font-size: clamp(16px, 1.8vw, 19px); color: var(--gray); line-height: 1.6; max-width: 680px; margin: 0 auto; }
-    .cmp-hero-trio { display: flex; justify-content: center; gap: clamp(24px, 4vw, 56px); margin-top: 48px; align-items: end; }
-    .cmp-hero-system { text-align: center; }
-    .cmp-hero-system-name { font-family: var(--serif); font-size: clamp(16px, 1.8vw, 22px); font-weight: 500; color: var(--ink); margin-bottom: 6px; }
-    .cmp-hero-system-tag { font-size: 10.5px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray); padding: 4px 10px; border-radius: 100px; background: rgba(0,0,0,0.04); display: inline-block; }
-    .cmp-hero-system--win .cmp-hero-system-name { color: var(--red); }
+    .cmp-hero p.lead { font-size: clamp(16px, 1.8vw, 19px); color: var(--gray); line-height: 1.6; max-width: 680px; margin: 0 auto 40px; }
+    .cmp-hero-trio { display: flex; justify-content: center; gap: clamp(20px, 4vw, 48px); align-items: end; margin-top: 32px; flex-wrap: wrap; }
+    .cmp-hero-system { text-align: center; padding: 16px 22px; border-radius: 14px; }
+    .cmp-hero-system-name { font-family: var(--serif); font-size: clamp(16px, 1.8vw, 22px); font-weight: 500; color: var(--ink); margin-bottom: 8px; }
+    .cmp-hero-system-tag { font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray); padding: 5px 12px; border-radius: 100px; background: rgba(0,0,0,0.04); display: inline-block; }
+    .cmp-hero-system--win { background: linear-gradient(180deg, white 0%, rgba(200,16,46,0.04) 100%); border: 2px solid var(--red); box-shadow: 0 18px 40px rgba(200,16,46,0.10); transform: scale(1.05); }
+    .cmp-hero-system--win .cmp-hero-system-name { color: var(--red); font-size: clamp(20px, 2.2vw, 26px); }
     .cmp-hero-system--win .cmp-hero-system-tag { background: var(--red); color: white; }
+    .cmp-hero-crown { font-size: 22px; margin-bottom: 6px; display: block; }
 
     /* SECTION (one per criterion) */
     .cmp-section { padding: clamp(70px, 10vw, 110px) 0; border-top: 1px solid var(--border); }
@@ -50,73 +52,79 @@
     .cmp-crit-title { font-family: var(--serif); font-size: clamp(28px, 3.6vw, 44px); font-weight: 500; color: var(--ink); letter-spacing: -0.02em; line-height: 1.08; margin-bottom: 18px; }
     .cmp-crit-title em { font-style: italic; color: var(--red); font-weight: 400; }
     .cmp-crit-desc { font-size: clamp(15px, 1.5vw, 17px); color: var(--gray); line-height: 1.65; margin-bottom: 28px; }
-    .cmp-crit-takeaway { display: inline-block; background: rgba(200,16,46,0.06); border-left: 3px solid var(--red); padding: 12px 18px; font-size: 14px; color: var(--ink-soft); line-height: 1.5; max-width: 480px; }
+    .cmp-crit-takeaway { display: inline-block; background: rgba(200,16,46,0.06); border-left: 3px solid var(--red); padding: 14px 20px; font-size: 14.5px; color: var(--ink-soft); line-height: 1.5; max-width: 480px; border-radius: 4px; }
     .cmp-crit-takeaway strong { color: var(--ink); }
 
-    /* COMPARISON CARDS (right column) */
+    /* COMPARISON CARDS — Polistibrick is ALWAYS first */
     .cmp-cards { display: flex; flex-direction: column; gap: 12px; }
-    .cmp-card { background: white; border: 1px solid var(--border); border-radius: 14px; padding: 22px 24px; display: grid; grid-template-columns: 36px 1fr auto; gap: 16px; align-items: center; transition: all 0.2s ease; }
-    .cmp-card-icon { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; font-size: 22px; border-radius: 8px; background: var(--cream-light); }
+    .cmp-card { background: white; border: 1px solid var(--border); border-radius: 14px; padding: 22px 24px; display: grid; grid-template-columns: 44px 1fr auto; gap: 16px; align-items: center; transition: all 0.2s ease; position: relative; }
+    .cmp-card-icon { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; font-size: 26px; border-radius: 10px; background: var(--cream-light); }
     .cmp-card-body { min-width: 0; }
-    .cmp-card-name { font-family: var(--sans); font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 2px; }
-    .cmp-card-sub { font-size: 12px; color: var(--gray); }
-    .cmp-card-value { font-family: var(--serif); font-size: clamp(20px, 2.4vw, 30px); font-weight: 500; color: var(--ink); letter-spacing: -0.02em; line-height: 1; }
+    .cmp-card-name { font-family: var(--sans); font-size: 14.5px; font-weight: 600; color: var(--ink); margin-bottom: 3px; }
+    .cmp-card-sub { font-size: 12.5px; color: var(--gray); line-height: 1.4; }
+    .cmp-card-value { font-family: var(--serif); font-size: clamp(20px, 2.4vw, 30px); font-weight: 500; color: var(--ink); letter-spacing: -0.02em; line-height: 1; text-align: right; }
     .cmp-card-value small { font-size: 0.45em; font-weight: 600; color: var(--gray); margin-left: 4px; letter-spacing: 0.05em; }
+    .cmp-card-value-text { font-family: var(--sans); font-size: 13px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; text-align: right; color: var(--gray); }
 
     .cmp-card--win {
-      background: linear-gradient(180deg, white 0%, rgba(200,16,46,0.04) 100%);
-      border-color: var(--red);
-      box-shadow: 0 14px 36px rgba(200,16,46,0.08);
+      background: linear-gradient(180deg, white 0%, rgba(200,16,46,0.05) 100%);
+      border: 2px solid var(--red);
+      box-shadow: 0 20px 44px rgba(200,16,46,0.10);
+      order: -1;
     }
     .cmp-card--win .cmp-card-icon { background: var(--red); color: white; }
     .cmp-card--win .cmp-card-value { color: var(--red); }
-    .cmp-card--win .cmp-card-name::after { content: '★'; color: var(--red); margin-left: 8px; font-size: 12px; vertical-align: middle; }
+    .cmp-card--win .cmp-card-value-text { color: var(--red); }
+    .cmp-card--win .cmp-card-name { color: var(--red); }
+    .cmp-card--win .cmp-card-name::before { content: '👑 '; font-size: 14px; }
+    .cmp-card--win::after {
+      content: 'LE CHOIX PREMIUM';
+      position: absolute;
+      top: -10px;
+      right: 16px;
+      background: var(--red);
+      color: white;
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      padding: 4px 12px;
+      border-radius: 100px;
+      box-shadow: 0 4px 10px rgba(200,16,46,0.25);
+    }
 
-    .cmp-card--bad .cmp-card-value { color: #b32424; }
-
-    /* VISUAL (left column) — various per criterion */
-    .cmp-viz { display: flex; align-items: center; justify-content: center; min-height: 280px; }
-    .cmp-viz-stack { display: flex; flex-direction: column; gap: 18px; width: 100%; max-width: 460px; }
-    .cmp-viz-row { display: flex; align-items: center; gap: 14px; font-size: 13px; color: var(--gray); }
-    .cmp-viz-row-label { width: 140px; flex-shrink: 0; font-weight: 600; color: var(--ink-soft); font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
-    .cmp-viz-row-bar { flex: 1; height: 14px; background: rgba(0,0,0,0.05); border-radius: 100px; overflow: hidden; position: relative; }
-    .cmp-viz-row-fill { height: 100%; border-radius: 100px; background: var(--gray); }
-    .cmp-viz-row-fill--win { background: var(--red); }
-    .cmp-viz-row-fill--bad { background: #b32424; }
-    .cmp-viz-row-num { font-family: var(--serif); font-size: 18px; font-weight: 500; color: var(--ink); min-width: 60px; text-align: right; }
-    .cmp-viz-row-num--win { color: var(--red); }
-
-    /* Pictogram visuals (people, materials, etc) */
-    .cmp-pictos { display: flex; flex-direction: column; gap: 22px; width: 100%; max-width: 460px; }
-    .cmp-picto-row { padding: 18px 20px; background: white; border: 1px solid var(--border); border-radius: 14px; }
-    .cmp-picto-row--win { border-color: var(--red); background: linear-gradient(180deg, white 0%, rgba(200,16,46,0.03) 100%); }
-    .cmp-picto-system { font-size: 11px; color: var(--gray); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 10px; }
+    /* Pictogram visuals */
+    .cmp-pictos { display: flex; flex-direction: column; gap: 14px; width: 100%; max-width: 460px; }
+    .cmp-picto-row { padding: 20px 22px; background: white; border: 1px solid var(--border); border-radius: 14px; position: relative; }
+    .cmp-picto-row--win { border: 2px solid var(--red); background: linear-gradient(180deg, white 0%, rgba(200,16,46,0.04) 100%); box-shadow: 0 20px 44px rgba(200,16,46,0.10); }
+    .cmp-picto-row--win::after {
+      content: 'PREMIUM';
+      position: absolute;
+      top: -10px;
+      right: 16px;
+      background: var(--red);
+      color: white;
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      padding: 4px 12px;
+      border-radius: 100px;
+    }
+    .cmp-picto-system { font-size: 12px; color: var(--gray); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px; }
     .cmp-picto-row--win .cmp-picto-system { color: var(--red); }
+    .cmp-picto-row--win .cmp-picto-system::before { content: '👑 '; }
     .cmp-picto-icons { display: flex; flex-wrap: wrap; gap: 6px; font-size: 24px; line-height: 1; }
     .cmp-picto-row--win .cmp-picto-icons { color: var(--red); }
-    .cmp-picto-icons.is-overflow { color: var(--gray); }
-    .cmp-picto-row--win .cmp-picto-icons.is-overflow { color: var(--red); }
-
-    /* Timeline visual */
-    .cmp-timeline { width: 100%; max-width: 480px; }
-    .cmp-timeline-row { display: grid; grid-template-columns: 110px 1fr 70px; gap: 14px; align-items: center; margin-bottom: 18px; }
-    .cmp-timeline-row .label { font-size: 12px; font-weight: 600; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.05em; }
-    .cmp-timeline-row .track { height: 28px; background: rgba(0,0,0,0.04); border-radius: 100px; position: relative; overflow: hidden; }
-    .cmp-timeline-row .fill { height: 100%; background: var(--gray); border-radius: 100px; }
-    .cmp-timeline-row .fill--win { background: var(--red); }
-    .cmp-timeline-row .fill--bad { background: #b32424; }
-    .cmp-timeline-row .value { font-family: var(--serif); font-size: 18px; font-weight: 500; color: var(--ink); }
-    .cmp-timeline-row .value--win { color: var(--red); }
+    .cmp-picto-note { margin-top: 10px; font-size: 13px; color: var(--gray); line-height: 1.4; }
 
     /* Wall cross-section visual */
     .cmp-wall { width: 100%; max-width: 460px; }
     .cmp-wall-system { margin-bottom: 22px; }
     .cmp-wall-name { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
-    .cmp-wall-name strong { font-family: var(--sans); font-size: 13px; font-weight: 600; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.06em; }
-    .cmp-wall-name span { font-family: var(--serif); font-size: 16px; color: var(--gray); }
-    .cmp-wall-section { display: flex; height: 60px; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); }
-    .cmp-wall-section--win { border-color: var(--red); box-shadow: 0 12px 28px rgba(200,16,46,0.08); }
-    .cmp-wall-layer { display: flex; align-items: center; justify-content: center; font-size: 10px; color: white; font-weight: 600; letter-spacing: 0.03em; text-shadow: 0 1px 2px rgba(0,0,0,0.3); }
+    .cmp-wall-name strong { font-family: var(--sans); font-size: 13px; font-weight: 700; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.06em; }
+    .cmp-wall-name span { font-family: var(--serif); font-size: 15px; color: var(--gray); font-style: italic; }
+    .cmp-wall-section { display: flex; height: 64px; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); }
+    .cmp-wall-section--win { border: 2px solid var(--red); box-shadow: 0 14px 32px rgba(200,16,46,0.10); }
+    .cmp-wall-layer { display: flex; align-items: center; justify-content: center; font-size: 10.5px; color: white; font-weight: 600; letter-spacing: 0.03em; text-shadow: 0 1px 2px rgba(0,0,0,0.3); }
     .layer-isol { background: linear-gradient(135deg, #c8102e 0%, #a3001f 100%); }
     .layer-isol-extra { background: linear-gradient(135deg, #f5a3a3 0%, #c8102e 100%); }
     .layer-brique { background: linear-gradient(135deg, #b8895a 0%, #8a5f3e 100%); }
@@ -124,35 +132,57 @@
     .layer-enduit { background: linear-gradient(135deg, #d4cfc4 0%, #b5b0a3 100%); color: var(--ink); text-shadow: none; }
 
     /* Energy class badge */
-    .cmp-energy { display: flex; flex-direction: column; gap: 14px; width: 100%; max-width: 420px; }
-    .cmp-energy-row { display: grid; grid-template-columns: 140px 1fr; gap: 14px; align-items: center; padding: 18px 20px; background: white; border: 1px solid var(--border); border-radius: 14px; }
-    .cmp-energy-row--win { border-color: var(--red); background: linear-gradient(180deg, white 0%, rgba(200,16,46,0.03) 100%); }
-    .cmp-energy-label { font-size: 12px; font-weight: 600; color: var(--gray); text-transform: uppercase; letter-spacing: 0.06em; }
+    .cmp-energy { display: flex; flex-direction: column; gap: 12px; width: 100%; max-width: 460px; }
+    .cmp-energy-row { display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: center; padding: 20px 22px; background: white; border: 1px solid var(--border); border-radius: 14px; position: relative; }
+    .cmp-energy-row--win { border: 2px solid var(--red); background: linear-gradient(180deg, white 0%, rgba(200,16,46,0.04) 100%); box-shadow: 0 20px 44px rgba(200,16,46,0.10); }
+    .cmp-energy-row--win::after {
+      content: 'PREMIUM';
+      position: absolute; top: -10px; right: 16px;
+      background: var(--red); color: white;
+      font-size: 9.5px; font-weight: 700; letter-spacing: 0.12em;
+      padding: 4px 12px; border-radius: 100px;
+    }
+    .cmp-energy-info {}
+    .cmp-energy-label { font-size: 13px; font-weight: 700; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.06em; }
     .cmp-energy-row--win .cmp-energy-label { color: var(--red); }
+    .cmp-energy-row--win .cmp-energy-label::before { content: '👑 '; font-size: 14px; }
+    .cmp-energy-sub { font-size: 12.5px; color: var(--gray); margin-top: 3px; }
     .cmp-energy-badge { display: inline-flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 26px; font-weight: 600; padding: 10px 22px; border-radius: 8px; color: white; letter-spacing: -0.02em; }
     .badge-aplus { background: linear-gradient(135deg, #1a7d3a 0%, #0e5d27 100%); }
-    .badge-c { background: linear-gradient(135deg, #d4a017 0%, #a47e10 100%); }
     .badge-e { background: linear-gradient(135deg, #e54d2e 0%, #b3361a 100%); }
+    .badge-neutral { background: linear-gradient(135deg, #4a4a4f 0%, #2A2520 100%); }
 
-    /* Cost bars (vertical) */
-    .cmp-cost-bars { display: flex; gap: clamp(16px, 3vw, 36px); align-items: flex-end; height: 280px; width: 100%; max-width: 460px; padding: 20px 0; }
-    .cmp-cost-bar { flex: 1; display: flex; flex-direction: column; align-items: center; height: 100%; justify-content: flex-end; }
-    .cmp-cost-bar-bar { width: 100%; background: var(--gray); border-radius: 12px 12px 0 0; transition: height 0.6s cubic-bezier(0.22,1,0.36,1); position: relative; }
-    .cmp-cost-bar-bar--win { background: var(--red); }
-    .cmp-cost-bar-bar--bad { background: #b32424; }
-    .cmp-cost-bar-value { position: absolute; top: -32px; left: 50%; transform: translateX(-50%); font-family: var(--serif); font-size: 17px; font-weight: 500; color: var(--ink); white-space: nowrap; }
-    .cmp-cost-bar-bar--win .cmp-cost-bar-value { color: var(--red); }
-    .cmp-cost-bar-label { margin-top: 10px; font-size: 11px; font-weight: 600; color: var(--gray); text-transform: uppercase; letter-spacing: 0.05em; text-align: center; line-height: 1.3; }
+    /* Cost visual — simple bars no €/m² numbers */
+    .cmp-cost-simple { display: flex; flex-direction: column; gap: 14px; width: 100%; max-width: 460px; }
+    .cmp-cost-row { padding: 18px 22px; background: white; border: 1px solid var(--border); border-radius: 14px; position: relative; }
+    .cmp-cost-row--win { border: 2px solid var(--red); background: linear-gradient(180deg, white 0%, rgba(200,16,46,0.04) 100%); box-shadow: 0 20px 44px rgba(200,16,46,0.10); }
+    .cmp-cost-row--win::after {
+      content: 'PREMIUM ACCESSIBLE';
+      position: absolute; top: -10px; right: 16px;
+      background: var(--red); color: white;
+      font-size: 9.5px; font-weight: 700; letter-spacing: 0.12em;
+      padding: 4px 12px; border-radius: 100px;
+    }
+    .cmp-cost-label { font-size: 13px; font-weight: 700; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px; }
+    .cmp-cost-row--win .cmp-cost-label { color: var(--red); }
+    .cmp-cost-row--win .cmp-cost-label::before { content: '👑 '; font-size: 14px; }
+    .cmp-cost-track { height: 18px; background: rgba(0,0,0,0.05); border-radius: 100px; overflow: hidden; margin-bottom: 8px; }
+    .cmp-cost-fill { height: 100%; background: var(--gray); border-radius: 100px; transition: width 0.6s; }
+    .cmp-cost-fill--win { background: var(--red); }
+    .cmp-cost-fill--bad { background: #b32424; }
+    .cmp-cost-note { font-size: 13px; color: var(--gray); line-height: 1.4; }
+    .cmp-cost-note strong { color: var(--ink-soft); }
 
-    /* Savings — 25 years */
-    .cmp-savings { width: 100%; max-width: 460px; background: linear-gradient(135deg, #2A2520 0%, #393229 100%); color: var(--cream); padding: 36px; border-radius: 20px; text-align: center; }
-    .cmp-savings-eyebrow { font-size: 11px; color: rgba(247,244,237,0.55); font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 12px; display: block; }
-    .cmp-savings-big { font-family: var(--serif); font-size: clamp(48px, 7vw, 80px); font-weight: 500; color: var(--red); line-height: 1; letter-spacing: -0.03em; margin: 4px 0; }
-    .cmp-savings-big small { font-size: 0.35em; color: rgba(255,255,255,0.55); margin-left: 4px; font-weight: 400; }
-    .cmp-savings-vs { font-size: 14px; color: rgba(247,244,237,0.75); margin-top: 8px; }
+    /* Savings */
+    .cmp-savings { width: 100%; max-width: 460px; background: linear-gradient(135deg, #2A2520 0%, #393229 100%); color: var(--cream); padding: 40px; border-radius: 20px; text-align: center; }
+    .cmp-savings-eyebrow { font-size: 11px; color: rgba(247,244,237,0.55); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 14px; display: block; }
+    .cmp-savings-big { font-family: var(--serif); font-size: clamp(56px, 8vw, 88px); font-weight: 500; color: var(--red); line-height: 1; letter-spacing: -0.03em; margin: 4px 0; }
+    .cmp-savings-big small { font-size: 0.32em; color: rgba(255,255,255,0.55); margin-left: 6px; font-weight: 400; }
+    .cmp-savings-vs { font-size: 15px; color: rgba(247,244,237,0.8); margin-top: 12px; line-height: 1.5; }
     .cmp-savings-vs strong { color: var(--cream); }
+    .cmp-savings-foot { margin-top: 18px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.12); font-size: 12px; color: rgba(247,244,237,0.55); }
 
-    /* Final punchline */
+    /* Final */
     .cmp-final { padding: clamp(80px, 10vw, 120px) 0; background: linear-gradient(135deg, #2A2520 0%, #393229 100%); color: var(--cream); text-align: center; }
     .cmp-final .container { max-width: 880px; }
     .cmp-final .eyebrow { color: var(--red); font-weight: 700; letter-spacing: 0.14em; font-size: 12px; text-transform: uppercase; margin-bottom: 22px; display: inline-block; }
@@ -171,18 +201,19 @@
 <!-- ============ HERO ============ -->
 <section class="cmp-hero">
   <div class="container">
-    <span class="eyebrow">La comparaison finale</span>
-    <h1>La <em>vérité</em> sur Polistibrick<br>en 9 critères concrets.</h1>
-    <p class="lead">Polistibrick — système ICF intégré, breveté européen. Comparé à la brique classique et à la brique passive (qui atteint le passif par 11 couches supplémentaires). Sans demi-vérités. Sans flou. Juste des chiffres.</p>
+    <span class="eyebrow">★ Le choix premium</span>
+    <h1>Polistibrick — <em>le seul système ICF</em><br>premium intégré dès la conception.</h1>
+    <p class="lead">Tout est inclus dans un seul panneau : isolation, résistance au feu, antisismique, hydrofuge, acoustique. Comparé à la brique classique et à la brique passive — la différence est claire dès le premier critère.</p>
 
     <div class="cmp-hero-trio">
-      <div class="cmp-hero-system">
-        <div class="cmp-hero-system-name">Brique classique</div>
-        <div class="cmp-hero-system-tag">Référence</div>
-      </div>
       <div class="cmp-hero-system cmp-hero-system--win">
+        <span class="cmp-hero-crown">👑</span>
         <div class="cmp-hero-system-name">Polistibrick</div>
         <div class="cmp-hero-system-tag">★ Premium intégré</div>
+      </div>
+      <div class="cmp-hero-system">
+        <div class="cmp-hero-system-name">Brique classique</div>
+        <div class="cmp-hero-system-tag">Conventionnel</div>
       </div>
       <div class="cmp-hero-system">
         <div class="cmp-hero-system-name">Brique passive</div>
@@ -198,37 +229,37 @@
     <div class="cmp-section-grid">
       <div>
         <span class="cmp-crit-num">Critère 01 · 🧱 Matériaux</span>
-        <h2 class="cmp-crit-title">Combien de matériaux <em>pour un mur fini ?</em></h2>
-        <p class="cmp-crit-desc">Un mur fonctionnel et fini, prêt à recevoir l'enduit. La brique en demande des dizaines. Polistibrick — trois.</p>
+        <h2 class="cmp-crit-title">Tout dans <em>un seul panneau.</em></h2>
+        <p class="cmp-crit-desc">Polistibrick réunit l'isolation, la structure, le coffrage et le support de finitions dans un seul produit préfabriqué. La brique demande des dizaines de matériaux séparés à coordonner.</p>
         <div class="cmp-crit-takeaway">
-          <strong>5× moins de matériaux à commander, livrer, stocker, manipuler.</strong> Et 5× moins d'erreurs possibles.
+          <strong>Moins de matériaux = moins d'erreurs, moins de retards, moins de surprises.</strong> Tout est pensé dès l'usine.
         </div>
       </div>
 
       <div class="cmp-cards">
+        <div class="cmp-card cmp-card--win">
+          <div class="cmp-card-icon">⚡</div>
+          <div class="cmp-card-body">
+            <div class="cmp-card-name">Polistibrick</div>
+            <div class="cmp-card-sub">Système intégré 5-en-1 : isolation + structure + coffrage + finition + acoustique</div>
+          </div>
+          <div class="cmp-card-value-text">Tout-en-un</div>
+        </div>
         <div class="cmp-card">
           <div class="cmp-card-icon">🧱</div>
           <div class="cmp-card-body">
             <div class="cmp-card-name">Brique classique</div>
             <div class="cmp-card-sub">Brique + mortier + isolation + colles + treillis...</div>
           </div>
-          <div class="cmp-card-value">10<small>+</small></div>
+          <div class="cmp-card-value-text">Beaucoup</div>
         </div>
-        <div class="cmp-card cmp-card--win">
-          <div class="cmp-card-icon">⚡</div>
-          <div class="cmp-card-body">
-            <div class="cmp-card-name">Polistibrick</div>
-            <div class="cmp-card-sub">Coffrage EPS + acier + béton. C'est tout.</div>
-          </div>
-          <div class="cmp-card-value">3</div>
-        </div>
-        <div class="cmp-card cmp-card--bad">
+        <div class="cmp-card">
           <div class="cmp-card-icon">🧱</div>
           <div class="cmp-card-body">
             <div class="cmp-card-name">Brique passive</div>
-            <div class="cmp-card-sub">+11 couches ajoutées (EPS, membranes, traitements...)</div>
+            <div class="cmp-card-sub">Brique + isolation supplémentaire + membranes + traitements...</div>
           </div>
-          <div class="cmp-card-value">14<small>+</small></div>
+          <div class="cmp-card-value-text">Encore plus</div>
         </div>
       </div>
     </div>
@@ -241,25 +272,28 @@
     <div class="cmp-section-grid is-reversed">
       <div>
         <span class="cmp-crit-num">Critère 02 · 👷 Équipes</span>
-        <h2 class="cmp-crit-title">Combien d'équipes <em>sur le chantier ?</em></h2>
-        <p class="cmp-crit-desc">Chaque équipe différente = un planning supplémentaire à coordonner, une facture en plus, un risque de retard. Polistibrick — une seule équipe.</p>
+        <h2 class="cmp-crit-title">Une seule équipe <em>fait tout.</em></h2>
+        <p class="cmp-crit-desc">Avec Polistibrick, une équipe certifiée monte tout — murs, planchers, toit. Pas de coordination entre maçons, isolateurs, étancheurs, façadiers. Un seul interlocuteur, du début à la fin.</p>
         <div class="cmp-crit-takeaway">
-          <strong>1 seule équipe vs 5-6.</strong> Moins de coordination, moins d'attente, moins de surprises.
+          <strong>1 seul interlocuteur, 1 seul calendrier.</strong> Vous gérez 1 entreprise, pas 5.
         </div>
       </div>
 
       <div class="cmp-pictos">
-        <div class="cmp-picto-row">
-          <div class="cmp-picto-system">Brique classique · 4-5 équipes</div>
-          <div class="cmp-picto-icons">👷👷👷👷👷</div>
-        </div>
         <div class="cmp-picto-row cmp-picto-row--win">
-          <div class="cmp-picto-system">★ Polistibrick · 1 équipe (2-3 personnes)</div>
+          <div class="cmp-picto-system">Polistibrick · 1 équipe</div>
           <div class="cmp-picto-icons">👷</div>
+          <div class="cmp-picto-note">Équipe certifiée Polistibrick (2-3 personnes), du début à la fin.</div>
         </div>
         <div class="cmp-picto-row">
-          <div class="cmp-picto-system">Brique passive · 5-6 équipes</div>
+          <div class="cmp-picto-system">Brique classique · plusieurs équipes</div>
+          <div class="cmp-picto-icons">👷👷👷👷👷</div>
+          <div class="cmp-picto-note">Maçons, isolateurs, façadiers… à coordonner.</div>
+        </div>
+        <div class="cmp-picto-row">
+          <div class="cmp-picto-system">Brique passive · encore plus d'équipes</div>
           <div class="cmp-picto-icons">👷👷👷👷👷👷</div>
+          <div class="cmp-picto-note">Encore plus d'étapes spécialisées à coordonner.</div>
         </div>
       </div>
     </div>
@@ -272,58 +306,50 @@
     <div class="cmp-section-grid">
       <div>
         <span class="cmp-crit-num">Critère 03 · ⏱️ Temps d'exécution</span>
-        <h2 class="cmp-crit-title">Combien de mois <em>pour fermer le gros œuvre ?</em></h2>
-        <p class="cmp-crit-desc">Du début des murs jusqu'à la mise hors d'eau. Plus vite — moins de loyer pendant le chantier, moins d'intérêts sur le crédit construction.</p>
+        <h2 class="cmp-crit-title">Vous emménagez <em>en quelques semaines.</em></h2>
+        <p class="cmp-crit-desc">Les panneaux Polistibrick s'assemblent comme des LEGO. Pas de temps de séchage du mortier. Pas de couches d'isolation à coller une à une. La rapidité fait partie du système.</p>
         <div class="cmp-crit-takeaway">
-          <strong>4-7× plus rapide.</strong> Vous emménagez en quelques semaines, pas en plusieurs saisons.
+          <strong>Le gros œuvre fini en 1 mois,</strong> au lieu de plusieurs saisons. Moins de loyer pendant le chantier, moins d'intérêts sur le crédit.
         </div>
       </div>
 
-      <div class="cmp-timeline">
-        <div class="cmp-timeline-row">
-          <span class="label">Brique classique</span>
-          <div class="track"><div class="fill" style="width:65%;"></div></div>
-          <span class="value">4-5 mois</span>
+      <div class="cmp-pictos">
+        <div class="cmp-picto-row cmp-picto-row--win">
+          <div class="cmp-picto-system">Polistibrick · le plus rapide</div>
+          <div class="cmp-picto-icons" style="font-size:32px;">⚡</div>
+          <div class="cmp-picto-note"><strong>Quelques semaines</strong> pour fermer le gros œuvre.</div>
         </div>
-        <div class="cmp-timeline-row">
-          <span class="label">Polistibrick ★</span>
-          <div class="track"><div class="fill fill--win" style="width:15%;"></div></div>
-          <span class="value value--win">1 mois</span>
+        <div class="cmp-picto-row">
+          <div class="cmp-picto-system">Brique classique · plusieurs mois</div>
+          <div class="cmp-picto-icons">📅📅📅📅</div>
+          <div class="cmp-picto-note">Plusieurs mois sur le chantier.</div>
         </div>
-        <div class="cmp-timeline-row">
-          <span class="label">Brique passive</span>
-          <div class="track"><div class="fill fill--bad" style="width:100%;"></div></div>
-          <span class="value">6-7 mois</span>
+        <div class="cmp-picto-row">
+          <div class="cmp-picto-system">Brique passive · encore plus long</div>
+          <div class="cmp-picto-icons">📅📅📅📅📅📅</div>
+          <div class="cmp-picto-note">Les couches passives supplémentaires rallongent le chantier.</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ CRITÈRE 04 — ISOLATION ============ -->
+<!-- ============ CRITÈRE 04 — ISOLATION INTÉGRÉE ============ -->
 <section class="cmp-section">
   <div class="container">
     <div class="cmp-section-grid is-reversed">
       <div>
-        <span class="cmp-crit-num">Critère 04 · 🌡️ Isolation continue</span>
-        <h2 class="cmp-crit-title">Isolation <em>intégrée ou ajoutée après ?</em></h2>
-        <p class="cmp-crit-desc">L'isolation continue (sans ponts thermiques) est la clé du passif. Chez Polistibrick, elle est moulée dans le panneau. Chez la concurrence, elle est collée après.</p>
+        <span class="cmp-crit-num">Critère 04 · 🌡️ Isolation intégrée</span>
+        <h2 class="cmp-crit-title">Isolation <em>moulée dans le panneau.</em></h2>
+        <p class="cmp-crit-desc">Chez Polistibrick, l'isolation EPS premium est moulée dans le panneau dès l'usine. Pas une couche ajoutée, pas un produit séparé. Continuité parfaite, zéro pont thermique — à vie.</p>
         <div class="cmp-crit-takeaway">
-          <strong>Isolation moulée dans le panneau,</strong> pas une couche ajoutée. Zéro pont thermique, à vie.
+          <strong>L'isolation n'est pas un accessoire — elle EST la structure.</strong> Performance Passivhaus dès la conception.
         </div>
       </div>
 
       <div class="cmp-wall">
         <div class="cmp-wall-system">
-          <div class="cmp-wall-name"><strong>Brique classique</strong><span>10 cm isolation</span></div>
-          <div class="cmp-wall-section">
-            <div class="cmp-wall-layer layer-brique" style="flex: 25;">Brique</div>
-            <div class="cmp-wall-layer layer-isol-extra" style="flex: 10;">EPS</div>
-            <div class="cmp-wall-layer layer-enduit" style="flex: 3;">Enduit</div>
-          </div>
-        </div>
-        <div class="cmp-wall-system">
-          <div class="cmp-wall-name"><strong style="color:var(--red);">★ Polistibrick</strong><span>30 cm intégré</span></div>
+          <div class="cmp-wall-name"><strong style="color:var(--red);">👑 Polistibrick</strong><span>Isolation intégrée</span></div>
           <div class="cmp-wall-section cmp-wall-section--win">
             <div class="cmp-wall-layer layer-isol" style="flex: 25;">EPS premium</div>
             <div class="cmp-wall-layer layer-beton" style="flex: 15;">Béton armé</div>
@@ -331,10 +357,18 @@
           </div>
         </div>
         <div class="cmp-wall-system">
-          <div class="cmp-wall-name"><strong>Brique passive</strong><span>30+ cm collé</span></div>
+          <div class="cmp-wall-name"><strong>Brique classique</strong><span>Isolation collée après</span></div>
           <div class="cmp-wall-section">
             <div class="cmp-wall-layer layer-brique" style="flex: 25;">Brique</div>
-            <div class="cmp-wall-layer layer-isol-extra" style="flex: 30;">+EPS ajouté</div>
+            <div class="cmp-wall-layer layer-isol-extra" style="flex: 10;">+ EPS</div>
+            <div class="cmp-wall-layer layer-enduit" style="flex: 3;">Enduit</div>
+          </div>
+        </div>
+        <div class="cmp-wall-system">
+          <div class="cmp-wall-name"><strong>Brique passive</strong><span>Plus d'isolation collée</span></div>
+          <div class="cmp-wall-section">
+            <div class="cmp-wall-layer layer-brique" style="flex: 25;">Brique</div>
+            <div class="cmp-wall-layer layer-isol-extra" style="flex: 30;">+ EPS épais</div>
             <div class="cmp-wall-layer layer-enduit" style="flex: 3;">Enduit</div>
           </div>
         </div>
@@ -349,59 +383,68 @@
     <div class="cmp-section-grid">
       <div>
         <span class="cmp-crit-num">Critère 05 · ❄️ Ponts thermiques</span>
-        <h2 class="cmp-crit-title">Combien de <em>fuites de chaleur</em> dans les murs ?</h2>
-        <p class="cmp-crit-desc">Les ponts thermiques sont les zones où le froid pénètre : angles, jonctions, fenêtres. Ils tuent la performance d'une maison passive. Polistibrick — zéro, grâce à l'isolation continue.</p>
+        <h2 class="cmp-crit-title"><em>Zéro</em> pont thermique.</h2>
+        <p class="cmp-crit-desc">Les ponts thermiques (angles, jonctions, fenêtres) sont les fuites de chaleur silencieuses qui tuent la performance d'une maison passive. L'EPS continu de Polistibrick les élimine — à la conception, pas après-coup.</p>
         <div class="cmp-crit-takeaway">
-          <strong>Zéro pont thermique.</strong> Test Blower Door (n50 &lt; 0,6) passé sans membranes supplémentaires.
+          <strong>Étanche par nature.</strong> Test Blower Door passé sans membranes supplémentaires.
         </div>
       </div>
 
       <div class="cmp-pictos">
-        <div class="cmp-picto-row">
-          <div class="cmp-picto-system">Brique classique</div>
-          <div class="cmp-picto-icons">❄️❄️❄️❄️❄️❄️</div>
-          <div style="margin-top:8px;font-size:13px;color:var(--gray);">Joints, angles, linteaux, dalles — partout.</div>
-        </div>
         <div class="cmp-picto-row cmp-picto-row--win">
-          <div class="cmp-picto-system">★ Polistibrick · 0 pont thermique</div>
-          <div class="cmp-picto-icons">✓</div>
-          <div style="margin-top:8px;font-size:13px;color:var(--gray);">EPS continu autour de toute la structure.</div>
+          <div class="cmp-picto-system">Polistibrick · zéro pont thermique</div>
+          <div class="cmp-picto-icons" style="font-size:32px;">✓</div>
+          <div class="cmp-picto-note">EPS continu autour de toute la structure. Aucune fuite de chaleur.</div>
         </div>
         <div class="cmp-picto-row">
-          <div class="cmp-picto-system">Brique passive</div>
+          <div class="cmp-picto-system">Brique classique · partout</div>
+          <div class="cmp-picto-icons">❄️❄️❄️❄️❄️❄️</div>
+          <div class="cmp-picto-note">Joints, angles, linteaux, dalles — partout.</div>
+        </div>
+        <div class="cmp-picto-row">
+          <div class="cmp-picto-system">Brique passive · réduits, mais présents</div>
           <div class="cmp-picto-icons">❄️❄️</div>
-          <div style="margin-top:8px;font-size:13px;color:var(--gray);">Réduits par traitement, mais présents aux jonctions.</div>
+          <div class="cmp-picto-note">Traitements supplémentaires, mais des points faibles subsistent.</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ CRITÈRE 06 — FEU ============ -->
+<!-- ============ CRITÈRE 06 — SÉCURITÉ FEU ============ -->
 <section class="cmp-section">
   <div class="container">
     <div class="cmp-section-grid is-reversed">
       <div>
         <span class="cmp-crit-num">Critère 06 · 🔥 Résistance au feu</span>
-        <h2 class="cmp-crit-title">Combien de temps les murs <em>tiennent face au feu ?</em></h2>
-        <p class="cmp-crit-desc">REI 240 = la structure résiste 240 minutes (4 heures) à un incendie. Pour les pompiers, les assurances et votre tranquillité. Toutes les solutions sont en classe A1 (non-combustible).</p>
+        <h2 class="cmp-crit-title">Classe A1 — <em>non-combustible.</em></h2>
+        <p class="cmp-crit-desc">Les trois systèmes sont en classe A1 (incombustible — la classe la plus élevée en Europe). La différence est dans la structure : le béton armé de Polistibrick, protégé par l'EPS, offre la meilleure intégrité structurelle face au feu.</p>
         <div class="cmp-crit-takeaway">
-          <strong>REI 240 — la classe la plus élevée</strong> grâce au béton armé 15 cm protégé par l'EPS.
+          <strong>A1 + béton armé continu</strong> — la sécurité d'une structure monolithique, certifiée pour les pompiers et les assureurs.
         </div>
       </div>
 
       <div class="cmp-energy">
-        <div class="cmp-energy-row">
-          <span class="cmp-energy-label">Brique classique</span>
-          <div><span class="cmp-energy-badge badge-c" style="background:linear-gradient(135deg,#888 0%,#666 100%);">REI 120</span></div>
-        </div>
         <div class="cmp-energy-row cmp-energy-row--win">
-          <span class="cmp-energy-label">★ Polistibrick</span>
-          <div><span class="cmp-energy-badge" style="background:linear-gradient(135deg,#c8102e 0%,#a3001f 100%);">REI 240</span></div>
+          <div class="cmp-energy-info">
+            <div class="cmp-energy-label">Polistibrick</div>
+            <div class="cmp-energy-sub">A1 · Structure monolithique en béton armé</div>
+          </div>
+          <span class="cmp-energy-badge" style="background:linear-gradient(135deg,#c8102e 0%,#a3001f 100%);">A1</span>
         </div>
         <div class="cmp-energy-row">
-          <span class="cmp-energy-label">Brique passive</span>
-          <div><span class="cmp-energy-badge badge-c" style="background:linear-gradient(135deg,#888 0%,#666 100%);">REI 120</span></div>
+          <div class="cmp-energy-info">
+            <div class="cmp-energy-label">Brique classique</div>
+            <div class="cmp-energy-sub">A1 · Maçonnerie traditionnelle</div>
+          </div>
+          <span class="cmp-energy-badge badge-neutral">A1</span>
+        </div>
+        <div class="cmp-energy-row">
+          <div class="cmp-energy-info">
+            <div class="cmp-energy-label">Brique passive</div>
+            <div class="cmp-energy-sub">A1 · Maçonnerie + couches isolantes</div>
+          </div>
+          <span class="cmp-energy-badge badge-neutral">A1</span>
         </div>
       </div>
     </div>
@@ -414,88 +457,92 @@
     <div class="cmp-section-grid">
       <div>
         <span class="cmp-crit-num">Critère 07 · 🔋 Classe énergétique</span>
-        <h2 class="cmp-crit-title">Quelle <em>classe énergétique</em> est atteinte par défaut ?</h2>
-        <p class="cmp-crit-desc">La brique classique commence en E/F — il faut tout transformer pour atteindre le passif. Polistibrick livre A+++ dès la conception. Pas d'ajouts, pas d'options.</p>
+        <h2 class="cmp-crit-title">A+++ <em>par défaut.</em></h2>
+        <p class="cmp-crit-desc">Polistibrick livre la classe énergétique la plus haute (A+++) dès la conception — sans options, sans ajouts. La brique classique reste à E/F (le standard conventionnel). La brique passive atteint A+++ uniquement après transformation lourde.</p>
         <div class="cmp-crit-takeaway">
-          <strong>A+++ par défaut</strong> — pas en option, pas avec des ajouts. C'est ce qui sort du moule.
+          <strong>A+++ inclus — pas en option.</strong> C'est la performance qui sort de l'usine.
         </div>
       </div>
 
       <div class="cmp-energy">
-        <div class="cmp-energy-row">
-          <span class="cmp-energy-label">Brique classique</span>
-          <div><span class="cmp-energy-badge badge-e">E / F</span></div>
-        </div>
         <div class="cmp-energy-row cmp-energy-row--win">
-          <span class="cmp-energy-label">★ Polistibrick</span>
-          <div><span class="cmp-energy-badge badge-aplus">A+++</span></div>
+          <div class="cmp-energy-info">
+            <div class="cmp-energy-label">Polistibrick</div>
+            <div class="cmp-energy-sub">A+++ par défaut, sans ajouts</div>
+          </div>
+          <span class="cmp-energy-badge badge-aplus">A+++</span>
         </div>
         <div class="cmp-energy-row">
-          <span class="cmp-energy-label">Brique passive</span>
-          <div><span class="cmp-energy-badge badge-aplus">A+++</span></div>
+          <div class="cmp-energy-info">
+            <div class="cmp-energy-label">Brique classique</div>
+            <div class="cmp-energy-sub">Standard conventionnel, énergivore</div>
+          </div>
+          <span class="cmp-energy-badge badge-e">E / F</span>
+        </div>
+        <div class="cmp-energy-row">
+          <div class="cmp-energy-info">
+            <div class="cmp-energy-label">Brique passive</div>
+            <div class="cmp-energy-sub">A+++ atteint par couches ajoutées</div>
+          </div>
+          <span class="cmp-energy-badge badge-aplus">A+++</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ CRITÈRE 08 — COÛT INITIAL ============ -->
+<!-- ============ CRITÈRE 08 — PRIX ACCESSIBLE ============ -->
 <section class="cmp-section">
   <div class="container">
     <div class="cmp-section-grid is-reversed">
       <div>
-        <span class="cmp-crit-num">Critère 08 · 💶 Coût initial / m²</span>
-        <h2 class="cmp-crit-title">Combien coûte le <em>gros œuvre fini ?</em></h2>
-        <p class="cmp-crit-desc">Prix moyen d'un mur fini, prêt à enduire, pour 100 m² habitables (matériaux + main-d'œuvre, hors finitions). Polistibrick : à peine 5 % de plus que la brique classique. Et 30 % de moins que la brique passive traditionnelle.</p>
+        <span class="cmp-crit-num">Critère 08 · 💶 Prix accessible</span>
+        <h2 class="cmp-crit-title">Le passif au prix <em>du conventionnel.</em></h2>
+        <p class="cmp-crit-desc">Polistibrick coûte à peine plus cher que la brique classique — pour une performance A+++ premium. La brique passive traditionnelle, elle, est sensiblement plus chère parce qu'elle empile des couches sur la brique de base.</p>
         <div class="cmp-crit-takeaway">
-          <strong>+5 % vs brique classique. −30 % vs brique passive.</strong> Le passif au prix du conventionnel.
+          <strong>Polistibrick rend le premium accessible.</strong> Vous payez quasiment le prix du conventionnel pour une maison passive.
         </div>
       </div>
 
-      <div class="cmp-cost-bars">
-        <div class="cmp-cost-bar">
-          <div class="cmp-cost-bar-bar" style="height: 60%;">
-            <span class="cmp-cost-bar-value">~1 000 €</span>
-          </div>
-          <span class="cmp-cost-bar-label">Brique<br>classique</span>
+      <div class="cmp-cost-simple">
+        <div class="cmp-cost-row cmp-cost-row--win">
+          <div class="cmp-cost-label">Polistibrick</div>
+          <div class="cmp-cost-track"><div class="cmp-cost-fill cmp-cost-fill--win" style="width: 52%;"></div></div>
+          <div class="cmp-cost-note"><strong>Quasi-égal au conventionnel</strong> — pour une maison passive A+++.</div>
         </div>
-        <div class="cmp-cost-bar">
-          <div class="cmp-cost-bar-bar cmp-cost-bar-bar--win" style="height: 63%;">
-            <span class="cmp-cost-bar-value">~1 050 €</span>
-          </div>
-          <span class="cmp-cost-bar-label">★ Polistibrick</span>
+        <div class="cmp-cost-row">
+          <div class="cmp-cost-label">Brique classique</div>
+          <div class="cmp-cost-track"><div class="cmp-cost-fill" style="width: 50%;"></div></div>
+          <div class="cmp-cost-note">Le standard du marché — sans la performance passive.</div>
         </div>
-        <div class="cmp-cost-bar">
-          <div class="cmp-cost-bar-bar cmp-cost-bar-bar--bad" style="height: 78%;">
-            <span class="cmp-cost-bar-value">~1 300 €</span>
-          </div>
-          <span class="cmp-cost-bar-label">Brique<br>passive</span>
+        <div class="cmp-cost-row">
+          <div class="cmp-cost-label">Brique passive</div>
+          <div class="cmp-cost-track"><div class="cmp-cost-fill cmp-cost-fill--bad" style="width: 75%;"></div></div>
+          <div class="cmp-cost-note">Sensiblement plus chère — les couches passives s'ajoutent au prix de base.</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ CRITÈRE 09 — COÛT TOTAL 25 ANS ============ -->
+<!-- ============ CRITÈRE 09 — ÉCONOMIES À VIE ============ -->
 <section class="cmp-section">
   <div class="container">
     <div class="cmp-section-grid">
       <div>
-        <span class="cmp-crit-num">Critère 09 · 📉 Coût total 25 ans</span>
-        <h2 class="cmp-crit-title">Combien vous coûte <em>réellement la maison sur 25 ans ?</em></h2>
-        <p class="cmp-crit-desc">Construction + énergie cumulée (chauffage + climatisation) + entretien sur 25 ans. La brique classique coûte +30 % de plus à terme à cause des factures d'énergie. Polistibrick — économies massives dès la 1<sup>re</sup> année.</p>
+        <span class="cmp-crit-num">Critère 09 · 📉 Économies à vie</span>
+        <h2 class="cmp-crit-title">Vous économisez <em>chaque mois.</em></h2>
+        <p class="cmp-crit-desc">La performance Passivhaus de Polistibrick fait fondre vos factures d'énergie dès la première année. Sur 25 ans, l'économie compense — et dépasse — le léger surcoût initial. C'est la vraie économie : pas à la construction, mais sur toute la vie de la maison.</p>
         <div class="cmp-crit-takeaway">
-          <strong>43 500 € économisés vs brique classique</strong> sur 25 ans, pour une maison de 150 m².
+          <strong>Investissement à vie.</strong> Chaque hiver et chaque été qui passent vous rendent votre investissement.
         </div>
       </div>
 
       <div class="cmp-savings">
-        <span class="cmp-savings-eyebrow">Économies totales avec Polistibrick</span>
+        <span class="cmp-savings-eyebrow">👑 Économies Polistibrick</span>
         <div class="cmp-savings-big">43 500<small> €</small></div>
-        <div class="cmp-savings-vs">sur <strong>25 ans</strong>, maison <strong>150 m²</strong></div>
-        <div style="margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.12);font-size:13px;color:rgba(247,244,237,0.6);">
-          ~178 500 € (Polistibrick) vs ~222 000 € (brique classique)
-        </div>
+        <div class="cmp-savings-vs">économisés sur <strong>25 ans</strong>,<br>pour une maison de <strong>150 m²</strong>.</div>
+        <div class="cmp-savings-foot">vs construction en brique classique<br>(énergie + entretien cumulés)</div>
       </div>
     </div>
   </div>
@@ -504,9 +551,9 @@
 <!-- ============ FINAL PUNCHLINE + CTA ============ -->
 <section class="cmp-final">
   <div class="container">
-    <span class="eyebrow">Conclusion</span>
-    <h2>Le même passif A+++. <em>Sans les compromis.</em></h2>
-    <p>Polistibrick obtient la même maison passive A+++ que la brique passive traditionnelle — avec <strong>3 matériaux au lieu de 14+</strong>, <strong>1 équipe au lieu de 6</strong>, <strong>1 mois au lieu de 7</strong>, et <strong>30 % moins cher</strong>. Pas par hasard — par conception.</p>
+    <span class="eyebrow">👑 Le verdict</span>
+    <h2>Polistibrick — <em>le premium intégré</em>, sans compromis.</h2>
+    <p>La même maison passive A+++ que la brique passive traditionnelle — mais avec un système intégré dès la conception, livré par une équipe unique, en quelques semaines, au prix du conventionnel. C'est la définition du premium : tout pensé, rien laissé au hasard.</p>
     <div class="cmp-final-cta">
       <a href="../devis/" class="btn btn-on-dark btn-large btn-arrow">Demander un devis</a>
       <a href="../calculateur/" class="btn btn-on-dark-ghost btn-large">Calculer le coût</a>
