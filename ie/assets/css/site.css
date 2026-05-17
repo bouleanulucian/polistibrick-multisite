@@ -989,3 +989,100 @@ p { line-height: 1.65; color: var(--gray); }
   .nav-toggle { display: inline-flex; }
   .nav-cta .btn-ghost { display: none; }
 }
+
+/* ============================================================
+   COUNTRY SWITCHER — shared (appears in nav across all pages)
+   ============================================================ */
+.country-switcher {
+  position: relative;
+  display: inline-block;
+  margin-right: 8px;
+}
+.country-switcher-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.10);
+  color: var(--ink);
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .15s ease, border-color .15s ease;
+  font-family: inherit;
+}
+.country-switcher-trigger:hover {
+  background: rgba(0,0,0,0.08);
+  border-color: rgba(0,0,0,0.16);
+}
+.country-switcher-trigger[aria-expanded="true"] {
+  background: rgba(0,0,0,0.08);
+  border-color: rgba(200,16,46,0.4);
+}
+.country-switcher-flag { font-size: 16px; line-height: 1; }
+.country-switcher-code { letter-spacing: 0.04em; }
+.country-switcher-caret {
+  transition: transform .2s ease;
+  opacity: 0.7;
+}
+.country-switcher-trigger[aria-expanded="true"] .country-switcher-caret {
+  transform: rotate(180deg);
+}
+.country-switcher-panel {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  min-width: 280px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 8px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.18), 0 0 0 1px rgba(0,0,0,0.03);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px) scale(0.97);
+  transition: opacity .18s ease, transform .18s ease, visibility .18s;
+  z-index: 1000;
+}
+.country-switcher-panel.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+.country-switcher-header {
+  color: var(--gray);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  padding: 8px 12px 6px;
+}
+.country-switcher-item {
+  display: grid;
+  grid-template-columns: 24px 1fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 14px;
+  transition: background .15s ease;
+}
+.country-switcher-item:hover {
+  background: rgba(0,0,0,0.04);
+}
+.country-switcher-item.active {
+  background: rgba(200,16,46,0.08);
+  color: var(--red);
+}
+.country-switcher-item.active .domain { color: rgba(200,16,46,0.85); }
+.country-switcher-item .flag { font-size: 20px; line-height: 1; }
+.country-switcher-item .name { font-weight: 600; }
+.country-switcher-item .domain {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 11px;
+  color: var(--gray);
+}

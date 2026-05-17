@@ -92,6 +92,24 @@
         </div>
       </nav>
       <div class="nav-cta">
+        <div class="country-switcher" data-country-switcher>
+          <button class="country-switcher-trigger" type="button" aria-label="Choisissez votre pays" aria-expanded="false">
+            <span class="country-switcher-flag">🇫🇷</span>
+            <span class="country-switcher-code">FR</span>
+            <svg class="country-switcher-caret" viewBox="0 0 12 12" width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,5 6,8 9,5"/></svg>
+          </button>
+          <div class="country-switcher-panel" role="menu" aria-hidden="true">
+            <div class="country-switcher-header">🌍 Choisissez votre pays</div>
+            <a href="https://polistibrick.ro" data-country="ro" class="country-switcher-item"><span class="flag">🇷🇴</span><span class="name">România</span><span class="domain">polistibrick.ro</span></a>
+            <a href="https://polistibrick.fr" data-country="fr" class="country-switcher-item"><span class="flag">🇫🇷</span><span class="name">France</span><span class="domain">polistibrick.fr</span></a>
+            <a href="https://polistibrick.it" data-country="it" class="country-switcher-item"><span class="flag">🇮🇹</span><span class="name">Italia</span><span class="domain">polistibrick.it</span></a>
+            <a href="https://polistibrick.es" data-country="es" class="country-switcher-item"><span class="flag">🇪🇸</span><span class="name">España</span><span class="domain">polistibrick.es</span></a>
+            <a href="https://polistibrick.be" data-country="be" class="country-switcher-item"><span class="flag">🇧🇪</span><span class="name">België</span><span class="domain">polistibrick.be</span></a>
+            <a href="https://polistibrick.ie" data-country="ie" class="country-switcher-item"><span class="flag">🇮🇪</span><span class="name">Ireland</span><span class="domain">polistibrick.ie</span></a>
+            <a href="https://polistibrick.uk" data-country="uk" class="country-switcher-item"><span class="flag">🇬🇧</span><span class="name">United Kingdom</span><span class="domain">polistibrick.uk</span></a>
+            <a href="https://polistibrick.com" data-country="ch" class="country-switcher-item"><span class="flag">🇨🇭</span><span class="name">Schweiz</span><span class="domain">polistibrick.com</span></a>
+          </div>
+        </div>
         <a href="${BASE}contact/" class="btn btn-ghost">Contact</a>
         <a href="${BASE}devis/" class="btn btn-primary btn-arrow">Demander un devis</a>
       </div>
@@ -183,6 +201,46 @@
     const update = () => nav.classList.toggle('is-scrolled', window.scrollY > 6);
     update();
     window.addEventListener('scroll', update, { passive: true });
+  }
+
+  // Country switcher (in shared nav) — toggle + mark active
+  function countrySwitcherShared() {
+    document.querySelectorAll('[data-country-switcher]').forEach(switcher => {
+      const trigger = switcher.querySelector('.country-switcher-trigger');
+      const panel = switcher.querySelector('.country-switcher-panel');
+      if (!trigger || !panel) return;
+
+      // Mark active based on current URL path (e.g. /fr/, /ro/, etc.)
+      const path = window.location.pathname;
+      // Try to detect country code from URL: /polistibrick-multisite/fr/... or /fr/...
+      const m = path.match(/\/(ro|fr|it|es|nl|de|en|ie)(\/|$)/i);
+      const currentFolder = m ? m[1].toLowerCase() : null;
+      // Folder → country picker key map
+      const folderToKey = { ro: 'ro', fr: 'fr', it: 'it', es: 'es', nl: 'be', de: 'ch', en: 'uk', ie: 'ie' };
+      const currentKey = folderToKey[currentFolder];
+      if (currentKey) {
+        panel.querySelectorAll('.country-switcher-item').forEach(item => {
+          if (item.dataset.country === currentKey) item.classList.add('active');
+        });
+      }
+
+      function setOpen(open) {
+        trigger.setAttribute('aria-expanded', String(open));
+        panel.setAttribute('aria-hidden', String(!open));
+        panel.classList.toggle('open', open);
+      }
+      trigger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+        setOpen(!isOpen);
+      });
+      document.addEventListener('click', (e) => {
+        if (!switcher.contains(e.target)) setOpen(false);
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') setOpen(false);
+      });
+    });
   }
 
   // Reveal-on-scroll
@@ -409,6 +467,7 @@
   document.addEventListener('DOMContentLoaded', async () => {
     inject();
     navShadow();
+    countrySwitcherShared();
     reveal();
     gallery();
     wireCountryPickerButtons();
