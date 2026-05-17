@@ -991,7 +991,8 @@ p { line-height: 1.65; color: var(--gray); }
 }
 
 /* ============================================================
-  /* === NAVIGATION === */
+   NAVIGATION (from homepage, used by all pages via site.js)
+   ============================================================ */
   nav {
     position: fixed;
     top: 0;
