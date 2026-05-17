@@ -89,6 +89,17 @@
     .download-arrow { color: var(--red); font-size: 16px; flex-shrink: 0; }
     @media (max-width: 768px) { .download-list { grid-template-columns: 1fr; } .download-group { padding: 22px; } }
 
+    /* Product columns inside Fiches techniques group (MBK / PBK / TBK) */
+    .product-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .product-col { background: var(--cream-light); border-radius: 14px; padding: 18px 16px; display: flex; flex-direction: column; gap: 8px; }
+    .product-col-head { display: flex; align-items: baseline; gap: 8px; padding: 4px 8px 12px; border-bottom: 1px solid var(--border); margin-bottom: 6px; }
+    .product-col-name { font-family: var(--serif); font-size: 17px; font-weight: 600; color: var(--ink); letter-spacing: 0.02em; }
+    .product-col-desc { font-size: 11px; color: var(--gray); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; }
+    .product-col .download-item { background: white; padding: 11px 14px; }
+    .product-col .download-item:hover { background: var(--cream-dark); }
+    .product-col-extra { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border); }
+    @media (max-width: 768px) { .product-cols { grid-template-columns: 1fr; } }
+
     /* 6. Design teaser */
     .design-section { background: white; padding: 80px 0; }
     .design-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; max-width: 1100px; margin: 40px auto 0; }
@@ -266,13 +277,36 @@
           <div class="download-group-icon">📄</div>
           <h3>Fiches techniques produits</h3>
         </div>
-        <div class="download-list">
-          <button class="download-item" onclick="requestDoc('Fiche technique MBK 210')"><span class="download-icon">📄</span><span class="download-info"><span class="download-label">Fiche technique MBK 210</span><span class="download-meta">Disponible sur demande</span></span><span class="download-arrow">→</span></button>
-          <button class="download-item" onclick="requestDoc('Fiche technique MBK 270')"><span class="download-icon">📄</span><span class="download-info"><span class="download-label">Fiche technique MBK 270</span><span class="download-meta">Disponible sur demande</span></span><span class="download-arrow">→</span></button>
-          <button class="download-item" onclick="requestDoc('Fiche technique MBK 300')"><span class="download-icon">📄</span><span class="download-info"><span class="download-label">Fiche technique MBK 300</span><span class="download-meta">Disponible sur demande</span></span><span class="download-arrow">→</span></button>
-          <button class="download-item" onclick="requestDoc('Fiche technique PBK')"><span class="download-icon">📄</span><span class="download-info"><span class="download-label">Fiche technique PBK (planchers)</span><span class="download-meta">Disponible sur demande</span></span><span class="download-arrow">→</span></button>
-          <button class="download-item" onclick="requestDoc('Fiche technique TBK')"><span class="download-icon">📄</span><span class="download-info"><span class="download-label">Fiche technique TBK (toit)</span><span class="download-meta">Disponible sur demande</span></span><span class="download-arrow">→</span></button>
-          <button class="download-item" onclick="requestDoc('Catalogue accessoires')"><span class="download-icon">📄</span><span class="download-info"><span class="download-label">Catalogue accessoires</span><span class="download-meta">Disponible sur demande</span></span><span class="download-arrow">→</span></button>
+        <div class="product-cols">
+          <!-- COL 1 — MBK (Murs) -->
+          <div class="product-col">
+            <div class="product-col-head">
+              <span class="product-col-name">MBK</span>
+              <span class="product-col-desc">Murs</span>
+            </div>
+            <button class="download-item" onclick="requestDoc('Fiche technique MBK 210')"><span class="download-icon">📄</span><span class="download-info"><span class="download-label">MBK 210</span><span class="download-meta">RE2020 Prime · U = 0,14</span></span><span class="download-arrow">→</span></button>
+            <button class="download-item" onclick="requestDoc('Fiche technique MBK 270')"><span class="download-icon">📄</span><span class="download-info"><span class="download-label">MBK 270</span><span class="download-meta">Passif · U = 0,12</span></span><span class="download-arrow">→</span></button>
+            <button class="download-item" onclick="requestDoc('Fiche technique MBK 300')"><span class="download-icon">📄</span><span class="download-info"><span class="download-label">MBK 300</span><span class="download-meta">Passif+ · U = 0,10</span></span><span class="download-arrow">→</span></button>
+          </div>
+          <!-- COL 2 — PBK (Planchers) -->
+          <div class="product-col">
+            <div class="product-col-head">
+              <span class="product-col-name">PBK</span>
+              <span class="product-col-desc">Planchers</span>
+            </div>
+            <button class="download-item" onclick="requestDoc('Fiche technique PBK')"><span class="download-icon">📄</span><span class="download-info"><span class="download-label">Fiche technique PBK</span><span class="download-meta">Planchers isolants</span></span><span class="download-arrow">→</span></button>
+          </div>
+          <!-- COL 3 — TBK (Toit) -->
+          <div class="product-col">
+            <div class="product-col-head">
+              <span class="product-col-name">TBK</span>
+              <span class="product-col-desc">Toit</span>
+            </div>
+            <button class="download-item" onclick="requestDoc('Fiche technique TBK')"><span class="download-icon">📄</span><span class="download-info"><span class="download-label">Fiche technique TBK</span><span class="download-meta">Toiture isolante</span></span><span class="download-arrow">→</span></button>
+          </div>
+        </div>
+        <div class="product-col-extra">
+          <button class="download-item" onclick="requestDoc('Catalogue accessoires')" style="background:var(--cream);"><span class="download-icon">🔩</span><span class="download-info"><span class="download-label">Catalogue accessoires</span><span class="download-meta">Connecteurs, finitions, fixations</span></span><span class="download-arrow">→</span></button>
         </div>
       </div>
 
