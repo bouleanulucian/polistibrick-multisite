@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Comparaison · Polistibrick — le seul ICF avec plan d'armature, antisismique, intégré 5-en-1</title>
-  <meta name="description" content="Polistibrick vs autres ICF vs brique classique vs brique passive. Le seul système ICF qui respecte un plan d'armature, conçu pour zones sismiques, avec isolation intégrée 5-en-1.">
+  <meta name="description" content="Polistibrick vs autre système ICF vs système classique vs système classique transformé en passif. Le seul ICF intégré 5-en-1, antisismique, avec plan d'armature.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -13,6 +13,68 @@
     /* ============================================================
        COMPARISON V4 — Polistibrick vs Alt ICF vs Brique vs Brique passive
        ============================================================ */
+
+    /* SHOWCASE — 4 systems with SVG illustrations */
+    .cmp-showcase { padding: clamp(60px, 8vw, 90px) 0; background: var(--cream-light); border-top: 1px solid var(--border); }
+    .cmp-showcase .container { max-width: 1400px; }
+    .cmp-showcase-intro { text-align: center; max-width: 720px; margin: 0 auto 50px; }
+    .cmp-showcase-intro .eyebrow { display: inline-block; background: var(--red-soft); color: var(--red); padding: 6px 14px; border-radius: 100px; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 18px; }
+    .cmp-showcase-intro h2 { font-family: var(--serif); font-size: clamp(28px, 3.6vw, 42px); font-weight: 500; color: var(--ink); letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 14px; }
+    .cmp-showcase-intro h2 em { font-style: italic; color: var(--red); font-weight: 400; }
+    .cmp-showcase-intro p { font-size: 16px; color: var(--gray); line-height: 1.6; }
+    .cmp-showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: clamp(14px, 1.8vw, 24px);
+    }
+    @media (max-width: 1100px) { .cmp-showcase-grid { grid-template-columns: repeat(2, 1fr); } }
+    .cmp-sys-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px 20px 24px;
+      position: relative;
+      transition: transform 0.25s ease;
+    }
+    .cmp-sys-card:hover { transform: translateY(-4px); }
+    .cmp-sys-card--win {
+      border: 2px solid var(--red);
+      background: linear-gradient(180deg, white 0%, rgba(200,16,46,0.04) 100%);
+      box-shadow: 0 20px 48px rgba(200,16,46,0.10);
+    }
+    .cmp-sys-card--win::after {
+      content: 'PREMIUM';
+      position: absolute; top: -10px; right: 18px;
+      background: var(--red); color: white;
+      font-size: 9.5px; font-weight: 700; letter-spacing: 0.12em;
+      padding: 4px 12px; border-radius: 100px;
+    }
+    .cmp-sys-visual {
+      width: 100%; height: 130px; border-radius: 12px;
+      background: var(--cream); display: flex; align-items: center; justify-content: center;
+      margin-bottom: 16px; overflow: hidden;
+    }
+    .cmp-sys-visual svg { width: 100%; height: 100%; max-width: 220px; }
+    .cmp-sys-name {
+      font-family: var(--serif); font-size: clamp(17px, 1.8vw, 21px); font-weight: 500;
+      color: var(--ink); line-height: 1.2; margin-bottom: 6px;
+    }
+    .cmp-sys-card--win .cmp-sys-name { color: var(--red); }
+    .cmp-sys-card--win .cmp-sys-name::before { content: '👑 '; }
+    .cmp-sys-tag {
+      display: inline-block; background: rgba(0,0,0,0.04); color: var(--gray);
+      font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 4px 10px; border-radius: 100px; margin-bottom: 12px;
+    }
+    .cmp-sys-card--win .cmp-sys-tag { background: var(--red); color: white; }
+    .cmp-sys-desc { font-size: 13px; color: var(--gray); line-height: 1.5; }
+    .cmp-sys-desc strong { color: var(--ink); }
+    .cmp-sys-key {
+      margin-top: 14px; padding-top: 12px; border-top: 1px dashed var(--border);
+      font-size: 12px; font-weight: 600; color: var(--ink-soft); line-height: 1.4;
+    }
+    .cmp-sys-card--win .cmp-sys-key { color: var(--red); }
+    .cmp-sys-key::before { content: '★ '; }
 
     /* HERO */
     .cmp-hero { padding: clamp(80px, 12vw, 140px) 0 clamp(60px, 8vw, 100px); background: var(--cream); text-align: center; }
@@ -171,7 +233,7 @@
   <div class="container">
     <span class="eyebrow">★ Le choix premium</span>
     <h1>Polistibrick — <em>le seul ICF</em> avec plan d'armature, antisismique, intégré 5-en-1.</h1>
-    <p class="lead">Tous les systèmes ICF ne se valent pas. Polistibrick est le seul à respecter un plan d'armature classique, à être certifié pour zones sismiques, et à intégrer 5 fonctions dans un seul panneau. Comparé aux autres ICF, à la brique classique et à la brique passive.</p>
+    <p class="lead">Tous les systèmes ICF ne se valent pas. Polistibrick est le seul à respecter un plan d'armature classique, à être certifié pour zones sismiques, et à intégrer 5 fonctions dans un seul panneau. Comparé aux autres ICF, à le système classique et au système classique transformé en passif.</p>
 
     <div class="cmp-hero-quad">
       <div class="cmp-hero-system cmp-hero-system--win">
@@ -180,17 +242,148 @@
         <div class="cmp-hero-system-tag">★ Premium 5-en-1</div>
       </div>
       <div class="cmp-hero-system">
-        <div class="cmp-hero-system-name">Autre ICF</div>
+        <div class="cmp-hero-system-name">Autre système ICF</div>
         <div class="cmp-hero-system-tag">ICF basique</div>
       </div>
       <div class="cmp-hero-system">
-        <div class="cmp-hero-system-name">Brique classique</div>
+        <div class="cmp-hero-system-name">Système classique</div>
         <div class="cmp-hero-system-tag">Conventionnel</div>
       </div>
       <div class="cmp-hero-system">
-        <div class="cmp-hero-system-name">Brique passive</div>
+        <div class="cmp-hero-system-name">Système classique → passif</div>
         <div class="cmp-hero-system-tag">Passive par ajouts</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SHOWCASE — VOICI LES 4 SYSTÈMES ============ -->
+<section class="cmp-showcase">
+  <div class="container">
+    <div class="cmp-showcase-intro">
+      <span class="eyebrow">Avant la comparaison</span>
+      <h2>Les 4 systèmes <em>en un coup d'œil.</em></h2>
+      <p>Avant de comparer les critères, voyez à quoi ressemble concrètement chaque mur. La différence saute aux yeux.</p>
+    </div>
+
+    <div class="cmp-showcase-grid">
+
+      <!-- POLISTIBRICK -->
+      <div class="cmp-sys-card cmp-sys-card--win">
+        <div class="cmp-sys-visual">
+          <svg viewBox="0 0 220 130" xmlns="http://www.w3.org/2000/svg">
+            <!-- Outer EPS (red, premium) -->
+            <rect x="20" y="15" width="55" height="100" fill="#c8102e" rx="2"/>
+            <text x="47.5" y="68" text-anchor="middle" font-size="9" font-weight="700" fill="white">EPS</text>
+            <text x="47.5" y="79" text-anchor="middle" font-size="7" fill="white" opacity="0.85">premium</text>
+            <!-- Concrete core with rebar -->
+            <rect x="75" y="15" width="60" height="100" fill="#4a4a4f" rx="2"/>
+            <!-- Rebars (gold dots arranged) -->
+            <circle cx="88" cy="32" r="3.5" fill="#d4a017" stroke="#a47e10" stroke-width="0.5"/>
+            <circle cx="88" cy="65" r="3.5" fill="#d4a017" stroke="#a47e10" stroke-width="0.5"/>
+            <circle cx="88" cy="98" r="3.5" fill="#d4a017" stroke="#a47e10" stroke-width="0.5"/>
+            <circle cx="122" cy="32" r="3.5" fill="#d4a017" stroke="#a47e10" stroke-width="0.5"/>
+            <circle cx="122" cy="65" r="3.5" fill="#d4a017" stroke="#a47e10" stroke-width="0.5"/>
+            <circle cx="122" cy="98" r="3.5" fill="#d4a017" stroke="#a47e10" stroke-width="0.5"/>
+            <text x="105" y="119" text-anchor="middle" font-size="7" fill="white" opacity="0.7">béton + acier</text>
+            <!-- Inner EPS -->
+            <rect x="135" y="15" width="30" height="100" fill="#c8102e" rx="2"/>
+            <text x="150" y="68" text-anchor="middle" font-size="8" font-weight="700" fill="white">EPS</text>
+            <!-- Label arrow -->
+            <text x="110" y="10" text-anchor="middle" font-size="8" font-weight="700" fill="#c8102e">PANNEAU 5-EN-1 INTÉGRÉ</text>
+          </svg>
+        </div>
+        <div class="cmp-sys-name">Polistibrick</div>
+        <span class="cmp-sys-tag">★ Premium 5-en-1</span>
+        <p class="cmp-sys-desc"><strong>Un seul panneau préfabriqué</strong> qui intègre isolation + structure + plan d'armature + coffrage + finition + acoustique. Tout est moulé ensemble en usine.</p>
+        <div class="cmp-sys-key">Plan d'armature respecté · antisismique · A+++ par défaut</div>
+      </div>
+
+      <!-- AUTRE ICF -->
+      <div class="cmp-sys-card">
+        <div class="cmp-sys-visual">
+          <svg viewBox="0 0 220 130" xmlns="http://www.w3.org/2000/svg">
+            <!-- Stacked LEGO-style blocks -->
+            <!-- Row 1 -->
+            <rect x="30" y="22" width="160" height="20" fill="#f5d5d5" stroke="#c4a3a3" stroke-width="1" rx="2"/>
+            <circle cx="50" cy="22" r="3" fill="#d99a9a"/>
+            <circle cx="80" cy="22" r="3" fill="#d99a9a"/>
+            <circle cx="110" cy="22" r="3" fill="#d99a9a"/>
+            <circle cx="140" cy="22" r="3" fill="#d99a9a"/>
+            <circle cx="170" cy="22" r="3" fill="#d99a9a"/>
+            <!-- Row 2 -->
+            <rect x="30" y="44" width="160" height="20" fill="#f5d5d5" stroke="#c4a3a3" stroke-width="1" rx="2"/>
+            <!-- Row 3 -->
+            <rect x="30" y="66" width="160" height="20" fill="#f5d5d5" stroke="#c4a3a3" stroke-width="1" rx="2"/>
+            <!-- Row 4 -->
+            <rect x="30" y="88" width="160" height="20" fill="#f5d5d5" stroke="#c4a3a3" stroke-width="1" rx="2"/>
+            <!-- Concrete fill (no rebar visible) -->
+            <rect x="80" y="22" width="60" height="86" fill="#888" opacity="0.5"/>
+            <text x="110" y="68" text-anchor="middle" font-size="8" fill="white" font-weight="600">béton</text>
+            <text x="110" y="78" text-anchor="middle" font-size="6" fill="white" opacity="0.7">sans plan armature</text>
+            <text x="110" y="120" text-anchor="middle" font-size="8" font-weight="700" fill="#888">BLOCS EMPILÉS LEGO</text>
+          </svg>
+        </div>
+        <div class="cmp-sys-name">Autre système ICF</div>
+        <span class="cmp-sys-tag">ICF basique</span>
+        <p class="cmp-sys-desc"><strong>Blocs EPS empilés comme des LEGO</strong> et remplis de béton. L'isolation est intégrée — mais c'est tout. Pas de plan d'armature, pas adapté aux zones sismiques.</p>
+        <div class="cmp-sys-key">✗ Pas de plan d'armature · ✗ Pas pour zones sismiques</div>
+      </div>
+
+      <!-- SYSTÈME CLASSIQUE -->
+      <div class="cmp-sys-card">
+        <div class="cmp-sys-visual">
+          <svg viewBox="0 0 220 130" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="brickpattern" x="0" y="0" width="20" height="14" patternUnits="userSpaceOnUse">
+                <rect width="20" height="14" fill="#b8895a"/>
+                <line x1="0" y1="0" x2="0" y2="14" stroke="#8a5f3e" stroke-width="0.8"/>
+                <line x1="20" y1="0" x2="20" y2="14" stroke="#8a5f3e" stroke-width="0.8"/>
+                <line x1="0" y1="7" x2="20" y2="7" stroke="#8a5f3e" stroke-width="0.8"/>
+                <line x1="10" y1="0" x2="10" y2="7" stroke="#8a5f3e" stroke-width="0.4"/>
+              </pattern>
+            </defs>
+            <!-- Brick wall -->
+            <rect x="30" y="15" width="120" height="100" fill="url(#brickpattern)" stroke="#8a5f3e" stroke-width="1" rx="2"/>
+            <!-- Thin EPS layer (after) -->
+            <rect x="150" y="15" width="20" height="100" fill="#f5a3a3" stroke="#c4a3a3" stroke-width="1" rx="1"/>
+            <text x="160" y="68" text-anchor="middle" font-size="7" fill="white" font-weight="700">EPS</text>
+            <text x="160" y="78" text-anchor="middle" font-size="5.5" fill="white" opacity="0.85">10 cm</text>
+            <!-- Render/enduit -->
+            <rect x="170" y="15" width="10" height="100" fill="#d4cfc4" stroke="#b5b0a3" stroke-width="0.8" rx="1"/>
+            <text x="110" y="120" text-anchor="middle" font-size="8" font-weight="700" fill="#8a5f3e">BRIQUE + ISOLATION COLLÉE</text>
+          </svg>
+        </div>
+        <div class="cmp-sys-name">Système classique</div>
+        <span class="cmp-sys-tag">Conventionnel</span>
+        <p class="cmp-sys-desc"><strong>Mur en briques</strong> monté traditionnellement, puis isolation collée par-dessus, puis enduit. Plusieurs équipes, plusieurs étapes, plusieurs matériaux.</p>
+        <div class="cmp-sys-key">Classe énergétique E/F · isolation collée après</div>
+      </div>
+
+      <!-- SYSTÈME CLASSIQUE → PASSIF -->
+      <div class="cmp-sys-card">
+        <div class="cmp-sys-visual">
+          <svg viewBox="0 0 220 130" xmlns="http://www.w3.org/2000/svg">
+            <!-- Brick wall -->
+            <rect x="30" y="15" width="90" height="100" fill="url(#brickpattern)" stroke="#8a5f3e" stroke-width="1" rx="2"/>
+            <!-- THICK EPS layer (passif requirement) -->
+            <rect x="120" y="15" width="50" height="100" fill="#f5a3a3" stroke="#c4a3a3" stroke-width="1" rx="1"/>
+            <text x="145" y="62" text-anchor="middle" font-size="8" fill="white" font-weight="700">+ EPS</text>
+            <text x="145" y="74" text-anchor="middle" font-size="7" fill="white" opacity="0.9">épais 30 cm</text>
+            <!-- Membrane layer -->
+            <rect x="170" y="15" width="6" height="100" fill="#666" rx="1"/>
+            <!-- Render -->
+            <rect x="176" y="15" width="10" height="100" fill="#d4cfc4" stroke="#b5b0a3" stroke-width="0.8" rx="1"/>
+            <!-- "+ 11 layers" indicator -->
+            <text x="110" y="120" text-anchor="middle" font-size="8" font-weight="700" fill="#b32424">BRIQUE + 11 COUCHES AJOUTÉES</text>
+          </svg>
+        </div>
+        <div class="cmp-sys-name">Système classique transformé en passif</div>
+        <span class="cmp-sys-tag">Passif par ajouts</span>
+        <p class="cmp-sys-desc"><strong>Le même mur en briques</strong> mais avec 11+ couches supplémentaires collées par-dessus pour atteindre la performance Passivhaus. Sensiblement plus cher, plus long, plus complexe.</p>
+        <div class="cmp-sys-key">A+++ atteint par empilage de couches · 30 % plus cher</div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -220,7 +413,7 @@
         <div class="cmp-card cmp-card--mid">
           <div class="cmp-card-icon">🧊</div>
           <div class="cmp-card-body">
-            <div class="cmp-card-name">Autre ICF</div>
+            <div class="cmp-card-name">Autre système ICF</div>
             <div class="cmp-card-sub">Seulement l'isolation intégrée. Tout le reste à part.</div>
           </div>
           <div class="cmp-card-value-text">Isolation seule</div>
@@ -228,7 +421,7 @@
         <div class="cmp-card">
           <div class="cmp-card-icon">🧱</div>
           <div class="cmp-card-body">
-            <div class="cmp-card-name">Brique classique</div>
+            <div class="cmp-card-name">Système classique</div>
             <div class="cmp-card-sub">Tous les composants séparés à coordonner.</div>
           </div>
           <div class="cmp-card-value-text">Tout séparé</div>
@@ -236,7 +429,7 @@
         <div class="cmp-card cmp-card--bad">
           <div class="cmp-card-icon">🧱</div>
           <div class="cmp-card-body">
-            <div class="cmp-card-name">Brique passive</div>
+            <div class="cmp-card-name">Système classique → passif</div>
             <div class="cmp-card-sub">Brique + couches passives ajoutées par-dessus.</div>
           </div>
           <div class="cmp-card-value-text">Encore plus</div>
@@ -269,21 +462,21 @@
         </div>
         <div class="cmp-row">
           <div class="cmp-row-info">
-            <div class="cmp-row-label">Autre ICF</div>
+            <div class="cmp-row-label">Autre système ICF</div>
             <div class="cmp-row-sub">Système LEGO basique — pas de plan d'armature possible</div>
           </div>
           <span class="cmp-badge badge-no">✗ NON</span>
         </div>
         <div class="cmp-row">
           <div class="cmp-row-info">
-            <div class="cmp-row-label">Brique classique</div>
+            <div class="cmp-row-label">Système classique</div>
             <div class="cmp-row-sub">Renforcement standard possible</div>
           </div>
           <span class="cmp-badge badge-neutral">Standard</span>
         </div>
         <div class="cmp-row">
           <div class="cmp-row-info">
-            <div class="cmp-row-label">Brique passive</div>
+            <div class="cmp-row-label">Système classique → passif</div>
             <div class="cmp-row-sub">Identique à la brique classique</div>
           </div>
           <span class="cmp-badge badge-neutral">Standard</span>
@@ -316,21 +509,21 @@
         </div>
         <div class="cmp-row">
           <div class="cmp-row-info">
-            <div class="cmp-row-label">Autre ICF</div>
+            <div class="cmp-row-label">Autre système ICF</div>
             <div class="cmp-row-sub">Non adapté — pas de plan d'armature, structure fragile</div>
           </div>
           <span class="cmp-badge badge-no">✗ NON</span>
         </div>
         <div class="cmp-row">
           <div class="cmp-row-info">
-            <div class="cmp-row-label">Brique classique</div>
+            <div class="cmp-row-label">Système classique</div>
             <div class="cmp-row-sub">Possible avec renforcements coûteux</div>
           </div>
           <span class="cmp-badge badge-partial">Coûteux</span>
         </div>
         <div class="cmp-row">
           <div class="cmp-row-info">
-            <div class="cmp-row-label">Brique passive</div>
+            <div class="cmp-row-label">Système classique → passif</div>
             <div class="cmp-row-sub">Identique à la brique classique</div>
           </div>
           <span class="cmp-badge badge-partial">Coûteux</span>
@@ -363,21 +556,21 @@
         </div>
         <div class="cmp-row">
           <div class="cmp-row-info">
-            <div class="cmp-row-label">Autre ICF</div>
+            <div class="cmp-row-label">Autre système ICF</div>
             <div class="cmp-row-sub">Plusieurs équipes (comme la brique)</div>
           </div>
           <span class="cmp-badge badge-partial" style="font-size:18px;">Plusieurs</span>
         </div>
         <div class="cmp-row">
           <div class="cmp-row-info">
-            <div class="cmp-row-label">Brique classique</div>
+            <div class="cmp-row-label">Système classique</div>
             <div class="cmp-row-sub">Maçons + isolateurs + façadiers...</div>
           </div>
           <span class="cmp-badge badge-neutral" style="font-size:18px;">Plusieurs</span>
         </div>
         <div class="cmp-row">
           <div class="cmp-row-info">
-            <div class="cmp-row-label">Brique passive</div>
+            <div class="cmp-row-label">Système classique → passif</div>
             <div class="cmp-row-sub">Encore plus d'étapes spécialisées</div>
           </div>
           <span class="cmp-badge badge-no" style="font-size:18px;">Encore +</span>
@@ -410,21 +603,21 @@
         </div>
         <div class="cmp-row">
           <div class="cmp-row-info">
-            <div class="cmp-row-label">Autre ICF</div>
+            <div class="cmp-row-label">Autre système ICF</div>
             <div class="cmp-row-sub">Même temps que la brique (mêmes étapes complémentaires)</div>
           </div>
           <span class="cmp-badge badge-partial" style="font-size:16px;">≈ Brique</span>
         </div>
         <div class="cmp-row">
           <div class="cmp-row-info">
-            <div class="cmp-row-label">Brique classique</div>
+            <div class="cmp-row-label">Système classique</div>
             <div class="cmp-row-sub">Plusieurs mois sur chantier</div>
           </div>
           <span class="cmp-badge badge-neutral" style="font-size:16px;">Plusieurs mois</span>
         </div>
         <div class="cmp-row">
           <div class="cmp-row-info">
-            <div class="cmp-row-label">Brique passive</div>
+            <div class="cmp-row-label">Système classique → passif</div>
             <div class="cmp-row-sub">Encore plus long (couches passives ajoutées)</div>
           </div>
           <span class="cmp-badge badge-no" style="font-size:16px;">Encore +</span>
@@ -457,7 +650,7 @@
           </div>
         </div>
         <div class="cmp-wall-system">
-          <div class="cmp-wall-name"><strong>Autre ICF</strong><span>Intégrée mais basique</span></div>
+          <div class="cmp-wall-name"><strong>Autre système ICF</strong><span>Intégrée mais basique</span></div>
           <div class="cmp-wall-section">
             <div class="cmp-wall-layer layer-icf-light" style="flex: 15;">EPS léger</div>
             <div class="cmp-wall-layer layer-beton" style="flex: 15;">Béton</div>
@@ -465,7 +658,7 @@
           </div>
         </div>
         <div class="cmp-wall-system">
-          <div class="cmp-wall-name"><strong>Brique classique</strong><span>Collée après coup</span></div>
+          <div class="cmp-wall-name"><strong>Système classique</strong><span>Collée après coup</span></div>
           <div class="cmp-wall-section">
             <div class="cmp-wall-layer layer-brique" style="flex: 25;">Brique</div>
             <div class="cmp-wall-layer layer-isol-extra" style="flex: 10;">+ EPS</div>
@@ -473,7 +666,7 @@
           </div>
         </div>
         <div class="cmp-wall-system">
-          <div class="cmp-wall-name"><strong>Brique passive</strong><span>Plus d'EPS collé</span></div>
+          <div class="cmp-wall-name"><strong>Système classique → passif</strong><span>Plus d'EPS collé</span></div>
           <div class="cmp-wall-section">
             <div class="cmp-wall-layer layer-brique" style="flex: 25;">Brique</div>
             <div class="cmp-wall-layer layer-isol-extra" style="flex: 30;">+ EPS épais</div>
@@ -508,21 +701,21 @@
         </div>
         <div class="cmp-row">
           <div class="cmp-row-info">
-            <div class="cmp-row-label">Autre ICF</div>
+            <div class="cmp-row-label">Autre système ICF</div>
             <div class="cmp-row-sub">A1 si correctement installé</div>
           </div>
           <span class="cmp-badge badge-neutral">A1</span>
         </div>
         <div class="cmp-row">
           <div class="cmp-row-info">
-            <div class="cmp-row-label">Brique classique</div>
+            <div class="cmp-row-label">Système classique</div>
             <div class="cmp-row-sub">A1 · maçonnerie traditionnelle</div>
           </div>
           <span class="cmp-badge badge-neutral">A1</span>
         </div>
         <div class="cmp-row">
           <div class="cmp-row-info">
-            <div class="cmp-row-label">Brique passive</div>
+            <div class="cmp-row-label">Système classique → passif</div>
             <div class="cmp-row-sub">A1 · brique + couches isolantes</div>
           </div>
           <span class="cmp-badge badge-neutral">A1</span>
@@ -555,21 +748,21 @@
         </div>
         <div class="cmp-row">
           <div class="cmp-row-info">
-            <div class="cmp-row-label">Autre ICF</div>
+            <div class="cmp-row-label">Autre système ICF</div>
             <div class="cmp-row-sub">Performance intermédiaire (isolation seule)</div>
           </div>
           <span class="cmp-badge badge-bc">B / C</span>
         </div>
         <div class="cmp-row">
           <div class="cmp-row-info">
-            <div class="cmp-row-label">Brique classique</div>
+            <div class="cmp-row-label">Système classique</div>
             <div class="cmp-row-sub">Standard énergivore</div>
           </div>
           <span class="cmp-badge badge-e">E / F</span>
         </div>
         <div class="cmp-row">
           <div class="cmp-row-info">
-            <div class="cmp-row-label">Brique passive</div>
+            <div class="cmp-row-label">Système classique → passif</div>
             <div class="cmp-row-sub">A+++ atteint par couches ajoutées</div>
           </div>
           <span class="cmp-badge badge-aplus">A+++</span>
@@ -602,21 +795,21 @@
         </div>
         <div class="cmp-row">
           <div class="cmp-row-info">
-            <div class="cmp-row-label">Autre ICF</div>
+            <div class="cmp-row-label">Autre système ICF</div>
             <div class="cmp-row-sub">Plus cher sans la performance complète</div>
           </div>
           <span class="cmp-badge badge-partial" style="font-size:15px;">Médiocre</span>
         </div>
         <div class="cmp-row">
           <div class="cmp-row-info">
-            <div class="cmp-row-label">Brique classique</div>
+            <div class="cmp-row-label">Système classique</div>
             <div class="cmp-row-sub">Standard du marché — sans le passif</div>
           </div>
           <span class="cmp-badge badge-neutral" style="font-size:15px;">Standard</span>
         </div>
         <div class="cmp-row">
           <div class="cmp-row-info">
-            <div class="cmp-row-label">Brique passive</div>
+            <div class="cmp-row-label">Système classique → passif</div>
             <div class="cmp-row-sub">Sensiblement plus chère</div>
           </div>
           <span class="cmp-badge badge-no" style="font-size:15px;">Cher</span>
