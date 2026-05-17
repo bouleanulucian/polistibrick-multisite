@@ -17,82 +17,82 @@
 
   const NAV_HTML = `
     <div class="nav-inner">
-      <a href="${BASE}" class="nav-logo" aria-label="Polistibrick — acasă">
+      <a href="${BASE}" class="nav-logo" aria-label="Polistibrick — home">
         <img src="${BASE}images/logo.png" alt="Polistibrick" loading="eager">
       </a>
-      <nav class="nav-menu" aria-label="Navigare principală">
+      <nav class="nav-menu" aria-label="Navigazione principale">
         <div class="nav-item">
           <button class="nav-link" aria-haspopup="true" aria-expanded="false">
-            Produse
+            Prodotti
             <svg class="nav-link-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5l3 3 3-3"/></svg>
           </button>
           <div class="nav-dropdown">
-            <a class="nav-dropdown-item" href="${BASE}produse/pereti-mbk/">Pereți MBK<span class="nav-dropdown-item-sub">Cofraj-pierdut pentru pereți portanți</span></a>
-            <a class="nav-dropdown-item" href="${BASE}produse/planseu-pbk/">Planșee PBK<span class="nav-dropdown-item-sub">Panouri prefabricate cu defazaj 10,8 h</span></a>
-            <a class="nav-dropdown-item" href="${BASE}produse/acoperis-tbk/">Acoperiș TBK<span class="nav-dropdown-item-sub">Sistem Passivhaus din fabrică</span></a>
-            <a class="nav-dropdown-item" href="${BASE}produse/accesorii/">Accesorii<span class="nav-dropdown-item-sub">Colțare, capete, scări, ferestre</span></a>
+            <a class="nav-dropdown-item" href="${BASE}produse/pereti-mbk/">Pareti MBK<span class="nav-dropdown-item-sub">Cassero isolante per pareti portanti</span></a>
+            <a class="nav-dropdown-item" href="${BASE}produse/planseu-pbk/">Solai PBK<span class="nav-dropdown-item-sub">Pannelli prefabbricati con sfasamento 10,8 h</span></a>
+            <a class="nav-dropdown-item" href="${BASE}produse/acoperis-tbk/">Tetto TBK<span class="nav-dropdown-item-sub">Sistema Passivhaus dalla fabbrica</span></a>
+            <a class="nav-dropdown-item" href="${BASE}produse/accesorii/">Accessori<span class="nav-dropdown-item-sub">Angolari, terminali, scale, finestre</span></a>
           </div>
         </div>
         <div class="nav-item">
           <button class="nav-link" aria-haspopup="true" aria-expanded="false">
-            Soluții
+            Soluzioni
             <svg class="nav-link-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5l3 3 3-3"/></svg>
           </button>
           <div class="nav-dropdown">
-            <a class="nav-dropdown-item" href="${BASE}pentru/proprietari/">Pentru proprietari<span class="nav-dropdown-item-sub">Casă pasivă fără facturi mari</span></a>
-            <a class="nav-dropdown-item" href="${BASE}pentru/arhitecti/">Pentru arhitecți<span class="nav-dropdown-item-sub">Detalii constructive, BIM, fișe</span></a>
-            <a class="nav-dropdown-item" href="${BASE}pentru/constructori/">Pentru constructori<span class="nav-dropdown-item-sub">Montaj, certificare, parteneriat</span></a>
-            <a class="nav-dropdown-item" href="${BASE}pentru/investitori/">Pentru investitori<span class="nav-dropdown-item-sub">ROI, viteză execuție, ansambluri</span></a>
-            <a class="nav-dropdown-item" href="${BASE}devino-partener/" style="color:var(--red);font-weight:600;">→ Devino partener<span class="nav-dropdown-item-sub" style="color:rgba(200,16,46,0.7);">Aplicație constructori certificați</span></a>
+            <a class="nav-dropdown-item" href="${BASE}pentru/proprietari/">Per i proprietari<span class="nav-dropdown-item-sub">Casa passiva senza bollette alte</span></a>
+            <a class="nav-dropdown-item" href="${BASE}pentru/arhitecti/">Per gli architetti<span class="nav-dropdown-item-sub">Dettagli costruttivi, BIM, schede</span></a>
+            <a class="nav-dropdown-item" href="${BASE}pentru/constructori/">Per i costruttori<span class="nav-dropdown-item-sub">Montaggio, certificazione, partnership</span></a>
+            <a class="nav-dropdown-item" href="${BASE}pentru/investitori/">Per gli investitori<span class="nav-dropdown-item-sub">ROI, velocità di esecuzione, complessi</span></a>
+            <a class="nav-dropdown-item" href="${BASE}devino-partener/" style="color:var(--red);font-weight:600;">→ Diventa partner<span class="nav-dropdown-item-sub" style="color:rgba(200,16,46,0.7);">Domanda costruttori certificati</span></a>
           </div>
         </div>
         <div class="nav-item">
           <button class="nav-link" aria-haspopup="true" aria-expanded="false">
-            Proiecte
+            Progetti
             <svg class="nav-link-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5l3 3 3-3"/></svg>
           </button>
           <div class="nav-dropdown">
-            <a class="nav-dropdown-item" href="${BASE}proiecte/">Case construite<span class="nav-dropdown-item-sub">Galerie + hartă cu proiecte</span></a>
-            <a class="nav-dropdown-item" href="${BASE}testimoniale/">Testimoniale (video)<span class="nav-dropdown-item-sub">Proprietarii vorbesc, cu cifre reale</span></a>
+            <a class="nav-dropdown-item" href="${BASE}proiecte/">Case costruite<span class="nav-dropdown-item-sub">Galleria + mappa dei progetti</span></a>
+            <a class="nav-dropdown-item" href="${BASE}testimoniale/">Testimonianze (video)<span class="nav-dropdown-item-sub">I proprietari parlano, con numeri reali</span></a>
           </div>
         </div>
         <div class="nav-item">
           <button class="nav-link" aria-haspopup="true" aria-expanded="false">
-            Calculator
+            Calcolatore
             <svg class="nav-link-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5l3 3 3-3"/></svg>
           </button>
           <div class="nav-dropdown">
-            <a class="nav-dropdown-item" href="${BASE}calculator/">Calculator cost<span class="nav-dropdown-item-sub">Estimează prețul panourilor casei tale</span></a>
-            <a class="nav-dropdown-item" href="${BASE}economii/">Calculator economii<span class="nav-dropdown-item-sub">Polistibrick vs cărămidă pe 25 de ani</span></a>
+            <a class="nav-dropdown-item" href="${BASE}calculator/">Calcolatore costi<span class="nav-dropdown-item-sub">Stima il prezzo dei pannelli per la tua casa</span></a>
+            <a class="nav-dropdown-item" href="${BASE}economii/">Calcolatore risparmi<span class="nav-dropdown-item-sub">Polistibrick vs mattone su 25 anni</span></a>
           </div>
         </div>
         <div class="nav-item">
           <button class="nav-link" aria-haspopup="true" aria-expanded="false">
-            Resurse
+            Risorse
             <svg class="nav-link-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5l3 3 3-3"/></svg>
           </button>
           <div class="nav-dropdown">
-            <a class="nav-dropdown-item" href="${BASE}resurse/blog/">Blog<span class="nav-dropdown-item-sub">Articole despre Casa Pasivă, ICF</span></a>
-            <a class="nav-dropdown-item" href="${BASE}resurse/faq/">Întrebări frecvente<span class="nav-dropdown-item-sub">Răspunsuri la cele mai comune întrebări</span></a>
+            <a class="nav-dropdown-item" href="${BASE}resurse/blog/">Blog<span class="nav-dropdown-item-sub">Articoli sulla Casa Passiva, l'ICF</span></a>
+            <a class="nav-dropdown-item" href="${BASE}resurse/faq/">Domande frequenti<span class="nav-dropdown-item-sub">Risposte alle domande più comuni</span></a>
           </div>
         </div>
         <div class="nav-item">
           <button class="nav-link" aria-haspopup="true" aria-expanded="false">
-            Despre
+            Chi siamo
             <svg class="nav-link-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5l3 3 3-3"/></svg>
           </button>
           <div class="nav-dropdown">
-            <a class="nav-dropdown-item" href="${BASE}despre/">Compania<span class="nav-dropdown-item-sub">Cine suntem, viziune, misiune</span></a>
-            <a class="nav-dropdown-item" href="${BASE}despre/patent/">Patentul Polistibrick<span class="nav-dropdown-item-sub">Brevetul care ne face unici</span></a>
-            <a class="nav-dropdown-item" href="${BASE}despre/certificari/">Certificări<span class="nav-dropdown-item-sub">CE, ISO, Passivhaus, agremente</span></a>
-            <a class="nav-dropdown-item" href="${BASE}despre/fabrici/">Fabricile noastre<span class="nav-dropdown-item-sub">Valencia (ES) și Craiova (RO)</span></a>
-            <a class="nav-dropdown-item" href="${BASE}despre/echipa/">Echipa<span class="nav-dropdown-item-sub">Fondatori și oamenii noștri</span></a>
+            <a class="nav-dropdown-item" href="${BASE}despre/">L'azienda<span class="nav-dropdown-item-sub">Chi siamo, visione, missione</span></a>
+            <a class="nav-dropdown-item" href="${BASE}despre/patent/">Il brevetto Polistibrick<span class="nav-dropdown-item-sub">Il brevetto che ci rende unici</span></a>
+            <a class="nav-dropdown-item" href="${BASE}despre/certificari/">Certificazioni<span class="nav-dropdown-item-sub">CE, ISO, Passivhaus, approvazioni tecniche</span></a>
+            <a class="nav-dropdown-item" href="${BASE}despre/fabrici/">Le nostre fabbriche<span class="nav-dropdown-item-sub">Valencia (ES) e Craiova (RO)</span></a>
+            <a class="nav-dropdown-item" href="${BASE}despre/echipa/">Il team<span class="nav-dropdown-item-sub">Fondatori e le nostre persone</span></a>
           </div>
         </div>
       </nav>
       <div class="nav-cta">
-        <a href="${BASE}contact/" class="btn btn-ghost">Contact</a>
-        <a href="${BASE}oferta/" class="btn btn-primary btn-arrow">Cere ofertă</a>
+        <a href="${BASE}contact/" class="btn btn-ghost">Contatti</a>
+        <a href="${BASE}oferta/" class="btn btn-primary btn-arrow">Richiedi un preventivo</a>
       </div>
     </div>
   `;
@@ -104,53 +104,53 @@
           <a href="${BASE}" class="footer-logo">
             <img src="${BASE}images/logo.png" alt="Polistibrick" style="height:32px;">
           </a>
-          <p class="footer-brand-tagline">Sistemul ICF brevetat pentru case pasive premium, fără facturi de energie. Fabricat în UE.</p>
+          <p class="footer-brand-tagline">Il sistema ICF brevettato per case passive premium, senza bollette energetiche. Fabbricato nell'UE.</p>
         </div>
         <div class="footer-col">
-          <h5>Produse</h5>
+          <h5>Prodotti</h5>
           <ul>
-            <li><a href="${BASE}produse/pereti-mbk/">Pereți MBK</a></li>
-            <li><a href="${BASE}produse/planseu-pbk/">Planșee PBK</a></li>
-            <li><a href="${BASE}produse/acoperis-tbk/">Acoperiș TBK</a></li>
-            <li><a href="${BASE}produse/accesorii/">Accesorii</a></li>
+            <li><a href="${BASE}produse/pereti-mbk/">Pareti MBK</a></li>
+            <li><a href="${BASE}produse/planseu-pbk/">Solai PBK</a></li>
+            <li><a href="${BASE}produse/acoperis-tbk/">Tetto TBK</a></li>
+            <li><a href="${BASE}produse/accesorii/">Accessori</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h5>Soluții</h5>
+          <h5>Soluzioni</h5>
           <ul>
             <li><a href="${BASE}pentru/proprietari/">Proprietari</a></li>
-            <li><a href="${BASE}pentru/arhitecti/">Arhitecți</a></li>
-            <li><a href="${BASE}pentru/constructori/">Constructori</a></li>
+            <li><a href="${BASE}pentru/arhitecti/">Architetti</a></li>
+            <li><a href="${BASE}pentru/constructori/">Costruttori</a></li>
             <li><a href="${BASE}pentru/investitori/">Investitori</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h5>Resurse</h5>
+          <h5>Risorse</h5>
           <ul>
-            <li><a href="${BASE}proiecte/">Proiecte realizate</a></li>
+            <li><a href="${BASE}proiecte/">Progetti realizzati</a></li>
             <li><a href="${BASE}resurse/blog/">Blog</a></li>
-            <li><a href="${BASE}resurse/faq/">Întrebări frecvente</a></li>
-            <li><a href="${BASE}calculator/">Calculator cost</a></li>
+            <li><a href="${BASE}resurse/faq/">Domande frequenti</a></li>
+            <li><a href="${BASE}calculator/">Calcolatore costi</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h5>Companie</h5>
+          <h5>Azienda</h5>
           <ul>
-            <li><a href="${BASE}despre/">Despre noi</a></li>
-            <li><a href="${BASE}despre/patent/">Patent</a></li>
-            <li><a href="${BASE}despre/certificari/">Certificări</a></li>
-            <li><a href="${BASE}despre/fabrici/">Fabrici</a></li>
-            <li><a href="${BASE}contact/">Contact</a></li>
+            <li><a href="${BASE}despre/">Chi siamo</a></li>
+            <li><a href="${BASE}despre/patent/">Il brevetto Polistibrick</a></li>
+            <li><a href="${BASE}despre/certificari/">Certificazioni</a></li>
+            <li><a href="${BASE}despre/fabrici/">Le nostre fabbriche</a></li>
+            <li><a href="${BASE}contact/">Contatti</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© 2026 Polistibrick. Toate drepturile rezervate. Sistem brevetat.</span>
+        <span>© 2026 Polistibrick. Tutti i diritti riservati. Sistema brevettato.</span>
         <div class="footer-bottom-links">
-          <a href="${BASE}legal/termeni/">Termeni</a>
-          <a href="${BASE}legal/confidentialitate/">Confidențialitate</a>
-          <a href="${BASE}legal/cookies/">Cookies</a>
-          <a href="${BASE}legal/sustenabilitate/">Sustenabilitate</a>
+          <a href="${BASE}legal/termeni/">Termini</a>
+          <a href="${BASE}legal/confidentialitate/">Privacy</a>
+          <a href="${BASE}legal/cookies/">Cookie</a>
+          <a href="${BASE}legal/sustenabilitate/">Sostenibilità</a>
         </div>
       </div>
     </div>
@@ -302,14 +302,14 @@
   // ========================================================================
   const POLISTIBRICK_COUNTRIES = {
     RO: { name: 'România', flag: '🇷🇴', url: 'https://polistibrick.ro' },
-    ES: { name: 'Spania', flag: '🇪🇸', url: 'https://polistibrick.es' },
-    FR: { name: 'Franța', flag: '🇫🇷', url: 'https://polistibrick.fr' },
-    BE: { name: 'Belgia', flag: '🇧🇪', url: 'https://polistibrick.be' },
+    ES: { name: 'España', flag: '🇪🇸', url: 'https://polistibrick.es' },
+    FR: { name: 'France', flag: '🇫🇷', url: 'https://polistibrick.fr' },
+    BE: { name: 'Belgique', flag: '🇧🇪', url: 'https://polistibrick.be' },
     IT: { name: 'Italia', flag: '🇮🇹', url: 'https://polistibrick.it' },
-    AT: { name: 'Austria', flag: '🇦🇹', url: 'https://polistibrick.at' },
+    AT: { name: 'Österreich', flag: '🇦🇹', url: 'https://polistibrick.at' },
     GB: { name: 'United Kingdom', flag: '🇬🇧', url: 'https://polistibrick.uk' },
-    IE: { name: 'Irlanda', flag: '🇮🇪', url: 'https://polistibrick.ie' },
-    ME: { name: 'Muntenegru', flag: '🇲🇪', url: 'https://polistibrick.me' },
+    IE: { name: 'Ireland', flag: '🇮🇪', url: 'https://polistibrick.ie' },
+    ME: { name: 'Crna Gora', flag: '🇲🇪', url: 'https://polistibrick.me' },
   };
   // Map non-Polistibrick European codes to nearest country (e.g., DE → AT, NL → BE)
   const FALLBACK_COUNTRY = {
@@ -349,26 +349,26 @@
     modal.className = 'country-picker';
     modal.setAttribute('role', 'dialog');
     modal.setAttribute('aria-modal', 'true');
-    modal.setAttribute('aria-label', 'Alege țara');
+    modal.setAttribute('aria-label', 'Scegli il tuo paese');
     modal.innerHTML = `
       <div class="country-picker-backdrop"></div>
       <div class="country-picker-panel">
-        <button class="country-picker-close" aria-label="Închide">×</button>
+        <button class="country-picker-close" aria-label="Chiudi">×</button>
         <div class="country-picker-header">
-          <span class="country-picker-eyebrow">🌍 Alege țara ta</span>
-          <h2 class="country-picker-title">În ce țară <em>construiești?</em></h2>
-          <p class="country-picker-sub">Te redirecționăm la site-ul țării tale cu echipă locală, contact direct și ofertă în limba ta.</p>
+          <span class="country-picker-eyebrow">🌍 Scegli il tuo paese</span>
+          <h2 class="country-picker-title">In quale paese <em>stai costruendo?</em></h2>
+          <p class="country-picker-sub">Ti reindirizziamo al sito del tuo paese con il team locale, contatto diretto e preventivo nella tua lingua.</p>
         </div>
         <div class="country-picker-grid">
           ${Object.entries(POLISTIBRICK_COUNTRIES).map(([code, c]) => `
             <a href="${c.url}" class="country-picker-item ${code === detectedCountry ? 'is-detected' : ''}" data-country="${code}" target="_blank" rel="noopener">
               <span class="country-picker-flag">${c.flag}</span>
               <span class="country-picker-name">${c.name}</span>
-              ${code === detectedCountry ? '<span class="country-picker-tag">★ Țara ta</span>' : ''}
+              ${code === detectedCountry ? '<span class="country-picker-tag">★ Il tuo paese</span>' : ''}
             </a>
           `).join('')}
         </div>
-        <p class="country-picker-foot">Țara ta nu e listată? Scrie-ne la <a href="mailto:info@polistibrick.eu">info@polistibrick.eu</a></p>
+        <p class="country-picker-foot">Il tuo paese non è elencato? Scrivici a <a href="mailto:info@polistibrick.eu">info@polistibrick.eu</a></p>
       </div>
     `;
     document.body.appendChild(modal);

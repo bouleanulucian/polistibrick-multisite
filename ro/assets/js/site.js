@@ -137,9 +137,9 @@
           <h5>Companie</h5>
           <ul>
             <li><a href="${BASE}despre/">Despre noi</a></li>
-            <li><a href="${BASE}despre/patent/">Patent</a></li>
+            <li><a href="${BASE}despre/patent/">Patentul Polistibrick</a></li>
             <li><a href="${BASE}despre/certificari/">Certificări</a></li>
-            <li><a href="${BASE}despre/fabrici/">Fabrici</a></li>
+            <li><a href="${BASE}despre/fabrici/">Fabricile noastre</a></li>
             <li><a href="${BASE}contact/">Contact</a></li>
           </ul>
         </div>
@@ -302,14 +302,14 @@
   // ========================================================================
   const POLISTIBRICK_COUNTRIES = {
     RO: { name: 'România', flag: '🇷🇴', url: 'https://polistibrick.ro' },
-    ES: { name: 'Spania', flag: '🇪🇸', url: 'https://polistibrick.es' },
-    FR: { name: 'Franța', flag: '🇫🇷', url: 'https://polistibrick.fr' },
-    BE: { name: 'Belgia', flag: '🇧🇪', url: 'https://polistibrick.be' },
+    ES: { name: 'España', flag: '🇪🇸', url: 'https://polistibrick.es' },
+    FR: { name: 'France', flag: '🇫🇷', url: 'https://polistibrick.fr' },
+    BE: { name: 'Belgique', flag: '🇧🇪', url: 'https://polistibrick.be' },
     IT: { name: 'Italia', flag: '🇮🇹', url: 'https://polistibrick.it' },
-    AT: { name: 'Austria', flag: '🇦🇹', url: 'https://polistibrick.at' },
+    AT: { name: 'Österreich', flag: '🇦🇹', url: 'https://polistibrick.at' },
     GB: { name: 'United Kingdom', flag: '🇬🇧', url: 'https://polistibrick.uk' },
-    IE: { name: 'Irlanda', flag: '🇮🇪', url: 'https://polistibrick.ie' },
-    ME: { name: 'Muntenegru', flag: '🇲🇪', url: 'https://polistibrick.me' },
+    IE: { name: 'Ireland', flag: '🇮🇪', url: 'https://polistibrick.ie' },
+    ME: { name: 'Crna Gora', flag: '🇲🇪', url: 'https://polistibrick.me' },
   };
   // Map non-Polistibrick European codes to nearest country (e.g., DE → AT, NL → BE)
   const FALLBACK_COUNTRY = {
