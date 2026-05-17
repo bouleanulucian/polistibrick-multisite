@@ -100,14 +100,14 @@
           </button>
           <div class="country-switcher-panel" role="menu" aria-hidden="true">
             <div class="country-switcher-header">🌍 Elige tu país</div>
-            <a href="https://polistibrick.ro" data-country="ro" class="country-switcher-item"><span class="flag">🇷🇴</span><span class="name">România</span><span class="domain">polistibrick.ro</span></a>
-            <a href="https://polistibrick.fr" data-country="fr" class="country-switcher-item"><span class="flag">🇫🇷</span><span class="name">France</span><span class="domain">polistibrick.fr</span></a>
-            <a href="https://polistibrick.it" data-country="it" class="country-switcher-item"><span class="flag">🇮🇹</span><span class="name">Italia</span><span class="domain">polistibrick.it</span></a>
-            <a href="https://polistibrick.es" data-country="es" class="country-switcher-item"><span class="flag">🇪🇸</span><span class="name">España</span><span class="domain">polistibrick.es</span></a>
-            <a href="https://polistibrick.be" data-country="be" class="country-switcher-item"><span class="flag">🇧🇪</span><span class="name">België</span><span class="domain">polistibrick.be</span></a>
-            <a href="https://polistibrick.ie" data-country="ie" class="country-switcher-item"><span class="flag">🇮🇪</span><span class="name">Ireland</span><span class="domain">polistibrick.ie</span></a>
-            <a href="https://polistibrick.uk" data-country="uk" class="country-switcher-item"><span class="flag">🇬🇧</span><span class="name">United Kingdom</span><span class="domain">polistibrick.uk</span></a>
-            <a href="https://polistibrick.com" data-country="ch" class="country-switcher-item"><span class="flag">🇨🇭</span><span class="name">Schweiz</span><span class="domain">polistibrick.com</span></a>
+            <a href="https://polistibrick.ro" data-country="ro" data-folder="ro" class="country-switcher-item"><span class="flag">🇷🇴</span><span class="name">România</span><span class="domain">polistibrick.ro</span></a>
+            <a href="https://polistibrick.fr" data-country="fr" data-folder="fr" class="country-switcher-item"><span class="flag">🇫🇷</span><span class="name">France</span><span class="domain">polistibrick.fr</span></a>
+            <a href="https://polistibrick.it" data-country="it" data-folder="it" class="country-switcher-item"><span class="flag">🇮🇹</span><span class="name">Italia</span><span class="domain">polistibrick.it</span></a>
+            <a href="https://polistibrick.es" data-country="es" data-folder="es" class="country-switcher-item"><span class="flag">🇪🇸</span><span class="name">España</span><span class="domain">polistibrick.es</span></a>
+            <a href="https://polistibrick.be" data-country="be" data-folder="nl" class="country-switcher-item"><span class="flag">🇧🇪</span><span class="name">België</span><span class="domain">polistibrick.be</span></a>
+            <a href="https://polistibrick.ie" data-country="ie" data-folder="ie" class="country-switcher-item"><span class="flag">🇮🇪</span><span class="name">Ireland</span><span class="domain">polistibrick.ie</span></a>
+            <a href="https://polistibrick.uk" data-country="uk" data-folder="en" class="country-switcher-item"><span class="flag">🇬🇧</span><span class="name">United Kingdom</span><span class="domain">polistibrick.uk</span></a>
+            <a href="https://polistibrick.com" data-country="ch" data-folder="de" class="country-switcher-item"><span class="flag">🇨🇭</span><span class="name">Schweiz</span><span class="domain">polistibrick.com</span></a>
           </div>
         </div>
         <a href="${BASE}contact/" class="btn btn-ghost">Contacto</a>
@@ -203,26 +203,44 @@
     window.addEventListener('scroll', update, { passive: true });
   }
 
-  // Country switcher (in shared nav) — toggle + mark active
+  // Country switcher (in shared nav) — toggle + mark active + rewrite for preview
   function countrySwitcherShared() {
+    // Detect preview mode (github.io / localhost) vs production (real domain)
+    const isPreview = location.hostname.includes('github.io') || location.hostname === 'localhost' || location.hostname.startsWith('127.');
+    // Find current folder in path (e.g. /polistibrick-multisite/fr/... or /fr/...)
+    const pathParts = location.pathname.split('/').filter(p => p);
+    const folders = ['ro','fr','it','es','nl','ie','en','de'];
+    const currentFolderIdx = pathParts.findIndex(p => folders.includes(p));
+    const currentFolder = currentFolderIdx >= 0 ? pathParts[currentFolderIdx] : null;
+    // Folder → switcher key map (which item gets .active)
+    const folderToKey = { ro: 'ro', fr: 'fr', it: 'it', es: 'es', nl: 'be', de: 'ch', en: 'uk', ie: 'ie' };
+    const currentKey = folderToKey[currentFolder];
+
+    function rewriteUrl(folder, fullDomain) {
+      if (!isPreview) return fullDomain;  // production → real domain
+      // preview → swap current folder with target folder in current path
+      if (currentFolderIdx >= 0) {
+        const newParts = pathParts.slice();
+        newParts[currentFolderIdx] = folder;
+        // Preserve trailing slash if present, keep rest of path so user stays on same page
+        return '/' + newParts.join('/') + (location.pathname.endsWith('/') ? '/' : '');
+      }
+      // fallback: go to country root
+      return '/' + folder + '/';
+    }
+
     document.querySelectorAll('[data-country-switcher]').forEach(switcher => {
       const trigger = switcher.querySelector('.country-switcher-trigger');
       const panel = switcher.querySelector('.country-switcher-panel');
       if (!trigger || !panel) return;
 
-      // Mark active based on current URL path (e.g. /fr/, /ro/, etc.)
-      const path = window.location.pathname;
-      // Try to detect country code from URL: /polistibrick-multisite/fr/... or /fr/...
-      const m = path.match(/\/(ro|fr|it|es|nl|de|en|ie)(\/|$)/i);
-      const currentFolder = m ? m[1].toLowerCase() : null;
-      // Folder → country picker key map
-      const folderToKey = { ro: 'ro', fr: 'fr', it: 'it', es: 'es', nl: 'be', de: 'ch', en: 'uk', ie: 'ie' };
-      const currentKey = folderToKey[currentFolder];
-      if (currentKey) {
-        panel.querySelectorAll('.country-switcher-item').forEach(item => {
-          if (item.dataset.country === currentKey) item.classList.add('active');
-        });
-      }
+      // Mark active country + rewrite hrefs for preview
+      panel.querySelectorAll('.country-switcher-item').forEach(item => {
+        if (currentKey && item.dataset.country === currentKey) item.classList.add('active');
+        const folder = item.dataset.folder || item.dataset.country;
+        const origHref = item.getAttribute('href');
+        item.href = rewriteUrl(folder, origHref);
+      });
 
       function setOpen(open) {
         trigger.setAttribute('aria-expanded', String(open));
