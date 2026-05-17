@@ -92,6 +92,7 @@
         </div>
       </nav>
       <div class="nav-cta">
+        <!-- COUNTRY SWITCHER — identique à celui du homepage -->
         <div class="country-switcher" data-country-switcher>
           <button class="country-switcher-trigger" type="button" aria-label="Choose your country" aria-expanded="false">
             <span class="country-switcher-flag">🇮🇪</span>
@@ -100,14 +101,14 @@
           </button>
           <div class="country-switcher-panel" role="menu" aria-hidden="true">
             <div class="country-switcher-header">🌍 Choose your country</div>
-            <a href="https://polistibrick.ro" data-country="ro" data-folder="ro" class="country-switcher-item"><span class="flag">🇷🇴</span><span class="name">România</span><span class="domain">polistibrick.ro</span></a>
-            <a href="https://polistibrick.fr" data-country="fr" data-folder="fr" class="country-switcher-item"><span class="flag">🇫🇷</span><span class="name">France</span><span class="domain">polistibrick.fr</span></a>
-            <a href="https://polistibrick.it" data-country="it" data-folder="it" class="country-switcher-item"><span class="flag">🇮🇹</span><span class="name">Italia</span><span class="domain">polistibrick.it</span></a>
-            <a href="https://polistibrick.es" data-country="es" data-folder="es" class="country-switcher-item"><span class="flag">🇪🇸</span><span class="name">España</span><span class="domain">polistibrick.es</span></a>
-            <a href="https://polistibrick.be" data-country="be" data-folder="nl" class="country-switcher-item"><span class="flag">🇧🇪</span><span class="name">België</span><span class="domain">polistibrick.be</span></a>
-            <a href="https://polistibrick.ie" data-country="ie" data-folder="ie" class="country-switcher-item"><span class="flag">🇮🇪</span><span class="name">Ireland</span><span class="domain">polistibrick.ie</span></a>
-            <a href="https://polistibrick.uk" data-country="uk" data-folder="en" class="country-switcher-item"><span class="flag">🇬🇧</span><span class="name">United Kingdom</span><span class="domain">polistibrick.uk</span></a>
-            <a href="https://polistibrick.com" data-country="ch" data-folder="de" class="country-switcher-item"><span class="flag">🇨🇭</span><span class="name">Schweiz</span><span class="domain">polistibrick.com</span></a>
+            <a href="#" data-country="ro" data-domain="https://polistibrick.ro" data-folder="ro" class="country-switcher-item"><span class="flag">🇷🇴</span><span class="name">România</span><span class="domain">polistibrick.ro</span></a>
+            <a href="#" data-country="fr" data-domain="https://polistibrick.fr" data-folder="fr" class="country-switcher-item"><span class="flag">🇫🇷</span><span class="name">France</span><span class="domain">polistibrick.fr</span></a>
+            <a href="#" data-country="it" data-domain="https://polistibrick.it" data-folder="it" class="country-switcher-item"><span class="flag">🇮🇹</span><span class="name">Italia</span><span class="domain">polistibrick.it</span></a>
+            <a href="#" data-country="es" data-domain="https://polistibrick.es" data-folder="es" class="country-switcher-item"><span class="flag">🇪🇸</span><span class="name">España</span><span class="domain">polistibrick.es</span></a>
+            <a href="#" data-country="be" data-domain="https://polistibrick.be" data-folder="nl" class="country-switcher-item"><span class="flag">🇧🇪</span><span class="name">België</span><span class="domain">polistibrick.be</span></a>
+            <a href="#" data-country="ie" data-domain="https://polistibrick.ie" data-folder="ie" class="country-switcher-item"><span class="flag">🇮🇪</span><span class="name">Ireland</span><span class="domain">polistibrick.ie</span></a>
+            <a href="#" data-country="uk" data-domain="https://polistibrick.uk" data-folder="en" class="country-switcher-item"><span class="flag">🇬🇧</span><span class="name">United Kingdom</span><span class="domain">polistibrick.uk</span></a>
+            <a href="#" data-country="ch" data-domain="https://polistibrick.com" data-folder="de" class="country-switcher-item"><span class="flag">🇨🇭</span><span class="name">Schweiz</span><span class="domain">polistibrick.com</span></a>
           </div>
         </div>
         <a href="${BASE}contact/" class="btn btn-ghost">Contact</a>
@@ -234,12 +235,12 @@
       const panel = switcher.querySelector('.country-switcher-panel');
       if (!trigger || !panel) return;
 
-      // Mark active country + rewrite hrefs for preview
+      // Mark active country + rewrite hrefs for preview vs production
       panel.querySelectorAll('.country-switcher-item').forEach(item => {
         if (currentKey && item.dataset.country === currentKey) item.classList.add('active');
         const folder = item.dataset.folder || item.dataset.country;
-        const origHref = item.getAttribute('href');
-        item.href = rewriteUrl(folder, origHref);
+        const domain = item.dataset.domain || item.getAttribute('href');
+        item.href = rewriteUrl(folder, domain);
       });
 
       function setOpen(open) {
