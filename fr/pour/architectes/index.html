@@ -284,7 +284,7 @@
               <span class="product-col-name">MBK</span>
               <span class="product-col-desc">Murs</span>
             </div>
-            <button class="download-item" onclick="requestDoc('Fiche technique MBK')"><span class="download-icon">📄</span><span class="download-info"><span class="download-label">Fiche technique</span><span class="download-meta">MBK 210 · 270 · 300</span></span><span class="download-arrow">→</span></button>
+            <button class="download-item" onclick="requestFiche('Fiche technique MBK')"><span class="download-icon">📄</span><span class="download-info"><span class="download-label">Fiche technique</span><span class="download-meta">MBK 210 · 270 · 300</span></span><span class="download-arrow">→</span></button>
           </div>
           <!-- COL 2 — PBK (Planchers) -->
           <div class="product-col">
@@ -292,7 +292,7 @@
               <span class="product-col-name">PBK</span>
               <span class="product-col-desc">Planchers</span>
             </div>
-            <button class="download-item" onclick="requestDoc('Fiche technique PBK')"><span class="download-icon">📄</span><span class="download-info"><span class="download-label">Fiche technique</span><span class="download-meta">Planchers isolants</span></span><span class="download-arrow">→</span></button>
+            <button class="download-item" onclick="requestFiche('Fiche technique PBK')"><span class="download-icon">📄</span><span class="download-info"><span class="download-label">Fiche technique</span><span class="download-meta">Planchers isolants</span></span><span class="download-arrow">→</span></button>
           </div>
           <!-- COL 3 — TBK (Toit) -->
           <div class="product-col">
@@ -300,7 +300,7 @@
               <span class="product-col-name">TBK</span>
               <span class="product-col-desc">Toit</span>
             </div>
-            <button class="download-item" onclick="requestDoc('Fiche technique TBK')"><span class="download-icon">📄</span><span class="download-info"><span class="download-label">Fiche technique</span><span class="download-meta">Toiture isolante</span></span><span class="download-arrow">→</span></button>
+            <button class="download-item" onclick="requestFiche('Fiche technique TBK')"><span class="download-icon">📄</span><span class="download-info"><span class="download-label">Fiche technique</span><span class="download-meta">Toiture isolante</span></span><span class="download-arrow">→</span></button>
           </div>
         </div>
         <div class="product-col-extra">
@@ -445,10 +445,26 @@
 <script src="../../assets/js/site.js"></script>
 
 <script>
-// Pré-remplit formulaire de contact avec la demande
+// Pour FICHES TECHNIQUES (public, pour tout le monde) — TODO: când PDF-ul există,
+// schimbă onclick="requestFiche(...)" în href="../../downloads/X.pdf" direct
+function requestFiche(ficheName) {
+  var params = new URLSearchParams({
+    subject: 'Demande de documentation',
+    type: 'document',
+    doc: ficheName
+  });
+  window.location.href = '../../contact/?' + params.toString();
+}
+
+// Pour TOATE celelalte docs (CAD, BIM, calculs, rapports) — necesită rol pro
 function requestDoc(docName) {
-  var url = '../../contact/?subject=' + encodeURIComponent('Demande document : ' + docName);
-  window.location.href = url;
+  var params = new URLSearchParams({
+    subject: 'Demande de documentation',
+    role: 'architecte-bet',
+    type: 'document',
+    doc: docName
+  });
+  window.location.href = '../../contact/?' + params.toString();
 }
 </script>
 

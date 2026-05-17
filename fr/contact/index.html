@@ -275,15 +275,30 @@
                   <input class="form-input" type="tel" id="cphone" placeholder="+33 6 XX XX XX XX">
                 </div>
                 <div>
-                  <label class="form-label" for="csubject">Sujet</label>
-                  <select class="form-select" id="csubject">
-                    <option>Question technique</option>
-                    <option>Support produit</option>
-                    <option>Devenez partenaire</option>
-                    <option>Presse / Médias</option>
-                    <option>Autre</option>
+                  <label class="form-label" for="crole">Vous êtes</label>
+                  <select class="form-select" id="crole">
+                    <option value="">— Sélectionnez —</option>
+                    <option value="architecte">Architecte</option>
+                    <option value="bet">Bureau d'études (BET)</option>
+                    <option value="constructeur">Constructeur / Entrepreneur</option>
+                    <option value="particulier">Particulier / Propriétaire</option>
+                    <option value="promoteur">Promoteur / Investisseur</option>
+                    <option value="autre">Autre</option>
                   </select>
                 </div>
+              </div>
+
+              <div class="form-row">
+                <label class="form-label" for="csubject">Sujet</label>
+                <select class="form-select" id="csubject">
+                  <option>Question technique</option>
+                  <option>Demande de documentation</option>
+                  <option>Support produit</option>
+                  <option>Devenez partenaire</option>
+                  <option>Demande de devis</option>
+                  <option>Presse / Médias</option>
+                  <option>Autre</option>
+                </select>
               </div>
 
               <div class="form-row">
@@ -482,6 +497,84 @@
       addFiles(e.dataTransfer.files);
     }
   });
+
+  /* === AUTO-FILL formular pe baza query params din URL ===
+     Exemple URL apelat din /pour/architectes/:
+       ?subject=Demande+document+:+CAD+DWG&role=architecte-bet&doc=CAD+DWG&type=document */
+  (function prefillFromURL() {
+    var params = new URLSearchParams(window.location.search);
+    var subject = params.get('subject');
+    var role = params.get('role');
+    var doc = params.get('doc');
+    var type = params.get('type');
+
+    // Pre-select rol (Architecte / BET / etc)
+    var roleSelect = document.getElementById('crole');
+    if (role && roleSelect) {
+      var roleMap = {
+        'architecte': 'architecte',
+        'bet': 'bet',
+        'architecte-bet': 'architecte', // default to architecte if both
+        'constructeur': 'constructeur',
+        'particulier': 'particulier',
+        'promoteur': 'promoteur'
+      };
+      var mappedRole = roleMap[role] || '';
+      if (mappedRole) roleSelect.value = mappedRole;
+    }
+
+    // Pre-select sujet — try to match existing option
+    var subjectSelect = document.getElementById('csubject');
+    if (subjectSelect) {
+      if (type === 'document' || (subject && subject.toLowerCase().indexOf('document') !== -1)) {
+        // Force "Demande de documentation"
+        for (var i = 0; i < subjectSelect.options.length; i++) {
+          if (subjectSelect.options[i].text === 'Demande de documentation') {
+            subjectSelect.selectedIndex = i;
+            break;
+          }
+        }
+      } else if (subject) {
+        // Try to find exact match
+        for (var j = 0; j < subjectSelect.options.length; j++) {
+          if (subjectSelect.options[j].text === subject) {
+            subjectSelect.selectedIndex = j;
+            break;
+          }
+        }
+      }
+    }
+
+    // Pre-fill message based on params
+    var msgField = document.getElementById('cmsg');
+    if (msgField && (doc || subject)) {
+      var roleText = '';
+      if (role === 'architecte-bet' || role === 'architecte') roleText = 'architecte';
+      else if (role === 'bet') roleText = 'bureau d\'études (BET)';
+      else if (role === 'constructeur') roleText = 'constructeur';
+      else if (role === 'promoteur') roleText = 'promoteur / investisseur';
+
+      var msg = '';
+      if (doc) {
+        if (roleText) {
+          msg = 'Bonjour,\n\nEn tant que ' + roleText + ', je souhaite recevoir le document suivant :\n\n• ' + doc + '\n\nMerci d\'avance.';
+        } else {
+          msg = 'Bonjour,\n\nJe souhaite recevoir le document suivant :\n\n• ' + doc + '\n\nMerci d\'avance.';
+        }
+      } else if (subject) {
+        msg = 'Bonjour,\n\nDemande : ' + subject + '\n\nMerci d\'avance.';
+      }
+      msgField.value = msg;
+    }
+
+    // Auto-scroll to form on page load if any param present
+    if (subject || role || doc || type) {
+      setTimeout(function(){
+        var formCard = document.querySelector('.wm-form-card');
+        if (formCard) formCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 300);
+    }
+  })();
 </script>
 </body>
 </html>
