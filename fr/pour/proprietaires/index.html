@@ -30,15 +30,57 @@
       .wm-visual { margin-top: 0; aspect-ratio: 16/10; }
     }
     @media (max-width: 768px) { .wm-stage { padding: 28px 20px; } }
-    /* Tabel comparativ extins la 5 coloane (+ Classique Passif) */
-    .spec-table-5cols { max-width: 1100px !important; }
-    .spec-table-5cols .spec-table-row { grid-template-columns: 1.3fr 1fr 1fr 1fr 1.1fr; }
-    .spec-table-5cols .spec-table-cell { padding: 12px 14px; font-size: 13px; }
-    .spec-table-5cols .spec-table-cell--value { font-size: 14.5px; }
-    @media (max-width: 900px) {
-      .spec-table-5cols .spec-table-row { grid-template-columns: 1fr 1fr 1fr; font-size: 11px; }
-      .spec-table-5cols .spec-table-cell { padding: 8px 10px; }
+    /* Tabel comparativ calitativ — 4 coloane, fără prețuri exacte */
+    .spec-table-quali { max-width: 980px !important; }
+    .spec-table-quali .spec-table-row { grid-template-columns: 1.5fr 1fr 1fr 1.1fr; }
+    .spec-table-quali .spec-table-cell { padding: 16px 18px; font-size: 13.5px; text-align: center; }
+    .spec-table-quali .spec-table-cell--label { text-align: left; font-weight: 500; }
+    @media (max-width: 768px) {
+      .spec-table-quali .spec-table-row { grid-template-columns: 1.4fr 1fr 1fr 1fr; font-size: 11.5px; }
+      .spec-table-quali .spec-table-cell { padding: 10px 8px; }
     }
+
+    /* Pastile calitative — verde / galben / roșu */
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+    .pill::before {
+      content: '';
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+    .pill--good {
+      background: rgba(26, 125, 58, 0.10);
+      color: #1a7d3a;
+    }
+    .pill--good::before { background: #1a7d3a; }
+    .pill--medium {
+      background: rgba(200, 145, 16, 0.12);
+      color: #a8740e;
+    }
+    .pill--medium::before { background: #d49920; }
+    .pill--bad {
+      background: rgba(200, 16, 46, 0.10);
+      color: #c8102e;
+    }
+    .pill--bad::before { background: #c8102e; }
+    .pill--star {
+      background: linear-gradient(135deg, rgba(26, 125, 58, 0.18), rgba(26, 125, 58, 0.08));
+      color: #156a30;
+      font-weight: 700;
+    }
+    .pill--star::before { background: #1a7d3a; box-shadow: 0 0 0 3px rgba(26, 125, 58, 0.20); }
   </style>
 </head>
 <body data-base="../../">
@@ -109,48 +151,46 @@
 
 <section class="section section--cream">
   <div class="container">
-    <div class="reveal" style="text-align:center;max-width:760px;margin:0 auto 50px;">
-      <span class="eyebrow">Calcul économique réel</span>
-      <h2>Combien vous économisez <em>en 25 ans.</em></h2>
-      <p class="lead" style="margin-top:14px;">Une maison de 150 m². Calcul comparatif Polistibrick vs classique vs classique passif.</p>
+    <div class="reveal" style="text-align:center;max-width:760px;margin:0 auto 40px;">
+      <span class="eyebrow">Comparaison sur 25 ans</span>
+      <h2>Combien vous économisez <em>sur la vie de la maison.</em></h2>
+      <p class="lead" style="margin-top:14px;">Chaque maison est différente. Voici la comparaison qualitative des 4 postes de dépense — Polistibrick vs classique vs classique transformée en passive. Les chiffres exacts sont calculés dans votre devis personnalisé.</p>
     </div>
-    <div class="reveal spec-table spec-table-5cols" style="margin:0 auto;">
+    <div class="reveal spec-table spec-table-quali" style="margin:0 auto;">
       <div class="spec-table-row is-header">
-        <div class="spec-table-cell">Coût</div>
+        <div class="spec-table-cell">Poste de dépense</div>
         <div class="spec-table-cell">Polistibrick</div>
         <div class="spec-table-cell">Classique</div>
         <div class="spec-table-cell">Classique passif</div>
-        <div class="spec-table-cell">Différence</div>
       </div>
       <div class="spec-table-row">
         <div class="spec-table-cell spec-table-cell--label">Construction initiale</div>
-        <div class="spec-table-cell spec-table-cell--value">~157.500 €</div>
-        <div class="spec-table-cell spec-table-cell--value">~150.000 €</div>
-        <div class="spec-table-cell spec-table-cell--value">~220.000 €</div>
-        <div class="spec-table-cell spec-table-cell--value" style="color:#1a7d3a;">−28% vs passif</div>
+        <div class="spec-table-cell"><span class="pill pill--medium">Standard</span></div>
+        <div class="spec-table-cell"><span class="pill pill--good">Léger</span></div>
+        <div class="spec-table-cell"><span class="pill pill--bad">Très élevé</span></div>
       </div>
       <div class="spec-table-row">
-        <div class="spec-table-cell spec-table-cell--label">Énergie 25 ans (gaz + électricité)</div>
-        <div class="spec-table-cell spec-table-cell--value">~18.000 €</div>
-        <div class="spec-table-cell spec-table-cell--value">~60.000 €</div>
-        <div class="spec-table-cell spec-table-cell--value">~18.000 €</div>
-        <div class="spec-table-cell spec-table-cell--value" style="color:#1a7d3a;">−70% vs classique</div>
+        <div class="spec-table-cell spec-table-cell--label">Énergie sur 25 ans</div>
+        <div class="spec-table-cell"><span class="pill pill--good">Très bas</span></div>
+        <div class="spec-table-cell"><span class="pill pill--bad">Très élevé</span></div>
+        <div class="spec-table-cell"><span class="pill pill--good">Très bas</span></div>
       </div>
       <div class="spec-table-row">
-        <div class="spec-table-cell spec-table-cell--label">Entretien 25 ans</div>
-        <div class="spec-table-cell spec-table-cell--value">~3.000 €</div>
-        <div class="spec-table-cell spec-table-cell--value">~12.000 €</div>
-        <div class="spec-table-cell spec-table-cell--value">~6.000 €</div>
-        <div class="spec-table-cell spec-table-cell--value" style="color:#1a7d3a;">−75% vs classique</div>
+        <div class="spec-table-cell spec-table-cell--label">Entretien sur 25 ans</div>
+        <div class="spec-table-cell"><span class="pill pill--good">Très bas</span></div>
+        <div class="spec-table-cell"><span class="pill pill--bad">Élevé</span></div>
+        <div class="spec-table-cell"><span class="pill pill--medium">Moyen</span></div>
       </div>
-      <div class="spec-table-row" style="background:rgba(200,16,46,0.05);">
-        <div class="spec-table-cell spec-table-cell--label" style="font-weight:700;">TOTAL 25 ANS</div>
-        <div class="spec-table-cell spec-table-cell--value" style="color:var(--red);font-weight:700;">~178.500 €</div>
-        <div class="spec-table-cell spec-table-cell--value">~222.000 €</div>
-        <div class="spec-table-cell spec-table-cell--value">~244.000 €</div>
-        <div class="spec-table-cell spec-table-cell--value" style="color:#1a7d3a;font-weight:600;">Économies 43.500 €<br><span style="font-size:12px;font-weight:400;">à 65.500 €</span></div>
+      <div class="spec-table-row" style="background:rgba(15,15,15,0.03);">
+        <div class="spec-table-cell spec-table-cell--label" style="font-weight:700;">Coût total sur 25 ans</div>
+        <div class="spec-table-cell"><span class="pill pill--star">Optimal</span></div>
+        <div class="spec-table-cell"><span class="pill pill--bad">Élevé</span></div>
+        <div class="spec-table-cell"><span class="pill pill--bad">Très élevé</span></div>
       </div>
     </div>
+    <p class="reveal" style="max-width:760px;margin:24px auto 0;text-align:center;font-size:13.5px;color:var(--gray);line-height:1.6;">
+      <strong style="color:var(--ink);">À retenir :</strong> Polistibrick coûte un peu plus cher à construire que la brique classique, mais beaucoup moins cher à vivre. Et nettement moins cher qu'une maison classique transformée en passive — qui demande +30 cm d'isolant, triple vitrage, VMC double-flux, étanchéité certifiée.
+    </p>
   </div>
 </section>
 
