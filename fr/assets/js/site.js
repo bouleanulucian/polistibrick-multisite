@@ -72,6 +72,7 @@
             <svg class="nav-link-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5l3 3 3-3"/></svg>
           </button>
           <div class="nav-dropdown">
+            <a class="nav-dropdown-item" href="${BASE}comparaison/">Comparaison<span class="nav-dropdown-item-sub">Polistibrick vs système classique vs autre ICF</span></a>
             <a class="nav-dropdown-item" href="${BASE}ressources/blog/">Blog<span class="nav-dropdown-item-sub">Articles sur la Maison Passive, l'ICF</span></a>
             <a class="nav-dropdown-item" href="${BASE}ressources/faq/">Questions fréquentes<span class="nav-dropdown-item-sub">Réponses aux questions les plus courantes</span></a>
           </div>

@@ -72,6 +72,7 @@
             <svg class="nav-link-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5l3 3 3-3"/></svg>
           </button>
           <div class="nav-dropdown">
+            <a class="nav-dropdown-item" href="${BASE}comparatie/">Vergelijking<span class="nav-dropdown-item-sub">Polistibrick vs klassiek systeem vs andere ICF</span></a>
             <a class="nav-dropdown-item" href="${BASE}resurse/blog/">Blog<span class="nav-dropdown-item-sub">Artikelen over Passiefhuis, ICF</span></a>
             <a class="nav-dropdown-item" href="${BASE}resurse/faq/">Veelgestelde vragen<span class="nav-dropdown-item-sub">Antwoorden op de meest gestelde vragen</span></a>
           </div>

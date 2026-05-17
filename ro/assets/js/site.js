@@ -72,6 +72,7 @@
             <svg class="nav-link-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5l3 3 3-3"/></svg>
           </button>
           <div class="nav-dropdown">
+            <a class="nav-dropdown-item" href="${BASE}comparatie/">Comparație<span class="nav-dropdown-item-sub">Polistibrick vs sistem clasic vs alt ICF</span></a>
             <a class="nav-dropdown-item" href="${BASE}resurse/blog/">Blog<span class="nav-dropdown-item-sub">Articole despre Casa Pasivă, ICF</span></a>
             <a class="nav-dropdown-item" href="${BASE}resurse/faq/">Întrebări frecvente<span class="nav-dropdown-item-sub">Răspunsuri la cele mai comune întrebări</span></a>
           </div>
