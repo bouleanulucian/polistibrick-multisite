@@ -957,64 +957,134 @@
 </section>
 
 <!-- ====================================================
-     8. ARHITECȚI LOCALI — gate-ul critic
+     8. COLLABORATION CU ARHITECT + BET — Polistibrick = partener, nu disruptor
      ==================================================== -->
+<style>
+  /* Override: cardurile arhitect devin text-only (fără photo placeholder) */
+  .collab-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .collab-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 32px 28px;
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    display: flex;
+    flex-direction: column;
+  }
+  .collab-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 36px rgba(0,0,0,0.06);
+    border-color: var(--red);
+  }
+  .collab-icon {
+    width: 56px; height: 56px;
+    background: var(--red-soft);
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 28px;
+    margin-bottom: 18px;
+  }
+  .collab-tag {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--gray);
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    width: fit-content;
+  }
+  .collab-card h3 {
+    font-family: var(--serif);
+    font-size: 21px;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.25;
+    margin-bottom: 14px;
+  }
+  .collab-card h3 em { font-style: italic; color: var(--red); font-weight: 400; }
+  .collab-card p {
+    font-size: 14px;
+    color: var(--gray);
+    line-height: 1.65;
+    margin: 0;
+    flex: 1;
+  }
+  .collab-card p strong { color: var(--ink); font-weight: 600; }
+
+  /* Footer CTA card — soft fallback */
+  .collab-fallback {
+    max-width: 920px;
+    margin: 44px auto 0;
+    padding: 32px 36px;
+    background: linear-gradient(135deg, var(--cream-dark) 0%, var(--cream) 100%);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 32px;
+    align-items: center;
+  }
+  .collab-fallback-text { font-size: 14.5px; color: var(--ink-soft); line-height: 1.6; }
+  .collab-fallback-text strong { color: var(--ink); font-weight: 600; }
+
+  @media (max-width: 968px) {
+    .collab-grid { grid-template-columns: 1fr; }
+    .collab-fallback { grid-template-columns: 1fr; text-align: center; }
+  }
+</style>
+
 <section class="archi-section">
   <div class="container">
-    <div class="reveal" style="text-align:center;max-width:760px;margin:0 auto 50px;">
-      <span class="eyebrow">Architectes certifiés Polistibrick</span>
-      <h2>L'inquiétude #1 : <em>« mon architecte ne connaît pas. »</em></h2>
-      <p class="lead" style="margin-top:14px;">Nous avons résolu ce problème. Voici 3 architectes formés Polistibrick, prêts à vous rencontrer gratuitement. Si vous avez déjà un architecte, nous le formons en 2 jours, gratuitement.</p>
+    <div class="reveal" style="text-align:center;max-width:780px;margin:0 auto 50px;">
+      <span class="eyebrow">Collaboration avec votre architecte</span>
+      <h2>Nous travaillons avec votre architecte — <em>dans votre intérêt.</em></h2>
+      <p class="lead" style="margin-top:14px;">Vous n'avez pas besoin de changer d'architecte. Nous fournissons toute la documentation technique et l'accompagnement nécessaire à votre équipe — pour qu'ils réalisent la maison de vos rêves avec sérénité.</p>
     </div>
 
-    <div class="archi-grid reveal">
-      <!-- TODO: înlocuiește cu arhitecți reali parteneri -->
-      <div class="archi-card">
-        <div class="archi-photo">[Photo : Architecte]</div>
-        <div class="archi-content">
-          <div class="archi-meta">Île-de-France · Paris</div>
-          <div class="archi-name">[Nom Architecte]</div>
-          <div class="archi-cabinet">Cabinet [Nom du cabinet]</div>
-          <span class="archi-stat">12 projets Polistibrick</span>
-          <div class="archi-contact">
-            📞 <a href="tel:+33XXXXXXXXX">+33 X XX XX XX XX</a><br>
-            ✉ <a href="mailto:contact@cabinet.fr">contact@cabinet.fr</a>
-          </div>
-        </div>
+    <div class="collab-grid reveal">
+
+      <!-- Card 1 — Cu arhitectul -->
+      <div class="collab-card">
+        <div class="collab-icon">🤝</div>
+        <span class="collab-tag">Avec votre architecte</span>
+        <h3>Nous mettons à sa disposition <em>tout le matériel nécessaire.</em></h3>
+        <p>Mettez-nous en contact avec l'architecte qui dessine votre maison. Nous lui fournissons <strong>toute la documentation technique</strong> — fiches CAD, BIM, certificats, détails constructifs, calculs thermiques — pour qu'il puisse concevoir la maison de vos rêves en toute sérénité. Si votre architecte n'a pas d'intérêts cachés, il collaborera avec nous — <strong>dans votre intérêt.</strong></p>
       </div>
 
-      <div class="archi-card">
-        <div class="archi-photo">[Photo : Architecte]</div>
-        <div class="archi-content">
-          <div class="archi-meta">PACA · Marseille</div>
-          <div class="archi-name">[Nom Architecte]</div>
-          <div class="archi-cabinet">Cabinet [Nom du cabinet]</div>
-          <span class="archi-stat">8 projets Polistibrick</span>
-          <div class="archi-contact">
-            📞 <a href="tel:+33XXXXXXXXX">+33 X XX XX XX XX</a><br>
-            ✉ <a href="mailto:contact@cabinet.fr">contact@cabinet.fr</a>
-          </div>
-        </div>
+      <!-- Card 2 — Polistibrick = cofraj clasic -->
+      <div class="collab-card">
+        <div class="collab-icon">🏗️</div>
+        <span class="collab-tag">Un système qu'il connaît déjà</span>
+        <h3>Polistibrick se comporte <em>comme un coffrage classique.</em></h3>
+        <p>Un architecte comprend en 2 secondes : on monte l'armature à l'intérieur, on y coule le béton — exactement comme sur un chantier traditionnel. Les villas haut de gamme de la Côte d'Azur sont déjà en <strong>béton armé</strong>. Polistibrick, c'est ce même béton armé, mais coulé dans un <strong>coffrage thermo-isolant</strong> qui intègre ingénieusement les 5 matériaux nécessaires à la construction.</p>
       </div>
 
-      <div class="archi-card">
-        <div class="archi-photo">[Photo : Architecte]</div>
-        <div class="archi-content">
-          <div class="archi-meta">Auvergne-Rhône-Alpes · Lyon</div>
-          <div class="archi-name">[Nom Architecte]</div>
-          <div class="archi-cabinet">Cabinet [Nom du cabinet]</div>
-          <span class="archi-stat">15 projets Polistibrick</span>
-          <div class="archi-contact">
-            📞 <a href="tel:+33XXXXXXXXX">+33 X XX XX XX XX</a><br>
-            ✉ <a href="mailto:contact@cabinet.fr">contact@cabinet.fr</a>
-          </div>
-        </div>
+      <!-- Card 3 — Cu BET / ingineri -->
+      <div class="collab-card">
+        <div class="collab-icon">📐</div>
+        <span class="collab-tag">Avec votre bureau d'études</span>
+        <h3>Nous dialoguons <em>avec votre BET.</em></h3>
+        <p>Si votre bureau d'études techniques rencontre des questions, nous prenons contact avec lui — <strong>dans votre intérêt</strong>. Nous lui expliquons clairement que Polistibrick est un coffrage classique : on y monte l'armature, on y coule le béton. À ne pas confondre avec les <strong>coffrages "type Lego"</strong> qui ont inondé le marché sans apporter de réelle valeur ajoutée — alors que Polistibrick offre une vraie <strong>technologie 5-en-1</strong> intégrée.</p>
       </div>
+
     </div>
 
-    <div style="text-align:center;margin-top:36px;" class="reveal">
-      <p style="font-size:14px;color:var(--gray);margin-bottom:14px;">Pas d'architecte certifié près de chez vous ? Pas de problème.</p>
-      <a href="../../contact/" class="btn btn-primary btn-arrow">Nous formons votre architecte gratuitement</a>
+    <!-- Fallback CTA : dacă arhitectul refuză colaborarea -->
+    <div class="collab-fallback reveal">
+      <div class="collab-fallback-text">
+        <strong>Si malgré tout votre architecte refuse de collaborer dans votre intérêt</strong> et que vous souhaitez tout de même construire votre maison avec Polistibrick, nous pouvons vous orienter vers un architecte avec qui nous avons déjà travaillé sur des projets similaires.
+      </div>
+      <a href="../../contact/" class="btn btn-primary btn-arrow">Nous contacter</a>
     </div>
   </div>
 </section>
