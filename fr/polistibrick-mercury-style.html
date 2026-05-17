@@ -3238,6 +3238,204 @@
   </div>
 </section>
 
+<!-- PENTRU CINE — 4 personas (propriétaire, architecte, constructeur, promoteur) — afișat imediat sub hero -->
+<style>
+  .pentru-section {
+    background: var(--cream);
+    padding: 80px 0;
+  }
+  .pentru-stage-wrap {
+    position: relative;
+    margin: 60px auto 0;
+    max-width: 1480px;
+  }
+  .pentru-stage {
+    position: relative;
+    background: var(--cream-light);
+    border: 1px solid var(--border);
+    border-radius: 32px;
+    padding: 64px 48px 56px;
+    overflow: visible;
+  }
+  .pentru-watermark {
+    position: absolute; top: 0; left: 50%; width: 100vw; margin-left: -50vw;
+    pointer-events: none; user-select: none; transform: translateY(-50%);
+    height: 1em; line-height: 1; text-align: center; text-transform: uppercase;
+    font-family: var(--serif); font-size: clamp(64px, 11vw, 180px);
+    font-weight: 500; letter-spacing: -0.06em; z-index: 2;
+  }
+  .pentru-watermark .wm-half { position: absolute; inset: 0; width: 100%; display: block; }
+  .pentru-watermark .wm-top { color: transparent; -webkit-text-stroke: 1.4px rgba(15,15,15,0.30); clip-path: inset(0 0 50% 0); }
+  .pentru-watermark .wm-bottom { color: var(--cream-dark); opacity: 0.65; clip-path: inset(50% 0 0 0); }
+  .pentru-intro {
+    max-width: 760px; margin: 0 auto 48px; text-align: center;
+  }
+  .pentru-intro .bubble-tag {
+    display: inline-block; background: var(--red-soft); color: var(--red);
+    padding: 4px 12px; border-radius: 4px; font-size: 11px; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 14px;
+  }
+  .pentru-intro h2 {
+    font-family: var(--serif); font-size: clamp(28px, 3.2vw, 44px); font-weight: 500;
+    color: var(--ink); letter-spacing: -0.02em; line-height: 1.05; margin-bottom: 14px;
+  }
+  .pentru-intro h2 em { font-style: italic; color: var(--red); font-weight: 400; }
+  .pentru-intro p { font-size: 15px; color: var(--gray); line-height: 1.6; margin: 0; }
+
+  .pentru-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  @media (max-width: 1200px) {
+    .pentru-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  .pentru-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 36px 32px;
+    transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+  }
+  .pentru-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 50px rgba(0,0,0,0.08);
+    border-color: var(--red);
+  }
+  .pentru-icon {
+    width: 56px; height: 56px;
+    background: var(--red-soft);
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 28px;
+    margin-bottom: 22px;
+  }
+  .pentru-card h3 {
+    font-family: var(--serif); font-size: 22px; font-weight: 500;
+    color: var(--ink); margin-bottom: 8px; letter-spacing: -0.01em;
+    line-height: 1.15;
+  }
+  .pentru-card h3 em { font-style: italic; color: var(--red); font-weight: 400; }
+  .pentru-tag {
+    display: inline-block; background: var(--cream);
+    color: var(--gray); padding: 3px 10px; border-radius: 4px;
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .pentru-card p {
+    font-size: 14px; color: var(--gray); line-height: 1.6; margin: 0 0 18px;
+    flex: 1;
+  }
+  .pentru-promises {
+    list-style: none; padding: 0; margin: 0 0 22px;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .pentru-promises li {
+    font-size: 13px; color: var(--ink-soft); display: flex;
+    align-items: flex-start; gap: 8px; line-height: 1.4;
+  }
+  .pentru-promises li::before {
+    content: '✓'; color: var(--red); font-weight: 700;
+    flex-shrink: 0; margin-top: 1px;
+  }
+  .pentru-link {
+    font-size: 13px; font-weight: 600; color: var(--red);
+    text-transform: uppercase; letter-spacing: 0.06em;
+    transition: gap 0.2s ease; display: inline-flex; align-items: center; gap: 6px;
+  }
+  .pentru-card:hover .pentru-link { gap: 10px; }
+
+  @media (max-width: 968px) {
+    .pentru-grid { grid-template-columns: 1fr; gap: 18px; }
+    .pentru-stage { padding: 48px 24px 36px; }
+    .pentru-card { padding: 28px 24px; }
+  }
+</style>
+
+<section class="pentru-section">
+  <div class="container">
+    <div class="pentru-stage-wrap reveal">
+      <div class="pentru-watermark" aria-hidden="true">
+        <span class="wm-half wm-top">Pour</span>
+        <span class="wm-half wm-bottom">Pour</span>
+      </div>
+
+      <div class="pentru-stage">
+        <div class="pentru-intro">
+          <span class="bubble-tag">Vous êtes... ?</span>
+          <h2>Quatre rôles, <em>la même maison parfaite.</em></h2>
+          <p>Polistibrick résout des problèmes différents pour chacun. Choisissez votre rôle pour voir concrètement ce que vous obtenez.</p>
+        </div>
+
+        <div class="pentru-grid">
+
+          <a href="pour/proprietaires/" class="pentru-card">
+            <div class="pentru-icon">🏠</div>
+            <span class="pentru-tag">Propriétaire</span>
+            <h3>Maison premium <em>sans factures.</em></h3>
+            <p>Vous voulez une maison passive qui ne fonctionne ni au gaz, ni au bois, ni à l'électricité. Vous voulez emménager en quelques semaines, pas en plusieurs mois. Vous voulez la sérénité d'une maison qui dure des générations.</p>
+            <ul class="pentru-promises">
+              <li>Factures &minus;95% sur l'énergie</li>
+              <li>Construction en 4 semaines</li>
+              <li>L'été sans climatisation, l'hiver sans chaudière</li>
+              <li>Résiste aux séismes, au feu, à l'eau</li>
+            </ul>
+            <span class="pentru-link">Voir pour propriétaires →</span>
+          </a>
+
+          <a href="pour/architectes/" class="pentru-card">
+            <div class="pentru-icon">📐</div>
+            <span class="pentru-tag">Architecte · Ingénieur</span>
+            <h3>Liberté de design. <em>Support technique.</em></h3>
+            <p>ICF breveté avec calculs antisismiques intégrés, BIM, PHPP et ingénieur dédié à chaque projet.</p>
+            <ul class="pentru-promises">
+              <li>Plan d'armature antisismique intégré</li>
+              <li>BIM + DWG + fiches techniques gratuites</li>
+              <li>Portées de 9 m sans poutres</li>
+              <li>Passe Passivhaus à la première visite</li>
+            </ul>
+            <span class="pentru-link">Voir pour architectes →</span>
+          </a>
+
+          <a href="pour/constructeurs/" class="pentru-card">
+            <div class="pentru-icon">🔨</div>
+            <span class="pentru-tag">Constructeur</span>
+            <h3>3× plus rapide. <em>Marges protégées.</em></h3>
+            <p>Un système qui se monte en 4 semaines avec une équipe de 2-3 personnes. Formation certifiée gratuite et support sur chantier.</p>
+            <ul class="pentru-promises">
+              <li>Construction en 4 semaines (vs 4-5 mois)</li>
+              <li>Marges +15-25% sur chaque chantier</li>
+              <li>Formation certifiée gratuite (3 jours)</li>
+              <li>Leads garantis via le programme partenaire</li>
+            </ul>
+            <span class="pentru-link">Voir pour constructeurs →</span>
+          </a>
+
+          <a href="pour/investisseurs/" class="pentru-card">
+            <div class="pentru-icon">🏢</div>
+            <span class="pentru-tag">Promoteur</span>
+            <h3>ROI maximum. <em>Risque minimum.</em></h3>
+            <p>Ensembles résidentiels Passivhaus livrés en moitié moins de temps, vendus avec une prime de +18% au-dessus du marché.</p>
+            <ul class="pentru-promises">
+              <li>&minus;40% de temps d'exécution sur ensemble</li>
+              <li>+18% de prime sur le prix de vente</li>
+              <li>Certification Passivhaus garantie</li>
+              <li>Remises pour gros volumes B2B</li>
+            </ul>
+            <span class="pentru-link">Voir pour promoteurs →</span>
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- SUPERPOWERS — 3 trust badges right under hero (non-snap thin band) -->
 <section class="superpowers" aria-label="De ce Polistibrick">
   <div class="container">
@@ -3383,187 +3581,6 @@
       </div>
     </div>
 
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PENTRU CINE — 3 personas (proprietar, arhitect, dezvoltator) -->
-<style>
-  .pentru-section {
-    background: var(--cream);
-    padding: 80px 0;
-  }
-  .pentru-stage-wrap {
-    position: relative;
-    margin: 60px auto 0;
-    max-width: 1480px;
-  }
-  .pentru-stage {
-    position: relative;
-    background: var(--cream-light);
-    border: 1px solid var(--border);
-    border-radius: 32px;
-    padding: 64px 48px 56px;
-    overflow: visible;
-  }
-  .pentru-watermark {
-    position: absolute; top: 0; left: 50%; width: 100vw; margin-left: -50vw;
-    pointer-events: none; user-select: none; transform: translateY(-50%);
-    height: 1em; line-height: 1; text-align: center; text-transform: uppercase;
-    font-family: var(--serif); font-size: clamp(64px, 11vw, 180px);
-    font-weight: 500; letter-spacing: -0.06em; z-index: 2;
-  }
-  .pentru-watermark .wm-half { position: absolute; inset: 0; width: 100%; display: block; }
-  .pentru-watermark .wm-top { color: transparent; -webkit-text-stroke: 1.4px rgba(15,15,15,0.30); clip-path: inset(0 0 50% 0); }
-  .pentru-watermark .wm-bottom { color: var(--cream-dark); opacity: 0.65; clip-path: inset(50% 0 0 0); }
-  .pentru-intro {
-    max-width: 760px; margin: 0 auto 48px; text-align: center;
-  }
-  .pentru-intro .bubble-tag {
-    display: inline-block; background: var(--red-soft); color: var(--red);
-    padding: 4px 12px; border-radius: 4px; font-size: 11px; font-weight: 600;
-    letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 14px;
-  }
-  .pentru-intro h2 {
-    font-family: var(--serif); font-size: clamp(28px, 3.2vw, 44px); font-weight: 500;
-    color: var(--ink); letter-spacing: -0.02em; line-height: 1.05; margin-bottom: 14px;
-  }
-  .pentru-intro h2 em { font-style: italic; color: var(--red); font-weight: 400; }
-  .pentru-intro p { font-size: 15px; color: var(--gray); line-height: 1.6; margin: 0; }
-
-  .pentru-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-  }
-  .pentru-card {
-    background: white;
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 36px 32px;
-    transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s ease, border-color 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    text-decoration: none;
-    color: inherit;
-  }
-  .pentru-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 24px 50px rgba(0,0,0,0.08);
-    border-color: var(--red);
-  }
-  .pentru-icon {
-    width: 56px; height: 56px;
-    background: var(--red-soft);
-    border-radius: 14px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 28px;
-    margin-bottom: 22px;
-  }
-  .pentru-card h3 {
-    font-family: var(--serif); font-size: 22px; font-weight: 500;
-    color: var(--ink); margin-bottom: 8px; letter-spacing: -0.01em;
-    line-height: 1.15;
-  }
-  .pentru-card h3 em { font-style: italic; color: var(--red); font-weight: 400; }
-  .pentru-tag {
-    display: inline-block; background: var(--cream);
-    color: var(--gray); padding: 3px 10px; border-radius: 4px;
-    font-size: 10px; font-weight: 600;
-    letter-spacing: 0.08em; text-transform: uppercase;
-    margin-bottom: 14px;
-  }
-  .pentru-card p {
-    font-size: 14px; color: var(--gray); line-height: 1.6; margin: 0 0 18px;
-    flex: 1;
-  }
-  .pentru-promises {
-    list-style: none; padding: 0; margin: 0 0 22px;
-    display: flex; flex-direction: column; gap: 8px;
-  }
-  .pentru-promises li {
-    font-size: 13px; color: var(--ink-soft); display: flex;
-    align-items: flex-start; gap: 8px; line-height: 1.4;
-  }
-  .pentru-promises li::before {
-    content: '✓'; color: var(--red); font-weight: 700;
-    flex-shrink: 0; margin-top: 1px;
-  }
-  .pentru-link {
-    font-size: 13px; font-weight: 600; color: var(--red);
-    text-transform: uppercase; letter-spacing: 0.06em;
-    transition: gap 0.2s ease; display: inline-flex; align-items: center; gap: 6px;
-  }
-  .pentru-card:hover .pentru-link { gap: 10px; }
-
-  @media (max-width: 968px) {
-    .pentru-grid { grid-template-columns: 1fr; gap: 18px; }
-    .pentru-stage { padding: 48px 24px 36px; }
-    .pentru-card { padding: 28px 24px; }
-  }
-</style>
-
-<section class="pentru-section">
-  <div class="container">
-    <div class="pentru-stage-wrap reveal">
-      <div class="pentru-watermark" aria-hidden="true">
-        <span class="wm-half wm-top">Pour</span>
-        <span class="wm-half wm-bottom">Pour</span>
-      </div>
-
-      <div class="pentru-stage">
-        <div class="pentru-intro">
-          <span class="bubble-tag">Pour qui est Polistibrick</span>
-          <h2>Trois personnes différentes, <em>la même maison parfaite.</em></h2>
-          <p>Polistibrick résout des problèmes différents pour chacun. Choisissez votre rôle pour voir concrètement ce que vous obtenez.</p>
-        </div>
-
-        <div class="pentru-grid">
-
-          <a href="pour/proprietaires/" class="pentru-card">
-            <div class="pentru-icon">🏠</div>
-            <span class="pentru-tag">Propriétaire</span>
-            <h3>Maison premium <em>sans factures.</em></h3>
-            <p>Vous voulez une maison passive qui ne fonctionne ni au gaz, ni au bois, ni à l'électricité. Vous voulez emménager en quelques semaines, pas en plusieurs mois. Vous voulez la sérénité d'une maison qui dure des générations.</p>
-            <ul class="pentru-promises">
-              <li>Factures &minus;95% sur l'énergie</li>
-              <li>Construction en 4 semaines</li>
-              <li>L'été sans climatisation, l'hiver sans chaudière</li>
-              <li>Résiste aux séismes, au feu, à l'eau</li>
-            </ul>
-            <span class="pentru-link">Voir pour propriétaires →</span>
-          </a>
-
-          <a href="pour/architectes/" class="pentru-card">
-            <div class="pentru-icon">📐</div>
-            <span class="pentru-tag">Architecte · Ingénieur</span>
-            <h3>Système flexible. <em>Support complet.</em></h3>
-            <p>ICF breveté avec certifications UE, BIM, calculs PHPP et support technique dédié à chaque projet.</p>
-            <ul class="pentru-promises">
-              <li>Portées de 9 m sans poutres</li>
-              <li>Géométries personnalisées sans coût supplémentaire</li>
-              <li>BIM + DWG + fiches techniques gratuites</li>
-              <li>Passe Passivhaus à la première visite</li>
-            </ul>
-            <span class="pentru-link">Voir pour architectes →</span>
-          </a>
-
-          <a href="pour/investisseurs/" class="pentru-card">
-            <div class="pentru-icon">🏢</div>
-            <span class="pentru-tag">Promoteur</span>
-            <h3>ROI maximum. <em>Risque minimum.</em></h3>
-            <p>Ensembles résidentiels Passivhaus livrés en moitié moins de temps, vendus avec une prime de +18% au-dessus du marché.</p>
-            <ul class="pentru-promises">
-              <li>&minus;40% de temps d'exécution sur ensemble</li>
-              <li>+18% de prime sur le prix de vente</li>
-              <li>Certification Passivhaus garantie</li>
-              <li>Remises pour gros volumes B2B</li>
-            </ul>
-            <span class="pentru-link">Voir pour promoteurs →</span>
-          </a>
-
-        </div>
       </div>
     </div>
   </div>
