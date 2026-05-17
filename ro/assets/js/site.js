@@ -15,67 +15,84 @@
     return depth <= 1 ? '' : '../'.repeat(depth - 1);
   })();
 
-  // NAV_HTML — identical structure to homepage (uses .nav-menu-item / .nav-menu-link / .nav-menu-dropdown classes)
   const NAV_HTML = `
     <div class="nav-inner">
-      <a href="${BASE}" class="logo" aria-label="Polistibrick — acasă">
-        <img src="${BASE}images/logo.png" alt="Polistibrick" class="logo-img">
+      <a href="${BASE}" class="nav-logo" aria-label="Polistibrick — acasă">
+        <img src="${BASE}images/logo.png" alt="Polistibrick" loading="eager">
       </a>
-      <div class="nav-menu" aria-label="Navigare principală">
-        <div class="nav-menu-item">
-          <a href="${BASE}produse/pereti-mbk/" class="nav-menu-link">Produse <span class="nav-menu-caret">▾</span></a>
-          <div class="nav-menu-dropdown">
-            <a href="${BASE}produse/pereti-mbk/">Pereți MBK</a>
-            <a href="${BASE}produse/planseu-pbk/">Planșee PBK</a>
-            <a href="${BASE}produse/acoperis-tbk/">Acoperiș TBK</a>
-            <a href="${BASE}produse/accesorii/">Accesorii</a>
+      <nav class="nav-menu" aria-label="Navigare principală">
+        <div class="nav-item">
+          <button class="nav-link" aria-haspopup="true" aria-expanded="false">
+            Produse
+            <svg class="nav-link-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5l3 3 3-3"/></svg>
+          </button>
+          <div class="nav-dropdown">
+            <a class="nav-dropdown-item" href="${BASE}produse/pereti-mbk/">Pereți MBK<span class="nav-dropdown-item-sub">Cofraj-pierdut pentru pereți portanți</span></a>
+            <a class="nav-dropdown-item" href="${BASE}produse/planseu-pbk/">Planșee PBK<span class="nav-dropdown-item-sub">Panouri prefabricate cu defazaj 10,8 h</span></a>
+            <a class="nav-dropdown-item" href="${BASE}produse/acoperis-tbk/">Acoperiș TBK<span class="nav-dropdown-item-sub">Sistem Passivhaus din fabrică</span></a>
+            <a class="nav-dropdown-item" href="${BASE}produse/accesorii/">Accesorii<span class="nav-dropdown-item-sub">Colțare, capete, scări, ferestre</span></a>
           </div>
         </div>
-        <div class="nav-menu-item">
-          <a href="${BASE}pentru/proprietari/" class="nav-menu-link">Soluții <span class="nav-menu-caret">▾</span></a>
-          <div class="nav-menu-dropdown">
-            <a href="${BASE}pentru/proprietari/">Pentru proprietari</a>
-            <a href="${BASE}pentru/arhitecti/">Pentru arhitecți</a>
-            <a href="${BASE}pentru/constructori/">Pentru constructori</a>
-            <a href="${BASE}pentru/investitori/">Pentru investitori</a>
-            <a href="${BASE}devino-partener/" style="color:var(--red);font-weight:600;">→ Devino partener</a>
+        <div class="nav-item">
+          <button class="nav-link" aria-haspopup="true" aria-expanded="false">
+            Soluții
+            <svg class="nav-link-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5l3 3 3-3"/></svg>
+          </button>
+          <div class="nav-dropdown">
+            <a class="nav-dropdown-item" href="${BASE}pentru/proprietari/">Pentru proprietari<span class="nav-dropdown-item-sub">Casă pasivă fără facturi mari</span></a>
+            <a class="nav-dropdown-item" href="${BASE}pentru/arhitecti/">Pentru arhitecți<span class="nav-dropdown-item-sub">Detalii constructive, BIM, fișe</span></a>
+            <a class="nav-dropdown-item" href="${BASE}pentru/constructori/">Pentru constructori<span class="nav-dropdown-item-sub">Montaj, certificare, parteneriat</span></a>
+            <a class="nav-dropdown-item" href="${BASE}pentru/investitori/">Pentru investitori<span class="nav-dropdown-item-sub">ROI, viteză execuție, ansambluri</span></a>
+            <a class="nav-dropdown-item" href="${BASE}devino-partener/" style="color:var(--red);font-weight:600;">→ Devino partener<span class="nav-dropdown-item-sub" style="color:rgba(200,16,46,0.7);">Aplicație constructori certificați</span></a>
           </div>
         </div>
-        <div class="nav-menu-item">
-          <a href="${BASE}proiecte/" class="nav-menu-link">Proiecte <span class="nav-menu-caret">▾</span></a>
-          <div class="nav-menu-dropdown">
-            <a href="${BASE}proiecte/">Case construite</a>
-            <a href="${BASE}testimoniale/">Testimoniale (video)</a>
+        <div class="nav-item">
+          <button class="nav-link" aria-haspopup="true" aria-expanded="false">
+            Proiecte
+            <svg class="nav-link-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5l3 3 3-3"/></svg>
+          </button>
+          <div class="nav-dropdown">
+            <a class="nav-dropdown-item" href="${BASE}proiecte/">Case construite<span class="nav-dropdown-item-sub">Galerie + hartă cu proiecte</span></a>
+            <a class="nav-dropdown-item" href="${BASE}testimoniale/">Testimoniale (video)<span class="nav-dropdown-item-sub">Proprietarii vorbesc, cu cifre reale</span></a>
           </div>
         </div>
-        <div class="nav-menu-item">
-          <a href="${BASE}calculator/" class="nav-menu-link">Calculator <span class="nav-menu-caret">▾</span></a>
-          <div class="nav-menu-dropdown">
-            <a href="${BASE}calculator/">Calculator cost</a>
-            <a href="${BASE}economii/">Calculator economii</a>
+        <div class="nav-item">
+          <button class="nav-link" aria-haspopup="true" aria-expanded="false">
+            Calculator
+            <svg class="nav-link-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5l3 3 3-3"/></svg>
+          </button>
+          <div class="nav-dropdown">
+            <a class="nav-dropdown-item" href="${BASE}calculator/">Calculator cost<span class="nav-dropdown-item-sub">Estimează prețul panourilor casei tale</span></a>
+            <a class="nav-dropdown-item" href="${BASE}economii/">Calculator economii<span class="nav-dropdown-item-sub">Polistibrick vs cărămidă pe 25 de ani</span></a>
           </div>
         </div>
-        <div class="nav-menu-item">
-          <a href="${BASE}resurse/" class="nav-menu-link">Resurse <span class="nav-menu-caret">▾</span></a>
-          <div class="nav-menu-dropdown">
-            <a href="${BASE}comparatie/">Comparație</a>
-            <a href="${BASE}resurse/blog/">Blog</a>
-            <a href="${BASE}resurse/faq/">Întrebări frecvente</a>
+        <div class="nav-item">
+          <button class="nav-link" aria-haspopup="true" aria-expanded="false">
+            Resurse
+            <svg class="nav-link-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5l3 3 3-3"/></svg>
+          </button>
+          <div class="nav-dropdown">
+            <a class="nav-dropdown-item" href="${BASE}comparatie/">Comparație<span class="nav-dropdown-item-sub">Polistibrick vs sistem clasic vs alt ICF</span></a>
+            <a class="nav-dropdown-item" href="${BASE}resurse/blog/">Blog<span class="nav-dropdown-item-sub">Articole despre Casa Pasivă, ICF</span></a>
+            <a class="nav-dropdown-item" href="${BASE}resurse/faq/">Întrebări frecvente<span class="nav-dropdown-item-sub">Răspunsuri la cele mai comune întrebări</span></a>
           </div>
         </div>
-        <div class="nav-menu-item">
-          <a href="${BASE}despre/" class="nav-menu-link">Despre <span class="nav-menu-caret">▾</span></a>
-          <div class="nav-menu-dropdown">
-            <a href="${BASE}despre/">Compania</a>
-            <a href="${BASE}despre/patent/">Patentul Polistibrick</a>
-            <a href="${BASE}despre/certificari/">Certificări</a>
-            <a href="${BASE}despre/fabrici/">Fabricile noastre</a>
-            <a href="${BASE}despre/echipa/">Echipa</a>
+        <div class="nav-item">
+          <button class="nav-link" aria-haspopup="true" aria-expanded="false">
+            Despre
+            <svg class="nav-link-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5l3 3 3-3"/></svg>
+          </button>
+          <div class="nav-dropdown">
+            <a class="nav-dropdown-item" href="${BASE}despre/">Compania<span class="nav-dropdown-item-sub">Cine suntem, viziune, misiune</span></a>
+            <a class="nav-dropdown-item" href="${BASE}despre/patent/">Patentul Polistibrick<span class="nav-dropdown-item-sub">Brevetul care ne face unici</span></a>
+            <a class="nav-dropdown-item" href="${BASE}despre/certificari/">Certificări<span class="nav-dropdown-item-sub">CE, ISO, Passivhaus, agremente</span></a>
+            <a class="nav-dropdown-item" href="${BASE}despre/fabrici/">Fabricile noastre<span class="nav-dropdown-item-sub">Valencia (ES) și Craiova (RO)</span></a>
+            <a class="nav-dropdown-item" href="${BASE}despre/echipa/">Echipa<span class="nav-dropdown-item-sub">Fondatori și oamenii noștri</span></a>
           </div>
         </div>
-      </div>
+      </nav>
       <div class="nav-cta">
-        <!-- COUNTRY SWITCHER (identique au homepage) -->
+        <!-- COUNTRY SWITCHER — identique à celui du homepage -->
         <div class="country-switcher" data-country-switcher>
           <button class="country-switcher-trigger" type="button" aria-label="Alege țara" aria-expanded="false">
             <span class="country-switcher-flag">🇷🇴</span>
@@ -95,7 +112,7 @@
           </div>
         </div>
         <a href="${BASE}contact/" class="btn btn-ghost">Contact</a>
-        <a href="${BASE}oferta/" class="btn btn-primary">Cere ofertă →</a>
+        <a href="${BASE}oferta/" class="btn btn-primary btn-arrow">Cere ofertă</a>
       </div>
     </div>
   `;
