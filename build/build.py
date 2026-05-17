@@ -63,10 +63,44 @@ def apply_placeholders(text: str, config: dict) -> str:
     return PLACEHOLDER_RE.sub(lambda m: resolve_placeholder(m.group(1), config), text)
 
 
+# Per-language URL path rewriting (RO → target lang folder names)
+PATH_REWRITES = {
+    "fr": {
+        "produse": "produits", "pentru": "pour", "despre": "a-propos",
+        "resurse": "ressources", "proiecte": "projets", "economii": "economies",
+        "oferta": "devis", "comparatie": "comparaison", "calculator": "calculateur",
+        "testimoniale": "temoignages", "devino-partener": "devenir-partenaire",
+        "pereti-mbk": "murs-mbk", "planseu-pbk": "planchers-pbk",
+        "acoperis-tbk": "toit-tbk", "accesorii": "accessoires",
+        "proprietari": "proprietaires", "arhitecti": "architectes",
+        "constructori": "constructeurs", "investitori": "investisseurs",
+        "certificari": "certifications", "fabrici": "usines",
+        "echipa": "equipe", "patent": "brevet",
+        "casa-cluj-napoca": "maison-cluj-napoca", "ansamblu-lyon": "ensemble-lyon",
+        "confidentialitate": "confidentialite", "sustenabilitate": "durabilite",
+        "termeni": "conditions",
+    },
+}
+
+
+def rewrite_paths(text: str, lang: str) -> str:
+    """Rewrite RO folder names to target language paths in href/src attributes."""
+    rewrites = PATH_REWRITES.get(lang)
+    if not rewrites:
+        return text
+    for old, new in sorted(rewrites.items(), key=lambda x: -len(x[0])):
+        if old == new:
+            continue
+        # Match in href="..." / src="..." / template literals ${BASE}old/
+        text = re.sub(r'(["\'/$\}])' + re.escape(old) + r'(/)', r'\1' + new + r'\2', text)
+    return text
+
+
 def copy_tree(src: Path, dst: Path, transform: bool, config: dict):
     """Copy src→dst. If transform=True, replace placeholders in .html/.css/.js."""
     if not src.exists():
         return
+    lang = config.get("lang", "ro")
     for item in src.rglob("*"):
         if item.is_dir():
             continue
@@ -77,6 +111,9 @@ def copy_tree(src: Path, dst: Path, transform: bool, config: dict):
             try:
                 content = item.read_text(encoding="utf-8")
                 content = apply_placeholders(content, config)
+                # Rewrite RO folder names to target lang paths (for shared site.js)
+                if item.suffix.lower() in {".js", ".html"}:
+                    content = rewrite_paths(content, lang)
                 target.write_text(content, encoding="utf-8")
                 continue
             except UnicodeDecodeError:
