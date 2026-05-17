@@ -286,25 +286,25 @@
 
           <!-- LEFT: text + beneficii -->
           <div class="wm-text">
-            <span class="bubble-tag">Deviz în 48 hours</span>
-            <h2>The House ta, <em>cu cifre exacte.</em></h2>
-            <p>Spune-ne despre proiect și un specialist Polistibrick îți pregătește o ofertă complete — cantități pe componente, materiale, livrare în țara ta, montaj opțional.</p>
-            <p><strong>Fără obligație, fără costuri ascunse, fără pressuring.</strong> Dacă nu e potrivit pentru tine, o spunem direct.</p>
+            <span class="bubble-tag">Quote in 48 hours</span>
+            <h2>The House ta, <em>with exact figures.</em></h2>
+            <p>Tell us about your project and a Polistibrick specialist will prepare a complete quote for you — quantities per component, materials, delivery in your country, optional installation.</p>
+            <p><strong>No obligation, no hidden costs, no pressure.</strong> If it's not right for you, we'll tell you straight.</p>
 
             <div class="wm-bullets">
-              <div class="wm-bullet"><span><strong>Răspuns în maxim 48 hours</strong> în days lucrătoare</span></div>
-              <div class="wm-bullet"><span><strong>Deviz transparent</strong> pe materiale, accesorii, livrare și opțional montaj</span></div>
-              <div class="wm-bullet"><span><strong>Calcul pe planul tău real</strong> — nu estimări medii, ci cifre exacte pe proiectul tău</span></div>
-              <div class="wm-bullet"><span><strong>Recomandare model</strong> (MBK 210/270/300) în funcție de climă, buget, planuri</span></div>
-              <div class="wm-bullet"><span><strong>Constructor local certificat</strong> dacă vrei, sau lucrezi cu cel al tău</span></div>
-              <div class="wm-bullet"><span><strong>Datele tale rămân confidențiale</strong> — nu le vindem, nu le transmitem</span></div>
+              <div class="wm-bullet"><span><strong>Response within 48 hours</strong> on working days</span></div>
+              <div class="wm-bullet"><span><strong>Deviz transparent</strong> on materials, accessories, delivery and optional installation</span></div>
+              <div class="wm-bullet"><span><strong>Calculation on your real plan</strong> — not average estimates, but exact figures for your project</span></div>
+              <div class="wm-bullet"><span><strong>Recomandare model</strong> (MBK 210/270/300) according to climate, budget, plans</span></div>
+              <div class="wm-bullet"><span><strong>Constructor local certificat</strong> if you wish, or work with your own</span></div>
+              <div class="wm-bullet"><span><strong>Your data stays confidential</strong> — we don't sell it, we don't share it</span></div>
             </div>
           </div>
 
           <!-- RIGHT: formular -->
           <div class="wm-form-card">
             <h3>Tell us about the project.</h3>
-            <p>Toate câmpurile sunt confidențiale. Le folosim doar pentru a-ți pregăti oferta.</p>
+            <p>All fields are confidential. We use them only to prepare your quote.</p>
 
             <form onsubmit="alert('Formularul este momentan în demo. Va fi conectat la sistemul de procesare al ofertelor.'); return false;">
 
@@ -314,7 +314,7 @@
                 <div class="form-radio-group">
                   <div class="form-radio">
                     <input type="radio" name="type" id="type-casa" value="casa" checked>
-                    <label for="type-casa">House unifamilială</label>
+                    <label for="type-casa">Single-family house</label>
                   </div>
                   <div class="form-radio">
                     <input type="radio" name="type" id="type-duplex" value="duplex">
@@ -333,7 +333,7 @@
 
               <!-- COMPONENTS -->
               <div class="form-row">
-                <label class="form-label">Ce te interesează</label>
+                <label class="form-label">What you are interested in</label>
                 <div class="form-radio-group">
                   <div class="form-radio">
                     <input type="checkbox" name="components" id="cmp-mbk" value="mbk" checked>
@@ -357,11 +357,11 @@
               <!-- SIZE + LOCATION -->
               <div class="form-row form-row--split">
                 <div>
-                  <label class="form-label" for="surface">Suprafață (m²)</label>
+                  <label class="form-label" for="surface">Surface area (m²)</label>
                   <input class="form-input" type="number" id="surface" name="surface" placeholder="ex. 180" min="20" max="5000">
                 </div>
                 <div>
-                  <label class="form-label" for="location">Localitate / Județ</label>
+                  <label class="form-label" for="location">Town / County</label>
                   <input class="form-input" type="text" id="location" name="location" placeholder="ex. Cluj-Napoca, CJ">
                 </div>
               </div>
@@ -372,22 +372,22 @@
                   <label class="form-label" for="budget">Buget orientativ (€)</label>
                   <select class="form-select" id="budget" name="budget">
                     <option value="">Select</option>
-                    <option value="under-100k">Sub 100.000 €</option>
+                    <option value="under-100k">Under 100,000 €</option>
                     <option value="100-200k">100.000 – 200.000 €</option>
                     <option value="200-400k">200.000 – 400.000 €</option>
-                    <option value="400k-plus">Peste 400.000 €</option>
-                    <option value="unknown">Încă nu știu</option>
+                    <option value="400k-plus">Over 400,000 €</option>
+                    <option value="unknown">Not sure yet</option>
                   </select>
                 </div>
                 <div>
-                  <label class="form-label" for="timeline">Când vrei să începi</label>
+                  <label class="form-label" for="timeline">When you want to start</label>
                   <select class="form-select" id="timeline" name="timeline">
                     <option value="">Select</option>
-                    <option value="asap">Cât mai curând</option>
-                    <option value="3m">În 3 months</option>
-                    <option value="6m">În 6 months</option>
-                    <option value="12m">În 6-12 months</option>
-                    <option value="exploring">Doar mă informez</option>
+                    <option value="asap">As soon as possible</option>
+                    <option value="3m">In 3 months</option>
+                    <option value="6m">In 6 months</option>
+                    <option value="12m">In 6-12 months</option>
+                    <option value="exploring">Just gathering information</option>
                   </select>
                 </div>
               </div>
@@ -406,7 +406,7 @@
                   </div>
                   <div class="form-radio">
                     <input type="radio" name="stage" id="stage-auth" value="auth">
-                    <label for="stage-auth">Am autorizație</label>
+                    <label for="stage-auth">I have planning permission</label>
                   </div>
                 </div>
               </div>
@@ -419,12 +419,12 @@
 
               <!-- ATTACHMENTS (plans, sketches, documents) -->
               <div class="form-row">
-                <label class="form-label">Atașamente (plan, schițe, documente)</label>
+                <label class="form-label">Attachments (plan, sketches, documents)</label>
                 <label class="form-file-drop" for="ofiles" id="fileDropZone">
                   <span class="form-file-icon">📎</span>
                   <div class="form-file-text">
                     <strong>Attach plans, sketches or documents</strong>
-                    <span>PDF · DWG · DXF · JPG · PNG · ZIP — max 10 MB / fișier</span>
+                    <span>PDF · DWG · DXF · JPG · PNG · ZIP — max 10 MB / file</span>
                   </div>
                   <input type="file" id="ofiles" name="files" accept=".pdf,.dwg,.dxf,.jpg,.jpeg,.png,.zip" multiple style="display:none;">
                 </label>
@@ -478,29 +478,29 @@
 <section class="section section--cream">
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 50px;">
-      <span class="eyebrow">Ce urmează</span>
+      <span class="eyebrow">What happens next</span>
       <h2>Procesul, <em>step by step.</em></h2>
     </div>
     <div class="grid grid-4 reveal" style="gap:32px;">
       <div>
         <div style="font-family:var(--serif);font-size:48px;color:var(--red);line-height:1;margin-bottom:14px;">01</div>
-        <h4 style="margin-bottom:8px;">Trimiți cererea</h4>
-        <p style="font-size:14px;">Completezi formularul. Toate detaliile sunt confidențiale.</p>
+        <h4 style="margin-bottom:8px;">You submit the request</h4>
+        <p style="font-size:14px;">Completezi formularul. All details are confidential.</p>
       </div>
       <div>
         <div style="font-family:var(--serif);font-size:48px;color:var(--red);line-height:1;margin-bottom:14px;">02</div>
-        <h4 style="margin-bottom:8px;">Te contactăm</h4>
-        <p style="font-size:14px;">În 24-48 hours te sună un specialist Polistibrick să clarifice detaliile.</p>
+        <h4 style="margin-bottom:8px;">We contact you</h4>
+        <p style="font-size:14px;">Within 24-48 hours a Polistibrick specialist calls you to clarify the details.</p>
       </div>
       <div>
         <div style="font-family:var(--serif);font-size:48px;color:var(--red);line-height:1;margin-bottom:14px;">03</div>
-        <h4 style="margin-bottom:8px;">Primești oferta</h4>
-        <p style="font-size:14px;">Calculăm exact cantitățile MBK/PBK/TBK necesare + livrare + montaj opțional.</p>
+        <h4 style="margin-bottom:8px;">You receive the quote</h4>
+        <p style="font-size:14px;">We calculate exactly the MBK/PBK/TBK quantities required + delivery + optional installation.</p>
       </div>
       <div>
         <div style="font-family:var(--serif);font-size:48px;color:var(--red);line-height:1;margin-bottom:14px;">04</div>
         <h4 style="margin-bottom:8px;">Construim</h4>
-        <p style="font-size:14px;">Comanda intră în producție. O house livrabilă în 2-3 weeks.</p>
+        <p style="font-size:14px;">The order goes into production. A house ready for delivery in 2-3 weeks.</p>
       </div>
     </div>
   </div>

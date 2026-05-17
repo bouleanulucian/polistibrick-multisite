@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calculator economii · Cât economisești cu Polistibrick — 25 years</title>
+  <title>Savings calculator · How much you save with Polistibrick — 25 years</title>
   <meta name="description" content="Calculator dinamic care arată cât economisești cu Polistibrick vs brick clasică pe 25 de years. Introdu m², climă, preț energie și vezi diferența reală.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -116,9 +116,9 @@
       <div class="wm-stage">
 
         <div class="wm-intro">
-          <span class="bubble-tag">Cât economisești în 25 years</span>
+          <span class="bubble-tag">How much you save in 25 years</span>
           <h2>Polistibrick vs brick: <em>cifrele tale.</em></h2>
-          <p>Calculator dinamic care îți arată EXACT cât economisești pe energie, mentenanță și costuri totale pe 25 de years, pentru casa pe care vrei să o construiești. Introdu cifrele tale, vezi rezultatul în timp real.</p>
+          <p>A dynamic calculator that shows you EXACTLY how much you save on energy, maintenance and total costs over 25 years, for the house you want to build. Enter your figures, see the result in real time.</p>
         </div>
 
         <div class="comp-grid">
@@ -128,12 +128,12 @@
             <h3>Datele casei tale.</h3>
 
             <div class="form-row">
-              <label class="form-label" for="cSurface">Suprafață house (m²)</label>
+              <label class="form-label" for="cSurface">House surface (m²)</label>
               <input class="form-input" type="number" id="cSurface" value="150" min="50" max="1000" step="10">
             </div>
 
             <div class="form-row">
-              <label class="form-label" for="cYears">Ani de locuit luați în calcul</label>
+              <label class="form-label" for="cYears">Years of occupancy considered</label>
               <select class="form-select" id="cYears">
                 <option value="10">10 years</option>
                 <option value="15">15 years</option>
@@ -152,22 +152,22 @@
                 <option value="temperate" data-brick-energy="130" data-poli-energy="35" selected>Temperat (Europa boiler — 8-14°C medie)</option>
                 <option value="warm" data-brick-energy="100" data-poli-energy="25">Cald (sud, mediteranean — &gt; 14°C medie)</option>
               </select>
-              <p style="font-size:11px;color:var(--gray);margin-top:6px;">Calculul include atât încălzirea (winter) cât și răcirea (summer).</p>
+              <p style="font-size:11px;color:var(--gray);margin-top:6px;">The calculation includes both heating (winter) and cooling (summer).</p>
             </div>
 
             <div class="form-row">
-              <label class="form-label" for="cEnergyPrice">Preț energie mediu (€/kWh)</label>
+              <label class="form-label" for="cEnergyPrice">Average energy price (€/kWh)</label>
               <input class="form-input" type="number" id="cEnergyPrice" value="0.22" min="0.05" max="0.60" step="0.01">
-              <p style="font-size:11px;color:var(--gray);margin-top:6px;">Folosește media pentru tara ta (RO ~0.18, FR ~0.25, DE ~0.32, ES ~0.20).</p>
+              <p style="font-size:11px;color:var(--gray);margin-top:6px;">Use the average for your country (RO ~0.18, FR ~0.25, DE ~0.32, ES ~0.20).</p>
             </div>
 
             <div class="form-row">
-              <label class="form-label" for="cEnergyInflation">Creștere anuală preț energie (%)</label>
+              <label class="form-label" for="cEnergyInflation">Annual energy price increase (%)</label>
               <select class="form-select" id="cEnergyInflation">
-                <option value="0">0% — preț constant (optimist)</option>
-                <option value="2">2% — inflație stabilă</option>
+                <option value="0">0% — constant price (optimistic)</option>
+                <option value="2">2% — steady inflation</option>
                 <option value="4" selected>4% — realist (media UE 2010-2024)</option>
-                <option value="6">6% — pesimist (criză energetică)</option>
+                <option value="6">6% — pessimistic (energy crisis)</option>
               </select>
             </div>
 
@@ -175,10 +175,10 @@
 
             <p style="font-size:12.5px;color:var(--gray);margin-bottom:12px;">💡 Calculul include:</p>
             <ul style="display:flex;flex-direction:column;gap:5px;font-size:12.5px;color:var(--ink-soft);padding-left:4px;list-style:none;">
-              <li>✓ Cost construction (panouri + manoperă, fără finisaje)</li>
-              <li>✓ Cost energie pe anii selectați</li>
-              <li>✓ Cost mentenanță estimată</li>
-              <li>✓ Toate proiectate la inflația aleasă</li>
+              <li>✓ Construction cost (panels + labour, excluding finishes)</li>
+              <li>✓ Energy cost over the selected years</li>
+              <li>✓ Estimated maintenance cost</li>
+              <li>✓ All projected at the chosen inflation rate</li>
             </ul>
           </form>
 
@@ -186,14 +186,14 @@
           <div class="comp-result">
 
             <div class="comp-savings">
-              <span class="eyebrow" style="color:rgba(247,244,237,0.55);">Economie totală cu Polistibrick</span>
+              <span class="eyebrow" style="color:rgba(247,244,237,0.55);">Total savings with Polistibrick</span>
               <div class="comp-savings-big" id="totalSavings">— <small>€</small></div>
-              <p style="font-size:13.5px;color:rgba(247,244,237,0.75);">pe <span id="yearsLabel">25</span> de years, pentru o house de <span id="surfaceLabel">150</span> m²</p>
+              <p style="font-size:13.5px;color:rgba(247,244,237,0.75);">pe <span id="yearsLabel">25</span> years, for a house of <span id="surfaceLabel">150</span> m²</p>
             </div>
 
             <div class="comp-bar-container">
               <div class="comp-bar-label">
-                <span>Brick clasică</span>
+                <span>Classic brick</span>
                 <strong id="brickTotalLabel">— €</strong>
               </div>
               <div class="comp-bar"><div class="comp-bar-fill" id="brickBar" style="width:100%;"></div></div>
@@ -222,7 +222,7 @@
                 <span class="num num-good" id="poliEnergy">— €</span>
               </div>
               <div class="comp-row">
-                <span>Mentenanță</span>
+                <span>Maintenance</span>
                 <span class="num" id="brickMaint">— €</span>
                 <span class="num num-good" id="poliMaint">— €</span>
               </div>
@@ -247,24 +247,24 @@
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 40px;">
       <span class="eyebrow">How it works calculul</span>
-      <h2>Metodologie <em>transparentă.</em></h2>
+      <h2>Metodologie <em>transparent.</em></h2>
     </div>
     <div class="grid grid-2 reveal" style="max-width:980px;margin:0 auto;">
       <div class="card">
         <h4 style="margin-bottom:12px;">Cost construction</h4>
-        <p style="font-size:14px;line-height:1.6;">Brick: ~1.000 €/m² standard nonconform. Polistibrick: ~1.050 €/m² (+5%) pentru passive house A+++. Include materiale și manoperă, fără finisaje interioare sau exterioare.</p>
+        <p style="font-size:14px;line-height:1.6;">Brick: ~1.000 €/m² standard nonconform. Polistibrick: ~1,050 €/m² (+5%) for an A+++ passive house. Includes materials and labour, excluding interior or exterior finishes.</p>
       </div>
       <div class="card">
         <h4 style="margin-bottom:12px;">Cost energie</h4>
-        <p style="font-size:14px;line-height:1.6;">Bazat pe consumul tipic per climă: brick consumă în medie 100-180 kWh/m²/year pentru heating + răcire. Polistibrick (pasivă) consumă 25-45 kWh/m²/year. Reducere medie de 70%.</p>
+        <p style="font-size:14px;line-height:1.6;">Based on typical consumption per climate: brick consumes on average 100-180 kWh/m²/year for heating + cooling. Polistibrick (passive) consumes 25-45 kWh/m²/year. Average reduction of 70%.</p>
       </div>
       <div class="card">
-        <h4 style="margin-bottom:12px;">Mentenanță 25 years</h4>
-        <p style="font-size:14px;line-height:1.6;">Brick: refresh termo la 15 years (~5.000€), reparații umiditate, refresh fațadă. Polistibrick: niciuna din astea — EPS-ul nu absorbe apă, nu se degradează, structura monolit nu fisurează.</p>
+        <h4 style="margin-bottom:12px;">25-year maintenance</h4>
+        <p style="font-size:14px;line-height:1.6;">Brick: thermal refresh at 15 years (~5,000€), damp repairs, façade refresh. Polistibrick: none of that — EPS doesn't absorb water, doesn't degrade, the monolithic structure doesn't crack.</p>
       </div>
       <div class="card">
-        <h4 style="margin-bottom:12px;">Inflație energie</h4>
-        <p style="font-size:14px;line-height:1.6;">În ultimii 14 years prețul energiei electrice în UE a crescut cu ~4% pe year. Calculul nostru include compoundarea anuală — economia reală pe 25 years e mai mare decât diferența de azi × 25.</p>
+        <h4 style="margin-bottom:12px;">Energy inflation</h4>
+        <p style="font-size:14px;line-height:1.6;">Over the last 14 years, electricity prices in the EU have risen by ~4% per year. Our calculation includes annual compounding — the real saving over 25 years is greater than today's difference × 25.</p>
       </div>
     </div>
   </div>
@@ -273,7 +273,7 @@
 <section class="section section--tight">
   <div class="cta-band reveal">
     <h2>Convinced by <em>cifrele tale?</em></h2>
-    <p>Request a personalized quote Polistibrick — calcul exact pentru proiectul tău, fără obligație, fără costuri ascunse.</p>
+    <p>Request a personalized Polistibrick quote — exact calculation for your project, no obligation, no hidden costs.</p>
     <div class="cta-band-actions">
       <a href="../oferta/" class="btn btn-on-dark btn-large btn-arrow">Request a personalized quote</a>
       <a href="../contact/" class="btn btn-on-dark-ghost btn-large">Talk to a specialist</a>
