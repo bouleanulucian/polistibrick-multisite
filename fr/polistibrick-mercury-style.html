@@ -322,6 +322,7 @@
     letter-spacing: 0.01em;
     border-radius: 100px;
     transition: background 0.2s ease, color 0.2s ease;
+    cursor: pointer;
   }
   .nav-menu-link:hover { background: rgba(15, 15, 15, 0.05); color: var(--ink); }
   .nav-menu-caret { font-size: 10px; opacity: 0.6; }
@@ -3060,7 +3061,7 @@
     </a>
     <div class="nav-menu" aria-label="Navigation du site">
       <div class="nav-menu-item">
-        <a href="produits/murs-mbk/" class="nav-menu-link">Produits <span class="nav-menu-caret">▾</span></a>
+        <a href="#" class="nav-menu-link" role="button" aria-haspopup="true" aria-expanded="false" onclick="event.preventDefault(); return false;">Produits <span class="nav-menu-caret">▾</span></a>
         <div class="nav-menu-dropdown">
           <a href="produits/murs-mbk/">Murs MBK</a>
           <a href="produits/planchers-pbk/">Planchers PBK</a>
@@ -3069,7 +3070,7 @@
         </div>
       </div>
       <div class="nav-menu-item">
-        <a href="pour/proprietaires/" class="nav-menu-link">Solutions <span class="nav-menu-caret">▾</span></a>
+        <a href="#" class="nav-menu-link" role="button" aria-haspopup="true" aria-expanded="false" onclick="event.preventDefault(); return false;">Solutions <span class="nav-menu-caret">▾</span></a>
         <div class="nav-menu-dropdown">
           <a href="pour/proprietaires/">Pour les propriétaires</a>
           <a href="pour/architectes/">Pour les architectes</a>
@@ -3079,21 +3080,21 @@
         </div>
       </div>
       <div class="nav-menu-item">
-        <a href="projets/" class="nav-menu-link">Projets <span class="nav-menu-caret">▾</span></a>
+        <a href="#" class="nav-menu-link" role="button" aria-haspopup="true" aria-expanded="false" onclick="event.preventDefault(); return false;">Projets <span class="nav-menu-caret">▾</span></a>
         <div class="nav-menu-dropdown">
           <a href="projets/">Maisons construites</a>
           <a href="temoignages/">Témoignages (vidéo)</a>
         </div>
       </div>
       <div class="nav-menu-item">
-        <a href="calculateur/" class="nav-menu-link">Calculateur <span class="nav-menu-caret">▾</span></a>
+        <a href="#" class="nav-menu-link" role="button" aria-haspopup="true" aria-expanded="false" onclick="event.preventDefault(); return false;">Calculateur <span class="nav-menu-caret">▾</span></a>
         <div class="nav-menu-dropdown">
           <a href="calculateur/">Calculateur de coût</a>
           <a href="economies/">Calculateur d'économies (vs brique)</a>
         </div>
       </div>
       <div class="nav-menu-item">
-        <a href="ressources/" class="nav-menu-link">Ressources <span class="nav-menu-caret">▾</span></a>
+        <a href="#" class="nav-menu-link" role="button" aria-haspopup="true" aria-expanded="false" onclick="event.preventDefault(); return false;">Ressources <span class="nav-menu-caret">▾</span></a>
         <div class="nav-menu-dropdown">
           <a href="comparaison/">Comparaison vs brique</a>
           <a href="ressources/blog/">Blog</a>
@@ -3101,7 +3102,7 @@
         </div>
       </div>
       <div class="nav-menu-item">
-        <a href="a-propos/" class="nav-menu-link">À propos <span class="nav-menu-caret">▾</span></a>
+        <a href="#" class="nav-menu-link" role="button" aria-haspopup="true" aria-expanded="false" onclick="event.preventDefault(); return false;">À propos <span class="nav-menu-caret">▾</span></a>
         <div class="nav-menu-dropdown">
           <a href="a-propos/">L'entreprise</a>
           <a href="a-propos/brevet/">Brevet</a>

@@ -322,6 +322,7 @@
     letter-spacing: 0.01em;
     border-radius: 100px;
     transition: background 0.2s ease, color 0.2s ease;
+    cursor: pointer;
   }
   .nav-menu-link:hover { background: rgba(15, 15, 15, 0.05); color: var(--ink); }
   .nav-menu-caret { font-size: 10px; opacity: 0.6; }
@@ -3060,7 +3061,7 @@
     </a>
     <div class="nav-menu" aria-label="Navigare site">
       <div class="nav-menu-item">
-        <a href="produse/pereti-mbk/" class="nav-menu-link">Prodotti <span class="nav-menu-caret">▾</span></a>
+        <a href="#" class="nav-menu-link" role="button" aria-haspopup="true" aria-expanded="false" onclick="event.preventDefault(); return false;">Prodotti <span class="nav-menu-caret">▾</span></a>
         <div class="nav-menu-dropdown">
           <a href="produse/pereti-mbk/">Pareti MBK</a>
           <a href="produse/planseu-pbk/">Solai PBK</a>
@@ -3069,7 +3070,7 @@
         </div>
       </div>
       <div class="nav-menu-item">
-        <a href="pentru/proprietari/" class="nav-menu-link">Soluzioni <span class="nav-menu-caret">▾</span></a>
+        <a href="#" class="nav-menu-link" role="button" aria-haspopup="true" aria-expanded="false" onclick="event.preventDefault(); return false;">Soluzioni <span class="nav-menu-caret">▾</span></a>
         <div class="nav-menu-dropdown">
           <a href="pentru/proprietari/">Per proprietari</a>
           <a href="pentru/arhitecti/">Per architetti</a>
@@ -3079,21 +3080,21 @@
         </div>
       </div>
       <div class="nav-menu-item">
-        <a href="proiecte/" class="nav-menu-link">Progetti <span class="nav-menu-caret">▾</span></a>
+        <a href="#" class="nav-menu-link" role="button" aria-haspopup="true" aria-expanded="false" onclick="event.preventDefault(); return false;">Progetti <span class="nav-menu-caret">▾</span></a>
         <div class="nav-menu-dropdown">
           <a href="proiecte/">Case costruite</a>
           <a href="testimoniale/">Testimonianze (video)</a>
         </div>
       </div>
       <div class="nav-menu-item">
-        <a href="calculator/" class="nav-menu-link">Calcolatore <span class="nav-menu-caret">▾</span></a>
+        <a href="#" class="nav-menu-link" role="button" aria-haspopup="true" aria-expanded="false" onclick="event.preventDefault(); return false;">Calcolatore <span class="nav-menu-caret">▾</span></a>
         <div class="nav-menu-dropdown">
           <a href="calculator/">Calcolatore costi</a>
           <a href="economii/">Calcolatore di risparmi (vs mattone)</a>
         </div>
       </div>
       <div class="nav-menu-item">
-        <a href="resurse/" class="nav-menu-link">Risorse <span class="nav-menu-caret">▾</span></a>
+        <a href="#" class="nav-menu-link" role="button" aria-haspopup="true" aria-expanded="false" onclick="event.preventDefault(); return false;">Risorse <span class="nav-menu-caret">▾</span></a>
         <div class="nav-menu-dropdown">
           <a href="comparatie/">Confronto con il mattone</a>
           <a href="resurse/blog/">Blog</a>
@@ -3101,7 +3102,7 @@
         </div>
       </div>
       <div class="nav-menu-item">
-        <a href="despre/" class="nav-menu-link">Su di noi <span class="nav-menu-caret">▾</span></a>
+        <a href="#" class="nav-menu-link" role="button" aria-haspopup="true" aria-expanded="false" onclick="event.preventDefault(); return false;">Su di noi <span class="nav-menu-caret">▾</span></a>
         <div class="nav-menu-dropdown">
           <a href="despre/">L'azienda</a>
           <a href="despre/patent/">Brevetto</a>
