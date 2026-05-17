@@ -991,7 +991,8 @@ p { line-height: 1.65; color: var(--gray); }
 }
 
 /* ============================================================
-   COUNTRY SWITCHER — shared (appears in nav across all pages)
+   COUNTRY SWITCHER — single source of truth (identic peste tot)
+   Light theme: dark text pe nav crem, white dropdown panel.
    ============================================================ */
 .country-switcher {
   position: relative;
@@ -1002,9 +1003,9 @@ p { line-height: 1.65; color: var(--gray); }
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: rgba(0,0,0,0.05);
-  border: 1px solid rgba(0,0,0,0.10);
-  color: var(--ink);
+  background: rgba(15, 15, 15, 0.04);
+  border: 1px solid rgba(15, 15, 15, 0.10);
+  color: #0F0F0F;
   padding: 8px 12px;
   border-radius: 999px;
   font-size: 13px;
@@ -1014,12 +1015,12 @@ p { line-height: 1.65; color: var(--gray); }
   font-family: inherit;
 }
 .country-switcher-trigger:hover {
-  background: rgba(0,0,0,0.08);
-  border-color: rgba(0,0,0,0.16);
+  background: rgba(15, 15, 15, 0.08);
+  border-color: rgba(15, 15, 15, 0.18);
 }
 .country-switcher-trigger[aria-expanded="true"] {
-  background: rgba(0,0,0,0.08);
-  border-color: rgba(200,16,46,0.4);
+  background: rgba(15, 15, 15, 0.08);
+  border-color: rgba(200, 16, 46, 0.45);
 }
 .country-switcher-flag { font-size: 16px; line-height: 1; }
 .country-switcher-code { letter-spacing: 0.04em; }
@@ -1035,11 +1036,11 @@ p { line-height: 1.65; color: var(--gray); }
   top: calc(100% + 10px);
   right: 0;
   min-width: 280px;
-  background: white;
-  border: 1px solid var(--border);
+  background: #FFFFFF;
+  border: 1px solid #E5E0D7;
   border-radius: 14px;
   padding: 8px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.18), 0 0 0 1px rgba(0,0,0,0.03);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18), 0 0 0 1px rgba(0, 0, 0, 0.03);
   opacity: 0;
   visibility: hidden;
   transform: translateY(-6px) scale(0.97);
@@ -1052,7 +1053,7 @@ p { line-height: 1.65; color: var(--gray); }
   transform: translateY(0) scale(1);
 }
 .country-switcher-header {
-  color: var(--gray);
+  color: #6B6B6B;
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -1067,22 +1068,22 @@ p { line-height: 1.65; color: var(--gray); }
   padding: 10px 12px;
   border-radius: 8px;
   text-decoration: none;
-  color: var(--ink);
+  color: #0F0F0F;
   font-size: 14px;
   transition: background .15s ease;
 }
 .country-switcher-item:hover {
-  background: rgba(0,0,0,0.04);
+  background: rgba(15, 15, 15, 0.04);
 }
 .country-switcher-item.active {
-  background: rgba(200,16,46,0.08);
-  color: var(--red);
+  background: rgba(200, 16, 46, 0.08);
+  color: #C8102E;
 }
-.country-switcher-item.active .domain { color: rgba(200,16,46,0.85); }
+.country-switcher-item.active .domain { color: rgba(200, 16, 46, 0.85); }
 .country-switcher-item .flag { font-size: 20px; line-height: 1; }
 .country-switcher-item .name { font-weight: 600; }
 .country-switcher-item .domain {
   font-family: ui-monospace, "SF Mono", Menlo, monospace;
   font-size: 11px;
-  color: var(--gray);
+  color: #6B6B6B;
 }
