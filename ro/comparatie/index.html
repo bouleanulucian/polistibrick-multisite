@@ -3,358 +3,766 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Comparație · Polistibrick vs cărămidă vs cărămidă pasivă</title>
-  <meta name="description" content="Comparație directă a materialelor, echipelor, timpului și izolației. Polistibrick (3 materiale, 1 echipă, 1 lună) vs cărămidă clasică și cărămidă pasivă (14+ materiale, 5-6 echipe, 6-7 luni).">
+  <title>Comparație · Polistibrick — singura tehnologie care reunește 5 materiale premium într-un singur sistem de construcție</title>
+  <meta name="description" content="Polistibrick este singura tehnologie care reunește 5 materiale premium (izolație, foc A1, antiseismic, hidrofug, acustic) într-un singur sistem de construcție. Comparat cu alte ICF, sistemul clasic și sistemul clasic transformat în pasiv.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/site.css">
   <style>
-    /* === Watermark + stage (same pattern as other pages) === */
-    .wm-section { padding: clamp(60px, 8vw, 100px) 0; background: var(--cream); }
-    .wm-stage-wrap { position: relative; margin: 70px auto 0; max-width: 1640px; }
-    .wm-watermark {
-      position: absolute; top: 0; left: 50%; width: 100vw; margin-left: -50vw;
-      pointer-events: none; user-select: none; transform: translateY(-50%);
-      height: 1em; line-height: 1; text-align: center; text-transform: uppercase;
-      font-family: var(--serif); font-size: clamp(64px, 12vw, 200px);
-      font-weight: 500; letter-spacing: -0.06em; z-index: 2;
-    }
-    .wm-watermark .wm-half { position: absolute; inset: 0; width: 100%; display: block; }
-    .wm-watermark .wm-top { color: transparent; -webkit-text-stroke: 1.4px rgba(15,15,15,0.30); clip-path: inset(0 0 50% 0); }
-    .wm-watermark .wm-bottom { color: var(--cream-dark); opacity: 0.65; clip-path: inset(50% 0 0 0); }
-    .wm-stage {
-      position: relative; background: var(--cream-light); border: 1px solid var(--border);
-      border-radius: 32px; padding: 56px;
-    }
+    /* ============================================================
+       COMPARISON V4 — Polistibrick vs Alt ICF vs Cărămidă vs Cărămidă passive
+       ============================================================ */
 
-    /* === Page intro === */
-    .compare-intro {
-      max-width: 760px;
-      margin: 0 auto 40px;
-      text-align: center;
-    }
-    .compare-intro .bubble-tag {
-      display: inline-block; background: var(--red-soft); color: var(--red);
-      padding: 4px 12px; border-radius: 4px; font-size: 11px; font-weight: 600;
-      letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 16px;
-    }
-    .compare-intro h1 {
-      font-family: var(--serif); font-size: clamp(34px, 4vw, 56px); font-weight: 500;
-      color: var(--ink); letter-spacing: -0.02em; line-height: 1.05; margin-bottom: 18px;
-    }
-    .compare-intro h1 em { font-style: italic; color: var(--red); font-weight: 400; }
-    .compare-intro p.lead { font-size: 17px; color: var(--gray); line-height: 1.6; }
-
-    /* === Comparison layout — reference (left) vs 2 passive options (right) === */
-    .compare-layout {
+    /* HERO */
+    .cmp-hero { padding: clamp(80px, 12vw, 140px) 0 clamp(60px, 8vw, 100px); background: var(--cream); text-align: center; }
+    .cmp-hero .container { max-width: 980px; }
+    .cmp-hero .eyebrow { display: inline-block; background: var(--red-soft); color: var(--red); padding: 6px 14px; border-radius: 100px; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 22px; }
+    .cmp-hero h1 { font-family: var(--serif); font-size: clamp(36px, 5vw, 64px); font-weight: 500; color: var(--ink); letter-spacing: -0.025em; line-height: 1.03; margin-bottom: 22px; }
+    .cmp-hero h1 em { font-style: italic; color: var(--red); font-weight: 400; }
+    .cmp-hero p.lead { font-size: clamp(16px, 1.7vw, 18px); color: var(--gray); line-height: 1.65; max-width: 720px; margin: 0 auto 40px; }
+    .cmp-hero-quad {
       display: grid;
-      grid-template-columns: 1fr 2.1fr;
-      gap: 24px;
+      grid-template-columns: 1.15fr 1fr 1fr 1fr;
+      gap: clamp(12px, 1.6vw, 18px);
       margin-top: 32px;
       align-items: stretch;
     }
-    .ct-group { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
-    .ct-group > .ct-col { flex: 1; }
-    .ct-group--passive {
-      border-left: 1px dashed var(--border);
-      padding-left: 24px;
+    @media (max-width: 768px) { .cmp-hero-quad { grid-template-columns: 1fr 1fr; } }
+    .cmp-hero-system { text-align: center; padding: 18px 14px; border-radius: 12px; background: rgba(0,0,0,0.025); }
+    .cmp-hero-crown { font-size: 18px; line-height: 1; margin-bottom: 4px; display: block; }
+    .cmp-hero-system-name { font-family: var(--serif); font-size: clamp(15px, 1.5vw, 19px); font-weight: 500; color: var(--ink); margin-bottom: 6px; line-height: 1.1; }
+    .cmp-hero-system-tag { font-size: 9.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray); padding: 4px 10px; border-radius: 100px; background: white; display: inline-block; }
+    .cmp-hero-system--win {
+      background: linear-gradient(180deg, white 0%, rgba(200,16,46,0.06) 100%);
+      border: 2px solid var(--red);
+      box-shadow: 0 18px 40px rgba(200,16,46,0.12);
     }
-    .ct-passive-cols {
-      flex: 1;
+    .cmp-hero-system--win .cmp-hero-system-name { color: var(--red); font-weight: 600; }
+    .cmp-hero-system--win .cmp-hero-system-tag { background: var(--red); color: white; }
+
+    /* SECTION */
+    .cmp-section { padding: clamp(70px, 10vw, 110px) 0; border-top: 1px solid var(--border); }
+    .cmp-section:nth-child(even) { background: var(--cream-light); }
+    .cmp-section .container { max-width: 1300px; }
+    .cmp-section-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      align-items: stretch;
-    }
-    .ct-col--ref { border-style: dashed; background: transparent; }
-    @media (max-width: 968px) {
-      .compare-layout { grid-template-columns: 1fr; gap: 16px; }
-      .ct-group--passive { border-left: none; border-top: 1px dashed var(--border); padding-left: 0; padding-top: 16px; }
-      .ct-passive-cols { grid-template-columns: 1fr; }
-    }
-    .ct-col {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 14px 14px 12px;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-    }
-    .ct-col--winner {
-      border-color: var(--red);
-      box-shadow: 0 22px 50px rgba(200,16,46,0.10);
-    }
-
-    /* HEAD: badge + name + class */
-    .ct-top {
-      text-align: center;
-      padding-bottom: 10px;
-      margin-bottom: 10px;
-      border-bottom: 1px solid var(--border);
-    }
-    .ct-badge {
-      display: inline-block;
-      background: var(--red);
-      color: white;
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 3px 10px;
-      border-radius: 100px;
-      margin-bottom: 6px;
-    }
-    .ct-badge--alt { background: rgba(0,0,0,0.06); color: var(--ink-soft); }
-    .ct-name {
-      font-family: var(--serif);
-      font-size: 19px;
-      font-weight: 500;
-      letter-spacing: -0.01em;
-      color: var(--ink);
-      margin: 2px 0 4px;
-      line-height: 1.05;
-    }
-    .ct-class { font-size: 11px; color: var(--gray); letter-spacing: 0.02em; }
-    .ct-class em { font-style: normal; color: var(--red); font-weight: 600; }
-    .ct-class--bad em {
-      color: var(--gray);
-      text-decoration: line-through;
-      text-decoration-color: rgba(150,150,150,0.5);
-    }
-
-    /* MATERIALS list */
-    .ct-mats {
-      list-style: none; margin: 0 0 10px; padding: 0;
-      display: flex; flex-direction: column; gap: 3px; flex: 1;
-    }
-    .mat {
-      background: var(--cream-light);
-      border: 1px solid var(--border);
-      padding: 3px 9px; border-radius: 6px;
-      font-size: 10.5px; font-weight: 500;
-      text-align: center; color: var(--ink-soft);
-      line-height: 1.25;
-    }
-    .mat--insul {
-      background: var(--red-soft);
-      border-color: rgba(200,16,46,0.20);
-      color: var(--red-dark);
-    }
-    .mat--extra {
-      background: rgba(200,16,46,0.10);
-      border-color: rgba(200,16,46,0.30);
-      color: var(--red-dark);
-      font-weight: 600;
-    }
-
-    /* STATS row */
-    .ct-stats {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 4px;
-      padding: 8px 0;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      margin-bottom: 10px;
-    }
-    .ct-stat { text-align: center; display: flex; flex-direction: column; align-items: center; line-height: 1; gap: 2px; }
-    .ct-label { font-size: 8.5px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gray); font-weight: 600; }
-    .ct-stat strong { font-family: var(--serif); font-size: 16px; font-weight: 500; color: var(--ink); margin-top: 2px; }
-    .ct-col--winner .ct-stat strong { color: var(--red); }
-    .ct-sub { font-size: 8.5px; color: var(--gray); letter-spacing: 0.02em; }
-
-    /* PRICE row */
-    .ct-price {
-      margin-top: auto;
-      padding: 10px 12px;
-      border-radius: 10px;
-      background: var(--cream-light);
-      border: 1px solid var(--border);
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 10px;
-    }
-    .ct-price-label { font-size: 10px; color: var(--gray); letter-spacing: 0.04em; line-height: 1.2; text-align: left; flex: 1; }
-    .ct-price-value { font-family: var(--serif); font-size: 28px; font-weight: 500; line-height: 1; color: var(--ink); letter-spacing: -0.02em; white-space: nowrap; }
-    .ct-price--good .ct-price-value { color: #1a7d3a; }
-    .ct-price--bad .ct-price-value { color: var(--red); }
-    .ct-price-value--ref { color: var(--gray) !important; font-style: italic; }
-
-    /* Punchline */
-    .compare-punchline {
-      margin-top: 24px;
-      background: linear-gradient(135deg, #2A2520 0%, #393229 100%);
-      color: var(--cream);
-      border-radius: 18px;
-      padding: 28px 36px;
-      display: flex;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: clamp(40px, 6vw, 80px);
       align-items: center;
-      gap: 32px;
-      box-shadow: 0 14px 40px rgba(0,0,0,0.10);
     }
-    .punchline-big { flex-shrink: 0; text-align: center; border-right: 1px solid rgba(255,255,255,0.15); padding-right: 32px; }
-    .punchline-big strong { font-family: var(--serif); font-size: clamp(48px, 6vw, 84px); font-weight: 500; color: var(--red); line-height: 1; letter-spacing: -0.04em; display: block; }
-    .punchline-big span { display: block; margin-top: 4px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--cream); opacity: 0.7; font-weight: 600; }
-    .punchline-text { flex: 1; }
-    .punchline-text h3 { font-family: var(--serif); font-size: clamp(20px, 2.2vw, 30px); font-weight: 400; line-height: 1.15; letter-spacing: -0.02em; color: var(--cream); margin-bottom: 6px; }
-    .punchline-text h3 em { font-style: italic; color: var(--red); font-weight: 400; }
-    .punchline-text p { font-size: 14px; color: var(--cream); opacity: 0.85; line-height: 1.5; margin-bottom: 4px; }
-    .punchline-text .cc-foot { display: block; margin-top: 4px; font-size: 11px; color: var(--cream); opacity: 0.55; letter-spacing: 0.02em; }
-    @media (max-width: 768px) {
-      .compare-punchline { flex-direction: column; gap: 16px; padding: 24px; text-align: center; }
-      .punchline-big { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.15); padding-right: 0; padding-bottom: 16px; }
-      .wm-stage { padding: 28px 20px; }
+    .cmp-section-grid.is-reversed { grid-template-columns: 1.15fr 0.85fr; direction: rtl; }
+    .cmp-section-grid.is-reversed > * { direction: ltr; }
+    @media (max-width: 900px) {
+      .cmp-section-grid, .cmp-section-grid.is-reversed { grid-template-columns: 1fr; gap: 36px; }
     }
+
+    /* CRITERION HEADER */
+    .cmp-crit-num { display: inline-block; font-family: var(--serif); font-size: 13.5px; font-weight: 500; color: var(--red); letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 14px; }
+    .cmp-crit-num::before { content: ''; display: inline-block; width: 24px; height: 1px; background: var(--red); vertical-align: middle; margin-right: 10px; transform: translateY(-2px); }
+    .cmp-crit-title { font-family: var(--serif); font-size: clamp(26px, 3.4vw, 42px); font-weight: 500; color: var(--ink); letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 16px; }
+    .cmp-crit-title em { font-style: italic; color: var(--red); font-weight: 400; }
+    .cmp-crit-desc { font-size: clamp(14.5px, 1.4vw, 16px); color: var(--gray); line-height: 1.65; margin-bottom: 24px; }
+    .cmp-crit-takeaway { display: inline-block; background: rgba(200,16,46,0.06); border-left: 3px solid var(--red); padding: 12px 18px; font-size: 13.5px; color: var(--ink-soft); line-height: 1.5; max-width: 480px; border-radius: 4px; }
+    .cmp-crit-takeaway strong { color: var(--ink); }
+
+    /* COMPARISON CARDS — 4 systems, Polistibrick first */
+    .cmp-cards { display: flex; flex-direction: column; gap: 10px; }
+    .cmp-card {
+      background: white; border: 1px solid var(--border); border-radius: 12px;
+      padding: 16px 20px; display: grid;
+      grid-template-columns: 38px 1fr auto;
+      gap: 14px; align-items: center; position: relative;
+    }
+    .cmp-card-icon { width: 38px; height: 38px; display: flex; align-items: center; justify-content: center; font-size: 22px; border-radius: 8px; background: var(--cream-light); }
+    .cmp-card-body { min-width: 0; }
+    .cmp-card-name { font-family: var(--sans); font-size: 13.5px; font-weight: 600; color: var(--ink); margin-bottom: 2px; }
+    .cmp-card-sub { font-size: 12px; color: var(--gray); line-height: 1.4; }
+    .cmp-card-value-text { font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; text-align: right; color: var(--gray); padding: 4px 10px; border-radius: 100px; background: rgba(0,0,0,0.04); white-space: nowrap; }
+
+    .cmp-card--win {
+      background: linear-gradient(180deg, white 0%, rgba(200,16,46,0.06) 100%);
+      border: 2px solid var(--red);
+      box-shadow: 0 16px 36px rgba(200,16,46,0.10);
+    }
+    .cmp-card--win .cmp-card-icon { background: var(--red); color: white; }
+    .cmp-card--win .cmp-card-name { color: var(--red); }
+    .cmp-card--win .cmp-card-name::before { content: '👑 '; }
+    .cmp-card--win .cmp-card-value-text { background: var(--red); color: white; }
+    .cmp-card--win::after {
+      content: 'PREMIUM';
+      position: absolute; top: -10px; right: 14px;
+      background: var(--red); color: white;
+      font-size: 9px; font-weight: 700; letter-spacing: 0.12em;
+      padding: 4px 10px; border-radius: 100px;
+    }
+    .cmp-card--bad .cmp-card-value-text { color: #b32424; }
+    .cmp-card--mid .cmp-card-value-text { background: rgba(212, 160, 23, 0.12); color: #8a6810; }
+
+    /* Wall cross-section */
+    .cmp-wall { width: 100%; max-width: 480px; }
+    .cmp-wall-system { margin-bottom: 18px; }
+    .cmp-wall-name { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
+    .cmp-wall-name strong { font-family: var(--sans); font-size: 12.5px; font-weight: 700; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.06em; }
+    .cmp-wall-name span { font-family: var(--serif); font-size: 14px; color: var(--gray); font-style: italic; }
+    .cmp-wall-section { display: flex; height: 56px; border-radius: 8px; overflow: hidden; border: 1px solid var(--border); }
+    .cmp-wall-section--win { border: 2px solid var(--red); box-shadow: 0 12px 28px rgba(200,16,46,0.08); }
+    .cmp-wall-layer { display: flex; align-items: center; justify-content: center; font-size: 10px; color: white; font-weight: 600; letter-spacing: 0.02em; text-shadow: 0 1px 2px rgba(0,0,0,0.3); }
+    .layer-isol { background: linear-gradient(135deg, #c8102e 0%, #a3001f 100%); }
+    .layer-isol-extra { background: linear-gradient(135deg, #f5a3a3 0%, #c8102e 100%); }
+    .layer-brique { background: linear-gradient(135deg, #b8895a 0%, #8a5f3e 100%); }
+    .layer-beton { background: linear-gradient(135deg, #6e6e72 0%, #4a4a4f 100%); }
+    .layer-enduit { background: linear-gradient(135deg, #d4cfc4 0%, #b5b0a3 100%); color: var(--ink); text-shadow: none; }
+    .layer-icf-light { background: linear-gradient(135deg, #f5d5d5 0%, #d99a9a 100%); color: var(--ink); text-shadow: none; }
+
+    /* Energy/Badge rows */
+    .cmp-rows { display: flex; flex-direction: column; gap: 10px; width: 100%; max-width: 480px; }
+    .cmp-row { display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: center; padding: 16px 20px; background: white; border: 1px solid var(--border); border-radius: 12px; position: relative; }
+    .cmp-row--win { border: 2px solid var(--red); background: linear-gradient(180deg, white 0%, rgba(200,16,46,0.05) 100%); box-shadow: 0 16px 36px rgba(200,16,46,0.10); }
+    .cmp-row--win::after {
+      content: 'PREMIUM';
+      position: absolute; top: -10px; right: 14px;
+      background: var(--red); color: white;
+      font-size: 9px; font-weight: 700; letter-spacing: 0.12em;
+      padding: 4px 10px; border-radius: 100px;
+    }
+    .cmp-row-info {}
+    .cmp-row-label { font-size: 12.5px; font-weight: 700; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.05em; }
+    .cmp-row--win .cmp-row-label { color: var(--red); }
+    .cmp-row--win .cmp-row-label::before { content: '👑 '; font-size: 13px; }
+    .cmp-row-sub { font-size: 12.5px; color: var(--gray); margin-top: 3px; line-height: 1.4; }
+    .cmp-badge { display: inline-flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 22px; font-weight: 600; padding: 8px 18px; border-radius: 8px; color: white; letter-spacing: -0.02em; min-width: 140px; box-sizing: border-box; }
+    @media (max-width: 480px) { .cmp-badge { min-width: 110px; padding: 8px 14px; } }
+    .badge-yes { background: linear-gradient(135deg, #c8102e 0%, #a3001f 100%); }
+    .badge-no { background: linear-gradient(135deg, #b32424 0%, #8a1a1a 100%); }
+    .badge-partial { background: linear-gradient(135deg, #d4a017 0%, #a47e10 100%); }
+    .badge-neutral { background: linear-gradient(135deg, #4a4a4f 0%, #2A2520 100%); }
+    .badge-green { background: linear-gradient(135deg, #1a7d3a 0%, #0e5d27 100%); }
+    .badge-yellow { background: linear-gradient(135deg, #d4a017 0%, #a47e10 100%); }
+    .badge-red { background: linear-gradient(135deg, #c8102e 0%, #8a1a1a 100%); }
+    .badge-aplus { background: linear-gradient(135deg, #1a7d3a 0%, #0e5d27 100%); }
+    .badge-e { background: linear-gradient(135deg, #e54d2e 0%, #b3361a 100%); }
+    .badge-bc { background: linear-gradient(135deg, #d4a017 0%, #a47e10 100%); }
+    .cmp-badge-icon { font-size: 18px; }
+
+    /* Savings */
+    .cmp-savings { width: 100%; max-width: 480px; background: linear-gradient(135deg, #2A2520 0%, #393229 100%); color: var(--cream); padding: 36px; border-radius: 20px; text-align: center; }
+    .cmp-savings-eyebrow { font-size: 11px; color: rgba(247,244,237,0.55); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 14px; display: block; }
+    .cmp-savings-big { font-family: var(--serif); font-size: clamp(52px, 7vw, 84px); font-weight: 500; color: var(--red); line-height: 1; letter-spacing: -0.03em; margin: 4px 0; }
+    .cmp-savings-big small { font-size: 0.32em; color: rgba(255,255,255,0.55); margin-left: 6px; font-weight: 400; }
+    .cmp-savings-vs { font-size: 15px; color: rgba(247,244,237,0.8); margin-top: 12px; line-height: 1.5; }
+    .cmp-savings-vs strong { color: var(--cream); }
+    .cmp-savings-foot { margin-top: 18px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.12); font-size: 12px; color: rgba(247,244,237,0.55); }
+
+    /* Final */
+    .cmp-final { padding: clamp(80px, 10vw, 120px) 0; background: linear-gradient(135deg, #2A2520 0%, #393229 100%); color: var(--cream); text-align: center; }
+    .cmp-final .container { max-width: 880px; }
+    .cmp-final .eyebrow { color: var(--red); font-weight: 700; letter-spacing: 0.14em; font-size: 12px; text-transform: uppercase; margin-bottom: 22px; display: inline-block; }
+    .cmp-final h2 { font-family: var(--serif); font-size: clamp(32px, 4.2vw, 56px); font-weight: 500; color: var(--cream); letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 24px; }
+    .cmp-final h2 em { font-style: italic; color: var(--red); font-weight: 400; }
+    .cmp-final p { font-size: 17px; color: rgba(247,244,237,0.8); line-height: 1.6; max-width: 640px; margin: 0 auto 40px; }
+    .cmp-final-cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .cmp-final-cta .btn-on-dark { background: var(--red); color: white; }
+    .cmp-final-cta .btn-on-dark:hover { background: #a3001f; }
   </style>
 </head>
 <body data-base="../">
 
 <header class="nav" data-include="nav"></header>
 
-<section class="wm-section">
+<!-- ============ HERO ============ -->
+<section class="cmp-hero">
   <div class="container">
+    <span class="eyebrow">★ Singura tehnologie premium integrată</span>
+    <h1>Polistibrick — singura tehnologie care <em>reunește 5 materiale premium</em> într-un singur sistem de construcție.</h1>
+    <p class="lead">🌡️ Izolație · 🔥 Rezistență la foc A1 · 🛡️ Antiseismic · 💧 Hidrofug · 🔇 Acustic — totul integrat într-un panou prefabricat unic. Nicio altă tehnologie de construcție nu oferă această integrare. Comparat cu alte ICF, cu sistemul clasic și cu sistemul clasic transformat în pasiv.</p>
 
-    <!-- Page intro -->
-    <div class="compare-intro reveal">
-      <span class="bubble-tag">Comparația finală</span>
-      <h1>Polistibrick. <em>Perfecțiunea fără compromisuri.</em></h1>
-      <p class="lead">Cum se compară sistemul Polistibrick (premium integrat) cu cărămida clasică și cu cărămida pasivă (care obține pasivul prin 11 straturi adăugate). Vezi materialele, echipele, timpul — totul vizibil într-un tabel.</p>
-    </div>
-
-    <div class="wm-stage-wrap reveal">
-      <div class="wm-watermark" aria-hidden="true">
-        <span class="wm-half wm-top">Comparație</span>
-        <span class="wm-half wm-bottom">Comparație</span>
+    <div class="cmp-hero-quad">
+      <div class="cmp-hero-system cmp-hero-system--win">
+        <span class="cmp-hero-crown">👑</span>
+        <div class="cmp-hero-system-name">Polistibrick</div>
+        <div class="cmp-hero-system-tag">★ Premium 5-în-1</div>
       </div>
-      <div class="wm-stage">
-
-        <!-- 3 columns: reference (left) | 2 passive options (right) -->
-        <div class="compare-layout">
-
-          <div class="ct-group">
-            <article class="ct-col ct-col--ref">
-              <div class="ct-top">
-                <h3 class="ct-name">Cărămidă / BCA</h3>
-                <div class="ct-class ct-class--bad">Casă convențională · <em>nepasivă</em></div>
-              </div>
-              <ul class="ct-mats">
-                <li class="mat">Cărămidă / BCA</li>
-                <li class="mat">Mortar de zidărie</li>
-                <li class="mat">Fier-beton</li>
-                <li class="mat">Beton</li>
-                <li class="mat">Cofraj</li>
-                <li class="mat">Mortar de tencuială</li>
-                <li class="mat mat--insul">Adeziv polistiren</li>
-                <li class="mat mat--insul">Ciuperci de fixare</li>
-                <li class="mat mat--insul">Plasă de fibră</li>
-                <li class="mat mat--insul">Adeziv de fațadă</li>
-              </ul>
-              <div class="ct-stats">
-                <div class="ct-stat"><span class="ct-label">Materiale</span><strong>10+</strong></div>
-                <div class="ct-stat"><span class="ct-label">Echipe</span><strong>4-5</strong><span class="ct-sub">diferite</span></div>
-                <div class="ct-stat"><span class="ct-label">Timp</span><strong>4-5</strong><span class="ct-sub">luni</span></div>
-                <div class="ct-stat"><span class="ct-label">Izolație</span><strong>10 cm</strong></div>
-              </div>
-              <div class="ct-price">
-                <span class="ct-price-label">Standardul construcției</span>
-                <span class="ct-price-value ct-price-value--ref">Clasic</span>
-              </div>
-            </article>
-          </div>
-
-          <div class="ct-group ct-group--passive">
-            <div class="ct-passive-cols">
-
-              <article class="ct-col ct-col--winner">
-                <div class="ct-top">
-                  <span class="ct-badge">★ Premium integrat din naștere</span>
-                  <h3 class="ct-name">Polistibrick</h3>
-                  <div class="ct-class">Casă pasivă · <em>A+++</em></div>
-                </div>
-                <ul class="ct-mats">
-                  <li class="mat">Cofraj Polistibrick (5-în-1)</li>
-                  <li class="mat">Fier-beton</li>
-                  <li class="mat">Beton</li>
-                </ul>
-                <div class="ct-stats">
-                  <div class="ct-stat"><span class="ct-label">Materiale</span><strong>3</strong></div>
-                  <div class="ct-stat"><span class="ct-label">Echipe</span><strong>1</strong><span class="ct-sub">3 oameni</span></div>
-                  <div class="ct-stat"><span class="ct-label">Timp</span><strong>1</strong><span class="ct-sub">lună</span></div>
-                  <div class="ct-stat"><span class="ct-label">Izolație</span><strong>30 cm</strong></div>
-                </div>
-                <div class="ct-price ct-price--good">
-                  <span class="ct-price-label">Tot ce ai nevoie pentru pasiv</span>
-                  <span class="ct-price-value">Inclus</span>
-                </div>
-              </article>
-
-              <article class="ct-col">
-                <div class="ct-top">
-                  <span class="ct-badge ct-badge--alt">Pasivă prin adăugiri succesive</span>
-                  <h3 class="ct-name">Cărămidă pasivă</h3>
-                  <div class="ct-class">Casă pasivă · <em>A+++</em></div>
-                </div>
-                <ul class="ct-mats">
-                  <li class="mat">Cărămidă / BCA</li>
-                  <li class="mat">Mortar de zidărie</li>
-                  <li class="mat">Fier-beton</li>
-                  <li class="mat">Beton</li>
-                  <li class="mat">Cofraj</li>
-                  <li class="mat">Mortar de tencuială</li>
-                  <li class="mat mat--insul">Adeziv polistiren</li>
-                  <li class="mat mat--insul">Ciuperci de fixare</li>
-                  <li class="mat mat--insul">Plasă de fibră</li>
-                  <li class="mat mat--insul">Adeziv de fațadă</li>
-                  <li class="mat mat--extra">+ EPS suplimentar 30 cm</li>
-                  <li class="mat mat--extra">+ Membrană etanșeitate aer</li>
-                  <li class="mat mat--extra">+ Tratare punți termice</li>
-                  <li class="mat mat--extra">+ Mortar termoizolant la rost</li>
-                </ul>
-                <div class="ct-stats">
-                  <div class="ct-stat"><span class="ct-label">Materiale</span><strong>14+</strong></div>
-                  <div class="ct-stat"><span class="ct-label">Echipe</span><strong>5-6</strong><span class="ct-sub">diferite</span></div>
-                  <div class="ct-stat"><span class="ct-label">Timp</span><strong>6-7</strong><span class="ct-sub">luni</span></div>
-                  <div class="ct-stat"><span class="ct-label">Izolație</span><strong>30+ cm</strong></div>
-                </div>
-                <div class="ct-price ct-price--bad">
-                  <span class="ct-price-label">Necesită adăugiri</span>
-                  <span class="ct-price-value">+11 straturi</span>
-                </div>
-              </article>
-
-            </div>
-          </div>
-        </div>
-
-        <!-- Punchline -->
-        <div class="compare-punchline">
-          <div class="punchline-big">
-            <strong>5×</strong>
-            <span>mai puține materiale</span>
-          </div>
-          <div class="punchline-text">
-            <h3>Premium integrat. <em>Zero adăugiri.</em></h3>
-            <p>Aceeași casă pasivă A+++ — fără 11 straturi suplimentare, fără 5 echipe diferite, fără 6 luni de șantier. Polistibrick e pentru cei care nu fac compromisuri.</p>
-            <span class="cc-foot">3 materiale · 1 echipă · 1 lună — în loc de 14+ materiale, 5-6 echipe, 6-7 luni.</span>
-          </div>
-        </div>
-
+      <div class="cmp-hero-system">
+        <div class="cmp-hero-system-name">Alt sistem ICF</div>
+        <div class="cmp-hero-system-tag">ICF bazic</div>
+      </div>
+      <div class="cmp-hero-system">
+        <div class="cmp-hero-system-name">Sistem clasic</div>
+        <div class="cmp-hero-system-tag">Convențional</div>
+      </div>
+      <div class="cmp-hero-system">
+        <div class="cmp-hero-system-name">Sistem clasic → pasiv</div>
+        <div class="cmp-hero-system-tag">Pasiv prin adaosuri</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA at bottom -->
-<section class="section section--tight">
-  <div class="cta-band reveal">
-    <h2>Convins de <em>simplitate?</em></h2>
-    <p>Cere o ofertă personalizată Polistibrick — calcul exact pentru proiectul tău, fără obligație.</p>
-    <div class="cta-band-actions">
+<!-- ============ CRITÈRE 01 — SYSTÈME INTÉGRÉ 5-ÎN-1 ============ -->
+<section class="cmp-section">
+  <div class="container">
+    <div class="cmp-section-grid">
+      <div>
+        <span class="cmp-crit-num">Criteriul 01 · ⚡ Sistem 5-în-1</span>
+        <h2 class="cmp-crit-title">5 funcții într-<em>un singur panou.</em></h2>
+        <p class="cmp-crit-desc">Polistibrick integrează 5 funcții premium într-un singur panou prefabricat — turnate împreună în fabrică, livrate gata de montaj:</p>
+        <ul style="list-style:none;padding:0;margin:0 0 24px;display:grid;grid-template-columns:1fr;gap:8px;">
+          <li style="display:flex;gap:10px;align-items:center;font-size:14.5px;color:var(--ink-soft);"><span style="font-size:20px;">🌡️</span><strong>Izolație termică</strong> · EPS premium continuu până la 30 cm</li>
+          <li style="display:flex;gap:10px;align-items:center;font-size:14.5px;color:var(--ink-soft);"><span style="font-size:20px;">🔥</span><strong>Rezistență la foc A1</strong> · necombustibil, REI 240</li>
+          <li style="display:flex;gap:10px;align-items:center;font-size:14.5px;color:var(--ink-soft);"><span style="font-size:20px;">🛡️</span><strong>Antiseismic</strong> · beton armat 15 cm cu plan de armare</li>
+          <li style="display:flex;gap:10px;align-items:center;font-size:14.5px;color:var(--ink-soft);"><span style="font-size:20px;">💧</span><strong>Hidrofug</strong> · EPS cu celule închise, fără apă, fără mucegai</li>
+          <li style="display:flex;gap:10px;align-items:center;font-size:14.5px;color:var(--ink-soft);"><span style="font-size:20px;">🔇</span><strong>Izolație acustică</strong> · combinație EPS + beton armat</li>
+        </ul>
+        <div class="cmp-crit-takeaway">
+          <strong>5 funcții premium într-un panou.</strong> Alte ICF integrează doar izolația — restul trebuie adăugat separat.
+        </div>
+      </div>
+
+      <div class="cmp-cards">
+        <div class="cmp-card cmp-card--win">
+          <div class="cmp-card-icon">⚡</div>
+          <div class="cmp-card-body">
+            <div class="cmp-card-name">Polistibrick</div>
+            <div class="cmp-card-sub">🌡️ + 🔥 + 🛡️ + 💧 + 🔇 — totul-într-unul, turnat în fabrică.</div>
+          </div>
+          <div class="cmp-card-value-text">5-ÎN-1</div>
+        </div>
+        <div class="cmp-card cmp-card--mid">
+          <div class="cmp-card-icon">🧊</div>
+          <div class="cmp-card-body">
+            <div class="cmp-card-name">Alt sistem ICF</div>
+            <div class="cmp-card-sub">🌡️ doar atât. Foc / antiseismic / hidrofug / acustic = de adăugat.</div>
+          </div>
+          <div class="cmp-card-value-text">1 din 5</div>
+        </div>
+        <div class="cmp-card">
+          <div class="cmp-card-icon">🧱</div>
+          <div class="cmp-card-body">
+            <div class="cmp-card-name">Sistem clasic</div>
+            <div class="cmp-card-sub">0 funcții premium integrate. Totul de adăugat separat.</div>
+          </div>
+          <div class="cmp-card-value-text">0 din 5</div>
+        </div>
+        <div class="cmp-card cmp-card--bad">
+          <div class="cmp-card-icon">🧱</div>
+          <div class="cmp-card-body">
+            <div class="cmp-card-name">Sistem clasic → pasiv</div>
+            <div class="cmp-card-sub">Cărămidă + 11 straturi adăugate pentru a atinge cele 5 funcții.</div>
+          </div>
+          <div class="cmp-card-value-text">Stratificat</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CRITÈRE 02 — PLAN D'ARMATURE ============ -->
+<section class="cmp-section">
+  <div class="container">
+    <div class="cmp-section-grid is-reversed">
+      <div>
+        <span class="cmp-crit-num">Criteriul 02 · 🛠️ Plan de armare</span>
+        <h2 class="cmp-crit-title">Singurul ICF care respectă <em>un plan de armare real.</em></h2>
+        <p class="cmp-crit-desc">Polistibrick are locașuri brevetate pre-poziționate pentru bare de oțel — inginerul de structură poate concepe un plan de armare ca pentru betonul armat clasic. Alte ICF sunt sisteme "LEGO" bazice: fără plan de armare posibil, fără calcule structurale avansate.</p>
+        <div class="cmp-crit-takeaway">
+          <strong>Plan de armare inginer = siguranță structurală.</strong> Indispensabil pentru clădirile multi-etajate, zone seismice, sarcini grele.
+        </div>
+      </div>
+
+      <div class="cmp-rows">
+        <div class="cmp-row cmp-row--win">
+          <div class="cmp-row-info">
+            <div class="cmp-row-label">Polistibrick</div>
+            <div class="cmp-row-sub">Locașuri brevetate pentru bare de oțel — plan de armare respectat</div>
+          </div>
+          <span class="cmp-badge badge-green" style="font-size:15px;">Complet</span>
+        </div>
+        <div class="cmp-row">
+          <div class="cmp-row-info">
+            <div class="cmp-row-label">Alt sistem ICF</div>
+            <div class="cmp-row-sub">Sistem LEGO bazic — fără plan de armare posibil</div>
+          </div>
+          <span class="cmp-badge badge-red" style="font-size:15px;">Incomplet</span>
+        </div>
+        <div class="cmp-row">
+          <div class="cmp-row-info">
+            <div class="cmp-row-label">Sistem clasic</div>
+            <div class="cmp-row-sub">Întărire standard posibilă</div>
+          </div>
+          <span class="cmp-badge badge-yellow" style="font-size:15px;">Bazic</span>
+        </div>
+        <div class="cmp-row">
+          <div class="cmp-row-info">
+            <div class="cmp-row-label">Sistem clasic → pasiv</div>
+            <div class="cmp-row-sub">Identic cu cărămida clasică</div>
+          </div>
+          <span class="cmp-badge badge-red" style="font-size:15px;">Complicat</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CRITÈRE 03 — ZONES SISMIQUES ============ -->
+<section class="cmp-section">
+  <div class="container">
+    <div class="cmp-section-grid">
+      <div>
+        <span class="cmp-crit-num">Criteriul 03 · 🏔️ Zone seismice</span>
+        <h2 class="cmp-crit-title">Conceput să reziste <em>la seisme.</em></h2>
+        <p class="cmp-crit-desc">Datorită planului de armare respectat și structurii monolitice în beton armat, Polistibrick este certificat pentru zonele seismice și terenurile cu mișcări. Alte ICF (fără plan de armare) nu pot fi folosite în aceste zone — este o limitare structurală majoră.</p>
+        <div class="cmp-crit-takeaway">
+          <strong>Construiți în siguranță oriunde în Europa</strong>, inclusiv în regiunile seismice (Italia, România, Grecia, Balcani).
+        </div>
+      </div>
+
+      <div class="cmp-rows">
+        <div class="cmp-row cmp-row--win">
+          <div class="cmp-row-info">
+            <div class="cmp-row-label">Polistibrick</div>
+            <div class="cmp-row-sub">Certificat zone seismice · beton armat monolitic</div>
+          </div>
+          <span class="cmp-badge badge-green">Da</span>
+        </div>
+        <div class="cmp-row">
+          <div class="cmp-row-info">
+            <div class="cmp-row-label">Alt sistem ICF</div>
+            <div class="cmp-row-sub">Neadaptat — fără plan de armare, structură fragilă</div>
+          </div>
+          <span class="cmp-badge badge-yellow">Nu</span>
+        </div>
+        <div class="cmp-row">
+          <div class="cmp-row-info">
+            <div class="cmp-row-label">Sistem clasic</div>
+            <div class="cmp-row-sub">Posibil cu întărire structurală</div>
+          </div>
+          <span class="cmp-badge badge-green">Posibil</span>
+        </div>
+        <div class="cmp-row">
+          <div class="cmp-row-info">
+            <div class="cmp-row-label">Sistem clasic → pasiv</div>
+            <div class="cmp-row-sub">Identic cu sistemul clasic</div>
+          </div>
+          <span class="cmp-badge badge-green">Posibil</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CRITÈRE 04 — ÉQUIPES ============ -->
+<section class="cmp-section">
+  <div class="container">
+    <div class="cmp-section-grid is-reversed">
+      <div>
+        <span class="cmp-crit-num">Criteriul 04 · 👷 Echipe</span>
+        <h2 class="cmp-crit-title">O singură echipă <em>face tot.</em></h2>
+        <p class="cmp-crit-desc">Polistibrick este livrat gata de montaj: o singură echipă certificată face pereți, planșee, acoperiș. Alte ICF fac doar pereți izolați — tot trebuie să chemi zidari, dulgheri, fațadiști ca la cărămida clasică.</p>
+        <div class="cmp-crit-takeaway">
+          <strong>1 singur interlocutor, 1 singur calendar.</strong> Cu alte ICF, gestionezi tot atâtea echipe ca la cărămidă.
+        </div>
+      </div>
+
+      <div class="cmp-rows">
+        <div class="cmp-row cmp-row--win">
+          <div class="cmp-row-info">
+            <div class="cmp-row-label">Polistibrick</div>
+            <div class="cmp-row-sub">O singură echipă certificată (2-3 persoane)</div>
+          </div>
+          <span class="cmp-badge badge-green" style="font-size:18px;">1 echipă</span>
+        </div>
+        <div class="cmp-row">
+          <div class="cmp-row-info">
+            <div class="cmp-row-label">Alt sistem ICF</div>
+            <div class="cmp-row-sub">Mai multe echipe (ca la cărămidă)</div>
+          </div>
+          <span class="cmp-badge badge-yellow" style="font-size:18px;">Mai multe</span>
+        </div>
+        <div class="cmp-row">
+          <div class="cmp-row-info">
+            <div class="cmp-row-label">Sistem clasic</div>
+            <div class="cmp-row-sub">Zidari + izolatori + fațadiști...</div>
+          </div>
+          <span class="cmp-badge badge-yellow" style="font-size:18px;">Mai multe</span>
+        </div>
+        <div class="cmp-row">
+          <div class="cmp-row-info">
+            <div class="cmp-row-label">Sistem clasic → pasiv</div>
+            <div class="cmp-row-sub">Și mai multe etape specializate</div>
+          </div>
+          <span class="cmp-badge badge-red" style="font-size:18px;">Și mai +</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CRITÈRE 05 — TEMPS ============ -->
+<section class="cmp-section">
+  <div class="container">
+    <div class="cmp-section-grid">
+      <div>
+        <span class="cmp-crit-num">Criteriul 05 · ⏱️ Timp de execuție</span>
+        <h2 class="cmp-crit-title">Vă mutați <em>în câteva săptămâni.</em></h2>
+        <p class="cmp-crit-desc">Panourile Polistibrick se asamblează ca LEGO și integrează tot — asta face rapiditatea. Alte ICF, chiar dacă sunt în blocuri, trebuie completate cu tot restul (fațadă, finisaje, hidroizolație) — șantierul durează la fel cât la cărămidă.</p>
+        <div class="cmp-crit-takeaway">
+          <strong>Singurul ICF care reduce cu adevărat timpul de șantier.</strong> Altele durează la fel ca la cărămidă.
+        </div>
+      </div>
+
+      <div class="cmp-rows">
+        <div class="cmp-row cmp-row--win">
+          <div class="cmp-row-info">
+            <div class="cmp-row-label">Polistibrick</div>
+            <div class="cmp-row-sub">Câteva săptămâni pentru structura finită</div>
+          </div>
+          <span class="cmp-badge badge-green" style="font-size:16px;">Cel mai rapid</span>
+        </div>
+        <div class="cmp-row">
+          <div class="cmp-row-info">
+            <div class="cmp-row-label">Alt sistem ICF</div>
+            <div class="cmp-row-sub">Același timp ca la cărămidă (aceleași etape complementare)</div>
+          </div>
+          <span class="cmp-badge badge-yellow" style="font-size:16px;">≈ Cărămidă</span>
+        </div>
+        <div class="cmp-row">
+          <div class="cmp-row-info">
+            <div class="cmp-row-label">Sistem clasic</div>
+            <div class="cmp-row-sub">Mai multe mois sur chantier</div>
+          </div>
+          <span class="cmp-badge badge-yellow" style="font-size:16px;">Mai multe mois</span>
+        </div>
+        <div class="cmp-row">
+          <div class="cmp-row-info">
+            <div class="cmp-row-label">Sistem clasic → pasiv</div>
+            <div class="cmp-row-sub">Și mai lung (straturi pasive adăugate)</div>
+          </div>
+          <span class="cmp-badge badge-red" style="font-size:16px;">Și mai +</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CRITÈRE 06 — ISOLATION CONTINUE ============ -->
+<section class="cmp-section">
+  <div class="container">
+    <div class="cmp-section-grid is-reversed">
+      <div>
+        <span class="cmp-crit-num">Criteriul 06 · 🌡️ Izolație continuă</span>
+        <h2 class="cmp-crit-title">Izolație <em>turnată în panou.</em></h2>
+        <p class="cmp-crit-desc">La Polistibrick, EPS-ul premium este turnat în panou împreună cu betonul — continuitate perfectă, zero punți termice. Alte ICF au izolație integrată, dar fără aceeași calitate de integrare și fără performanță Passivhaus implicit.</p>
+        <div class="cmp-crit-takeaway">
+          <strong>Performanță Passivhaus de la proiectare.</strong> Nu un accesoriu — este chiar structura.
+        </div>
+      </div>
+
+      <div class="cmp-wall">
+        <div class="cmp-wall-system">
+          <div class="cmp-wall-name"><strong style="color:var(--red);">👑 Polistibrick</strong><span>Integrată + continuă</span></div>
+          <div class="cmp-wall-section cmp-wall-section--win">
+            <div class="cmp-wall-layer layer-isol" style="flex: 25;">EPS premium</div>
+            <div class="cmp-wall-layer layer-beton" style="flex: 15;">Beton armat</div>
+            <div class="cmp-wall-layer layer-isol" style="flex: 5;">EPS</div>
+          </div>
+        </div>
+        <div class="cmp-wall-system">
+          <div class="cmp-wall-name"><strong>Alt sistem ICF</strong><span>Integrată dar bazică</span></div>
+          <div class="cmp-wall-section">
+            <div class="cmp-wall-layer layer-icf-light" style="flex: 15;">EPS ușor</div>
+            <div class="cmp-wall-layer layer-beton" style="flex: 15;">Beton</div>
+            <div class="cmp-wall-layer layer-icf-light" style="flex: 5;">EPS</div>
+          </div>
+        </div>
+        <div class="cmp-wall-system">
+          <div class="cmp-wall-name"><strong>Sistem clasic</strong><span>Lipită după turnare</span></div>
+          <div class="cmp-wall-section">
+            <div class="cmp-wall-layer layer-brique" style="flex: 25;">Cărămidă</div>
+            <div class="cmp-wall-layer layer-isol-extra" style="flex: 10;">+ EPS</div>
+            <div class="cmp-wall-layer layer-enduit" style="flex: 3;">Tencuială</div>
+          </div>
+        </div>
+        <div class="cmp-wall-system">
+          <div class="cmp-wall-name"><strong>Sistem clasic → pasiv</strong><span>Mai mult EPS lipit</span></div>
+          <div class="cmp-wall-section">
+            <div class="cmp-wall-layer layer-brique" style="flex: 25;">Cărămidă</div>
+            <div class="cmp-wall-layer layer-isol-extra" style="flex: 30;">+ EPS gros</div>
+            <div class="cmp-wall-layer layer-enduit" style="flex: 3;">Tencuială</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CRITÈRE 07 — SÉCURITÉ FEU A1 ============ -->
+<section class="cmp-section">
+  <div class="container">
+    <div class="cmp-section-grid">
+      <div>
+        <span class="cmp-crit-num">Criteriul 07 · 🔥 Rezistență la foc</span>
+        <h2 class="cmp-crit-title">Clasa A1 — <em>necombustibil.</em></h2>
+        <p class="cmp-crit-desc">Toate cele patru sisteme ating clasa A1 (necombustibil — cea mai ridicată în Europa). Diferența este în structură: doar Polistibrick oferă beton armat continuu cu plan de armare respectat, pentru cea mai bună integritate în fața focului.</p>
+        <div class="cmp-crit-takeaway">
+          <strong>A1 + structură monolitică din beton armat.</strong> Siguranța unei structuri proiectate de inginer.
+        </div>
+      </div>
+
+      <div class="cmp-rows">
+        <div class="cmp-row cmp-row--win">
+          <div class="cmp-row-info">
+            <div class="cmp-row-label">Polistibrick</div>
+            <div class="cmp-row-sub">A1 + structură monolitică din beton armat</div>
+          </div>
+          <span class="cmp-badge badge-green">A1</span>
+        </div>
+        <div class="cmp-row">
+          <div class="cmp-row-info">
+            <div class="cmp-row-label">Alt sistem ICF</div>
+            <div class="cmp-row-sub">A1 dacă este instalat corect</div>
+          </div>
+          <span class="cmp-badge badge-neutral">A1</span>
+        </div>
+        <div class="cmp-row">
+          <div class="cmp-row-info">
+            <div class="cmp-row-label">Sistem clasic</div>
+            <div class="cmp-row-sub">A1 · zidărie tradițională</div>
+          </div>
+          <span class="cmp-badge badge-neutral">A1</span>
+        </div>
+        <div class="cmp-row">
+          <div class="cmp-row-info">
+            <div class="cmp-row-label">Sistem clasic → pasiv</div>
+            <div class="cmp-row-sub">A1 · cărămidă + straturi izolante</div>
+          </div>
+          <span class="cmp-badge badge-neutral">A1</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CRITÈRE 08 — HYDROFUGE ============ -->
+<section class="cmp-section">
+  <div class="container">
+    <div class="cmp-section-grid is-reversed">
+      <div>
+        <span class="cmp-crit-num">Criteriul 08 · 💧 Hidrofug</span>
+        <h2 class="cmp-crit-title">Fără apă. <em>Fără mucegai.</em></h2>
+        <p class="cmp-crit-desc">EPS-ul Polistibrick este cu celule închise — nu absoarbe apa. Combinat cu betonul armat monolitic, ai o structură complet etanșă, fără risc de umiditate, mucegai sau putrezire. Cărămida, în schimb, absoarbe natural umiditatea — de aici problemele cu pereți umezi și tencuială care se cojește.</p>
+        <div class="cmp-crit-takeaway">
+          <strong>Pereți etanși pe viață.</strong> Fără probleme de umiditate, garanție 50+ ani.
+        </div>
+      </div>
+
+      <div class="cmp-rows">
+        <div class="cmp-row cmp-row--win">
+          <div class="cmp-row-info">
+            <div class="cmp-row-label">Polistibrick</div>
+            <div class="cmp-row-sub">EPS celule închise + beton armat monolitic</div>
+          </div>
+          <span class="cmp-badge badge-green">Total</span>
+        </div>
+        <div class="cmp-row">
+          <div class="cmp-row-info">
+            <div class="cmp-row-label">Alt sistem ICF</div>
+            <div class="cmp-row-sub">EPS bazic + îmbinări = puncte de infiltrare</div>
+          </div>
+          <span class="cmp-badge badge-yellow">Parțial</span>
+        </div>
+        <div class="cmp-row">
+          <div class="cmp-row-info">
+            <div class="cmp-row-label">Sistem clasic</div>
+            <div class="cmp-row-sub">Cărămidă absorbe l'humidité — risque de moisissure</div>
+          </div>
+          <span class="cmp-badge badge-red">Nu</span>
+        </div>
+        <div class="cmp-row">
+          <div class="cmp-row-info">
+            <div class="cmp-row-label">Sistem clasic → pasiv</div>
+            <div class="cmp-row-sub">Membrane adăugate, dar cărămida rămâne absorbantă</div>
+          </div>
+          <span class="cmp-badge badge-yellow">Parțial</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CRITÈRE 09 — ACOUSTIQUE ============ -->
+<section class="cmp-section">
+  <div class="container">
+    <div class="cmp-section-grid">
+      <div>
+        <span class="cmp-crit-num">Criteriul 09 · 🔇 Izolație acustică</span>
+        <h2 class="cmp-crit-title">Liniște <em>ca într-o cameră blindată.</em></h2>
+        <p class="cmp-crit-desc">Combinația EPS premium + beton armat Polistibrick oferă o izolație acustică profesională (&gt; 50 dB) fără niciun strat adăugat. Cărămida singură este slabă acustic — sunt necesare panouri acustice separate pentru același rezultat.</p>
+        <div class="cmp-crit-takeaway">
+          <strong>Liniște totală de la proiectare.</strong> Nu mai auzi vecinii, nici strada.
+        </div>
+      </div>
+
+      <div class="cmp-rows">
+        <div class="cmp-row cmp-row--win">
+          <div class="cmp-row-info">
+            <div class="cmp-row-label">Polistibrick</div>
+            <div class="cmp-row-sub">EPS + beton armat = &gt; 50 dB fără adăugiri</div>
+          </div>
+          <span class="cmp-badge badge-green">Premium</span>
+        </div>
+        <div class="cmp-row">
+          <div class="cmp-row-info">
+            <div class="cmp-row-label">Alt sistem ICF</div>
+            <div class="cmp-row-sub">Performanță bazică, panouri acustice de adăugat</div>
+          </div>
+          <span class="cmp-badge badge-yellow">Bazic</span>
+        </div>
+        <div class="cmp-row">
+          <div class="cmp-row-info">
+            <div class="cmp-row-label">Sistem clasic</div>
+            <div class="cmp-row-sub">Cărămidă = isolation acoustique faible</div>
+          </div>
+          <span class="cmp-badge badge-red">Slabă</span>
+        </div>
+        <div class="cmp-row">
+          <div class="cmp-row-info">
+            <div class="cmp-row-label">Sistem clasic → pasiv</div>
+            <div class="cmp-row-sub">Panouri acustice adăugate separat</div>
+          </div>
+          <span class="cmp-badge badge-yellow">Cu adaosuri</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CRITÈRE 10 — CLASSE ÉNERGÉTIQUE ============ -->
+<section class="cmp-section">
+  <div class="container">
+    <div class="cmp-section-grid is-reversed">
+      <div>
+        <span class="cmp-crit-num">Criteriul 10 · 🔋 Clasă energetică</span>
+        <h2 class="cmp-crit-title">A+++ <em>implicit.</em></h2>
+        <p class="cmp-crit-desc">Polistibrick livrează A+++ de la proiectare. Alte ICF ating o performanță medie (B/C) — izolează dar nu la nivelul Passivhaus complet. Cărămida clasică rămâne E/F. Cărămida pasivă atinge A+++ prin straturi adăugate.</p>
+        <div class="cmp-crit-takeaway">
+          <strong>A+++ inclus — nu opțional.</strong> Singurul ICF care livrează Passivhaus de la proiectare.
+        </div>
+      </div>
+
+      <div class="cmp-rows">
+        <div class="cmp-row cmp-row--win">
+          <div class="cmp-row-info">
+            <div class="cmp-row-label">Polistibrick</div>
+            <div class="cmp-row-sub">A+++ implicit, fără adăugiri</div>
+          </div>
+          <span class="cmp-badge badge-green">A+++</span>
+        </div>
+        <div class="cmp-row">
+          <div class="cmp-row-info">
+            <div class="cmp-row-label">Alt sistem ICF</div>
+            <div class="cmp-row-sub">Performanță intermediară (doar izolație)</div>
+          </div>
+          <span class="cmp-badge badge-yellow">B / C</span>
+        </div>
+        <div class="cmp-row">
+          <div class="cmp-row-info">
+            <div class="cmp-row-label">Sistem clasic</div>
+            <div class="cmp-row-sub">Standard mare consumator de energie</div>
+          </div>
+          <span class="cmp-badge badge-red">E / F</span>
+        </div>
+        <div class="cmp-row">
+          <div class="cmp-row-info">
+            <div class="cmp-row-label">Sistem clasic → pasiv</div>
+            <div class="cmp-row-sub">A+++ atins prin straturi adăugate</div>
+          </div>
+          <span class="cmp-badge badge-green">A+++</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CRITÈRE 11 — PRIX ACCESSIBLE ============ -->
+<section class="cmp-section">
+  <div class="container">
+    <div class="cmp-section-grid">
+      <div>
+        <span class="cmp-crit-num">Criteriul 11 · 💶 Preț accesibil</span>
+        <h2 class="cmp-crit-title">Pasivul la prețul <em>convenționalului.</em></h2>
+        <p class="cmp-crit-desc">Polistibrick costă cu foarte puțin mai mult decât cărămida clasică — pentru o performanță A+++ premium integrată. Alte ICF costă mai mult decât cărămida fără să ofere performanța completă. Cărămida pasivă tradițională este semnificativ mai scumpă.</p>
+        <div class="cmp-crit-takeaway">
+          <strong>Polistibrick face premium-ul accesibil.</strong> Cel mai bun raport performanță/preț de pe piață.
+        </div>
+      </div>
+
+      <div class="cmp-rows">
+        <div class="cmp-row cmp-row--win">
+          <div class="cmp-row-info">
+            <div class="cmp-row-label">Polistibrick</div>
+            <div class="cmp-row-sub">Aproape egal cu convenționalul — pentru A+++ premium</div>
+          </div>
+          <span class="cmp-badge badge-green" style="font-size:15px;">Excelent</span>
+        </div>
+        <div class="cmp-row">
+          <div class="cmp-row-info">
+            <div class="cmp-row-label">Alt sistem ICF</div>
+            <div class="cmp-row-sub">Mai scump fără performanța completă</div>
+          </div>
+          <span class="cmp-badge badge-yellow" style="font-size:15px;">Mediocru</span>
+        </div>
+        <div class="cmp-row">
+          <div class="cmp-row-info">
+            <div class="cmp-row-label">Sistem clasic</div>
+            <div class="cmp-row-sub">Standardul pieței — fără pasiv</div>
+          </div>
+          <span class="cmp-badge badge-yellow" style="font-size:15px;">Standard</span>
+        </div>
+        <div class="cmp-row">
+          <div class="cmp-row-info">
+            <div class="cmp-row-label">Sistem clasic → pasiv</div>
+            <div class="cmp-row-sub">Semnificativ mai scumpă</div>
+          </div>
+          <span class="cmp-badge badge-red" style="font-size:15px;">Scump</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CRITÈRE 12 — ÉCONOMIES À VIE ============ -->
+<section class="cmp-section">
+  <div class="container">
+    <div class="cmp-section-grid is-reversed">
+      <div>
+        <span class="cmp-crit-num">Criteriul 12 · 📉 Economii pe viață</span>
+        <h2 class="cmp-crit-title">Economisiți <em>în fiecare lună.</em></h2>
+        <p class="cmp-crit-desc">Performanța Passivhaus a Polistibrick face să se topească facturile de energie din primul an. Pe 25 de ani, economia cumulată compensează — și depășește — surplusul inițial mic. Aceasta este adevărata economie: nu la construcție, ci pe viață.</p>
+        <div class="cmp-crit-takeaway">
+          <strong>Investiție care se amortizează în fiecare iarnă.</strong> Fiecare factură neplătită îți recuperează investiția.
+        </div>
+      </div>
+
+      <div class="cmp-savings">
+        <span class="cmp-savings-eyebrow">👑 Economii Polistibrick</span>
+        <div class="cmp-savings-big">43 500<small> €</small></div>
+        <div class="cmp-savings-vs">economisiți pe <strong>25 de ani</strong>,<br>pentru o casă de <strong>150 m²</strong>.</div>
+        <div class="cmp-savings-foot">vs construcție în cărămidă clasică<br>(energie + întreținere cumulate)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL ============ -->
+<section class="cmp-final">
+  <div class="container">
+    <span class="eyebrow">👑 Verdictul</span>
+    <h2>Polistibrick — singura tehnologie care <em>reunește 5 materiale premium</em> într-un singur sistem.</h2>
+    <p>🌡️ Izolație termică · 🔥 Rezistență la foc A1 · 🛡️ Antiseismic · 💧 Hidrofug · 🔇 Acustic. <strong>Niciun alt sistem — nici ICF-urile concurente, nici cărămida clasică, nici cărămida pasivă tradițională — nu oferă această integrare premium într-un singur panou prefabricat.</strong> Livrat de o singură echipă. La prețul convenționalului.</p>
+    <div class="cmp-final-cta">
       <a href="../oferta/" class="btn btn-on-dark btn-large btn-arrow">Cere o ofertă</a>
-      <a href="../contact/" class="btn btn-on-dark-ghost btn-large">Vorbește cu un specialist</a>
+      <a href="../calculator/" class="btn btn-on-dark-ghost btn-large">Calculează costul</a>
     </div>
   </div>
 </section>
