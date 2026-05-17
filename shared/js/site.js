@@ -72,6 +72,7 @@
             <svg class="nav-link-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5l3 3 3-3"/></svg>
           </button>
           <div class="nav-dropdown">
+            <a class="nav-dropdown-item" href="${BASE}comparatie/">{{ui.comparaison}}<span class="nav-dropdown-item-sub">{{ui.comparaison_sub}}</span></a>
             <a class="nav-dropdown-item" href="${BASE}resurse/blog/">{{ui.blog}}<span class="nav-dropdown-item-sub">{{ui.blog_sub}}</span></a>
             <a class="nav-dropdown-item" href="${BASE}resurse/faq/">{{ui.faq}}<span class="nav-dropdown-item-sub">{{ui.faq_sub}}</span></a>
           </div>
