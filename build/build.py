@@ -26,12 +26,24 @@ FALLBACK_COUNTRY = "ro"   # used when a country has only _config.json
 PLACEHOLDER_RE = re.compile(r"\{\{\s*([a-zA-Z0-9_.]+)\s*\}\}")
 
 
+UI_STRINGS_PATH = ROOT / "translations" / "ui_strings.json"
+
+
 def load_config(country_code: str) -> dict:
     cfg_path = COUNTRIES_DIR / country_code / "_config.json"
     if not cfg_path.exists():
         raise SystemExit(f"[ERROR] Missing config: {cfg_path}")
     with cfg_path.open(encoding="utf-8") as f:
-        return json.load(f)
+        cfg = json.load(f)
+    # Inject UI strings for the country's language (used by site.js placeholders)
+    if UI_STRINGS_PATH.exists() and "ui" not in cfg:
+        with UI_STRINGS_PATH.open(encoding="utf-8") as f:
+            ui_all = json.load(f)
+        lang = cfg.get("lang", "ro")
+        if country_code == "ie":  # ie falls back to RO template; UI should be EN
+            lang = "en"
+        cfg["ui"] = ui_all.get(lang, ui_all.get("ro", {}))
+    return cfg
 
 
 def resolve_placeholder(key: str, config: dict) -> str:

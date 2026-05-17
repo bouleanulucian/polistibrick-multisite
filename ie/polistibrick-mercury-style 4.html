@@ -3,11 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Polistibrick — Une maison. Un sistem. Sans compromis.</title>
-<meta name="description" content="Sistem ICF complet — murs, planchers, toit. Standard A+++. Construit en 4 semaines. Fără compromis, sans factures.">
-<meta property="og:title" content="Polistibrick — Une maison. Un sistem.">
-<meta property="og:description" content="Sistem ICF complet pentru casa A+++. Murs, planșee, acoperiș — un sistem premium.">
-<meta property="og:image" content="images/logo.png">
+<title>Polistibrick — Bun venit în viitor</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -2868,187 +2864,9 @@
       transform: translateY(0) scale(1) translateX(0) !important;
     }
   }
-
-  /* ===================================================
-     COUNTRY SWITCHER — header dropdown
-     =================================================== */
-  .country-switcher {
-    position: relative;
-    display: inline-block;
-    margin-right: 8px;
-  }
-  .country-switcher-trigger {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.12);
-    color: var(--text, #f5f5f7);
-    padding: 8px 12px;
-    border-radius: 999px;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background .15s ease, border-color .15s ease;
-    font-family: inherit;
-  }
-  .country-switcher-trigger:hover {
-    background: rgba(255,255,255,0.10);
-    border-color: rgba(255,255,255,0.20);
-  }
-  .country-switcher-trigger[aria-expanded="true"] {
-    background: rgba(255,255,255,0.10);
-    border-color: rgba(196,0,31,0.45);
-  }
-  .country-switcher-flag { font-size: 16px; line-height: 1; }
-  .country-switcher-code { letter-spacing: 0.04em; }
-  .country-switcher-caret {
-    transition: transform .2s ease;
-    opacity: 0.7;
-  }
-  .country-switcher-trigger[aria-expanded="true"] .country-switcher-caret {
-    transform: rotate(180deg);
-  }
-  .country-switcher-panel {
-    position: absolute;
-    top: calc(100% + 10px);
-    right: 0;
-    min-width: 280px;
-    background: #14141c;
-    border: 1px solid rgba(255,255,255,0.10);
-    border-radius: 14px;
-    padding: 8px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.04);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-6px) scale(0.97);
-    transition: opacity .18s ease, transform .18s ease, visibility .18s;
-    z-index: 1000;
-  }
-  .country-switcher-panel.open {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0) scale(1);
-  }
-  .country-switcher-header {
-    color: rgba(255,255,255,0.45);
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-weight: 600;
-    padding: 8px 12px 6px;
-  }
-  .country-switcher-item {
-    display: grid;
-    grid-template-columns: 24px 1fr auto;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 12px;
-    border-radius: 8px;
-    text-decoration: none;
-    color: #f5f5f7;
-    font-size: 14px;
-    transition: background .15s ease;
-  }
-  .country-switcher-item:hover {
-    background: rgba(255,255,255,0.06);
-  }
-  .country-switcher-item.active {
-    background: rgba(196,0,31,0.12);
-    color: var(--red, #c4001f);
-  }
-  .country-switcher-item.active .domain { color: rgba(196,0,31,0.85); }
-  .country-switcher-item .flag { font-size: 20px; line-height: 1; }
-  .country-switcher-item .name { font-weight: 600; }
-  .country-switcher-item .domain {
-    font-family: ui-monospace, "SF Mono", Menlo, monospace;
-    font-size: 11px;
-    color: rgba(255,255,255,0.45);
-  }
-
-  /* ===================================================
-     COUNTRY BANNER — auto-detection suggestion
-     =================================================== */
-  .country-banner {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 9999;
-    background: linear-gradient(180deg, rgba(196,0,31,0.97) 0%, rgba(160,0,25,0.97) 100%);
-    backdrop-filter: blur(10px);
-    color: #fff;
-    padding: 12px 24px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.25);
-    transform: translateY(-100%);
-    transition: transform .4s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .country-banner.show {
-    transform: translateY(0);
-  }
-  .country-banner-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-  .country-banner-flag { font-size: 28px; line-height: 1; flex-shrink: 0; }
-  .country-banner-text { flex: 1; font-size: 14.5px; min-width: 240px; }
-  .country-banner-text strong { font-weight: 700; }
-  .country-banner-actions { display: flex; gap: 8px; flex-shrink: 0; }
-  .country-banner-btn {
-    padding: 8px 16px;
-    border-radius: 999px;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-    border: 1px solid transparent;
-    transition: background .15s ease, border-color .15s ease;
-    font-family: inherit;
-  }
-  .country-banner-btn.primary {
-    background: #fff;
-    color: var(--red, #c4001f);
-  }
-  .country-banner-btn.primary:hover { background: rgba(255,255,255,0.92); }
-  .country-banner-btn.ghost {
-    background: transparent;
-    color: #fff;
-    border-color: rgba(255,255,255,0.4);
-  }
-  .country-banner-btn.ghost:hover { background: rgba(255,255,255,0.12); }
-
-  /* Push the nav down when banner is visible */
-  body.has-country-banner #nav { top: 60px; }
-  body.has-country-banner { padding-top: 0; }
-
-  /* Mobile */
-  @media (max-width: 768px) {
-    .country-switcher-trigger { padding: 6px 10px; font-size: 12px; }
-    .country-switcher-code { display: none; }
-    .country-switcher-panel { min-width: 260px; right: -8px; }
-    .country-banner { padding: 10px 16px; }
-    .country-banner-text { font-size: 13px; }
-    .country-banner-actions { width: 100%; justify-content: flex-end; }
-    body.has-country-banner #nav { top: 92px; }
-  }
 </style>
 </head>
 <body>
-
-<!-- COUNTRY SUGGESTION BANNER (auto-detect) -->
-<div class="country-banner" id="countryBanner" hidden role="region" aria-live="polite">
-  <div class="country-banner-inner">
-    <span class="country-banner-flag" id="bannerFlag">🌍</span>
-    <span class="country-banner-text" id="bannerText">Nous détectons que vous êtes en <strong id="bannerCountry">...</strong>. Vizitezi <strong id="bannerDomain">polistibrick.??</strong>?</span>
-    <div class="country-banner-actions">
-      <button class="country-banner-btn primary" id="bannerYes">Da, mergi</button>
-      <button class="country-banner-btn ghost" id="bannerNo">Je reste ici</button>
-    </div>
-  </div>
-</div>
 
 <!-- SOLAR PARTICLE FIELD — magnetic dots that follow the cursor -->
 <canvas id="solarField" aria-hidden="true"></canvas>
@@ -3063,19 +2881,19 @@
       <div class="nav-menu-item">
         <a href="produse/pereti-mbk/" class="nav-menu-link">Produse <span class="nav-menu-caret">▾</span></a>
         <div class="nav-menu-dropdown">
-          <a href="produse/pereti-mbk/">Murs MBK</a>
-          <a href="produse/planseu-pbk/">Planchers PBK</a>
-          <a href="produse/acoperis-tbk/">Toit TBK</a>
+          <a href="produse/pereti-mbk/">Pereți MBK</a>
+          <a href="produse/planseu-pbk/">Planșee PBK</a>
+          <a href="produse/acoperis-tbk/">Acoperiș TBK</a>
           <a href="produse/accesorii/">Accesorii</a>
         </div>
       </div>
       <div class="nav-menu-item">
         <a href="pentru/proprietari/" class="nav-menu-link">Soluții <span class="nav-menu-caret">▾</span></a>
         <div class="nav-menu-dropdown">
-          <a href="pentru/proprietari/">Pour proprietari</a>
-          <a href="pentru/arhitecti/">Pour les architectes</a>
-          <a href="pentru/constructori/">Pour constructori</a>
-          <a href="pentru/investitori/">Pour investitori</a>
+          <a href="pentru/proprietari/">Pentru proprietari</a>
+          <a href="pentru/arhitecti/">Pentru arhitecți</a>
+          <a href="pentru/constructori/">Pentru constructori</a>
+          <a href="pentru/investitori/">Pentru investitori</a>
           <a href="devino-partener/" style="color:var(--red);font-weight:600;">→ Devino partener</a>
         </div>
       </div>
@@ -3090,15 +2908,14 @@
         <a href="calculator/" class="nav-menu-link">Calculator <span class="nav-menu-caret">▾</span></a>
         <div class="nav-menu-dropdown">
           <a href="calculator/">Calculator cost</a>
-          <a href="economii/">Calculateur d'économies (vs brique)</a>
+          <a href="economii/">Calculator economii (vs cărămidă)</a>
         </div>
       </div>
       <div class="nav-menu-item">
         <a href="resurse/" class="nav-menu-link">Resurse <span class="nav-menu-caret">▾</span></a>
         <div class="nav-menu-dropdown">
-          <a href="comparatie/">Comparaison vs brique</a>
           <a href="resurse/blog/">Blog</a>
-          <a href="resurse/faq/">Questions fréquentes</a>
+          <a href="resurse/faq/">Întrebări frecvente</a>
         </div>
       </div>
       <div class="nav-menu-item">
@@ -3106,51 +2923,15 @@
         <div class="nav-menu-dropdown">
           <a href="despre/">Compania</a>
           <a href="despre/patent/">Patent</a>
-          <a href="despre/certificari/">Certifications</a>
+          <a href="despre/certificari/">Certificări</a>
           <a href="despre/fabrici/">Fabrici</a>
           <a href="despre/echipa/">Echipa</a>
         </div>
       </div>
     </div>
     <div class="nav-cta">
-      <!-- COUNTRY SELECTOR -->
-      <div class="country-switcher" id="countrySwitcher">
-        <button class="country-switcher-trigger" id="countrySwitcherTrigger" aria-label="Schimbă țara" aria-expanded="false">
-          <span class="country-switcher-flag">{{country_flag}}</span>
-          <span class="country-switcher-code">{{country}}</span>
-          <svg class="country-switcher-caret" viewBox="0 0 12 12" width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,5 6,8 9,5"/></svg>
-        </button>
-        <div class="country-switcher-panel" id="countrySwitcherPanel" role="menu" aria-hidden="true">
-          <div class="country-switcher-header">Choisir le pays</div>
-          <a href="#" data-country="ro" data-domain="https://polistibrick.ro" data-folder="ro" class="country-switcher-item">
-            <span class="flag">🇷🇴</span><span class="name">Roumanie</span><span class="domain">polistibrick.ro</span>
-          </a>
-          <a href="#" data-country="fr" data-domain="https://polistibrick.fr" data-folder="fr" class="country-switcher-item">
-            <span class="flag">🇫🇷</span><span class="name">France</span><span class="domain">polistibrick.fr</span>
-          </a>
-          <a href="#" data-country="it" data-domain="https://polistibrick.it" data-folder="it" class="country-switcher-item">
-            <span class="flag">🇮🇹</span><span class="name">Italia</span><span class="domain">polistibrick.it</span>
-          </a>
-          <a href="#" data-country="es" data-domain="https://polistibrick.es" data-folder="es" class="country-switcher-item">
-            <span class="flag">🇪🇸</span><span class="name">España</span><span class="domain">polistibrick.es</span>
-          </a>
-          <a href="#" data-country="be" data-domain="https://polistibrick.be" data-folder="nl" class="country-switcher-item">
-            <span class="flag">🇧🇪</span><span class="name">België</span><span class="domain">polistibrick.be</span>
-          </a>
-          <a href="#" data-country="ie" data-domain="https://polistibrick.ie" data-folder="ie" class="country-switcher-item">
-            <span class="flag">🇮🇪</span><span class="name">Ireland</span><span class="domain">polistibrick.ie</span>
-          </a>
-          <a href="#" data-country="uk" data-domain="https://polistibrick.uk" data-folder="en" class="country-switcher-item">
-            <span class="flag">🇬🇧</span><span class="name">United Kingdom</span><span class="domain">polistibrick.uk</span>
-          </a>
-          <a href="#" data-country="ch" data-domain="https://polistibrick.com" data-folder="de" class="country-switcher-item">
-            <span class="flag">🇨🇭</span><span class="name">Schweiz</span><span class="domain">polistibrick.com</span>
-          </a>
-        </div>
-      </div>
-      <!-- /COUNTRY SELECTOR -->
       <a href="contact/" class="btn btn-ghost">Contact</a>
-      <a href="oferta/" class="btn btn-primary">Demander un devis →</a>
+      <a href="oferta/" class="btn btn-primary">Cere o ofertă →</a>
       <button class="nav-burger" id="navBurger" aria-label="Deschide meniul" aria-expanded="false" aria-controls="navDrawer">
         <span></span><span></span><span></span>
       </button>
@@ -3168,18 +2949,18 @@
 
   <div class="nav-drawer-group">
     <div class="nav-drawer-title">Produse</div>
-    <a href="produse/pereti-mbk/">Murs MBK</a>
-    <a href="produse/planseu-pbk/">Planchers PBK</a>
-    <a href="produse/acoperis-tbk/">Toit TBK</a>
+    <a href="produse/pereti-mbk/">Pereți MBK</a>
+    <a href="produse/planseu-pbk/">Planșee PBK</a>
+    <a href="produse/acoperis-tbk/">Acoperiș TBK</a>
     <a href="produse/accesorii/">Accesorii</a>
   </div>
 
   <div class="nav-drawer-group">
     <div class="nav-drawer-title">Soluții</div>
-    <a href="pentru/proprietari/">Pour proprietari</a>
-    <a href="pentru/arhitecti/">Pour les architectes</a>
-    <a href="pentru/constructori/">Pour constructori</a>
-    <a href="pentru/investitori/">Pour investitori</a>
+    <a href="pentru/proprietari/">Pentru proprietari</a>
+    <a href="pentru/arhitecti/">Pentru arhitecți</a>
+    <a href="pentru/constructori/">Pentru constructori</a>
+    <a href="pentru/investitori/">Pentru investitori</a>
     <a href="devino-partener/" class="partner-link">→ Devino partener</a>
   </div>
 
@@ -3197,23 +2978,22 @@
 
   <div class="nav-drawer-group">
     <div class="nav-drawer-title">Resurse</div>
-    <a href="comparatie/">Comparaison vs brique</a>
     <a href="resurse/blog/">Blog</a>
-    <a href="resurse/faq/">Questions fréquentes</a>
+    <a href="resurse/faq/">Întrebări frecvente</a>
   </div>
 
   <div class="nav-drawer-group">
     <div class="nav-drawer-title">Despre</div>
     <a href="despre/">Compania</a>
     <a href="despre/patent/">Patent</a>
-    <a href="despre/certificari/">Certifications</a>
+    <a href="despre/certificari/">Certificări</a>
     <a href="despre/fabrici/">Fabrici</a>
     <a href="despre/echipa/">Echipa</a>
   </div>
 
   <div class="nav-drawer-cta">
     <a href="contact/" class="btn btn-ghost">Contact</a>
-    <a href="oferta/" class="btn btn-primary">Demander un devis →</a>
+    <a href="oferta/" class="btn btn-primary">Cere o ofertă →</a>
   </div>
 
 </aside>
@@ -3223,17 +3003,17 @@
   <div class="container">
     <div class="hero-text-col">
       <div class="reveal">
-        <span class="hero-eyebrow">Système breveté européen · ICF</span>
+        <span class="hero-eyebrow">Sistem brevetat european · ICF</span>
       </div>
-      <h1 class="reveal">Une maison. Un système.<br><em>Sans compromis. Sans factures.</em></h1>
-      <p class="hero-sub reveal">Système ICF breveté complet — <strong>murs, planchers, toit</strong>. 5 produits haut de gamme dans un seul panneau : isolation · résistance au feu A1 · parasismique · hydrofuge · acoustique. Standard A+++. Construit en 4 semaines.</p>
+      <h1 class="reveal">Nu doar casă pasivă.<br><em>Casă premium fără facturi.</em></h1>
+      <p class="hero-sub reveal">Sistem brevetat ICF cu panouri de 3 m. <strong>5 produse premium într-un singur panou</strong>: izolație · rezistență la foc A1 · antiseismic · hidrofug · acustic. Vara fără AC, iarna fără centrală. Construit în 4 săptămâni.</p>
       <div class="hero-actions reveal">
-        <a href="oferta/" class="btn btn-red btn-large">Demander un devis →</a>
-        <a href="calculator/" class="btn btn-ghost btn-large">Calculez le coût de la maison</a>
+        <a href="oferta/" class="btn btn-red btn-large">Cere o ofertă →</a>
+        <a href="calculator/" class="btn btn-ghost btn-large">Calculează costul casei</a>
       </div>
     </div>
     <div class="hero-image-col">
-      <img class="mobile-product reveal" src="images/robot.png" alt="Polistibrick — Construction inteligentă" loading="lazy">
+      <img class="mobile-product reveal" src="images/robot.png" alt="Polistibrick — Construcție inteligentă" loading="lazy">
     </div>
   </div>
 </section>
@@ -3248,7 +3028,7 @@
         </div>
         <div class="superpower-text">
           <strong>Patent European</strong>
-          <span>Système unique, breveté et protégé</span>
+          <span>Sistem unic, brevetat și protejat</span>
         </div>
         <span class="superpower-arrow">→</span>
       </a>
@@ -3257,8 +3037,8 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
         </div>
         <div class="superpower-text">
-          <strong>Présence dans 7 pays</strong>
-          <span>Nous ne sommes pas une startup — nous sommes une entreprise européenne</span>
+          <strong>Prezență în 7 țări</strong>
+          <span>Nu suntem un startup — suntem un business european</span>
         </div>
         <span class="superpower-arrow">→</span>
       </a>
@@ -3267,8 +3047,8 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
         </div>
         <div class="superpower-text">
-          <strong>Personnalisation gratuite</strong>
-          <span>Le seul ICF avec production personnalisée sans coût supplémentaire</span>
+          <strong>Personalizare gratuită</strong>
+          <span>Singurul ICF cu producție custom fără cost suplimentar</span>
         </div>
         <span class="superpower-arrow">→</span>
       </a>
@@ -3287,9 +3067,9 @@
 
       <div class="stats-stage">
         <div class="stats-intro">
-          <span class="bubble-tag">Le standard Maison Passive</span>
-          <h2>Construit pour <em>une efficacité maximale.</em></h2>
-          <p>Le système ICF Polistibrick atteint — et dépasse — les standards européens Maison Passive dès la conception. Sans isolation supplémentaire. Sans grosses factures.</p>
+          <span class="bubble-tag">Standardul Casa Pasivă</span>
+          <h2>Construit pentru <em>eficiență maximă.</em></h2>
+          <p>Sistemul ICF Polistibrick atinge — și depășește — standardele europene Casa Pasivă direct din proiectare. Fără izolație suplimentară. Fără facturi mari.</p>
         </div>
 
     <!-- PASSIVE HOUSE SHOWCASE — LEFT photo card + RIGHT original showcase -->
@@ -3324,27 +3104,27 @@
         </div>
 
         <div class="passive-info">
-          <span class="passive-tag">Maison Passive A+++</span>
-          <h3>Mursi <em>respire.</em><br>La maison reste chaude.</h3>
-          <p>Les murs MBK, les planchers PBK et le toit TBK fonctionnent ensemble comme un thermos. L'hiver, la chaleur reste à l'intérieur ; l'été, la fraîcheur. Le calme — toujours.</p>
+          <span class="passive-tag">Casa Pasivă A+++</span>
+          <h3>Pereții <em>respiră.</em><br>Casa rămâne caldă.</h3>
+          <p>Pereții MBK, planșeele PBK și acoperișul TBK lucrează împreună ca un termos. Iarna căldura rămâne înăuntru, vara răcoarea. Liniștea — mereu.</p>
           <div class="passive-bullets">
             <div class="passive-bullet">
               <div class="passive-bullet-icon">
                 <svg viewBox="0 0 24 24"><path d="M12 3v18M5 8c0 0 2-3 7-3s7 3 7 3M5 16c0 0 2 3 7 3s7-3 7-3"/></svg>
               </div>
-              Hiver : la chaleur reste à l'intérieur, sans déperdition par les murs
+              Iarna: căldura rămâne înăuntru, fără pierderi prin pereți
             </div>
             <div class="passive-bullet">
               <div class="passive-bullet-icon">
                 <svg viewBox="0 0 24 24"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/></svg>
               </div>
-              Été : la fraîcheur reste à l'intérieur, sans climatisation permanente
+              Vara: răcoarea stă înăuntru, fără aer condiționat permanent
             </div>
             <div class="passive-bullet">
               <div class="passive-bullet-icon">
                 <svg viewBox="0 0 24 24"><path d="M11 5L6 9H2v6h4l5 4V5zM19 12c0-2.5-1.5-4.5-3.5-5.5M22 12c0-4-2-7-5-9"/></svg>
               </div>
-              Acoustique : 2 plaques fibrociment Eternit × 65 dB — isolation professionnelle, sans couche supplémentaire
+              Fonic: 2 plăci fibrociment Eternit × 65 dB — izolare profesională, fără strat suplimentar
             </div>
           </div>
         </div>
@@ -3358,28 +3138,28 @@
           <img src="images/icons/feature-climate.png" alt="">
         </div>
         <div class="stat-num">Facturi <span>−90%</span></div>
-        <div class="stat-label">sur la consommation d'énergie<br>vs. construction classique</div>
+        <div class="stat-label">la consumul de energie<br>vs. construcție clasică</div>
       </div>
       <div class="stat-card">
         <div class="stat-icon">
           <img src="images/icons/feature-fire.png" alt="">
         </div>
-        <div class="stat-num">A1 · protection</div>
-        <div class="stat-label">Résistance au feu<br>la plus haute classe UE</div>
+        <div class="stat-num">A1 · protecție</div>
+        <div class="stat-label">Rezistență la foc<br>cea mai înaltă clasă UE</div>
       </div>
       <div class="stat-card">
         <div class="stat-icon">
           <img src="images/icons/feature-seismic.png" alt="">
         </div>
         <div class="stat-num">Antiseismic</div>
-        <div class="stat-label">Beton armat monolitic<br>sans points faibles</div>
+        <div class="stat-label">Beton armat monolitic<br>fără punți slabe</div>
       </div>
       <div class="stat-card">
         <div class="stat-icon">
           <img src="images/icons/feature-rapid.png" alt="">
         </div>
-        <div class="stat-num">Finalisé en <span>3×</span></div>
-        <div class="stat-label">Plus rapide que la construction<br>traditionnelle en brique</div>
+        <div class="stat-num">Finalizat de <span>3×</span></div>
+        <div class="stat-label">Mai rapid decât construcția<br>tradițională cu cărămidă</div>
       </div>
     </div>
 
@@ -3508,15 +3288,15 @@
   <div class="container">
     <div class="pentru-stage-wrap reveal">
       <div class="pentru-watermark" aria-hidden="true">
-        <span class="wm-half wm-top">Pour</span>
-        <span class="wm-half wm-bottom">Pour</span>
+        <span class="wm-half wm-top">Pentru</span>
+        <span class="wm-half wm-bottom">Pentru</span>
       </div>
 
       <div class="pentru-stage">
         <div class="pentru-intro">
-          <span class="bubble-tag">Pour qui est Polistibrick</span>
-          <h2>Trois personnes différentes, <em>la même maison parfaite.</em></h2>
-          <p>Polistibrick résout des problèmes différents pour chacun. Choisissez votre rôle pour voir concrètement ce que vous obtenez.</p>
+          <span class="bubble-tag">Pentru cine este Polistibrick</span>
+          <h2>Trei oameni diferiți, <em>aceeași casă perfectă.</em></h2>
+          <p>Polistibrick rezolvă probleme diferite pentru fiecare. Alege-ți rolul ca să vezi ce primești concret.</p>
         </div>
 
         <div class="pentru-grid">
@@ -3524,43 +3304,43 @@
           <a href="pentru/proprietari/" class="pentru-card">
             <div class="pentru-icon">🏠</div>
             <span class="pentru-tag">Proprietar</span>
-            <h3>Casa premium <em>sans factures.</em></h3>
-            <p>Vous voulez une maison passive qui ne fonctionne ni au gaz, ni au bois, ni à l'électricité. Vous voulez emménager en quelques semaines, pas en plusieurs mois. Vous voulez la sérénité d'une maison qui dure des générations.</p>
+            <h3>Casa premium <em>fără facturi.</em></h3>
+            <p>Vrei o casă pasivă care nu funcționează pe gaz, lemne sau curent. Vrei să te muți în săptămâni, nu în luni. Vrei liniștea unei case care durează generații.</p>
             <ul class="pentru-promises">
-              <li>Factures &minus;95% sur l'énergie</li>
-              <li>Construction en 4 semaines</li>
-              <li>L'été sans climatisation, l'hiver sans chaudière</li>
-              <li>Résiste aux séismes, au feu, à l'eau</li>
+              <li>Facturi cu &minus;95% pe energie</li>
+              <li>Construcție în 4 săptămâni</li>
+              <li>Vara fără AC, iarna fără centrală</li>
+              <li>Rezistă cutremure, foc, apă</li>
             </ul>
-            <span class="pentru-link">Voir pour propriétaires →</span>
+            <span class="pentru-link">Vezi pentru proprietari →</span>
           </a>
 
           <a href="pentru/arhitecti/" class="pentru-card">
             <div class="pentru-icon">📐</div>
             <span class="pentru-tag">Arhitect · Inginer</span>
-            <h3>Système flexible. <em>Suport complet.</em></h3>
-            <p>ICF breveté avec certifications UE, BIM, calculs PHPP et support technique dédié à chaque projet.</p>
+            <h3>Sistem flexibil. <em>Suport complet.</em></h3>
+            <p>ICF brevetat cu certificări UE, BIM, calculații PHPP și suport tehnic dedicat pe fiecare proiect.</p>
             <ul class="pentru-promises">
-              <li>Portées de 9 m sans poutres</li>
-              <li>Géométries personnalisées sans coût supplémentaire</li>
-              <li>BIM + DWG + fiches techniques gratuites</li>
-              <li>Passe Passivhaus à la première visite</li>
+              <li>Deschideri 9 m fără grinzi</li>
+              <li>Geometrii custom fără cost suplimentar</li>
+              <li>BIM + DWG + fișe tehnice gratuite</li>
+              <li>Trece Passivhaus la prima vizită</li>
             </ul>
-            <span class="pentru-link">Voir pour architectes →</span>
+            <span class="pentru-link">Vezi pentru arhitecți →</span>
           </a>
 
           <a href="pentru/investitori/" class="pentru-card">
             <div class="pentru-icon">🏢</div>
             <span class="pentru-tag">Dezvoltator</span>
             <h3>ROI maxim. <em>Risc minim.</em></h3>
-            <p>Ensembles résidentiels Passivhaus livrés en moitié moins de temps, vendus avec une prime de +18% au-dessus du marché.</p>
+            <p>Ansambluri rezidențiale Passivhaus livrate în jumătate de timp, vândute cu premium +18% peste piață.</p>
             <ul class="pentru-promises">
-              <li>&minus;40% de temps d'exécution sur ensemble</li>
-              <li>+18% de prime sur le prix de vente</li>
-              <li>Certification Passivhaus garantie</li>
+              <li>&minus;40% timp execuție pe ansamblu</li>
+              <li>+18% premium preț vânzare</li>
+              <li>Certificare Passivhaus garantată</li>
               <li>Volume / discount-uri B2B</li>
             </ul>
-            <span class="pentru-link">Voir pour promoteurs →</span>
+            <span class="pentru-link">Vezi pentru dezvoltatori →</span>
           </a>
 
         </div>
@@ -3708,9 +3488,9 @@
 
       <div class="bundle-stage">
         <div class="bundle-intro">
-          <span class="bubble-tag">La différence Polistibrick</span>
-          <h2>Une maison passive classique a besoin de <em>5 produse separate.</em><br>Polistibrick les inclut toutes en une seule.</h2>
-          <p>La concurrence vend des panneaux d'isolation, des panneaux coupe-feu, des panneaux hydrofuges, des panneaux acoustiques et la structure — séparément. Echipe diferite. Costuri diferite. Erori diferite. Polistibrick: <strong>un singur panou. Une seule installation.</strong></p>
+          <span class="bubble-tag">Diferența Polistibrick</span>
+          <h2>O casă pasivă clasică are nevoie de <em>5 produse separate.</em><br>Polistibrick le include pe toate într-unul.</h2>
+          <p>Concurența vinde plăci de izolație, plăci pentru foc, plăci hidro, plăci fonice și structura — separat. Echipe diferite. Costuri diferite. Erori diferite. Polistibrick: <strong>un singur panou. O singură instalare.</strong></p>
         </div>
 
         <div class="bundle-diagram">
@@ -3720,36 +3500,36 @@
             <div class="bundle-layer">
               <div class="bundle-layer-icon">🌡️</div>
               <div class="bundle-layer-text">
-                <strong>Isolation thermique haut de gamme</strong>
-                <span>EPS haute densité, jusqu'à 25 cm</span>
+                <strong>Izolație termică premium</strong>
+                <span>EPS de înaltă densitate, până la 25 cm</span>
               </div>
             </div>
             <div class="bundle-layer">
               <div class="bundle-layer-icon">🔥</div>
               <div class="bundle-layer-text">
-                <strong>Résistance au feu A1 · REI 240</strong>
-                <span>La plus haute classe européenne</span>
+                <strong>Rezistență la foc A1 · REI 240</strong>
+                <span>Cea mai înaltă clasă europeană</span>
               </div>
             </div>
             <div class="bundle-layer">
               <div class="bundle-layer-icon">🏗️</div>
               <div class="bundle-layer-text">
-                <strong>Structure parasismique monolithique</strong>
-                <span>Béton armé, résiste aux séismes majeurs</span>
+                <strong>Structură antiseismică monolitică</strong>
+                <span>Beton armat, rezistă la cutremure majore</span>
               </div>
             </div>
             <div class="bundle-layer">
               <div class="bundle-layer-icon">💧</div>
               <div class="bundle-layer-text">
-                <strong>Hydrofuge + étanche à l'air</strong>
-                <span>Sans infiltrations, sans ponts thermiques</span>
+                <strong>Hidrofug + etanș la aer</strong>
+                <span>Fără infiltrații, fără punți termice</span>
               </div>
             </div>
             <div class="bundle-layer">
               <div class="bundle-layer-icon">🔇</div>
               <div class="bundle-layer-text">
-                <strong>Isolation acoustique professionnelle</strong>
-                <span>2 plaques fibrociment Eternit · ≥52 dB</span>
+                <strong>Izolație acustică profesională</strong>
+                <span>2 plăci fibrociment Eternit · ≥52 dB</span>
               </div>
             </div>
           </div>
@@ -3760,11 +3540,11 @@
           <!-- RIGHT: result -->
           <div class="bundle-result">
             <span class="bundle-result-tag">Rezultat</span>
-            <h3>Un singur panou.<br><em>Une maison complète.</em></h3>
-            <p>Maison passive A+++ haut de gamme, sans rien ajouter de plus. Construit en semaines, pas en mois.</p>
+            <h3>Un singur panou.<br><em>O casă completă.</em></h3>
+            <p>Casă pasivă A+++ premium, fără să adaugi nimic în plus. Construit în săptămâni, nu luni.</p>
             <div class="bundle-result-stats">
               <div class="bundle-result-stat">
-                <strong>4 sem.</strong><span>Exécution</span>
+                <strong>4 săpt.</strong><span>Execuție</span>
               </div>
               <div class="bundle-result-stat">
                 <strong>−95%</strong><span>Facturi</span>
@@ -3792,15 +3572,15 @@
       <div class="produse-stage fabrici-stage">
         <div class="fabrici-content">
           <div class="fabrici-text">
-            <span class="bubble-tag">Production · Polistibrick</span>
-            <h3>Deux usines. <em>Sept pays.</em></h3>
-            <p>Nous fabriquons les panneaux Polistibrick dans deux usines en propre : <strong>Valencia</strong> (Espagne) et <strong>Craiova</strong> (Roumanie). Notre réseau logistique livre directement sur chantier dans <strong>7 pays européens</strong> — de la Marea Britanie la Roumanie.</p>
-            <p class="fabrici-detail">Production sur stock, qualité certifiée CE et ISO, livraison palettisée en 1 à 2 camions par maison. Près de vous, où que vous construisiez.</p>
-            <a href="oferta/" class="product-cta">Demander un devis</a>
+            <span class="bubble-tag">Producție · Polistibrick</span>
+            <h3>Două fabrici. <em>Șapte țări.</em></h3>
+            <p>Producem panourile Polistibrick în două fabrici proprii: <strong>Valencia</strong> (Spania) și <strong>Craiova</strong> (România). Rețeaua noastră logistică livrează direct pe șantier în <strong>7 țări europene</strong> — de la Marea Britanie la România.</p>
+            <p class="fabrici-detail">Producție pe stoc, calitate certificată CE și ISO, livrare paletizată în 1–2 camioane per casă. Aproape de tine, oriunde construiești.</p>
+            <a href="oferta/" class="product-cta">Cere o ofertă</a>
 
             <div class="fabrici-stats">
               <span class="fabrici-stat"><strong>2</strong> <span class="fabrici-stat-emoji">🏭</span> Fabrici</span>
-              <span class="fabrici-stat"><strong>7</strong> <span class="fabrici-stat-emoji">🌍</span> Pays de présence</span>
+              <span class="fabrici-stat"><strong>7</strong> <span class="fabrici-stat-emoji">🌍</span> Țări de prezență</span>
             </div>
           </div>
           <div class="reach-map">
@@ -3872,10 +3652,10 @@
           <!-- Country name labels positioned at centroids -->
           <text x="161"  y="755"  class="m-label">UK</text>
           <text x="145"  y="1170" class="m-label">Spania</text>
-          <text x="243"  y="970"  class="m-label">France</text>
+          <text x="243"  y="970"  class="m-label">Franța</text>
           <text x="298"  y="862"  class="m-label">Belgia</text>
           <text x="478"  y="950"  class="m-label">Austria</text>
-          <text x="715"  y="998"  class="m-label">Roumanie</text>
+          <text x="715"  y="998"  class="m-label">România</text>
           <text x="463"  y="1090" class="m-label">Italia</text>
           <text x="430"  y="1015" class="m-label m-label--tiny">Corsica</text>
           </g>
@@ -3887,14 +3667,14 @@
           <circle cx="200" cy="1140" r="36" class="f-pulse f-pulse--delay"/>
           <circle cx="200" cy="1140" r="13" class="f-dot"/>
           <text   x="200"  y="1215" class="f-label">VALENCIA</text>
-          <text   x="200"  y="1238" class="f-sub">Usine · Espagne</text>
+          <text   x="200"  y="1238" class="f-sub">Fabrică · Spania</text>
 
           <!-- Craiova (southern Romania) -->
           <circle cx="700" cy="1040" r="36" class="f-pulse"/>
           <circle cx="700" cy="1040" r="36" class="f-pulse f-pulse--delay"/>
           <circle cx="700" cy="1040" r="13" class="f-dot"/>
           <text   x="775"  y="1030" class="f-label" text-anchor="start">CRAIOVA</text>
-          <text   x="775"  y="1052" class="f-sub" text-anchor="start">Usine · Roumanie</text>
+          <text   x="775"  y="1052" class="f-sub" text-anchor="start">Fabrică · România</text>
         </g>
       </svg>
           </div>
@@ -4027,8 +3807,8 @@
       <div class="sistem-stage">
         <div class="sistem-intro">
           <span class="bubble-tag">Sistemul Polistibrick</span>
-          <h2>Une maison complète. <em>Trois produits premium.</em></h2>
-          <p>Murs, planchers et toit — fabriqués pour fonctionner ensemble comme un système monolithique. Tous avec isolation haut de gamme intégrée, certifiés UE et calculés Passivhaus.</p>
+          <h2>O casă completă. <em>Trei produse premium.</em></h2>
+          <p>Pereți, planșee și acoperiș — fabricate să lucreze împreună ca un sistem monolitic. Toate cu izolație premium integrată, certificate UE și calculate Passivhaus.</p>
         </div>
 
         <div class="sistem-grid">
@@ -4037,9 +3817,9 @@
             <div class="sistem-card-img">
               <img src="images/mbk-wall.png" alt="Polistibrick MBK — perete premium" loading="lazy">
             </div>
-            <span class="bubble-tag">Murs · MBK</span>
+            <span class="bubble-tag">Pereți · MBK</span>
             <h3>Perete finit <em>5 în 1.</em></h3>
-            <p>3 modèles haut de gamme (210/270/300) plus production sur commande sans coût supplémentaire. Le seul ICF avec cette garantie.</p>
+            <p>3 modele premium (210/270/300) plus producție la comandă fără cost suplimentar. Singurul ICF cu această garanție.</p>
             <div class="sistem-card-spec">
               <strong>U=0,10–0,14</strong> W/m²K · Foc A1 · Antiseismic
             </div>
@@ -4050,9 +3830,9 @@
             <div class="sistem-card-img">
               <img src="images/pbk-floor.png" alt="Polistibrick PBK — planșeu premium" loading="lazy">
             </div>
-            <span class="bubble-tag">Planchers · PBK</span>
-            <h3>Deschideri <em>jusqu'à 9 m.</em></h3>
-            <p>Système préfabriqué léger et ultra-résistant : polystyrène + fibrociment + béton armé. Defazaj termic 10,8 ore.</p>
+            <span class="bubble-tag">Planșee · PBK</span>
+            <h3>Deschideri <em>până la 9 m.</em></h3>
+            <p>Sistem prefabricat ușor și ultra-rezistent: polistiren + fibrocement + beton armat. Defazaj termic 10,8 ore.</p>
             <div class="sistem-card-spec">
               <strong>9 m</strong> deschidere · 65 kg/m² · Fonic ≥ 52 dB
             </div>
@@ -4063,9 +3843,9 @@
             <div class="sistem-card-img">
               <img src="images/tbk-roof.png" alt="Polistibrick TBK — acoperiș Passivhaus" loading="lazy">
             </div>
-            <span class="bubble-tag">Toit · TBK</span>
-            <h3>Passivhaus <em>sortie d'usine.</em></h3>
-            <p>U=0,13 W/m²K, grosime 25 cm, doar 22 kg/m². Le toit le plus performant de sa catégorie. Sans isolation additionnelle.</p>
+            <span class="bubble-tag">Acoperiș · TBK</span>
+            <h3>Passivhaus <em>din fabrică.</em></h3>
+            <p>U=0,13 W/m²K, grosime 25 cm, doar 22 kg/m². Cel mai performant acoperiș din clasa lui. Fără izolație adițională.</p>
             <div class="sistem-card-spec">
               <strong>U=0,13</strong> W/m²K · 22 kg/m² · Passivhaus
             </div>
@@ -4261,9 +4041,9 @@
 
       <div class="montaj-stage">
         <div class="montaj-intro">
-          <span class="bubble-tag">Étapes de pose</span>
-          <h2>Une maison complète <em>en 4 étapes.</em></h2>
-          <p>De la fondation au coffrage fermé — prêt pour le coulage du béton. L'ensemble du processus en quelques semaines avec seulement 2 à 3 personnes sur le chantier.</p>
+          <span class="bubble-tag">Etape de montaj</span>
+          <h2>O casă completă <em>în 4 pași.</em></h2>
+          <p>De la fundație la cofraj închis — gata de turnarea betonului. Tot procesul în câteva săptămâni cu doar 2-3 oameni pe șantier.</p>
         </div>
 
         <div class="montaj-grid">
@@ -4275,29 +4055,29 @@
             </div>
             <div class="montaj-card-body">
               <h3>Cofraj</h3>
-              <p>Murs EPS dressés et fixés avec étaiement latéral en bois sur la fondation. Sans mortier, sans perte d'isolation.</p>
+              <p>Pereții EPS ridicați și fixați cu sprijin lateral de lemn pe fundație. Fără mortar, fără pierdere de izolație.</p>
             </div>
           </article>
 
           <article class="montaj-card">
             <div class="montaj-num">02</div>
             <div class="montaj-img">
-              <img src="images/construction/stage3-planseu.jpg" alt="Plancher PBK montat">
+              <img src="images/construction/stage3-planseu.jpg" alt="Planșeu PBK montat">
             </div>
             <div class="montaj-card-body">
-              <h3>Plancher</h3>
-              <p>Panneaux PBK 250 montés horizontalement — couches EPS-Graphite + fibrociment prêtes à recevoir l'armature.</p>
+              <h3>Planșeu</h3>
+              <p>Panouri PBK 250 montate orizontal — straturi EPS-Grafit + fibrocement gata să primească armătura.</p>
             </div>
           </article>
 
           <article class="montaj-card">
             <div class="montaj-num">03</div>
             <div class="montaj-img">
-              <img src="images/construction/stage2-fierbeton.jpg" alt="Armature oțel-beton pe planșeu">
+              <img src="images/construction/stage2-fierbeton.jpg" alt="Armătură oțel-beton pe planșeu">
             </div>
             <div class="montaj-card-body">
-              <h3>Armature</h3>
-              <p>Les treillis d'acier d'armature se placent entre les nervures EPS-Graphite. Liaison monolithique entre les murs et le plancher.</p>
+              <h3>Armătură</h3>
+              <p>Plasele de oțel-beton se așază între nervurile EPS-Grafit. Conexiune monolitică între pereți și planșeu.</p>
             </div>
           </article>
 
@@ -4307,16 +4087,16 @@
               <img src="images/construction/stage4-final.jpg" alt="Cofraj închis, gata pentru turnare beton">
             </div>
             <div class="montaj-card-body">
-              <h3>Fermeture du coffrage</h3>
-              <p>Tous les éléments assemblés et vérifiés. <strong>Nous sommes maintenant prêts pour le coulage du béton.</strong></p>
+              <h3>Închiderea cofrajului</h3>
+              <p>Toate elementele asamblate și verificate. <strong>Acum suntem gata de turnarea betonului.</strong></p>
             </div>
           </article>
 
         </div>
 
         <div class="montaj-cta">
-          <p>Après le coulage du béton, la structure devient <strong>monolithique en 24 heures</strong> — murs, planchers, toit, isolés en continu, sans ponts thermiques.</p>
-          <a href="oferta/" class="btn btn-primary btn-arrow">Demandez un devis personnalisé</a>
+          <p>După turnarea betonului, structura devine <strong>monolitică în 24 ore</strong> — pereți, planșeu, acoperiș, izolate continuu, fără punți termice.</p>
+          <a href="oferta/" class="btn btn-primary btn-arrow">Cere ofertă personalizată</a>
         </div>
 
       </div>
@@ -4513,8 +4293,8 @@
   <div class="container">
     <div class="testimonial-stage-wrap reveal">
       <div class="testimonial-watermark" aria-hidden="true">
-        <span class="wm-half wm-top">Histoires</span>
-        <span class="wm-half wm-bottom">Histoires</span>
+        <span class="wm-half wm-top">Povești</span>
+        <span class="wm-half wm-bottom">Povești</span>
       </div>
 
       <div class="testimonial-stage">
@@ -4523,36 +4303,36 @@
           <div class="testimonial-quote-wrap">
             <div class="testimonial-quote-mark" aria-hidden="true">"</div>
             <p class="testimonial-quote">
-              Après 2 hivers passés dans la maison Polistibrick, <em>je n'ai plus jamais allumé la chaudière</em>. Je paie 38 €/mois d'électricité. Les voisins en brique passive paient plus de 300.
+              După 2 ani de iarnă în casa Polistibrick, <em>n-am mai pornit niciodată centrala</em>. Plătesc 38 €/lună la curent. Vecinii cu cărămidă pasivă plătesc peste 300.
             </p>
             <div class="testimonial-author">
               <div class="testimonial-author-avatar">[Foto]</div>
               <div class="testimonial-author-info">
                 <strong>[Nume Proprietar]</strong>
-                <span>Cluj-Napoca · Maison 180 m² · Habitée depuis 2024</span>
+                <span>Cluj-Napoca · Casă 180 m² · Locuită din 2024</span>
               </div>
             </div>
           </div>
 
           <div class="testimonial-stats">
             <span class="testimonial-tag">Cifre reale</span>
-            <h4>Facturi reale, <em>pas des promesses.</em></h4>
-            <p>Données issues d'une maison Polistibrick habitée depuis 2 ans — comparées directement avec les voisins qui construisent en brique passive dans la même rue.</p>
+            <h4>Facturi reale, <em>nu promisiuni.</em></h4>
+            <p>Date dintr-o casă Polistibrick locuită de 2 ani — comparate direct cu vecinii care construiesc cu cărămidă pasivă pe aceeași stradă.</p>
             <div class="testimonial-stats-grid">
               <div class="testimonial-stats-cell">
-                <strong>38€</strong><span>Facture/mois</span>
+                <strong>38€</strong><span>Factură/lună</span>
               </div>
               <div class="testimonial-stats-cell">
-                <strong>5 sem.</strong><span>Exécution</span>
+                <strong>5 săpt.</strong><span>Execuție</span>
               </div>
               <div class="testimonial-stats-cell">
-                <strong>A+++</strong><span>Classe énerg.</span>
+                <strong>A+++</strong><span>Clasă energ.</span>
               </div>
               <div class="testimonial-stats-cell">
-                <strong>0 €</strong><span>Réparations</span>
+                <strong>0 €</strong><span>Reparații</span>
               </div>
             </div>
-            <a href="testimoniale/" class="testimonial-link">Voir toutes les histoires →</a>
+            <a href="testimoniale/" class="testimonial-link">Vezi toate poveștile →</a>
           </div>
 
         </div>
@@ -4561,83 +4341,143 @@
   </div>
 </section>
 
-<!-- COMPARISON TEASER — short, links to /comparatie/ -->
-<section class="compare-teaser-section">
+<!-- COMPARISON — Polistibrick = perfection vs the passive alternative -->
+<section class="comparison-section" id="compare">
   <div class="container">
-    <div class="compare-teaser reveal">
-      <div class="compare-teaser-left">
-        <span class="ct-eyebrow">La comparaison</span>
-        <h2 class="ct-headline"><strong>3 materiale.</strong> <strong>1 équipe.</strong> <strong>1 lună.</strong></h2>
-        <p class="ct-sub">Les autres construisent une maison passive avec <strong>14+ materiale</strong>, <strong>5-6 echipe</strong>, <strong>6-7 luni</strong>. Polistibrick obtient le même A+++ avec 5× moins de composants.</p>
+    <div class="produse-stage-wrap compare-stage-wrap reveal">
+      <div class="produse-watermark compare-watermark" aria-hidden="true">
+        <span class="wm-half wm-top">Comparație</span>
+        <span class="wm-half wm-bottom">Comparație</span>
       </div>
-      <div class="compare-teaser-right">
-        <a href="comparatie/" class="btn btn-primary btn-arrow">Voir la comparaison complète</a>
+      <div class="produse-stage compare-stage">
+
+        <div class="compare-inner-grid">
+          <div class="compare-side-text">
+      <span class="section-eyebrow">Comparația finală</span>
+      <h2 class="section-title">Polistibrick. <em>Perfecțiunea fără compromisuri.</em></h2>
+      <p class="section-sub">Polistibrick este sistemul <strong>premium 5-în-1</strong>: un singur panou inteligent care înlocuiește 10+ produse de construcție. Izolație, foc A1, antiseismic, hidrofug, acustic — <strong>toate integrate din naștere</strong>.</p>
+      <p class="section-sub">Concurența construiește casa pasivă prin adăugiri succesive: cărămidă + 4 straturi izolație + plăci hidro + plăci fonice + plăci foc + membrane etanșare. <strong>Polistibrick face totul într-o singură turnare</strong>.</p>
+      <p class="section-sub"><strong>Mai puține materiale = mai puține erori.</strong> O singură echipă = execuție impecabilă. 4 săptămâni vs 6 luni = liniștea ta.</p>
+      <p class="section-sub compare-punch-inline"><strong>3 materiale</strong>. <strong>1 echipă</strong>. <strong>1 lună</strong>. Aceeași casă pasivă A+++.</p>
+      <p class="section-sub compare-mission">Misiunea noastră: casa pasivă premium executată impecabil. Totul inclus din naștere.</p>
+    </div>
+
+          <!-- 3 columns: reference (left, muted) | 2 passive options (right) -->
+          <div class="compare-layout">
+
+          <div class="ct-group">
+            <article class="ct-col ct-col--ref">
+              <div class="ct-top">
+                <h3 class="ct-name">Cărămidă / BCA</h3>
+                <div class="ct-class ct-class--bad">Casă convențională · <em>nepasivă</em></div>
+              </div>
+              <ul class="ct-mats">
+                <li class="mat">Cărămidă / BCA</li>
+                <li class="mat">Mortar de zidărie</li>
+                <li class="mat">Fier-beton</li>
+                <li class="mat">Beton</li>
+                <li class="mat">Cofraj</li>
+                <li class="mat">Mortar de tencuială</li>
+                <li class="mat mat--insul">Adeziv polistiren</li>
+                <li class="mat mat--insul">Ciuperci de fixare</li>
+                <li class="mat mat--insul">Plasă de fibră</li>
+                <li class="mat mat--insul">Adeziv de fațadă</li>
+              </ul>
+              <div class="ct-stats">
+                <div class="ct-stat"><span class="ct-label">Materiale</span><strong>10+</strong></div>
+                <div class="ct-stat"><span class="ct-label">Echipe</span><strong>4-5</strong><span class="ct-sub">diferite</span></div>
+                <div class="ct-stat"><span class="ct-label">Timp</span><strong>4-5</strong><span class="ct-sub">luni</span></div>
+                <div class="ct-stat"><span class="ct-label">Izolație</span><strong>10 cm</strong></div>
+              </div>
+              <div class="ct-price">
+                <span class="ct-price-label">Standardul construcției</span>
+                <span class="ct-price-value ct-price-value--ref">Clasic</span>
+              </div>
+            </article>
+          </div>
+
+          <div class="ct-group ct-group--passive">
+            <div class="ct-passive-cols">
+
+              <article class="ct-col ct-col--winner">
+                <div class="ct-top">
+                  <span class="ct-badge">★ Premium integrat din naștere</span>
+                  <h3 class="ct-name">Polistibrick</h3>
+                  <div class="ct-class">Casă pasivă · <em>A+++</em></div>
+                </div>
+                <ul class="ct-mats">
+                  <li class="mat">Cofraj Polistibrick (5-în-1)</li>
+                  <li class="mat">Fier-beton</li>
+                  <li class="mat">Beton</li>
+                </ul>
+                <div class="ct-stats">
+                  <div class="ct-stat"><span class="ct-label">Materiale</span><strong>3</strong></div>
+                  <div class="ct-stat"><span class="ct-label">Echipe</span><strong>1</strong><span class="ct-sub">3 oameni</span></div>
+                  <div class="ct-stat"><span class="ct-label">Timp</span><strong>1</strong><span class="ct-sub">lună</span></div>
+                  <div class="ct-stat"><span class="ct-label">Izolație</span><strong>30 cm</strong></div>
+                </div>
+                <div class="ct-price ct-price--good">
+                  <span class="ct-price-label">Tot ce ai nevoie pentru pasiv</span>
+                  <span class="ct-price-value">Inclus</span>
+                </div>
+              </article>
+
+              <article class="ct-col">
+                <div class="ct-top">
+                  <span class="ct-badge ct-badge--alt">Pasivă prin adăugiri succesive</span>
+                  <h3 class="ct-name">Cărămidă pasivă</h3>
+                  <div class="ct-class">Casă pasivă · <em>A+++</em></div>
+                </div>
+                <ul class="ct-mats">
+                  <li class="mat">Cărămidă / BCA</li>
+                  <li class="mat">Mortar de zidărie</li>
+                  <li class="mat">Fier-beton</li>
+                  <li class="mat">Beton</li>
+                  <li class="mat">Cofraj</li>
+                  <li class="mat">Mortar de tencuială</li>
+                  <li class="mat mat--insul">Adeziv polistiren</li>
+                  <li class="mat mat--insul">Ciuperci de fixare</li>
+                  <li class="mat mat--insul">Plasă de fibră</li>
+                  <li class="mat mat--insul">Adeziv de fațadă</li>
+                  <li class="mat mat--extra">+ EPS suplimentar 30 cm</li>
+                  <li class="mat mat--extra">+ Membrană etanșeitate aer</li>
+                  <li class="mat mat--extra">+ Tratare punți termice</li>
+                  <li class="mat mat--extra">+ Mortar termoizolant la rost</li>
+                </ul>
+                <div class="ct-stats">
+                  <div class="ct-stat"><span class="ct-label">Materiale</span><strong>14+</strong></div>
+                  <div class="ct-stat"><span class="ct-label">Echipe</span><strong>5-6</strong><span class="ct-sub">diferite</span></div>
+                  <div class="ct-stat"><span class="ct-label">Timp</span><strong>6-7</strong><span class="ct-sub">luni</span></div>
+                  <div class="ct-stat"><span class="ct-label">Izolație</span><strong>30+ cm</strong></div>
+                </div>
+                <div class="ct-price ct-price--bad">
+                  <span class="ct-price-label">Necesită adăugiri</span>
+                  <span class="ct-price-value">+11 straturi</span>
+                </div>
+              </article>
+
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <!-- Punchline — the takeaway message -->
+        <div class="compare-punchline">
+          <div class="punchline-big">
+            <strong>5×</strong>
+            <span>mai puține materiale</span>
+          </div>
+          <div class="punchline-text">
+            <h3>Premium integrat. <em>Zero adăugiri.</em></h3>
+            <p>Aceeași casă pasivă A+++ — fără 11 straturi suplimentare, fără 5 echipe diferite, fără 6 luni de șantier. Polistibrick e pentru cei care nu fac compromisuri.</p>
+            <span class="cc-foot">3 materiale · 1 echipă · 1 lună — în loc de 14+ materiale, 5-6 echipe, 6-7 luni.</span>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
 </section>
-<style>
-  /* === COMPARE TEASER — small banner linking to /comparatie/ === */
-  .compare-teaser-section {
-    background: var(--cream);
-    padding: 60px 0;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-  }
-  .compare-teaser {
-    background: var(--cream-light);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 36px 44px;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 32px;
-    align-items: center;
-    max-width: 1180px;
-    margin: 0 auto;
-  }
-  .compare-teaser-left { min-width: 0; }
-  .compare-teaser .ct-eyebrow {
-    display: inline-block;
-    background: var(--red-soft);
-    color: var(--red);
-    padding: 3px 10px;
-    border-radius: 4px;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-  }
-  .compare-teaser .ct-headline {
-    font-family: var(--serif);
-    font-size: clamp(26px, 3.2vw, 40px);
-    font-weight: 500;
-    color: var(--ink);
-    letter-spacing: -0.02em;
-    line-height: 1.1;
-    margin: 0 0 10px;
-  }
-  .compare-teaser .ct-headline strong {
-    color: var(--red);
-    font-weight: 500;
-  }
-  .compare-teaser .ct-sub {
-    font-size: 15px;
-    color: var(--gray);
-    line-height: 1.5;
-    margin: 0;
-  }
-  .compare-teaser .ct-sub strong {
-    color: var(--ink);
-    font-weight: 600;
-  }
-  .compare-teaser-right { flex-shrink: 0; }
-  @media (max-width: 768px) {
-    .compare-teaser { grid-template-columns: 1fr; gap: 20px; padding: 28px 24px; text-align: center; }
-  }
-</style>
-
 <!-- PROCES — 4 pași de la decizie la mutare -->
 <style>
   .proces-section {
@@ -4754,39 +4594,39 @@
 
       <div class="proces-stage">
         <div class="proces-intro">
-          <span class="bubble-tag">Comment ça fonctionne</span>
-          <h2>De la décision à l'emménagement. <em>En 4 étapes.</em></h2>
-          <p>Le processus Polistibrick est simple et transparent. Vous dites ce que vous voulez, nous calculons tout, nous livrons, nous construisons. Sans surprises.</p>
+          <span class="bubble-tag">Cum funcționează</span>
+          <h2>De la decizie la mutare. <em>În 4 pași.</em></h2>
+          <p>Procesul Polistibrick e simplu și transparent. Tu spui ce vrei, noi calculăm tot, livrăm, construim. Fără surprize.</p>
         </div>
 
         <div class="proces-grid">
 
           <article class="proces-step">
             <div class="proces-step-num">1</div>
-            <h4>Cere <em>devis.</em></h4>
-            <p>Vous remplissez le formulaire avec les détails du projet — ou vous nous envoyez votre plan. Sans engagement, sans frais.</p>
+            <h4>Cere <em>ofertă.</em></h4>
+            <p>Completezi formularul cu detalii despre proiect — sau ne trimiți planul tău. Fără obligație, fără cost.</p>
             <span class="proces-step-time">5 minute</span>
           </article>
 
           <article class="proces-step">
             <div class="proces-step-num">2</div>
-            <h4>Ingénieur sur <em>place.</em></h4>
-            <p>Un spécialiste Polistibrick vient sur place, mesure, comprend ce que vous voulez, vous conseille sur le système et le modèle.</p>
+            <h4>Inginer la <em>fața locului.</em></h4>
+            <p>Un specialist Polistibrick vine pe teren, măsoară, înțelege ce vrei, te sfătuiește pe sistem și model.</p>
             <span class="proces-step-time">1-3 zile</span>
           </article>
 
           <article class="proces-step">
             <div class="proces-step-num">3</div>
-            <h4>Devis <em>complète.</em></h4>
-            <p>Vous recevez un devis détaillé : panneaux, livraison, pose en option, accessoires. Chiffres exacts pour votre maison.</p>
+            <h4>Ofertă <em>completă.</em></h4>
+            <p>Primești cotație detaliată: panouri, livrare, montaj opțional, accesorii. Cifre exacte pentru casa ta.</p>
             <span class="proces-step-time">48 ore</span>
           </article>
 
           <article class="proces-step">
             <div class="proces-step-num">4</div>
             <h4>Construire <em>premium.</em></h4>
-            <p>Notre équipe (ou un constructeur partenaire certifié) livre les panneaux et construit en quelques semaines.</p>
-            <span class="proces-step-time">4 à 6 semaines</span>
+            <p>Echipa noastră (sau constructor partener certificat) livrează panourile și construiește în săptămâni.</p>
+            <span class="proces-step-time">4-6 săptămâni</span>
           </article>
 
         </div>
@@ -4799,16 +4639,16 @@
 <section class="cta-section" id="contact">
   <div class="container">
     <div class="cta-box reveal">
-      <div class="cta-box-eyebrow">CONSTRUISEZ AVEC NOUS</div>
-      <h2>Construisons ensemble<br><em>casa ta din viitor.</em></h2>
-      <p>Parlez-nous de votre projet. Nous vous préparons un devis personnalisé sous 48 heures — sans engagement.</p>
+      <div class="cta-box-eyebrow">CONSTRUIEȘTE CU NOI</div>
+      <h2>Hai să construim<br><em>casa ta din viitor.</em></h2>
+      <p>Spune-ne despre proiectul tău. Îți pregătim o ofertă personalizată în 48 de ore — fără obligații.</p>
       <div class="cta-actions">
-        <a href="oferta/" class="btn btn-on-dark btn-large">Demander un devis →</a>
-        <a href="tel:{{contact.phone_raw}}" class="btn btn-on-dark-ghost btn-large">{{contact.phone_display}}</a>
+        <a href="oferta/" class="btn btn-on-dark btn-large">Cere o ofertă →</a>
+        <a href="tel:+353[to fill in]" class="btn btn-on-dark-ghost btn-large">+353 [to fill in]</a>
       </div>
     </div>
     <div class="cta-image-col">
-      <img class="mobile-product" src="images/robot.png" alt="Polistibrick — Construction inteligentă" loading="lazy">
+      <img class="mobile-product" src="images/robot.png" alt="Polistibrick — Construcție inteligentă" loading="lazy">
     </div>
   </div>
 </section>
@@ -4818,7 +4658,7 @@
   <div class="container">
     <!-- Certifications strip — compact row at the top of the footer -->
     <div class="footer-certs">
-      <span class="footer-certs-label">Certifié et reconnu internationalement</span>
+      <span class="footer-certs-label">Certificat și recunoscut internațional</span>
       <div class="footer-certs-items">
         <span class="trust-item"><span class="trust-icon">ISO</span>9001</span>
         <span class="trust-item"><span class="trust-icon">ISO</span>14001</span>
@@ -4826,7 +4666,7 @@
         <span class="trust-item"><span class="trust-icon">EP</span>Brevet European</span>
         <span class="trust-item"><span class="trust-icon">AT</span>Agrement Tehnic</span>
         <span class="trust-item"><span class="trust-icon">CE</span>Standard European</span>
-        <span class="trust-item"><span class="trust-icon">A+</span>Maison Passive</span>
+        <span class="trust-item"><span class="trust-icon">A+</span>Casa Pasivă</span>
       </div>
     </div>
     <div class="footer-grid">
@@ -4834,38 +4674,38 @@
         <a href="#" class="logo" aria-label="Polistibrick">
           <img src="images/logo.png" alt="Polistibrick" class="logo-img">
         </a>
-        <p class="footer-tagline">Le système ICF qui construit des maisons plus performantes, plus rapides et plus durables. Fabriqué en UE.</p>
+        <p class="footer-tagline">Sistemul ICF care construiește case mai eficiente, mai rapide și mai sustenabile. Fabricat în UE.</p>
       </div>
       <div class="footer-col">
         <h4>Sistem</h4>
         <ul>
-          <li><a href="#produse">Murs MBK</a></li>
-          <li><a href="#produse-planseu">Planchers PBK</a></li>
-          <li><a href="#produse-acoperis">Toit TBK</a></li>
-          <li><a href="#produse">Comment ça fonctionne</a></li>
+          <li><a href="#produse">Pereți MBK</a></li>
+          <li><a href="#produse-planseu">Planșee PBK</a></li>
+          <li><a href="#produse-acoperis">Acoperiș TBK</a></li>
+          <li><a href="#produse">Cum funcționează</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Companie</h4>
         <ul>
-          <li><a href="despre/">À propos</a></li>
+          <li><a href="despre/">Despre noi</a></li>
           <li><a href="proiecte/">Proiecte</a></li>
-          <li><a href="despre/certificari/">Certifications</a></li>
+          <li><a href="despre/certificari/">Certificări</a></li>
           <li><a href="despre/fabrici/">Fabrici</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
         <ul>
-          <li><a href="mailto:{{contact.email_general}}">{{contact.email_general}}</a></li>
-          <li><a href="tel:{{contact.phone_raw}}">{{contact.phone_display}}</a></li>
-          <li><a href="oferta/">Demander un devis</a></li>
+          <li><a href="mailto:contact@polistibrick.ie">contact@polistibrick.ie</a></li>
+          <li><a href="tel:+353[to fill in]">+353 [to fill in]</a></li>
+          <li><a href="oferta/">Cere o ofertă</a></li>
           <li><a href="contact/">Contact</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <div>© 2026 Polistibrick. Tous droits réservés.</div>
+      <div>© 2026 Polistibrick. Toate drepturile rezervate.</div>
       <div>Made with ⚒ in Europe • ISO 9001 / 14001 / 45001</div>
     </div>
   </div>
@@ -5300,174 +5140,6 @@
     window.addEventListener('scroll', onScrollScrub, { passive: true });
     window.addEventListener('resize', onScrollScrub);
   }
-</script>
-
-<!-- =====================================================
-     COUNTRY SWITCHER + AUTO-DETECTION BANNER
-     ===================================================== -->
-<script>
-(function() {
-  // Current country code — injected from build config
-  const CURRENT_COUNTRY = "{{country}}".toLowerCase();
-  const CURRENT_LANG = "{{lang}}".toLowerCase();
-  const CURRENT_DOMAIN = "{{domain}}";
-
-  // Country metadata
-  const COUNTRIES = {
-    ro: { flag: '🇷🇴', name: 'România', nameNative: 'România', domain: 'polistibrick.ro', folder: 'ro', langs: ['ro'] },
-    fr: { flag: '🇫🇷', name: 'France',  nameNative: 'France',  domain: 'polistibrick.fr', folder: 'fr', langs: ['fr'] },
-    it: { flag: '🇮🇹', name: 'Italia',  nameNative: 'Italia',  domain: 'polistibrick.it', folder: 'it', langs: ['it'] },
-    es: { flag: '🇪🇸', name: 'España',  nameNative: 'España',  domain: 'polistibrick.es', folder: 'es', langs: ['es'] },
-    be: { flag: '🇧🇪', name: 'Belgium', nameNative: 'België',  domain: 'polistibrick.be', folder: 'nl', langs: ['nl', 'fr'] },
-    ie: { flag: '🇮🇪', name: 'Ireland', nameNative: 'Ireland', domain: 'polistibrick.ie', folder: 'ie', langs: ['en'] },
-    gb: { flag: '🇬🇧', name: 'UK',      nameNative: 'UK',      domain: 'polistibrick.uk', folder: 'en', langs: ['en'] },
-    ch: { flag: '🇨🇭', name: 'Schweiz', nameNative: 'Schweiz', domain: 'polistibrick.com', folder: 'de', langs: ['de', 'fr', 'it'] }
-  };
-
-  // Map current country code (RO/GB/IT/etc.) to switcher's data-country attribute
-  const COUNTRY_KEY_MAP = { ro: 'ro', fr: 'fr', it: 'it', es: 'es', be: 'be', ie: 'ie', gb: 'uk', ch: 'ch' };
-
-  // ===== Detect preview mode (github.io subfolder) vs production (real domain) =====
-  const isPreview = location.hostname.includes('github.io') || location.hostname === 'localhost' || location.hostname.startsWith('127.');
-
-  function buildCountryUrl(folder, fullDomain) {
-    if (isPreview) {
-      // Preview: navigate to sibling subfolder
-      const pathParts = location.pathname.split('/').filter(p => p);
-      // /polistibrick-multisite/ro/... → keep the repo base, swap country folder
-      const repoBaseIdx = pathParts.findIndex(p => ['ro','fr','it','es','nl','ie','en','de'].includes(p));
-      if (repoBaseIdx >= 0) {
-        pathParts[repoBaseIdx] = folder;
-        return '/' + pathParts.join('/');
-      }
-      return '/' + folder + '/polistibrick-mercury-style.html';
-    }
-    // Production: go to real domain
-    return fullDomain;
-  }
-
-  // ===== COUNTRY SWITCHER (dropdown) =====
-  const switcher = document.getElementById('countrySwitcher');
-  const trigger  = document.getElementById('countrySwitcherTrigger');
-  const panel    = document.getElementById('countrySwitcherPanel');
-
-  if (switcher && trigger && panel) {
-    // Mark current country as active
-    const currentKey = COUNTRY_KEY_MAP[CURRENT_COUNTRY] || CURRENT_COUNTRY;
-    panel.querySelectorAll('.country-switcher-item').forEach(item => {
-      if (item.dataset.country === currentKey) item.classList.add('active');
-      // Rewrite href for preview vs prod
-      item.href = buildCountryUrl(item.dataset.folder, item.dataset.domain);
-    });
-
-    // Toggle panel
-    function setOpen(open) {
-      trigger.setAttribute('aria-expanded', open);
-      panel.setAttribute('aria-hidden', !open);
-      panel.classList.toggle('open', open);
-    }
-    trigger.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const isOpen = trigger.getAttribute('aria-expanded') === 'true';
-      setOpen(!isOpen);
-    });
-    document.addEventListener('click', (e) => {
-      if (!switcher.contains(e.target)) setOpen(false);
-    });
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') setOpen(false);
-    });
-  }
-
-  // ===== AUTO-DETECTION BANNER =====
-  const banner = document.getElementById('countryBanner');
-  if (!banner) return;
-
-  // Don't show if user already dismissed or already chose
-  const dismissed = localStorage.getItem('pbk_country_banner_dismissed');
-  if (dismissed === '1') return;
-
-  // Detect user's preferred language from browser
-  const browserLangs = (navigator.languages || [navigator.language || ''])
-    .map(l => l.toLowerCase().split('-'));
-
-  // Find best matching country based on browser language + region
-  let suggestedKey = null;
-  for (const [lang, region] of browserLangs) {
-    // Try region match first (e.g., en-GB → UK, fr-BE → Belgium)
-    if (region) {
-      const r = region.toLowerCase();
-      if (r === 'ro') { suggestedKey = 'ro'; break; }
-      if (r === 'fr') { suggestedKey = 'fr'; break; }
-      if (r === 'it') { suggestedKey = 'it'; break; }
-      if (r === 'es') { suggestedKey = 'es'; break; }
-      if (r === 'be') { suggestedKey = 'be'; break; }
-      if (r === 'ie') { suggestedKey = 'ie'; break; }
-      if (r === 'gb' || r === 'uk') { suggestedKey = 'uk'; break; }
-      if (r === 'ch') { suggestedKey = 'ch'; break; }
-    }
-    // Fall back to language match
-    if (lang === 'ro') { suggestedKey = 'ro'; break; }
-    if (lang === 'fr') { suggestedKey = 'fr'; break; }
-    if (lang === 'it') { suggestedKey = 'it'; break; }
-    if (lang === 'es') { suggestedKey = 'es'; break; }
-    if (lang === 'nl') { suggestedKey = 'be'; break; }
-    if (lang === 'de') { suggestedKey = 'ch'; break; }
-    if (lang === 'en') { suggestedKey = 'uk'; break; }
-  }
-
-  if (!suggestedKey) return;
-
-  // If suggested country = current country, no need to show banner
-  const currentKey = COUNTRY_KEY_MAP[CURRENT_COUNTRY] || CURRENT_COUNTRY;
-  if (suggestedKey === currentKey) return;
-
-  // Find country data
-  const meta = Object.entries(COUNTRIES).find(([k]) => COUNTRY_KEY_MAP[k] === suggestedKey || k === suggestedKey);
-  if (!meta) return;
-  const [_, data] = meta;
-  const targetUrl = buildCountryUrl(data.folder, 'https://' + data.domain);
-
-  // Populate banner
-  document.getElementById('bannerFlag').textContent = data.flag;
-  document.getElementById('bannerCountry').textContent = data.nameNative;
-  document.getElementById('bannerDomain').textContent = data.domain;
-
-  // Localize banner text by suggested language
-  const TEXTS = {
-    ro: { msg: 'Detectăm că ești în', visit: 'Vizitezi', yes: 'Da, mergi', no: 'Rămân aici' },
-    fr: { msg: 'Nous avons détecté que vous êtes en', visit: 'Visitez', yes: 'Oui, aller', no: 'Rester ici' },
-    it: { msg: 'Hai notato che sei in', visit: 'Vai a', yes: 'Sì, vai', no: 'Resta qui' },
-    es: { msg: 'Detectamos que estás en', visit: 'Visita', yes: 'Sí, ir', no: 'Quedarme aquí' },
-    nl: { msg: 'We zien dat je in', visit: 'Bezoek', yes: 'Ja, ga', no: 'Hier blijven' },
-    de: { msg: 'Wir haben festgestellt, dass Sie in', visit: 'Besuchen', yes: 'Ja, gehen', no: 'Hier bleiben' },
-    en: { msg: 'We detected you\'re in', visit: 'Visit', yes: 'Yes, go', no: 'Stay here' }
-  };
-  const langKey = (data.langs && data.langs[0]) || 'en';
-  const t = TEXTS[langKey] || TEXTS.en;
-  document.getElementById('bannerText').innerHTML =
-    `${t.msg} <strong>${data.nameNative}</strong>. ${t.visit} <strong>${data.domain}</strong>?`;
-  document.getElementById('bannerYes').textContent = t.yes;
-  document.getElementById('bannerNo').textContent = t.no;
-
-  // Show banner
-  banner.hidden = false;
-  document.body.classList.add('has-country-banner');
-  requestAnimationFrame(() => banner.classList.add('show'));
-
-  // Yes button → go to suggested country
-  document.getElementById('bannerYes').addEventListener('click', () => {
-    localStorage.setItem('pbk_country_banner_dismissed', '1');
-    location.href = targetUrl;
-  });
-  // No button → dismiss permanently
-  document.getElementById('bannerNo').addEventListener('click', () => {
-    localStorage.setItem('pbk_country_banner_dismissed', '1');
-    banner.classList.remove('show');
-    document.body.classList.remove('has-country-banner');
-    setTimeout(() => { banner.hidden = true; }, 400);
-  });
-})();
 </script>
 
 </body>
