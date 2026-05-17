@@ -171,16 +171,15 @@ def build_country(code: str):
     if shared_downloads.exists():
         copy_tree(shared_downloads, out_dir / "downloads", transform=False, config=config)
 
-    # 2) Country HTML (if missing, fall back to RO template)
+    # 2) Country HTML — empty countries (only _config.json) are SKIPPED (not built)
     country_src = COUNTRIES_DIR / code
     html_files = [p for p in country_src.iterdir() if p.is_file() and p.suffix == ".html"]
-    subfolders = [p for p in country_src.iterdir() if p.is_dir()]
-    if not html_files and code != FALLBACK_COUNTRY:
-        print(f"  [info] {code} has only _config.json → using {FALLBACK_COUNTRY} as template")
-        copy_tree(COUNTRIES_DIR / FALLBACK_COUNTRY, out_dir, transform=True, config=config)
-        # Remove the fallback's _config from output
-    else:
-        copy_tree(country_src, out_dir, transform=True, config=config)
+    subfolders = [p for p in country_src.iterdir() if p.is_dir() and p.name not in ('_config.json',)]
+    if not html_files and not subfolders:
+        print(f"  [skip] {code} is empty (only _config.json) — not deployed")
+        shutil.rmtree(out_dir)
+        return
+    copy_tree(country_src, out_dir, transform=True, config=config)
 
     # Strip _config.json from output (not needed publicly)
     cfg_out = out_dir / "_config.json"
