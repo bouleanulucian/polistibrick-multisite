@@ -161,6 +161,16 @@ def build_country(code: str):
     copy_tree(SHARED_DIR / "js",  out_dir / "assets" / "js",  transform=True, config=config)
     copy_tree(SHARED_DIR / "images", out_dir / "images", transform=False, config=config)
 
+    # 1b) shared downloads (PDF, CAD, BIM, etc) per language → build/[code]/downloads/
+    lang_code = config.get("lang", "ro")
+    downloads_src = SHARED_DIR / "downloads" / lang_code
+    if downloads_src.exists():
+        copy_tree(downloads_src, out_dir / "downloads", transform=False, config=config)
+    # Also copy shared multilingual downloads (logos, brochures)
+    shared_downloads = SHARED_DIR / "downloads" / "shared"
+    if shared_downloads.exists():
+        copy_tree(shared_downloads, out_dir / "downloads", transform=False, config=config)
+
     # 2) Country HTML (if missing, fall back to RO template)
     country_src = COUNTRIES_DIR / code
     html_files = [p for p in country_src.iterdir() if p.is_file() and p.suffix == ".html"]
