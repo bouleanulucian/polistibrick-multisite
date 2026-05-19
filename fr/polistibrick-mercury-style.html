@@ -3035,6 +3035,20 @@
     body.has-country-banner #nav { top: 92px; }
   }
 </style>
+
+<style>
+/* === STATIC DESIGN OVERRIDE — fără animații, fără hover transforms === */
+html { scroll-behavior: auto !important; }
+.reveal, .reveal.visible, .reveal.is-visible {
+  opacity: 1 !important; transform: none !important; transition: none !important;
+}
+*:hover { transform: none !important; }
+.country-switcher-trigger[aria-expanded="true"] .country-switcher-caret,
+.nav-item:hover .nav-link-caret { transform: rotate(180deg) !important; }
+.case-arrow--prev:hover, .case-arrow--next:hover { transform: translateY(-50%) !important; }
+.btn-arrow:hover::after, .product-cta:hover::after, .superpower:hover .superpower-arrow, .bundle-layer:hover { transform: none !important; }
+.montaj-card:hover .montaj-img img { transform: none !important; }
+</style>
 </head>
 <body>
 
@@ -3541,8 +3555,8 @@
         <div class="stat-icon">
           <img src="images/icons/feature-seismic.png" alt="">
         </div>
-        <div class="stat-num">Antisismique</div>
-        <div class="stat-label">Béton armé monolithique<br>sans points faibles</div>
+        <div class="stat-num">Antiseismic</div>
+        <div class="stat-label">Beton armat monolitic<br>sans points faibles</div>
       </div>
       <div class="stat-card">
         <div class="stat-icon">
@@ -4030,7 +4044,7 @@
             <h3>Mur fini <em>5 en 1.</em></h3>
             <p>3 modèles haut de gamme (210/270/300) plus production sur commande sans coût supplémentaire. Le seul ICF avec cette garantie.</p>
             <div class="sistem-card-spec">
-              <strong>U=0,10–0,14</strong> W/m²K · Feu A1 · Antisismique
+              <strong>U=0,10–0,14</strong> W/m²K · Foc A1 · Antiseismic
             </div>
             <span class="sistem-link">Voir détails MBK →</span>
           </a>
@@ -4040,10 +4054,10 @@
               <img src="images/pbk-floor.png" alt="Polistibrick PBK — plancher premium" loading="lazy">
             </div>
             <span class="bubble-tag">Planchers · PBK</span>
-            <h3>Portées <em>jusqu'à 9 m.</em></h3>
-            <p>Système préfabriqué léger et ultra-résistant : polystyrène + fibrociment + béton armé. Déphasage thermique 10,8 h.</p>
+            <h3>Deschideri <em>jusqu'à 9 m.</em></h3>
+            <p>Système préfabriqué léger et ultra-résistant : polystyrène + fibrociment + béton armé. Defazaj termic 10,8 ore.</p>
             <div class="sistem-card-spec">
-              <strong>9 m</strong> de portée · 65 kg/m² · Acoustique ≥ 52 dB
+              <strong>9 m</strong> deschidere · 65 kg/m² · Fonic ≥ 52 dB
             </div>
             <span class="sistem-link">Voir détails PBK →</span>
           </a>
@@ -4054,7 +4068,7 @@
             </div>
             <span class="bubble-tag">Toit · TBK</span>
             <h3>Passivhaus <em>sortie d'usine.</em></h3>
-            <p>U=0,13 W/m²K, épaisseur 25 cm, seulement 22 kg/m². Le toit le plus performant de sa catégorie. Sans isolation additionnelle.</p>
+            <p>U=0,13 W/m²K, épaisseur 25 cm, doar 22 kg/m². Le toit le plus performant de sa catégorie. Sans isolation additionnelle.</p>
             <div class="sistem-card-spec">
               <strong>U=0,13</strong> W/m²K · 22 kg/m² · Passivhaus
             </div>
@@ -4556,8 +4570,8 @@
     <div class="compare-teaser reveal">
       <div class="compare-teaser-left">
         <span class="ct-eyebrow">La comparaison</span>
-        <h2 class="ct-headline">Comparaison entre <strong>4 systèmes</strong> de construction <strong>différents.</strong></h2>
-        <p class="ct-sub">Polistibrick face à la brique classique, au passif classique et à l'ossature bois. Découvrez sur 12 critères pourquoi Polistibrick fait la différence — sécurité, coût total, vitesse, certifications.</p>
+        <h2 class="ct-headline"><strong>3 matériaux.</strong> <strong>1 équipe.</strong> <strong>1 mois.</strong></h2>
+        <p class="ct-sub">Les autres construisent une maison passive avec <strong>14+ matériaux</strong>, <strong>5-6 équipes</strong>, <strong>6-7 mois</strong>. Polistibrick obtient le même A+++ avec 5× moins de composants.</p>
       </div>
       <div class="compare-teaser-right">
         <a href="comparaison/" class="btn btn-primary btn-arrow">Voir la comparaison complète</a>

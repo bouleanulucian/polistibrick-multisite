@@ -575,16 +575,8 @@ p { line-height: 1.65; color: var(--gray); }
 }
 
 /* === REVEAL ANIMATION === */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-              transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+.reveal { opacity: 1; transform: none; transition: none; }
+.reveal.is-visible { opacity: 1; transform: none; }
 
 /* === DOWNLOAD CARD === */
 .download {
@@ -1087,3 +1079,14 @@ p { line-height: 1.65; color: var(--gray); }
   font-size: 11px;
   color: #6B6B6B;
 }
+
+
+/* === STATIC DESIGN OVERRIDE === */
+html { scroll-behavior: auto !important; }
+.btn:hover, .pentru-card:hover, .atout-card:hover, .cta-esc-card:hover,
+.case-card:hover, .archi-card:hover, .feature:hover, .collab-card:hover,
+.partner-benefit:hover, .tier-card:hover, .tier-volume-card:hover,
+.cert-row:hover, .download-item:hover, .trust-card:hover,
+.sistem-card:hover, .country-switcher-trigger:hover { transform: none !important; }
+.btn-arrow:hover::after { transform: none !important; }
+.case-arrow:hover { transform: translateY(-50%) !important; }
