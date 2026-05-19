@@ -3095,6 +3095,74 @@ html { scroll-behavior: auto !important; }
     margin-right: auto !important;
   }
 }
+
+/* ===========================================================
+   STATIC FREEZE — toate cartelele/secțiunile mari sa fie FIXE
+   Bloc final, prioritate maxima. Înghețăm:
+   - orice transform (nu permitem translate, scale, rotate)
+   - orice transition (nimic nu se animează)
+   - orice will-change (nu mai creăm layere GPU care produc flicker)
+   pe TOATE cardurile mari + stage-urile produsului.
+   =========================================================== */
+.stat-card, .stat-card:hover,
+.structural-card, .structural-card:hover,
+.step-card, .step-card:hover,
+.why-card, .why-card:hover,
+.pentru-card, .pentru-card:hover,
+.bundle-layer, .bundle-layer:hover,
+.sistem-card, .sistem-card:hover,
+.montaj-card, .montaj-card:hover,
+.testimonial-card, .testimonial-card:hover,
+.proces-card, .proces-card:hover,
+.case-card, .case-card:hover,
+.persona-card, .persona-card:hover,
+.superpower, .superpower:hover,
+.product-card, .product-card:hover,
+.passive-photo-card, .passive-photo-card:hover,
+.passive-showcase, .passive-showcase:hover,
+.stats-stage, .stats-stage:hover,
+.pentru-stage, .pentru-stage:hover,
+.bundle-stage, .bundle-stage:hover,
+.sistem-stage, .sistem-stage:hover,
+.montaj-stage, .montaj-stage:hover,
+.testimonial-stage, .testimonial-stage:hover,
+.proces-stage, .proces-stage:hover,
+.fabrici-stage, .fabrici-stage:hover,
+.produse-stage, .produse-stage:hover,
+.fabrici-stage-wrap, .fabrici-stage-wrap:hover,
+.produse-stage-wrap, .produse-stage-wrap:hover,
+.pentru-stage-wrap, .pentru-stage-wrap:hover,
+.stats-stage-wrap, .stats-stage-wrap:hover,
+.bundle-stage-wrap, .bundle-stage-wrap:hover,
+.sistem-stage-wrap, .sistem-stage-wrap:hover,
+.montaj-stage-wrap, .montaj-stage-wrap:hover,
+.testimonial-stage-wrap, .testimonial-stage-wrap:hover,
+.proces-stage-wrap, .proces-stage-wrap:hover {
+  transform: none !important;
+  transition: none !important;
+  animation: none !important;
+  will-change: auto !important;
+}
+
+/* Imaginile interioare nu mai au scale pe hover */
+.montaj-card:hover .montaj-img img,
+.case-card:hover img,
+.passive-photo-card:hover img,
+.persona-card:hover img {
+  transform: none !important;
+  transition: none !important;
+}
+
+/* Linkurile/CTAs din interiorul cardurilor — fără gap shift, fără padding shift */
+.pentru-card:hover .pentru-link,
+.sistem-card:hover .sistem-link,
+.testimonial-link:hover,
+.nav-drawer a:hover,
+.nav-drawer a:focus {
+  gap: initial !important;
+  padding-left: initial !important;
+  transition: none !important;
+}
 </style>
 </head>
 <body>
