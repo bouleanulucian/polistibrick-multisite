@@ -1411,12 +1411,16 @@
     margin: 60px auto 0;
     max-width: 1480px;
   }
-  /* Override the .reveal transforms so our 20mm right shift survives */
-  .fabrici-stage-wrap.reveal {
-    transform: translateY(80px) scale(0.88) translateX(20mm);
+  /* STATIC DESIGN: no reveal animation. Map stays in its correct final position. */
+  .fabrici-stage-wrap.reveal,
+  .fabrici-stage-wrap.reveal.visible,
+  .fabrici-stage-wrap {
+    transform: translateX(20mm) !important;
+    opacity: 1 !important;
+    transition: none !important;
   }
-  .fabrici-stage-wrap.reveal.visible {
-    transform: translateY(0) scale(1) translateX(20mm);
+  .fabrici-stage-wrap:hover {
+    transform: translateX(20mm) !important;
   }
   .fabrici-stage {
     /* Override produse-stage: centered, full-page card, no translateX shift */
@@ -3056,6 +3060,33 @@ html { scroll-behavior: auto !important; }
 .passive-photo-card .passive-photo-img:nth-child(2),
 .passive-photo-card .passive-photo-img:nth-child(3) { display: none !important; }
 .passive-photo-card .passive-photo-img:nth-child(4) { display: block !important; opacity: 1 !important; }
+
+/* FINAL FIX — PRÉSENCE map: one position only, no transform, no hover shift */
+.reach-section .produse-stage-wrap.fabrici-stage-wrap,
+.reach-section .produse-stage-wrap.fabrici-stage-wrap.reveal,
+.reach-section .produse-stage-wrap.fabrici-stage-wrap.reveal.visible,
+.reach-section .produse-stage-wrap.fabrici-stage-wrap:hover,
+.reach-section .produse-stage-wrap.fabrici-stage-wrap.reveal:hover,
+.reach-section .produse-stage-wrap.fabrici-stage-wrap.reveal.visible:hover {
+  transform: none !important;
+  opacity: 1 !important;
+  transition: none !important;
+  animation: none !important;
+}
+.reach-section .reach-map,
+.reach-section .reach-svg,
+.reach-section .reach-map:hover,
+.reach-section .reach-svg:hover {
+  transform: none !important;
+  transition: none !important;
+}
+@media (min-width: 769px) {
+  /* Desktop: center the card naturally — no manual 20mm push (was causing offset) */
+  .reach-section .produse-stage-wrap.fabrici-stage-wrap {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
 </style>
 </head>
 <body>
@@ -4935,7 +4966,12 @@ html { scroll-behavior: auto !important; }
     ? { threshold: 0, rootMargin: '0px 0px 200px 0px' }
     : { threshold: 0.12, rootMargin: '0px 0px -80px 0px' });
 
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  // STATIC DESIGN: immediately mark every .reveal as visible — no scroll-trigger.
+  // This eliminates initial broken transforms (scale 0.88 etc.) on slow elements.
+  document.querySelectorAll('.reveal').forEach(el => {
+    el.classList.add('visible');
+    observer.observe(el);
+  });
 
   // Stagger child cards with extra "visible" class
   document.querySelectorAll('.steps-grid .step-card, .products-grid .product-card, .why-grid .why-card').forEach((el, i) => {
