@@ -1411,12 +1411,16 @@
     margin: 60px auto 0;
     max-width: 1480px;
   }
-  /* Override the .reveal transforms so our 20mm right shift survives */
-  .fabrici-stage-wrap.reveal {
-    transform: translateY(80px) scale(0.88) translateX(20mm);
+  /* STATIC DESIGN: no reveal animation. Map stays in its correct final position. */
+  .fabrici-stage-wrap.reveal,
+  .fabrici-stage-wrap.reveal.visible,
+  .fabrici-stage-wrap {
+    transform: translateX(20mm) !important;
+    opacity: 1 !important;
+    transition: none !important;
   }
-  .fabrici-stage-wrap.reveal.visible {
-    transform: translateY(0) scale(1) translateX(20mm);
+  .fabrici-stage-wrap:hover {
+    transform: translateX(20mm) !important;
   }
   .fabrici-stage {
     /* Override produse-stage: centered, full-page card, no translateX shift */
@@ -1540,8 +1544,7 @@
     }
   }
 
-  /* Real Europe country paths (default = inactive countries) */
-  /* STATIC: pointer-events disabled, no hover, no transition */
+  /* STATIC map paths */
   .europe-countries path {
     fill: rgba(15, 15, 15, 0.06);
     stroke: rgba(15, 15, 15, 0.30);
@@ -3031,7 +3034,7 @@
 /* === STATIC DESIGN OVERRIDE — TOTAL STATIC, ZERO ANIMATIONS === */
 html { scroll-behavior: auto !important; }
 
-/* Disable ALL CSS animations (factoryPulse, photoCycle4, navPulse, hintBob, floatStat, glowPass, productBob, stageLoop, etc.) */
+/* Disable ALL CSS animations */
 *, *::before, *::after {
   animation: none !important;
   animation-duration: 0s !important;
@@ -3052,11 +3055,38 @@ html { scroll-behavior: auto !important; }
 .btn-arrow:hover::after, .product-cta:hover::after, .superpower:hover .superpower-arrow, .bundle-layer:hover { transform: none !important; }
 .montaj-card:hover .montaj-img img { transform: none !important; }
 
-/* Hide broken case study photos (404) — show only fallback stage images */
+/* Hide broken case study photos (404) */
 .passive-photo-card .passive-photo-img:nth-child(1),
 .passive-photo-card .passive-photo-img:nth-child(2),
 .passive-photo-card .passive-photo-img:nth-child(3) { display: none !important; }
 .passive-photo-card .passive-photo-img:nth-child(4) { display: block !important; opacity: 1 !important; }
+
+/* FINAL FIX — PRÉSENCE map: one position only, no transform, no hover shift */
+.reach-section .produse-stage-wrap.fabrici-stage-wrap,
+.reach-section .produse-stage-wrap.fabrici-stage-wrap.reveal,
+.reach-section .produse-stage-wrap.fabrici-stage-wrap.reveal.visible,
+.reach-section .produse-stage-wrap.fabrici-stage-wrap:hover,
+.reach-section .produse-stage-wrap.fabrici-stage-wrap.reveal:hover,
+.reach-section .produse-stage-wrap.fabrici-stage-wrap.reveal.visible:hover {
+  transform: none !important;
+  opacity: 1 !important;
+  transition: none !important;
+  animation: none !important;
+}
+.reach-section .reach-map,
+.reach-section .reach-svg,
+.reach-section .reach-map:hover,
+.reach-section .reach-svg:hover {
+  transform: none !important;
+  transition: none !important;
+}
+@media (min-width: 769px) {
+  /* Desktop: center the card naturally — no manual 20mm push (was causing offset) */
+  .reach-section .produse-stage-wrap.fabrici-stage-wrap {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
 </style>
 </head>
 <body>
@@ -3564,8 +3594,8 @@ html { scroll-behavior: auto !important; }
         <div class="stat-icon">
           <img src="images/icons/feature-seismic.png" alt="">
         </div>
-        <div class="stat-num">Antiseismic</div>
-        <div class="stat-label">Beton armat monolitic<br>sans points faibles</div>
+        <div class="stat-num">Antisismique</div>
+        <div class="stat-label">Béton armé monolithique<br>sans points faibles</div>
       </div>
       <div class="stat-card">
         <div class="stat-icon">
@@ -4053,7 +4083,7 @@ html { scroll-behavior: auto !important; }
             <h3>Mur fini <em>5 en 1.</em></h3>
             <p>3 modèles haut de gamme (210/270/300) plus production sur commande sans coût supplémentaire. Le seul ICF avec cette garantie.</p>
             <div class="sistem-card-spec">
-              <strong>U=0,10–0,14</strong> W/m²K · Foc A1 · Antiseismic
+              <strong>U=0,10–0,14</strong> W/m²K · Feu A1 · Antisismique
             </div>
             <span class="sistem-link">Voir détails MBK →</span>
           </a>
@@ -4063,10 +4093,10 @@ html { scroll-behavior: auto !important; }
               <img src="images/pbk-floor.png" alt="Polistibrick PBK — plancher premium" loading="lazy">
             </div>
             <span class="bubble-tag">Planchers · PBK</span>
-            <h3>Deschideri <em>jusqu'à 9 m.</em></h3>
-            <p>Système préfabriqué léger et ultra-résistant : polystyrène + fibrociment + béton armé. Defazaj termic 10,8 ore.</p>
+            <h3>Portées <em>jusqu'à 9 m.</em></h3>
+            <p>Système préfabriqué léger et ultra-résistant : polystyrène + fibrociment + béton armé. Déphasage thermique 10,8 h.</p>
             <div class="sistem-card-spec">
-              <strong>9 m</strong> deschidere · 65 kg/m² · Fonic ≥ 52 dB
+              <strong>9 m</strong> de portée · 65 kg/m² · Acoustique ≥ 52 dB
             </div>
             <span class="sistem-link">Voir détails PBK →</span>
           </a>
@@ -4077,7 +4107,7 @@ html { scroll-behavior: auto !important; }
             </div>
             <span class="bubble-tag">Toit · TBK</span>
             <h3>Passivhaus <em>sortie d'usine.</em></h3>
-            <p>U=0,13 W/m²K, épaisseur 25 cm, doar 22 kg/m². Le toit le plus performant de sa catégorie. Sans isolation additionnelle.</p>
+            <p>U=0,13 W/m²K, épaisseur 25 cm, seulement 22 kg/m². Le toit le plus performant de sa catégorie. Sans isolation additionnelle.</p>
             <div class="sistem-card-spec">
               <strong>U=0,13</strong> W/m²K · 22 kg/m² · Passivhaus
             </div>
@@ -4579,8 +4609,8 @@ html { scroll-behavior: auto !important; }
     <div class="compare-teaser reveal">
       <div class="compare-teaser-left">
         <span class="ct-eyebrow">La comparaison</span>
-        <h2 class="ct-headline"><strong>3 matériaux.</strong> <strong>1 équipe.</strong> <strong>1 mois.</strong></h2>
-        <p class="ct-sub">Les autres construisent une maison passive avec <strong>14+ matériaux</strong>, <strong>5-6 équipes</strong>, <strong>6-7 mois</strong>. Polistibrick obtient le même A+++ avec 5× moins de composants.</p>
+        <h2 class="ct-headline">Comparaison entre <strong>4 systèmes</strong> de construction <strong>différents.</strong></h2>
+        <p class="ct-sub">Polistibrick face à la brique classique, au passif classique et à l'ossature bois. Découvrez sur 12 critères pourquoi Polistibrick fait la différence — sécurité, coût total, vitesse, certifications.</p>
       </div>
       <div class="compare-teaser-right">
         <a href="comparaison/" class="btn btn-primary btn-arrow">Voir la comparaison complète</a>
@@ -4936,7 +4966,12 @@ html { scroll-behavior: auto !important; }
     ? { threshold: 0, rootMargin: '0px 0px 200px 0px' }
     : { threshold: 0.12, rootMargin: '0px 0px -80px 0px' });
 
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  // STATIC DESIGN: immediately mark every .reveal as visible — no scroll-trigger.
+  // This eliminates initial broken transforms (scale 0.88 etc.) on slow elements.
+  document.querySelectorAll('.reveal').forEach(el => {
+    el.classList.add('visible');
+    observer.observe(el);
+  });
 
   // Stagger child cards with extra "visible" class
   document.querySelectorAll('.steps-grid .step-card, .products-grid .product-card, .why-grid .why-card').forEach((el, i) => {
