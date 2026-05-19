@@ -3037,36 +3037,35 @@
 </style>
 
 <style>
-/* === STATIC DESIGN OVERRIDE — fără animații, fără hover transforms === */
+/* === STATIC DESIGN OVERRIDE — TOTAL STATIC, ZERO ANIMATIONS === */
 html { scroll-behavior: auto !important; }
 
-/* Disable scroll fade-in animations on home */
-.reveal,
-.reveal.visible,
-.reveal.is-visible {
-  opacity: 1 !important;
-  transform: none !important;
-  transition: none !important;
+/* Disable ALL CSS animations */
+*, *::before, *::after {
+  animation: none !important;
+  animation-duration: 0s !important;
+  animation-iteration-count: 1 !important;
+  animation-play-state: paused !important;
 }
 
-/* Disable all hover translate / scale transforms */
+/* Disable scroll fade-in animations */
+.reveal, .reveal.visible, .reveal.is-visible {
+  opacity: 1 !important; transform: none !important; transition: none !important;
+}
+
+/* Disable hover transforms */
 *:hover { transform: none !important; }
-
-/* Restore essential rotations / caret animations (don't make page broken) */
 .country-switcher-trigger[aria-expanded="true"] .country-switcher-caret,
-.nav-item:hover .nav-link-caret,
-.case-arrow:hover { transform: rotate(180deg) !important; }
-.case-arrow--prev:hover { transform: translateY(-50%) !important; }
-.case-arrow--next:hover { transform: translateY(-50%) !important; }
-
-/* btn-arrow's → indicator stays static */
-.btn-arrow:hover::after,
-.product-cta:hover::after,
-.superpower:hover .superpower-arrow,
-.bundle-layer:hover { transform: none !important; }
-
-/* Image scale on hover disabled */
+.nav-item:hover .nav-link-caret { transform: rotate(180deg) !important; }
+.case-arrow--prev:hover, .case-arrow--next:hover { transform: translateY(-50%) !important; }
+.btn-arrow:hover::after, .product-cta:hover::after, .superpower:hover .superpower-arrow, .bundle-layer:hover { transform: none !important; }
 .montaj-card:hover .montaj-img img { transform: none !important; }
+
+/* Hide broken case study photos (404) */
+.passive-photo-card .passive-photo-img:nth-child(1),
+.passive-photo-card .passive-photo-img:nth-child(2),
+.passive-photo-card .passive-photo-img:nth-child(3) { display: none !important; }
+.passive-photo-card .passive-photo-img:nth-child(4) { display: block !important; opacity: 1 !important; }
 </style>
 </head>
 <body>
