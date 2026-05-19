@@ -574,16 +574,16 @@ p { line-height: 1.65; color: var(--gray); }
   letter-spacing: -0.01em;
 }
 
-/* === REVEAL ANIMATION === */
+/* === REVEAL — DISABLED (static design per user request) ===
+   Toate elementele rămân vizibile imediat, fără scroll fade-in. */
 .reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-              transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  opacity: 1;
+  transform: none;
+  transition: none;
 }
 .reveal.is-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 
 /* === DOWNLOAD CARD === */
@@ -1087,3 +1087,27 @@ p { line-height: 1.65; color: var(--gray); }
   font-size: 11px;
   color: #6B6B6B;
 }
+
+/* === STATIC DESIGN OVERRIDE — fără hover transforms, fără smooth scroll === */
+html { scroll-behavior: auto !important; }
+.btn-primary:hover,
+.btn-ghost:hover,
+.btn-arrow:hover,
+.btn:hover { transform: none !important; }
+.btn-arrow:hover::after { transform: none !important; }
+.pentru-card:hover,
+.atout-card:hover,
+.cta-esc-card:hover,
+.case-card:hover,
+.archi-card:hover,
+.feature:hover,
+.collab-card:hover,
+.partner-benefit:hover,
+.tier-card:hover,
+.tier-volume-card:hover,
+.cert-row:hover,
+.download-item:hover,
+.trust-card:hover,
+.sistem-card:hover { transform: none !important; }
+.country-switcher-trigger:hover { transform: none !important; }
+.case-arrow:hover { transform: translateY(-50%) !important; }
