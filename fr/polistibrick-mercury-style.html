@@ -1423,12 +1423,15 @@
     transform: translateX(20mm) !important;
   }
   .fabrici-stage {
-    /* Override produse-stage: centered, full-page card, no translateX shift */
-    transform: none;
+    /* Override produse-stage translateX(-30mm) — keep card centered, no shift */
+    transform: none !important;
     padding: 56px 56px 48px;
     min-height: 70vh;
     display: flex;
     align-items: center;
+  }
+  .fabrici-stage:hover {
+    transform: none !important;
   }
   .fabrici-watermark {
     /* Inherits produse-watermark base, but tighter font for shorter word */
@@ -3061,7 +3064,12 @@ html { scroll-behavior: auto !important; }
 .passive-photo-card .passive-photo-img:nth-child(3) { display: none !important; }
 .passive-photo-card .passive-photo-img:nth-child(4) { display: block !important; opacity: 1 !important; }
 
-/* FINAL FIX — PRÉSENCE map: one position only, no transform, no hover shift */
+/* FINAL FIX — PRÉSENCE map: cartela INTERIOARĂ (.fabrici-stage / .produse-stage)
+   avea transform: translateX(-30mm) care o muta 30mm la stânga. La hover, *:hover
+   transform:none kicked in și o readucea în poziția corectă — DE ASTA părea
+   că "se mișcă". Aici anulăm shift-ul pentru ORICE stare. */
+.reach-section .produse-stage.fabrici-stage,
+.reach-section .produse-stage.fabrici-stage:hover,
 .reach-section .produse-stage-wrap.fabrici-stage-wrap,
 .reach-section .produse-stage-wrap.fabrici-stage-wrap.reveal,
 .reach-section .produse-stage-wrap.fabrici-stage-wrap.reveal.visible,
