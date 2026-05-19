@@ -1540,35 +1540,25 @@
     }
   }
 
-  /* Real Europe country paths (default = inactive countries) */
+  /* STATIC map paths */
   .europe-countries path {
     fill: rgba(15, 15, 15, 0.06);
     stroke: rgba(15, 15, 15, 0.30);
     stroke-width: 1;
     stroke-linejoin: round;
-    transition: fill 0.3s ease;
     vector-effect: non-scaling-stroke;
+    pointer-events: none;
   }
-  .europe-countries path:hover {
-    fill: rgba(15, 15, 15, 0.12);
-  }
-  /* Highlighted countries (the 11 markets where Polistibrick operates) */
   .europe-countries path.eu-active {
     fill: rgba(200, 16, 46, 0.16);
     stroke: rgba(200, 16, 46, 0.65);
     stroke-width: 1.4;
   }
-  .europe-countries path.eu-active:hover {
-    fill: rgba(200, 16, 46, 0.28);
-  }
-
-  /* Market country dots */
   .m-dot {
     fill: var(--ink);
     opacity: 0.85;
-    transition: opacity 0.3s ease;
+    pointer-events: none;
   }
-  .m-dot:hover { opacity: 1; }
   .m-label {
     fill: var(--ink);
     font-family: var(--sans);
