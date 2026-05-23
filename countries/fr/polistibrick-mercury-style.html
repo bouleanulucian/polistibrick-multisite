@@ -4679,17 +4679,23 @@ html { scroll-behavior: auto !important; }
   </div>
 </section>
 
-<!-- COMPARISON TEASER — short, links to /comparaison/ -->
+<!-- COMPARISON TEASER — title-cut watermark like PRÉSENCE -->
 <section class="compare-teaser-section">
   <div class="container">
-    <div class="compare-teaser reveal">
-      <div class="compare-teaser-left">
-        <span class="ct-eyebrow">La comparaison</span>
-        <h2 class="ct-headline">Comparaison entre <strong>4 systèmes</strong> de construction <strong>différents.</strong></h2>
-        <p class="ct-sub">Polistibrick face à la brique classique, au passif classique et à l'ossature bois. Découvrez sur 12 critères pourquoi Polistibrick fait la différence — sécurité, coût total, vitesse, certifications.</p>
+    <div class="compare-stage-wrap reveal">
+      <div class="compare-watermark" aria-hidden="true">
+        <span class="wm-half wm-top">Comparaison</span>
+        <span class="wm-half wm-bottom">Comparaison</span>
       </div>
-      <div class="compare-teaser-right">
-        <a href="comparaison/" class="btn btn-primary btn-arrow">Voir la comparaison complète</a>
+      <div class="compare-teaser">
+        <div class="compare-teaser-left">
+          <span class="ct-eyebrow">La comparaison</span>
+          <h2 class="ct-headline">Comparaison entre <strong>4 systèmes</strong> de construction <strong>différents.</strong></h2>
+          <p class="ct-sub">Polistibrick face à la brique classique, au passif classique et à l'ossature bois. Découvrez sur 12 critères pourquoi Polistibrick fait la différence — sécurité, coût total, vitesse, certifications.</p>
+        </div>
+        <div class="compare-teaser-right">
+          <a href="comparaison/" class="btn btn-primary btn-arrow">Voir la comparaison complète</a>
+        </div>
       </div>
     </div>
   </div>
@@ -4698,11 +4704,58 @@ html { scroll-behavior: auto !important; }
   /* === COMPARE TEASER — small banner linking to /comparaison/ === */
   .compare-teaser-section {
     background: var(--cream);
-    padding: 60px 0;
+    padding: 120px 0 60px; /* extra top padding for the cut watermark title */
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
   }
+
+  /* Wrap pentru "Comparaison" cut title — identic cu fabrici-stage-wrap (PRÉSENCE) */
+  .compare-stage-wrap {
+    position: relative;
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+  .compare-watermark {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100vw;
+    margin-left: -50vw;
+    pointer-events: none;
+    user-select: none;
+    transform: translateY(-50%);
+    height: 1em;
+    line-height: 1;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: var(--serif);
+    /* "Comparaison" e mai lung decat "Présence" — font usor mai mic */
+    font-size: clamp(56px, 10vw, 160px);
+    font-weight: 500;
+    letter-spacing: -0.06em;
+    z-index: 2;
+  }
+  .compare-watermark .wm-half {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    display: block;
+  }
+  .compare-watermark .wm-top {
+    color: transparent;
+    -webkit-text-stroke: 1.4px rgba(15, 15, 15, 0.30);
+    text-stroke: 1.4px rgba(15, 15, 15, 0.30);
+    clip-path: inset(0 0 50% 0);
+  }
+  .compare-watermark .wm-bottom {
+    color: var(--cream-dark);
+    opacity: 0.65;
+    clip-path: inset(50% 0 0 0);
+  }
+
   .compare-teaser {
+    position: relative;
+    z-index: 1; /* sub watermark, ca sa nu acopere cuvantul */
     background: var(--cream-light);
     border: 1px solid var(--border);
     border-radius: 20px;
@@ -4752,7 +4805,9 @@ html { scroll-behavior: auto !important; }
   }
   .compare-teaser-right { flex-shrink: 0; }
   @media (max-width: 768px) {
+    .compare-teaser-section { padding: 80px 0 40px; }
     .compare-teaser { grid-template-columns: 1fr; gap: 20px; padding: 28px 24px; text-align: center; }
+    .compare-watermark { font-size: clamp(40px, 14vw, 90px); }
   }
 </style>
 
