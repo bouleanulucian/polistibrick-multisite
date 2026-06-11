@@ -267,7 +267,7 @@
     border-color: rgba(60, 200, 255, 1);
     background: rgba(60, 200, 255, 0.14);
     box-shadow: 0 0 18px rgba(60, 200, 255, 0.55), 0 0 36px rgba(60, 200, 255, 0.25);
-    animation: navPulse 2.6s ease-in-out infinite;
+    /* premium = calm: no infinite pulse */
   }
   @keyframes navPulse {
     0%, 100% {
@@ -571,7 +571,6 @@
     width: 6px; height: 6px;
     background: var(--red);
     border-radius: 50%;
-    animation: pulse 2s infinite;
   }
   @keyframes pulse {
     0%, 100% { opacity: 1; }
@@ -654,7 +653,6 @@
     content: '↕';
     margin-right: 6px;
     display: inline-block;
-    animation: hintBob 2s ease-in-out infinite;
   }
   @keyframes hintBob {
     0%, 100% { transform: translateY(0); }
@@ -679,9 +677,9 @@
     font-weight: 500;
     margin-bottom: 2px;
   }
-  .stat-floating.s1 { top: 30px; left: 60px; animation: floatStat 5s ease-in-out infinite; }
-  .stat-floating.s2 { bottom: 40px; right: 60px; animation: floatStat 5s ease-in-out infinite 1.5s; }
-  .stat-floating.s3 { top: 50%; right: 30px; animation: floatStat 5s ease-in-out infinite 3s; }
+  .stat-floating.s1 { top: 30px; left: 60px; }
+  .stat-floating.s2 { bottom: 40px; right: 60px; }
+  .stat-floating.s3 { top: 50%; right: 30px; }
   @keyframes floatStat {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-8px); }
@@ -936,20 +934,12 @@
     object-fit: cover;
     display: block;
     opacity: 0;
-    animation: photoCycle4 8s infinite ease-in-out;
   }
-  .passive-photo-img:nth-child(1) { animation-delay: 0s; }
-  .passive-photo-img:nth-child(2) { animation-delay: 2s; }
-  .passive-photo-img:nth-child(3) { animation-delay: 4s; }
-  .passive-photo-img:nth-child(4) { animation-delay: 6s; }
-  /* 8s cycle, 4 photos × 2s each. Each photo visible ~1.6s with 0.4s crossfade. */
-  @keyframes photoCycle4 {
-    0%   { opacity: 0; }
-    3%   { opacity: 1; }
-    22%  { opacity: 1; }
-    25%, 97% { opacity: 0; }
-    100% { opacity: 0; }
-  }
+  /* Static premium: o singură fotografie, fără ciclu (pozele 1-3 sunt 404) */
+  .passive-photo-img:nth-child(1),
+  .passive-photo-img:nth-child(2),
+  .passive-photo-img:nth-child(3) { display: none; }
+  .passive-photo-img:nth-child(4) { opacity: 1; }
   .passive-photo-label {
     position: absolute;
     bottom: 18px; left: 18px;
@@ -1033,7 +1023,6 @@
     box-shadow: 0 0 40px rgba(0,166,81,0.45), 0 8px 24px rgba(0,0,0,0.25);
     width: 78%;
     position: relative;
-    animation: glowPass 2.6s ease-in-out infinite;
   }
   .energy-bar.active .arrow {
     font-size: 14px;
@@ -1084,7 +1073,6 @@
     width: 6px; height: 6px;
     background: var(--red);
     border-radius: 50%;
-    animation: pulse 2s infinite;
   }
   .passive-info h3 {
     font-family: var(--serif);
@@ -1411,16 +1399,13 @@
     margin: 60px auto 0;
     max-width: 1480px;
   }
-  /* STATIC DESIGN: no reveal animation. Map stays in its correct final position. */
+  /* PRÉSENCE: cardul hărții este centrat și NU se mișcă niciodată.
+     Reveal-ul lui e doar opacity (fade) — zero transform, în orice stare. */
   .fabrici-stage-wrap.reveal,
   .fabrici-stage-wrap.reveal.visible,
-  .fabrici-stage-wrap {
-    transform: translateX(20mm) !important;
-    opacity: 1 !important;
-    transition: none !important;
-  }
+  .fabrici-stage-wrap,
   .fabrici-stage-wrap:hover {
-    transform: translateX(20mm) !important;
+    transform: none !important;
   }
   .fabrici-stage {
     /* Override produse-stage translateX(-30mm) — keep card centered, no shift */
@@ -1540,11 +1525,6 @@
       gap: 32px;
     }
     .fabrici-text { max-width: 100%; }
-    /* Override the 20mm right shift — center the card on narrow screens */
-    .fabrici-stage-wrap.reveal,
-    .fabrici-stage-wrap.reveal.visible {
-      transform: translateY(0) scale(1) translateX(0) !important;
-    }
   }
 
   /* STATIC map paths */
@@ -1594,13 +1574,10 @@
     filter: drop-shadow(0 3px 6px rgba(200,16,46,0.45));
   }
   .f-pulse {
-    fill: var(--red);
-    opacity: 0;
-    transform-origin: center;
-    transform-box: fill-box;
-    animation: factoryPulse 2.6s ease-out infinite;
+    /* Harta rămâne perfect nemișcată — fără pulse pe markerii de fabrică */
+    display: none;
   }
-  .f-pulse--delay { animation-delay: 1.3s; }
+  .f-pulse--delay { display: none; }
   @keyframes factoryPulse {
     0%   { transform: scale(0.3); opacity: 0.55; }
     80%  { opacity: 0; }
@@ -2581,69 +2558,89 @@
     gap: 16px;
   }
 
-  /* === SCROLL REVEALS — enhanced with scale === */
+  /* ===========================================================
+     PREMIUM REVEALS — discret, elegant, o singură dată.
+     Reguli de aur (învățate pe pielea noastră):
+     - NICIODATĂ scale pe secțiuni (a cauzat "2 poziții" la hartă)
+     - NICIODATĂ animații infinite (au cauzat pâlpâieli)
+     - NICIODATĂ will-change permanent (layere GPU = flicker)
+     - distanță mică (22px), easing luxos, reveal-once
+     =========================================================== */
   .reveal {
     opacity: 0;
-    transform: translateY(80px) scale(0.88);
-    transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), transform 1s cubic-bezier(0.22, 1, 0.36, 1);
-    will-change: opacity, transform;
+    transform: translateY(22px);
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
   }
   .reveal.visible {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: none;
   }
 
-  /* Stagger child reveals slightly when grouped */
+  /* Hero entrance — intrare eșalonată la încărcare (eyebrow → titlu → sub → CTA) */
+  .hero h1.reveal           { transition-delay: 0.10s; }
+  .hero .hero-sub.reveal    { transition-delay: 0.22s; }
+  .hero .hero-actions.reveal{ transition-delay: 0.34s; }
+  .hero-image-col .reveal   { transition-delay: 0.30s; }
+
+  /* Stagger pe carduri în interiorul secțiunilor — DOAR opacity
+     (fără transform pe copii → zero conflict cu hover-urile lor) */
+  .stats-grid.reveal .stat-card,
+  .pentru-stage-wrap.reveal .pentru-card,
+  .sistem-stage-wrap.reveal .sistem-card,
+  .montaj-stage-wrap.reveal .montaj-card,
+  .proces-stage-wrap.reveal .proces-step {
+    opacity: 0;
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
   .stats-grid.reveal.visible .stat-card,
+  .pentru-stage-wrap.reveal.visible .pentru-card,
+  .sistem-stage-wrap.reveal.visible .sistem-card,
+  .montaj-stage-wrap.reveal.visible .montaj-card,
+  .proces-stage-wrap.reveal.visible .proces-step {
+    opacity: 1;
+  }
+  .stats-grid.reveal.visible .stat-card:nth-child(2),
+  .pentru-stage-wrap.reveal.visible .pentru-card:nth-child(2),
+  .sistem-stage-wrap.reveal.visible .sistem-card:nth-child(2),
+  .montaj-stage-wrap.reveal.visible .montaj-card:nth-child(2),
+  .proces-stage-wrap.reveal.visible .proces-step:nth-child(2) { transition-delay: 0.10s; }
+  .stats-grid.reveal.visible .stat-card:nth-child(3),
+  .pentru-stage-wrap.reveal.visible .pentru-card:nth-child(3),
+  .sistem-stage-wrap.reveal.visible .sistem-card:nth-child(3),
+  .montaj-stage-wrap.reveal.visible .montaj-card:nth-child(3),
+  .proces-stage-wrap.reveal.visible .proces-step:nth-child(3) { transition-delay: 0.20s; }
+  .stats-grid.reveal.visible .stat-card:nth-child(4),
+  .pentru-stage-wrap.reveal.visible .pentru-card:nth-child(4),
+  .montaj-stage-wrap.reveal.visible .montaj-card:nth-child(4),
+  .proces-stage-wrap.reveal.visible .proces-step:nth-child(4) { transition-delay: 0.30s; }
+
+  /* Cardurile cu reveal individual prin JS (stagger i*90ms) — doar fade */
+  .steps-grid .step-card,
+  .products-grid .product-card,
+  .why-grid .why-card {
+    opacity: 0;
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.35s ease, border-color 0.3s ease, background 0.3s ease;
+  }
   .steps-grid .step-card.visible,
   .products-grid .product-card.visible,
   .why-grid .why-card.visible {
-    animation: popIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
-  }
-  @keyframes popIn {
-    from { opacity: 0; transform: translateY(40px) scale(0.9); }
-    to   { opacity: 1; transform: translateY(0) scale(1); }
+    opacity: 1;
   }
 
-  /* === SCROLL-DRIVEN PARALLAX & SCALE === */
-  .parallax-slow  { will-change: transform; }
-  .parallax-fast  { will-change: transform; }
-  .scroll-scale   { will-change: transform; transform-origin: center center; }
-
-  /* Each <section> shrinks slightly as it leaves the viewport, gives a "stack" feel */
-  section {
-    transform-origin: center top;
-    will-change: transform, opacity;
-  }
-
-  /* 3D block — JS-driven rotation overrides the float anim once scrolling */
-  .block-3d.scroll-active {
-    animation: none;
-  }
-
-  /* Sticky-ish hero text that slowly drifts */
-  .hero h1, .hero-sub, .hero-actions, .hero-eyebrow {
-    will-change: transform, opacity;
-  }
-
-  /* CTA box dramatic zoom-in */
-  .cta-box {
-    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-  .cta-box.zoomed {
-    transform: scale(1.02);
-  }
-
-  /* Smooth 3D card tilts on scroll position */
-  .product-card, .why-card, .step-card {
-    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease;
-  }
-
-  /* Reduce motion if user prefers */
+  /* Accesibilitate: utilizatorii care preferă fără mișcare primesc totul static */
   @media (prefers-reduced-motion: reduce) {
     .reveal, .reveal.visible,
-    section, .block-3d, .hero-visual,
-    .cta-box, .product-card, .why-card, .step-card {
+    .stats-grid.reveal .stat-card,
+    .pentru-stage-wrap.reveal .pentru-card,
+    .sistem-stage-wrap.reveal .sistem-card,
+    .montaj-stage-wrap.reveal .montaj-card,
+    .proces-stage-wrap.reveal .proces-step,
+    .steps-grid .step-card,
+    .products-grid .product-card,
+    .why-grid .why-card {
       transition: none !important;
       animation: none !important;
       transform: none !important;
@@ -2672,7 +2669,6 @@
     position: relative;
     width: 100%;
     aspect-ratio: 1;
-    animation: productBob 6s ease-in-out infinite;
   }
   .floating-product .pi {
     position: absolute;
@@ -2698,7 +2694,6 @@
     height: 100%;
     object-fit: contain;
     opacity: 0;
-    animation: stageLoop 4s infinite ease-in-out;
     /* match the same drop-shadow other floating images use */
     filter: drop-shadow(0 40px 60px rgba(0, 0, 0, 0.28))
             drop-shadow(0 14px 24px rgba(0, 0, 0, 0.10));
@@ -2851,20 +2846,12 @@
     /* Inline mobile-product image — nu trebuie sa depaseasca latimea sectiunii */
     .mobile-product { max-width: 100%; }
 
-    /* Reveal animations: mai blande + mai rapide pe mobil (sa apara IN TIMP cu scroll-ul) */
+    /* Reveal pe mobil: mai scurt și mai rapid (ține pasul cu scroll-ul) */
     .reveal {
-      transform: translateY(24px) scale(0.98);
-      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+      transform: translateY(14px);
+      transition: opacity 0.55s ease-out, transform 0.55s ease-out;
     }
-    .reveal.visible { transform: translateY(0) scale(1); }
-
-    /* Section transforms (.fabrici-stage-wrap) sa fie identice cu .reveal pe mobil */
-    .fabrici-stage-wrap.reveal {
-      transform: translateY(24px) scale(0.98) translateX(0) !important;
-    }
-    .fabrici-stage-wrap.reveal.visible {
-      transform: translateY(0) scale(1) translateX(0) !important;
-    }
+    .reveal.visible { transform: none; }
   }
 
   /* ===================================================
@@ -3034,135 +3021,62 @@
 </style>
 
 <style>
-/* === STATIC DESIGN OVERRIDE — TOTAL STATIC, ZERO ANIMATIONS === */
-html { scroll-behavior: auto !important; }
-
-/* Disable ALL CSS animations */
-*, *::before, *::after {
-  animation: none !important;
-  animation-duration: 0s !important;
-  animation-iteration-count: 1 !important;
-  animation-play-state: paused !important;
-}
-
-/* Disable scroll fade-in animations */
-.reveal, .reveal.visible, .reveal.is-visible {
-  opacity: 1 !important; transform: none !important; transition: none !important;
-}
-
-/* Disable hover transforms */
-*:hover { transform: none !important; }
-.country-switcher-trigger[aria-expanded="true"] .country-switcher-caret,
-.nav-item:hover .nav-link-caret { transform: rotate(180deg) !important; }
-.case-arrow--prev:hover, .case-arrow--next:hover { transform: translateY(-50%) !important; }
-.btn-arrow:hover::after, .product-cta:hover::after, .superpower:hover .superpower-arrow, .bundle-layer:hover { transform: none !important; }
-.montaj-card:hover .montaj-img img { transform: none !important; }
-
-/* Hide broken case study photos (404) */
-.passive-photo-card .passive-photo-img:nth-child(1),
-.passive-photo-card .passive-photo-img:nth-child(2),
-.passive-photo-card .passive-photo-img:nth-child(3) { display: none !important; }
-.passive-photo-card .passive-photo-img:nth-child(4) { display: block !important; opacity: 1 !important; }
-
-/* FINAL FIX — PRÉSENCE map: cartela INTERIOARĂ (.fabrici-stage / .produse-stage)
-   avea transform: translateX(-30mm) care o muta 30mm la stânga. La hover, *:hover
-   transform:none kicked in și o readucea în poziția corectă — DE ASTA părea
-   că "se mișcă". Aici anulăm shift-ul pentru ORICE stare. */
-.reach-section .produse-stage.fabrici-stage,
-.reach-section .produse-stage.fabrici-stage:hover,
-.reach-section .produse-stage-wrap.fabrici-stage-wrap,
-.reach-section .produse-stage-wrap.fabrici-stage-wrap.reveal,
-.reach-section .produse-stage-wrap.fabrici-stage-wrap.reveal.visible,
-.reach-section .produse-stage-wrap.fabrici-stage-wrap:hover,
-.reach-section .produse-stage-wrap.fabrici-stage-wrap.reveal:hover,
-.reach-section .produse-stage-wrap.fabrici-stage-wrap.reveal.visible:hover {
-  transform: none !important;
-  opacity: 1 !important;
-  transition: none !important;
-  animation: none !important;
-}
-.reach-section .reach-map,
-.reach-section .reach-svg,
-.reach-section .reach-map:hover,
-.reach-section .reach-svg:hover {
-  transform: none !important;
-  transition: none !important;
-}
-@media (min-width: 769px) {
-  /* Desktop: center the card naturally — no manual 20mm push (was causing offset) */
-  .reach-section .produse-stage-wrap.fabrici-stage-wrap {
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-}
-
 /* ===========================================================
-   STATIC FREEZE — toate cartelele/secțiunile mari sa fie FIXE
-   Bloc final, prioritate maxima. Înghețăm:
-   - orice transform (nu permitem translate, scale, rotate)
-   - orice transition (nimic nu se animează)
-   - orice will-change (nu mai creăm layere GPU care produc flicker)
-   pe TOATE cardurile mari + stage-urile produsului.
+   PREMIUM POLISH — rafinament final, prioritate maximă.
+   Mișcarea e permisă DOAR acolo unde e elegantă și sigură:
+   - reveal-uri discrete (definite mai sus)
+   - hover fin pe carduri mici (definit în CSS-ul de bază)
+   Mai jos: garanții anti-regresie + finisaje vizuale.
    =========================================================== */
-.stat-card, .stat-card:hover,
-.structural-card, .structural-card:hover,
-.step-card, .step-card:hover,
-.why-card, .why-card:hover,
-.pentru-card, .pentru-card:hover,
-.bundle-layer, .bundle-layer:hover,
-.sistem-card, .sistem-card:hover,
-.montaj-card, .montaj-card:hover,
-.testimonial-card, .testimonial-card:hover,
-.proces-card, .proces-card:hover,
-.case-card, .case-card:hover,
-.persona-card, .persona-card:hover,
-.superpower, .superpower:hover,
-.product-card, .product-card:hover,
-.passive-photo-card, .passive-photo-card:hover,
-.passive-showcase, .passive-showcase:hover,
-.stats-stage, .stats-stage:hover,
-.pentru-stage, .pentru-stage:hover,
-.bundle-stage, .bundle-stage:hover,
-.sistem-stage, .sistem-stage:hover,
-.montaj-stage, .montaj-stage:hover,
-.testimonial-stage, .testimonial-stage:hover,
-.proces-stage, .proces-stage:hover,
-.fabrici-stage, .fabrici-stage:hover,
-.produse-stage, .produse-stage:hover,
-.fabrici-stage-wrap, .fabrici-stage-wrap:hover,
-.produse-stage-wrap, .produse-stage-wrap:hover,
-.pentru-stage-wrap, .pentru-stage-wrap:hover,
-.stats-stage-wrap, .stats-stage-wrap:hover,
-.bundle-stage-wrap, .bundle-stage-wrap:hover,
-.sistem-stage-wrap, .sistem-stage-wrap:hover,
-.montaj-stage-wrap, .montaj-stage-wrap:hover,
-.testimonial-stage-wrap, .testimonial-stage-wrap:hover,
-.proces-stage-wrap, .proces-stage-wrap:hover {
+
+/* GARANȚIE 1: stage-urile mari nu au NICIO regulă de hover — transformul
+   lor de bază (ex. produse-stage -30mm) rămâne identic în orice stare,
+   deci nu pot "sări". Nu adăugăm reguli aici tocmai ca să nu creăm conflict. */
+
+/* GARANȚIE 2: harta PRÉSENCE rămâne pixel-perfect nemișcată, mereu.
+   (.produse-stage are translateX(-30mm) prin design pentru secțiunea
+   produse — fabrici o anulează; aici blindăm tot lanțul hărții.) */
+.reach-section .fabrici-stage,
+.reach-section .fabrici-stage:hover,
+.reach-section .fabrici-stage-wrap,
+.reach-section .fabrici-stage-wrap:hover,
+.reach-section .reach-map,
+.reach-section .reach-svg {
   transform: none !important;
-  transition: none !important;
-  animation: none !important;
-  will-change: auto !important;
+}
+.reach-section .fabrici-stage-wrap {
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
-/* Imaginile interioare nu mai au scale pe hover */
-.montaj-card:hover .montaj-img img,
-.case-card:hover img,
-.passive-photo-card:hover img,
-.persona-card:hover img {
-  transform: none !important;
-  transition: none !important;
+/* GARANȚIE 3: niciun layer GPU permanent (sursa pâlpâielilor de demult) */
+section, .reveal, .stat-card, .pentru-card, .sistem-card,
+.montaj-card, .step-card, .product-card, .why-card {
+  will-change: auto;
 }
 
-/* Linkurile/CTAs din interiorul cardurilor — fără gap shift, fără padding shift */
-.pentru-card:hover .pentru-link,
-.sistem-card:hover .sistem-link,
-.testimonial-link:hover,
-.nav-drawer a:hover,
-.nav-drawer a:focus {
-  gap: initial !important;
-  padding-left: initial !important;
-  transition: none !important;
+/* FINISAJ: tranziții catifelate pe butoane și linkuri (culoare + umbră) */
+.btn, .btn-primary, .btn-red, .btn-ghost, .btn-on-dark, .btn-on-dark-ghost, .product-cta {
+  transition: background-color 0.3s ease, color 0.3s ease,
+              border-color 0.3s ease, box-shadow 0.3s ease,
+              transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
+.btn-red:hover, .btn-primary:hover {
+  box-shadow: 0 10px 28px rgba(200, 16, 46, 0.22);
+}
+
+/* FINISAJ: cardurile mici răspund elegant — umbră stratificată la hover */
+.pentru-card, .sistem-card, .montaj-card, .superpower,
+.structural-card, .step-card, .why-card, .product-card, .stat-card {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.35s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+/* FINISAJ: selecție de text în culoarea brandului */
+::selection { background: rgba(200, 16, 46, 0.14); color: var(--ink); }
+
+/* FINISAJ: navigația devine mai prezentă la scroll (umbră fină) */
+nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.05); }
 </style>
 </head>
 <body>
@@ -5083,26 +4997,34 @@ html { scroll-behavior: auto !important; }
     document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
   })();
 
-  // === Reveal animations (Intersection Observer) ===
-  // Mobile: trigger MUCH earlier (200px before element enters viewport) + threshold 0
-  // Desktop: keep the dramatic reveal (12% intersection + -80px bottom margin)
+  // === Reveal animations (Intersection Observer) — PREMIUM ===
+  // Reveal o singură dată (unobserve după), discret, fără re-trigger la
+  // scroll înapoi. Fallback: dacă IO nu există, totul devine vizibil instant.
   const isMobile = window.matchMedia('(max-width: 768px)').matches;
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, isMobile
-    ? { threshold: 0, rootMargin: '0px 0px 200px 0px' }
-    : { threshold: 0.12, rootMargin: '0px 0px -80px 0px' });
+  if (!('IntersectionObserver' in window)) {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+  } else {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, isMobile
+      ? { threshold: 0, rootMargin: '0px 0px 120px 0px' }
+      : { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
-  // STATIC DESIGN: immediately mark every .reveal as visible — no scroll-trigger.
-  // This eliminates initial broken transforms (scale 0.88 etc.) on slow elements.
-  document.querySelectorAll('.reveal').forEach(el => {
-    el.classList.add('visible');
-    observer.observe(el);
-  });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Plasă de siguranță: dacă ceva rămâne ascuns după 2.5s (edge case), arată-l.
+    setTimeout(() => {
+      document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
+        const r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight && r.bottom > 0) el.classList.add('visible');
+      });
+    }, 2500);
+  }
 
   // Stagger child cards with extra "visible" class
   document.querySelectorAll('.steps-grid .step-card, .products-grid .product-card, .why-grid .why-card').forEach((el, i) => {
@@ -5117,117 +5039,21 @@ html { scroll-behavior: auto !important; }
     cardObserver.observe(el);
   });
 
-  // === Scroll-driven parallax, scale, rotation ===
-  const heroVisual = document.querySelector('.hero-visual');
-  const heroH1 = document.querySelector('.hero h1');
-  const heroSub = document.querySelector('.hero-sub');
-  const heroActions = document.querySelector('.hero-actions');
-  const heroEyebrow = document.querySelector('.hero-eyebrow');
+  // === Scroll: DOAR umbra navigației. ===
+  // Motorul de parallax (secțiuni care se micșorau, carduri care "pluteau",
+  // hero care se deplasa la scroll) a fost ELIMINAT definitiv — el era sursa
+  // mișcărilor haotice. Premium = calm: conținutul stă pe loc.
   const wallVisual = document.querySelector('.wall-visual');
   const wallVideo = wallVisual ? wallVisual.querySelector('video') : null;
-  const stat1 = document.querySelector('.stat-floating.s1');
-  const stat2 = document.querySelector('.stat-floating.s2');
-  const stat3 = document.querySelector('.stat-floating.s3');
-  const ctaBox = document.querySelector('.cta-box');
-  const sections = document.querySelectorAll('section');
-  const allCards = document.querySelectorAll('.product-card, .why-card, .step-card, .stat-card');
 
   function clamp(v, min, max) { return Math.max(min, Math.min(max, v)); }
-  function lerp(a, b, t) { return a + (b - a) * t; }
-
-  let scrollY = window.scrollY;
-  let targetScroll = scrollY;
-  let ticking = false;
-
-  function update() {
-    scrollY = lerp(scrollY, targetScroll, 0.18);
-    const wh = window.innerHeight;
-
-    // Nav border on scroll
-    if (scrollY > 20) nav.classList.add('scrolled');
-    else nav.classList.remove('scrolled');
-
-    // --- HERO PARALLAX ---
-    // Text drifts up slightly while fading; visual moves down with parallax + scales
-    if (heroEyebrow) {
-      heroEyebrow.style.transform = `translateY(${scrollY * -0.15}px)`;
-      heroEyebrow.style.opacity = clamp(1 - scrollY / 400, 0, 1);
-    }
-    if (heroH1) {
-      heroH1.style.transform = `translateY(${scrollY * -0.18}px) scale(${clamp(1 - scrollY / 3500, 0.85, 1)})`;
-      heroH1.style.opacity = clamp(1 - scrollY / 700, 0, 1);
-    }
-    if (heroSub) {
-      heroSub.style.transform = `translateY(${scrollY * -0.22}px)`;
-      heroSub.style.opacity = clamp(1 - scrollY / 600, 0, 1);
-    }
-    if (heroActions) {
-      heroActions.style.transform = `translateY(${scrollY * -0.25}px)`;
-      heroActions.style.opacity = clamp(1 - scrollY / 500, 0, 1);
-    }
-    // Hero visual stays in place (no parallax translate) — otherwise it
-    // creates a visible gap between the video bottom and the next section.
-
-    // (Wall visual is full-screen and centered via CSS — no JS transform here,
-    //  scroll-driven scrubbing of the video is handled separately below.)
-
-    // --- Floating stats different parallax speeds ---
-    if (stat1) stat1.style.transform = `translateY(${scrollY * -0.35}px) translateX(${scrollY * -0.05}px)`;
-    if (stat2) stat2.style.transform = `translateY(${scrollY * -0.55}px) translateX(${scrollY * 0.07}px)`;
-    if (stat3) stat3.style.transform = `translateY(${scrollY * -0.45}px) translateX(${scrollY * 0.04}px)`;
-
-    // --- Section "stack" scaling: each section shrinks slightly as it leaves ---
-    sections.forEach(section => {
-      const rect = section.getBoundingClientRect();
-      // How much of the section has scrolled past the top of the viewport
-      const past = clamp(-rect.top / Math.max(rect.height, 1), 0, 1);
-      const scale = 1 - past * 0.04;          // up to 4% shrink
-      const opacity = 1 - past * 0.22;        // mild fade as it recedes
-      const translate = past * 30;            // small upward drift
-      // Don't override hero — handled separately above
-      if (!section.classList.contains('hero')) {
-        section.style.transform = `translateY(${-translate}px) scale(${scale})`;
-        section.style.opacity = opacity;
-      }
-    });
-
-    // --- Cards lift up as they cross the middle of the viewport ---
-    allCards.forEach(card => {
-      const rect = card.getBoundingClientRect();
-      const center = rect.top + rect.height / 2;
-      const distance = (center - wh / 2) / wh;          // -1 (above) ... 1 (below)
-      const lift = clamp(-distance, -0.5, 0.5);          // active band near center
-      const ty = lift * 18;                              // px
-      const sc = 1 + Math.abs(lift) * 0.015;             // tiny scale pulse
-      card.style.transform = `translateY(${ty}px) scale(${sc})`;
-    });
-
-    // --- CTA box zoom when in view ---
-    if (ctaBox) {
-      const rect = ctaBox.getBoundingClientRect();
-      const inView = rect.top < wh * 0.85 && rect.bottom > wh * 0.15;
-      ctaBox.classList.toggle('zoomed', inView);
-    }
-
-    if (Math.abs(scrollY - targetScroll) > 0.1) {
-      requestAnimationFrame(update);
-    } else {
-      ticking = false;
-    }
-  }
 
   function onScroll() {
-    targetScroll = window.scrollY;
-    if (!ticking) {
-      ticking = true;
-      requestAnimationFrame(update);
-    }
+    if (window.scrollY > 20) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
   }
-
   window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', onScroll);
-  // Kick off once so initial state is correct
-  update();
+  onScroll();
 
   // === POLYSTYRENE BEADS — a panel of EPS grain that reacts to the cursor ===
   // White polystyrene-bead texture covering the full viewport. Each bead is
