@@ -3281,13 +3281,9 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     object-position: center;
   }
   /* Scrim pentru lizibilitate: întunecat în stânga (text) + jos, transparent în rest */
-  /* Scrim NATURAL — doar o ancoră discretă jos pentru text, fără filtru negru.
-     Imaginea rămâne curată ca la zuru; lizibilitatea vine din text-shadow. */
-  .hero-bg-scrim {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(0deg, rgba(8, 7, 6, 0.40) 0%, rgba(8, 7, 6, 0.14) 22%, rgba(8, 7, 6, 0) 40%);
-  }
+  /* FĂRĂ scrim — imaginea e 100% naturală, luminoasă.
+     Lizibilitatea textului vine doar din text-shadow. */
+  .hero-bg-scrim { display: none; }
   .hero--photo .container { position: relative; z-index: 1; }
 
   /* DEGAJAT, stil zuru: textul jos-stânga (2 rânduri), robotul jos-dreapta,
@@ -3309,7 +3305,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     /* calibrat să stea pe 2 rânduri ca la zuru, nu 4 */
     font-size: clamp(40px, 5vw, 72px);
     margin-bottom: 26px;
-    text-shadow: 0 2px 30px rgba(0, 0, 0, 0.45), 0 1px 4px rgba(0, 0, 0, 0.30);
+    text-shadow: 0 2px 36px rgba(0, 0, 0, 0.55), 0 1px 6px rgba(0, 0, 0, 0.40);
   }
   .hero--photo h1 em { color: #FFD9DE; } /* italic alb-rozat cald — accent subtil */
   /* Rândul 2 decalat — "Un système." începe sub "maison" */
@@ -3337,11 +3333,6 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   /* Reduced motion / fallback: doar prima imagine, fixă */
   /* Reduced motion: JS oprește videoul; posterul rămâne. */
   @media (max-width: 968px) {
-    /* Pe mobil scrim mai uniform — textul e pe toată lățimea */
-    .hero-bg-scrim {
-      background:
-        linear-gradient(180deg, rgba(12, 10, 8, 0.55) 0%, rgba(12, 10, 8, 0.35) 55%, rgba(12, 10, 8, 0.60) 100%);
-    }
     .hero--photo .container { padding-bottom: 36px; }
     .hero--photo .hero-text-col { max-width: 100%; }
     .hero--photo h1 { font-size: clamp(34px, 8.5vw, 52px); }
