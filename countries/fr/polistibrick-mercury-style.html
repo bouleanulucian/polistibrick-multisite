@@ -191,7 +191,10 @@
     -webkit-backdrop-filter: none;
   }
   nav:not(.scrolled) .logo-img {
-    filter: brightness(0) invert(1) drop-shadow(0 1px 10px rgba(0, 0, 0, 0.35));
+    /* logo ROȘU brand (#C8102E) peste video */
+    filter: brightness(0) saturate(100%) invert(13%) sepia(96%) saturate(5630%)
+            hue-rotate(347deg) brightness(84%) contrast(98%)
+            drop-shadow(0 1px 10px rgba(0, 0, 0, 0.30));
   }
   nav:not(.scrolled) .nav-menu-link {
     color: #FFFFFF;
