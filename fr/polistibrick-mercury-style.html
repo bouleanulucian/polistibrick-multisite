@@ -3291,6 +3291,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     border-bottom: 1px solid var(--border);
   }
   .morph-media {
+    position: relative;
     max-width: 1760px;
     margin: 0 auto;
   }
@@ -3298,6 +3299,23 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     display: block;
     width: 100%;
     height: auto;
+  }
+  /* SCRIM — gradient crem peste partea de sus a videoului: textul suprapus
+     rămâne lizibil chiar și când clădirea crește în zona lui. Aceeași
+     culoare ca fundalul (#F7F4ED) → tranziția e invizibilă, clădirea pare
+     că se retrage în lumină. */
+  .morph-media::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 48%;
+    background: linear-gradient(180deg,
+      rgba(247, 244, 237, 0.97) 0%,
+      rgba(247, 244, 237, 0.88) 34%,
+      rgba(247, 244, 237, 0.45) 68%,
+      rgba(247, 244, 237, 0) 100%);
+    pointer-events: none;
+    z-index: 1;
   }
   .morph-overlay {
     position: absolute;
@@ -3352,6 +3370,8 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
       padding: 48px 20px 8px;
     }
     .morph-media { margin-top: -3vw; }
+    /* Fără scrim — textul nu mai e peste video, clădirea se vede întreagă */
+    .morph-media::after { display: none; }
   }
 </style>
 <section class="morph-section" id="morph">
