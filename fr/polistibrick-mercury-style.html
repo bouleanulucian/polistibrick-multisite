@@ -3319,7 +3319,8 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   }
   .morph-overlay {
     position: absolute;
-    top: clamp(24px, 5.5vw, 80px);
+    /* ridicat cu 14mm la cererea userului */
+    top: calc(clamp(24px, 5.5vw, 80px) - 14mm);
     left: 0;
     right: 0;
     z-index: 2;
