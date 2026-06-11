@@ -3261,8 +3261,95 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
 
 </aside>
 
-<!-- HERO -->
-<section class="hero">
+<!-- HERO — full-bleed maisons Polistibrick (stil showreel), text alb stânga + robot dreapta -->
+<style>
+  /* === HERO PHOTO — fundal full-bleed cu case, crossfade lent === */
+  .hero--photo {
+    background: #14120F; /* sub imagini — niciodată crem între fade-uri */
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 0;
+  }
+  .hero-bg img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0;
+    animation: heroCycle 21s ease-in-out infinite;
+  }
+  .hero-bg img:nth-child(1) { animation-delay: 0s; }
+  .hero-bg img:nth-child(2) { animation-delay: 7s; }
+  .hero-bg img:nth-child(3) { animation-delay: 14s; }
+  /* 21s ciclu, 3 imagini × 7s. Crossfade lent de ~1.5s — calm, premium. */
+  @keyframes heroCycle {
+    0%      { opacity: 0; }
+    7%      { opacity: 1; }
+    33.33%  { opacity: 1; }
+    40.33%  { opacity: 0; }
+    100%    { opacity: 0; }
+  }
+  /* Scrim pentru lizibilitate: întunecat în stânga (text) + jos, transparent în rest */
+  .hero-bg-scrim {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(100deg, rgba(12, 10, 8, 0.66) 0%, rgba(12, 10, 8, 0.38) 42%, rgba(12, 10, 8, 0.10) 68%, rgba(12, 10, 8, 0) 100%),
+      linear-gradient(0deg, rgba(12, 10, 8, 0.35) 0%, rgba(12, 10, 8, 0) 30%);
+  }
+  .hero--photo .container { position: relative; z-index: 1; }
+
+  /* Text alb peste fotografie */
+  .hero--photo h1 { color: #FFFFFF; }
+  .hero--photo h1 em { color: #FFD9DE; } /* italic alb-rozat cald — accentul ramane subtil */
+  .hero--photo .hero-sub { color: rgba(255, 255, 255, 0.88); }
+  .hero--photo .hero-sub strong { color: #FFFFFF; }
+  .hero--photo .hero-eyebrow {
+    background: rgba(255, 255, 255, 0.14);
+    color: #FFFFFF;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+  }
+  .hero--photo .hero-eyebrow::before { background: #FF6B7A; }
+  .hero--photo .btn-ghost {
+    color: #FFFFFF;
+    border-color: rgba(255, 255, 255, 0.55);
+    background: rgba(255, 255, 255, 0.08);
+  }
+  .hero--photo .btn-ghost:hover {
+    background: rgba(255, 255, 255, 0.18);
+    border-color: #FFFFFF;
+  }
+  /* Robotul — umbră mai puternică pentru separare de fotografie */
+  .hero--photo .hero-image-col .mobile-product {
+    filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.45));
+  }
+  /* Reduced motion / fallback: doar prima imagine, fixă */
+  @media (prefers-reduced-motion: reduce) {
+    .hero-bg img { animation: none !important; }
+    .hero-bg img:nth-child(1) { opacity: 1 !important; }
+  }
+  @media (max-width: 968px) {
+    /* Pe mobil scrim mai uniform — textul e pe toată lățimea */
+    .hero-bg-scrim {
+      background:
+        linear-gradient(180deg, rgba(12, 10, 8, 0.62) 0%, rgba(12, 10, 8, 0.40) 55%, rgba(12, 10, 8, 0.55) 100%);
+    }
+  }
+</style>
+<section class="hero hero--photo">
+  <div class="hero-bg" aria-hidden="true">
+    <img src="images/hero/hero-house-1.jpg" alt="" fetchpriority="high">
+    <img src="images/hero/hero-house-2.jpg" alt="" loading="lazy">
+    <img src="images/hero/hero-house-3.jpg" alt="" loading="lazy">
+    <div class="hero-bg-scrim"></div>
+  </div>
   <div class="container">
     <div class="hero-text-col">
       <div class="reveal">
