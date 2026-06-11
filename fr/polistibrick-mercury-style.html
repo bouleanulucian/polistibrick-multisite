@@ -3281,6 +3281,95 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   </div>
 </section>
 
+<!-- MORPH — un seul système, toutes les architectures (vidéo full-bleed, texte superposé) -->
+<style>
+  .morph-section {
+    position: relative;
+    background: #F7F4ED; /* exact culoarea de fundal a videoului — secțiune fără margini vizibile */
+    overflow: hidden;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .morph-media {
+    max-width: 1760px;
+    margin: 0 auto;
+  }
+  .morph-video {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .morph-overlay {
+    position: absolute;
+    top: clamp(24px, 5.5vw, 80px);
+    left: 0;
+    right: 0;
+    z-index: 2;
+    text-align: center;
+    padding: 0 24px;
+    pointer-events: none; /* doar butonul primește click */
+  }
+  .morph-overlay .morph-eyebrow {
+    display: inline-block;
+    background: var(--red-soft);
+    color: var(--red);
+    padding: 5px 14px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .morph-overlay h2 {
+    font-family: var(--serif);
+    font-size: clamp(30px, 4.6vw, 64px);
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: -0.025em;
+    line-height: 1.04;
+    margin: 0 0 14px;
+  }
+  .morph-overlay h2 em {
+    font-style: italic;
+    color: var(--red);
+    font-weight: 400;
+  }
+  .morph-overlay .morph-sub {
+    font-size: clamp(13.5px, 1.3vw, 16px);
+    color: var(--gray);
+    line-height: 1.55;
+    max-width: 640px;
+    margin: 0 auto 22px;
+  }
+  .morph-overlay .morph-cta {
+    pointer-events: auto;
+  }
+  @media (max-width: 1080px) {
+    /* Sub 1080px textul stă deasupra videoului, nu suprapus (ar acoperi casa) */
+    .morph-overlay {
+      position: static;
+      padding: 48px 20px 8px;
+    }
+    .morph-media { margin-top: -3vw; }
+  }
+</style>
+<section class="morph-section" id="morph">
+  <div class="morph-overlay">
+    <span class="morph-eyebrow reveal">Un seul système</span>
+    <h2 class="reveal">Une maison. Un immeuble.<br><em>Les mêmes panneaux.</em></h2>
+    <p class="morph-sub reveal">Plain-pied, villa à étage ou petit collectif — MBK, PBK et TBK s'assemblent dans n'importe quelle architecture. Vous imaginez, le système suit.</p>
+    <a href="devis/" class="btn btn-red morph-cta reveal">Demander un devis →</a>
+  </div>
+  <div class="morph-media">
+    <video id="morphVideo" class="morph-video" autoplay muted loop playsinline preload="metadata"
+           poster="images/morph/morph-poster.jpg"
+           aria-label="Le système Polistibrick se reconfigure : maison de plain-pied, villa à étage, petit immeuble collectif">
+      <source src="images/morph/morphing-polistibrick.mp4" type="video/mp4">
+    </video>
+  </div>
+</section>
+
 <!-- PENTRU CINE — 4 personas (propriétaire, architecte, constructeur, promoteur) — afișat imediat sub hero -->
 <style>
   .pentru-section {
@@ -3810,95 +3899,6 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- MORPH — un seul système, toutes les architectures (vidéo full-bleed, texte superposé) -->
-<style>
-  .morph-section {
-    position: relative;
-    background: #F7F4ED; /* exact culoarea de fundal a videoului — secțiune fără margini vizibile */
-    overflow: hidden;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-  }
-  .morph-media {
-    max-width: 1760px;
-    margin: 0 auto;
-  }
-  .morph-video {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-  .morph-overlay {
-    position: absolute;
-    top: clamp(24px, 5.5vw, 80px);
-    left: 0;
-    right: 0;
-    z-index: 2;
-    text-align: center;
-    padding: 0 24px;
-    pointer-events: none; /* doar butonul primește click */
-  }
-  .morph-overlay .morph-eyebrow {
-    display: inline-block;
-    background: var(--red-soft);
-    color: var(--red);
-    padding: 5px 14px;
-    border-radius: 100px;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.10em;
-    text-transform: uppercase;
-    margin-bottom: 16px;
-  }
-  .morph-overlay h2 {
-    font-family: var(--serif);
-    font-size: clamp(30px, 4.6vw, 64px);
-    font-weight: 500;
-    color: var(--ink);
-    letter-spacing: -0.025em;
-    line-height: 1.04;
-    margin: 0 0 14px;
-  }
-  .morph-overlay h2 em {
-    font-style: italic;
-    color: var(--red);
-    font-weight: 400;
-  }
-  .morph-overlay .morph-sub {
-    font-size: clamp(13.5px, 1.3vw, 16px);
-    color: var(--gray);
-    line-height: 1.55;
-    max-width: 640px;
-    margin: 0 auto 22px;
-  }
-  .morph-overlay .morph-cta {
-    pointer-events: auto;
-  }
-  @media (max-width: 1080px) {
-    /* Sub 1080px textul stă deasupra videoului, nu suprapus (ar acoperi casa) */
-    .morph-overlay {
-      position: static;
-      padding: 48px 20px 8px;
-    }
-    .morph-media { margin-top: -3vw; }
-  }
-</style>
-<section class="morph-section" id="morph">
-  <div class="morph-overlay">
-    <span class="morph-eyebrow reveal">Un seul système</span>
-    <h2 class="reveal">Une maison. Un immeuble.<br><em>Les mêmes panneaux.</em></h2>
-    <p class="morph-sub reveal">Plain-pied, villa à étage ou petit collectif — MBK, PBK et TBK s'assemblent dans n'importe quelle architecture. Vous imaginez, le système suit.</p>
-    <a href="devis/" class="btn btn-red morph-cta reveal">Demander un devis →</a>
-  </div>
-  <div class="morph-media">
-    <video id="morphVideo" class="morph-video" autoplay muted loop playsinline preload="metadata"
-           poster="images/morph/morph-poster.jpg"
-           aria-label="Le système Polistibrick se reconfigure : maison de plain-pied, villa à étage, petit immeuble collectif">
-      <source src="images/morph/morphing-polistibrick.mp4" type="video/mp4">
-    </video>
   </div>
 </section>
 
