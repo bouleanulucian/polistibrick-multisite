@@ -3324,6 +3324,11 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     margin-bottom: 26px;
   }
   .hero--photo h1 em { color: #FFD9DE; } /* italic alb-rozat cald — accent subtil */
+  /* Rândul 2 decalat — "Un système." începe sub "maison" */
+  .hero--photo h1 .h1-l2 {
+    display: inline-block;
+    padding-left: 1.78em; /* lățimea lui "Une " — scalează cu fontul */
+  }
   .hero--photo .hero-actions { margin-bottom: 0; }
   .hero--photo .btn-ghost {
     color: #FFFFFF;
@@ -3368,7 +3373,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   <div class="container">
     <div class="hero-text-col">
       <img class="hero-robot reveal" src="images/robot.png" alt="Polistibrick — Construction intelligente" fetchpriority="high">
-      <h1 class="reveal">Une maison. Un système.</h1>
+      <h1 class="reveal">Une maison.<br><span class="h1-l2">Un système.</span></h1>
       <div class="hero-actions reveal">
         <a href="devis/" class="btn btn-red btn-large">Demander un devis →</a>
         <a href="calculateur/" class="btn btn-ghost btn-large">Calculez le coût de la maison</a>
