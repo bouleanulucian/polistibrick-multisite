@@ -2577,11 +2577,10 @@
     transform: none;
   }
 
-  /* Hero entrance — intrare eșalonată la încărcare (eyebrow → titlu → sub → CTA) */
-  .hero h1.reveal           { transition-delay: 0.10s; }
-  .hero .hero-sub.reveal    { transition-delay: 0.22s; }
-  .hero .hero-actions.reveal{ transition-delay: 0.34s; }
-  .hero-image-col .reveal   { transition-delay: 0.30s; }
+  /* Hero entrance — intrare eșalonată la încărcare (robot → titlu → CTA) */
+  .hero .hero-robot.reveal  { transition-delay: 0s; }
+  .hero h1.reveal           { transition-delay: 0.14s; }
+  .hero .hero-actions.reveal{ transition-delay: 0.28s; }
 
   /* Stagger pe carduri în interiorul secțiunilor — DOAR opacity
      (fără transform pe copii → zero conflict cu hover-urile lor) */
@@ -3335,18 +3334,12 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     background: rgba(255, 255, 255, 0.18);
     border-color: #FFFFFF;
   }
-  /* Robotul — absolut, jos-dreapta, ancorat de marginea secțiunii */
-  .hero--photo .hero-image-col {
-    position: absolute;
-    right: clamp(24px, 4vw, 72px);
-    bottom: 0;
-    z-index: 1;
-  }
-  .hero--photo .hero-image-col .mobile-product {
-    max-width: clamp(220px, 24vw, 360px);
-    margin: 0;
+  /* Robotul — în stânga, deasupra titlului. Dreapta rămâne liberă, aerisită. */
+  .hero--photo .hero-robot {
     display: block;
-    filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.45));
+    max-width: clamp(180px, 19vw, 270px);
+    margin: 0 0 20px;
+    filter: drop-shadow(0 24px 44px rgba(0, 0, 0, 0.45));
   }
   /* Reduced motion / fallback: doar prima imagine, fixă */
   @media (prefers-reduced-motion: reduce) {
@@ -3362,9 +3355,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     .hero--photo .container { padding-bottom: 36px; }
     .hero--photo .hero-text-col { max-width: 100%; }
     .hero--photo h1 { font-size: clamp(34px, 8.5vw, 52px); }
-    /* Robotul discret în colț, să nu acopere textul */
-    .hero--photo .hero-image-col { right: 8px; opacity: 0.92; }
-    .hero--photo .hero-image-col .mobile-product { max-width: 132px; }
+    .hero--photo .hero-robot { max-width: 132px; margin-bottom: 14px; }
   }
 </style>
 <section class="hero hero--photo">
@@ -3376,14 +3367,12 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   </div>
   <div class="container">
     <div class="hero-text-col">
+      <img class="hero-robot reveal" src="images/robot.png" alt="Polistibrick — Construction intelligente" fetchpriority="high">
       <h1 class="reveal">Une maison. Un système.</h1>
       <div class="hero-actions reveal">
         <a href="devis/" class="btn btn-red btn-large">Demander un devis →</a>
         <a href="calculateur/" class="btn btn-ghost btn-large">Calculez le coût de la maison</a>
       </div>
-    </div>
-    <div class="hero-image-col">
-      <img class="mobile-product reveal" src="images/robot.png" alt="Polistibrick — Construction intelligente" loading="lazy">
     </div>
   </div>
 </section>
