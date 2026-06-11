@@ -1,0 +1,6 @@
+build/
+countries/
+shared/
+translations/
+.DS_Store
+*" 2"*
