@@ -3272,34 +3272,21 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     overflow: hidden;
     z-index: 0;
   }
-  .hero-bg img {
+  .hero-bg video {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
-    opacity: 0;
-    animation: heroCycle 21s ease-in-out infinite;
-  }
-  .hero-bg img:nth-child(1) { animation-delay: 0s; }
-  .hero-bg img:nth-child(2) { animation-delay: 7s; }
-  .hero-bg img:nth-child(3) { animation-delay: 14s; }
-  /* 21s ciclu, 3 imagini × 7s. Crossfade lent de ~1.5s — calm, premium. */
-  @keyframes heroCycle {
-    0%      { opacity: 0; }
-    7%      { opacity: 1; }
-    33.33%  { opacity: 1; }
-    40.33%  { opacity: 0; }
-    100%    { opacity: 0; }
   }
   /* Scrim pentru lizibilitate: întunecat în stânga (text) + jos, transparent în rest */
+  /* Scrim NATURAL — doar o ancoră discretă jos pentru text, fără filtru negru.
+     Imaginea rămâne curată ca la zuru; lizibilitatea vine din text-shadow. */
   .hero-bg-scrim {
     position: absolute;
     inset: 0;
-    background:
-      linear-gradient(100deg, rgba(12, 10, 8, 0.66) 0%, rgba(12, 10, 8, 0.38) 42%, rgba(12, 10, 8, 0.10) 68%, rgba(12, 10, 8, 0) 100%),
-      linear-gradient(0deg, rgba(12, 10, 8, 0.35) 0%, rgba(12, 10, 8, 0) 30%);
+    background: linear-gradient(0deg, rgba(8, 7, 6, 0.40) 0%, rgba(8, 7, 6, 0.14) 22%, rgba(8, 7, 6, 0) 40%);
   }
   .hero--photo .container { position: relative; z-index: 1; }
 
@@ -3322,6 +3309,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     /* calibrat să stea pe 2 rânduri ca la zuru, nu 4 */
     font-size: clamp(40px, 5vw, 72px);
     margin-bottom: 26px;
+    text-shadow: 0 2px 30px rgba(0, 0, 0, 0.45), 0 1px 4px rgba(0, 0, 0, 0.30);
   }
   .hero--photo h1 em { color: #FFD9DE; } /* italic alb-rozat cald — accent subtil */
   /* Rândul 2 decalat — "Un système." începe sub "maison" */
@@ -3347,10 +3335,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     filter: drop-shadow(0 24px 44px rgba(0, 0, 0, 0.45));
   }
   /* Reduced motion / fallback: doar prima imagine, fixă */
-  @media (prefers-reduced-motion: reduce) {
-    .hero-bg img { animation: none !important; }
-    .hero-bg img:nth-child(1) { opacity: 1 !important; }
-  }
+  /* Reduced motion: JS oprește videoul; posterul rămâne. */
   @media (max-width: 968px) {
     /* Pe mobil scrim mai uniform — textul e pe toată lățimea */
     .hero-bg-scrim {
@@ -3365,9 +3350,10 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
 </style>
 <section class="hero hero--photo">
   <div class="hero-bg" aria-hidden="true">
-    <img src="images/hero/hero-house-1.jpg" alt="" fetchpriority="high">
-    <img src="images/hero/hero-house-2.jpg" alt="" loading="lazy">
-    <img src="images/hero/hero-house-3.jpg" alt="" loading="lazy">
+    <video id="heroVideo" autoplay muted loop playsinline preload="auto"
+           poster="images/hero/hero-house-1.jpg">
+      <source src="images/hero/hero-houses-reel.mp4" type="video/mp4">
+    </video>
     <div class="hero-bg-scrim"></div>
   </div>
   <div class="container">
@@ -5259,8 +5245,8 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   onScroll();
 
   // === MORPH video: redă doar când e vizibil; static pentru reduced-motion ===
-  (function() {
-    const v = document.getElementById('morphVideo');
+  ['morphVideo', 'heroVideo'].forEach((id) => {
+    const v = document.getElementById(id);
     if (!v) return;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       v.removeAttribute('autoplay');
@@ -5276,7 +5262,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
       }, { threshold: 0.1 });
       vio.observe(v);
     }
-  })();
+  });
 
   // === POLYSTYRENE BEADS — a panel of EPS grain that reacts to the cursor ===
   // White polystyrene-bead texture covering the full viewport. Each bead is
