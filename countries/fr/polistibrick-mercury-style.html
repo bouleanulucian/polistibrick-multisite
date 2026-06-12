@@ -3528,7 +3528,10 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
      tăiat jumătate-jumătate pe muchie — pattern-ul Présence/Comparaison */
   .personas-wrap {
     position: relative;
-    margin-top: 0; /* lipit de video-ul morph — POUR taie exact muchia dintre ele */
+    z-index: 2;
+    /* Ridicat peste podeaua goală din cadrul video (max sigur: la scena cu
+       turnul conținutul coboară până la 88% din cadru → overlap ≤ 6vw) */
+    margin-top: clamp(-130px, -6vw, -40px);
   }
   .personas-watermark {
     position: absolute;
