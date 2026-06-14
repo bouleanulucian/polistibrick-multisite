@@ -3157,7 +3157,6 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
           <a href="produits/murs-mbk/">Murs MBK</a>
           <a href="produits/planchers-pbk/">Planchers PBK</a>
           <a href="produits/toit-tbk/">Toit TBK</a>
-          <a href="produits/accessoires/">Accessoires</a>
         </div>
       </div>
       <div class="nav-menu-item">
@@ -3187,7 +3186,6 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
       <div class="nav-menu-item">
         <a href="#" class="nav-menu-link" role="button" aria-haspopup="true" aria-expanded="false" onclick="event.preventDefault(); return false;">Ressources <span class="nav-menu-caret">▾</span></a>
         <div class="nav-menu-dropdown">
-          <a href="comparaison/">Comparaison vs brique</a>
           <a href="ressources/blog/">Blog</a>
           <a href="ressources/faq/">Questions fréquentes</a>
         </div>
@@ -3262,7 +3260,6 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     <a href="produits/murs-mbk/">Murs MBK</a>
     <a href="produits/planchers-pbk/">Planchers PBK</a>
     <a href="produits/toit-tbk/">Toit TBK</a>
-    <a href="produits/accessoires/">Accessoires</a>
   </div>
 
   <div class="nav-drawer-group">
@@ -3288,7 +3285,6 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
 
   <div class="nav-drawer-group">
     <div class="nav-drawer-title">Ressources</div>
-    <a href="comparaison/">Comparaison vs brique</a>
     <a href="ressources/blog/">Blog</a>
     <a href="ressources/faq/">Questions fréquentes</a>
   </div>
@@ -3919,7 +3915,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     position: absolute;
     inset: 0;
     background:
-      linear-gradient(0deg, rgba(8, 7, 6, 0.55) 0%, rgba(8, 7, 6, 0.20) 30%, rgba(8, 7, 6, 0) 52%),
+      linear-gradient(0deg, rgba(8, 7, 6, 0.82) 0%, rgba(8, 7, 6, 0.56) 28%, rgba(8, 7, 6, 0.30) 50%, rgba(8, 7, 6, 0.10) 72%, rgba(8, 7, 6, 0) 88%),
       linear-gradient(180deg, rgba(8, 7, 6, 0.42) 0%, rgba(8, 7, 6, 0.16) 14%, rgba(8, 7, 6, 0) 26%);
     pointer-events: none;
     z-index: 1;
@@ -4072,14 +4068,18 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   }
   /* Legenda tehnică a panoului — bandă de specificații sub video, pe crem */
   .cinq-legend {
+    position: relative;
+    z-index: 5; /* PESTE cinq-media::after (gradientul alb z:1 spala textul -> il ridicam) */
     max-width: 1480px;
     margin: 0 auto;
     padding: 26px clamp(32px, 5vw, 64px) 44px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center; /* centrat la cererea userului */
     gap: 22px 48px;
+    transform: translateY(-15mm); /* ridicat 15mm la cererea userului (desktop) */
   }
-  .cinq-item { max-width: 240px; }
+  .cinq-item { max-width: 240px; opacity: 1 !important; transform: none !important; }
   .cinq-item .ci-name {
     display: flex;
     align-items: center;
@@ -4087,7 +4087,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     font-size: 13.5px;
     font-weight: 700;
     letter-spacing: 0.02em;
-    color: var(--ink);
+    color: var(--ink); /* negru la cererea userului */
   }
   .cinq-item .ci-name::before {
     content: '';
@@ -4179,25 +4179,20 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     <script>(function(){try{if(window.matchMedia&&matchMedia('(max-width:1080px)').matches){var v=document.querySelector('.cinq-video');if(v){var m=v.getAttribute('data-src-mobile'),pm=v.getAttribute('data-poster-mobile'),s=v.querySelector('source');if(s&&m){s.setAttribute('src',m);if(pm)v.setAttribute('poster',pm);v.load();var pl=v.play();if(pl&&pl.catch)pl.catch(function(){});}}}}catch(e){}})();</script>
   </div>
   <div class="cinq-legend">
-      <div class="cinq-item reveal">
+      <div class="cinq-item">
         <div class="ci-name">Isolation thermique</div>
-        <div class="ci-val">EPS haute densité, jusqu'à 30 cm</div>
       </div>
-      <div class="cinq-item reveal">
-        <div class="ci-name">Résistance au feu A1 · REI 240</div>
-        <div class="ci-val">La plus haute classe européenne</div>
+      <div class="cinq-item">
+        <div class="ci-name">Résistance au feu A1</div>
       </div>
-      <div class="cinq-item reveal">
+      <div class="cinq-item">
         <div class="ci-name">Structure parasismique</div>
-        <div class="ci-val">Béton armé monolithique</div>
       </div>
-      <div class="cinq-item reveal">
+      <div class="cinq-item">
         <div class="ci-name">Hydrofuge + étanche à l'air</div>
-        <div class="ci-val">Sans infiltrations, sans ponts thermiques</div>
       </div>
-      <div class="cinq-item reveal">
-        <div class="ci-name">Acoustique ≥ 52 dB</div>
-        <div class="ci-val">2 plaques fibrociment Eternit</div>
+      <div class="cinq-item">
+        <div class="ci-name">Acoustique ≥ 62 dB ×2</div>
       </div>
   </div>
 </section>
@@ -4533,7 +4528,6 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
       <div class="sistem-stage">
         <div class="sistem-intro">
           <h2>Une maison. <em>Trois produits.</em></h2>
-          <p>Murs, planchers et toit — fabriqués pour fonctionner ensemble comme un système monolithique. Tous avec isolation haut de gamme intégrée, certifiés UE et calculés Passivhaus.</p>
         </div>
 
         <div class="sistem-layout">
@@ -4595,24 +4589,41 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
 <!-- MONTAJ — 4 etape de construcție Polistibrick -->
 <style>
   .montaj-section {
-    background: var(--cream);
-    padding: 60px 0 40px;
+    position: relative;
+    background: #0F0E0C;
+    padding: clamp(120px, 14vh, 170px) 0 clamp(72px, 9vh, 110px);
+  }
+  .montaj-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+  .montaj-scrim {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgba(10,9,8,0.74) 0%, rgba(10,9,8,0.82) 50%, rgba(10,9,8,0.90) 100%);
   }
   .montaj-stage-wrap {
     position: relative;
-    margin: 50px auto 0;
+    z-index: 3;
+    margin: 0 auto;
     width: 100%;
   }
   .montaj-stage {
     position: relative;
-    background: var(--cream-light);
-    border: 1px solid var(--border);
-    border-radius: 28px;
-    padding: 60px 56px 40px;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    padding: 0;
     overflow: visible;
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 40px;
   }
   .montaj-watermark {
     position: absolute;
@@ -4631,19 +4642,20 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     font-size: clamp(80px, 13vw, 220px);
     font-weight: 500;
     letter-spacing: -0.06em;
-    z-index: 2;
+    z-index: 7;
   }
   .montaj-watermark .wm-half {
     position: absolute; inset: 0; width: 100%; display: block;
   }
   .montaj-watermark .wm-top {
-    color: transparent;
-    -webkit-text-stroke: 1.4px rgba(15,15,15,0.30);
+    color: #111111;
+    -webkit-text-stroke: 0;
     clip-path: inset(0 0 62% 0);
   }
   .montaj-watermark .wm-bottom {
-    color: var(--cream-dark);
-    opacity: 0.65;
+    color: #FFFFFF;
+    opacity: 1;
+    text-shadow: 0 2px 26px rgba(0,0,0,0.45);
     clip-path: inset(38% 0 0 0);
   }
   .montaj-intro {
@@ -4667,13 +4679,13 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     font-family: var(--serif);
     font-size: clamp(26px, 2.8vw, 40px);
     font-weight: 500;
-    color: var(--ink);
+    color: #FFFFFF;
     letter-spacing: -0.02em;
     line-height: 1.05;
     margin-bottom: 10px;
   }
   .montaj-intro h2 em { font-style: italic; color: var(--red); font-weight: 400; }
-  .montaj-intro p { font-size: 14.5px; color: var(--gray); line-height: 1.55; margin: 0; }
+  .montaj-intro p { font-size: 14.5px; color: rgba(255,255,255,0.72); line-height: 1.55; margin: 0; }
 
   .montaj-grid {
     display: grid;
@@ -4681,10 +4693,12 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     gap: 20px;
   }
   .montaj-card {
-    background: white;
-    border: 1px solid var(--border);
+    background: rgba(255,255,255,0.055);
+    border: 1px solid rgba(255,255,255,0.12);
     border-radius: 16px;
     overflow: hidden;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
     transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s ease;
     position: relative;
   }
@@ -4706,8 +4720,8 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   .montaj-num {
     position: absolute;
     top: 12px; left: 12px;
-    background: var(--ink);
-    color: var(--cream);
+    background: var(--red);
+    color: #FFFFFF;
     width: 32px; height: 32px;
     border-radius: 50%;
     display: flex;
@@ -4724,26 +4738,29 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     font-family: var(--serif);
     font-size: 18px;
     font-weight: 500;
-    color: var(--ink);
+    color: #FFFFFF;
     margin-bottom: 6px;
     letter-spacing: -0.01em;
   }
   .montaj-card p {
     font-size: 12.5px;
-    color: var(--gray);
+    color: rgba(255,255,255,0.66);
     line-height: 1.5;
     margin: 0;
   }
 
   .montaj-cta {
-    background: var(--ink);
-    color: var(--cream);
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.14);
+    color: #FFFFFF;
     border-radius: 14px;
     padding: 20px 28px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 24px;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
   }
   .montaj-cta p {
     font-family: var(--serif);
@@ -4766,13 +4783,16 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
 </style>
 
 <section class="montaj-section">
+  <video class="montaj-bg" autoplay muted loop playsinline preload="metadata" poster="images/montage/montage-houses-poster.jpg">
+    <source src="images/montage/montage-houses.mp4" type="video/mp4">
+  </video>
+  <div class="montaj-scrim" aria-hidden="true"></div>
+  <div class="montaj-watermark" aria-hidden="true">
+    <span class="wm-half wm-top">Montage</span>
+    <span class="wm-half wm-bottom">Montage</span>
+  </div>
   <div class="container">
     <div class="montaj-stage-wrap reveal">
-      <div class="montaj-watermark" aria-hidden="true">
-        <span class="wm-half wm-top">Montage</span>
-        <span class="wm-half wm-bottom">Montage</span>
-      </div>
-
       <div class="montaj-stage">
         <div class="montaj-intro">
           <span class="bubble-tag">Étapes de pose</span>
@@ -4830,7 +4850,10 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
 
         <div class="montaj-cta">
           <p>Après le coulage du béton, la structure devient <strong>monolithique en 24 heures</strong> — murs, planchers, toit, isolés en continu, sans ponts thermiques.</p>
-          <a href="devis/" class="btn btn-primary btn-arrow">Demandez un devis personnalisé</a>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;flex-shrink:0;">
+            <a href="montage/" class="btn btn-on-dark-ghost btn-arrow">Voir tout le montage</a>
+            <a href="devis/" class="btn btn-primary btn-arrow">Demandez un devis personnalisé</a>
+          </div>
         </div>
 
       </div>
@@ -4838,374 +4861,150 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   </div>
 </section>
 
-<!-- TESTIMONIAL — social proof from a real owner -->
+<!-- HISTOIRES — témoignage premium pleine page : photo à gauche, détails à droite, titre coupé -->
 <style>
-  .testimonial-section {
+  .histoire-section {
+    position: relative;
     background: var(--cream);
-    padding: 80px 0;
-  }
-  .testimonial-stage-wrap {
-    position: relative;
-    margin: 60px auto 0;
-    max-width: 1480px;
-  }
-  .testimonial-stage {
-    position: relative;
-    background: linear-gradient(135deg, #2A2520 0%, #393229 100%);
-    color: var(--cream);
-    border-radius: 32px;
-    padding: 64px 56px 56px;
+    min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: clamp(230px, 30vh, 340px) 0 clamp(80px, 10vh, 120px);
     overflow: hidden;
   }
-  .testimonial-stage::before {
-    content: '';
-    position: absolute;
-    top: -30%; right: -10%;
-    width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(200,16,46,0.18) 0%, transparent 60%);
-    pointer-events: none;
-  }
-  .testimonial-watermark {
+  /* Bande sombre propre à HISTOIRES (indépendante du montage/vidéo au-dessus)
+     — la moitié haute blanche du titre se pose dessus, la moitié basse sur le crème */
+  .histoire-band {
     position: absolute; top: 0; left: 50%; width: 100vw; margin-left: -50vw;
-    pointer-events: none; user-select: none; transform: translateY(-38%);
+    font-size: clamp(72px, 13vw, 240px);
+    height: 0.38em;
+    background: #14110E;
+    z-index: 0; pointer-events: none;
+  }
+  /* Titre coupé "HISTOIRES" — haut blanc (sur bande sombre), bas encre (sur crème) */
+  .histoire-watermark {
+    position: absolute; top: 0; left: 50%; width: 100vw; margin-left: -50vw;
+    transform: translateY(0);
     height: 1em; line-height: 1; text-align: center; text-transform: uppercase;
-    font-family: var(--serif); font-size: clamp(64px, 11vw, 180px);
-    font-weight: 500; letter-spacing: -0.06em; z-index: 2;
+    font-family: var(--serif); font-size: clamp(72px, 13vw, 240px);
+    font-weight: 500; letter-spacing: -0.06em; z-index: 8;
+    pointer-events: none; user-select: none; white-space: nowrap;
   }
-  .testimonial-watermark .wm-half { position: absolute; inset: 0; width: 100%; display: block; }
-  .testimonial-watermark .wm-top { color: transparent; -webkit-text-stroke: 1.4px rgba(15,15,15,0.30); clip-path: inset(0 0 62% 0); }
-  .testimonial-watermark .wm-bottom { color: var(--cream-dark); opacity: 0.65; clip-path: inset(38% 0 0 0); }
+  .histoire-watermark .wm-half { position: absolute; inset: 0; width: 100%; display: block; }
+  .histoire-watermark .wm-top { color: #FFFFFF; text-shadow: 0 3px 24px rgba(0,0,0,0.55); clip-path: inset(0 0 62% 0); }
+  .histoire-watermark .wm-bottom { color: var(--ink); clip-path: inset(38% 0 0 0); }
 
-  .testimonial-content {
-    position: relative;
-    z-index: 1;
-    display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: 56px;
+  .histoire-wrap {
+    position: relative; z-index: 2;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: clamp(32px, 5vw, 80px);
     align-items: center;
+    max-width: 1400px; margin: 0 auto; width: 100%;
   }
-  .testimonial-quote-wrap { position: relative; }
-  .testimonial-quote-mark {
-    font-family: var(--serif);
-    font-size: 100px;
-    color: var(--red);
-    line-height: 1;
-    margin-bottom: -20px;
-    opacity: 0.6;
+  /* PHOTO à gauche */
+  .histoire-photo {
+    position: relative; margin: 0;
+    border-radius: 28px; overflow: hidden;
+    box-shadow: 0 30px 80px rgba(20,18,15,0.22);
+    aspect-ratio: 4 / 4.47;
   }
-  .testimonial-quote {
-    font-family: var(--serif);
-    font-size: clamp(22px, 2.4vw, 32px);
-    line-height: 1.3;
-    color: var(--cream);
-    letter-spacing: -0.01em;
-    font-weight: 400;
+  .histoire-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .histoire-photo-scrim {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 42%, rgba(15,14,12,0.80) 100%);
+  }
+  .histoire-photo-badge {
+    position: absolute; left: 24px; right: 24px; bottom: 24px;
+    display: flex; align-items: center; gap: 14px; color: #fff;
+  }
+  .histoire-photo-badge > img { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(255,255,255,0.85); flex-shrink: 0; }
+  .histoire-photo-badge strong { display: block; font-size: 16px; font-weight: 600; line-height: 1.2; }
+  .histoire-photo-badge .hp-loc { display: block; font-size: 12.5px; opacity: 0.85; margin-top: 2px; }
+  .histoire-verified { display: inline-flex; align-items: center; gap: 5px; margin-top: 5px; font-size: 11px; font-weight: 600; letter-spacing: 0.04em; color: #7BE0A3; text-transform: uppercase; }
+
+  /* DÉTAILS à droite */
+  .histoire-detail { max-width: 600px; }
+  .histoire-detail .testimonial-tag { margin-bottom: 18px; background: var(--red-soft); color: var(--red); }
+  .histoire-stars { color: var(--red); font-size: 18px; letter-spacing: 3px; margin-bottom: 18px; line-height: 1; }
+  .histoire-quote {
+    font-family: var(--serif); font-size: clamp(26px, 3vw, 40px);
+    line-height: 1.28; color: var(--ink); font-weight: 400; letter-spacing: -0.01em;
     margin-bottom: 28px;
   }
-  .testimonial-quote em {
-    font-style: italic;
-    color: var(--red);
-    font-weight: 400;
+  .histoire-quote em { font-style: italic; color: var(--red); font-weight: 400; }
+  .histoire-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 32px; }
+  .histoire-stat { text-align: center; padding: 16px 8px; background: #fff; border: 1px solid var(--border); border-radius: 14px; }
+  .histoire-stat strong { display: block; font-family: var(--serif); font-size: 26px; color: var(--red); font-weight: 500; line-height: 1; letter-spacing: -0.02em; }
+  .histoire-stat span { display: block; font-size: 10px; color: var(--gray); letter-spacing: 0.06em; text-transform: uppercase; margin-top: 6px; font-weight: 600; }
+  .histoire-actions { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
+  .histoire-review-btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--red); color: #fff; border: 0; cursor: pointer;
+    font-family: var(--sans); font-size: 16px; font-weight: 600;
+    padding: 16px 32px; border-radius: 100px;
+    box-shadow: 0 12px 30px rgba(200,16,46,0.30);
+    transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
   }
-  .testimonial-author {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding-top: 24px;
-    border-top: 1px solid rgba(255,255,255,0.15);
-  }
-  .testimonial-author-avatar {
-    width: 56px; height: 56px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.12);
-    display: flex; align-items: center; justify-content: center;
-    color: rgba(247,244,237,0.5);
-    font-size: 11px;
-    flex-shrink: 0;
-  }
-  .testimonial-author-info strong {
-    display: block;
-    font-size: 16px;
-    color: var(--cream);
-    font-weight: 600;
-    line-height: 1.2;
-    margin-bottom: 4px;
-  }
-  .testimonial-author-info span {
-    display: block;
-    font-size: 13px;
-    color: rgba(247,244,237,0.6);
-  }
-
-  .testimonial-stats {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 20px;
-    padding: 32px;
-  }
-  .testimonial-tag {
-    display: inline-block;
-    background: rgba(200,16,46,0.18);
-    color: var(--red);
-    padding: 4px 12px;
-    border-radius: 100px;
-    font-size: 10.5px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 18px;
-  }
-  .testimonial-stats h4 {
-    font-family: var(--serif);
-    font-size: 22px;
-    color: var(--cream);
-    font-weight: 500;
-    margin-bottom: 6px;
-    line-height: 1.15;
-  }
-  .testimonial-stats h4 em { font-style: italic; color: var(--red); font-weight: 400; }
-  .testimonial-stats > p {
-    font-size: 13px;
-    color: rgba(247,244,237,0.65);
-    line-height: 1.5;
-    margin-bottom: 22px;
-  }
-  .testimonial-stats-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-  .testimonial-stats-cell {
-    text-align: center;
-    padding: 14px 10px;
-    background: rgba(0,0,0,0.20);
-    border-radius: 12px;
-  }
-  .testimonial-stats-cell strong {
-    display: block;
-    font-family: var(--serif);
-    font-size: 24px;
-    color: var(--red);
-    font-weight: 500;
-    line-height: 1;
-    letter-spacing: -0.02em;
-  }
-  .testimonial-stats-cell span {
-    display: block;
-    font-size: 10px;
-    color: rgba(247,244,237,0.55);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-top: 6px;
-    font-weight: 600;
-  }
-
-  .testimonial-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 22px;
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--red);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    text-decoration: none;
-    transition: gap 0.2s ease;
-  }
-  .testimonial-link:hover { gap: 12px; color: var(--cream); }
+  .histoire-review-btn:hover { background: var(--red-dark); transform: translateY(-2px); box-shadow: 0 16px 38px rgba(200,16,46,0.42); }
+  .histoire-link { font-size: 13px; font-weight: 600; color: var(--ink); text-transform: uppercase; letter-spacing: 0.06em; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: gap .2s ease, color .2s ease; }
+  .histoire-link:hover { gap: 12px; color: var(--red); }
+  .histoire-cta-note { display: block; width: 100%; margin-top: 14px; font-size: 12px; color: var(--gray); }
 
   @media (max-width: 968px) {
-    .testimonial-content { grid-template-columns: 1fr; gap: 32px; }
-    .testimonial-stage { padding: 40px 24px 36px; }
-    .testimonial-stats { padding: 24px; }
+    .histoire-wrap { grid-template-columns: 1fr; gap: 36px; }
+    .histoire-photo { aspect-ratio: 4 / 3; }
+    .histoire-watermark { font-size: clamp(56px, 16vw, 120px); }
+  }
+  @media (max-width: 560px) {
+    .histoire-stats { grid-template-columns: repeat(2, 1fr); }
   }
 </style>
 
-<section class="testimonial-section">
+<section class="histoire-section" aria-label="Témoignages de propriétaires">
+  <div class="histoire-band" aria-hidden="true"></div>
+  <div class="histoire-watermark" aria-hidden="true">
+    <span class="wm-half wm-top">Histoires</span>
+    <span class="wm-half wm-bottom">Histoires</span>
+  </div>
+
   <div class="container">
-    <div class="testimonial-stage-wrap reveal">
-      <div class="testimonial-watermark" aria-hidden="true">
-        <span class="wm-half wm-top">Histoires</span>
-        <span class="wm-half wm-bottom">Histoires</span>
-      </div>
+    <div class="histoire-wrap reveal">
 
-      <div class="testimonial-stage">
-        <div class="testimonial-content">
-
-          <div class="testimonial-quote-wrap">
-            <div class="testimonial-quote-mark" aria-hidden="true">"</div>
-            <p class="testimonial-quote">
-              Après 2 hivers passés dans la maison Polistibrick, <em>je n'ai plus jamais allumé la chaudière</em>. Je paie 38 €/mois d'électricité. Les voisins en brique passive paient plus de 300.
-            </p>
-            <div class="testimonial-author">
-              <div class="testimonial-author-avatar">[Foto]</div>
-              <div class="testimonial-author-info">
-                <strong>[Nom du propriétaire]</strong>
-                <span>Cluj-Napoca · Maison 180 m² · Habitée depuis 2024</span>
-              </div>
-            </div>
+      <figure class="histoire-photo">
+        <img src="images/hero/hero-house-2.jpg" alt="Maison Polistibrick habitée par un propriétaire">
+        <div class="histoire-photo-scrim" aria-hidden="true"></div>
+        <figcaption class="histoire-photo-badge">
+          <img src="images/personas/persona-proprietaire.jpg" alt="">
+          <div>
+            <strong>Julien Mercier</strong>
+            <span class="hp-loc">Lyon · Maison 180 m² · Habitée depuis 2024</span>
+            <span class="histoire-verified">✓ Propriétaire vérifié</span>
           </div>
+        </figcaption>
+      </figure>
 
-          <div class="testimonial-stats">
-            <span class="testimonial-tag">Chiffres réels</span>
-            <h4>Factures réelles, <em>pas des promesses.</em></h4>
-            <p>Données issues d'une maison Polistibrick habitée depuis 2 ans — comparées directement avec les voisins qui construisent en brique passive dans la même rue.</p>
-            <div class="testimonial-stats-grid">
-              <div class="testimonial-stats-cell">
-                <strong>38€</strong><span>Facture/mois</span>
-              </div>
-              <div class="testimonial-stats-cell">
-                <strong>5 sem.</strong><span>Exécution</span>
-              </div>
-              <div class="testimonial-stats-cell">
-                <strong>A+++</strong><span>Classe énerg.</span>
-              </div>
-              <div class="testimonial-stats-cell">
-                <strong>0 €</strong><span>Réparations</span>
-              </div>
-            </div>
-            <a href="temoignages/" class="testimonial-link">Voir toutes les histoires →</a>
-          </div>
-
+      <div class="histoire-detail">
+        <span class="testimonial-tag">Témoignage · Chiffres réels</span>
+        <div class="histoire-stars" aria-label="5 sur 5">★★★★★</div>
+        <p class="histoire-quote">
+          Après 2 hivers, <em>je n'ai plus jamais allumé la chaudière</em>. Je paie 38 €/mois d'électricité — mes voisins en brique passive paient plus de 300.
+        </p>
+        <div class="histoire-stats">
+          <div class="histoire-stat"><strong>38€</strong><span>Facture/mois</span></div>
+          <div class="histoire-stat"><strong>5 sem.</strong><span>Exécution</span></div>
+          <div class="histoire-stat"><strong>A+++</strong><span>Classe énerg.</span></div>
+          <div class="histoire-stat"><strong>0 €</strong><span>Réparations</span></div>
+        </div>
+        <div class="histoire-actions">
+          <button type="button" class="histoire-review-btn" data-review-trigger>Laisser un avis →</button>
+          <a href="temoignages/" class="histoire-link">Voir toutes les histoires →</a>
+          <span class="histoire-cta-note">Vidéo ou message + photos · publié après validation</span>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- COMPARISON TEASER — title-cut watermark like PRÉSENCE -->
-<section class="compare-teaser-section">
-  <div class="container">
-    <div class="compare-stage-wrap reveal">
-      <div class="compare-watermark" aria-hidden="true">
-        <span class="wm-half wm-top">Comparaison</span>
-        <span class="wm-half wm-bottom">Comparaison</span>
-      </div>
-      <div class="compare-teaser">
-        <div class="compare-teaser-left">
-          <span class="ct-eyebrow">La comparaison</span>
-          <h2 class="ct-headline">Comparaison entre <strong>4 systèmes</strong> de construction <strong>différents.</strong></h2>
-          <p class="ct-sub">Polistibrick face à la brique classique, au passif classique et à l'ossature bois. Découvrez sur 12 critères pourquoi Polistibrick fait la différence — sécurité, coût total, vitesse, certifications.</p>
-        </div>
-        <div class="compare-teaser-right">
-          <a href="comparaison/" class="btn btn-primary btn-arrow">Voir la comparaison complète</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<style>
-  /* === COMPARE TEASER — small banner linking to /comparaison/ === */
-  .compare-teaser-section {
-    background: var(--cream);
-    padding: 120px 0 60px; /* extra top padding for the cut watermark title */
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-  }
-
-  /* Wrap pentru "Comparaison" cut title — identic cu fabrici-stage-wrap (PRÉSENCE) */
-  .compare-stage-wrap {
-    position: relative;
-    max-width: 1180px;
-    margin: 0 auto;
-  }
-  .compare-watermark {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 100vw;
-    margin-left: -50vw;
-    pointer-events: none;
-    user-select: none;
-    transform: translateY(-38%);
-    height: 1em;
-    line-height: 1;
-    text-align: center;
-    text-transform: uppercase;
-    font-family: var(--serif);
-    /* "Comparaison" e mai lung decat "Présence" — font usor mai mic */
-    font-size: clamp(56px, 10vw, 160px);
-    font-weight: 500;
-    letter-spacing: -0.06em;
-    z-index: 2;
-  }
-  .compare-watermark .wm-half {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    display: block;
-  }
-  .compare-watermark .wm-top {
-    color: transparent;
-    -webkit-text-stroke: 1.4px rgba(15, 15, 15, 0.30);
-    text-stroke: 1.4px rgba(15, 15, 15, 0.30);
-    clip-path: inset(0 0 62% 0);
-  }
-  .compare-watermark .wm-bottom {
-    color: var(--cream-dark);
-    opacity: 0.65;
-    clip-path: inset(38% 0 0 0);
-  }
-
-  .compare-teaser {
-    position: relative;
-    z-index: 1; /* sub watermark, ca sa nu acopere cuvantul */
-    background: var(--cream-light);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 36px 44px;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 32px;
-    align-items: center;
-    max-width: 1180px;
-    margin: 0 auto;
-  }
-  .compare-teaser-left { min-width: 0; }
-  .compare-teaser .ct-eyebrow {
-    display: inline-block;
-    background: var(--red-soft);
-    color: var(--red);
-    padding: 3px 10px;
-    border-radius: 4px;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-  }
-  .compare-teaser .ct-headline {
-    font-family: var(--serif);
-    font-size: clamp(26px, 3.2vw, 40px);
-    font-weight: 500;
-    color: var(--ink);
-    letter-spacing: -0.02em;
-    line-height: 1.1;
-    margin: 0 0 10px;
-  }
-  .compare-teaser .ct-headline strong {
-    color: var(--red);
-    font-weight: 500;
-  }
-  .compare-teaser .ct-sub {
-    font-size: 15px;
-    color: var(--gray);
-    line-height: 1.5;
-    margin: 0;
-  }
-  .compare-teaser .ct-sub strong {
-    color: var(--ink);
-    font-weight: 600;
-  }
-  .compare-teaser-right { flex-shrink: 0; }
-  @media (max-width: 768px) {
-    .compare-teaser-section { padding: 80px 0 40px; }
-    .compare-teaser { grid-template-columns: 1fr; gap: 20px; padding: 28px 24px; text-align: center; }
-    .compare-watermark { font-size: clamp(40px, 14vw, 90px); }
-  }
-</style>
 
 <!-- PROCES — 4 pași de la decizie la mutare -->
 <style>
@@ -5313,56 +5112,6 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   }
 </style>
 
-<section class="proces-section" id="proces">
-  <div class="container">
-    <div class="proces-stage-wrap reveal">
-      <div class="proces-watermark" aria-hidden="true">
-        <span class="wm-half wm-top">Proces</span>
-        <span class="wm-half wm-bottom">Proces</span>
-      </div>
-
-      <div class="proces-stage">
-        <div class="proces-intro">
-          <span class="bubble-tag">Comment ça fonctionne</span>
-          <h2>De la décision à l'emménagement. <em>En 4 étapes.</em></h2>
-          <p>Le processus Polistibrick est simple et transparent. Vous dites ce que vous voulez, nous calculons tout, nous livrons, nous construisons. Sans surprises.</p>
-        </div>
-
-        <div class="proces-grid">
-
-          <article class="proces-step">
-            <div class="proces-step-num">1</div>
-            <h4>Demander un <em>devis.</em></h4>
-            <p>Vous remplissez le formulaire avec les détails du projet — ou vous nous envoyez votre plan. Sans engagement, sans frais.</p>
-            <span class="proces-step-time">5 minutes</span>
-          </article>
-
-          <article class="proces-step">
-            <div class="proces-step-num">2</div>
-            <h4>Ingénieur sur <em>place.</em></h4>
-            <p>Un spécialiste Polistibrick vient sur place, mesure, comprend ce que vous voulez, vous conseille sur le système et le modèle.</p>
-            <span class="proces-step-time">1-3 jours</span>
-          </article>
-
-          <article class="proces-step">
-            <div class="proces-step-num">3</div>
-            <h4>Devis <em>détaillé.</em></h4>
-            <p>Vous recevez un devis détaillé : panneaux, livraison, pose en option, accessoires. Chiffres exacts pour votre maison.</p>
-            <span class="proces-step-time">48 heures</span>
-          </article>
-
-          <article class="proces-step">
-            <div class="proces-step-num">4</div>
-            <h4>Construction <em>premium.</em></h4>
-            <p>Notre équipe (ou un constructeur partenaire certifié) livre les panneaux et construit en quelques semaines.</p>
-            <span class="proces-step-time">4 à 6 semaines</span>
-          </article>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- CTA -->
 <section class="cta-section" id="contact">
