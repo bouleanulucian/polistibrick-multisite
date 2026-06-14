@@ -1,197 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Polistibrick · Multi-site preview</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Polistibrick</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="fr/images/logo.png">
 <style>
-  :root {
-    --bg: #0a0a0f;
-    --bg-2: #14141c;
-    --fg: #f5f5f7;
-    --muted: #8b8b9a;
-    --accent: #c4001f;
-    --green: #00875a;
-    --line: rgba(255,255,255,0.08);
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html, body {
-    background: var(--bg); color: var(--fg);
-    font-family: -apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue", sans-serif;
-    -webkit-font-smoothing: antialiased; line-height: 1.5; min-height: 100vh;
-  }
-  .wrap { max-width: 1180px; margin: 0 auto; padding: 64px 32px 96px; }
-  header { text-align: center; margin-bottom: 64px; }
-  .brand-logo {
-    display: block;
-    margin: 0 auto 32px;
-    height: 56px;
-    width: auto;
-    filter: brightness(1.2);
-  }
-  @media (max-width: 640px) {
-    .brand-logo { height: 44px; margin-bottom: 24px; }
-  }
-  .badge {
-    display: inline-block; padding: 6px 14px;
-    background: rgba(196,0,31,0.12); color: var(--accent);
-    border: 1px solid rgba(196,0,31,0.3); border-radius: 999px;
-    font-size: 12px; font-weight: 600; text-transform: uppercase;
-    letter-spacing: 0.08em; margin-bottom: 20px;
-  }
-  h1 {
-    font-size: clamp(36px, 5vw, 64px); font-weight: 800;
-    letter-spacing: -0.03em; line-height: 1.05; margin-bottom: 16px;
-  }
-  h1 .red { color: var(--accent); }
-  .sub { color: var(--muted); font-size: 17px; max-width: 640px; margin: 0 auto; }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 16px;
-  }
-  .card {
-    background: var(--bg-2); border: 1px solid var(--line); border-radius: 16px;
-    padding: 28px 24px; text-decoration: none; color: var(--fg);
-    transition: transform .2s ease, border-color .2s ease, background .2s ease;
-    display: flex; flex-direction: column; gap: 6px;
-  }
-  .card:hover {
-    transform: translateY(-3px); border-color: rgba(196,0,31,0.4); background: #1a1a24;
-  }
-  .flag { font-size: 40px; line-height: 1; margin-bottom: 8px; }
-  .country { font-size: 20px; font-weight: 700; letter-spacing: -0.01em; }
-  .domain {
-    color: var(--muted); font-size: 13px;
-    font-family: ui-monospace, "SF Mono", Menlo, monospace;
-  }
-  .domain.has-domain { color: var(--green); }
-  .phone {
-    color: var(--fg); opacity: 0.7; font-size: 12px;
-    font-family: ui-monospace, "SF Mono", Menlo, monospace;
-    margin-top: 4px;
-  }
-  .meta {
-    margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line);
-    display: flex; justify-content: space-between; color: var(--muted); font-size: 12px;
-  }
-  .meta .arrow { color: var(--accent); font-weight: 700; }
-  .own-tag, .ro-tag {
-    display: inline-block; padding: 2px 8px;
-    background: rgba(0,135,90,0.15); color: var(--green);
-    border-radius: 999px; font-size: 10px; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.05em;
-  }
-  .shared-tag {
-    display: inline-block; padding: 2px 8px;
-    background: rgba(255,255,255,0.08); color: var(--muted);
-    border-radius: 999px; font-size: 10px; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.05em;
-  }
-  footer {
-    margin-top: 80px; padding-top: 32px; border-top: 1px solid var(--line);
-    text-align: center; color: var(--muted); font-size: 13px;
-  }
-  footer code {
-    color: var(--fg); font-family: ui-monospace, "SF Mono", Menlo, monospace;
-    background: rgba(255,255,255,0.05); padding: 2px 6px; border-radius: 4px;
-  }
-  .info-box {
-    margin-top: 48px; background: var(--bg-2); border: 1px solid var(--line);
-    border-radius: 14px; padding: 22px 26px; font-size: 14px; color: var(--muted);
-  }
-  .info-box strong { color: var(--fg); }
+  html,body{margin:0;height:100%;background:#0f0e0c;color:#f7f4ed;
+    font-family:-apple-system,BlinkMacSystemFont,"Inter","Helvetica Neue",sans-serif;
+    display:flex;align-items:center;justify-content:center;-webkit-font-smoothing:antialiased}
+  .box{text-align:center;padding:24px}
+  .spin{width:36px;height:36px;border:3px solid rgba(255,255,255,.18);
+    border-top-color:#C8102E;border-radius:50%;margin:0 auto 20px;animation:s .8s linear infinite}
+  @keyframes s{to{transform:rotate(360deg)}}
+  .t{font-size:15px;letter-spacing:.02em;color:#cfcad0}
+  .manual{margin-top:24px;font-size:13px;color:#8b8b9a;opacity:0;transition:opacity .4s ease}
+  .manual.show{opacity:1}
+  .manual a{color:#C8102E;text-decoration:none;font-weight:600}
+  .manual a:hover{text-decoration:underline}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <img src="./ro/images/logo.png" alt="Polistibrick" class="brand-logo">
-    <span class="badge">Multi-site preview</span>
-    <h1>8 țări <span class="red">·</span> 1 brand</h1>
-    <p class="sub">Un singur cod sursă → 8 site-uri pe 8 țări.<br>7 cu domeniu propriu, doar Elveția pe <strong>.com</strong>.</p>
-  </header>
-
-  <div class="grid">
-    <a class="card" href="./ro/polistibrick-mercury-style.html">
-      <div class="flag">🇷🇴</div>
-      <div class="country">România</div>
-      <div class="domain has-domain">polistibrick.ro</div>
-      <div class="phone">+40 371 550 550</div>
-      <div class="meta"><span class="ro-tag">canonical</span><span class="arrow">→</span></div>
-    </a>
-
-    <a class="card" href="./fr/polistibrick-mercury-style.html">
-      <div class="flag">🇫🇷</div>
-      <div class="country">France</div>
-      <div class="domain has-domain">polistibrick.fr</div>
-      <div class="phone">+33</div>
-      <div class="meta"><span class="own-tag">domeniu propriu</span><span class="arrow">→</span></div>
-    </a>
-
-    <a class="card" href="./it/polistibrick-mercury-style.html">
-      <div class="flag">🇮🇹</div>
-      <div class="country">Italia</div>
-      <div class="domain has-domain">polistibrick.it</div>
-      <div class="phone">+39</div>
-      <div class="meta"><span class="own-tag">domeniu propriu</span><span class="arrow">→</span></div>
-    </a>
-
-    <a class="card" href="./es/polistibrick-mercury-style.html">
-      <div class="flag">🇪🇸</div>
-      <div class="country">España</div>
-      <div class="domain has-domain">polistibrick.es</div>
-      <div class="phone">+34 642 777 216</div>
-      <div class="meta"><span class="own-tag">domeniu propriu</span><span class="arrow">→</span></div>
-    </a>
-
-    <a class="card" href="./nl/polistibrick-mercury-style.html">
-      <div class="flag">🇧🇪</div>
-      <div class="country">België</div>
-      <div class="domain has-domain">polistibrick.be</div>
-      <div class="phone">+32</div>
-      <div class="meta"><span class="own-tag">domeniu propriu</span><span class="arrow">→</span></div>
-    </a>
-
-    <a class="card" href="./ie/polistibrick-mercury-style.html">
-      <div class="flag">🇮🇪</div>
-      <div class="country">Ireland</div>
-      <div class="domain has-domain">polistibrick.ie</div>
-      <div class="phone">+353</div>
-      <div class="meta"><span class="own-tag">domeniu propriu</span><span class="arrow">→</span></div>
-    </a>
-
-    <a class="card" href="./en/polistibrick-mercury-style.html">
-      <div class="flag">🇬🇧</div>
-      <div class="country">United Kingdom</div>
-      <div class="domain has-domain">polistibrick.uk</div>
-      <div class="phone">+44</div>
-      <div class="meta"><span class="own-tag">domeniu propriu</span><span class="arrow">→</span></div>
-    </a>
-
-    <a class="card" href="./de/polistibrick-mercury-style.html">
-      <div class="flag">🇨🇭</div>
-      <div class="country">Schweiz</div>
-      <div class="domain">polistibrick.com</div>
-      <div class="phone">+41</div>
-      <div class="meta"><span class="shared-tag">.com</span><span class="arrow">→</span></div>
-    </a>
+  <div class="box">
+    <div class="spin" aria-hidden="true"></div>
+    <div class="t">Polistibrick…</div>
+    <div class="manual" id="manual">
+      Pas redirigé&nbsp;? <a href="fr/">Continuer vers le site →</a>
+    </div>
+    <noscript><p style="margin-top:16px"><a href="fr/" style="color:#C8102E">Entrer sur le site →</a></p></noscript>
   </div>
-
-  <div class="info-box">
-    <strong>Domenii configurate:</strong><br>
-    🟢 <strong style="color:var(--green)">.ro</strong> · <strong style="color:var(--green)">.fr</strong> · <strong style="color:var(--green)">.it</strong> · <strong style="color:var(--green)">.es</strong> · <strong style="color:var(--green)">.be</strong> · <strong style="color:var(--green)">.ie</strong> · <strong style="color:var(--green)">.uk</strong> — domenii proprii (7)<br>
-    ⚪ <strong>polistibrick.com</strong> — doar Elveția (până cumperi .ch)
-    <br><br>
-    <strong>Cum funcționează:</strong> Toate 8 site-uri sunt generate din același cod sursă.
-    Doar fișierul <code>countries/[țară]/_config.json</code> diferă — telefon, email, adresă, TVA.
-    Modifici o dată CSS-ul sau o pagină → se aplică pe toate 8 site-urile.
-  </div>
-
-  <footer>
-    Polistibrick Multi-site · Preview build · 8 țări<br>
-    Repo: <a style="color:var(--accent);text-decoration:none" href="https://github.com/bouleanulucian/polistibrick-multisite">github.com/bouleanulucian/polistibrick-multisite</a>
-  </footer>
-</div>
+<script>
+(function(){
+  // Pays dont le site est EN LIGNE (ajouter ici quand un nouveau pays est déployé).
+  var AVAILABLE = { fr:'fr/' };
+  var DEFAULT = 'fr/';
+  // Code pays ISO (géo IP) -> dossier de site souhaité.
+  var MAP = {
+    FR:'fr', BE:'fr', LU:'fr', MC:'fr', CH:'fr',
+    RO:'ro', MD:'ro',
+    GB:'en', IE:'en', US:'en',
+    IT:'it', ES:'es', DE:'de', AT:'de', NL:'nl'
+  };
+  var done=false;
+  function go(p){ if(done) return; done=true; location.replace(p); }
+  function decide(cc){
+    var key = MAP[(cc||'').toUpperCase()];
+    if (key && AVAILABLE[key]) return go(AVAILABLE[key]);
+    var lang = (navigator.language||'').slice(0,2).toLowerCase();
+    var byLang = ({fr:'fr',ro:'ro',en:'en',it:'it',es:'es',de:'de',nl:'nl'})[lang];
+    if (byLang && AVAILABLE[byLang]) return go(AVAILABLE[byLang]);
+    return go(DEFAULT);
+  }
+  // Sécurité : si la géo IP tarde trop, on décide quand même.
+  var t = setTimeout(function(){ decide(null); }, 2500);
+  // Lien manuel après un court instant.
+  setTimeout(function(){ var m=document.getElementById('manual'); if(m) m.className='manual show'; }, 1400);
+  fetch('https://ipapi.co/json/').then(function(r){return r.json();}).then(function(d){
+    clearTimeout(t); decide(d && d.country_code);
+  }).catch(function(){
+    fetch('https://ipwho.is/').then(function(r){return r.json();}).then(function(d){
+      clearTimeout(t); decide(d && d.country_code);
+    }).catch(function(){ clearTimeout(t); decide(null); });
+  });
+})();
+</script>
 </body>
 </html>
