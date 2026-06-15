@@ -77,7 +77,8 @@
     "cp_foot": "Țara ta nu e listată? Scrie-ne la",
     "alt_logo": "Polistibrick — Construcție inteligentă",
     "comparaison": "Comparație",
-    "comparaison_sub": "Polistibrick vs sistem clasic vs alt ICF"
+    "comparaison_sub": "Polistibrick vs sistem clasic vs alt ICF",
+    "cere_oferta_court": "Ofertă gratuită"
   },
   "en": {
     "home_aria": "Polistibrick — home",
@@ -156,7 +157,8 @@
     "cp_foot": "Your country isn't listed? Write to us at",
     "alt_logo": "Polistibrick — Smart construction",
     "comparaison": "Comparison",
-    "comparaison_sub": "Polistibrick vs classic system vs other ICF"
+    "comparaison_sub": "Polistibrick vs classic system vs other ICF",
+    "cere_oferta_court": "Free quote"
   },
   "fr": {
     "home_aria": "Polistibrick — accueil",
@@ -235,7 +237,8 @@
     "cp_foot": "Votre pays n'est pas listé ? Écrivez-nous à",
     "alt_logo": "Polistibrick — Construction intelligente",
     "comparaison": "Comparaison",
-    "comparaison_sub": "Polistibrick vs système classique vs autre ICF"
+    "comparaison_sub": "Polistibrick vs système classique vs autre ICF",
+    "cere_oferta_court": "Devis gratuit"
   },
   "it": {
     "home_aria": "Polistibrick — home",
@@ -314,7 +317,8 @@
     "cp_foot": "Il tuo paese non è elencato? Scrivici a",
     "alt_logo": "Polistibrick — Costruzione intelligente",
     "comparaison": "Confronto",
-    "comparaison_sub": "Polistibrick vs sistema classico vs altro ICF"
+    "comparaison_sub": "Polistibrick vs sistema classico vs altro ICF",
+    "cere_oferta_court": "Preventivo gratis"
   },
   "es": {
     "home_aria": "Polistibrick — inicio",
@@ -393,7 +397,8 @@
     "cp_foot": "¿Tu país no está en la lista? Escríbenos a",
     "alt_logo": "Polistibrick — Construcción inteligente",
     "comparaison": "Comparación",
-    "comparaison_sub": "Polistibrick vs sistema clásico vs otro ICF"
+    "comparaison_sub": "Polistibrick vs sistema clásico vs otro ICF",
+    "cere_oferta_court": "Presupuesto gratis"
   },
   "nl": {
     "home_aria": "Polistibrick — home",
@@ -472,7 +477,8 @@
     "cp_foot": "Uw land staat er niet bij? Schrijf ons op",
     "alt_logo": "Polistibrick — Slimme bouw",
     "comparaison": "Vergelijking",
-    "comparaison_sub": "Polistibrick vs klassiek systeem vs andere ICF"
+    "comparaison_sub": "Polistibrick vs klassiek systeem vs andere ICF",
+    "cere_oferta_court": "Gratis offerte"
   },
   "de": {
     "home_aria": "Polistibrick — Startseite",
@@ -551,6 +557,7 @@
     "cp_foot": "Ihr Land ist nicht aufgeführt? Schreiben Sie uns an",
     "alt_logo": "Polistibrick — Intelligentes Bauen",
     "comparaison": "Vergleich",
-    "comparaison_sub": "Polistibrick vs. klassisches System vs. anderes ICF"
+    "comparaison_sub": "Polistibrick vs. klassisches System vs. anderes ICF",
+    "cere_oferta_court": "Kostenloses Angebot"
   }
 }

@@ -1168,3 +1168,15 @@ html { scroll-behavior: auto !important; }
 .country-switcher-item .domain { display: none; }
 .country-switcher-panel { min-width: 204px; background: rgba(255,255,255,0.55); -webkit-backdrop-filter: blur(22px) saturate(1.4); backdrop-filter: blur(22px) saturate(1.4); border-color: rgba(255,255,255,0.55); }
 .country-switcher-item:hover { background: rgba(255,255,255,0.55); }
+
+/* CTA bar = pilule glassy sombre (équivalent du translucide blanc du homepage, adapté au fond clair) */
+.nav-cta-devis {
+  background: rgba(15,15,15,0.05);
+  color: #0F0F0F;
+  border: 1px solid rgba(15,15,15,0.14);
+  border-radius: 999px;
+  padding: 9px 18px;
+  font-weight: 600;
+  transition: background .2s ease, border-color .2s ease;
+}
+.nav-cta-devis:hover { background: rgba(15,15,15,0.10); border-color: rgba(15,15,15,0.24); color: #0F0F0F; }
