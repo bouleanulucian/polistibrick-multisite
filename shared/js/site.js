@@ -20,79 +20,8 @@
       <a href="${BASE}" class="nav-logo" aria-label="{{ui.home_aria}}">
         <img src="${BASE}images/logo.png" alt="Polistibrick" loading="eager">
       </a>
-      <nav class="nav-menu" aria-label="{{ui.nav_aria}}">
-        <div class="nav-item">
-          <button class="nav-link" aria-haspopup="true" aria-expanded="false">
-            {{ui.produse}}
-            <svg class="nav-link-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5l3 3 3-3"/></svg>
-          </button>
-          <div class="nav-dropdown">
-            <a class="nav-dropdown-item" href="${BASE}produse/pereti-mbk/">{{ui.pereti_mbk}}<span class="nav-dropdown-item-sub">{{ui.pereti_mbk_sub}}</span></a>
-            <a class="nav-dropdown-item" href="${BASE}produse/planseu-pbk/">{{ui.planseu_pbk}}<span class="nav-dropdown-item-sub">{{ui.planseu_pbk_sub}}</span></a>
-            <a class="nav-dropdown-item" href="${BASE}produse/acoperis-tbk/">{{ui.acoperis_tbk}}<span class="nav-dropdown-item-sub">{{ui.acoperis_tbk_sub}}</span></a>
-            <a class="nav-dropdown-item" href="${BASE}produse/accesorii/">{{ui.accesorii}}<span class="nav-dropdown-item-sub">{{ui.accesorii_sub}}</span></a>
-          </div>
-        </div>
-        <div class="nav-item">
-          <button class="nav-link" aria-haspopup="true" aria-expanded="false">
-            {{ui.solutii}}
-            <svg class="nav-link-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5l3 3 3-3"/></svg>
-          </button>
-          <div class="nav-dropdown">
-            <a class="nav-dropdown-item" href="${BASE}pentru/proprietari/">{{ui.pentru_proprietari}}<span class="nav-dropdown-item-sub">{{ui.pentru_proprietari_sub}}</span></a>
-            <a class="nav-dropdown-item" href="${BASE}pentru/arhitecti/">{{ui.pentru_arhitecti}}<span class="nav-dropdown-item-sub">{{ui.pentru_arhitecti_sub}}</span></a>
-            <a class="nav-dropdown-item" href="${BASE}pentru/constructori/">{{ui.pentru_constructori}}<span class="nav-dropdown-item-sub">{{ui.pentru_constructori_sub}}</span></a>
-            <a class="nav-dropdown-item" href="${BASE}pentru/investitori/">{{ui.pentru_investitori}}<span class="nav-dropdown-item-sub">{{ui.pentru_investitori_sub}}</span></a>
-            <a class="nav-dropdown-item" href="${BASE}devino-partener/" style="color:var(--red);font-weight:600;">{{ui.devino_partener}}<span class="nav-dropdown-item-sub" style="color:rgba(200,16,46,0.7);">{{ui.devino_partener_sub}}</span></a>
-          </div>
-        </div>
-        <div class="nav-item">
-          <button class="nav-link" aria-haspopup="true" aria-expanded="false">
-            {{ui.proiecte}}
-            <svg class="nav-link-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5l3 3 3-3"/></svg>
-          </button>
-          <div class="nav-dropdown">
-            <a class="nav-dropdown-item" href="${BASE}proiecte/">{{ui.case_construite}}<span class="nav-dropdown-item-sub">{{ui.case_construite_sub}}</span></a>
-            <a class="nav-dropdown-item" href="${BASE}testimoniale/">{{ui.testimoniale}}<span class="nav-dropdown-item-sub">{{ui.testimoniale_sub}}</span></a>
-          </div>
-        </div>
-        <div class="nav-item">
-          <button class="nav-link" aria-haspopup="true" aria-expanded="false">
-            {{ui.calculator}}
-            <svg class="nav-link-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5l3 3 3-3"/></svg>
-          </button>
-          <div class="nav-dropdown">
-            <a class="nav-dropdown-item" href="${BASE}calculator/">{{ui.calc_cost}}<span class="nav-dropdown-item-sub">{{ui.calc_cost_sub}}</span></a>
-            <a class="nav-dropdown-item" href="${BASE}economii/">{{ui.calc_econ}}<span class="nav-dropdown-item-sub">{{ui.calc_econ_sub}}</span></a>
-          </div>
-        </div>
-        <div class="nav-item">
-          <button class="nav-link" aria-haspopup="true" aria-expanded="false">
-            {{ui.resurse}}
-            <svg class="nav-link-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5l3 3 3-3"/></svg>
-          </button>
-          <div class="nav-dropdown">
-            <a class="nav-dropdown-item" href="${BASE}comparatie/">{{ui.comparaison}}<span class="nav-dropdown-item-sub">{{ui.comparaison_sub}}</span></a>
-            <a class="nav-dropdown-item" href="${BASE}resurse/blog/">{{ui.blog}}<span class="nav-dropdown-item-sub">{{ui.blog_sub}}</span></a>
-            <a class="nav-dropdown-item" href="${BASE}resurse/faq/">{{ui.faq}}<span class="nav-dropdown-item-sub">{{ui.faq_sub}}</span></a>
-          </div>
-        </div>
-        <div class="nav-item">
-          <button class="nav-link" aria-haspopup="true" aria-expanded="false">
-            {{ui.despre}}
-            <svg class="nav-link-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5l3 3 3-3"/></svg>
-          </button>
-          <div class="nav-dropdown">
-            <a class="nav-dropdown-item" href="${BASE}despre/">{{ui.compania}}<span class="nav-dropdown-item-sub">{{ui.compania_sub}}</span></a>
-            <a class="nav-dropdown-item" href="${BASE}despre/patent/">{{ui.patent}}<span class="nav-dropdown-item-sub">{{ui.patent_sub}}</span></a>
-            <a class="nav-dropdown-item" href="${BASE}despre/certificari/">{{ui.certificari}}<span class="nav-dropdown-item-sub">{{ui.certificari_sub}}</span></a>
-            <a class="nav-dropdown-item" href="${BASE}despre/fabrici/">{{ui.fabrici}}<span class="nav-dropdown-item-sub">{{ui.fabrici_sub}}</span></a>
-            <a class="nav-dropdown-item" href="${BASE}despre/echipa/">{{ui.echipa}}<span class="nav-dropdown-item-sub">{{ui.echipa_sub}}</span></a>
-          </div>
-        </div>
-      </nav>
       <div class="nav-cta">
-        <!-- COUNTRY SWITCHER — identique à celui du homepage -->
+        <!-- COUNTRY SWITCHER -->
         <div class="country-switcher" data-country-switcher>
           <button class="country-switcher-trigger" type="button" aria-label="{{ui.cp_label}}" aria-expanded="false">
             <span class="country-switcher-flag">{{country_flag}}</span>
@@ -111,10 +40,69 @@
             <a href="#" data-country="ch" data-domain="https://polistibrick.com" data-folder="de" class="country-switcher-item"><span class="flag">🇨🇭</span><span class="name">Schweiz</span><span class="domain">polistibrick.com</span></a>
           </div>
         </div>
-        <a href="${BASE}contact/" class="btn btn-ghost">{{ui.contact}}</a>
-        <a href="${BASE}oferta/" class="btn btn-primary btn-arrow">{{ui.cere_oferta}}</a>
+        <a href="${BASE}oferta/" class="btn btn-primary btn-arrow nav-cta-devis">{{ui.cere_oferta}}</a>
+        <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navDrawerShared">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
+
+    <div class="nav-drawer-overlay" data-nav-overlay aria-hidden="true"></div>
+    <aside class="nav-drawer" id="navDrawerShared" aria-label="Menu" aria-hidden="true">
+      <div class="nav-drawer-group">
+        <button class="nav-drawer-title" aria-expanded="false">{{ui.produse}}<span class="nd-caret">▾</span></button>
+        <div class="nav-acc">
+          <a href="${BASE}produse/pereti-mbk/">{{ui.pereti_mbk}}</a>
+          <a href="${BASE}produse/planseu-pbk/">{{ui.planseu_pbk}}</a>
+          <a href="${BASE}produse/acoperis-tbk/">{{ui.acoperis_tbk}}</a>
+        </div>
+      </div>
+      <div class="nav-drawer-group">
+        <button class="nav-drawer-title" aria-expanded="false">{{ui.solutii}}<span class="nd-caret">▾</span></button>
+        <div class="nav-acc">
+          <a href="${BASE}pentru/proprietari/">{{ui.pentru_proprietari}}</a>
+          <a href="${BASE}pentru/arhitecti/">{{ui.pentru_arhitecti}}</a>
+          <a href="${BASE}pentru/constructori/">{{ui.pentru_constructori}}</a>
+          <a href="${BASE}pentru/investitori/">{{ui.pentru_investitori}}</a>
+          <a href="${BASE}devino-partener/" class="partner-link">{{ui.devino_partener}}</a>
+        </div>
+      </div>
+      <div class="nav-drawer-group">
+        <button class="nav-drawer-title" aria-expanded="false">{{ui.proiecte}}<span class="nd-caret">▾</span></button>
+        <div class="nav-acc">
+          <a href="${BASE}proiecte/">{{ui.case_construite}}</a>
+          <a href="${BASE}testimoniale/">{{ui.testimoniale}}</a>
+        </div>
+      </div>
+      <div class="nav-drawer-group">
+        <button class="nav-drawer-title" aria-expanded="false">{{ui.calculator}}<span class="nd-caret">▾</span></button>
+        <div class="nav-acc">
+          <a href="${BASE}calculator/">{{ui.calc_cost}}</a>
+          <a href="${BASE}economii/">{{ui.calc_econ}}</a>
+        </div>
+      </div>
+      <div class="nav-drawer-group">
+        <button class="nav-drawer-title" aria-expanded="false">{{ui.resurse}}<span class="nd-caret">▾</span></button>
+        <div class="nav-acc">
+          <a href="${BASE}resurse/blog/">{{ui.blog}}</a>
+          <a href="${BASE}resurse/faq/">{{ui.faq}}</a>
+        </div>
+      </div>
+      <div class="nav-drawer-group">
+        <button class="nav-drawer-title" aria-expanded="false">{{ui.despre}}<span class="nd-caret">▾</span></button>
+        <div class="nav-acc">
+          <a href="${BASE}despre/">{{ui.compania}}</a>
+          <a href="${BASE}despre/patent/">{{ui.patent}}</a>
+          <a href="${BASE}despre/certificari/">{{ui.certificari}}</a>
+          <a href="${BASE}despre/fabrici/">{{ui.fabrici}}</a>
+          <a href="${BASE}despre/echipa/">{{ui.echipa}}</a>
+        </div>
+      </div>
+      <div class="nav-drawer-cta">
+        <a href="${BASE}contact/" class="btn btn-ghost">{{ui.contact}}</a>
+        <a href="${BASE}oferta/" class="btn btn-primary">{{ui.cere_oferta}}</a>
+      </div>
+    </aside>
   `;
 
   const FOOTER_HTML = `
@@ -132,7 +120,6 @@
             <li><a href="${BASE}produse/pereti-mbk/">{{ui.pereti_mbk}}</a></li>
             <li><a href="${BASE}produse/planseu-pbk/">{{ui.planseu_pbk}}</a></li>
             <li><a href="${BASE}produse/acoperis-tbk/">{{ui.acoperis_tbk}}</a></li>
-            <li><a href="${BASE}produse/accesorii/">{{ui.accesorii}}</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -483,10 +470,40 @@
     });
   }
 
+  // Hamburger drawer + accordion (style ZURU) pour la nav partagée
+  function navDrawerShared() {
+    const toggle = document.querySelector('.nav-toggle');
+    const drawer = document.getElementById('navDrawerShared');
+    const overlay = document.querySelector('[data-nav-overlay]');
+    if (!toggle || !drawer) return;
+    function setOpen(open) {
+      drawer.classList.toggle('open', open);
+      if (overlay) overlay.classList.toggle('open', open);
+      toggle.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+      drawer.setAttribute('aria-hidden', String(!open));
+    }
+    toggle.addEventListener('click', () => setOpen(!drawer.classList.contains('open')));
+    if (overlay) overlay.addEventListener('click', () => setOpen(false));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
+    drawer.querySelectorAll('.nav-drawer-title').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const g = btn.closest('.nav-drawer-group');
+        const willOpen = !g.classList.contains('open');
+        drawer.querySelectorAll('.nav-drawer-group.open').forEach(o => {
+          if (o !== g) { o.classList.remove('open'); const b = o.querySelector('.nav-drawer-title'); if (b) b.setAttribute('aria-expanded', 'false'); }
+        });
+        g.classList.toggle('open', willOpen);
+        btn.setAttribute('aria-expanded', String(willOpen));
+      });
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', async () => {
     inject();
     navShadow();
     countrySwitcherShared();
+    navDrawerShared();
     reveal();
     gallery();
     wireCountryPickerButtons();
