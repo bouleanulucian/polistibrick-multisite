@@ -20,79 +20,8 @@
       <a href="${BASE}" class="nav-logo" aria-label="Polistibrick — accueil">
         <img src="${BASE}images/logo.png" alt="Polistibrick" loading="eager">
       </a>
-      <nav class="nav-menu" aria-label="Navigation principale">
-        <div class="nav-item">
-          <button class="nav-link" aria-haspopup="true" aria-expanded="false">
-            Produits
-            <svg class="nav-link-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5l3 3 3-3"/></svg>
-          </button>
-          <div class="nav-dropdown">
-            <a class="nav-dropdown-item" href="${BASE}produits/murs-mbk/">Murs MBK<span class="nav-dropdown-item-sub">Coffrage isolant pour murs porteurs</span></a>
-            <a class="nav-dropdown-item" href="${BASE}produits/planchers-pbk/">Planchers PBK<span class="nav-dropdown-item-sub">Panneaux préfabriqués avec déphasage 10,8 h</span></a>
-            <a class="nav-dropdown-item" href="${BASE}produits/toit-tbk/">Toit TBK<span class="nav-dropdown-item-sub">Système Passivhaus sorti d'usine</span></a>
-            <a class="nav-dropdown-item" href="${BASE}produits/accessoires/">Accessoires<span class="nav-dropdown-item-sub">Angles, embouts, escaliers, fenêtres</span></a>
-          </div>
-        </div>
-        <div class="nav-item">
-          <button class="nav-link" aria-haspopup="true" aria-expanded="false">
-            Solutions
-            <svg class="nav-link-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5l3 3 3-3"/></svg>
-          </button>
-          <div class="nav-dropdown">
-            <a class="nav-dropdown-item" href="${BASE}pour/proprietaires/">Pour les propriétaires<span class="nav-dropdown-item-sub">Maison passive sans grosses factures</span></a>
-            <a class="nav-dropdown-item" href="${BASE}pour/architectes/">Pour les architectes<span class="nav-dropdown-item-sub">Détails constructifs, BIM, fiches</span></a>
-            <a class="nav-dropdown-item" href="${BASE}pour/constructeurs/">Pour les constructeurs<span class="nav-dropdown-item-sub">Pose, certification, partenariat</span></a>
-            <a class="nav-dropdown-item" href="${BASE}pour/investisseurs/">Pour les investisseurs<span class="nav-dropdown-item-sub">ROI, rapidité d'exécution, ensembles</span></a>
-            <a class="nav-dropdown-item" href="${BASE}devenir-partenaire/" style="color:var(--red);font-weight:600;">→ Devenez partenaire<span class="nav-dropdown-item-sub" style="color:rgba(200,16,46,0.7);">Candidature constructeurs certifiés</span></a>
-          </div>
-        </div>
-        <div class="nav-item">
-          <button class="nav-link" aria-haspopup="true" aria-expanded="false">
-            Projets
-            <svg class="nav-link-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5l3 3 3-3"/></svg>
-          </button>
-          <div class="nav-dropdown">
-            <a class="nav-dropdown-item" href="${BASE}projets/">Maisons construites<span class="nav-dropdown-item-sub">Galerie + carte des projets</span></a>
-            <a class="nav-dropdown-item" href="${BASE}temoignages/">Témoignages (vidéo)<span class="nav-dropdown-item-sub">Les propriétaires parlent, avec des chiffres réels</span></a>
-          </div>
-        </div>
-        <div class="nav-item">
-          <button class="nav-link" aria-haspopup="true" aria-expanded="false">
-            Calculateur
-            <svg class="nav-link-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5l3 3 3-3"/></svg>
-          </button>
-          <div class="nav-dropdown">
-            <a class="nav-dropdown-item" href="${BASE}calculateur/">Calculateur de coût<span class="nav-dropdown-item-sub">Estimez le prix des panneaux pour votre maison</span></a>
-            <a class="nav-dropdown-item" href="${BASE}economies/">Calculateur d'économies<span class="nav-dropdown-item-sub">Polistibrick vs brique sur 25 ans</span></a>
-          </div>
-        </div>
-        <div class="nav-item">
-          <button class="nav-link" aria-haspopup="true" aria-expanded="false">
-            Ressources
-            <svg class="nav-link-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5l3 3 3-3"/></svg>
-          </button>
-          <div class="nav-dropdown">
-            <a class="nav-dropdown-item" href="${BASE}comparaison/">Comparaison<span class="nav-dropdown-item-sub">Polistibrick vs système classique vs autre ICF</span></a>
-            <a class="nav-dropdown-item" href="${BASE}ressources/blog/">Blog<span class="nav-dropdown-item-sub">Articles sur la Maison Passive, l'ICF</span></a>
-            <a class="nav-dropdown-item" href="${BASE}ressources/faq/">Questions fréquentes<span class="nav-dropdown-item-sub">Réponses aux questions les plus courantes</span></a>
-          </div>
-        </div>
-        <div class="nav-item">
-          <button class="nav-link" aria-haspopup="true" aria-expanded="false">
-            À propos
-            <svg class="nav-link-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5l3 3 3-3"/></svg>
-          </button>
-          <div class="nav-dropdown">
-            <a class="nav-dropdown-item" href="${BASE}a-propos/">L'entreprise<span class="nav-dropdown-item-sub">Qui nous sommes, vision, mission</span></a>
-            <a class="nav-dropdown-item" href="${BASE}a-propos/brevet/">Le brevet Polistibrick<span class="nav-dropdown-item-sub">Le brevet qui nous rend uniques</span></a>
-            <a class="nav-dropdown-item" href="${BASE}a-propos/certifications/">Certifications<span class="nav-dropdown-item-sub">CE, ISO, Passivhaus, agréments</span></a>
-            <a class="nav-dropdown-item" href="${BASE}a-propos/usines/">Nos usines<span class="nav-dropdown-item-sub">Valence (ES) et Craiova (RO)</span></a>
-            <a class="nav-dropdown-item" href="${BASE}a-propos/equipe/">L'équipe<span class="nav-dropdown-item-sub">Fondateurs et nos collaborateurs</span></a>
-          </div>
-        </div>
-      </nav>
       <div class="nav-cta">
-        <!-- COUNTRY SWITCHER — identique à celui du homepage -->
+        <!-- COUNTRY SWITCHER -->
         <div class="country-switcher" data-country-switcher>
           <button class="country-switcher-trigger" type="button" aria-label="Choisissez votre pays" aria-expanded="false">
             <span class="country-switcher-flag">🇫🇷</span>
@@ -111,10 +40,69 @@
             <a href="#" data-country="ch" data-domain="https://polistibrick.com" data-folder="de" class="country-switcher-item"><span class="flag">🇨🇭</span><span class="name">Schweiz</span><span class="domain">polistibrick.com</span></a>
           </div>
         </div>
-        <a href="${BASE}contact/" class="btn btn-ghost">Contact</a>
-        <a href="${BASE}devis/" class="btn btn-primary btn-arrow">Demander un devis</a>
+        <a href="${BASE}devis/" class="btn btn-primary btn-arrow nav-cta-devis">Demander un devis</a>
+        <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navDrawerShared">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
+
+    <div class="nav-drawer-overlay" data-nav-overlay aria-hidden="true"></div>
+    <aside class="nav-drawer" id="navDrawerShared" aria-label="Menu" aria-hidden="true">
+      <div class="nav-drawer-group">
+        <button class="nav-drawer-title" aria-expanded="false">Produits<span class="nd-caret">▾</span></button>
+        <div class="nav-acc">
+          <a href="${BASE}produits/murs-mbk/">Murs MBK</a>
+          <a href="${BASE}produits/planchers-pbk/">Planchers PBK</a>
+          <a href="${BASE}produits/toit-tbk/">Toit TBK</a>
+        </div>
+      </div>
+      <div class="nav-drawer-group">
+        <button class="nav-drawer-title" aria-expanded="false">Solutions<span class="nd-caret">▾</span></button>
+        <div class="nav-acc">
+          <a href="${BASE}pour/proprietaires/">Pour les propriétaires</a>
+          <a href="${BASE}pour/architectes/">Pour les architectes</a>
+          <a href="${BASE}pour/constructeurs/">Pour les constructeurs</a>
+          <a href="${BASE}pour/investisseurs/">Pour les investisseurs</a>
+          <a href="${BASE}devenir-partenaire/" class="partner-link">→ Devenez partenaire</a>
+        </div>
+      </div>
+      <div class="nav-drawer-group">
+        <button class="nav-drawer-title" aria-expanded="false">Projets<span class="nd-caret">▾</span></button>
+        <div class="nav-acc">
+          <a href="${BASE}projets/">Maisons construites</a>
+          <a href="${BASE}temoignages/">Témoignages (vidéo)</a>
+        </div>
+      </div>
+      <div class="nav-drawer-group">
+        <button class="nav-drawer-title" aria-expanded="false">Calculateur<span class="nd-caret">▾</span></button>
+        <div class="nav-acc">
+          <a href="${BASE}calculateur/">Calculateur de coût</a>
+          <a href="${BASE}economies/">Calculateur d'économies</a>
+        </div>
+      </div>
+      <div class="nav-drawer-group">
+        <button class="nav-drawer-title" aria-expanded="false">Ressources<span class="nd-caret">▾</span></button>
+        <div class="nav-acc">
+          <a href="${BASE}ressources/blog/">Blog</a>
+          <a href="${BASE}ressources/faq/">Questions fréquentes</a>
+        </div>
+      </div>
+      <div class="nav-drawer-group">
+        <button class="nav-drawer-title" aria-expanded="false">À propos<span class="nd-caret">▾</span></button>
+        <div class="nav-acc">
+          <a href="${BASE}a-propos/">L'entreprise</a>
+          <a href="${BASE}a-propos/brevet/">Le brevet Polistibrick</a>
+          <a href="${BASE}a-propos/certifications/">Certifications</a>
+          <a href="${BASE}a-propos/usines/">Nos usines</a>
+          <a href="${BASE}a-propos/equipe/">L'équipe</a>
+        </div>
+      </div>
+      <div class="nav-drawer-cta">
+        <a href="${BASE}contact/" class="btn btn-ghost">Contact</a>
+        <a href="${BASE}devis/" class="btn btn-primary">Demander un devis</a>
+      </div>
+    </aside>
   `;
 
   const FOOTER_HTML = `
@@ -132,7 +120,6 @@
             <li><a href="${BASE}produits/murs-mbk/">Murs MBK</a></li>
             <li><a href="${BASE}produits/planchers-pbk/">Planchers PBK</a></li>
             <li><a href="${BASE}produits/toit-tbk/">Toit TBK</a></li>
-            <li><a href="${BASE}produits/accessoires/">Accessoires</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -483,10 +470,40 @@
     });
   }
 
+  // Hamburger drawer + accordion (style ZURU) pour la nav partagée
+  function navDrawerShared() {
+    const toggle = document.querySelector('.nav-toggle');
+    const drawer = document.getElementById('navDrawerShared');
+    const overlay = document.querySelector('[data-nav-overlay]');
+    if (!toggle || !drawer) return;
+    function setOpen(open) {
+      drawer.classList.toggle('open', open);
+      if (overlay) overlay.classList.toggle('open', open);
+      toggle.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+      drawer.setAttribute('aria-hidden', String(!open));
+    }
+    toggle.addEventListener('click', () => setOpen(!drawer.classList.contains('open')));
+    if (overlay) overlay.addEventListener('click', () => setOpen(false));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
+    drawer.querySelectorAll('.nav-drawer-title').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const g = btn.closest('.nav-drawer-group');
+        const willOpen = !g.classList.contains('open');
+        drawer.querySelectorAll('.nav-drawer-group.open').forEach(o => {
+          if (o !== g) { o.classList.remove('open'); const b = o.querySelector('.nav-drawer-title'); if (b) b.setAttribute('aria-expanded', 'false'); }
+        });
+        g.classList.toggle('open', willOpen);
+        btn.setAttribute('aria-expanded', String(willOpen));
+      });
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', async () => {
     inject();
     navShadow();
     countrySwitcherShared();
+    navDrawerShared();
     reveal();
     gallery();
     wireCountryPickerButtons();

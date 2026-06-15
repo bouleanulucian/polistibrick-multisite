@@ -223,8 +223,14 @@
     background: rgba(255, 255, 255, 0.10);
   }
   nav:not(.scrolled) .nav-cta .btn-primary {
-    background: #FFFFFF;
-    color: var(--ink);
+    background: rgba(255, 255, 255, 0.14);
+    color: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.38);
+  }
+  nav:not(.scrolled) .nav-cta .btn-primary:hover {
+    background: rgba(255, 255, 255, 0.24);
+    border-color: rgba(255, 255, 255, 0.60);
+    color: #FFFFFF;
   }
   nav:not(.scrolled) .nav-burger span { background: #FFFFFF; }
   nav:not(.scrolled) .nav-burger {
@@ -232,9 +238,9 @@
     background: rgba(255, 255, 255, 0.10);
   }
   .nav-inner {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 18px 32px;
+    max-width: none;
+    margin: 0;
+    padding: 18px clamp(16px, 3vw, 56px); /* ~15mm de la margine, full-width comme ZURU */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -2946,12 +2952,14 @@
     position: absolute;
     top: calc(100% + 10px);
     right: 0;
-    min-width: 280px;
-    background: #FFFFFF;
-    border: 1px solid #E5E0D7;
+    min-width: 204px;
+    background: rgba(255, 255, 255, 0.20);
+    -webkit-backdrop-filter: blur(24px) saturate(1.4);
+    backdrop-filter: blur(24px) saturate(1.4);
+    border: 1px solid rgba(255, 255, 255, 0.40);
     border-radius: 14px;
     padding: 8px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18), 0 0 0 1px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 24px 50px rgba(0, 0, 0, 0.28);
     opacity: 0;
     visibility: hidden;
     transform: translateY(-6px) scale(0.97);
@@ -2973,7 +2981,7 @@
   }
   .country-switcher-item {
     display: grid;
-    grid-template-columns: 24px 1fr auto;
+    grid-template-columns: 24px 1fr;
     align-items: center;
     gap: 10px;
     padding: 10px 12px;
@@ -2984,7 +2992,7 @@
     transition: background .15s ease;
   }
   .country-switcher-item:hover {
-    background: rgba(15, 15, 15, 0.04);
+    background: rgba(255, 255, 255, 0.45);
   }
   .country-switcher-item.active {
     background: rgba(200, 16, 46, 0.08);
@@ -2993,11 +3001,7 @@
   .country-switcher-item.active .domain { color: rgba(200, 16, 46, 0.85); }
   .country-switcher-item .flag { font-size: 20px; line-height: 1; }
   .country-switcher-item .name { font-weight: 600; }
-  .country-switcher-item .domain {
-    font-family: ui-monospace, "SF Mono", Menlo, monospace;
-    font-size: 11px;
-    color: #6B6B6B;
-  }
+  .country-switcher-item .domain { display: none; }
   /* ===================================================
      COUNTRY BANNER — auto-detection suggestion
      =================================================== */
@@ -3239,7 +3243,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
       </div>
       <!-- /COUNTRY SELECTOR -->
       <a href="contact/" class="btn btn-ghost">Contact</a>
-      <a href="devis/" class="btn btn-primary">Demander un devis →</a>
+      <a href="devis/" class="btn btn-primary">Devis gratuit →</a>
       <button class="nav-burger" id="navBurger" aria-label="Deschide meniul" aria-expanded="false" aria-controls="navDrawer">
         <span></span><span></span><span></span>
       </button>
@@ -3249,53 +3253,65 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
 
 <!-- MOBILE DRAWER + OVERLAY -->
 <div class="nav-drawer-overlay" id="navDrawerOverlay" aria-hidden="true"></div>
-<aside class="nav-drawer" id="navDrawer" aria-label="Meniu mobil" aria-hidden="true">
+<aside class="nav-drawer" id="navDrawer" aria-label="Menu" aria-hidden="true">
 
   <button class="nav-drawer-close" id="navDrawerClose" aria-label="Fermer le menu">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
   </button>
 
   <div class="nav-drawer-group">
-    <div class="nav-drawer-title">Produits</div>
-    <a href="produits/murs-mbk/">Murs MBK</a>
-    <a href="produits/planchers-pbk/">Planchers PBK</a>
-    <a href="produits/toit-tbk/">Toit TBK</a>
+    <button class="nav-drawer-title" aria-expanded="false">Produits<span class="nd-caret">▾</span></button>
+    <div class="nav-acc">
+      <a href="produits/murs-mbk/">Murs MBK</a>
+      <a href="produits/planchers-pbk/">Planchers PBK</a>
+      <a href="produits/toit-tbk/">Toit TBK</a>
+    </div>
   </div>
 
   <div class="nav-drawer-group">
-    <div class="nav-drawer-title">Solutions</div>
-    <a href="pour/proprietaires/">Pour les propriétaires</a>
-    <a href="pour/architectes/">Pour les architectes</a>
-    <a href="pour/constructeurs/">Pour les constructeurs</a>
-    <a href="pour/investisseurs/">Pour les investisseurs</a>
-    <a href="devenir-partenaire/" class="partner-link">→ Devenez partenaire</a>
+    <button class="nav-drawer-title" aria-expanded="false">Solutions<span class="nd-caret">▾</span></button>
+    <div class="nav-acc">
+      <a href="pour/proprietaires/">Pour les propriétaires</a>
+      <a href="pour/architectes/">Pour les architectes</a>
+      <a href="pour/constructeurs/">Pour les constructeurs</a>
+      <a href="pour/investisseurs/">Pour les investisseurs</a>
+      <a href="devenir-partenaire/" class="partner-link">→ Devenez partenaire</a>
+    </div>
   </div>
 
   <div class="nav-drawer-group">
-    <div class="nav-drawer-title">Projets</div>
-    <a href="projets/">Maisons construites</a>
-    <a href="temoignages/">Témoignages vidéo</a>
+    <button class="nav-drawer-title" aria-expanded="false">Projets<span class="nd-caret">▾</span></button>
+    <div class="nav-acc">
+      <a href="projets/">Maisons construites</a>
+      <a href="temoignages/">Témoignages vidéo</a>
+    </div>
   </div>
 
   <div class="nav-drawer-group">
-    <div class="nav-drawer-title">Calculateur</div>
-    <a href="calculateur/">Calculateur de coût</a>
-    <a href="economies/">Calculateur d'économies</a>
+    <button class="nav-drawer-title" aria-expanded="false">Calculateur<span class="nd-caret">▾</span></button>
+    <div class="nav-acc">
+      <a href="calculateur/">Calculateur de coût</a>
+      <a href="economies/">Calculateur d'économies</a>
+    </div>
   </div>
 
   <div class="nav-drawer-group">
-    <div class="nav-drawer-title">Ressources</div>
-    <a href="ressources/blog/">Blog</a>
-    <a href="ressources/faq/">Questions fréquentes</a>
+    <button class="nav-drawer-title" aria-expanded="false">Ressources<span class="nd-caret">▾</span></button>
+    <div class="nav-acc">
+      <a href="ressources/blog/">Blog</a>
+      <a href="ressources/faq/">Questions fréquentes</a>
+    </div>
   </div>
 
   <div class="nav-drawer-group">
-    <div class="nav-drawer-title">À propos</div>
-    <a href="a-propos/">L'entreprise</a>
-    <a href="a-propos/brevet/">Brevet</a>
-    <a href="a-propos/certifications/">Certifications</a>
-    <a href="a-propos/usines/">Nos usines</a>
-    <a href="a-propos/equipe/">L'équipe</a>
+    <button class="nav-drawer-title" aria-expanded="false">À propos<span class="nd-caret">▾</span></button>
+    <div class="nav-acc">
+      <a href="a-propos/">L'entreprise</a>
+      <a href="a-propos/brevet/">Brevet</a>
+      <a href="a-propos/certifications/">Certifications</a>
+      <a href="a-propos/usines/">Nos usines</a>
+      <a href="a-propos/equipe/">L'équipe</a>
+    </div>
   </div>
 
   <div class="nav-drawer-cta">
@@ -3304,6 +3320,71 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   </div>
 
 </aside>
+
+<!-- MENU ZURU-style : barre minimale + ☰ à droite, panneau déroulant avec accordéon -->
+<style>
+  .nav-menu { display: none !important; }       /* on cache le menu horizontal — tout passe dans le ☰ */
+  .nav-burger { display: flex !important; }      /* ☰ visible sur toutes les tailles */
+  .nav-cta > .btn-ghost { display: none; }       /* Contact -> dans le panneau */
+
+  /* Panneau déroulant (style ZURU) — descend depuis le coin haut-droit */
+  .nav-drawer {
+    top: 72px; right: 16px; left: auto; bottom: auto;
+    width: min(209px, calc(100vw - 24px));
+    height: auto; max-height: calc(100vh - 96px);
+    background: rgba(255, 255, 255, 0.20);
+    -webkit-backdrop-filter: blur(24px) saturate(1.4);
+    backdrop-filter: blur(24px) saturate(1.4);
+    border: 1px solid rgba(255, 255, 255, 0.40); border-radius: 18px;
+    box-shadow: 0 26px 64px rgba(15,14,12,0.28);
+    transform: translateY(-10px) scale(0.98);
+    opacity: 0; visibility: hidden; pointer-events: none;
+    transition: opacity .22s ease, transform .22s ease, visibility .22s;
+    padding: 12px;
+  }
+  .nav-drawer.open { transform: translateY(0) scale(1); opacity: 1; visibility: visible; pointer-events: auto; }
+  .nav-drawer-overlay { background: rgba(15,14,12,0.18); }
+  .nav-drawer-close { display: none; } /* X redondant — le ☰ de la barre devient déjà un X */
+
+  /* Accordéon : section -> sous-menu */
+  .nav-drawer-group { margin: 0; padding: 0 0 0 0; border-bottom: 1px solid var(--border); }
+  .nav-drawer-group:last-of-type { border-bottom: none; margin-bottom: 4px; }
+  #navDrawer .nav-drawer-title {
+    width: 100%; display: flex; align-items: center; justify-content: space-between;
+    background: transparent; border: 0; cursor: pointer;
+    font-family: var(--sans); font-size: 15px; font-weight: 700; color: #000000;
+    letter-spacing: 0; text-transform: none; padding: 13px 12px; border-radius: 10px;
+    margin-bottom: 0; transition: background .15s ease;
+  }
+  #navDrawer .nav-drawer-title:hover { background: rgba(255,255,255,0.45); }
+  .nd-caret { font-size: 11px; opacity: .5; transition: transform .25s ease; }
+  .nav-drawer-group.open .nd-caret { transform: rotate(180deg); }
+  .nav-acc { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+  .nav-drawer-group.open .nav-acc { max-height: 440px; }
+  .nav-acc a {
+    display: block; padding: 9px 12px 9px 24px; font-size: 14px;
+    color: #111111; text-decoration: none; border-radius: 8px;
+  }
+  .nav-acc a:hover { background: var(--cream); color: var(--ink); }
+  .nav-acc a.partner-link { color: var(--red); font-weight: 600; }
+  .nav-drawer-cta { margin-top: 10px; padding-top: 12px; border-top: 1px solid var(--border); display: grid; gap: 8px; }
+</style>
+<script>
+  (function(){
+    document.querySelectorAll('#navDrawer .nav-drawer-title').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var g = btn.closest('.nav-drawer-group');
+        var willOpen = !g.classList.contains('open');
+        // accordéon : ferme les autres
+        document.querySelectorAll('#navDrawer .nav-drawer-group.open').forEach(function(o){
+          if(o!==g){ o.classList.remove('open'); var b=o.querySelector('.nav-drawer-title'); if(b) b.setAttribute('aria-expanded','false'); }
+        });
+        g.classList.toggle('open', willOpen);
+        btn.setAttribute('aria-expanded', willOpen ? 'true':'false');
+      });
+    });
+  })();
+</script>
 
 <!-- HERO — full-bleed maisons Polistibrick (stil showreel), text alb stânga + robot dreapta -->
 <style>
