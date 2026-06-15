@@ -40,7 +40,7 @@
             <a href="#" data-country="ch" data-domain="https://polistibrick.com" data-folder="de" class="country-switcher-item"><span class="flag">🇨🇭</span><span class="name">Schweiz</span><span class="domain">polistibrick.com</span></a>
           </div>
         </div>
-        <a href="${BASE}devis/" class="btn btn-primary btn-arrow nav-cta-devis">Demander un devis</a>
+        <a href="${BASE}devis/" class="btn btn-arrow nav-cta-devis">Devis gratuit</a>
         <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navDrawerShared">
           <span></span><span></span><span></span>
         </button>
