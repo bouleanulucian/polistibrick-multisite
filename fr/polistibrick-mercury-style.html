@@ -4614,7 +4614,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
         <div class="sistem-layout">
         <div class="sistem-grid">
 
-          <a href="produits/murs-mbk/" class="sistem-card">
+          <a href="produits/murs-mbk/" class="sistem-card" data-part="murs">
             <div class="sistem-card-img">
               <img src="images/systeme/systeme-mbk.png" alt="Polistibrick MBK — mur premium" loading="lazy">
             </div>
@@ -4628,7 +4628,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
             </div>
           </a>
 
-          <a href="produits/planchers-pbk/" class="sistem-card">
+          <a href="produits/planchers-pbk/" class="sistem-card" data-part="plancher">
             <div class="sistem-card-img">
               <img src="images/systeme/systeme-pbk.png" alt="Polistibrick PBK — plancher premium" loading="lazy">
             </div>
@@ -4642,7 +4642,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
             </div>
           </a>
 
-          <a href="produits/toit-tbk/" class="sistem-card">
+          <a href="produits/toit-tbk/" class="sistem-card" data-part="toit">
             <div class="sistem-card-img">
               <img src="images/systeme/systeme-tbk.png" alt="Polistibrick TBK — toit Passivhaus" loading="lazy">
             </div>
@@ -4657,8 +4657,10 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
           </a>
 
         </div>
-        <div class="sistem-hero reveal">
-          <img src="images/systeme/systeme-house.png" alt="Maison Polistibrick en vue éclatée : toit TBK, plancher PBK, murs MBK — un seul système" loading="lazy">
+        <div class="sistem-hero reveal" id="sistemHero">
+          <img class="sh-layer sh-sizer" data-layer="murs" src="images/systeme/systeme-part-murs.png" alt="Maison Polistibrick en vue éclatée : toit TBK, plancher PBK, murs MBK" loading="lazy">
+          <img class="sh-layer" data-layer="plancher" src="images/systeme/systeme-part-plancher.png" alt="" aria-hidden="true" loading="lazy">
+          <img class="sh-layer" data-layer="toit" src="images/systeme/systeme-part-toit.png" alt="" aria-hidden="true" loading="lazy">
         </div>
         </div>
       </div>
@@ -4666,6 +4668,47 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   </div>
 </section>
 </div>
+
+<!-- SYSTÈME — survol d'une carte met en évidence la partie correspondante de la maison 3D -->
+<style>
+  .sistem-hero { position: relative; }
+  /* Casa = 3 straturi curate suprapuse (fara imagine de baza dedesubt) */
+  .sistem-hero .sh-layer {
+    display: block; width: 100%; height: auto;
+    transition: transform .4s cubic-bezier(.22,1,.36,1), filter .35s ease;
+  }
+  .sistem-hero .sh-sizer { position: relative; z-index: 1; top: 15mm; left: 7mm; }   /* murs: coborat 15mm + 7mm dreapta */
+  .sistem-hero .sh-layer[data-layer="plancher"] { position: absolute; top: 0; left: 0; z-index: 2; }
+  .sistem-hero .sh-layer[data-layer="toit"]     { position: absolute; top: 0; left: 0; z-index: 3; }
+  .sistem-hero .sh-layer[data-layer="toit"]     { transform-origin: 50% 22%; }
+  .sistem-hero .sh-layer[data-layer="plancher"] { transform-origin: 50% 50%; }
+  .sistem-hero .sh-layer[data-layer="murs"]     { transform-origin: 50% 80%; }
+  /* la hover: intuneca toate, apoi piesa activa ramane luminata, se mareste si vine in fata */
+  .sistem-hero.hl-on .sh-layer { filter: brightness(.5) saturate(.85); }
+  .sistem-hero.hl-toit     .sh-layer[data-layer="toit"],
+  .sistem-hero.hl-plancher .sh-layer[data-layer="plancher"],
+  .sistem-hero.hl-murs     .sh-layer[data-layer="murs"] { filter: none; transform: scale(1.12); z-index: 5; }
+  /* feedback discret pe cardul activ */
+  .sistem-card.is-active { border-color: var(--red); }
+  .sistem-card.is-active .bubble-tag { background: var(--red); color: #fff; }
+</style>
+<script>
+  (function () {
+    var hero = document.getElementById('sistemHero');
+    if (!hero) return;
+    var PARTS = ['toit', 'plancher', 'murs'];
+    function clear() { hero.classList.remove('hl-on', 'hl-toit', 'hl-plancher', 'hl-murs'); }
+    document.querySelectorAll('.sistem-card[data-part]').forEach(function (card) {
+      var part = card.getAttribute('data-part');
+      card.addEventListener('mouseenter', function () {
+        clear(); hero.classList.add('hl-on', 'hl-' + part); card.classList.add('is-active');
+      });
+      card.addEventListener('mouseleave', function () {
+        clear(); card.classList.remove('is-active');
+      });
+    });
+  })();
+</script>
 
 <!-- MONTAJ — 4 etape de construcție Polistibrick -->
 <style>
