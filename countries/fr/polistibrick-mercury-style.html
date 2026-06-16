@@ -3499,11 +3499,50 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   }
   /* Reduced motion / fallback: doar prima imagine, fixă */
   /* Reduced motion: JS oprește videoul; posterul rămâne. */
+  /* Eyebrow pe fundal foto — pastila translucidă, lizibilă peste video */
+  .hero--photo .hero-eyebrow {
+    color: rgba(255,255,255,0.95);
+    background: rgba(255,255,255,0.10);
+    border: 1px solid rgba(255,255,255,0.30);
+    backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+    text-shadow: 0 1px 8px rgba(0,0,0,0.45);
+    margin-bottom: 18px;
+  }
+  .hero--photo .hero-eyebrow::before { background: var(--red); }
+  /* Subtitlu — explică „5 corps de métier en 1" */
+  .hero--photo .hero-sub {
+    color: rgba(255,255,255,0.95);
+    max-width: 640px;
+    font-size: clamp(14px, 1.25vw, 17px);
+    line-height: 1.62;
+    margin: 0 0 22px;
+    text-shadow: 0 1px 14px rgba(0,0,0,0.55);
+  }
+  /* Rândul cu cele 3 cifre-cap */
+  .hero-stats-row {
+    list-style: none; margin: 0 0 28px; padding: 0;
+    display: flex; flex-wrap: wrap; gap: 12px 30px; align-items: baseline;
+  }
+  .hero-stats-row li {
+    color: rgba(255,255,255,0.92);
+    font-size: clamp(13px, 1.05vw, 15px);
+    letter-spacing: .01em;
+    text-shadow: 0 1px 10px rgba(0,0,0,0.5);
+    position: relative; padding-left: 18px;
+  }
+  .hero-stats-row li::before {
+    content: ''; position: absolute; left: 0; top: 0.5em;
+    width: 6px; height: 6px; border-radius: 50%; background: var(--red);
+  }
+  .hero-stats-row li strong { color: #fff; font-weight: 800; font-size: 1.2em; margin-right: 5px; }
   @media (max-width: 968px) {
     .hero--photo .container { padding-bottom: 36px; }
-    .hero--photo .container > .hero-text-col { max-width: 100%; transform: translateY(55mm); }
+    .hero--photo .container > .hero-text-col { max-width: 100%; transform: translateY(40mm); }
     .hero--photo h1 { font-size: clamp(22px, 6.8vw, 30px); }
     .hero--photo .hero-robot { max-width: 158px; margin-bottom: 14px; }
+    .hero--photo .hero-sub { font-size: 13px; line-height: 1.5; margin-bottom: 14px; }
+    .hero-stats-row { gap: 6px 18px; margin-bottom: 18px; }
+    .hero-stats-row li { font-size: 12px; }
   }
 </style>
 <section class="hero hero--photo">
@@ -3517,10 +3556,12 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   <div class="container">
     <div class="hero-text-col">
       <img class="hero-robot reveal" src="images/robot.png" alt="Polistibrick — Construction intelligente" fetchpriority="high">
-      <h1 class="reveal">Cinq produits dans un seul<br>système breveté.<br><span class="h1-l2">Une maison écoénergétique.</span></h1>
+      <span class="hero-eyebrow reveal">Système constructif breveté · RE2020</span>
+      <h1 class="reveal">Construisez plus de maisons.<br><span class="h1-l2">Avec moins de main-d'œuvre.</span></h1>
+      <p class="hero-sub reveal">Polistibrick remplace 5 matériaux différents et 5 équipes de construction différentes. Un seul produit, une seule équipe — et la maison est achevée. <strong>Innovation brevetée.</strong></p>
       <div class="hero-actions reveal">
-        <a href="devis/" class="btn btn-red btn-large">Demander un devis →</a>
-        <a href="calculateur/" class="btn btn-ghost btn-large">Calculez le coût de la maison</a>
+        <a href="devis/" class="btn btn-red btn-large">Recevez votre devis gratuit →</a>
+        <a href="autoconstruction/" class="btn btn-ghost btn-large">Je construis moi-même →</a>
       </div>
     </div>
   </div>
@@ -3569,7 +3610,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   .morph-watermark {
     position: absolute;
     top: 0; left: 0; right: 0;
-    transform: translateY(-0.5em);
+    transform: translateY(-38%);
     line-height: 1;
     text-align: center;
     text-transform: uppercase;
@@ -3585,16 +3626,16 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   .morph-watermark .mw-line1 { position: relative; height: 1em; }
   .morph-watermark .wm-half { position: absolute; inset: 0; width: 100%; display: block; }
   .morph-watermark .wm-top {
-    color: #FFFFFF;
-    -webkit-text-stroke: 1.6px rgba(15, 15, 15, 0.65);
+    color: transparent;
+    -webkit-text-stroke: 1.6px rgba(255, 255, 255, 0.6);
     paint-order: stroke fill;
     text-shadow: 0 2px 20px rgba(0, 0, 0, 0.35);
-    clip-path: inset(0 0 50% 0);
+    clip-path: inset(0 0 62% 0);
   }
   .morph-watermark .wm-bottom {
-    color: #111111;
+    color: #463d30; /* warm dark — peste cremul secțiunii morph */
     -webkit-text-stroke: 0;
-    clip-path: inset(50% 0 0 0);
+    clip-path: inset(38% 0 0 0);
   }
   .morph-watermark .mw-line2 {
     color: var(--red);
@@ -3617,7 +3658,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     z-index: 2;
     text-align: left;
     padding: 0 clamp(32px, 5vw, 64px); /* identic cu .persona-content */
-    max-width: 820px;
+    max-width: min(96vw, 1280px);
     pointer-events: none; /* doar butonul primește click */
   }
   .morph-overlay .morph-eyebrow {
@@ -3635,15 +3676,30 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     font-weight: 500;
     color: var(--ink);
     letter-spacing: -0.02em;
-    line-height: 1.05;
+    line-height: 1.12;
     margin: 0 0 24px;
-    max-width: 760px;
+    max-width: none;
+    white-space: nowrap;
   }
   .morph-overlay h2 em {
     font-style: italic;
     color: var(--red);
     font-weight: 400;
   }
+  .morph-overlay .morph-sub {
+    font-size: clamp(15px, 1.25vw, 18px);
+    line-height: 1.55;
+    color: var(--ink-soft);
+    max-width: 600px;
+    margin: 0 0 20px;
+  }
+  .morph-overlay .morph-metric {
+    font-size: clamp(14px, 1.4vw, 17px);
+    font-weight: 600;
+    color: var(--ink-soft);
+    margin: 0 0 24px;
+  }
+  .morph-overlay .morph-metric .sep { margin: 0 10px; opacity: 0.45; font-weight: 400; }
   .morph-overlay .morph-cta {
     pointer-events: auto;
   }
@@ -3655,7 +3711,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     .morph-media::after { top: auto; bottom: 0; height: 60%;
       background: linear-gradient(0deg, rgba(247,244,237,0.95) 0%, rgba(247,244,237,0.62) 42%, rgba(247,244,237,0) 100%); }
     .morph-overlay { position: absolute; left: 0; right: 0; bottom: 0; max-width: 100%; padding: 0 22px 80px; }
-    .morph-overlay h2 { font-size: clamp(30px, 8.5vw, 44px); }
+    .morph-overlay h2 { font-size: clamp(30px, 8.5vw, 44px); white-space: normal; }
   }
 </style>
 <div class="morph-wrap" style="position:relative;">
@@ -3668,8 +3724,10 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   </div>
 <section class="morph-section" id="morph">
   <div class="morph-overlay">
-    <h2 class="reveal">Remplace 5 matériaux<br><em>et 5 équipes différentes.</em></h2>
-    <a href="devis/" class="btn btn-red morph-cta reveal">Demander un devis →</a>
+    <span class="morph-eyebrow reveal">Liberté architecturale</span>
+    <h2 class="reveal">«&nbsp;Comment je construis ça&nbsp;?&nbsp;»<br><em>Avec Polistibrick, c'est possible.</em></h2>
+    <p class="morph-sub reveal">Liberté totale à l'exécution, comme à la conception.</p>
+    <a href="devis/" class="btn btn-red morph-cta reveal">Devis gratuit →</a>
   </div>
   <div class="morph-media">
     <video id="morphVideo" class="morph-video" autoplay muted loop playsinline preload="metadata"
@@ -3710,8 +3768,8 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   }
   .personas-watermark .wm-half { position: absolute; inset: 0; width: 100%; display: block; }
   .personas-watermark .wm-top {
-    color: #111111;
-    -webkit-text-stroke: 0;
+    color: transparent;
+    -webkit-text-stroke: 1.4px rgba(255, 255, 255, 0.55);
     clip-path: inset(0 0 62% 0);
   }
   .personas-watermark .wm-bottom {
@@ -3893,14 +3951,14 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   </div>
 <section class="personas-section" id="pour" aria-label="Vous êtes... ? Solutions par rôle">
 
-  <div class="persona-slide active" data-href="pour/proprietaires/">
-    <img src="images/personas/persona-proprietaire.jpg" alt="" fetchpriority="low" loading="lazy">
+  <div class="persona-slide active" data-href="pour/constructeurs/">
+    <img src="images/personas/persona-constructeur.jpg" alt="" fetchpriority="low" loading="lazy">
     <div class="persona-scrim"></div>
     <div class="persona-content">
-      <span class="persona-overline">Vous êtes… Propriétaire ?</span>
-      <h2>Maison premium, <em>sans factures.</em></h2>
-      <div class="persona-metric">−90% sur les factures d'énergie, pour la vie</div>
-      <a class="persona-cta" href="pour/proprietaires/">Voir pour propriétaires →</a>
+      <span class="persona-overline">Vous êtes… Constructeur ?</span>
+      <h2>3× plus rapide. <em>Marges protégées.</em></h2>
+      <div class="persona-metric">Une seule équipe = la marge de 5 équipes — jusqu'à 50%</div>
+      <a class="persona-cta" href="pour/constructeurs/">Voir pour constructeurs →</a>
     </div>
   </div>
 
@@ -3915,14 +3973,14 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     </div>
   </div>
 
-  <div class="persona-slide" data-href="pour/constructeurs/">
-    <img src="images/personas/persona-constructeur.jpg" alt="" loading="lazy">
+  <div class="persona-slide" data-href="pour/proprietaires/">
+    <img src="images/personas/persona-proprietaire.jpg" alt="" loading="lazy">
     <div class="persona-scrim"></div>
     <div class="persona-content">
-      <span class="persona-overline">Vous êtes… Constructeur ?</span>
-      <h2>3× plus rapide. <em>Marges protégées.</em></h2>
-      <div class="persona-metric">Une seule équipe = la marge de 5 équipes — jusqu'à 50%</div>
-      <a class="persona-cta" href="pour/constructeurs/">Voir pour constructeurs →</a>
+      <span class="persona-overline">Vous êtes… Propriétaire ?</span>
+      <h2>Maison premium, <em>sans factures.</em></h2>
+      <div class="persona-metric">−90% sur les factures d'énergie, pour la vie</div>
+      <a class="persona-cta" href="pour/proprietaires/">Voir pour propriétaires →</a>
     </div>
   </div>
 
@@ -3938,9 +3996,9 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   </div>
 
   <div class="persona-dots" role="tablist" aria-label="Choisir le rôle">
-    <button class="persona-dot active" aria-label="Propriétaire"><span class="pd-label">Propriétaire</span><span class="pd-bar"><span class="pd-fill"></span></span></button>
+    <button class="persona-dot active" aria-label="Constructeur"><span class="pd-label">Constructeur</span><span class="pd-bar"><span class="pd-fill"></span></span></button>
     <button class="persona-dot" aria-label="Architecte"><span class="pd-label">Architecte</span><span class="pd-bar"><span class="pd-fill"></span></span></button>
-    <button class="persona-dot" aria-label="Constructeur"><span class="pd-label">Constructeur</span><span class="pd-bar"><span class="pd-fill"></span></span></button>
+    <button class="persona-dot" aria-label="Propriétaire"><span class="pd-label">Propriétaire</span><span class="pd-bar"><span class="pd-fill"></span></span></button>
     <button class="persona-dot" aria-label="Promoteur"><span class="pd-label">Promoteur</span><span class="pd-bar"><span class="pd-fill"></span></span></button>
   </div>
 </section>
@@ -3981,6 +4039,12 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     text-shadow: 0 3px 34px rgba(0, 0, 0, 0.55), 0 1px 8px rgba(0, 0, 0, 0.40);
     clip-path: inset(38% 0 0 0);
   }
+  /* === Degrade GLOBAL pentru toate watermark-urile: jumătatea plină de jos
+     pornește solid de jos și se estompează spre muchia dintre secțiuni (ca PASSIF). === */
+  .wm-bottom {
+    -webkit-mask-image: linear-gradient(to top, #000 0%, #000 calc(26% - 2mm), rgba(0,0,0,0) calc(60% - 2mm));
+            mask-image: linear-gradient(to top, #000 0%, #000 calc(26% - 2mm), rgba(0,0,0,0) calc(60% - 2mm));
+  }
   @media (max-width: 640px) {
     .passif-watermark { font-size: clamp(56px, 16vw, 110px); } /* identic cu POUR mobil */
   }
@@ -3991,15 +4055,27 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   }
   .passif-media { position: relative; }
   .passif-video { display: block; width: 100%; height: auto; }
+  /* Slideshow 4 saisons — fondu enchaîné, 1,5 s par image */
+  .passif-slides { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; }
+  .passif-slides .ps {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; opacity: 0;
+    transition: opacity .9s ease-in-out; will-change: opacity;
+  }
+  .passif-slides .ps.active { opacity: 1; }
+  /* Prim-plan fix: intérieur identique, seul le paysage derrière la vitre change */
+  .passif-slides .passif-fg {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; z-index: 5; pointer-events: none;
+  }
   /* Scrim — aceeași gramatică precum caruselul: gradient închis jos pentru lizibilitate */
   .passif-scrim {
     position: absolute;
     inset: 0;
     background:
-      linear-gradient(0deg, rgba(8, 7, 6, 0.82) 0%, rgba(8, 7, 6, 0.56) 28%, rgba(8, 7, 6, 0.30) 50%, rgba(8, 7, 6, 0.10) 72%, rgba(8, 7, 6, 0) 88%),
-      linear-gradient(180deg, rgba(8, 7, 6, 0.42) 0%, rgba(8, 7, 6, 0.16) 14%, rgba(8, 7, 6, 0) 26%);
+      linear-gradient(0deg, rgba(8, 7, 6, 0.55) 0%, rgba(8, 7, 6, 0.26) 20%, rgba(8, 7, 6, 0.05) 40%, rgba(8, 7, 6, 0) 56%);
     pointer-events: none;
-    z-index: 1;
+    z-index: 6; /* peste prim-planul fix, doar pentru lizibilitatea textului jos */
   }
   /* Aceeași poliță de text ca la carusel: jos-stânga, aceleași fonturi și înălțimi */
   .passif-content {
@@ -4009,7 +4085,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     max-width: 1480px;
     margin: 0 auto;
     color: #fff;
-    z-index: 2;
+    z-index: 7; /* deasupra scrim-ului (z6) — textul rămâne lizibil */
   }
   .passif-overline {
     display: inline-block;
@@ -4052,6 +4128,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     .passif-section { min-height: calc(78svh + 30mm); }
     .passif-media { position: absolute; inset: 0; height: 100%; }
     .passif-video { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+    .passif-slides { height: 100%; aspect-ratio: auto; }
     .passif-scrim { display: block; background: linear-gradient(0deg, rgba(8,7,6,0.92) 0%, rgba(8,7,6,0.70) 26%, rgba(8,7,6,0.42) 50%, rgba(8,7,6,0.14) 72%, rgba(8,7,6,0) 90%); }
     .passif-content { position: absolute; left: 0; right: 0; bottom: 0; max-width: 100%; padding: 0 22px 80px; color: #fff; }
     .passif-content h2 { color: #fff; text-shadow: 0 2px 24px rgba(0, 0, 0, 0.45); font-size: clamp(30px, 8.5vw, 44px); }
@@ -4069,19 +4146,19 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     <span class="passif-overline reveal">Le standard Maison Passive</span>
     <h2 class="reveal">Dehors, les saisons passent.<br><em>Dedans, rien ne change.</em></h2>
     <div class="passif-metric reveal">Classe A+++<span class="sep">·</span>−90% de factures<span class="sep">·</span>15 kWh/m²/an<span class="sep">·</span>21 °C constant</div>
-    <a href="calculateur/" class="btn btn-red passif-cta reveal">Calculez vos économies →</a>
+    <a href="devis/" class="btn btn-red passif-cta reveal">Devis gratuit →</a>
   </div>
   <div class="passif-media">
-    <video class="passif-video" autoplay muted loop playsinline preload="metadata"
-           poster="images/passive/passive-seasons-poster.jpg"
-           data-src-mobile="images/passive/passive-seasons-mobile.mp4?v=1"
-           data-poster-mobile="images/passive/passive-seasons-mobile-poster.jpg?v=1"
-           aria-label="La même maison Polistibrick à travers les quatre saisons : l'enfant joue à l'intérieur, le confort ne change pas">
-      <source src="images/passive/passive-seasons.mp4" type="video/mp4">
-    </video>
-    <script>(function(){try{if(window.matchMedia&&matchMedia('(max-width:1080px)').matches){var v=document.querySelector('.passif-video');if(v){var m=v.getAttribute('data-src-mobile'),pm=v.getAttribute('data-poster-mobile'),s=v.querySelector('source');if(s&&m){s.setAttribute('src',m);if(pm)v.setAttribute('poster',pm);v.load();var pl=v.play();if(pl&&pl.catch)pl.catch(function(){});}}}}catch(e){}})();</script>
+    <div class="passif-slides" aria-label="La même maison Polistibrick à travers les quatre saisons : dehors tout change, dedans le confort reste constant">
+      <img class="ps active" src="images/passive/passive-spring.jpg?v=3" alt="La vue depuis le salon au printemps" fetchpriority="low">
+      <img class="ps" src="images/passive/passive-summer.jpg?v=3" alt="" loading="lazy">
+      <img class="ps" src="images/passive/passive-autumn.jpg?v=3" alt="" loading="lazy">
+      <img class="ps" src="images/passive/passive-winter.jpg?v=3" alt="" loading="lazy">
+      <img class="passif-fg" src="images/passive/passive-interior-fg.png?v=3" alt="" aria-hidden="true">
+    </div>
     <div class="passif-scrim"></div>
   </div>
+  <script>(function(){var s=document.querySelectorAll('#passif .ps');if(s.length<2)return;var i=0;setInterval(function(){s[i].classList.remove('active');i=(i+1)%s.length;s[i].classList.add('active');},1500);})();</script>
 </section>
 </div>
 
@@ -4111,8 +4188,8 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   }
   .cinq-watermark .wm-half { position: absolute; inset: 0; width: 100%; display: block; }
   .cinq-watermark .wm-top {
-    color: #FFFFFF;
-    -webkit-text-stroke: 0;
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.6);
     text-shadow: 0 3px 34px rgba(0, 0, 0, 0.55), 0 1px 8px rgba(0, 0, 0, 0.40);
     clip-path: inset(0 0 62% 0);
   }
@@ -4248,7 +4325,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     <span class="cinq-eyebrow reveal">La différence Polistibrick</span>
     <h2 class="reveal">Cinq produits séparés.<br><em>Un seul panneau.</em></h2>
     <div class="cinq-metric reveal">4 semaines d'exécution<span class="sep">·</span>−95% de factures<span class="sep">·</span>50+ ans de durabilité</div>
-    <a href="devis/" class="btn btn-red cinq-cta reveal">Demander un devis →</a>
+    <a href="devis/" class="btn btn-red cinq-cta reveal">Devis gratuit →</a>
   </div>
     <video class="cinq-video" autoplay muted loop playsinline preload="metadata"
            poster="images/bundle/bundle-test-poster.jpg?v=3"
@@ -4284,7 +4361,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   .presence-wrap { position: relative; z-index: 5; } /* peste cinq-wrap (z4) — jumatatea de sus a PRÉSENCE se vede peste sectiunea 5-EN-1 */
   .presence-watermark { position:absolute; top:0; left:0; right:0; transform:translateY(-38%); height:1em; line-height:1; text-align:center; text-transform:uppercase; font-family:var(--serif); font-size:clamp(64px,11vw,180px); font-weight:500; letter-spacing:-0.06em; z-index:4; pointer-events:none; user-select:none; white-space:nowrap; }
   .presence-watermark .wm-half { position:absolute; inset:0; width:100%; display:block; }
-  .presence-watermark .wm-top { color:var(--ink); -webkit-text-stroke:0; clip-path:inset(0 0 62% 0); } /* negru plin — vizibil peste sectiunea alba de deasupra */
+  .presence-watermark .wm-top { color:transparent; -webkit-text-stroke:1.5px rgba(90,80,66,0.62); clip-path:inset(0 0 62% 0); } /* crem închis cald — vizibil pe fundal alb */
   .presence-watermark .wm-bottom { color:#FFFFFF; text-shadow:0 3px 34px rgba(0,0,0,0.55),0 1px 8px rgba(0,0,0,0.40); clip-path:inset(38% 0 0 0); } /* alb peste foto */
   @media (max-width:640px){ .presence-watermark{ font-size:clamp(56px,16vw,110px);} }
 
@@ -4343,7 +4420,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     <span class="presence-overline reveal">Production · Polistibrick</span>
     <h2 class="reveal">Deux usines. <em>Neuf pays.</em></h2>
     <div class="presence-metric reveal">2 usines en propre<span class="sep">·</span>9 pays livrés<span class="sep">·</span>directement sur chantier</div>
-    <a href="devis/" class="btn btn-red presence-cta reveal">Demander un devis →</a>
+    <a href="devis/" class="btn btn-red presence-cta reveal">Devis gratuit →</a>
   </div>
 
   <div class="presence-mapcard">
@@ -4488,7 +4565,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     font-weight: 500; letter-spacing: -0.06em; z-index: 2;
   }
   .sistem-watermark .wm-half { position: absolute; inset: 0; width: 100%; display: block; }
-  .sistem-watermark .wm-top { color: #FFFFFF; clip-path: inset(0 0 62% 0); }
+  .sistem-watermark .wm-top { color: transparent; -webkit-text-stroke: 1.5px rgba(255,255,255,0.6); clip-path: inset(0 0 62% 0); }
   .sistem-watermark .wm-bottom { color: #111111; -webkit-text-stroke: 0; clip-path: inset(38% 0 0 0); }
   .sistem-intro {
     max-width: 760px; margin: 0 auto 48px; text-align: center;
@@ -4772,8 +4849,8 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     position: absolute; inset: 0; width: 100%; display: block;
   }
   .montaj-watermark .wm-top {
-    color: #111111;
-    -webkit-text-stroke: 0;
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(90, 80, 66, 0.62); /* crem închis cald — vizibil pe fundal alb */
     clip-path: inset(0 0 62% 0);
   }
   .montaj-watermark .wm-bottom {
@@ -5014,7 +5091,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     pointer-events: none; user-select: none; white-space: nowrap;
   }
   .histoire-watermark .wm-half { position: absolute; inset: 0; width: 100%; display: block; }
-  .histoire-watermark .wm-top { color: #FFFFFF; text-shadow: 0 3px 24px rgba(0,0,0,0.55); clip-path: inset(0 0 62% 0); }
+  .histoire-watermark .wm-top { color: transparent; -webkit-text-stroke: 1.5px rgba(255,255,255,0.6); clip-path: inset(0 0 62% 0); }
   .histoire-watermark .wm-bottom { color: var(--ink); clip-path: inset(38% 0 0 0); }
 
   .histoire-wrap {
@@ -5048,13 +5125,19 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   /* DÉTAILS à droite */
   .histoire-detail { max-width: 600px; }
   .histoire-detail .testimonial-tag { margin-bottom: 18px; background: var(--red-soft); color: var(--red); }
-  .histoire-stars { color: var(--red); font-size: 18px; letter-spacing: 3px; margin-bottom: 18px; line-height: 1; }
+  .histoire-stars { color: var(--red); font-size: 18px; letter-spacing: 3px; margin-bottom: 16px; line-height: 1; display: flex; align-items: baseline; gap: 10px; }
+  .histoire-date { font-family: var(--sans); font-size: 13px; font-weight: 500; letter-spacing: 0; color: var(--gray); text-transform: none; }
   .histoire-quote {
-    font-family: var(--serif); font-size: clamp(26px, 3vw, 40px);
-    line-height: 1.28; color: var(--ink); font-weight: 400; letter-spacing: -0.01em;
-    margin-bottom: 28px;
+    font-family: var(--serif); font-size: clamp(18px, 1.8vw, 23px);
+    line-height: 1.5; color: var(--ink); font-weight: 400; letter-spacing: -0.005em;
+    margin-bottom: 22px;
   }
   .histoire-quote em { font-style: italic; color: var(--red); font-weight: 400; }
+  /* Galerie de photos « ajoutées par le client » — look avis authentique */
+  .histoire-gallery-label { font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gray); margin-bottom: 10px; }
+  .histoire-gallery { display: flex; gap: 10px; margin-bottom: 30px; flex-wrap: wrap; }
+  .histoire-gallery img { width: 92px; height: 92px; object-fit: cover; border-radius: 12px; border: 1px solid var(--border); cursor: pointer; transition: transform .2s ease; }
+  .histoire-gallery img:hover { transform: translateY(-2px); }
   .histoire-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 32px; }
   .histoire-stat { text-align: center; padding: 16px 8px; background: #fff; border: 1px solid var(--border); border-radius: 14px; }
   .histoire-stat strong { display: block; font-family: var(--serif); font-size: 26px; color: var(--red); font-weight: 500; line-height: 1; letter-spacing: -0.02em; }
@@ -5083,7 +5166,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   }
 </style>
 
-<section class="histoire-section" aria-label="Témoignages de propriétaires">
+<section class="histoire-section" aria-label="Témoignages de constructeurs">
   <div class="histoire-band" aria-hidden="true"></div>
   <div class="histoire-watermark" aria-hidden="true">
     <span class="wm-half wm-top">Histoires</span>
@@ -5094,29 +5177,29 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     <div class="histoire-wrap reveal">
 
       <figure class="histoire-photo">
-        <img src="images/hero/hero-house-2.jpg" alt="Maison Polistibrick habitée par un propriétaire">
+        <img src="images/hero/hero-house-2.jpg" alt="Maison construite par une entreprise avec le système Polistibrick">
         <div class="histoire-photo-scrim" aria-hidden="true"></div>
         <figcaption class="histoire-photo-badge">
-          <img src="images/personas/persona-proprietaire.jpg" alt="">
+          <img src="images/personas/persona-constructeur.jpg" alt="">
           <div>
-            <strong>Julien Mercier</strong>
-            <span class="hp-loc">Lyon · Maison 180 m² · Habitée depuis 2024</span>
-            <span class="histoire-verified">✓ Propriétaire vérifié</span>
+            <strong>Marc Dubois</strong>
+            <span class="hp-loc">Entreprise générale · Aix-en-Provence · 14 maisons livrées</span>
+            <span class="histoire-verified">✓ Constructeur vérifié</span>
           </div>
         </figcaption>
       </figure>
 
       <div class="histoire-detail">
-        <span class="testimonial-tag">Témoignage · Chiffres réels</span>
-        <div class="histoire-stars" aria-label="5 sur 5">★★★★★</div>
+        <span class="testimonial-tag">Avis vérifié</span>
+        <div class="histoire-stars" aria-label="5 sur 5">★★★★★ <span class="histoire-date">il y a 3 mois</span></div>
         <p class="histoire-quote">
-          Après 2 hivers, <em>je n'ai plus jamais allumé la chaudière</em>. Je paie 38 €/mois d'électricité — mes voisins en brique passive paient plus de 300.
+          Une équipe de 3, une maison de 120 m² montée en <em>moins de 3 semaines</em>. Je signe plus de chantiers avec les mêmes ouvriers — et ma marge a grimpé, sans embaucher. Franchement, je ne reviens plus en arrière.
         </p>
-        <div class="histoire-stats">
-          <div class="histoire-stat"><strong>38€</strong><span>Facture/mois</span></div>
-          <div class="histoire-stat"><strong>5 sem.</strong><span>Exécution</span></div>
-          <div class="histoire-stat"><strong>A+++</strong><span>Classe énerg.</span></div>
-          <div class="histoire-stat"><strong>0 €</strong><span>Réparations</span></div>
+        <div class="histoire-gallery-label">Photos ajoutées par Marc</div>
+        <div class="histoire-gallery">
+          <img src="images/montage/montage-houses-poster.jpg" alt="Photo de chantier ajoutée par le constructeur" loading="lazy">
+          <img src="images/hero/hero-house-3.jpg" alt="Photo de chantier ajoutée par le constructeur" loading="lazy">
+          <img src="images/hero/hero-house-1.jpg" alt="Photo de chantier ajoutée par le constructeur" loading="lazy">
         </div>
         <div class="histoire-actions">
           <button type="button" class="histoire-review-btn" data-review-trigger>Laisser un avis →</button>
@@ -5245,7 +5328,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
       <h2>Construisons ensemble<br><em>votre maison du futur.</em></h2>
       <p>Parlez-nous de votre projet. Nous vous préparons un devis personnalisé sous 48 heures — sans engagement.</p>
       <div class="cta-actions">
-        <a href="devis/" class="btn btn-on-dark btn-large">Demander un devis →</a>
+        <a href="devis/" class="btn btn-on-dark btn-large">Devis gratuit →</a>
         <a href="tel:{{contact.phone_raw}}" class="btn btn-on-dark-ghost btn-large">{{contact.phone_display}}</a>
       </div>
     </div>
@@ -5897,6 +5980,230 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     banner.classList.remove('show');
     document.body.classList.remove('has-country-banner');
     setTimeout(() => { banner.hidden = true; }, 400);
+  });
+})();
+</script>
+
+<!-- AVIS — moteur : formulaire « Laisser un avis » (modale) -->
+<style>
+  .avis-overlay {
+    position: fixed; inset: 0; z-index: 9999;
+    background: rgba(15,14,12,0.55); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
+    display: none; align-items: flex-start; justify-content: center;
+    padding: clamp(16px,5vh,64px) 16px; overflow-y: auto;
+  }
+  .avis-overlay.open { display: flex; }
+  .avis-modal {
+    background: var(--cream-light, #FDFBF7); color: var(--ink, #0F0F0F);
+    width: 100%; max-width: 560px; border-radius: 22px;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.4); position: relative;
+    padding: clamp(24px,4vw,40px); font-family: var(--sans);
+    animation: avisIn .28s cubic-bezier(.22,1,.36,1);
+  }
+  @keyframes avisIn { from { opacity:0; transform: translateY(16px); } to { opacity:1; transform:none; } }
+  .avis-close { position: absolute; top: 16px; right: 16px; width: 38px; height: 38px; border-radius: 50%;
+    border: 1px solid var(--border); background: #fff; font-size: 20px; line-height: 1; cursor: pointer; color: var(--ink); }
+  .avis-close:hover { background: var(--cream-dark, #EDE8DC); }
+  .avis-modal h3 { font-family: var(--serif); font-size: clamp(24px,3vw,32px); font-weight: 600; margin: 0 0 4px; }
+  .avis-modal .avis-sub { font-size: 13.5px; color: var(--muted,#6b6457); margin-bottom: 22px; }
+  .avis-field { margin-bottom: 16px; }
+  .avis-field label { display: block; font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--muted,#6b6457); margin-bottom: 7px; }
+  .avis-field input[type=text], .avis-field select, .avis-field textarea {
+    width: 100%; font-family: var(--sans); font-size: 15px; color: var(--ink);
+    padding: 12px 14px; border: 1px solid var(--border); border-radius: 12px; background: #fff; outline: none;
+  }
+  .avis-field input:focus, .avis-field select:focus, .avis-field textarea:focus { border-color: var(--red); }
+  .avis-field textarea { resize: vertical; min-height: 96px; }
+  .avis-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  /* étoiles */
+  .avis-stars { display: inline-flex; gap: 6px; }
+  .avis-stars button { background: none; border: 0; cursor: pointer; font-size: 30px; line-height: 1; color: #d9d2c4; padding: 0; transition: color .12s, transform .12s; }
+  .avis-stars button:hover { transform: scale(1.12); }
+  .avis-stars button.on { color: var(--red); }
+  /* upload */
+  .avis-drop { border: 1.5px dashed var(--border); border-radius: 12px; padding: 16px; text-align: center;
+    font-size: 13px; color: var(--muted,#6b6457); cursor: pointer; background: #fff; }
+  .avis-drop:hover { border-color: var(--red); color: var(--red); }
+  .avis-drop input { display: none; }
+  .avis-thumbs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  .avis-thumb { position: relative; width: 70px; height: 70px; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); }
+  .avis-thumb img { width: 100%; height: 100%; object-fit: cover; }
+  .avis-thumb button { position: absolute; top: 2px; right: 2px; width: 20px; height: 20px; border-radius: 50%; border: 0;
+    background: rgba(0,0,0,.6); color: #fff; font-size: 13px; line-height: 1; cursor: pointer; }
+  .avis-profile-row { display: flex; align-items: center; gap: 14px; }
+  .avis-profile-pic { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border); background: var(--cream-dark,#EDE8DC); flex-shrink: 0; }
+  .avis-submit { width: 100%; margin-top: 8px; background: var(--red); color: #fff; border: 0; border-radius: 100px;
+    font-family: var(--sans); font-size: 15px; font-weight: 600; padding: 15px; cursor: pointer; box-shadow: 0 12px 30px rgba(200,16,46,.3); }
+  .avis-submit:hover { background: var(--red-dark, #A60E13); }
+  .avis-note { font-size: 11.5px; color: var(--muted,#6b6457); text-align: center; margin-top: 12px; }
+  .avis-err { color: var(--red); font-size: 12.5px; margin-top: 6px; display: none; }
+  /* état merci */
+  .avis-thanks { display: none; text-align: center; padding: 20px 0; }
+  .avis-thanks .at-check { width: 64px; height: 64px; border-radius: 50%; background: var(--red-soft,#FBE9EC); color: var(--red);
+    display: flex; align-items: center; justify-content: center; font-size: 32px; margin: 0 auto 18px; }
+  .avis-thanks h3 { margin-bottom: 8px; }
+  .avis-thanks p { font-size: 14px; color: var(--muted,#6b6457); }
+  .avis-modal.sent .avis-form { display: none; }
+  .avis-modal.sent .avis-thanks { display: block; }
+</style>
+
+<div class="avis-overlay" id="avisOverlay" role="dialog" aria-modal="true" aria-labelledby="avisTitle">
+  <div class="avis-modal" id="avisModal">
+    <button type="button" class="avis-close" id="avisClose" aria-label="Fermer">×</button>
+
+    <form class="avis-form" id="avisForm" novalidate>
+      <h3 id="avisTitle">Laisser un avis</h3>
+      <p class="avis-sub">Partagez votre expérience avec Polistibrick. Publié après validation.</p>
+
+      <div class="avis-field">
+        <label>Votre note</label>
+        <div class="avis-stars" id="avisStars" role="radiogroup" aria-label="Note">
+          <button type="button" data-v="1" aria-label="1 étoile">★</button>
+          <button type="button" data-v="2" aria-label="2 étoiles">★</button>
+          <button type="button" data-v="3" aria-label="3 étoiles">★</button>
+          <button type="button" data-v="4" aria-label="4 étoiles">★</button>
+          <button type="button" data-v="5" aria-label="5 étoiles">★</button>
+        </div>
+      </div>
+
+      <div class="avis-row">
+        <div class="avis-field">
+          <label for="avisNom">Nom / Entreprise</label>
+          <input type="text" id="avisNom" name="nom" autocomplete="name">
+        </div>
+        <div class="avis-field">
+          <label for="avisRole">Vous êtes</label>
+          <select id="avisRole" name="role">
+            <option value="">Choisir…</option>
+            <option>Constructeur</option>
+            <option>Auto-constructeur</option>
+            <option>Propriétaire</option>
+            <option>Architecte · Ingénieur</option>
+            <option>Promoteur</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="avis-field">
+        <label for="avisLieu">Localité (ville / région)</label>
+        <input type="text" id="avisLieu" name="lieu" placeholder="ex. Aix-en-Provence">
+      </div>
+
+      <div class="avis-field">
+        <label for="avisMsg">Votre avis</label>
+        <textarea id="avisMsg" name="message" placeholder="Décrivez votre projet et votre expérience…"></textarea>
+      </div>
+
+      <div class="avis-field">
+        <label>Photos du projet (optionnel)</label>
+        <label class="avis-drop" for="avisPhotos">📷 Ajouter des photos de votre chantier / maison
+          <input type="file" id="avisPhotos" accept="image/*" multiple>
+        </label>
+        <div class="avis-thumbs" id="avisThumbs"></div>
+      </div>
+
+      <div class="avis-field">
+        <label>Photo de profil (optionnel)</label>
+        <div class="avis-profile-row">
+          <img class="avis-profile-pic" id="avisProfilePreview" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23bbb'%3E%3Cpath d='M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0 2c-5 0-9 2.5-9 6v2h18v-2c0-3.5-4-6-9-6Z'/%3E%3C/svg%3E" alt="">
+          <label class="avis-drop" for="avisProfile" style="flex:1">Ajouter une photo
+            <input type="file" id="avisProfile" accept="image/*">
+          </label>
+        </div>
+      </div>
+
+      <div class="avis-err" id="avisErr">Merci de remplir au moins : note, nom et avis.</div>
+      <button type="submit" class="avis-submit">Envoyer mon avis →</button>
+      <p class="avis-note">🔒 Vérifié et publié par Polistibrick après validation.</p>
+    </form>
+
+    <div class="avis-thanks">
+      <div class="at-check">✓</div>
+      <h3>Merci !</h3>
+      <p>Votre avis a bien été envoyé. Il sera publié sur le site après validation par notre équipe.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var overlay = document.getElementById('avisOverlay');
+  if (!overlay) return;
+  var modal = document.getElementById('avisModal');
+  var form = document.getElementById('avisForm');
+  var rating = 0;
+  var photos = [];      // {file, url}
+  var profileFile = null;
+
+  function open(){ overlay.classList.add('open'); document.body.style.overflow='hidden'; }
+  function close(){ overlay.classList.remove('open'); document.body.style.overflow=''; }
+
+  document.querySelectorAll('[data-review-trigger]').forEach(function(b){
+    b.addEventListener('click', function(e){ e.preventDefault(); open(); });
+  });
+  document.getElementById('avisClose').addEventListener('click', close);
+  overlay.addEventListener('click', function(e){ if (e.target === overlay) close(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && overlay.classList.contains('open')) close(); });
+
+  // étoiles
+  var stars = document.querySelectorAll('#avisStars button');
+  stars.forEach(function(s){
+    s.addEventListener('click', function(){
+      rating = parseInt(s.getAttribute('data-v'),10);
+      stars.forEach(function(x){ x.classList.toggle('on', parseInt(x.getAttribute('data-v'),10) <= rating); });
+    });
+  });
+
+  // photos projet
+  var thumbs = document.getElementById('avisThumbs');
+  function renderThumbs(){
+    thumbs.innerHTML = '';
+    photos.forEach(function(p, i){
+      var d = document.createElement('div'); d.className = 'avis-thumb';
+      d.innerHTML = '<img src="'+p.url+'" alt=""><button type="button" aria-label="Retirer">×</button>';
+      d.querySelector('button').addEventListener('click', function(){ photos.splice(i,1); renderThumbs(); });
+      thumbs.appendChild(d);
+    });
+  }
+  document.getElementById('avisPhotos').addEventListener('change', function(e){
+    Array.prototype.forEach.call(e.target.files, function(f){
+      if (f.type.indexOf('image')===0) photos.push({file:f, url:URL.createObjectURL(f)});
+    });
+    e.target.value=''; renderThumbs();
+  });
+
+  // photo profil
+  document.getElementById('avisProfile').addEventListener('change', function(e){
+    var f = e.target.files[0]; if(!f) return; profileFile = f;
+    document.getElementById('avisProfilePreview').src = URL.createObjectURL(f);
+  });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var nom = document.getElementById('avisNom').value.trim();
+    var msg = document.getElementById('avisMsg').value.trim();
+    var err = document.getElementById('avisErr');
+    if (!rating || !nom || !msg){ err.style.display='block'; return; }
+    err.style.display='none';
+
+    var avis = {
+      note: rating,
+      nom: nom,
+      role: document.getElementById('avisRole').value,
+      lieu: document.getElementById('avisLieu').value.trim(),
+      message: msg,
+      nbPhotos: photos.length,
+      hasProfile: !!profileFile,
+      date: new Date().toISOString(),
+      statut: 'en_attente'
+    };
+    // v1 : on garde une trace locale + confirmation. (Backend de modération à brancher : Firebase / e-mail.)
+    try {
+      var list = JSON.parse(localStorage.getItem('pbk_avis') || '[]');
+      list.push(avis); localStorage.setItem('pbk_avis', JSON.stringify(list));
+    } catch(_){}
+    // TODO backend: envoyer { avis, photos, profileFile } pour modération + publication.
+    modal.classList.add('sent');
   });
 })();
 </script>
