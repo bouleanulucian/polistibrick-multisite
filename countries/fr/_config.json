@@ -12,16 +12,16 @@
     "name_short": "Polistibrick France",
     "vat": "FR[à remplir]",
     "registration": "[à remplir]",
-    "address_street": "[à remplir]",
-    "address_city": "Paris",
-    "address_zip": "[à remplir]",
+    "address_street": "4 Rue Hans List",
+    "address_city": "Croissy-sur-Seine",
+    "address_zip": "78290",
     "address_country": "France"
   },
 
   "contact": {
-    "phone": "+33 [à remplir]",
-    "phone_raw": "+33[à remplir]",
-    "phone_display": "+33 [à remplir]",
+    "phone": "+33 1 61 30 40 09",
+    "phone_raw": "+33161304009",
+    "phone_display": "+33 1 61 30 40 09",
     "email_general": "contact@polistibrick.fr",
     "email_offer": "devis@polistibrick.fr",
     "email_press": "presse@polistibrick.fr",
@@ -30,7 +30,8 @@
       "facebook": "",
       "instagram": "",
       "linkedin": "https://linkedin.com/company/polistibrick-france",
-      "youtube": ""
+      "youtube": "",
+      "tiktok": ""
     }
   },
 
