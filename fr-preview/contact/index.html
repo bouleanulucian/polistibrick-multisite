@@ -265,22 +265,22 @@
               <div class="form-row form-row--split">
                 <div>
                   <label class="form-label" for="cname">Nom *</label>
-                  <input class="form-input" type="text" id="cname" required placeholder="Votre nom">
+                  <input class="form-input" type="text" id="cname" name="name" required placeholder="Votre nom">
                 </div>
                 <div>
                   <label class="form-label" for="cemail">Email *</label>
-                  <input class="form-input" type="email" id="cemail" required placeholder="email@exemple.fr">
+                  <input class="form-input" type="email" id="cemail" name="email" required placeholder="email@exemple.fr">
                 </div>
               </div>
 
               <div class="form-row form-row--split">
                 <div>
                   <label class="form-label" for="cphone">Téléphone (facultatif)</label>
-                  <input class="form-input" type="tel" id="cphone" placeholder="+33 6 XX XX XX XX">
+                  <input class="form-input" type="tel" id="cphone" name="phone" placeholder="+33 6 XX XX XX XX">
                 </div>
                 <div>
                   <label class="form-label" for="crole">Vous êtes</label>
-                  <select class="form-select" id="crole">
+                  <select class="form-select" id="crole" name="role">
                     <option value="">— Sélectionnez —</option>
                     <option value="architecte">Architecte</option>
                     <option value="bet">Bureau d'études (BET)</option>
@@ -294,7 +294,7 @@
 
               <div class="form-row">
                 <label class="form-label" for="csubject">Sujet</label>
-                <select class="form-select" id="csubject">
+                <select class="form-select" id="csubject" name="subject">
                   <option>Question technique</option>
                   <option>Demande de documentation</option>
                   <option>Support produit</option>
@@ -307,7 +307,7 @@
 
               <div class="form-row">
                 <label class="form-label" for="cmsg">Message *</label>
-                <textarea class="form-textarea" id="cmsg" required placeholder="Comment pouvons-nous vous aider ?"></textarea>
+                <textarea class="form-textarea" id="cmsg" name="message" required placeholder="Comment pouvons-nous vous aider ?"></textarea>
               </div>
 
               <div class="form-row">
