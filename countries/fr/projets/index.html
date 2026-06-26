@@ -36,12 +36,14 @@
       background: white !important;
     }
     header.nav .nav-cta-devis {
-      color: white !important;
-      border-color: rgba(255,255,255,0.3) !important;
+      background: rgba(255,255,255,0.14) !important;   /* glassy translucide — identique à la home */
+      color: #fff !important;
+      border: 1px solid rgba(255,255,255,0.38) !important;
+      border-radius: 8px !important;
     }
     header.nav .nav-cta-devis:hover {
-      background: rgba(255,255,255,0.1) !important;
-      color: white !important;
+      background: rgba(255,255,255,0.22) !important;
+      color: #fff !important;
     }
 
     /* Slider styling */
@@ -139,9 +141,9 @@
       gap: 16px;
     }
     .slider-arrow {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.15);
-      color: white;
+      background: var(--red);
+      border: 1px solid var(--red);
+      color: #fff;
       width: 50px; height: 50px;
       border-radius: 50%;
       cursor: pointer;
@@ -153,9 +155,9 @@
       backdrop-filter: blur(8px);
     }
     .slider-arrow:hover {
-      background: white;
-      color: #0b0c0d;
-      border-color: white;
+      background: #a60d26;
+      color: #fff;
+      border-color: #a60d26;
       transform: scale(1.05);
     }
 
