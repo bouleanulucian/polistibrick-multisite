@@ -8,11 +8,11 @@
   "domain_url": "https://polistibrick.fr",
 
   "company": {
-    "name_legal": "Polistibrick France SAS",
-    "name_short": "Polistibrick France",
-    "vat": "FR[à remplir]",
-    "registration": "[à remplir]",
-    "address_street": "4 Rue Hans List",
+    "name_legal": "POLISTIBRICK SARL",
+    "name_short": "Polistibrick",
+    "vat": "FR74 984 804 872",
+    "registration": "SIREN 984 804 872 (RCS Versailles)",
+    "address_street": "2-4 Parc Claude Monet, 4 Rue Hans List",
     "address_city": "Croissy-sur-Seine",
     "address_zip": "78290",
     "address_country": "France"
@@ -37,10 +37,10 @@
 
   "team": [
     {
-      "name": "[Nom Manager]",
+      "name": "Pierre Dumont",
       "role": "Directeur commercial France",
-      "email": "[email]@polistibrick.fr",
-      "phone": "[téléphone]",
+      "email": "p.dumont@polistibrick.fr",
+      "phone": "+33 1 61 30 40 09",
       "languages": ["FR", "EN"],
       "photo": "team/manager-fr.jpg",
       "linkedin": ""
@@ -57,7 +57,7 @@
 
   "factory": {
     "name": "Valencia",
-    "address": "[Espagne]",
+    "address": "Valence, Espagne",
     "year_built": 2014
   },
 
