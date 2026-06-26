@@ -101,6 +101,8 @@
     }
     .country-office-site a { color: var(--red); font-weight: 600; font-size: 13px; }
     .country-office-langs { font-size: 11.5px; color: var(--gray); }
+    .country-office-photo { width: 58px; height: 58px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 1px solid var(--border); }
+    .country-office-photo--ph { display: flex; align-items: center; justify-content: center; background: var(--cream); font-size: 28px; }
 
     .wm-form-card {
       background: white; border: 1px solid var(--border); border-radius: 20px;
@@ -338,6 +340,9 @@
 <footer class="site-footer" data-include="footer"></footer>
 <script src="../assets/js/site.js"></script>
 <script>
+  // Pour afficher la photo et le nom du responsable d'un pays, ajoutez à son entrée :
+  //   photo: 'images/team/NOM-FICHIER.jpg', contact: 'Prénom Nom'
+  // (sans photo, un cercle avec le drapeau s'affiche par défaut)
   const COUNTRIES = {
     RO: { flag: '🇷🇴', name: 'Roumanie', city: 'Craiova', phone: '+40 371 550 550', phoneRaw: '+40371550550', email: 'romania@polistibrick.eu', address: 'Prelungirea Ghencea 281,<br>sector 6, Bucarest', site: 'polistibrick.ro', langs: 'RO · EN', badge: 'Siège RO' },
     ES: { flag: '🇪🇸', name: 'Espagne', city: 'Valencia', phone: '+34 642 777 216', phoneRaw: '+34642777216', email: 'lucian@polistibrick.es', address: 'Pol. 24, 106,<br>Santa Eulalia del Rio', site: 'polistibrick.es', langs: 'ES · EN', badge: 'Siège ES' },
@@ -379,10 +384,12 @@
       </div>` : '';
     card.innerHTML = `
       <div class="country-office-head">
-        <span class="country-office-flag">${c.flag}</span>
+        ${c.photo
+          ? `<img class="country-office-photo" src="${c.photo}" alt="${c.contact || c.city}">`
+          : `<div class="country-office-photo country-office-photo--ph" aria-hidden="true">${c.flag}</div>`}
         <div class="country-office-name">
-          ${c.city}
-          <span>${c.badge}</span>
+          ${c.contact || c.city}
+          <span>${c.contact ? c.city + ' · ' + c.badge : c.badge}</span>
         </div>
       </div>
       <div class="country-office-info">
