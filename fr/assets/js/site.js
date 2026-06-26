@@ -95,7 +95,7 @@
           <a href="${BASE}a-propos/brevet/">Le brevet Polistibrick</a>
           <a href="${BASE}a-propos/certifications/">Certifications</a>
           <a href="${BASE}a-propos/usines/">Nos usines</a>
-          <a href="${BASE}a-propos/equipe/">L'équipe</a>
+          <a href="${BASE}a-propos/fondateur/">L'équipe</a>
         </div>
       </div>
       <div class="nav-drawer-cta">
