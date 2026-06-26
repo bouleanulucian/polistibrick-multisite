@@ -223,11 +223,11 @@
               <div class="form-row form-row--split">
                 <div>
                   <label class="form-label" for="pname">Nom du contact *</label>
-                  <input class="form-input" type="text" id="pname" required placeholder="Votre nom">
+                  <input class="form-input" type="text" id="pname" name="contact_name" required placeholder="Votre nom">
                 </div>
                 <div>
                   <label class="form-label" for="prole">Fonction dans l'entreprise *</label>
-                  <select class="form-select" id="prole" required>
+                  <select class="form-select" id="prole" name="role" required>
                     <option value="">Sélectionnez</option>
                     <option>Dirigeant / Directeur général</option>
                     <option>Directeur technique / Chef de chantier</option>
@@ -240,22 +240,22 @@
               <div class="form-row form-row--split">
                 <div>
                   <label class="form-label" for="pcompany">Entreprise *</label>
-                  <input class="form-input" type="text" id="pcompany" required placeholder="Nom de l'entreprise">
+                  <input class="form-input" type="text" id="pcompany" name="company" required placeholder="Nom de l'entreprise">
                 </div>
                 <div>
                   <label class="form-label" for="pcui">SIRET / N° d'immatriculation</label>
-                  <input class="form-input" type="text" id="pcui" placeholder="optionnel, mais accélère la vérification">
+                  <input class="form-input" type="text" id="pcui" name="registration" placeholder="optionnel, mais accélère la vérification">
                 </div>
               </div>
 
               <div class="form-row form-row--split">
                 <div>
                   <label class="form-label" for="pregion">Région / Pays *</label>
-                  <input class="form-input" type="text" id="pregion" required placeholder="ex. Île-de-France, FR / Cluj, RO">
+                  <input class="form-input" type="text" id="pregion" name="region" required placeholder="ex. Île-de-France, FR / Cluj, RO">
                 </div>
                 <div>
                   <label class="form-label" for="pteam">Équipe (personnes)</label>
-                  <select class="form-select" id="pteam">
+                  <select class="form-select" id="pteam" name="team_size">
                     <option value="">Sélectionnez</option>
                     <option>1-3</option>
                     <option>4-10</option>
@@ -268,7 +268,7 @@
               <div class="form-row form-row--split">
                 <div>
                   <label class="form-label" for="pyears">Années d'expérience</label>
-                  <select class="form-select" id="pyears">
+                  <select class="form-select" id="pyears" name="experience_years">
                     <option value="">Sélectionnez</option>
                     <option>Moins de 2 ans</option>
                     <option>2-5 ans</option>
@@ -278,7 +278,7 @@
                 </div>
                 <div>
                   <label class="form-label" for="pprojects">Maisons construites/an</label>
-                  <select class="form-select" id="pprojects">
+                  <select class="form-select" id="pprojects" name="houses_per_year">
                     <option value="">Sélectionnez</option>
                     <option>Moins de 5</option>
                     <option>5-15</option>
@@ -292,36 +292,36 @@
                 <label class="form-label">Système principal utilisé actuellement</label>
                 <div class="form-radio-group">
                   <div class="form-radio">
-                    <input type="checkbox" id="sys-brick"><label for="sys-brick">Brique</label>
+                    <input type="checkbox" id="sys-brick" name="current_system" value="brique"><label for="sys-brick">Brique</label>
                   </div>
                   <div class="form-radio">
-                    <input type="checkbox" id="sys-bca"><label for="sys-bca">Béton cellulaire</label>
+                    <input type="checkbox" id="sys-bca" name="current_system" value="beton-cellulaire"><label for="sys-bca">Béton cellulaire</label>
                   </div>
                   <div class="form-radio">
-                    <input type="checkbox" id="sys-wood"><label for="sys-wood">Bois / CLT</label>
+                    <input type="checkbox" id="sys-wood" name="current_system" value="bois-clt"><label for="sys-wood">Bois / CLT</label>
                   </div>
                   <div class="form-radio">
-                    <input type="checkbox" id="sys-icf"><label for="sys-icf">Autre ICF</label>
+                    <input type="checkbox" id="sys-icf" name="current_system" value="autre-icf"><label for="sys-icf">Autre ICF</label>
                   </div>
                   <div class="form-radio">
-                    <input type="checkbox" id="sys-other"><label for="sys-other">Autre</label>
+                    <input type="checkbox" id="sys-other" name="current_system" value="autre"><label for="sys-other">Autre</label>
                   </div>
                 </div>
               </div>
 
               <div class="form-row">
                 <label class="form-label" for="pmotivation">Pourquoi souhaitez-vous devenir partenaire ?</label>
-                <textarea class="form-textarea" id="pmotivation" placeholder="En quelques mots : ce qui vous a amené à découvrir Polistibrick, les projets que vous souhaitez réaliser..."></textarea>
+                <textarea class="form-textarea" id="pmotivation" name="motivation" placeholder="En quelques mots : ce qui vous a amené à découvrir Polistibrick, les projets que vous souhaitez réaliser..."></textarea>
               </div>
 
               <div class="form-row form-row--split">
                 <div>
                   <label class="form-label" for="pemail">Email *</label>
-                  <input class="form-input" type="email" id="pemail" required placeholder="contact@entreprise.fr">
+                  <input class="form-input" type="email" id="pemail" name="email" required placeholder="contact@entreprise.fr">
                 </div>
                 <div>
                   <label class="form-label" for="pphone">Téléphone *</label>
-                  <input class="form-input" type="tel" id="pphone" required placeholder="+33 X XX XX XX XX">
+                  <input class="form-input" type="tel" id="pphone" name="phone" required placeholder="+33 X XX XX XX XX">
                 </div>
               </div>
 
@@ -379,8 +379,8 @@
         <em style="color:var(--red);font-style:normal;">"</em>
       </p>
       <div style="font-size:13px;color:var(--gray);">
-        <strong style="color:var(--ink);font-size:14px;display:block;margin-bottom:4px;">[Nom du partenaire]</strong>
-        Partenaire certifié · [Localité] · 12 projets livrés
+        <strong style="color:var(--ink);font-size:14px;display:block;margin-bottom:4px;">Jean-François Roux</strong>
+        Partenaire certifié · Bâti-Innov SAS · Auvergne-Rhône-Alpes · 12 projets livrés
       </div>
     </div>
   </div>

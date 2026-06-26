@@ -75,7 +75,7 @@ PATH_REWRITES = {
         "proprietari": "proprietaires", "arhitecti": "architectes",
         "constructori": "constructeurs", "investitori": "investisseurs",
         "certificari": "certifications", "fabrici": "usines",
-        "echipa": "equipe", "patent": "brevet",
+        "echipa": "fondateur", "patent": "brevet",
         "casa-cluj-napoca": "maison-cluj-napoca", "ansamblu-lyon": "ensemble-lyon",
         "confidentialitate": "confidentialite", "sustenabilitate": "durabilite",
         "termeni": "conditions",
