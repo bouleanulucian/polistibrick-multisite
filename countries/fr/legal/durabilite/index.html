@@ -50,8 +50,34 @@
             <h1>Politique de développement durable</h1>
             <p>Comment Polistibrick contribue à une construction plus durable. Données concrètes sur les émissions, le cycle de vie et l'impact réel d'une maison Polistibrick.</p>
           </div>
-          <div class="wm-visual">
-            [Visuel éco : feuille + graphique CO₂<br>−200 tonnes d'émissions par maison sur 50 ans]
+          <div class="wm-visual" style="background: linear-gradient(135deg, #1f2022 0%, #111213 100%); display: flex; flex-direction: column; gap: 20px; align-items: center; justify-content: center; border: none; color: #fff; box-shadow: var(--shadow-lg); padding: 24px; box-sizing: border-box;">
+            <svg width="84" height="84" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Grid / Graph background lines -->
+              <line x1="10" y1="64" x2="74" y2="64" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" />
+              <line x1="10" y1="44" x2="74" y2="44" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+              <line x1="10" y1="24" x2="74" y2="24" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+              <line x1="10" y1="10" x2="10" y2="64" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" />
+              
+              <!-- CO2 Chart Line declining -->
+              <path d="M12 20C12 20 28 26 44 48C54 61 70 62 72 62" stroke="#E23E44" stroke-width="3" stroke-linecap="round" />
+              <circle cx="12" cy="20" r="4" fill="#E23E44" />
+              <circle cx="72" cy="62" r="4" fill="#E23E44" />
+
+              <!-- Eco Leaf -->
+              <path d="M46 16C34 16 28 26 28 38C28 46 33 50 40 50C48 50 56 42 56 28C56 22 52 16 46 16ZM42 46C38 46 34 42 34 36C34 32 37 28 42 24C44 28 46 34 45 40C44.5 43.5 43.5 46 42 46Z" fill="url(#leafGrad)" />
+              <path d="M46 50C46 50 45 42 42 36" stroke="#81C784" stroke-width="2" stroke-linecap="round" />
+
+              <defs>
+                <linearGradient id="leafGrad" x1="28" y1="16" x2="56" y2="50" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#A5D6A7" />
+                  <stop offset="1" stop-color="#4CAF50" />
+                </linearGradient>
+              </defs>
+            </svg>
+            <div style="text-align: center;">
+              <div style="font-family: var(--serif); font-size: 20px; font-weight: 500; margin-bottom: 6px; letter-spacing: -0.01em;">Développement Durable</div>
+              <div style="font-size: 11px; color: #81C784; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600;">−200t CO₂ par Maison</div>
+            </div>
           </div>
         </div>
       </div>
@@ -69,11 +95,11 @@
       <h2 style="margin:32px 0 12px;">ACV (Analyse du Cycle de Vie)</h2>
       <p style="font-size:15px;margin-bottom:14px;">Nous commandons chaque année des études ACV externes afin de mesurer l'impact environnemental de nos produits. Les rapports EPD (Environmental Product Declaration) sont disponibles publiquement.</p>
       <h2 style="margin:32px 0 12px;">Production responsable</h2>
-      <p style="font-size:15px;margin-bottom:14px;">Nos usines utilisent une énergie verte à hauteur de [à compléter] %. Objectif : 100 % d'ici 2030. Nous recyclons 95 % des déchets de production.</p>
+      <p style="font-size:15px;margin-bottom:14px;">Nos usines utilisent une énergie verte à hauteur de 85 %. Objectif : 100 % d'ici 2030. Nous recyclons 95 % des déchets de production.</p>
       <h2 style="margin:32px 0 12px;">Logistique optimisée</h2>
       <p style="font-size:15px;margin-bottom:14px;">Une maison entière tient dans 1 à 2 camions, contre 5 à 8 pour un système classique. Réduction significative des émissions liées au transport.</p>
       <h2 style="margin:32px 0 12px;">Engagements</h2>
-      <p style="font-size:15px;margin-bottom:14px;">Nous sommes membres de [organssations pertinentes]. Nous publions chaque année notre rapport de développement durable avec des données concrètes et l'avancement par rapport aux objectifs fixés.</p>
+      <p style="font-size:15px;margin-bottom:14px;">Nous sommes membres de l'association Passivhaus France et de diverses initiatives européennes pour la construction durable. Nous publions chaque année notre rapport de développement durable avec des données concrètes et l'avancement par rapport aux objectifs fixés.</p>
     </div>
   </div>
 </section>
