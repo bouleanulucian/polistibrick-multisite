@@ -249,14 +249,14 @@
           <!-- RIGHT -->
           <div class="wm-form-card">
             <div class="wm-form-target">
-              <span id="formTargetFlag">🇷🇴</span>
-              <span>Message à <strong id="formTargetCountry">Roumanie</strong></span>
+              <span id="formTargetFlag">🇫🇷</span>
+              <span>Message à <strong id="formTargetCountry">France</strong></span>
             </div>
             <h3>Écrivez-nous directement.</h3>
             <p>Votre message arrive directement à l'équipe du pays sélectionné.</p>
 
             <form id="contactForm" onsubmit="alert('Démo : le message sera envoyé à ' + document.getElementById('formTargetCountry').textContent + '. Connexion au backend requise.'); return false;">
-              <input type="hidden" name="country" id="formCountryHidden" value="RO">
+              <input type="hidden" name="country" id="formCountryHidden" value="FR">
 
               <div class="form-row form-row--split">
                 <div>
@@ -353,7 +353,7 @@
     'RS': 'ME', 'BA': 'ME', 'MK': 'ME', 'AL': 'ME',
   };
 
-  let activeCountry = 'RO';
+  let activeCountry = 'FR';
 
   function renderActiveCountry(code) {
     activeCountry = code;
@@ -419,7 +419,7 @@
     btn.addEventListener('click', () => renderActiveCountry(btn.dataset.country));
   });
 
-  renderActiveCountry('RO');
+  renderActiveCountry('FR');
   detect().then(code => {
     if (code) {
       const btn = document.querySelector(`.country-flag-btn[data-country="${code}"]`);
