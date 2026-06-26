@@ -36,6 +36,19 @@
       .wm-visual { margin-top: 0; aspect-ratio: 16/10; }
     }
     @media (max-width: 768px) { .wm-stage { padding: 28px 20px; } }
+
+    /* Founder — sticky aside + signature */
+    .founder-aside { position: sticky; top: 96px; }
+    /* Founder — journey metrics strip */
+    .founder-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--border); }
+    .founder-stat .num { font-family: var(--serif); font-size: clamp(34px, 4vw, 50px); font-weight: 500; color: var(--ink); line-height: 1; letter-spacing: -0.02em; }
+    .founder-stat .num em { color: var(--red); font-style: normal; }
+    .founder-stat .lbl { font-size: 12.5px; color: var(--gray); margin-top: 12px; line-height: 1.45; max-width: 200px; }
+    /* Extended team — disciplines row */
+    .team-disciplines { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 12px; margin-top: 36px; }
+    .team-disciplines span { font-size: 13px; color: var(--gray); border: 1px solid var(--border); border-radius: 999px; padding: 7px 16px; background: var(--cream-light); }
+    @media (max-width: 1100px) { .founder-aside { position: static; } }
+    @media (max-width: 768px) { .founder-stats { grid-template-columns: repeat(2, 1fr); gap: 32px 20px; } }
   </style>
 <link rel="canonical" href="https://polistibrick.fr/a-propos/equipe/">
 <meta property="og:url" content="https://polistibrick.fr/a-propos/equipe/">
@@ -76,7 +89,7 @@
       <h2>Polistibrick est né <em>sur le chantier.</em></h2>
     </div>
     <div class="grid grid-2 reveal" style="align-items:start;gap:52px;">
-      <div>
+      <div class="founder-aside">
         <!-- ▼ Remplacez ce bloc par la vraie photo quand elle est prête :
              <img src="../../images/team/lucian-bouleanu.jpg" alt="Lucian Bouleanu, fondateur de Polistibrick" style="width:100%;border-radius:20px;display:block;"> -->
         <div class="img-placeholder" style="aspect-ratio:4/5;border-radius:20px;">[Photo — Lucian Bouleanu]</div>
@@ -95,6 +108,25 @@
         <p style="margin-bottom:0;">Et si demain un système meilleur et plus performant devait voir le jour, c'est encore Polistibrick qui le créera — <em style="color:var(--ink);font-style:italic;">parce que la construction est l'air que je respire.</em></p>
       </div>
     </div>
+
+    <div class="founder-stats reveal">
+      <div class="founder-stat">
+        <div class="num">8<em> ans</em></div>
+        <div class="lbl">Premier pas sur le chantier, aux côtés de son grand-père.</div>
+      </div>
+      <div class="founder-stat">
+        <div class="num">+90<em> %</em></div>
+        <div class="lbl">des coffrages ICF du marché, construits et éprouvés.</div>
+      </div>
+      <div class="founder-stat">
+        <div class="num">6<em> versions</em></div>
+        <div class="lbl">de recherche réelle avant le système actuel.</div>
+      </div>
+      <div class="founder-stat">
+        <div class="num">5<em> en 1</em></div>
+        <div class="lbl">toutes les étapes d'une construction passive, un seul système.</div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -102,31 +134,39 @@
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 50px;">
       <span class="eyebrow">L'équipe élargie</span>
-      <h2>Spécialistes de la <em>construction passive.</em></h2>
-      <p class="lead" style="margin-top:14px;">[à compléter] personnes à Valencia et [à compléter] à Craiova — ingénieurs concepteurs, technologues, équipe commerciale, support.</p>
+      <h2>Une équipe, <em>deux sites de production.</em></h2>
+      <p class="lead" style="margin-top:14px;">Ingénieurs concepteurs, technologues, équipe commerciale et support technique — répartis entre nos usines de Valencia et de Craiova.</p>
     </div>
-    <div class="grid grid-4 reveal">
-      <div style="text-align:center;">
-        <div class="img-placeholder img-placeholder--square" style="border-radius:50%;margin-bottom:14px;">[Photo]</div>
-        <h4 style="margin-bottom:2px;">[Nom]</h4>
-        <p style="font-size:12.5px;color:var(--gray);">Directeur commercial</p>
+    <div class="grid grid-2 reveal" style="gap:28px;">
+      <div class="card">
+        <span class="bubble-tag">Espagne</span>
+        <h3 style="margin:12px 0 8px;">Valencia</h3>
+        <p style="font-size:14.5px;color:var(--gray);">Conception, ingénierie et production pour l'Europe de l'Ouest.</p>
       </div>
-      <div style="text-align:center;">
-        <div class="img-placeholder img-placeholder--square" style="border-radius:50%;margin-bottom:14px;">[Photo]</div>
-        <h4 style="margin-bottom:2px;">[Nom]</h4>
-        <p style="font-size:12.5px;color:var(--gray);">Ingénieur en chef conception</p>
-      </div>
-      <div style="text-align:center;">
-        <div class="img-placeholder img-placeholder--square" style="border-radius:50%;margin-bottom:14px;">[Photo]</div>
-        <h4 style="margin-bottom:2px;">[Nom]</h4>
-        <p style="font-size:12.5px;color:var(--gray);">Directeur d'usine Valencia</p>
-      </div>
-      <div style="text-align:center;">
-        <div class="img-placeholder img-placeholder--square" style="border-radius:50%;margin-bottom:14px;">[Photo]</div>
-        <h4 style="margin-bottom:2px;">[Nom]</h4>
-        <p style="font-size:12.5px;color:var(--gray);">Directeur d'usine Craiova</p>
+      <div class="card">
+        <span class="bubble-tag">Roumanie</span>
+        <h3 style="margin:12px 0 8px;">Craiova</h3>
+        <p style="font-size:14.5px;color:var(--gray);">Production et support pour l'Europe centrale et de l'Est.</p>
       </div>
     </div>
+
+    <div class="team-disciplines reveal">
+      <span>Conception</span>
+      <span>Ingénierie Passivhaus</span>
+      <span>Production</span>
+      <span>Commercial</span>
+      <span>Support technique</span>
+    </div>
+
+    <!-- ▼ Pour présenter des membres de l'équipe (avec photo) plus tard, dupliquez ce modèle :
+    <div class="grid grid-4 reveal" style="margin-top:48px;">
+      <div style="text-align:center;">
+        <img src="../../images/team/NOM-FICHIER.jpg" alt="Prénom Nom" style="width:100%;max-width:200px;border-radius:50%;margin:0 auto 14px;display:block;">
+        <h4 style="margin-bottom:2px;">Prénom Nom</h4>
+        <p style="font-size:12.5px;color:var(--gray);">Rôle</p>
+      </div>
+    </div>
+    -->
   </div>
 </section>
 
