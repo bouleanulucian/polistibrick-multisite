@@ -449,8 +449,8 @@
 <script src="../../assets/js/site.js"></script>
 
 <script>
-// Pour FICHES TECHNIQUES (public, pour tout le monde) — TODO: când PDF-ul există,
-// schimbă onclick="requestFiche(...)" în href="../../downloads/X.pdf" direct
+// Fiches techniques (publiques) : le bouton ouvre le formulaire de contact (requestFiche).
+// TODO : quand les PDF seront disponibles, lier directement vers le fichier.
 function requestFiche(ficheName) {
   var params = new URLSearchParams({
     subject: 'Demande de documentation',
