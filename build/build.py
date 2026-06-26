@@ -121,6 +121,41 @@ def copy_tree(src: Path, dst: Path, transform: bool, config: dict):
         shutil.copy2(item, target)
 
 
+def page_canonical(rel_path: str, base: str) -> str:
+    """Map a built HTML file's relative path to its public canonical URL.
+    The homepage (both the index.html redirect and the actual homepage file)
+    canonicalizes to the site root, not to /polistibrick-mercury-style.html."""
+    if rel_path in ("index.html", "polistibrick-mercury-style.html"):
+        rel_path = ""
+    elif rel_path.endswith("/index.html"):
+        rel_path = rel_path[:-len("index.html")]
+    return f"{base}/{rel_path}"
+
+
+def inject_seo(out_dir: Path, config: dict):
+    """Insert canonical + og:url + hreflang into every page that lacks them.
+    Canonical always points to the official domain (domain_url), never the
+    staging host (e.g. GitHub Pages)."""
+    base = config.get("domain_url", "").rstrip("/")
+    if not base:
+        return
+    hreflang = config.get("metadata", {}).get("hreflang") or config.get("lang", "")
+    for html in out_dir.rglob("*.html"):
+        text = html.read_text(encoding="utf-8")
+        if 'rel="canonical"' in text or "</head>" not in text:
+            continue
+        rel = html.relative_to(out_dir).as_posix()
+        url = page_canonical(rel, base)
+        tags = (
+            f'<link rel="canonical" href="{url}">\n'
+            f'<meta property="og:url" content="{url}">\n'
+            f'<link rel="alternate" hreflang="{hreflang}" href="{url}">\n'
+            f'<link rel="alternate" hreflang="x-default" href="{url}">\n'
+        )
+        text = text.replace("</head>", tags + "</head>", 1)
+        html.write_text(text, encoding="utf-8")
+
+
 def generate_sitemap(out_dir: Path, config: dict):
     base = config.get("domain_url", "").rstrip("/")
     urls = []
@@ -186,7 +221,10 @@ def build_country(code: str):
     if cfg_out.exists():
         cfg_out.unlink()
 
-    # 3) sitemap + robots
+    # 3) SEO tags (canonical, og:url, hreflang) — always on the official domain
+    inject_seo(out_dir, config)
+
+    # 4) sitemap + robots
     generate_sitemap(out_dir, config)
     generate_robots(out_dir, config)
 
