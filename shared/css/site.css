@@ -1180,3 +1180,29 @@ html { scroll-behavior: auto !important; }
   transition: background .2s ease, border-color .2s ease;
 }
 .nav-cta-devis:hover { background: rgba(15,15,15,0.10); border-color: rgba(15,15,15,0.24); color: #0F0F0F; }
+
+/* === Barre de contact mobile flottante (Appeler + Email) — toutes les pages === */
+.mobile-contact-bar { display: none; }
+@media (max-width: 768px) {
+  .mobile-contact-bar {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 1000;
+    display: flex;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.18);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .mobile-contact-bar .mcb-btn {
+    flex: 1 1 0;
+    display: flex; align-items: center; justify-content: center; gap: 9px;
+    padding: 15px 8px;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 15px; font-weight: 600; letter-spacing: 0.01em;
+    text-decoration: none; color: #fff;
+  }
+  .mobile-contact-bar .mcb-btn svg { width: 19px; height: 19px; flex-shrink: 0; }
+  .mobile-contact-bar .mcb-call { background: #C8102E; }
+  .mobile-contact-bar .mcb-call:active { background: #a60d26; }
+  .mobile-contact-bar .mcb-email { background: #1a1a1a; }
+  .mobile-contact-bar .mcb-email:active { background: #000; }
+  /* éviter que la barre fixe cache le bas de la page */
+  body { padding-bottom: calc(54px + env(safe-area-inset-bottom, 0px)); }
+}
