@@ -17,8 +17,8 @@
 
   const NAV_HTML = `
     <div class="nav-inner">
-      <a href="${BASE}" class="nav-logo" aria-label="{{ui.home_aria}}">
-        <img src="${BASE}images/logo.png" alt="Polistibrick" loading="eager">
+      <a href="${BASE}" class="logo nav-logo" aria-label="{{ui.home_aria}}">
+        <img src="${BASE}images/logo.png" alt="Polistibrick" class="logo-img" loading="eager">
       </a>
       <div class="nav-cta">
         <!-- COUNTRY SWITCHER -->
@@ -40,8 +40,8 @@
             <a href="#" data-country="ch" data-domain="https://polistibrick.com" data-folder="de" class="country-switcher-item"><span class="flag">🇨🇭</span><span class="name">Schweiz</span><span class="domain">polistibrick.com</span></a>
           </div>
         </div>
-        <a href="${BASE}oferta/" class="btn btn-arrow nav-cta-devis">{{ui.cere_oferta_court}}</a>
-        <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navDrawerShared">
+        <a href="${BASE}oferta/" class="btn btn-primary nav-cta-devis">{{ui.cere_oferta_court}} →</a>
+        <button class="nav-burger nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navDrawerShared">
           <span></span><span></span><span></span>
         </button>
       </div>
