@@ -1180,3 +1180,74 @@ html { scroll-behavior: auto !important; }
   transition: background .2s ease, border-color .2s ease;
 }
 .nav-cta-devis:hover { background: rgba(15,15,15,0.10); border-color: rgba(15,15,15,0.24); color: #0F0F0F; }
+
+/* ============================================================
+   MOBILE NAV BAR — logo lisible + contrôles alignés (≤768px)
+   ============================================================ */
+@media (max-width: 768px) {
+  :root { --nav-height: 60px; }
+
+  .nav-inner {
+    height: var(--nav-height);
+    padding: 0 12px;
+    gap: 10px;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+
+  .nav-logo {
+    flex: 0 1 auto;
+    min-width: 0;
+    max-width: min(148px, 38vw);
+    margin-right: auto;
+  }
+  .nav-logo img {
+    height: 26px;
+    width: auto;
+    max-width: 100%;
+    display: block;
+    object-fit: contain;
+    object-position: left center;
+  }
+
+  .nav-cta {
+    flex: 0 0 auto;
+    margin-left: 0;
+    gap: 6px;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  .country-switcher-trigger {
+    padding: 6px 8px;
+    font-size: 12px;
+    gap: 4px;
+  }
+  .country-switcher-code { display: none; }
+  .country-switcher-caret { display: none; }
+
+  .nav-cta-devis {
+    padding: 7px 12px;
+    font-size: 12px;
+    white-space: nowrap;
+    line-height: 1.2;
+  }
+  .nav-cta-devis::after { font-size: 14px; }
+
+  .nav-toggle {
+    width: 40px;
+    height: 40px;
+    margin-left: 0;
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 380px) {
+  .nav-inner { padding: 0 10px; gap: 6px; }
+  .nav-logo { max-width: min(128px, 34vw); }
+  .nav-logo img { height: 24px; }
+  .nav-cta { gap: 5px; }
+  .nav-cta-devis { padding: 6px 10px; font-size: 11.5px; }
+  .country-switcher-trigger { padding: 5px 7px; }
+  .nav-toggle { width: 38px; height: 38px; }
+}
