@@ -50,8 +50,34 @@
             <h1>Tout ce dont vous avez besoin <em>en un seul endroit.</em></h1>
             <p>Fiches techniques, guides, articles, tutoriels vidéo, FAQ — toutes les ressources Polistibrick pour les propriétaires, les architectes et les constructeurs. Toutes gratuites.</p>
           </div>
-          <div class="wm-visual">
-            [Icônes documents / téléchargements :<br>PDF · DWG · BIM · Tutoriels vidéo]
+          <div class="wm-visual" style="background: linear-gradient(135deg, #1f2022 0%, #111213 100%); display: flex; flex-direction: column; gap: 20px; align-items: center; justify-content: center; border: none; color: #fff; box-shadow: var(--shadow-lg); padding: 24px; box-sizing: border-box;">
+            <svg width="90" height="90" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Grid background -->
+              <circle cx="45" cy="45" r="40" stroke="rgba(255,255,255,0.05)" stroke-width="2" stroke-dasharray="4 4" />
+              <!-- Document 1: PDF (left back) -->
+              <rect x="18" y="24" width="28" height="38" rx="3" fill="#3a3c3f" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" />
+              <rect x="23" y="32" width="12" height="2.5" rx="1" fill="#E23E44" />
+              <rect x="23" y="39" width="18" height="2" rx="1" fill="rgba(255,255,255,0.4)" />
+              <rect x="23" y="45" width="18" height="2" rx="1" fill="rgba(255,255,255,0.4)" />
+              <!-- Document 2: BIM/3D (right front) -->
+              <rect x="38" y="34" width="34" height="42" rx="4" fill="url(#docGrad)" stroke="#E23E44" stroke-width="2" />
+              <!-- Folder corner fold -->
+              <path d="M64 34L72 42H64V34Z" fill="#ffb020" />
+              <!-- BIM cube outline -->
+              <path d="M55 46L46 51V62L55 67L64 62V51L55 46Z" stroke="#fff" stroke-width="1.5" stroke-linejoin="round" />
+              <path d="M46 51L55 56L64 51M55 56V67" stroke="#fff" stroke-width="1.5" />
+              
+              <defs>
+                <linearGradient id="docGrad" x1="38" y1="34" x2="72" y2="76" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#E23E44" />
+                  <stop offset="1" stop-color="#9E1E22" />
+                </linearGradient>
+              </defs>
+            </svg>
+            <div style="text-align: center;">
+              <div style="font-family: var(--serif); font-size: 20px; font-weight: 500; margin-bottom: 6px; letter-spacing: -0.01em;">Centre de Téléchargement</div>
+              <div style="font-size: 11px; color: rgba(255,255,255,0.60); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600;">PDF · BIM · CAD · Vidéo</div>
+            </div>
           </div>
         </div>
       </div>
