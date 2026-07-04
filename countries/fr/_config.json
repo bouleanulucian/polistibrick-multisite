@@ -55,6 +55,25 @@
   "form_submit_email": "contact@polistibrick.fr",
   "form_cc_email": "info@polistibrick.eu",
 
+  "forms": {
+    "access_key": "",
+    "provider": "web3forms",
+    "subjects": {
+      "contact": "Contact — Polistibrick France",
+      "devis": "Demande de devis — Polistibrick France",
+      "partner": "Candidature partenaire — Polistibrick France",
+      "review": "Nouvel avis client — Polistibrick France"
+    }
+  },
+
+  "legal": {
+    "publication_director": "Lucian Bouleanu",
+    "hosting_provider": "Cloudflare, Inc.",
+    "hosting_address": "101 Townsend St, San Francisco, CA 94107, États-Unis",
+    "privacy_contact_email": "contact@polistibrick.fr",
+    "privacy_slug": "confidentialite"
+  },
+
   "factory": {
     "name": "Valencia",
     "address": "Valence, Espagne",
@@ -64,5 +83,10 @@
   "metadata": {
     "og_locale": "fr_FR",
     "hreflang": "fr-FR"
+  },
+
+  "devis_app": {
+    "url": "https://devis.polistibrick.fr",
+    "pays": "FR"
   }
 }

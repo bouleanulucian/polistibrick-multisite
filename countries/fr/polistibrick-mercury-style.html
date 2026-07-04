@@ -10,7 +10,7 @@
 <meta property="og:image" content="images/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --cream: #F7F4ED;
@@ -2521,6 +2521,7 @@
   .cta-social a { width: 42px; height: 42px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
     background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.22); color: #fff; transition: background .2s ease, border-color .2s ease, transform .2s ease; }
   .cta-social a:hover { background: var(--red); border-color: var(--red); transform: translateY(-2px); }
+  .cta-social a[href=""] { display: none; }
   .cta-social svg { width: 18px; height: 18px; fill: currentColor; }
   .cta-watermark {
     position: absolute;
@@ -2739,7 +2740,7 @@
   }
 
   /* Hero entrance — intrare eșalonată la încărcare (robot → titlu → CTA) */
-  .hero .hero-robot.reveal  { transition-delay: 0s; }
+  .hero .hero-robot-wrap.reveal { transition-delay: 0s; }
   .hero h1.reveal           { transition-delay: 0.14s; }
   .hero .hero-actions.reveal{ transition-delay: 0.28s; }
 
@@ -3596,11 +3597,20 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     background: rgba(255, 255, 255, 0.18);
     border-color: #FFFFFF;
   }
-  /* Robotul — în stânga, deasupra titlului. Dreapta rămâne liberă, aerisită. */
+  /* Robotul — jos-dreapta, absolut (fundalul negru al PNG se topește în gradientul de jos). */
+  .hero--photo .hero-robot-wrap {
+    position: absolute;
+    right: clamp(12px, 3.5vw, 48px);
+    bottom: calc(48px + 20mm);
+    z-index: 3;
+    pointer-events: none;
+    max-width: clamp(180px, 22.8vw, 324px);
+  }
   .hero--photo .hero-robot {
     display: block;
-    max-width: clamp(216px, 22.8vw, 324px); /* +20% */
-    margin: 0 0 20px;
+    width: 100%;
+    height: auto;
+    margin: 0;
     filter: drop-shadow(0 24px 44px rgba(0, 0, 0, 0.45));
   }
   /* Reduced motion / fallback: doar prima imagine, fixă */
@@ -3645,7 +3655,11 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     .hero--photo .container { padding-bottom: calc(40mm + 36px); }
     .hero--photo .container > .hero-text-col { max-width: 100%; transform: translateY(40mm); }
     .hero--photo h1 { font-size: clamp(22px, 6.8vw, 30px); }
-    .hero--photo .hero-robot { max-width: 158px; margin-bottom: 14px; }
+    .hero--photo .hero-robot-wrap {
+      max-width: clamp(120px, 34vw, 168px);
+      right: clamp(8px, 2vw, 20px);
+      bottom: calc(36px + 12mm);
+    }
     .hero--photo .hero-sub { font-size: 13px; line-height: 1.5; margin-bottom: 14px; }
     .hero-stats-row { gap: 6px 18px; margin-bottom: 18px; }
     .hero-stats-row li { font-size: 12px; }
@@ -3653,15 +3667,18 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
 </style>
 <section class="hero hero--photo">
   <div class="hero-bg" aria-hidden="true">
-    <video id="heroVideo" autoplay muted loop playsinline preload="auto"
+    <video id="heroVideo" autoplay muted loop playsinline preload="metadata"
            poster="images/hero/hero-house-1.jpg">
       <source src="images/hero/hero-houses-reel.mp4" type="video/mp4">
     </video>
     <div class="hero-bg-scrim"></div>
   </div>
+  <picture class="hero-robot-wrap reveal">
+    <source srcset="images/robot.webp" type="image/webp">
+    <img class="hero-robot" src="images/robot.png" alt="Polistibrick — Construction intelligente" fetchpriority="high" width="480" height="480">
+  </picture>
   <div class="container">
     <div class="hero-text-col">
-      <img class="hero-robot reveal" src="images/robot.png" alt="Polistibrick — Construction intelligente" fetchpriority="high">
       <span class="hero-eyebrow reveal">Système constructif breveté · RE2020</span>
       <h1 class="reveal">Construisez plus de maisons.<br><span class="h1-l2">Avec moins de main-d'œuvre.</span></h1>
       <p class="hero-sub reveal">Polistibrick remplace 5 matériaux différents et 5 équipes de construction. Un seul produit, une seule équipe — et la maison est achevée. <strong>Innovation brevetée.</strong></p>
@@ -3837,10 +3854,10 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     <a href="devis/" class="btn btn-red morph-cta reveal">Devis gratuit →</a>
   </div>
   <div class="morph-media">
-    <video id="morphVideo" class="morph-video" autoplay muted loop playsinline preload="metadata"
+    <video id="morphVideo" class="morph-video lazy-video" muted loop playsinline preload="none"
            poster="images/morph/morph-poster.jpg"
            aria-label="Le système Polistibrick se reconfigure : maison de plain-pied, villa à étage, petit immeuble collectif">
-      <source src="images/morph/morphing-polistibrick.mp4" type="video/mp4">
+      <source data-src="images/morph/morphing-polistibrick.mp4" type="video/mp4">
     </video>
   </div>
 </section>
@@ -4247,8 +4264,8 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     <span class="wm-half wm-bottom">Différences</span>
   </div>
 <section class="differences-section" id="difference" aria-label="La différence Polistibrick">
-  <video class="differences-bg" autoplay muted loop playsinline preload="metadata" poster="images/wall.jpg">
-    <source src="images/wall.mp4" type="video/mp4">
+  <video class="differences-bg lazy-video" muted loop playsinline preload="none" poster="images/wall.jpg">
+    <source data-src="images/wall.mp4?v=2" type="video/mp4">
   </video>
   <div class="differences-scrim"></div>
 
@@ -5090,11 +5107,11 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   </div>
   <div class="passif-media">
     <div class="passif-slides" aria-label="La même maison Polistibrick à travers les quatre saisons : dehors tout change, dedans le confort reste constant">
-      <img class="ps active" src="images/passive/passive-spring.jpg?v=3" alt="La vue depuis le salon au printemps" fetchpriority="low">
+      <img class="ps active" src="images/passive/passive-spring.jpg?v=3" alt="La vue depuis le salon au printemps" fetchpriority="low" loading="lazy">
       <img class="ps" src="images/passive/passive-summer.jpg?v=3" alt="" loading="lazy">
       <img class="ps" src="images/passive/passive-autumn.jpg?v=3" alt="" loading="lazy">
       <img class="ps" src="images/passive/passive-winter.jpg?v=3" alt="" loading="lazy">
-      <img class="passif-fg" src="images/passive/passive-interior-fg.png?v=3" alt="" aria-hidden="true">
+      <img class="passif-fg" src="images/passive/passive-interior-fg.png?v=3" alt="" aria-hidden="true" loading="lazy">
     </div>
     <div class="passif-scrim"></div>
   </div>
@@ -5266,14 +5283,13 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     <div class="cinq-metric reveal"><strong>Feu, hydrofuge, étanchéité à l'air, isolation passive, insonorisation, fixation</strong> : ailleurs, on les chiffre, on les transporte et on les pose selon des normes strictes — au prix fort. Polistibrick les intègre d'usine, les avantages les plus convoités de 2026. Votre client les obtient sans surcoût — une maison que peu possèdent.</div>
     <a href="devis/" class="btn btn-red cinq-cta reveal">Devis gratuit →</a>
   </div>
-    <video class="cinq-video" autoplay muted loop playsinline preload="metadata"
+    <video class="cinq-video lazy-video" muted loop playsinline preload="none"
            poster="images/bundle/bundle-test-poster.jpg?v=3"
-           data-src-mobile="images/bundle/bundle-test-mobile.mp4?v=1"
+           data-src-mobile="images/bundle/bundle-test-mobile.mp4?v=2"
            data-poster-mobile="images/bundle/bundle-test-mobile-poster.jpg?v=1"
            aria-label="Le panneau Polistibrick testé : assemblage, feu, eau, impact, gel, bruit — intact à chaque épreuve">
-      <source src="images/bundle/bundle-test.mp4?v=3" type="video/mp4">
+      <source data-src="images/bundle/bundle-test.mp4?v=3" type="video/mp4">
     </video>
-    <script>(function(){try{if(window.matchMedia&&matchMedia('(max-width:1080px)').matches){var v=document.querySelector('.cinq-video');if(v){var m=v.getAttribute('data-src-mobile'),pm=v.getAttribute('data-poster-mobile'),s=v.querySelector('source');if(s&&m){s.setAttribute('src',m);if(pm)v.setAttribute('poster',pm);v.load();var pl=v.play();if(pl&&pl.catch)pl.catch(function(){});}}}}catch(e){}})();</script>
   </div>
   <div class="cinq-legend">
       <div class="cinq-item">
@@ -5362,10 +5378,10 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     <span class="wm-half wm-bottom">Présence</span>
   </div>
 <section class="reach-section presence-section" id="reach" aria-label="Présence : deux usines, neuf pays">
-  <video class="presence-bg" autoplay loop muted playsinline
+  <video class="presence-bg lazy-video" loop muted playsinline preload="none"
          poster="images/presence/presence-factory.jpg"
          aria-label="Usine Polistibrick : chargement des panneaux Polistibrick sur un camion">
-    <source src="images/presence/presence-factory-film.mp4?v=4" type="video/mp4">
+    <source data-src="images/presence/presence-factory-film.mp4?v=5" type="video/mp4">
   </video>
 
   <div class="presence-scrim"></div>
@@ -5968,8 +5984,8 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
 </style>
 
 <section class="montaj-section">
-  <video class="montaj-bg" autoplay muted loop playsinline preload="metadata" poster="images/montage/montage-houses-poster.jpg">
-    <source src="images/montage/montage-houses.mp4" type="video/mp4">
+  <video class="montaj-bg lazy-video" muted loop playsinline preload="none" poster="images/montage/montage-houses-poster.jpg">
+    <source data-src="images/montage/montage-houses.mp4" type="video/mp4">
   </video>
   <div class="montaj-scrim" aria-hidden="true"></div>
   <div class="montaj-watermark" aria-hidden="true">
@@ -5990,7 +6006,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
           <article class="montaj-card">
             <div class="montaj-num">01</div>
             <div class="montaj-img">
-              <img src="images/construction/stage1-cofraj.jpg" alt="Coffrage assemblé avec étaiement latéral">
+              <img src="images/construction/stage1-cofraj.jpg" alt="Coffrage assemblé avec étaiement latéral" loading="lazy">
             </div>
             <div class="montaj-card-body">
               <h3>Coffrage</h3>
@@ -6001,7 +6017,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
           <article class="montaj-card">
             <div class="montaj-num">02</div>
             <div class="montaj-img">
-              <img src="images/construction/stage3-planseu.jpg" alt="Plancher PBK monté">
+              <img src="images/construction/stage3-planseu.jpg" alt="Plancher PBK monté" loading="lazy">
             </div>
             <div class="montaj-card-body">
               <h3>Plancher</h3>
@@ -6012,7 +6028,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
           <article class="montaj-card">
             <div class="montaj-num">03</div>
             <div class="montaj-img">
-              <img src="images/construction/stage2-fierbeton.jpg" alt="Armature acier-béton sur plancher">
+              <img src="images/construction/stage2-fierbeton.jpg" alt="Armature acier-béton sur plancher" loading="lazy">
             </div>
             <div class="montaj-card-body">
               <h3>Armature</h3>
@@ -6023,7 +6039,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
           <article class="montaj-card">
             <div class="montaj-num">04</div>
             <div class="montaj-img">
-              <img src="images/construction/stage4-final.jpg" alt="Coffrage fermé, prêt pour le coulage du béton">
+              <img src="images/construction/stage4-final.jpg" alt="Coffrage fermé, prêt pour le coulage du béton" loading="lazy">
             </div>
             <div class="montaj-card-body">
               <h3>Fermeture du coffrage</h3>
@@ -6341,7 +6357,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
       <!-- Avis 1 — VIDÉO -->
       <div class="conf-slide is-active">
         <div class="conf-feature" data-conf-video="images/hero/hero-houses-reel.mp4">
-          <video src="images/hero/hero-houses-reel.mp4" poster="images/hero/hero-house-2.jpg" autoplay loop muted playsinline></video>
+          <video poster="images/hero/hero-house-2.jpg" loop muted playsinline preload="none"></video>
           <div class="conf-feature-scrim" aria-hidden="true"></div>
           <span class="conf-vbadge">Témoignage vidéo</span>
           <button type="button" class="conf-play" aria-label="Lire la vidéo">
@@ -6365,7 +6381,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
       <!-- Avis 2 — VIDÉO -->
       <div class="conf-slide">
         <div class="conf-feature" data-conf-video="images/montage/montage-houses.mp4">
-          <video src="images/montage/montage-houses.mp4" poster="images/montage/montage-houses-poster.jpg" loop muted playsinline></video>
+          <video poster="images/montage/montage-houses-poster.jpg" loop muted playsinline preload="none"></video>
           <div class="conf-feature-scrim" aria-hidden="true"></div>
           <span class="conf-vbadge">Témoignage vidéo</span>
           <button type="button" class="conf-play" aria-label="Lire la vidéo">
@@ -6479,7 +6495,12 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
         var on = (k === i);
         s.classList.toggle('is-active', on);
         [].slice.call(s.querySelectorAll('video')).forEach(function(v){
-          if(on){ var p=v.play(); if(p&&p.catch)p.catch(function(){}); } else { v.pause(); }
+          if(on){
+            var feat = s.querySelector('.conf-feature[data-conf-video]');
+            var url = feat && feat.getAttribute('data-conf-video');
+            if(url && !v.getAttribute('src')) v.setAttribute('src', url);
+            var p=v.play(); if(p&&p.catch)p.catch(function(){});
+          } else { v.pause(); }
         });
       });
       allDots.forEach(function(d){ d.classList.toggle('is-active', parseInt(d.getAttribute('data-conf-go'),10) === i); });
@@ -6826,6 +6847,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
       <div class="footer-col">
         <h4>Légal</h4>
         <ul>
+          <li><a href="legal/mentions-legales/">Mentions légales</a></li>
           <li><a href="legal/confidentialite/">Politique de confidentialité</a></li>
           <li><a href="legal/conditions/">Conditions générales</a></li>
           <li><a href="legal/cookies/">Politique de cookies</a></li>
@@ -7489,6 +7511,10 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     font-family: var(--sans); font-size: 15px; font-weight: 600; padding: 15px; cursor: pointer; box-shadow: 0 12px 30px rgba(200,16,46,.3); }
   .avis-submit:hover { background: var(--red-dark, #A60E13); }
   .avis-note { font-size: 11.5px; color: var(--muted,#6b6457); text-align: center; margin-top: 12px; }
+  .pb-form-consent { margin-top: 10px; }
+  .pb-consent-label { display: flex; align-items: flex-start; gap: 10px; font-size: 12px; line-height: 1.5; color: var(--muted,#6b6457); cursor: pointer; }
+  .pb-consent-label input { flex-shrink: 0; width: 16px; height: 16px; margin-top: 2px; accent-color: var(--red); }
+  .pb-consent-label a { color: var(--red); }
   .avis-err { color: var(--red); font-size: 12.5px; margin-top: 6px; display: none; }
   /* état merci */
   .avis-thanks { display: none; text-align: center; padding: 20px 0; }
@@ -7504,7 +7530,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   <div class="avis-modal" id="avisModal">
     <button type="button" class="avis-close" id="avisClose" aria-label="Fermer">×</button>
 
-    <form class="avis-form" id="avisForm" novalidate>
+    <form class="avis-form pb-form" id="avisForm" data-pb-form="review" novalidate>
       <h3 id="avisTitle">Laisser un avis</h3>
       <p class="avis-sub">Partagez votre expérience avec Polistibrick. Publié après validation.</p>
 
@@ -7582,6 +7608,12 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
       </div>
 
       <div class="avis-err" id="avisErr">Merci de remplir au moins : note, nom et avis.</div>
+      <div class="pb-form-consent" style="margin-bottom:10px;">
+        <label class="pb-consent-label">
+          <input type="checkbox" name="privacy_consent" value="1" required>
+          <span>J'accepte que mes données soient traitées conformément à la <a href="legal/confidentialite/" target="_blank" rel="noopener">politique de confidentialité (RGPD)</a>. *</span>
+        </label>
+      </div>
       <button type="submit" class="avis-submit">Envoyer mon avis →</button>
       <p class="avis-note">🔒 Vérifié et publié par Polistibrick après validation.</p>
     </form>
@@ -7687,39 +7719,11 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     });
   });
 
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    var nom = document.getElementById('avisNom').value.trim();
-    var msg = document.getElementById('avisMsg').value.trim();
-    var err = document.getElementById('avisErr');
-    if (!rating || !nom){ err.textContent = 'Merci d’indiquer au moins : une note et votre nom / entreprise.'; err.style.display='block'; return; }
-    if (mode === 'video' && !videoFile){ err.textContent = 'Merci d’ajouter votre vidéo — ou choisissez « Texte + photos ».'; err.style.display='block'; return; }
-    if (mode === 'texte' && !msg){ err.textContent = 'Merci d’écrire votre avis.'; err.style.display='block'; return; }
-    err.style.display='none';
-
-    var avis = {
-      note: rating,
-      nom: nom,
-      role: document.getElementById('avisRole').value,
-      lieu: document.getElementById('avisLieu').value.trim(),
-      message: msg,
-      nbPhotos: mode === 'video' ? 0 : photos.length,
-      hasProfile: !!profileFile,
-      hasVideo: mode === 'video' && !!videoFile,
-      type: mode,
-      date: new Date().toISOString(),
-      statut: 'en_attente'
-    };
-    // v1 : on garde une trace locale + confirmation. (Backend de modération à brancher : Firebase / e-mail.)
-    try {
-      var list = JSON.parse(localStorage.getItem('pbk_avis') || '[]');
-      list.push(avis); localStorage.setItem('pbk_avis', JSON.stringify(list));
-    } catch(_){}
-    // TODO backend: envoyer { avis, photos, profileFile, videoFile } pour modération + publication.
-    modal.classList.add('sent');
   });
 })();
 </script>
+<script src="assets/js/forms.js" defer></script>
+<script src="assets/js/cookies.js" defer></script>
 
 <!-- Barre de contact mobile flottante (Appeler + Email) — mobile uniquement -->
 <style>
@@ -7757,6 +7761,35 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     <span>Email</span>
   </a>
 </div>
+
+<script>
+(function(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  function bootVideo(v){
+    var s=v.querySelector('source[data-src]');
+    if(!s||s.src) return;
+    var mobile=v.dataset.srcMobile;
+    if(mobile&&window.matchMedia('(max-width:1080px)').matches){
+      s.dataset.src=mobile;
+      if(v.dataset.posterMobile) v.poster=v.dataset.posterMobile;
+    }
+    s.src=s.dataset.src;
+    v.load();
+    var p=v.play();
+    if(p&&p.catch) p.catch(function(){});
+  }
+  var vids=document.querySelectorAll('video.lazy-video');
+  if(!vids.length) return;
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ bootVideo(e.target); io.unobserve(e.target); }
+      });
+    },{rootMargin:'400px 0px',threshold:0.01});
+    vids.forEach(function(v){ io.observe(v); });
+  } else { vids.forEach(bootVideo); }
+})();
+</script>
 
 </body>
 </html>

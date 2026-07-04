@@ -79,6 +79,7 @@ PATH_REWRITES = {
         "casa-cluj-napoca": "maison-cluj-napoca", "ansamblu-lyon": "ensemble-lyon",
         "confidentialitate": "confidentialite", "sustenabilitate": "durabilite",
         "termeni": "conditions",
+        "mentiuni-legale": "mentions-legales",
     },
 }
 
@@ -96,7 +97,87 @@ def rewrite_paths(text: str, lang: str) -> str:
     return text
 
 
-def copy_tree(src: Path, dst: Path, transform: bool, config: dict):
+# Dev/staging files under */presence/ — not referenced on the live site
+PRESENCE_KEEP_FILES = {
+    "presence-factory.jpg",
+    "presence-factory-film.mp4",
+}
+
+
+# Unused / dev assets — never linked from live HTML
+SHARED_SKIP_NAMES = {
+    "house-comparison.png",
+    "house-comparison-pbk.png",
+    "wall_original.mp4",
+    "wall_uncrop.mp4",
+    "mbk-wall-old.png",
+    "stage3.png",
+    "passive-seasons.mp4",
+    "passive-seasons-mobile.mp4",
+}
+
+
+def should_skip_asset(rel: Path) -> bool:
+    if rel.name in SHARED_SKIP_NAMES:
+        return True
+    if "presence" in rel.parts:
+        return rel.name not in PRESENCE_KEEP_FILES
+    return False
+
+
+def optimize_html(text: str) -> str:
+    """Non-blocking fonts, lighter weights, deferred shared JS."""
+    text = text.replace(
+        "Inter:wght@400;500;600;700;800",
+        "Inter:wght@400;500;600;700",
+    )
+    text = text.replace(
+        "Inter:wght@300;400;500;600;700;800",
+        "Inter:wght@400;500;600;700",
+    )
+    text = re.sub(
+        r'<link\s+href="(https://fonts\.googleapis\.com/css[^"]+)"\s+rel="stylesheet">',
+        lambda m: (
+            f'<link rel="preload" as="style" href="{m.group(1)}" '
+            f'onload="this.onload=null;this.rel=\'stylesheet\'">\n'
+            f'  <noscript><link rel="stylesheet" href="{m.group(1)}"></noscript>'
+        ),
+        text,
+    )
+    text = re.sub(
+        r'(<script\s+src="[^"]*site\.js")(?!\s+defer)>',
+        r"\1 defer>",
+        text,
+    )
+    text = re.sub(
+        r'(<script\s+src="[^"]*forms\.js")(?!\s+defer)>',
+        r"\1 defer>",
+        text,
+    )
+    text = re.sub(
+        r'(<script\s+src="[^"]*cookies\.js")(?!\s+defer)>',
+        r"\1 defer>",
+        text,
+    )
+    return text
+
+
+def optimize_html_files(out_dir: Path):
+    for html in out_dir.rglob("*.html"):
+        text = html.read_text(encoding="utf-8")
+        optimized = optimize_html(text)
+        if optimized != text:
+            html.write_text(optimized, encoding="utf-8")
+
+
+def path_rewrite_lang(country_code: str, lang: str) -> str | None:
+    """Countries seeded from the FR template use French URL slugs."""
+    if country_code == "ro" or lang == "ro":
+        return None
+    return "fr"
+
+
+def copy_tree(src: Path, dst: Path, transform: bool, config: dict, country_code: str = ""):
     """Copy src→dst. If transform=True, replace placeholders in .html/.css/.js."""
     if not src.exists():
         return
@@ -105,15 +186,21 @@ def copy_tree(src: Path, dst: Path, transform: bool, config: dict):
         if item.is_dir():
             continue
         rel = item.relative_to(src)
+        if should_skip_asset(rel):
+            continue
         target = dst / rel
         target.parent.mkdir(parents=True, exist_ok=True)
         if transform and item.suffix.lower() in {".html", ".css", ".js", ".xml", ".txt", ".json"}:
             try:
                 content = item.read_text(encoding="utf-8")
                 content = apply_placeholders(content, config)
-                # Rewrite RO folder names to target lang paths (for shared site.js)
+                # Rewrite RO folder names in shared site.js → French paths (FR template countries)
                 if item.suffix.lower() in {".js", ".html"}:
-                    content = rewrite_paths(content, lang)
+                    rewrite = path_rewrite_lang(country_code, lang)
+                    if rewrite:
+                        content = rewrite_paths(content, rewrite)
+                if item.suffix.lower() == ".html":
+                    content = optimize_html(content)
                 target.write_text(content, encoding="utf-8")
                 continue
             except UnicodeDecodeError:
@@ -158,9 +245,12 @@ def inject_seo(out_dir: Path, config: dict):
 
 def generate_sitemap(out_dir: Path, config: dict):
     base = config.get("domain_url", "").rstrip("/")
+    skip_files = {"polistibrick-mercury-style.html"}  # homepage canonical = /
     urls = []
     for html in out_dir.rglob("*.html"):
         rel = html.relative_to(out_dir).as_posix()
+        if rel in skip_files:
+            continue
         if rel.endswith("/index.html"):
             rel = rel[:-10]
         elif rel == "index.html":
@@ -184,6 +274,66 @@ def generate_robots(out_dir: Path, config: dict):
     (out_dir / "robots.txt").write_text(content, encoding="utf-8")
 
 
+def generate_cache_headers(out_dir: Path):
+    """Cache-Control for Cloudflare CDN / Pages + Apache origins behind Cloudflare."""
+    headers = """# Auto-generated — Cloudflare Pages / Netlify cache rules
+# More specific paths first; first match wins.
+
+/assets/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+/images/*
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=604800
+
+/downloads/*
+  Cache-Control: public, max-age=2592000
+
+/sitemap.xml
+  Cache-Control: public, max-age=86400
+
+/robots.txt
+  Cache-Control: public, max-age=86400
+
+/*
+  Cache-Control: public, max-age=3600, must-revalidate
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+"""
+    (out_dir / "_headers").write_text(headers, encoding="utf-8")
+
+    htaccess = """# Auto-generated — Apache cache headers (Cloudflare CDN respects these)
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\\.(css|js)$">
+    Header set Cache-Control "public, max-age=604800, stale-while-revalidate=86400"
+  </FilesMatch>
+  <FilesMatch "\\.(jpg|jpeg|png|gif|webp|svg|ico|mp4|webm|woff2?)$">
+    Header set Cache-Control "public, max-age=2592000, stale-while-revalidate=604800"
+  </FilesMatch>
+  <FilesMatch "\\.(html)$">
+    Header set Cache-Control "public, max-age=3600, must-revalidate"
+  </FilesMatch>
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/webp "access plus 30 days"
+  ExpiresByType video/mp4 "access plus 30 days"
+  ExpiresByType text/html "access plus 1 hour"
+</IfModule>
+"""
+    (out_dir / ".htaccess").write_text(htaccess, encoding="utf-8")
+
+
 def build_country(code: str):
     config = load_config(code)
     out_dir = BUILD_DIR / code
@@ -192,8 +342,8 @@ def build_country(code: str):
     out_dir.mkdir(parents=True, exist_ok=True)
 
     # 1) shared assets → build/[code]/assets/ + images/
-    copy_tree(SHARED_DIR / "css", out_dir / "assets" / "css", transform=True, config=config)
-    copy_tree(SHARED_DIR / "js",  out_dir / "assets" / "js",  transform=True, config=config)
+    copy_tree(SHARED_DIR / "css", out_dir / "assets" / "css", transform=True, config=config, country_code=code)
+    copy_tree(SHARED_DIR / "js",  out_dir / "assets" / "js",  transform=True, config=config, country_code=code)
     copy_tree(SHARED_DIR / "images", out_dir / "images", transform=False, config=config)
 
     # 1b) shared downloads (PDF, CAD, BIM, etc) per language → build/[code]/downloads/
@@ -214,7 +364,7 @@ def build_country(code: str):
         print(f"  [skip] {code} is empty (only _config.json) — not deployed")
         shutil.rmtree(out_dir)
         return
-    copy_tree(country_src, out_dir, transform=True, config=config)
+    copy_tree(country_src, out_dir, transform=True, config=config, country_code=code)
 
     # Strip _config.json from output (not needed publicly)
     cfg_out = out_dir / "_config.json"
@@ -224,9 +374,13 @@ def build_country(code: str):
     # 3) SEO tags (canonical, og:url, hreflang) — always on the official domain
     inject_seo(out_dir, config)
 
-    # 4) sitemap + robots
+    # 3b) Performance — async fonts, defer site.js (pages that skipped transform)
+    optimize_html_files(out_dir)
+
+    # 4) sitemap + robots + CDN cache headers
     generate_sitemap(out_dir, config)
     generate_robots(out_dir, config)
+    generate_cache_headers(out_dir)
 
     pages = sum(1 for _ in out_dir.rglob("*.html"))
     print(f"✓ {code:3} ({config.get('country_name','?')}) → {out_dir.relative_to(ROOT)} ({pages} pages)")

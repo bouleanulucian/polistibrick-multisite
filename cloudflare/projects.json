@@ -1,0 +1,34 @@
+{
+  "fr": {
+    "project": "polistibrick-fr",
+    "domain": "polistibrick.fr"
+  },
+  "ro": {
+    "project": "polistibrick-ro",
+    "domain": "polistibrick.ro"
+  },
+  "en": {
+    "project": "polistibrick-uk",
+    "domain": "polistibrick.uk"
+  },
+  "it": {
+    "project": "polistibrick-it",
+    "domain": "polistibrick.it"
+  },
+  "es": {
+    "project": "polistibrick-es",
+    "domain": "polistibrick.es"
+  },
+  "nl": {
+    "project": "polistibrick-be",
+    "domain": "polistibrick.be"
+  },
+  "de": {
+    "project": "polistibrick-ch",
+    "domain": "polistibrick.com"
+  },
+  "ie": {
+    "project": "polistibrick-ie",
+    "domain": "polistibrick.ie"
+  }
+}

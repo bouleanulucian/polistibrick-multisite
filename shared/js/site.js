@@ -31,24 +31,24 @@
           <div class="country-switcher-panel" role="menu" aria-hidden="true">
             <div class="country-switcher-header">{{ui.cp_eyebrow}}</div>
             <a href="#" data-country="ro" data-domain="https://polistibrick.ro" data-folder="ro" class="country-switcher-item"><span class="flag">🇷🇴</span><span class="name">România</span><span class="domain">polistibrick.ro</span></a>
-            <a href="#" data-country="fr" data-domain="https://polistibrick.fr" data-folder="fr" class="country-switcher-item"><span class="flag">🇫🇷</span><span class="name">France</span><span class="domain">polistibrick.fr</span></a>
-            <a href="#" data-country="it" data-domain="https://polistibrick.it" data-folder="it" class="country-switcher-item"><span class="flag">🇮🇹</span><span class="name">Italia</span><span class="domain">polistibrick.it</span></a>
-            <a href="#" data-country="es" data-domain="https://polistibrick.es" data-folder="es" class="country-switcher-item"><span class="flag">🇪🇸</span><span class="name">España</span><span class="domain">polistibrick.es</span></a>
-            <a href="#" data-country="be" data-domain="https://polistibrick.be" data-folder="nl" class="country-switcher-item"><span class="flag">🇧🇪</span><span class="name">België</span><span class="domain">polistibrick.be</span></a>
-            <a href="#" data-country="ie" data-domain="https://polistibrick.ie" data-folder="ie" class="country-switcher-item"><span class="flag">🇮🇪</span><span class="name">Ireland</span><span class="domain">polistibrick.ie</span></a>
-            <a href="#" data-country="uk" data-domain="https://polistibrick.uk" data-folder="en" class="country-switcher-item"><span class="flag">🇬🇧</span><span class="name">United Kingdom</span><span class="domain">polistibrick.uk</span></a>
-            <a href="#" data-country="ch" data-domain="https://polistibrick.com" data-folder="de" class="country-switcher-item"><span class="flag">🇨🇭</span><span class="name">Schweiz</span><span class="domain">polistibrick.com</span></a>
+            <a href="#" data-country="fr" data-domain="https://polistibrick.fr" data-folder="fr" class="country-switcher-item"><span class="flag">🇫🇷</span><span class="name">{{ui.country_fr}}</span><span class="domain">polistibrick.fr</span></a>
+            <a href="#" data-country="it" data-domain="https://polistibrick.it" data-folder="it" class="country-switcher-item"><span class="flag">🇮🇹</span><span class="name">{{ui.country_it}}</span><span class="domain">polistibrick.it</span></a>
+            <a href="#" data-country="es" data-domain="https://polistibrick.es" data-folder="es" class="country-switcher-item"><span class="flag">🇪🇸</span><span class="name">{{ui.country_es}}</span><span class="domain">polistibrick.es</span></a>
+            <a href="#" data-country="be" data-domain="https://polistibrick.be" data-folder="nl" class="country-switcher-item"><span class="flag">🇧🇪</span><span class="name">{{ui.country_be}}</span><span class="domain">polistibrick.be</span></a>
+            <a href="#" data-country="ie" data-domain="https://polistibrick.ie" data-folder="ie" class="country-switcher-item"><span class="flag">🇮🇪</span><span class="name">{{ui.country_ie}}</span><span class="domain">polistibrick.ie</span></a>
+            <a href="#" data-country="uk" data-domain="https://polistibrick.uk" data-folder="en" class="country-switcher-item"><span class="flag">🇬🇧</span><span class="name">{{ui.country_uk}}</span><span class="domain">polistibrick.uk</span></a>
+            <a href="#" data-country="ch" data-domain="https://polistibrick.com" data-folder="de" class="country-switcher-item"><span class="flag">🇨🇭</span><span class="name">{{ui.country_ch}}</span><span class="domain">polistibrick.com</span></a>
           </div>
         </div>
         <a href="${BASE}oferta/" class="btn btn-primary nav-cta-devis">{{ui.cere_oferta_court}} →</a>
-        <button class="nav-burger nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navDrawerShared">
+        <button class="nav-burger nav-toggle" type="button" aria-label="{{ui.nav_menu_aria}}" aria-expanded="false" aria-controls="navDrawerShared">
           <span></span><span></span><span></span>
         </button>
       </div>
     </div>
 
     <div class="nav-drawer-overlay" data-nav-overlay aria-hidden="true"></div>
-    <aside class="nav-drawer" id="navDrawerShared" aria-label="Menu" aria-hidden="true">
+    <aside class="nav-drawer" id="navDrawerShared" aria-label="{{ui.nav_drawer_aria}}" aria-hidden="true">
       <div class="nav-drawer-group">
         <button class="nav-drawer-title" aria-expanded="false">{{ui.produse}}<span class="nd-caret">▾</span></button>
         <div class="nav-acc">
@@ -154,6 +154,7 @@
       <div class="footer-bottom">
         <span>{{ui.footer_copyright}}</span>
         <div class="footer-bottom-links">
+          <a href="${BASE}legal/mentiuni-legale/">{{ui.footer_mentions}}</a>
           <a href="${BASE}legal/termeni/">{{ui.footer_termeni}}</a>
           <a href="${BASE}legal/confidentialitate/">{{ui.footer_confidentialitate}}</a>
           <a href="${BASE}legal/cookies/">{{ui.footer_cookies}}</a>
@@ -170,19 +171,19 @@
     if (navMount) navMount.innerHTML = NAV_HTML;
     if (footMount) footMount.innerHTML = FOOTER_HTML;
 
-    // Barre de contact mobile flottante (Appeler + Email) — sur toutes les pages
+    // Mobile floating contact bar (call + email) — all pages
     if (!document.querySelector('.mobile-contact-bar')) {
       const bar = document.createElement('div');
       bar.className = 'mobile-contact-bar';
-      bar.setAttribute('aria-label', 'Contact rapide');
+      bar.setAttribute('aria-label', '{{ui.mobile_contact_aria}}');
       bar.innerHTML =
-        '<a href="tel:{{contact.phone_raw}}" class="mcb-btn mcb-call" aria-label="Appeler Polistibrick">' +
+        '<a href="tel:{{contact.phone_raw}}" class="mcb-btn mcb-call" aria-label="{{ui.mobile_call_aria}}">' +
           '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>' +
-          '<span>Appeler</span>' +
+          '<span>{{ui.mobile_call_label}}</span>' +
         '</a>' +
-        '<a href="mailto:{{contact.email_general}}" class="mcb-btn mcb-email" aria-label="Envoyer un email">' +
+        '<a href="mailto:{{contact.email_general}}" class="mcb-btn mcb-email" aria-label="{{ui.mobile_email_aria}}">' +
           '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>' +
-          '<span>Email</span>' +
+          '<span>{{ui.mobile_email_label}}</span>' +
         '</a>';
       document.body.appendChild(bar);
     }
@@ -405,6 +406,7 @@
   let detectedCountry = null;
 
   async function detectUserCountry() {
+    if (localStorage.getItem('pb_cookie_consent') !== 'accepted') return null;
     const cached = localStorage.getItem('pb_country');
     if (cached && POLISTIBRICK_COUNTRIES[cached]) return cached;
     try {
@@ -516,7 +518,7 @@
     });
   }
 
-  document.addEventListener('DOMContentLoaded', async () => {
+  document.addEventListener('DOMContentLoaded', () => {
     inject();
     navShadow();
     countrySwitcherShared();
@@ -524,6 +526,22 @@
     reveal();
     gallery();
     wireCountryPickerButtons();
-    detectedCountry = await detectUserCountry();
+
+    var cs = document.createElement('script');
+    cs.src = BASE + 'assets/js/cookies.js';
+    cs.defer = true;
+    document.head.appendChild(cs);
+
+    function runGeoIfAllowed() {
+      if (localStorage.getItem('pb_cookie_consent') !== 'accepted') return;
+      const idle = window.requestIdleCallback || ((cb) => setTimeout(cb, 2500));
+      idle(() => {
+        detectUserCountry().then((code) => { detectedCountry = code; });
+      });
+    }
+    runGeoIfAllowed();
+    window.addEventListener('pb-cookie-consent', (e) => {
+      if (e.detail && e.detail.level === 'accepted') runGeoIfAllowed();
+    });
   });
 })();

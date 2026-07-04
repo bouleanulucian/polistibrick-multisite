@@ -1,0 +1,57 @@
+name: Deploy Cloudflare Pages
+
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - "countries/**"
+      - "shared/**"
+      - "build/**"
+      - "translations/**"
+      - "cloudflare/**"
+      - ".github/workflows/cloudflare-pages.yml"
+  workflow_dispatch:
+    inputs:
+      country:
+        description: "Country code (fr, ro, en, …)"
+        required: true
+        default: "fr"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        country: ${{ github.event_name == 'workflow_dispatch' && fromJSON(format('["{0}"]', github.event.inputs.country)) || fromJSON('["ro","fr"]') }}
+    env:
+      COUNTRY: ${{ matrix.country }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build site
+        run: python3 build/build.py "$COUNTRY"
+
+      - name: Read Cloudflare project
+        id: cfg
+        run: |
+          python3 <<'PY'
+          import json, os, sys
+          code = os.environ["COUNTRY"]
+          cfg = json.load(open("cloudflare/projects.json"))[code]
+          out = os.environ["GITHUB_OUTPUT"]
+          with open(out, "a") as f:
+              f.write(f"project={cfg['project']}\n")
+              f.write(f"domain={cfg['domain']}\n")
+          PY
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy build/${{ env.COUNTRY }} --project-name=${{ steps.cfg.outputs.project }} --branch=main

@@ -54,6 +54,25 @@
   "form_submit_email": "contact@polistibrick.ro",
   "form_cc_email": "info@polistibrick.eu",
 
+  "forms": {
+    "access_key": "",
+    "provider": "web3forms",
+    "subjects": {
+      "contact": "Contact — Polistibrick România",
+      "devis": "Cerere ofertă — Polistibrick România",
+      "partner": "Candidatură partener — Polistibrick România",
+      "review": "Recenzie nouă — Polistibrick România"
+    }
+  },
+
+  "legal": {
+    "publication_director": "Lucian Bouleanu",
+    "hosting_provider": "Cloudflare, Inc.",
+    "hosting_address": "101 Townsend St, San Francisco, CA 94107, SUA",
+    "privacy_contact_email": "contact@polistibrick.ro",
+    "privacy_slug": "confidentialitate"
+  },
+
   "factory": {
     "name": "Craiova",
     "address": "[adresa fabrica Craiova]",
@@ -63,5 +82,10 @@
   "metadata": {
     "og_locale": "ro_RO",
     "hreflang": "ro-RO"
+  },
+
+  "devis_app": {
+    "url": "https://devis.polistibrick.ro",
+    "pays": "RO"
   }
 }

@@ -1279,7 +1279,21 @@ html { scroll-behavior: auto !important; }
   .nav-burger,
   .nav-toggle { width: 38px; height: 36px; }
 }
-/* === Barre de contact mobile flottante (Appeler + Email) — toutes les pages === */
+/* === FORM SUBMIT STATES (Web3Forms) === */
+.pb-honeypot { position: absolute; left: -9999px; opacity: 0; height: 0; width: 0; pointer-events: none; }
+.pb-form-error {
+  margin-top: 12px; padding: 10px 12px; border-radius: 10px;
+  background: var(--red-soft); color: var(--red-dark); font-size: 13px;
+}
+.pb-form-thanks {
+  text-align: center; padding: 28px 16px;
+}
+.pb-form-thanks h3 { font-family: var(--serif); font-size: 24px; margin-bottom: 8px; color: var(--ink); }
+.pb-form-thanks p { font-size: 14px; color: var(--gray); }
+.pb-form.is-sent > :not(.pb-form-thanks) { display: none; }
+.pb-form.is-sent .pb-form-thanks { display: block; }
+.pb-form.is-loading [type="submit"] { opacity: 0.72; cursor: wait; }
+
 .mobile-contact-bar { display: none; }
 @media (max-width: 768px) {
   .mobile-contact-bar {
@@ -1304,3 +1318,97 @@ html { scroll-behavior: auto !important; }
   /* éviter que la barre fixe cache le bas de la page */
   body { padding-bottom: calc(54px + env(safe-area-inset-bottom, 0px)); }
 }
+
+/* Sections / links hidden until content is ready */
+.pb-section-hidden { display: none !important; }
+.cta-social a[href=""] { display: none !important; }
+
+/* ---- Cookie consent banner ---- */
+.pb-cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10050;
+  padding: 16px 20px calc(16px + env(safe-area-inset-bottom, 0px));
+  background: rgba(26, 23, 20, 0.97);
+  color: #f7f4ed;
+  box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.22);
+  animation: pbCookieIn 0.35s ease;
+}
+@keyframes pbCookieIn {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.pb-cookie-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 24px;
+}
+.pb-cookie-text {
+  flex: 1 1 280px;
+  font-size: 13px;
+  line-height: 1.55;
+  margin: 0;
+  color: rgba(247, 244, 237, 0.88);
+}
+.pb-cookie-text a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.pb-cookie-text a:hover { color: #ffb4b7; }
+.pb-cookie-actions {
+  display: flex;
+  flex-shrink: 0;
+  gap: 10px;
+}
+.pb-cookie-btn {
+  font-family: var(--sans, 'Inter', system-ui, sans-serif);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+.pb-cookie-btn--ghost {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #fff;
+}
+.pb-cookie-btn--ghost:hover { background: rgba(255, 255, 255, 0.08); }
+.pb-cookie-btn--primary {
+  background: var(--red, #C8102E);
+  color: #fff;
+}
+.pb-cookie-btn--primary:hover { background: #a60d26; }
+@media (max-width: 600px) {
+  .pb-cookie-actions { width: 100%; }
+  .pb-cookie-btn { flex: 1; text-align: center; }
+}
+
+/* ---- RGPD consent checkbox on forms ---- */
+.pb-form-consent { margin-top: 14px; }
+.pb-consent-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--gray);
+  cursor: pointer;
+}
+.pb-consent-label input[type="checkbox"] {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  accent-color: var(--red, #C8102E);
+}
+.pb-consent-label a { color: var(--red); }

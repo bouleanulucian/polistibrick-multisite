@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vilă de familie · Valencia, Spania · Studiu de caz Polistibrick</title>
+  <meta name="description" content="Studiu de caz Polistibrick: vilă de 280 m² la Valencia construită cu MBK 210 + TBK în 7 săptămâni. Zero ore de aer condiționat vara, casă natural răcoroasă.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/site.css">
+  <style>
+    /* === Card cu watermark === */
+    .wm-section { padding: clamp(60px, 8vw, 100px) 0; background: var(--cream); }
+    .wm-stage-wrap { position: relative; margin: 70px auto 0; max-width: 1480px; }
+    .wm-watermark { position: absolute; top: 0; left: 50%; width: 100vw; margin-left: -50vw; pointer-events: none; user-select: none; transform: translateY(-50%); height: 1em; line-height: 1; text-align: center; text-transform: uppercase; font-family: var(--serif); font-size: clamp(64px, 12vw, 200px); font-weight: 500; letter-spacing: -0.06em; z-index: 2; }
+    .wm-watermark .wm-half { position: absolute; inset: 0; width: 100%; display: block; }
+    .wm-watermark .wm-top { color: transparent; -webkit-text-stroke: 1.4px rgba(15,15,15,0.30); clip-path: inset(0 0 50% 0); }
+    .wm-watermark .wm-bottom { color: var(--cream-dark); opacity: 0.65; clip-path: inset(50% 0 0 0); }
+    .wm-stage { position: relative; background: var(--cream-light); border: 1px solid var(--border); border-radius: 32px; padding: 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    .wm-text { padding-right: 8px; }
+    .wm-text .bubble-tag { display: inline-block; background: var(--red-soft); color: var(--red); padding: 4px 12px; border-radius: 4px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 16px; }
+    .wm-text h1 { font-family: var(--serif); font-size: clamp(30px, 3.6vw, 48px); font-weight: 500; color: var(--ink); letter-spacing: -0.02em; line-height: 1.08; margin-bottom: 18px; }
+    .wm-text h1 em { font-style: italic; color: var(--red); font-weight: 400; }
+    .wm-text p.lead { font-size: 15.5px; color: var(--gray); line-height: 1.65; }
+    .wm-visual { background: white; border: 1px solid var(--border); border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-md); margin-top: 10mm; aspect-ratio: 4/3; }
+    .wm-visual .img-placeholder { width: 100%; height: 100%; aspect-ratio: auto; border-radius: 0; border: none; margin: 0; }
+    @media (max-width: 1100px) {
+      .wm-stage { grid-template-columns: 1fr; gap: 32px; padding: 36px; }
+      .wm-visual { margin-top: 0; aspect-ratio: 16/10; }
+    }
+    @media (max-width: 768px) { .wm-stage { padding: 28px 20px; } }
+    .cs-quote {
+      font-family: var(--serif);
+      font-size: clamp(22px, 2.6vw, 32px);
+      line-height: 1.35;
+      color: var(--ink);
+      padding: 36px 40px;
+      border-left: 4px solid var(--red);
+      background: var(--cream-light);
+      border-radius: 0 20px 20px 0;
+      margin: 0;
+    }
+    .cs-quote::before { content: '"'; color: var(--red); font-size: 1.2em; }
+    .cs-quote::after { content: '"'; color: var(--red); font-size: 1.2em; }
+    .cs-quote-author {
+      display: block;
+      margin-top: 20px;
+      font-family: var(--sans);
+      font-size: 14px;
+      font-style: normal;
+      color: var(--gray);
+    }
+    .cs-quote-author strong { color: var(--ink); display: block; font-size: 15px; }
+    .cs-timeline { list-style: none; padding: 0; position: relative; }
+    .cs-timeline::before {
+      content: '';
+      position: absolute;
+      left: 14px; top: 0; bottom: 0;
+      width: 2px;
+      background: var(--border);
+    }
+    .cs-timeline-item {
+      position: relative;
+      padding-left: 50px;
+      margin-bottom: 28px;
+    }
+    .cs-timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 6px; top: 8px;
+      width: 18px; height: 18px;
+      background: var(--red);
+      border: 4px solid var(--cream);
+      border-radius: 50%;
+      box-shadow: 0 0 0 2px var(--red);
+    }
+    .cs-timeline-week {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 4px;
+    }
+    .cs-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    @media (max-width: 768px) { .cs-gallery { grid-template-columns: 1fr; } }
+    .cs-bill {
+      background: linear-gradient(135deg, #2A2520 0%, #393229 100%);
+      color: var(--cream);
+      padding: 36px;
+      border-radius: 20px;
+      text-align: center;
+    }
+    .cs-bill-num {
+      font-family: var(--serif);
+      font-size: clamp(48px, 7vw, 80px);
+      color: var(--red);
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      margin: 12px 0 6px;
+    }
+    .cs-bill-num small { font-size: 0.35em; color: rgba(255,255,255,0.55); margin-left: 4px; }
+  </style>
+</head>
+<body data-base="../../">
+
+<header class="nav" data-include="nav"></header>
+
+<!-- HERO cu watermark -->
+<section class="wm-section">
+  <div class="container">
+    <div class="wm-stage-wrap reveal">
+      <div class="wm-watermark" aria-hidden="true">
+        <span class="wm-half wm-top">Valencia</span>
+        <span class="wm-half wm-bottom">Valencia</span>
+      </div>
+
+      <div class="wm-stage">
+        <div class="wm-text">
+          <span class="bubble-tag">Vilă · Spania</span>
+          <h1>Vilă de familie <em>la Valencia.</em></h1>
+          <p class="lead">La Valencia, vara durează 5 luni cu temperaturi ce depășesc 35 °C. Aerul condiționat merge non-stop în casele clasice — facturi de peste 400 €/lună vara. Familia [Nume] a construit cu Polistibrick MBK 210 (versiune pentru climat temperat-cald) și TBK 250. După 18 luni de ocupare, aerul condiționat nu a fost pornit niciodată.</p>
+        </div>
+        <div class="wm-visual" style="padding:0;overflow:hidden;">
+          <img src="../../images/proiecte/projet-valencia.png" alt="Vila Valencia" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KEY FACTS -->
+<section class="section section--tight">
+  <div class="container">
+    <div class="grid grid-4 reveal">
+      <div class="fact"><span class="fact-num">280<small> m²</small></span><span class="fact-label">Suprafață construită</span></div>
+      <div class="fact"><span class="fact-num">7<small> săpt.</small></span><span class="fact-label">Execuție Polistibrick</span></div>
+      <div class="fact"><span class="fact-num">0<small> h AC</small></span><span class="fact-label">Aer condiționat vara</span></div>
+      <div class="fact"><span class="fact-num">−72<small> %</small></span><span class="fact-label">Energie vs vecini</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="section section--cream section--tight">
+  <div class="container container--narrow">
+    <blockquote class="cs-quote reveal">
+      Vara aici e brutală — la 38 °C afară, vecinii plătesc 500 € pe lună doar pentru aer condiționat. Am construit cu Polistibrick și casa rămâne natural la 24-25 °C, fără să pornim nimic. La început nu ne venea să credem, acum râdem când le povestim vecinilor.
+      <span class="cs-quote-author"><strong>[Numele proprietarului]</strong>Proprietar · Locuiește din mai 2023</span>
+    </blockquote>
+  </div>
+</section>
+
+<!-- PROJECT DETAILS -->
+<section class="section">
+  <div class="container">
+    <div class="grid grid-2" style="gap:48px;align-items:start;">
+      <div class="reveal">
+        <span class="eyebrow">Despre proiect</span>
+        <h2 style="margin-bottom:18px;">De la idee la mutare în 4 luni.</h2>
+        <p style="margin-bottom:14px;">Familia a cumpărat terenul în 2022 cu intenția de a construi o casă pentru pensionare. Au călătorit prin Europa pentru a vizita case pasive în climat diferit. Au testat tehnologii ICF în mai multe țări.</p>
+        <p style="margin-bottom:14px;">Au ales Polistibrick din 3 motive: <strong>(1)</strong> fabrica din Valencia permitea livrarea în 3 zile; <strong>(2)</strong> MBK 210 era optimizat pentru climat temperat-cald; <strong>(3)</strong> brevetul european le-a oferit garanția unui sistem unic, nu a unui produs de masă.</p>
+        <p style="margin-bottom:14px;">Construcția a început în martie 2023. Tâmplăria a sosit cu o săptămână întârziere, dar restul a decurs conform planului. Mutare: 1 mai 2023.</p>
+        <p>După prima vară (15 mai - 30 septembrie 2023), familia a deschis aplicația contorului electric. Consum total de electricitate: 290 kWh/lună. Vecinul lor: 1.840 kWh/lună.</p>
+      </div>
+      <div class="reveal">
+        <div class="card" style="padding:32px;">
+          <h4 style="margin-bottom:18px;">Specificații</h4>
+          <div class="spec-table" style="border-radius:10px;">
+            
+            <div class="spec-table-row" style="grid-template-columns:1fr 1fr;"><div class="spec-table-cell spec-table-cell--label">Locație</div><div class="spec-table-cell spec-table-cell--value">Valencia, Spania</div></div>
+            <div class="spec-table-row" style="grid-template-columns:1fr 1fr;"><div class="spec-table-cell spec-table-cell--label">Suprafață utilă</div><div class="spec-table-cell spec-table-cell--value">280 m²</div></div>
+            <div class="spec-table-row" style="grid-template-columns:1fr 1fr;"><div class="spec-table-cell spec-table-cell--label">Etaje</div><div class="spec-table-cell spec-table-cell--value">P + piscină</div></div>
+            <div class="spec-table-row" style="grid-template-columns:1fr 1fr;"><div class="spec-table-cell spec-table-cell--label">Pereți</div><div class="spec-table-cell spec-table-cell--value">MBK 210</div></div>
+            <div class="spec-table-row" style="grid-template-columns:1fr 1fr;"><div class="spec-table-cell spec-table-cell--label">Acoperiș</div><div class="spec-table-cell spec-table-cell--value">TBK 250</div></div>
+            <div class="spec-table-row" style="grid-template-columns:1fr 1fr;"><div class="spec-table-cell spec-table-cell--label">Cost total (la cheie)</div><div class="spec-table-cell spec-table-cell--value">~340 000 €</div></div>
+            <div class="spec-table-row" style="grid-template-columns:1fr 1fr;"><div class="spec-table-cell spec-table-cell--label">Început</div><div class="spec-table-cell spec-table-cell--value">Martie 2023</div></div>
+            <div class="spec-table-row" style="grid-template-columns:1fr 1fr;"><div class="spec-table-cell spec-table-cell--label">Mutare</div><div class="spec-table-cell spec-table-cell--value">Mai 2023</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BILL HIGHLIGHT -->
+<section class="section section--tight">
+  <div class="container container--narrow">
+    <div class="cs-bill reveal">
+      <span class="eyebrow" style="color:rgba(247,244,237,0.6);">Factură reală electricitate + gaz</span>
+      <div class="cs-bill-num">52<small> €/lună</small></div>
+      <p style="color:rgba(247,244,237,0.75);font-size:14px;">Medie electricitate pe 18 luni (vară inclusă). Casă de 280 m² cu 3 persoane. Aer condiționat niciodată pornit. Apă caldă din panouri solare.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="section section--cream">
+  <div class="container container--narrow">
+    <div class="reveal">
+      <span class="eyebrow">Cronologie execuție</span>
+      <h2 style="margin-bottom:30px;">De la fundație la <em>cheia în mână.</em></h2>
+      <ol class="cs-timeline">
+        
+        <li class="cs-timeline-item"><span class="cs-timeline-week">Săptămâna 1</span><h4>Fundație + placă</h4><p style="font-size:14px;color:var(--gray);">Excavație, fundație. Teren stabil — nu a fost necesară stabilizare suplimentară.</p></li>
+        <li class="cs-timeline-item"><span class="cs-timeline-week">Săptămâna 2-3</span><h4>Montaj cofraj MBK 210</h4><p style="font-size:14px;color:var(--gray);">O echipă de 4 persoane montează pereții parterului. Casa e mai mare — durează puțin mai mult.</p></li>
+        <li class="cs-timeline-item"><span class="cs-timeline-week">Săptămâna 4</span><h4>Acoperiș TBK + tâmplărie</h4><p style="font-size:14px;color:var(--gray);">Acoperiș montat în 2 zile. Tâmplărie cu geam low-e, triplu geam.</p></li>
+        <li class="cs-timeline-item"><span class="cs-timeline-week">Săptămâna 5-7</span><h4>Instalații + finisaje + piscină</h4><p style="font-size:14px;color:var(--gray);">Sistem de panouri solare. Piscină exterioară integrată. Tencuială mediteraneană cu învelitoare reflectorizantă.</p></li>
+        <li class="cs-timeline-item"><span class="cs-timeline-week">Săptămâna 8</span><h4>Mutare</h4><p style="font-size:14px;color:var(--gray);">Recepție tehnică validată. Test de consum verificat pe loc — sub pragurile Passivhaus.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY (with tabs + lightbox) -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="text-align:center;margin-bottom:30px;">
+      <span class="eyebrow">Galerie foto</span>
+      <h2>Cum a decurs <em>pas cu pas.</em></h2>
+      <p class="lead" style="margin-top:14px;max-width:620px;margin-left:auto;margin-right:auto;">Fotografiile de șantier vor fi publicate în curând.</p>
+    </div>
+
+    <div class="reveal pb-section-hidden" data-gallery>
+      <div class="gallery-tabs">
+        <button class="gallery-tab is-active" data-filter="all">Toate <span class="gallery-tab-count"></span></button>
+        <button class="gallery-tab" data-filter="construction">În construcție <span class="gallery-tab-count"></span></button>
+        <button class="gallery-tab" data-filter="final">Finalizate <span class="gallery-tab-count"></span></button>
+      </div>
+
+      <div class="gallery-grid">
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Teren mediteranean înainte de construcție.">
+          <div class="gallery-item-placeholder">[Foto: Înainte — teren]</div>
+          <span class="gallery-item-tag">Construcție</span>
+          <div class="gallery-item-caption">Teren mediteranean înainte de construcție.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Excavație și fundație tip placă.">
+          <div class="gallery-item-placeholder">[Foto: Săpt. 1 — Fundație]</div>
+          <span class="gallery-item-tag">Construcție</span>
+          <div class="gallery-item-caption">Excavație și fundație tip placă.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Pereți MBK 210 (optimizați climat cald).">
+          <div class="gallery-item-placeholder">[Foto: Săpt. 2 — Pereți parter]</div>
+          <span class="gallery-item-tag">Construcție</span>
+          <div class="gallery-item-caption">Pereți MBK 210 (optimizați climat cald).</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Detaliu sistem asamblare brevetat — punți termice eliminate.">
+          <div class="gallery-item-placeholder">[Foto: Săpt. 2 — Detalii]</div>
+          <span class="gallery-item-tag">Construcție</span>
+          <div class="gallery-item-caption">Detaliu sistem asamblare brevetat — punți termice eliminate.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Acoperiș TBK 250 montat — un singur strat, performanță Passivhaus.">
+          <div class="gallery-item-placeholder">[Foto: Săpt. 3 — Acoperiș]</div>
+          <span class="gallery-item-tag">Construcție</span>
+          <div class="gallery-item-caption">Acoperiș TBK 250 montat — un singur strat, performanță Passivhaus.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Pregătire turnare beton (cantitate optimă pre-calculată).">
+          <div class="gallery-item-placeholder">[Foto: Săpt. 3 — Pregătire]</div>
+          <span class="gallery-item-tag">Construcție</span>
+          <div class="gallery-item-caption">Pregătire turnare beton (cantitate optimă pre-calculată).</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Turnare beton într-o singură etapă pentru toți pereții.">
+          <div class="gallery-item-placeholder">[Foto: Săpt. 4 — Turnare]</div>
+          <span class="gallery-item-tag">Construcție</span>
+          <div class="gallery-item-caption">Turnare beton într-o singură etapă pentru toți pereții.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Tâmplărie cu geam low-e pentru filtrare solară.">
+          <div class="gallery-item-placeholder">[Foto: Săpt. 4-5 — Tâmplărie]</div>
+          <span class="gallery-item-tag">Construcție</span>
+          <div class="gallery-item-caption">Tâmplărie cu geam low-e pentru filtrare solară.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Panouri solare instalate pe TBK.">
+          <div class="gallery-item-placeholder">[Foto: Săpt. 5 — Solar]</div>
+          <span class="gallery-item-tag">Construcție</span>
+          <div class="gallery-item-caption">Panouri solare instalate pe TBK.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Construcție piscină exterioară integrată.">
+          <div class="gallery-item-placeholder">[Foto: Săpt. 6 — Piscină]</div>
+          <span class="gallery-item-tag">Construcție</span>
+          <div class="gallery-item-caption">Construcție piscină exterioară integrată.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Tencuieli exterioare reflectorizante.">
+          <div class="gallery-item-placeholder">[Foto: Săpt. 6-7 — Fațadă]</div>
+          <span class="gallery-item-tag">Construcție</span>
+          <div class="gallery-item-caption">Tencuieli exterioare reflectorizante.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Finisaje interioare — piatră naturală.">
+          <div class="gallery-item-placeholder">[Foto: Săpt. 7 — Interior]</div>
+          <span class="gallery-item-tag">Construcție</span>
+          <div class="gallery-item-caption">Finisaje interioare — piatră naturală.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="final" data-caption="Vedere exterioară cu piscină.">
+          <div class="gallery-item-placeholder">[Foto: Exterior + piscină]</div>
+          <span class="gallery-item-tag">Finalizat</span>
+          <div class="gallery-item-caption">Vedere exterioară cu piscină.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="final" data-caption="Fațadă mediteraneană cu balcon.">
+          <div class="gallery-item-placeholder">[Foto: Fațadă]</div>
+          <span class="gallery-item-tag">Finalizat</span>
+          <div class="gallery-item-caption">Fațadă mediteraneană cu balcon.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="final" data-caption="Living open-space cu vedere largă.">
+          <div class="gallery-item-placeholder">[Foto: Living]</div>
+          <span class="gallery-item-tag">Finalizat</span>
+          <div class="gallery-item-caption">Living open-space cu vedere largă.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="final" data-caption="Bucătărie integrată mediteraneană.">
+          <div class="gallery-item-placeholder">[Foto: Bucătărie]</div>
+          <span class="gallery-item-tag">Finalizat</span>
+          <div class="gallery-item-caption">Bucătărie integrată mediteraneană.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="final" data-caption="Dormitor matrimonial cu balcon.">
+          <div class="gallery-item-placeholder">[Foto: Dormitor]</div>
+          <span class="gallery-item-tag">Finalizat</span>
+          <div class="gallery-item-caption">Dormitor matrimonial cu balcon.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="final" data-caption="Baie cu finisaje naturale.">
+          <div class="gallery-item-placeholder">[Foto: Baie]</div>
+          <span class="gallery-item-tag">Finalizat</span>
+          <div class="gallery-item-caption">Baie cu finisaje naturale.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="final" data-caption="Terasă superioară pentru cină.">
+          <div class="gallery-item-placeholder">[Foto: Terasă]</div>
+          <span class="gallery-item-tag">Finalizat</span>
+          <div class="gallery-item-caption">Terasă superioară pentru cină.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="final" data-caption="Casa vara — aer condiționat niciodată pornit.">
+          <div class="gallery-item-placeholder">[Foto: Vară fără AC]</div>
+          <span class="gallery-item-tag">Finalizat</span>
+          <div class="gallery-item-caption">Casa vara — aer condiționat niciodată pornit.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="final" data-caption="Factură electricitate vară 2024: 58 €/lună.">
+          <div class="gallery-item-placeholder">[Foto: Factură vară]</div>
+          <span class="gallery-item-tag">Finalizat</span>
+          <div class="gallery-item-caption">Factură electricitate vară 2024: 58 €/lună.</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX (at body level, click any gallery item to open) -->
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Galerie foto">
+  <span class="lightbox-counter">1 / 1</span>
+  <button class="lightbox-close" aria-label="Închide">×</button>
+  <button class="lightbox-prev" aria-label="Imaginea anterioară">‹</button>
+  <button class="lightbox-next" aria-label="Imaginea următoare">›</button>
+  <img class="lightbox-img" src="" alt="">
+  <div class="lightbox-caption"></div>
+</div>
+
+<!-- CTA -->
+<section class="section section--tight">
+  <div class="cta-band reveal">
+    <h2>Vrei și tu <em>o casă ca asta?</em></h2>
+    <p>Cere o ofertă personalizată — calculăm exact pentru proiectul tău, pe baza planurilor tale.</p>
+    <div class="cta-band-actions">
+      <a href="../../oferta/" class="btn btn-on-dark btn-large btn-arrow">Cere o ofertă personalizată</a>
+      <a href="../../calculator/" class="btn btn-on-dark-ghost btn-large">Calculator cost</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" data-include="footer"></footer>
+<script src="../../assets/js/site.js"></script>
+</body>
+</html>

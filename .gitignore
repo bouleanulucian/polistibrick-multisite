@@ -25,3 +25,21 @@ venv/
 # Env files
 .env
 .env.local
+
+# Duplicate / dev-only folders
+countries/fr 2/
+drafts/
+
+# Presence dev assets (not used on live site — see build/build.py PRESENCE_KEEP_FILES)
+countries/*/images/presence/_frames/
+countries/*/images/presence/clipuri-seedance/
+countries/*/images/presence/[0-9]*
+countries/*/images/presence/seedance-*
+countries/*/images/presence/*test*
+countries/*/images/presence/presence-2k-*
+countries/*/images/presence/presence-montage-*
+countries/*/images/presence/presence-factory-film-graded.mp4
+countries/*/images/presence/presence_*.png
+countries/*/images/presence/presence_frame*.png
+countries/*/images/presence/factory-*.png
+countries/*/images/presence/frame*.png

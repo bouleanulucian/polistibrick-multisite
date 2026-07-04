@@ -60,6 +60,7 @@ python3 build/build.py ro en fr
 3. Copies `shared/` assets → `build/[country]/assets/` + `images/`
 4. Replaces `{{placeholders}}` in HTML with config values
 5. Generates `sitemap.xml` + `robots.txt`
+6. Generates `_headers` + `.htaccess` for CDN caching
 
 ---
 
@@ -115,6 +116,46 @@ Run `python3 build/build.py` → changes appear in **all 7 country builds**.
 ---
 
 ## 🌍 Deployment options
+
+### Option D: Cloudflare CDN + Pages (recommended for speed)
+
+Every build now includes **`_headers`** (Cloudflare Pages / Netlify) and **`.htaccess`** (Apache/FTP behind Cloudflare) with cache rules:
+
+| Asset | Browser cache | CDN cache |
+|---|---|---|
+| CSS, JS (`/assets/`) | 7 days | 7 days + stale-while-revalidate |
+| Images, video (`/images/`) | 30 days | 30 days |
+| HTML pages | 1 hour | 1 hour (always fresh after edits) |
+
+#### A) Cloudflare Pages (auto-deploy from GitHub)
+
+1. **Cloudflare dashboard** → Pages → Create project → Connect GitHub repo
+2. Or use the included GitHub Action (`.github/workflows/cloudflare-pages.yml`)
+3. Add GitHub secrets:
+   - `CLOUDFLARE_API_TOKEN` — [Create token](https://dash.cloudflare.com/profile/api-tokens) with *Cloudflare Pages Edit*
+   - `CLOUDFLARE_ACCOUNT_ID` — found in Cloudflare dashboard URL
+4. Create a Pages project per country (e.g. `polistibrick-fr`) — names in `cloudflare/projects.json`
+5. **Custom domain**: Pages → project → Custom domains → add `polistibrick.fr`
+6. **DNS**: point domain to Cloudflare (nameservers orange-cloud)
+
+Manual deploy (after build):
+```bash
+python3 build/build.py fr
+python3 build/deploy_cloudflare.py fr
+```
+
+#### B) FTP / existing host + Cloudflare proxy
+
+1. Upload `build/[country]/` via FTP (includes `.htaccess`)
+2. Add domain to Cloudflare → set nameservers
+3. DNS: A/CNAME record → your host IP, **Proxied** (orange cloud)
+4. Cloudflare → **Caching** → Configuration:
+   - Caching level: **Standard**
+   - Browser Cache TTL: **Respect Existing Headers**
+   - Auto Minify: HTML, CSS, JS ✓
+   - Brotli ✓
+
+Cloudflare will cache assets at edge; repeat visitors load from CDN worldwide.
 
 ### Option A: Netlify (recommended)
 - 1 Netlify site per country

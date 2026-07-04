@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "polistibrick": {
+      "command": "python3",
+      "args": ["/Users/polistibrick/Desktop/Aplicatii site web/polistibrick-multisite/mcp/server.py"],
+      "env": {
+        "POLISTIBRICK_ROOT": "/Users/polistibrick/Desktop/Aplicatii site web/polistibrick-multisite"
+      }
+    }
+  }
+}
