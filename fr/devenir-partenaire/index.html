@@ -7,7 +7,8 @@
   <meta name="description" content="Devenez constructeur partenaire Polistibrick. Leads transmis par nos soins, formation gratuite, marges accrues, exclusivité régionale. Postulez en 5 minutes.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="../assets/css/site.css">
   <style>
     /* === Card cu watermark — pattern de la home Fabrici === */
@@ -222,7 +223,7 @@
             <h3>Postulez pour le partenariat.</h3>
             <p>Réponse sous 3 jours ouvrés. Toutes les données restent confidentielles.</p>
 
-            <form onsubmit="alert('Votre candidature a été envoyée (démo). Elle sera connectée au système de traitement des leads B2B.'); return false;">
+            <form id="partnerForm" class="pb-form" data-pb-form="partner">
 
               <div class="form-row form-row--split">
                 <div>
@@ -331,7 +332,17 @@
 
               <button type="submit" class="btn btn-primary btn-large btn-arrow" style="width:100%;justify-content:center;margin-top:8px;">Envoyer la candidature</button>
 
-              <p style="font-size:11.5px;color:var(--gray);text-align:center;margin-top:14px;">Vos données restent confidentielles. <a href="../legal/confidentialite/" style="color:var(--red);">Politique RGPD</a>.</p>
+              <div class="pb-form-consent">
+                <label class="pb-consent-label">
+                  <input type="checkbox" name="privacy_consent" value="1" required>
+                  <span>J'accepte que mes données soient traitées conformément à la <a href="../legal/confidentialite/" target="_blank" rel="noopener">politique de confidentialité (RGPD)</a>. *</span>
+                </label>
+              </div>
+
+              <div class="pb-form-thanks" hidden>
+                <h3>Candidature envoyée ✓</h3>
+                <p>Merci ! Notre équipe B2B vous contacte sous 48 heures ouvrées.</p>
+              </div>
             </form>
           </div>
 
@@ -403,6 +414,7 @@
 </section>
 
 <footer class="site-footer" data-include="footer"></footer>
-<script src="../assets/js/site.js"></script>
+<script src="../assets/js/site.js" defer></script>
+<script src="../assets/js/forms.js" defer></script>
 </body>
 </html>

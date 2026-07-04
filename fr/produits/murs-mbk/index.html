@@ -7,7 +7,8 @@
   <meta name="description" content="Système MBK Polistibrick : coffrage isolant en EPS haute densité avec béton armé. 3 modèles prédéfinis (MBK 210/270/300), U=0,10-0,14 W/m²K, isolation continue sans ponts thermiques. Fabriqué en UE.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="../../assets/css/site.css">
   <style>
     /* === Card cu watermark — pattern shared cu /devis/, /contact/, etc. === */
@@ -120,7 +121,7 @@
           <p class="lead">MBK est le seul système ICF en Europe avec <strong>3 modèles prédéfinis</strong> et la possibilité de personnalisation sur mesure sans coût supplémentaire. Un seul coffrage remplace la brique, l'isolation, les mortiers, les treillis et les colles — des murs passifs A+++ en une seule coulée.</p>
           <div style="display:flex;gap:12px;flex-wrap:wrap;">
             <a href="../../devis/" class="btn btn-primary btn-arrow">Demander un devis personnalisé</a>
-            <a href="#downloads" class="btn btn-ghost">Télécharger la fiche technique</a>
+            <a href="../../contact/" class="btn btn-ghost">Demander la documentation</a>
           </div>
         </div>
         <div class="wm-visual" style="padding:18px;overflow:hidden;">
@@ -421,7 +422,7 @@
 </section>
 
 <!-- ============ DOWNLOADS ============ -->
-<section class="section section--cream" id="downloads">
+<section class="section section--cream pb-section-hidden" id="downloads">
   <div class="container">
     <div class="reveal" style="max-width:720px;margin:0 auto 40px;text-align:center;">
       <span class="eyebrow">Téléchargements</span>
@@ -537,6 +538,6 @@
 
 <footer class="site-footer" data-include="footer"></footer>
 
-<script src="../../assets/js/site.js"></script>
+<script src="../../assets/js/site.js" defer></script>
 </body>
 </html>

@@ -7,7 +7,8 @@
   <meta name="description" content="Lucian Bouleanu, fondateur de Polistibrick — d'une famille de maçons à l'invention du système ICF 5-en-1. Son histoire, et sa promesse.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="../../assets/css/site.css">
   <style>
     /* ===== HERO SPLIT ===== */
@@ -64,9 +65,7 @@
   <div class="container">
     <div class="fh-grid reveal">
       <div class="fh-portrait">
-        <!-- ▼ Remplacez ce bloc par la vraie photo quand elle est prête :
-             <img src="../../images/team/lucian-bouleanu.jpg" alt="Lucian Bouleanu, fondateur de Polistibrick"> -->
-        [Photo — Lucian Bouleanu]
+        <img src="../../images/equipe/founder1.png" alt="Lucian Bouleanu, fondateur de Polistibrick">
       </div>
       <div>
         <span class="bubble-tag">Le fondateur</span>
@@ -180,6 +179,6 @@
 </section>
 
 <footer class="site-footer" data-include="footer"></footer>
-<script src="../../assets/js/site.js"></script>
+<script src="../../assets/js/site.js" defer></script>
 </body>
 </html>

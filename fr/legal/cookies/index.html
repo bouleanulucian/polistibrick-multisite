@@ -7,7 +7,8 @@
   <meta name="description" content="Cookies utilisés sur le site Polistibrick et comment les contrôler. Conforme à la Directive EU 2009/136/CE.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="../../assets/css/site.css">
   <style>
     .wm-section { padding: clamp(60px, 8vw, 100px) 0; background: var(--cream); }
@@ -101,18 +102,29 @@
   <div class="container container--narrow">
     <div class="reveal">
       <h2 style="margin:32px 0 12px;">Qu'est-ce que les cookies</h2>
-      <p style="font-size:15px;margin-bottom:14px;">Les cookies sont de petits fichiers texte stockés par votre navigateur sur votre appareil. Ils permettent au site de vous reconnaître lors de visites répétées.</p>
-      <h2 style="margin:32px 0 12px;">Cookies que nous utilisons</h2>
-      <p style="font-size:15px;margin-bottom:14px;">(1) Essentiels — pour le fonctionnement du site. (2) Analytics — Google Analytics pour comprendre comment le site est utilisé. (3) Marketing — Meta Pixel, Google Ads pour vous afficher des publicités pertinentes.</p>
+      <p style="font-size:15px;margin-bottom:14px;">Les cookies et technologies similaires sont de petits fichiers ou identifiants stockés par votre navigateur. Ils permettent au site de mémoriser vos préférences entre les visites.</p>
+
+      <h2 style="margin:32px 0 12px;">Cookies que nous utilisons réellement</h2>
+      <p style="font-size:15px;margin-bottom:14px;"><strong>(1) Essentiels / strictement nécessaires</strong> — mémorisation de votre choix de consentement (<code>pb_cookie_consent</code> dans le stockage local du navigateur). Indispensables au respect de vos préférences RGPD.</p>
+      <p style="font-size:15px;margin-bottom:14px;"><strong>(2) Fonctionnels (avec consentement)</strong> — détection du pays via <strong>ipapi.co</strong> (adresse IP) pour pré-sélectionner le bureau Polistibrick le plus proche. Activé uniquement si vous cliquez « Accepter » sur la bannière cookies.</p>
+      <p style="font-size:15px;margin-bottom:14px;"><strong>(3) Polices web (Google Fonts)</strong> — lors du chargement des pages, votre navigateur contacte les serveurs de Google pour télécharger les polices Inter et Cormorant Garamond. Google peut recevoir votre adresse IP. Nous n'utilisons pas Google Analytics, Meta Pixel ni Google Ads sur ce site.</p>
+
       <h2 style="margin:32px 0 12px;">Contrôle des cookies</h2>
-      <p style="font-size:15px;margin-bottom:14px;">Vous pouvez accepter ou refuser les cookies non essentiels depuis la bannière affichée lors de votre première visite. Vous pouvez modifier votre choix à tout moment depuis les paramètres de votre navigateur ou en nous contactant directement.</p>
-      <h2 style="margin:32px 0 12px;">Cookies tiers</h2>
-      <p style="font-size:15px;margin-bottom:14px;">Nous utilisons des services Google (Analytics, Maps), Meta (Pixel, Conversions API), YouTube (intégration vidéo). Chacun dispose de sa propre politique de confidentialité.</p>
+      <p style="font-size:15px;margin-bottom:14px;">Lors de votre première visite, une bannière vous permet d'<strong>Accepter</strong> ou de <strong>Refuser</strong> les cookies non essentiels. Votre choix est enregistré 13 mois. Pour le modifier, effacez les données du site dans les paramètres de votre navigateur — la bannière réapparaîtra.</p>
+
+      <h2 style="margin:32px 0 12px;">Services tiers</h2>
+      <p style="font-size:15px;margin-bottom:14px;">Les prestataires suivants peuvent déposer ou recevoir des données selon votre navigation :</p>
+      <ul style="font-size:15px;margin:0 0 14px 20px;color:var(--gray);line-height:1.7;">
+        <li><a href="https://ipapi.co/privacy/" style="color:var(--red);" rel="noopener" target="_blank">ipapi.co</a> — géolocalisation IP (consentement requis)</li>
+        <li><a href="https://policies.google.com/privacy" style="color:var(--red);" rel="noopener" target="_blank">Google Fonts</a> — polices typographiques</li>
+        <li><a href="https://web3forms.com/privacy" style="color:var(--red);" rel="noopener" target="_blank">Web3Forms</a> — envoi des formulaires (pas de cookie marketing ; traitement des données du formulaire)</li>
+      </ul>
+      <p style="font-size:14px;margin-top:28px;color:var(--gray);">Pour le traitement global de vos données : <a href="../confidentialite/" style="color:var(--red);">politique de confidentialité</a>.</p>
     </div>
   </div>
 </section>
 
 <footer class="site-footer" data-include="footer"></footer>
-<script src="../../assets/js/site.js"></script>
+<script src="../../assets/js/site.js" defer></script>
 </body>
 </html>
