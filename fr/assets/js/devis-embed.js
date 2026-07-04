@@ -13,9 +13,15 @@
 
     var pays = frame.dataset.pays || "RO";
     var prodUrl = frame.dataset.appUrl || "";
+    var previewUrl = frame.dataset.previewUrl || "";
     var host = window.location.hostname;
     var isLocal = host === "localhost" || host === "127.0.0.1" || host === "[::1]";
-    var base = isLocal ? "http://localhost:3100" : prodUrl;
+    var isPreview = host.includes("github.io");
+    var base = isLocal
+      ? "http://localhost:3100"
+      : isPreview && previewUrl
+        ? previewUrl
+        : prodUrl;
 
     if (!base) {
       frame.replaceWith(
