@@ -52,6 +52,11 @@
     if (byLang && AVAILABLE[byLang]) return go(AVAILABLE[byLang]);
     return go(DEFAULT);
   }
+  // Preview GitHub Pages: redirect imediat, fără API geo (lent).
+  if (location.hostname.includes('github.io')) {
+    decide(null);
+    return;
+  }
   // Sécurité : si la géo IP tarde trop, on décide quand même.
   var t = setTimeout(function(){ decide(null); }, 2500);
   // Lien manuel après un court instant.

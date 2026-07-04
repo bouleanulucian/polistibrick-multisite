@@ -6,13 +6,13 @@
   var STORAGE_KEY = 'pb_cookie_consent';
 
   var TEXT = {
-    body: 'Folosim cookie-uri și servicii terțe pentru a îmbunătăți site-ul. Consultați',
-    link: 'politica de cookies',
-    and: 'și',
-    privacy: 'politica de confidențialitate',
-    aria: 'Consimțământ cookies',
-    accept: 'Accept',
-    refuse: 'Refuz',
+    body: '{{ui.cookie_banner_text}}',
+    link: '{{ui.cookie_banner_link}}',
+    and: '{{ui.cookie_banner_and}}',
+    privacy: '{{ui.cookie_banner_privacy_link}}',
+    aria: '{{ui.cookie_banner_aria}}',
+    accept: '{{ui.cookie_accept}}',
+    refuse: '{{ui.cookie_refuse}}',
     privacySlug: 'confidentialitate',
   };
 

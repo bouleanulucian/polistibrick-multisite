@@ -3672,7 +3672,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
 </style>
 <section class="hero hero--photo">
   <div class="hero-bg" aria-hidden="true">
-    <video id="heroVideo" autoplay muted loop playsinline preload="metadata"
+    <video id="heroVideo" autoplay muted loop playsinline preload="none"
            poster="images/hero/hero-house-1.jpg">
       <source src="images/hero/hero-houses-reel.mp4" type="video/mp4">
     </video>
@@ -3680,7 +3680,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   </div>
   <picture class="hero-robot-wrap reveal">
     <source srcset="images/robot.webp" type="image/webp">
-    <img class="hero-robot" src="images/robot.png" alt="Polistibrick — Construction intelligente" fetchpriority="high" width="480" height="480">
+    <img class="hero-robot" src="images/robot.webp" alt="Polistibrick — Construction intelligente" fetchpriority="high" width="1500" height="1362">
   </picture>
   <div class="container">
     <div class="hero-text-col">
@@ -6802,7 +6802,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
       </div>
     </div>
     <div class="cta-image-col">
-      <img class="mobile-product" src="images/robot.png" alt="Polistibrick — Construction intelligente" loading="lazy">
+      <img class="mobile-product" src="images/robot.webp" alt="Polistibrick — Construction intelligente" loading="lazy">
     </div>
   </div>
 </section>
@@ -7790,7 +7790,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
       entries.forEach(function(e){
         if(e.isIntersecting){ bootVideo(e.target); io.unobserve(e.target); }
       });
-    },{rootMargin:'400px 0px',threshold:0.01});
+    },{rootMargin:'80px 0px',threshold:0.01});
     vids.forEach(function(v){ io.observe(v); });
   } else { vids.forEach(bootVideo); }
 })();

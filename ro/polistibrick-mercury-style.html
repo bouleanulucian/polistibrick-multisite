@@ -3661,7 +3661,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
 </style>
 <section class="hero hero--photo">
   <div class="hero-bg" aria-hidden="true">
-    <video id="heroVideo" autoplay muted loop playsinline preload="metadata"
+    <video id="heroVideo" autoplay muted loop playsinline preload="none"
            poster="images/hero/hero-house-1.jpg">
       <source src="images/hero/hero-houses-reel.mp4" type="video/mp4">
     </video>
@@ -3670,8 +3670,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   <div class="container">
     <div class="hero-text-col">
       <picture>
-        <source srcset="images/robot.webp" type="image/webp">
-        <img class="hero-robot reveal" src="images/robot.png" alt="Polistibrick — Construcție inteligentă" fetchpriority="high" width="1500" height="1362">
+        <img class="hero-robot reveal" src="images/robot.webp" alt="Polistibrick — Construcție inteligentă" fetchpriority="high" width="1500" height="1362">
       </picture>
       <h1 class="reveal">Construiești mai multe case.<br><span class="h1-l2">Cu mai puțină manoperă.</span></h1>
       <p class="hero-sub reveal">Polistibrick înlocuiește 5 materiale diferite și 5 echipe de construcție. Un singur produs, o singură echipă — și casa este finalizată. <strong>Inovație brevetată.</strong></p>
@@ -6790,7 +6789,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
       </div>
     </div>
     <div class="cta-image-col">
-      <img class="mobile-product" src="images/robot.png" alt="Polistibrick — Construcție inteligentă" loading="lazy">
+      <img class="mobile-product" src="images/robot.webp" alt="Polistibrick — Construcție inteligentă" loading="lazy">
     </div>
   </div>
 </section>
@@ -7745,14 +7744,14 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     body { padding-bottom: calc(54px + env(safe-area-inset-bottom, 0px)); }
   }
 </style>
-<div class="mobile-contact-bar" aria-label="Contact rapid">
-  <a href="tel:+40371550550" class="mcb-btn mcb-call" aria-label="Sună Polistibrick">
+<div class="mobile-contact-bar" aria-label="{{ui.mobile_contact_aria}}">
+  <a href="tel:+40371550550" class="mcb-btn mcb-call" aria-label="{{ui.mobile_call_aria}}">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-    <span>Sună</span>
+    <span>{{ui.mobile_call_label}}</span>
   </a>
-  <a href="mailto:contact@polistibrick.ro" class="mcb-btn mcb-email" aria-label="Trimite e-mail">
+  <a href="mailto:contact@polistibrick.ro" class="mcb-btn mcb-email" aria-label="{{ui.mobile_email_aria}}">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
-    <span>E-mail</span>
+    <span>{{ui.mobile_email_label}}</span>
   </a>
 </div>
 
@@ -7779,7 +7778,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
       entries.forEach(function(e){
         if(e.isIntersecting){ bootVideo(e.target); io.unobserve(e.target); }
       });
-    },{rootMargin:'400px 0px',threshold:0.01});
+    },{rootMargin:'80px 0px',threshold:0.01});
     vids.forEach(function(v){ io.observe(v); });
   } else { vids.forEach(bootVideo); }
 })();
