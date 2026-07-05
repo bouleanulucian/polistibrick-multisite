@@ -11,13 +11,18 @@
   }
 
   function schedule(fn) {
-    if (document.readyState === 'complete') {
-      setTimeout(fn, 600);
-      return;
+    function run() {
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(fn, { timeout: 1200 });
+      } else {
+        setTimeout(fn, 200);
+      }
     }
-    window.addEventListener('load', function () {
-      setTimeout(fn, 600);
-    }, { once: true });
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', run, { once: true });
+    } else {
+      run();
+    }
   }
 
   function pickHeroUrls(video) {
