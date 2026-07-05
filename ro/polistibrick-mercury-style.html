@@ -3549,27 +3549,26 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
       min-height: max(180dvh, calc(100dvh + 320px));
     }
   }
+  .hero-teaser.text-stilizat,
   .hero-teaser {
     position: absolute;
-    left: clamp(20px, 1.8vw, 32px);
-    bottom: clamp(24px, 2.5vh, 48px);
+    bottom: 40px;
+    left: 40px;
     z-index: 3;
     margin: 0;
-    max-width: min(88vw, 640px);
-    font-family: var(--sans);
-    font-size: clamp(32px, 2.75vw + 22px, 56px);
-    font-weight: 600;
-    line-height: 1.1;
+    max-width: min(88vw, 720px);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: clamp(2rem, 4.5vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1.05;
     letter-spacing: -0.03em;
-    color: #FFFFFF;
+    color: #ffffff;
+    text-align: left;
     text-shadow: 0 1px 20px rgba(0, 0, 0, 0.35);
     opacity: calc(1 - min(var(--hero-progress, 0) * 2.2, 1));
     transform: translateY(calc(var(--hero-progress, 0) * -18px));
     transition: opacity 0.35s ease, transform 0.35s ease;
     pointer-events: none;
-  }
-  .hero-teaser-line {
-    display: block;
   }
   .hero-scroll-cue {
     position: absolute;
@@ -3723,7 +3722,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   .hero--photo .container > .hero-text-col {
     max-width: min(74%, 900px);
   }
-  .hero--photo h1 {
+  .hero-full-content h1 {
     color: #FFFFFF;
     /* titlu pe 3 rânduri: 2 albe + 1 roșu jos (ca secțiunea morph) */
     font-size: clamp(40px, 5vw, 72px);
@@ -3731,14 +3730,14 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     margin-bottom: 26px;
     text-shadow: 0 2px 36px rgba(0, 0, 0, 0.55), 0 1px 6px rgba(0, 0, 0, 0.40);
   }
-  .hero--photo h1 em { color: #FFD9DE; } /* italic alb-rozat cald — accent subtil */
+  .hero-full-content h1 em { color: #FFD9DE; } /* italic alb-rozat cald — accent subtil */
   /* Rândul 2 decalat — "Un système." începe sub "maison" */
-  .hero--photo h1 .h1-l2 {
+  .hero-full-content h1 .h1-l2 {
     display: inline-block;
     color: var(--red);
     font-style: italic;
   }
-  .hero--photo h1 .h1-l3 {
+  .hero-full-content h1 .h1-l3 {
     display: inline-block;
     padding-left: 3.56em; /* a doua treaptă a cascadei */
   }
@@ -3804,12 +3803,12 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     .hero--photo .container { padding-bottom: 0; }
     .hero--photo .container > .hero-text-col { max-width: 100%; transform: none; }
     .hero-teaser {
-      font-size: clamp(30px, 10vw, 40px);
-      line-height: 1.1;
-      bottom: 26px;
-      left: 22px;
+      font-size: clamp(1.625rem, 8.5vw, 2.5rem);
+      line-height: 1.05;
+      bottom: 28px;
+      left: 24px;
     }
-    .hero--photo h1 { font-size: clamp(22px, 6.8vw, 30px); }
+    .hero-full-content h1 { font-size: clamp(22px, 6.8vw, 30px); }
     .hero--photo .hero-robot { max-width: clamp(120px, 34vw, 168px); margin-bottom: 12px; }
     .hero--photo .hero-sub { font-size: 13px; line-height: 1.5; margin-bottom: 14px; }
     .hero-stats-row { gap: 6px 18px; margin-bottom: 18px; }
@@ -3825,10 +3824,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     </video>
     <div class="hero-bg-scrim"></div>
   </div>
-  <p class="hero-teaser">
-    <span class="hero-teaser-line">O tehnologie</span>
-    <span class="hero-teaser-line">cu 5 avantaje</span>
-  </p>
+  <h1 class="hero-teaser text-stilizat">O tehnologie<br>cu 5 avantaje</h1>
   <div class="hero-scroll-cue" aria-hidden="true"></div>
   <div class="hero-full-content">
     <div class="container">
