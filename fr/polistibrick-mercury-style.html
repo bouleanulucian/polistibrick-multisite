@@ -3594,12 +3594,38 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     z-index: 2;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    padding: 110px 0 0;
+    justify-content: center;
+    align-items: center;
+    padding: clamp(72px, 11vh, 108px) clamp(16px, 4vw, 32px) clamp(28px, 5vh, 48px);
     --hero-content-in: clamp(calc((var(--hero-progress, 0) - 0.12) / 0.58), 0, 1);
     opacity: var(--hero-content-in);
     transform: translateY(calc((1 - var(--hero-content-in)) * 36px));
     pointer-events: none;
+  }
+  .hero-full-content .container {
+    width: 100%;
+    padding-bottom: 0;
+    display: flex;
+    justify-content: center;
+  }
+  .hero-full-content .hero-text-col {
+    max-width: min(92vw, 820px);
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero-full-content h1 {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-full-content .hero-sub {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-full-content .hero-actions {
+    justify-content: center;
   }
   .hero-full-content .hero-actions,
   .hero-full-content a { pointer-events: auto; }
@@ -3704,20 +3730,19 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     background: rgba(255, 255, 255, 0.18);
     border-color: #FFFFFF;
   }
-  /* Robotul — jos-dreapta, absolut (în hero-full-content) */
+  /* Robotul — centrat deasupra titlului */
   .hero--photo .hero-robot-wrap {
-    position: absolute;
-    right: clamp(12px, 3.5vw, 48px);
-    bottom: calc(48px + 20mm);
-    z-index: 3;
+    position: static;
+    display: block;
+    max-width: clamp(180px, 22vw, 280px);
+    margin: 0 auto 18px;
     pointer-events: none;
-    max-width: clamp(180px, 22.8vw, 324px);
   }
   .hero--photo .hero-robot {
     display: block;
     width: 100%;
     height: auto;
-    margin: 0;
+    margin: 0 auto;
     filter: drop-shadow(0 24px 44px rgba(0, 0, 0, 0.45));
   }
   /* Reduced motion / fallback: doar prima imagine, fixă */
@@ -3759,14 +3784,14 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   }
   .hero-stats-row li strong { color: #fff; font-weight: 800; font-size: 1.2em; margin-right: 5px; }
   @media (max-width: 968px) {
-    .hero--photo .container { padding-bottom: calc(40mm + 36px); }
+    .hero-full-content { padding-top: 68px; }
+    .hero--photo .container { padding-bottom: 0; }
     .hero--photo .container > .hero-text-col { max-width: 100%; transform: none; }
     .hero-teaser { font-size: clamp(22px, 6.5vw, 32px); bottom: clamp(44px, 12vh, 96px); }
     .hero--photo h1 { font-size: clamp(22px, 6.8vw, 30px); }
     .hero--photo .hero-robot-wrap {
       max-width: clamp(120px, 34vw, 168px);
-      right: clamp(8px, 2vw, 20px);
-      bottom: calc(36px + 12mm);
+      margin-bottom: 12px;
     }
     .hero--photo .hero-sub { font-size: 13px; line-height: 1.5; margin-bottom: 14px; }
     .hero-stats-row { gap: 6px 18px; margin-bottom: 18px; }
@@ -3785,12 +3810,12 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   <p class="hero-teaser">Construisez plus de maisons.</p>
   <div class="hero-scroll-cue" aria-hidden="true"></div>
   <div class="hero-full-content">
-    <picture class="hero-robot-wrap">
-      <source srcset="images/robot.webp" type="image/webp">
-      <img class="hero-robot" src="images/robot.webp" alt="Polistibrick — Construction intelligente" fetchpriority="high" width="1500" height="1362">
-    </picture>
     <div class="container">
       <div class="hero-text-col">
+        <picture class="hero-robot-wrap">
+          <source srcset="images/robot.webp" type="image/webp">
+          <img class="hero-robot" src="images/robot.webp" alt="Polistibrick — Construction intelligente" fetchpriority="high" width="1500" height="1362">
+        </picture>
         <span class="hero-eyebrow">Système constructif breveté · RE2020</span>
         <h1>Construisez plus de maisons.<br><span class="h1-l2">Avec moins de main-d'œuvre.</span></h1>
         <p class="hero-sub">Polistibrick remplace 5 matériaux différents et 5 équipes de construction. Un seul produit, une seule équipe — et la maison est achevée. <strong>Innovation brevetée.</strong></p>
