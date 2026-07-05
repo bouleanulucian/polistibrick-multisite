@@ -5219,14 +5219,9 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   .passif-video { display: block; width: 100%; height: auto; }
   /* Iarnă statică — fără slideshow, fără video */
   .passif-slides { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; }
-  .passif-slides .passif-bg {
+  .passif-slides .passif-photo {
     position: absolute; inset: 0; width: 100%; height: 100%;
     object-fit: cover; object-position: center;
-  }
-  /* Prim-plan fix: interior identic */
-  .passif-slides .passif-fg {
-    position: absolute; inset: 0; width: 100%; height: 100%;
-    object-fit: cover; z-index: 5; pointer-events: none;
   }
   /* Scrim — aceeași gramatică precum caruselul: gradient închis jos pentru lizibilitate */
   .passif-scrim {
@@ -5310,8 +5305,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   </div>
   <div class="passif-media">
     <div class="passif-slides" aria-label="Casă Polistibrick iarna: confort constant în interior">
-      <img class="passif-bg" src="images/passive/passive-winter.jpg?v=4" alt="Vederea din living iarna — confort constant" loading="lazy">
-      <img class="passif-fg" src="images/passive/passive-interior-fg.png?v=3" alt="" aria-hidden="true" loading="lazy">
+      <img class="passif-photo" src="images/passive/passive-winter.jpg?v=5" alt="Vederea din living iarna — confort constant" loading="lazy">
     </div>
     <div class="passif-scrim"></div>
   </div>
