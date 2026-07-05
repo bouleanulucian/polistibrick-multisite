@@ -5217,15 +5217,13 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   }
   .passif-media { position: relative; }
   .passif-video { display: block; width: 100%; height: auto; }
-  /* Slideshow 4 saisons — fondu enchaîné, 1,5 s par image */
+  /* Iarnă statică — fără slideshow, fără video */
   .passif-slides { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; }
-  .passif-slides .ps {
+  .passif-slides .passif-bg {
     position: absolute; inset: 0; width: 100%; height: 100%;
-    object-fit: cover; opacity: 0;
-    transition: opacity .9s ease-in-out; will-change: opacity;
+    object-fit: cover; object-position: center;
   }
-  .passif-slides .ps.active { opacity: 1; }
-  /* Prim-plan fix: intérieur identique, seul le paysage derrière la vitre change */
+  /* Prim-plan fix: interior identic */
   .passif-slides .passif-fg {
     position: absolute; inset: 0; width: 100%; height: 100%;
     object-fit: cover; z-index: 5; pointer-events: none;
@@ -5311,11 +5309,8 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     <a href="oferta/" class="btn btn-red passif-cta reveal">Ofertă gratuită →</a>
   </div>
   <div class="passif-media">
-    <div class="passif-slides" aria-label="Aceeași casă Polistibrick în cele patru anotimpuri: afară totul se schimbă, înăuntru confortul rămâne constant">
-      <img class="ps active" src="images/passive/passive-spring.jpg?v=3" alt="Vederea din living primăvara" fetchpriority="low" loading="lazy">
-      <img class="ps" src="images/passive/passive-summer.jpg?v=3" alt="Vederea din living vara" loading="lazy">
-      <img class="ps" src="images/passive/passive-autumn.jpg?v=3" alt="Vederea din living toamna" loading="lazy">
-      <img class="ps" src="images/passive/passive-winter.jpg?v=3" alt="Vederea din living iarna" loading="lazy">
+    <div class="passif-slides" aria-label="Casă Polistibrick iarna: confort constant în interior">
+      <img class="passif-bg" src="images/passive/passive-winter.jpg?v=4" alt="Vederea din living iarna — confort constant" loading="lazy">
       <img class="passif-fg" src="images/passive/passive-interior-fg.png?v=3" alt="" aria-hidden="true" loading="lazy">
     </div>
     <div class="passif-scrim"></div>
