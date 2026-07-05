@@ -135,15 +135,15 @@
     io.observe(video);
   }
 
-  if (!reduced) {
-    var hero = document.getElementById('heroVideo');
-    if (hero && hero.dataset.srcDesktop) {
-      // Démarrage IMMÉDIAT (pas d'attente idle) — le poster couvre le premier instant,
-      // la vidéo prend le relais dès que le réseau la livre.
-      bootHero(hero);
-      // Déclencheur visibilité : pause dès qu'on scrolle au-delà du héros, reprise au retour.
-      watchVideo(hero, { threshold: 0.2, rootMargin: '0px' });
-    }
+  // Le héros démarre TOUJOURS (décision client) — y compris avec "Réduire les animations"
+  // activé sur macOS/iOS : c'est un fond muet, et le poster reste le fallback naturel.
+  var hero = document.getElementById('heroVideo');
+  if (hero && hero.dataset.srcDesktop) {
+    // Démarrage IMMÉDIAT (pas d'attente idle) — le poster couvre le premier instant,
+    // la vidéo prend le relais dès que le réseau la livre.
+    bootHero(hero);
+    // Déclencheur visibilité : pause dès qu'on scrolle au-delà du héros, reprise au retour.
+    watchVideo(hero, { threshold: 0.2, rootMargin: '0px' });
   }
 
   document.querySelectorAll('video.lazy-video').forEach(function (video) {
