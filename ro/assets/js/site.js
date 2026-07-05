@@ -49,7 +49,7 @@
             <a href="#" data-country="ch" data-domain="https://polistibrick.com" data-folder="de" class="country-switcher-item"><span class="flag">🇨🇭</span><span class="name">Elveția</span><span class="domain">polistibrick.com</span></a>
           </div>
         </div>
-        <a href="${BASE}oferta/" class="btn btn-primary nav-cta-devis">Ofertă gratuită →</a>
+        <a href="${BASE}oferta/" class="btn btn-primary nav-cta-devis">Ofertă gratuită</a>
         <button class="nav-burger nav-toggle" type="button" aria-label="Deschide meniul" aria-expanded="false" aria-controls="navDrawerShared">
           <span></span><span></span><span></span>
         </button>

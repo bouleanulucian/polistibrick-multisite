@@ -49,7 +49,7 @@
             <a href="#" data-country="ch" data-domain="https://polistibrick.com" data-folder="de" class="country-switcher-item"><span class="flag">🇨🇭</span><span class="name">{{ui.country_ch}}</span><span class="domain">polistibrick.com</span></a>
           </div>
         </div>
-        <a href="${BASE}devis/" class="btn btn-primary nav-cta-devis">Preventivo gratis →</a>
+        <a href="${BASE}devis/" class="btn btn-primary nav-cta-devis">Preventivo gratis</a>
         <button class="nav-burger nav-toggle" type="button" aria-label="{{ui.nav_menu_aria}}" aria-expanded="false" aria-controls="navDrawerShared">
           <span></span><span></span><span></span>
         </button>

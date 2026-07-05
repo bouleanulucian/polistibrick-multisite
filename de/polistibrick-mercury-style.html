@@ -413,6 +413,10 @@
     padding: 0 8px;
     font-weight: 600;
     box-shadow: none;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+    text-decoration-color: currentColor;
     transition: opacity .15s ease, color .15s ease;
   }
   .btn.nav-cta-devis:hover {
@@ -421,6 +425,7 @@
     opacity: 0.72;
     transform: none;
     box-shadow: none;
+    text-decoration: underline;
   }
   nav:not(.scrolled) .nav-cta-devis,
   nav:not(.scrolled) .nav-cta .btn-primary.nav-cta-devis {
@@ -3372,7 +3377,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
       </div>
       <!-- /COUNTRY SELECTOR -->
       <a href="contact/" class="btn btn-ghost">Kontakt</a>
-      <a href="devis/" class="btn btn-primary nav-cta-devis">Angebot →</a>
+      <a href="devis/" class="btn btn-primary nav-cta-devis">Angebot</a>
       <button class="nav-burger" id="navBurger" aria-label="Deschide meniul" aria-expanded="false" aria-controls="navDrawer">
         <span></span><span></span><span></span>
       </button>

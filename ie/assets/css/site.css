@@ -1222,6 +1222,10 @@ html { scroll-behavior: auto !important; }
   border-radius: 0;
   padding: 0 8px;
   font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  text-decoration-color: currentColor;
   transition: opacity .15s ease, color .15s ease;
   box-shadow: none;
   transform: none;
@@ -1241,6 +1245,7 @@ html { scroll-behavior: auto !important; }
   opacity: 0.72;
   transform: none;
   box-shadow: none;
+  text-decoration: underline;
 }
 
 /* ============================================================
