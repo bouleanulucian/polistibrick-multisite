@@ -100,6 +100,7 @@ def rewrite_paths(text: str, lang: str) -> str:
 # Dev/staging files under */presence/ — not referenced on the live site
 PRESENCE_KEEP_FILES = {
     "presence-factory.jpg",
+    "presence-factory-film.mp4",
 }
 
 
@@ -117,10 +118,6 @@ SHARED_SKIP_NAMES = {
     "hero-houses-reel.mp4",
     "hero-houses-reel-desktop.webm",
     "hero-houses-reel-mobile.webm",
-    "morphing-polistibrick.mp4",
-    "bundle-test.mp4",
-    "bundle-test-mobile.mp4",
-    "montage-houses.mp4",
 }
 
 
@@ -165,7 +162,12 @@ def optimize_html(text: str) -> str:
     )
     text = re.sub(
         r'(<script\s+src=")([^"]*mercury-perf\.js)(?:\?[^"]*)?(")(\s*defer)?>',
-        r'\1\2?v=8\3 defer>',
+        r'\1\2?v=9\3 defer>',
+        text,
+    )
+    text = re.sub(
+        r'(<link rel="stylesheet" href="assets/css/mercury-home\.css)\?v=[^"]*(">)',
+        r'\1?v=1\2',
         text,
     )
     text = re.sub(
