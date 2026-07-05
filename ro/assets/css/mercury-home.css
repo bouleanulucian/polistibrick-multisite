@@ -3269,14 +3269,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     transition: opacity 0.35s ease;
   }
   .montaj-bg.is-playing { opacity: 1; }
-  .cinq-media { position: relative; }
-  .cinq-media .cinq-video {
-    position: relative;
-    z-index: 1;
-    opacity: 0;
-    transition: opacity 0.35s ease;
-  }
-  .cinq-media .cinq-video.is-playing { opacity: 1; }
+  /* cinq: poster nativ pe <video> — mix-blend + clip-path; fără layer .media-poster */
 
 /* --- section --- */
 
