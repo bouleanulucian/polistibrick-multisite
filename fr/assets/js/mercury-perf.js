@@ -20,6 +20,26 @@
     return video.dataset.srcDesktop || '';
   }
 
+  function heroWrap(video) {
+    return video && video.closest('.hero-bg');
+  }
+
+  function markPlaying(video) {
+    video.classList.add('is-playing');
+    var wrap = heroWrap(video);
+    if (wrap) wrap.classList.add('is-video-playing');
+  }
+
+  function playVideo(video) {
+    var attempt = video.play();
+    if (!attempt || !attempt.then) return;
+    attempt.then(function () {
+      markPlaying(video);
+    }).catch(function () {
+      /* Safari poate refuza pana la canplay — reincercam acolo */
+    });
+  }
+
   function ensureMp4Source(video, url) {
     if (!url) return false;
     var src = video.querySelector('source');
@@ -33,15 +53,11 @@
     return true;
   }
 
-  function playVideo(video) {
-    var p = video.play();
-    if (p && p.then) {
-      p.then(function () { video.classList.add('is-playing'); }).catch(function () {});
-    }
-  }
-
   function bootVideo(video) {
-    if (video.dataset.booted === '1') return;
+    if (video.dataset.booted === '1') {
+      playVideo(video);
+      return;
+    }
     video.dataset.booted = '1';
 
     var lazySource = video.querySelector('source[data-src]');
@@ -56,8 +72,15 @@
       ensureMp4Source(video, pickDataSrc(video));
     }
 
+    function startPlayback() {
+      playVideo(video);
+    }
+
+    video.addEventListener('canplay', startPlayback, { once: true });
+    video.addEventListener('loadeddata', startPlayback, { once: true });
     video.load();
-    playVideo(video);
+
+    if (video.readyState >= 2) startPlayback();
   }
 
   function watchPlayPause(video, opts) {
@@ -70,22 +93,32 @@
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           bootVideo(video);
-          playVideo(video);
         } else {
           video.pause();
         }
       });
     }, {
       rootMargin: opts.rootMargin || '0px',
-      threshold: opts.threshold != null ? opts.threshold : 0.08
+      threshold: opts.threshold != null ? opts.threshold : 0.05
     });
     io.observe(video);
   }
 
-  var hero = document.getElementById('heroVideo');
-  if (hero) watchPlayPause(hero, { rootMargin: '40px 0px' });
+  function initHero() {
+    var hero = document.getElementById('heroVideo');
+    if (!hero) return;
+    bootVideo(hero);
+    watchPlayPause(hero, { rootMargin: '80px 0px', threshold: 0.01 });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initHero);
+  } else {
+    initHero();
+  }
 
   document.querySelectorAll('video.lazy-video').forEach(function (video) {
+    if (video.id === 'heroVideo') return;
     if (video.id === 'morphVideo') {
       watchPlayPause(video, { threshold: 0.12 });
       return;

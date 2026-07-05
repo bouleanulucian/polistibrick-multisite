@@ -3528,6 +3528,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     position: absolute;
     inset: 0;
     z-index: 0;
+    transition: opacity 0.55s ease;
   }
   .hero-bg-poster img {
     width: 100%;
@@ -3537,12 +3538,15 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     display: block;
   }
   .hero-bg video.hero-bg-video {
-    z-index: 0;
+    z-index: 1;
     opacity: 0;
     transition: opacity 0.55s ease;
   }
   .hero-bg video.hero-bg-video.is-playing {
     opacity: 1;
+  }
+  .hero-bg.is-video-playing .hero-bg-poster {
+    opacity: 0;
   }
   /* Scrim — întunecat progresiv la scroll (JS: --hero-progress 0→1) */
   .hero-bg-scrim {
@@ -3901,7 +3905,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
           <source srcset="images/robot.webp" type="image/webp">
           <img class="hero-robot" src="images/robot.webp" alt="Polistibrick — Construction intelligente" fetchpriority="low" loading="lazy" width="1500" height="1362">
         </picture>
-        <h1>Construisez plus de maisons.<br><span class="h1-l2">Avec moins de main-d'œuvre.</span></h1>
+        <h1>Construisez plus de logements.<br><span class="h1-l2">Avec une seule équipe.</span></h1>
         <p class="hero-sub">Polistibrick remplace 5 matériaux différents et 5 équipes de construction. Un seul produit, une seule équipe — et la maison est achevée. <strong>Innovation brevetée.</strong></p>
         <div class="hero-actions">
           <a href="devis/" class="btn btn-red btn-large">Recevez votre devis gratuit →</a>
@@ -7863,7 +7867,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   </a>
 </div>
 
-<script src="assets/js/mercury-perf.js?v=1" defer></script>
+<script src="assets/js/mercury-perf.js?v=2" defer></script>
 
 </body>
 </html>
