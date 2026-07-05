@@ -98,10 +98,7 @@ def presence_block(alt: str) -> str:
 
 
 def cinq_block(alt: str) -> str:
-    return f"""    <picture class="media-poster" aria-hidden="true">
-      <img src="images/bundle/bundle-test-poster.jpg?v=3" alt="" loading="lazy" decoding="async">
-    </picture>
-    <video class="cinq-video lazy-video" muted loop playsinline preload="none"
+    return f"""    <video class="cinq-video lazy-video" muted loop playsinline preload="none"
            poster="images/bundle/bundle-test-poster.jpg?v=3"
            data-src-mobile="images/bundle/bundle-test-mobile.mp4?v=2"
            data-poster-mobile="images/bundle/bundle-test-mobile-poster.jpg?v=1"

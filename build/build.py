@@ -167,7 +167,7 @@ def optimize_html(text: str) -> str:
     )
     text = re.sub(
         r'(<link rel="stylesheet" href="assets/css/mercury-home\.css)\?v=[^"]*(">)',
-        r'\1?v=1\2',
+        r'\1?v=2\2',
         text,
     )
     text = re.sub(
