@@ -1,0 +1,2082 @@
+{
+  "Adaugă logo-ul tău": {
+    "en": "Add your logo",
+    "fr": "Ajoutez votre logo",
+    "it": "Aggiungi il tuo logo",
+    "es": "Añade tu logo",
+    "nl": "Voeg je logo toe",
+    "de": "Logo hinzufügen"
+  },
+  "Ascunde comparația": {
+    "en": "Hide comparison",
+    "fr": "Masquer la comparaison",
+    "it": "Nascondi il confronto",
+    "es": "Ocultar comparación",
+    "nl": "Vergelijking verbergen",
+    "de": "Vergleich ausblenden"
+  },
+  "Construim împreună": {
+    "en": "We build together",
+    "fr": "Nous construisons ensemble",
+    "it": "Costruiamo insieme",
+    "es": "Construimos juntos",
+    "nl": "We bouwen samen",
+    "de": "Wir bauen gemeinsam"
+  },
+  "Durata de păstrare": {
+    "en": "Retention period",
+    "fr": "Durée de conservation",
+    "it": "Periodo di conservazione",
+    "es": "Periodo de conservación",
+    "nl": "Bewaartermijn",
+    "de": "Speicherdauer"
+  },
+  "Editor · Gazdă web": {
+    "en": "Publisher · Web host",
+    "fr": "Éditeur · Hébergeur web",
+    "it": "Editore · Host web",
+    "es": "Editor · Alojamiento web",
+    "nl": "Uitgever · Webhost",
+    "de": "Herausgeber · Webhost"
+  },
+  "Ești… Constructor?": {
+    "en": "Are you… a Builder?",
+    "fr": "Vous êtes… Constructeur ?",
+    "it": "Sei… Costruttore?",
+    "es": "¿Eres… Constructor?",
+    "nl": "Ben jij… Bouwer?",
+    "de": "Bist du… Bauunternehmer?"
+  },
+  "Ești… Dezvoltator?": {
+    "en": "Are you… a Developer?",
+    "fr": "Vous êtes… Promoteur ?",
+    "it": "Sei… Sviluppatore?",
+    "es": "¿Eres… Promotor?",
+    "nl": "Ben jij… Ontwikkelaar?",
+    "de": "Bist du… Bauträger?"
+  },
+  "Factură medie/lună": {
+    "en": "Average bill/month",
+    "fr": "Facture moyenne/mois",
+    "it": "Bolletta media/mese",
+    "es": "Factura media/mes",
+    "nl": "Gem. rekening/maand",
+    "de": "Ø-Rechnung/Monat"
+  },
+  "Formare tehnică de": {
+    "en": "Technical training of",
+    "fr": "Formation technique de",
+    "it": "Formazione tecnica di",
+    "es": "Formación técnica de",
+    "nl": "Technische training van",
+    "de": "Technische Schulung von"
+  },
+  "Instalații tehnice": {
+    "en": "Technical installations",
+    "fr": "Installations techniques",
+    "it": "Impianti tecnici",
+    "es": "Instalaciones técnicas",
+    "nl": "Technische installaties",
+    "de": "Technische Installationen"
+  },
+  "Izolație acustică:": {
+    "en": "Acoustic insulation:",
+    "fr": "Isolation acoustique :",
+    "it": "Isolamento acustico:",
+    "es": "Aislamiento acústico:",
+    "nl": "Akoestische isolatie:",
+    "de": "Akustische Dämmung:"
+  },
+  "Mai puțin de 2 ani": {
+    "en": "Less than 2 years",
+    "fr": "Moins de 2 ans",
+    "it": "Meno di 2 anni",
+    "es": "Menos de 2 años",
+    "nl": "Minder dan 2 jaar",
+    "de": "Weniger als 2 Jahre"
+  },
+  "O casă pasivă este": {
+    "en": "A passive house is",
+    "fr": "Une maison passive est",
+    "it": "Una casa passiva è",
+    "es": "Una casa pasiva es",
+    "nl": "Een passiefhuis is",
+    "de": "Ein Passivhaus ist"
+  },
+  "Primă la revânzare": {
+    "en": "Resale premium",
+    "fr": "Prime à la revente",
+    "it": "Premio alla rivendita",
+    "es": "Prima en reventa",
+    "nl": "Premie bij doorverkoop",
+    "de": "Wiederverkaufsprämie"
+  },
+  "Programați un call": {
+    "en": "Schedule a call",
+    "fr": "Planifier un appel",
+    "it": "Programma una call",
+    "es": "Programa una llamada",
+    "nl": "Plan een gesprek",
+    "de": "Termin vereinbaren"
+  },
+  "Scrieți-ne direct.": {
+    "en": "Write to us directly.",
+    "fr": "Écrivez-nous directement.",
+    "it": "Scrivici direttamente.",
+    "es": "Escríbenos directamente.",
+    "nl": "Schrijf ons direct.",
+    "de": "Schreiben Sie uns direkt."
+  },
+  "Sistem tradițional": {
+    "en": "Traditional system",
+    "fr": "Système traditionnel",
+    "it": "Sistema tradizionale",
+    "es": "Sistema tradicional",
+    "nl": "Traditioneel systeem",
+    "de": "Traditionelles System"
+  },
+  "Săpt. 1 — Fundație": {
+    "en": "Wk. 1 — Foundation",
+    "fr": "Sem. 1 — Fondations",
+    "it": "Sett. 1 — Fondazioni",
+    "es": "Sem. 1 — Cimentación",
+    "nl": "Wk. 1 — Fundering",
+    "de": "Wo. 1 — Fundament"
+  },
+  "Săpt. 5 — Acoperiș": {
+    "en": "Wk. 5 — Roof",
+    "fr": "Sem. 5 — Toiture",
+    "it": "Sett. 5 — Tetto",
+    "es": "Sem. 5 — Cubierta",
+    "nl": "Wk. 5 — Dak",
+    "de": "Wo. 5 — Dach"
+  },
+  "Toată documentația": {
+    "en": "All documentation",
+    "fr": "Toute la documentation",
+    "it": "Tutta la documentazione",
+    "es": "Toda la documentación",
+    "nl": "Alle documentatie",
+    "de": "Die gesamte Dokumentation"
+  },
+  "Umiditate posibilă": {
+    "en": "Possible moisture",
+    "fr": "Humidité possible",
+    "it": "Umidità possibile",
+    "es": "Humedad posible",
+    "nl": "Mogelijke vocht",
+    "de": "Mögliche Feuchtigkeit"
+  },
+  "Vezi pereții MBK →": {
+    "en": "See MBK walls →",
+    "fr": "Voir les murs MBK →",
+    "it": "Vedi pareti MBK →",
+    "es": "Ver muros MBK →",
+    "nl": "Bekijk MBK-muren →",
+    "de": "MBK-Wände ansehen →"
+  },
+  "casa pentru viață.": {
+    "en": "home for life.",
+    "fr": "maison pour la vie.",
+    "it": "casa per la vita.",
+    "es": "casa para toda la vida.",
+    "nl": "huis voor het leven.",
+    "de": "Haus fürs Leben."
+  },
+  "foc, apă și zgomot": {
+    "en": "fire, water and noise",
+    "fr": "feu, eau et bruit",
+    "it": "fuoco, acqua e rumore",
+    "es": "fuego, agua y ruido",
+    "nl": "vuur, water en geluid",
+    "de": "Feuer, Wasser und Lärm"
+  },
+  "fără facturi mari.": {
+    "en": "no high bills.",
+    "fr": "sans factures élevées.",
+    "it": "senza bollette alte.",
+    "es": "sin facturas altas.",
+    "nl": "geen hoge rekeningen.",
+    "de": "keine hohen Rechnungen."
+  },
+  "fără punți termice": {
+    "en": "no thermal bridges",
+    "fr": "sans ponts thermiques",
+    "it": "senza ponti termici",
+    "es": "sin puentes térmicos",
+    "nl": "geen koudebruggen",
+    "de": "ohne Wärmebrücken"
+  },
+  "mai puține dobânzi": {
+    "en": "lower interest rates",
+    "fr": "taux d'intérêt réduits",
+    "it": "tassi d'interesse più bassi",
+    "es": "menores tipos de interés",
+    "nl": "lagere rente",
+    "de": "niedrigere Zinsen"
+  },
+  "redus la esențial.": {
+    "en": "reduced to the essentials.",
+    "fr": "réduit à l'essentiel.",
+    "it": "ridotto all'essenziale.",
+    "es": "reducido a lo esencial.",
+    "nl": "teruggebracht tot het essentiële.",
+    "de": "auf das Wesentliche reduziert."
+  },
+  "−200t CO₂ per casă": {
+    "en": "−200t CO₂ per house",
+    "fr": "−200t CO₂ par maison",
+    "it": "−200t CO₂ per casa",
+    "es": "−200t CO₂ por casa",
+    "nl": "−200t CO₂ per huis",
+    "de": "−200t CO₂ pro Haus"
+  },
+  "Ani de experiență": {
+    "en": "Years of experience",
+    "fr": "Années d'expérience",
+    "it": "Anni di esperienza",
+    "es": "Años de experiencia",
+    "nl": "Jaar ervaring",
+    "de": "Jahre Erfahrung"
+  },
+  "Casă Polistibrick": {
+    "en": "Polistibrick home",
+    "fr": "Maison Polistibrick",
+    "it": "Casa Polistibrick",
+    "es": "Casa Polistibrick",
+    "nl": "Polistibrick-huis",
+    "de": "Polistibrick-Haus"
+  },
+  "De la fundații la": {
+    "en": "From foundations to",
+    "fr": "Des fondations à",
+    "it": "Dalle fondazioni a",
+    "es": "Desde cimentación hasta",
+    "nl": "Van fundering tot",
+    "de": "Vom Fundament bis"
+  },
+  "Descărcați ghidul": {
+    "en": "Download the guide",
+    "fr": "Téléchargez le guide",
+    "it": "Scarica la guida",
+    "es": "Descargue la guía",
+    "nl": "Download de gids",
+    "de": "Leitfaden herunterladen"
+  },
+  "Echipă (persoane)": {
+    "en": "Team (people)",
+    "fr": "Équipe (personnes)",
+    "it": "Squadra (persone)",
+    "es": "Equipo (personas)",
+    "nl": "Team (personen)",
+    "de": "Team (Personen)"
+  },
+  "Ești constructor?": {
+    "en": "Are you a builder?",
+    "fr": "Vous êtes constructeur ?",
+    "it": "Sei un costruttore?",
+    "es": "¿Eres constructor?",
+    "nl": "Ben je bouwer?",
+    "de": "Bist du Bauunternehmer?"
+  },
+  "Ești… Proprietar?": {
+    "en": "Are you… an Owner?",
+    "fr": "Vous êtes… Propriétaire ?",
+    "it": "Sei… Proprietario?",
+    "es": "¿Eres… Propietario?",
+    "nl": "Ben jij… Eigenaar?",
+    "de": "Bist du… Eigentümer?"
+  },
+  "Fabrici în Europa": {
+    "en": "Factories in Europe",
+    "fr": "Usines en Europe",
+    "it": "Fabbriche in Europa",
+    "es": "Fábricas en Europa",
+    "nl": "Fabrieken in Europa",
+    "de": "Werke in Europa"
+  },
+  "Fabrică · România": {
+    "en": "Factory · Romania",
+    "fr": "Usine · Roumanie",
+    "it": "Fabbrica · Romania",
+    "es": "Fábrica · Rumanía",
+    "nl": "Fabriek · Roemenië",
+    "de": "Werk · Rumänien"
+  },
+  "Imersiune fabrică": {
+    "en": "Factory immersion",
+    "fr": "Immersion en usine",
+    "it": "Immersione in fabbrica",
+    "es": "Inmersión en fábrica",
+    "nl": "Fabrieksbezoek",
+    "de": "Werksbesuch"
+  },
+  "Informații legale": {
+    "en": "Legal information",
+    "fr": "Informations légales",
+    "it": "Informazioni legali",
+    "es": "Información legal",
+    "nl": "Juridische informatie",
+    "de": "Rechtliche Informationen"
+  },
+  "Izolație acustică": {
+    "en": "Acoustic insulation",
+    "fr": "Isolation acoustique",
+    "it": "Isolamento acustico",
+    "es": "Aislamiento acústico",
+    "nl": "Akoestische isolatie",
+    "de": "Akustische Dämmung"
+  },
+  "Izolație termică:": {
+    "en": "Thermal insulation:",
+    "fr": "Isolation thermique :",
+    "it": "Isolamento termico:",
+    "es": "Aislamiento térmico:",
+    "nl": "Thermische isolatie:",
+    "de": "Wärmedämmung:"
+  },
+  "Lansați programul": {
+    "en": "Launch the program",
+    "fr": "Lancez le programme",
+    "it": "Avvia il programma",
+    "es": "Lance el programa",
+    "nl": "Start het programma",
+    "de": "Programm starten"
+  },
+  "Lasă o recenzie →": {
+    "en": "Leave a review →",
+    "fr": "Laisser un avis →",
+    "it": "Lascia una recensione →",
+    "es": "Deja una reseña →",
+    "nl": "Laat een review achter →",
+    "de": "Bewertung hinterlassen →"
+  },
+  "Monolitic în 24 h": {
+    "en": "Monolithic in 24 h",
+    "fr": "Monolithique en 24 h",
+    "it": "Monolitico in 24 h",
+    "es": "Monolítico en 24 h",
+    "nl": "Monolitisch in 24 u",
+    "de": "Monolithisch in 24 Std."
+  },
+  "Montajul în cifre": {
+    "en": "Assembly by the numbers",
+    "fr": "Le montage en chiffres",
+    "it": "Il montaggio in cifre",
+    "es": "El montaje en cifras",
+    "nl": "Montage in cijfers",
+    "de": "Montage in Zahlen"
+  },
+  "Montajul în video": {
+    "en": "Assembly on video",
+    "fr": "Le montage en vidéo",
+    "it": "Il montaggio in video",
+    "es": "El montaje en vídeo",
+    "nl": "Montage op video",
+    "de": "Montage im Video"
+  },
+  "Normă de testare:": {
+    "en": "Test standard:",
+    "fr": "Norme de test :",
+    "it": "Norma di prova:",
+    "es": "Norma de ensayo:",
+    "nl": "Testnorm:",
+    "de": "Prüfnorm:"
+  },
+  "Ofertă gratuită →": {
+    "en": "Free quote →",
+    "fr": "Devis gratuit →",
+    "it": "Preventivo gratuito →",
+    "es": "Presupuesto gratuito →",
+    "nl": "Gratis offerte →",
+    "de": "Kostenloses Angebot →"
+  },
+  "Structura durează": {
+    "en": "Structure lasts",
+    "fr": "La structure dure",
+    "it": "La struttura dura",
+    "es": "La estructura dura",
+    "nl": "Structuur gaat",
+    "de": "Struktur hält"
+  },
+  "Un singur sistem.": {
+    "en": "One single system.",
+    "fr": "Un seul système.",
+    "it": "Un solo sistema.",
+    "es": "Un solo sistema.",
+    "nl": "Eén enkel systeem.",
+    "de": "Ein einziges System."
+  },
+  "decenală (10 ani)": {
+    "en": "decennial (10 years)",
+    "fr": "décennale (10 ans)",
+    "it": "decennale (10 anni)",
+    "es": "decenal (10 años)",
+    "nl": "tienjarig (10 jaar)",
+    "de": "zehnjährig (10 Jahre)"
+  },
+  "direct pe șantier": {
+    "en": "directly on site",
+    "fr": "directement sur chantier",
+    "it": "direttamente in cantiere",
+    "es": "directamente en obra",
+    "nl": "direct op de bouwplaats",
+    "de": "direkt auf der Baustelle"
+  },
+  "estimare instantă": {
+    "en": "instant estimate",
+    "fr": "estimation instantanée",
+    "it": "stima istantanea",
+    "es": "estimación instantánea",
+    "nl": "directe schatting",
+    "de": "Sofortschätzung"
+  },
+  "expresie populară": {
+    "en": "popular expression",
+    "fr": "expression populaire",
+    "it": "espressione popolare",
+    "es": "expresión popular",
+    "nl": "populaire uitdrukking",
+    "de": "volkstümlicher Ausdruck"
+  },
+  "mențiunile legale": {
+    "en": "legal notices",
+    "fr": "mentions légales",
+    "it": "note legali",
+    "es": "aviso legal",
+    "nl": "juridische vermeldingen",
+    "de": "Impressum"
+  },
+  "tehnologie 5-în-1": {
+    "en": "5-in-1 technology",
+    "fr": "technologie 5-en-1",
+    "it": "tecnologia 5-in-1",
+    "es": "tecnología 5-en-1",
+    "nl": "5-in-1 technologie",
+    "de": "5-in-1-Technologie"
+  },
+  "totală de design.": {
+    "en": "total design.",
+    "fr": "totale de design.",
+    "it": "totale di design.",
+    "es": "total de diseño.",
+    "nl": "totale ontwerpvrijheid.",
+    "de": "totale Gestaltungsfreiheit."
+  },
+  "un clic distanță.": {
+    "en": "one click away.",
+    "fr": "à un clic.",
+    "it": "a un clic di distanza.",
+    "es": "a un clic de distancia.",
+    "nl": "één klik verwijderd.",
+    "de": "nur einen Klick entfernt."
+  },
+  "Întrebările reale": {
+    "en": "The real questions",
+    "fr": "Les vraies questions",
+    "it": "Le domande vere",
+    "es": "Las preguntas reales",
+    "nl": "De echte vragen",
+    "de": "Die echten Fragen"
+  },
+  "îl formăm gratuit": {
+    "en": "we train you free",
+    "fr": "nous formons gratuitement",
+    "it": "formiamo gratuitamente",
+    "es": "formamos gratis",
+    "nl": "trainen we gratis",
+    "de": "schulen wir kostenlos"
+  },
+  "„Nu respiră casa”": {
+    "en": "\"The house doesn't breathe\"",
+    "fr": "« La maison ne respire pas »",
+    "it": "« La casa non respira »",
+    "es": "«La casa no respira»",
+    "nl": "«Het huis ademt niet»",
+    "de": "„Das Haus atmet nicht“"
+  },
+  "Acces Spațiu Pro": {
+    "en": "Pro Space access",
+    "fr": "Accès Espace Pro",
+    "it": "Accesso Spazio Pro",
+    "es": "Acceso Espacio Pro",
+    "nl": "Pro Space-toegang",
+    "de": "Pro Space-Zugang"
+  },
+  "Acoperiș izolant": {
+    "en": "Insulating roof",
+    "fr": "Toit isolant",
+    "it": "Tetto isolante",
+    "es": "Tejado aislante",
+    "nl": "Isolerend dak",
+    "de": "Isolierendes Dach"
+  },
+  "Adăugată separat": {
+    "en": "Added separately",
+    "fr": "Ajoutée séparément",
+    "it": "Aggiunta separatamente",
+    "es": "Añadida por separado",
+    "nl": "Apart toegevoegd",
+    "de": "Separat hinzugefügt"
+  },
+  "Casă Cluj-Napoca": {
+    "en": "Cluj-Napoca House",
+    "fr": "Maison Cluj-Napoca",
+    "it": "Casa Cluj-Napoca",
+    "es": "Casa Cluj-Napoca",
+    "nl": "Huis Cluj-Napoca",
+    "de": "Haus Cluj-Napoca"
+  },
+  "Cerințe stricte,": {
+    "en": "Strict requirements,",
+    "fr": "Exigences strictes,",
+    "it": "Requisiti rigorosi,",
+    "es": "Requisitos estrictos,",
+    "nl": "Strenge eisen,",
+    "de": "Strenge Anforderungen,"
+  },
+  "Clasă energetică": {
+    "en": "Energy class",
+    "fr": "Classe énergétique",
+    "it": "Classe energetica",
+    "es": "Clase energética",
+    "nl": "Energieklasse",
+    "de": "Energieklasse"
+  },
+  "Construim astăzi": {
+    "en": "We build today",
+    "fr": "Nous construisons aujourd'hui",
+    "it": "Costruiamo oggi",
+    "es": "Construimos hoy",
+    "nl": "We bouwen vandaag",
+    "de": "Wir bauen heute"
+  },
+  "Câteva săptămâni": {
+    "en": "A few weeks",
+    "fr": "Quelques semaines",
+    "it": "Qualche settimana",
+    "es": "Unas semanas",
+    "nl": "Enkele weken",
+    "de": "Einige Wochen"
+  },
+  "Fațadă (finisaj)": {
+    "en": "Facade (finishing)",
+    "fr": "Façade (finition)",
+    "it": "Facciata (finitura)",
+    "es": "Fachada (acabado)",
+    "nl": "Gevel (afwerking)",
+    "de": "Fassade (Ausbau)"
+  },
+  "Formare gratuită": {
+    "en": "Free training",
+    "fr": "Formation gratuite",
+    "it": "Formazione gratuita",
+    "es": "Formación gratuita",
+    "nl": "Gratis training",
+    "de": "Kostenlose Schulung"
+  },
+  "Franța și Europa": {
+    "en": "France and Europe",
+    "fr": "France et Europe",
+    "it": "Francia ed Europa",
+    "es": "Francia y Europa",
+    "nl": "Frankrijk en Europa",
+    "de": "Frankreich und Europa"
+  },
+  "Fundație + placă": {
+    "en": "Foundation + slab",
+    "fr": "Fondations + dalle",
+    "it": "Fondazioni + soletta",
+    "es": "Cimentación + losa",
+    "nl": "Fundering + plaat",
+    "de": "Fundament + Decke"
+  },
+  "Lansați calculul": {
+    "en": "Launch the calculation",
+    "fr": "Lancez le calcul",
+    "it": "Avvia il calcolo",
+    "es": "Lance el cálculo",
+    "nl": "Start de berekening",
+    "de": "Berechnung starten"
+  },
+  "Lead-uri clienți": {
+    "en": "Client leads",
+    "fr": "Leads clients",
+    "it": "Lead clienti",
+    "es": "Leads de clientes",
+    "nl": "Klantleads",
+    "de": "Kundenanfragen"
+  },
+  "O casă întreagă.": {
+    "en": "An entire house.",
+    "fr": "Une maison entière.",
+    "it": "Un'intera casa.",
+    "es": "Una casa entera.",
+    "nl": "Een heel huis.",
+    "de": "Ein ganzes Haus."
+  },
+  "Rețelele se trag": {
+    "en": "Utilities are laid",
+    "fr": "Les réseaux sont posés",
+    "it": "Le reti vengono posate",
+    "es": "Las instalaciones se tienden",
+    "nl": "Leidingen worden aangelegd",
+    "de": "Leitungen werden verlegt"
+  },
+  "Siguranță la foc": {
+    "en": "Fire safety",
+    "fr": "Sécurité incendie",
+    "it": "Sicurezza antincendio",
+    "es": "Seguridad contra incendios",
+    "nl": "Brandveiligheid",
+    "de": "Brandschutz"
+  },
+  "Siguranță totală": {
+    "en": "Total safety",
+    "fr": "Sécurité totale",
+    "it": "Sicurezza totale",
+    "es": "Seguridad total",
+    "nl": "Totale veiligheid",
+    "de": "Totale Sicherheit"
+  },
+  "Solicită accesul": {
+    "en": "Request access",
+    "fr": "Demander l'accès",
+    "it": "Richiedi l'accesso",
+    "es": "Solicita acceso",
+    "nl": "Toegang aanvragen",
+    "de": "Zugang anfordern"
+  },
+  "Săpt. 3 — Etaj 1": {
+    "en": "Wk. 3 — Floor 1",
+    "fr": "Sem. 3 — Étage 1",
+    "it": "Sett. 3 — Piano 1",
+    "es": "Sem. 3 — Planta 1",
+    "nl": "Wk. 3 — Verdieping 1",
+    "de": "Wo. 3 — Etage 1"
+  },
+  "Turnată în panou": {
+    "en": "Cast in panel",
+    "fr": "Coulé dans le panneau",
+    "it": "Gettato nel pannello",
+    "es": "Vertido en panel",
+    "nl": "Gegoten in paneel",
+    "de": "Im Paneel gegossen"
+  },
+  "de 3× mai rapidă": {
+    "en": "3× faster",
+    "fr": "3× plus rapide",
+    "it": "3× più veloce",
+    "es": "3× más rápida",
+    "nl": "3× sneller",
+    "de": "3× schneller"
+  },
+  "o singură placă.": {
+    "en": "a single slab.",
+    "fr": "une seule dalle.",
+    "it": "una sola soletta.",
+    "es": "una sola losa.",
+    "nl": "één enkele plaat.",
+    "de": "eine einzige Decke."
+  },
+  "orice asigurător": {
+    "en": "any insurer",
+    "fr": "tout assureur",
+    "it": "qualsiasi assicuratore",
+    "es": "cualquier aseguradora",
+    "nl": "elke verzekeraar",
+    "de": "jeder Versicherer"
+  },
+  "Închidere cofraj": {
+    "en": "Formwork closure",
+    "fr": "Fermeture du coffrage",
+    "it": "Chiusura del cassero",
+    "es": "Cierre del encofrado",
+    "nl": "Bekisting sluiten",
+    "de": "Schalung schließen"
+  },
+  "Acoperiș finit,": {
+    "en": "Finished roof,",
+    "fr": "Toiture terminée,",
+    "it": "Tetto finito,",
+    "es": "Cubierta terminada,",
+    "nl": "Dak af,",
+    "de": "Dach fertig,"
+  },
+  "Clasă de foc A1": {
+    "en": "A1 fire class",
+    "fr": "Classe feu A1",
+    "it": "Classe fuoco A1",
+    "es": "Clase de fuego A1",
+    "nl": "Brandklasse A1",
+    "de": "Feuerklasse A1"
+  },
+  "Curat și precis": {
+    "en": "Clean and precise",
+    "fr": "Propre et précis",
+    "it": "Pulito e preciso",
+    "es": "Limpio y preciso",
+    "nl": "Schoon en precies",
+    "de": "Sauber und präzise"
+  },
+  "Descarcă ghidul": {
+    "en": "Download the guide",
+    "fr": "Télécharge le guide",
+    "it": "Scarica la guida",
+    "es": "Descarga la guía",
+    "nl": "Download de gids",
+    "de": "Leitfaden herunterladen"
+  },
+  "Etanș peste tot": {
+    "en": "Airtight everywhere",
+    "fr": "Étanche partout",
+    "it": "Stagno ovunque",
+    "es": "Hermético en todo",
+    "nl": "Overal luchtdicht",
+    "de": "Überall luftdicht"
+  },
+  "Execuție totală": {
+    "en": "Complete execution",
+    "fr": "Exécution totale",
+    "it": "Esecuzione totale",
+    "es": "Ejecución total",
+    "nl": "Volledige uitvoering",
+    "de": "Komplette Ausführung"
+  },
+  "Lasă o recenzie": {
+    "en": "Leave a review",
+    "fr": "Laisser un avis",
+    "it": "Lascia una recensione",
+    "es": "Deja una reseña",
+    "nl": "Laat een review achter",
+    "de": "Bewertung hinterlassen"
+  },
+  "Mențiuni legale": {
+    "en": "Legal notices",
+    "fr": "Mentions légales",
+    "it": "Note legali",
+    "es": "Aviso legal",
+    "nl": "Juridische vermeldingen",
+    "de": "Impressum"
+  },
+  "Montată manual,": {
+    "en": "Installed manually,",
+    "fr": "Montée manuellement,",
+    "it": "Montata manualmente,",
+    "es": "Montada manualmente,",
+    "nl": "Handmatig gemonteerd,",
+    "de": "Manuell montiert,"
+  },
+  "O casă completă": {
+    "en": "A complete house",
+    "fr": "Une maison complète",
+    "it": "Una casa completa",
+    "es": "Una casa completa",
+    "nl": "Een compleet huis",
+    "de": "Ein komplettes Haus"
+  },
+  "Planșee izolate": {
+    "en": "Insulated floors",
+    "fr": "Planchers isolés",
+    "it": "Solai isolati",
+    "es": "Forjados aislados",
+    "nl": "Geïsoleerde vloeren",
+    "de": "Isolierte Decken"
+  },
+  "Valică Bouleanu": {
+    "en": "Valică Bouleanu",
+    "fr": "Valică Bouleanu",
+    "it": "Valică Bouleanu",
+    "es": "Valică Bouleanu",
+    "nl": "Valică Bouleanu",
+    "de": "Valică Bouleanu"
+  },
+  "Vilă de familie": {
+    "en": "Family villa",
+    "fr": "Villa familiale",
+    "it": "Villa familiare",
+    "es": "Villa familiar",
+    "nl": "Gezinsvilla",
+    "de": "Familienvilla"
+  },
+  "alți arhitecți.": {
+    "en": "other architects.",
+    "fr": "d'autres architectes.",
+    "it": "altri architetti.",
+    "es": "otros arquitectos.",
+    "nl": "andere architecten.",
+    "de": "andere Architekten."
+  },
+  "amenință marja.": {
+    "en": "threatens the margin.",
+    "fr": "menace la marge.",
+    "it": "minaccia il margine.",
+    "es": "amenaza el margen.",
+    "nl": "bedreigt de marge.",
+    "de": "bedroht die Marge."
+  },
+  "cât mai repede.": {
+    "en": "as fast as possible.",
+    "fr": "le plus vite possible.",
+    "it": "il più presto possibile.",
+    "es": "lo antes posible.",
+    "nl": "zo snel mogelijk.",
+    "de": "so schnell wie möglich."
+  },
+  "fibră de ciment": {
+    "en": "fibre cement",
+    "fr": "fibrociment",
+    "it": "fibrocemento",
+    "es": "fibrocemento",
+    "nl": "vezelcement",
+    "de": "Faserzement"
+  },
+  "o casă ca asta?": {
+    "en": "a house like this?",
+    "fr": "une maison comme celle-ci ?",
+    "it": "una casa così?",
+    "es": "¿una casa así?",
+    "nl": "een huis zoals dit?",
+    "de": "ein Haus wie dieses?"
+  },
+  "primă revânzare": {
+    "en": "resale premium",
+    "fr": "prime de revente",
+    "it": "premio rivendita",
+    "es": "prima de reventa",
+    "nl": "doorverkooppremie",
+    "de": "Wiederverkaufsprämie"
+  },
+  "în acord-cadru.": {
+    "en": "under framework agreement.",
+    "fr": "en accord-cadre.",
+    "it": "in accordo quadro.",
+    "es": "en acuerdo marco.",
+    "nl": "in raamovereenkomst.",
+    "de": "im Rahmenvertrag."
+  },
+  "încălzire pe an": {
+    "en": "heating per year",
+    "fr": "chauffage par an",
+    "it": "riscaldamento annuo",
+    "es": "calefacción al año",
+    "nl": "verwarming per jaar",
+    "de": "Heizung pro Jahr"
+  },
+  "ținte de carbon": {
+    "en": "carbon targets",
+    "fr": "objectifs carbone",
+    "it": "obiettivi di carbonio",
+    "es": "objetivos de carbono",
+    "nl": "klimaatdoelen",
+    "de": "Klimaziele"
+  },
+  "9 țări livrate": {
+    "en": "9 countries served",
+    "fr": "9 pays livrés",
+    "it": "9 paesi serviti",
+    "es": "9 países atendidos",
+    "nl": "9 landen bediend",
+    "de": "9 Länder beliefert"
+  },
+  "Andrei Mureșan": {
+    "en": "Andrei Mureșan",
+    "fr": "Andrei Mureșan",
+    "it": "Andrei Mureșan",
+    "es": "Andrei Mureșan",
+    "nl": "Andrei Mureșan",
+    "de": "Andrei Mureșan"
+  },
+  "Casa pe viață,": {
+    "en": "Home for life,",
+    "fr": "Maison pour la vie,",
+    "it": "Casa per la vita,",
+    "es": "Casa para toda la vida,",
+    "nl": "Huis voor het leven,",
+    "de": "Haus fürs Leben,"
+  },
+  "Despre proiect": {
+    "en": "About the project",
+    "fr": "À propos du projet",
+    "it": "Sul progetto",
+    "es": "Sobre el proyecto",
+    "nl": "Over het project",
+    "de": "Über das Projekt"
+  },
+  "Factură elect.": {
+    "en": "Elect. bill",
+    "fr": "Facture élect.",
+    "it": "Bolletta elettr.",
+    "es": "Factura eléct.",
+    "nl": "Elektr. rekening",
+    "de": "Stromrechnung"
+  },
+  "Fixare directă": {
+    "en": "Direct fixing",
+    "fr": "Fixation directe",
+    "it": "Fissaggio diretto",
+    "es": "Fijación directa",
+    "nl": "Directe bevestiging",
+    "de": "Direkte Befestigung"
+  },
+  "Mai puțin de 5": {
+    "en": "Less than 5",
+    "fr": "Moins de 5",
+    "it": "Meno di 5",
+    "es": "Menos de 5",
+    "nl": "Minder dan 5",
+    "de": "Weniger als 5"
+  },
+  "Ne extindem în": {
+    "en": "We are expanding into",
+    "fr": "Nous nous développons en",
+    "it": "Ci espandiamo in",
+    "es": "Nos expandimos en",
+    "nl": "We breiden uit in",
+    "de": "Wir expandieren in"
+  },
+  "Povești reale,": {
+    "en": "Real stories,",
+    "fr": "Histoires vraies,",
+    "it": "Storie vere,",
+    "es": "Historias reales,",
+    "nl": "Echte verhalen,",
+    "de": "Echte Geschichten,"
+  },
+  "Primul șantier": {
+    "en": "First construction site",
+    "fr": "Premier chantier",
+    "it": "Primo cantiere",
+    "es": "Primera obra",
+    "nl": "Eerste bouwplaats",
+    "de": "Erste Baustelle"
+  },
+  "Servicii terțe": {
+    "en": "Third-party services",
+    "fr": "Services tiers",
+    "it": "Servizi di terze parti",
+    "es": "Servicios de terceros",
+    "nl": "Diensten van derden",
+    "de": "Drittanbieter-Dienste"
+  },
+  "Specialiști la": {
+    "en": "Specialists",
+    "fr": "Spécialistes à",
+    "it": "Specialisti a",
+    "es": "Especialistas a",
+    "nl": "Specialisten op",
+    "de": "Spezialisten nur"
+  },
+  "Structură lemn": {
+    "en": "Timber structure",
+    "fr": "Structure bois",
+    "it": "Struttura in legno",
+    "es": "Estructura de madera",
+    "nl": "Houtstructuur",
+    "de": "Holzstruktur"
+  },
+  "Studiu de preț": {
+    "en": "Price study",
+    "fr": "Étude de prix",
+    "it": "Studio di prezzo",
+    "es": "Estudio de precio",
+    "nl": "Prijsstudie",
+    "de": "Preisstudie"
+  },
+  "Zero absorbție": {
+    "en": "Zero absorption",
+    "fr": "Zéro absorption",
+    "it": "Zero assorbimento",
+    "es": "Cero absorción",
+    "nl": "Nul absorptie",
+    "de": "Null Absorption"
+  },
+  "cheia în mână.": {
+    "en": "turnkey.",
+    "fr": "clés en main.",
+    "it": "chiavi in mano.",
+    "es": "llave en mano.",
+    "nl": "sleutelklaar.",
+    "de": "schlüsselfertig."
+  },
+  "proiectul tău?": {
+    "en": "your project?",
+    "fr": "votre projet ?",
+    "it": "il tuo progetto?",
+    "es": "¿tu proyecto?",
+    "nl": "jouw project?",
+    "de": "dein Projekt?"
+  },
+  "În construcție": {
+    "en": "Under construction",
+    "fr": "En construction",
+    "it": "In costruzione",
+    "es": "En construcción",
+    "nl": "In aanbouw",
+    "de": "Im Bau"
+  },
+  "4–6 săptămâni": {
+    "en": "4–6 weeks",
+    "fr": "4–6 semaines",
+    "it": "4–6 settimane",
+    "es": "4–6 semanas",
+    "nl": "4–6 weken",
+    "de": "4–6 Wochen"
+  },
+  "6–8 săptămâni": {
+    "en": "6–8 weeks",
+    "fr": "6–8 semaines",
+    "it": "6–8 settimane",
+    "es": "6–8 semanas",
+    "nl": "6–8 weken",
+    "de": "6–8 Wochen"
+  },
+  "8. Modificări": {
+    "en": "8. Changes",
+    "fr": "8. Modifications",
+    "it": "8. Modifiche",
+    "es": "8. Modificaciones",
+    "nl": "8. Wijzigingen",
+    "de": "8. Änderungen"
+  },
+  "Aplicați acum": {
+    "en": "Apply now",
+    "fr": "Postulez maintenant",
+    "it": "Candidati ora",
+    "es": "Solicite ahora",
+    "nl": "Nu solliciteren",
+    "de": "Jetzt bewerben"
+  },
+  "Casă premium,": {
+    "en": "Premium home,",
+    "fr": "Maison haut de gamme,",
+    "it": "Casa premium,",
+    "es": "Casa premium,",
+    "nl": "Premium huis,",
+    "de": "Premium-Haus,"
+  },
+  "Ce schimbă un": {
+    "en": "What changes a",
+    "fr": "Ce que change un",
+    "it": "Cosa cambia un",
+    "es": "Qué cambia un",
+    "nl": "Wat verandert een",
+    "de": "Was ein"
+  },
+  "Ce se schimbă": {
+    "en": "What changes",
+    "fr": "Ce qui change",
+    "it": "Cosa cambia",
+    "es": "Qué cambia",
+    "nl": "Wat verandert",
+    "de": "Was sich ändert"
+  },
+  "Construiți cu": {
+    "en": "Build with",
+    "fr": "Construisez avec",
+    "it": "Costruite con",
+    "es": "Construya con",
+    "nl": "Bouw met",
+    "de": "Bauen Sie mit"
+  },
+  "Consultați și": {
+    "en": "See also",
+    "fr": "Consultez aussi",
+    "it": "Consultate anche",
+    "es": "Consulte también",
+    "nl": "Raadpleeg ook",
+    "de": "Siehe auch"
+  },
+  "Contactați-ne": {
+    "en": "Contact us",
+    "fr": "Contactez-nous",
+    "it": "Contattateci",
+    "es": "Contáctenos",
+    "nl": "Neem contact op",
+    "de": "Kontaktieren Sie uns"
+  },
+  "Despre sistem": {
+    "en": "About the system",
+    "fr": "À propos du système",
+    "it": "Sul sistema",
+    "es": "Sobre el sistema",
+    "nl": "Over het systeem",
+    "de": "Über das System"
+  },
+  "Proiectul tău": {
+    "en": "Your project",
+    "fr": "Votre projet",
+    "it": "Il tuo progetto",
+    "es": "Su proyecto",
+    "nl": "Jouw project",
+    "de": "Ihr Projekt"
+  },
+  "Timp câștigat": {
+    "en": "Time saved",
+    "fr": "Temps gagné",
+    "it": "Tempo risparmiato",
+    "es": "Tiempo ganado",
+    "nl": "Tijd gewonnen",
+    "de": "Zeit gespart"
+  },
+  "Următorul pas": {
+    "en": "Next step",
+    "fr": "Prochaine étape",
+    "it": "Prossimo passo",
+    "es": "Siguiente paso",
+    "nl": "Volgende stap",
+    "de": "Nächster Schritt"
+  },
+  "Vilă · Spania": {
+    "en": "Villa · Spain",
+    "fr": "Villa · Espagne",
+    "it": "Villa · Spagna",
+    "es": "Villa · España",
+    "nl": "Villa · Spanje",
+    "de": "Villa · Spanien"
+  },
+  "fără facturi.": {
+    "en": "no bills.",
+    "fr": "sans factures.",
+    "it": "senza bollette.",
+    "es": "sin facturas.",
+    "nl": "zonder rekeningen.",
+    "de": "ohne Rechnungen."
+  },
+  "la revânzare.": {
+    "en": "on resale.",
+    "fr": "à la revente.",
+    "it": "alla rivendita.",
+    "es": "en reventa.",
+    "nl": "bij doorverkoop.",
+    "de": "beim Wiederverkauf."
+  },
+  "ridicându-se?": {
+    "en": "rising?",
+    "fr": "s'élever ?",
+    "it": "crescere?",
+    "es": "¿levantándose?",
+    "nl": "oprijzen?",
+    "de": "entsteht?"
+  },
+  "în fiecare an": {
+    "en": "each year",
+    "fr": "chaque année",
+    "it": "ogni anno",
+    "es": "cada año",
+    "nl": "elk jaar",
+    "de": "jedes Jahr"
+  },
+  "și acoperișul": {
+    "en": "and the roof",
+    "fr": "et le toit",
+    "it": "e il tetto",
+    "es": "y el tejado",
+    "nl": "en het dak",
+    "de": "und das Dach"
+  },
+  "— Selectați —": {
+    "en": "— Select —",
+    "fr": "— Sélectionnez —",
+    "it": "— Seleziona —",
+    "es": "— Seleccione —",
+    "nl": "— Selecteer —",
+    "de": "— Auswählen —"
+  },
+  "„Costă dublu”": {
+    "en": "\"Costs double\"",
+    "fr": "« Coûte le double »",
+    "it": "« Costa il doppio »",
+    "es": "«Cuesta el doble»",
+    "nl": "«Kost het dubbele»",
+    "de": "„Kostet doppelt“"
+  },
+  "& logistică.": {
+    "en": "& logistics.",
+    "fr": "et logistique.",
+    "it": "e logistica.",
+    "es": "y logística.",
+    "nl": "en logistiek.",
+    "de": "und Logistik."
+  },
+  "Alternativă:": {
+    "en": "Alternative:",
+    "fr": "Alternative :",
+    "it": "Alternativa:",
+    "es": "Alternativa:",
+    "nl": "Alternatief:",
+    "de": "Alternative:"
+  },
+  "Fișă tehnică": {
+    "en": "Technical sheet",
+    "fr": "Fiche technique",
+    "it": "Scheda tecnica",
+    "es": "Ficha técnica",
+    "nl": "Technisch blad",
+    "de": "Technisches Datenblatt"
+  },
+  "Lyon, Franța": {
+    "en": "Lyon, France",
+    "fr": "Lyon, France",
+    "it": "Lione, Francia",
+    "es": "Lyon, Francia",
+    "nl": "Lyon, Frankrijk",
+    "de": "Lyon, Frankreich"
+  },
+  "Nu ați găsit": {
+    "en": "Didn't find",
+    "fr": "Vous n'avez pas trouvé",
+    "it": "Non avete trovato",
+    "es": "¿No ha encontrado",
+    "nl": "Niet gevonden",
+    "de": "Nicht gefunden"
+  },
+  "Nume / Firmă": {
+    "en": "Name / Company",
+    "fr": "Nom / Société",
+    "it": "Nome / Azienda",
+    "es": "Nombre / Empresa",
+    "nl": "Naam / Bedrijf",
+    "de": "Name / Firma"
+  },
+  "O întrebare,": {
+    "en": "One question,",
+    "fr": "Une question,",
+    "it": "Una domanda,",
+    "es": "Una pregunta,",
+    "nl": "Eén vraag,",
+    "de": "Eine Frage,"
+  },
+  "Pentru orice": {
+    "en": "For any",
+    "fr": "Pour toute",
+    "it": "Per qualsiasi",
+    "es": "Para cualquier",
+    "nl": "Voor elke",
+    "de": "Für jede"
+  },
+  "Pereți MBK (": {
+    "en": "MBK walls (",
+    "fr": "Murs MBK (",
+    "it": "Pareti MBK (",
+    "es": "Muros MBK (",
+    "nl": "MBK-muren (",
+    "de": "MBK-Wände ("
+  },
+  "Preț panouri": {
+    "en": "Panel price",
+    "fr": "Prix des panneaux",
+    "it": "Prezzo pannelli",
+    "es": "Precio paneles",
+    "nl": "Paneelprijs",
+    "de": "Paneelpreis"
+  },
+  "Se fisurează": {
+    "en": "Cracking",
+    "fr": "Fissures",
+    "it": "Si fessura",
+    "es": "Se fisura",
+    "nl": "Scheurt",
+    "de": "Risse"
+  },
+  "Structură în": {
+    "en": "Structure in",
+    "fr": "Structure en",
+    "it": "Struttura in",
+    "es": "Estructura en",
+    "nl": "Structuur in",
+    "de": "Struktur in"
+  },
+  "Sunteți gata": {
+    "en": "Are you ready",
+    "fr": "Vous êtes prêt",
+    "it": "Siete pronti",
+    "es": "¿Está listo",
+    "nl": "Bent u klaar",
+    "de": "Sind Sie bereit"
+  },
+  "Totul începe": {
+    "en": "Everything starts",
+    "fr": "Tout commence",
+    "it": "Tutto inizia",
+    "es": "Todo empieza",
+    "nl": "Alles begint",
+    "de": "Alles beginnt"
+  },
+  "economisiți?": {
+    "en": "save?",
+    "fr": "économiser ?",
+    "it": "risparmiare?",
+    "es": "¿ahorrar?",
+    "nl": "besparen?",
+    "de": "sparen?"
+  },
+  "În 48 de ore": {
+    "en": "In 48 hours",
+    "fr": "En 48 heures",
+    "it": "In 48 ore",
+    "es": "En 48 horas",
+    "nl": "Binnen 48 uur",
+    "de": "In 48 Stunden"
+  },
+  "−90% facturi": {
+    "en": "−90% bills",
+    "fr": "−90% factures",
+    "it": "−90% bollette",
+    "es": "−90% facturas",
+    "nl": "−90% rekeningen",
+    "de": "−90% Rechnungen"
+  },
+  "38 € / lună": {
+    "en": "38 € / month",
+    "fr": "38 € / mois",
+    "it": "38 € / mese",
+    "es": "38 € / mes",
+    "nl": "38 € / maand",
+    "de": "38 € / Monat"
+  },
+  "5 săptămâni": {
+    "en": "5 weeks",
+    "fr": "5 semaines",
+    "it": "5 settimane",
+    "es": "5 semanas",
+    "nl": "5 weken",
+    "de": "5 Wochen"
+  },
+  "5. Garanții": {
+    "en": "5. Warranties",
+    "fr": "5. Garanties",
+    "it": "5. Garanzie",
+    "es": "5. Garantías",
+    "nl": "5. Garanties",
+    "de": "5. Garantien"
+  },
+  "7 săptămâni": {
+    "en": "7 weeks",
+    "fr": "7 semaines",
+    "it": "7 settimane",
+    "es": "7 semanas",
+    "nl": "7 weken",
+    "de": "7 Wochen"
+  },
+  "Candidatură": {
+    "en": "Application",
+    "fr": "Candidature",
+    "it": "Candidatura",
+    "es": "Solicitud",
+    "nl": "Sollicitatie",
+    "de": "Bewerbung"
+  },
+  "Casa pasivă": {
+    "en": "Passive house",
+    "fr": "Maison passive",
+    "it": "Casa passiva",
+    "es": "Casa pasiva",
+    "nl": "Passiefhuis",
+    "de": "Passivhaus"
+  },
+  "Descoperiți": {
+    "en": "Discover",
+    "fr": "Découvrez",
+    "it": "Scoprite",
+    "es": "Descubra",
+    "nl": "Ontdek",
+    "de": "Entdecken Sie"
+  },
+  "Despre cost": {
+    "en": "About cost",
+    "fr": "Sur le coût",
+    "it": "Sul costo",
+    "es": "Sobre el coste",
+    "nl": "Over kosten",
+    "de": "Über die Kosten"
+  },
+  "Economisiți": {
+    "en": "You save",
+    "fr": "Vous économisez",
+    "it": "Risparmiate",
+    "es": "Ahorra",
+    "nl": "U bespaart",
+    "de": "Sie sparen"
+  },
+  "Fără macara": {
+    "en": "No crane",
+    "fr": "Sans grue",
+    "it": "Senza gru",
+    "es": "Sin grúa",
+    "nl": "Geen kraan",
+    "de": "Ohne Kran"
+  },
+  "P + piscină": {
+    "en": "G + pool",
+    "fr": "RDC + piscine",
+    "it": "P + piscina",
+    "es": "PB + piscina",
+    "nl": "BG + zwembad",
+    "de": "EG + Pool"
+  },
+  "Pentru tine": {
+    "en": "For you",
+    "fr": "Pour vous",
+    "it": "Per te",
+    "es": "Para ti",
+    "nl": "Voor jou",
+    "de": "Für dich"
+  },
+  "Planul tău,": {
+    "en": "Your plan,",
+    "fr": "Votre plan,",
+    "it": "Il tuo piano,",
+    "es": "Su plan,",
+    "nl": "Jouw plan,",
+    "de": "Ihr Plan,"
+  },
+  "Planșeu PBK": {
+    "en": "PBK floor slab",
+    "fr": "Plancher PBK",
+    "it": "Solaio PBK",
+    "es": "Forjado PBK",
+    "nl": "PBK-vloerplaat",
+    "de": "PBK-Decke"
+  },
+  "a doua casă": {
+    "en": "second home",
+    "fr": "deuxième maison",
+    "it": "seconda casa",
+    "es": "segunda vivienda",
+    "nl": "tweede huis",
+    "de": "Zweitwohnsitz"
+  },
+  "cu adevărat": {
+    "en": "truly",
+    "fr": "vraiment",
+    "it": "davvero",
+    "es": "de verdad",
+    "nl": "echt",
+    "de": "wirklich"
+  },
+  "de invenție": {
+    "en": "of invention",
+    "fr": "d'invention",
+    "it": "di invenzione",
+    "es": "de invención",
+    "nl": "van uitvinding",
+    "de": "der Erfindung"
+  },
+  "pe șantier.": {
+    "en": "on site.",
+    "fr": "sur chantier.",
+    "it": "in cantiere.",
+    "es": "en obra.",
+    "nl": "op de bouwplaats.",
+    "de": "auf der Baustelle."
+  },
+  "pe șantiere": {
+    "en": "on construction sites",
+    "fr": "sur les chantiers",
+    "it": "sui cantieri",
+    "es": "en obras",
+    "nl": "op bouwplaatsen",
+    "de": "auf Baustellen"
+  },
+  "până la 50%": {
+    "en": "up to 50%",
+    "fr": "jusqu'à 50 %",
+    "it": "fino al 50%",
+    "es": "hasta el 50%",
+    "nl": "tot 50%",
+    "de": "bis zu 50 %"
+  },
+  "Întreținere": {
+    "en": "Maintenance",
+    "fr": "Entretien",
+    "it": "Manutenzione",
+    "es": "Mantenimiento",
+    "nl": "Onderhoud",
+    "de": "Wartung"
+  },
+  "în 4 etape.": {
+    "en": "in 4 steps.",
+    "fr": "en 4 étapes.",
+    "it": "in 4 fasi.",
+    "es": "en 4 pasos.",
+    "nl": "in 4 stappen.",
+    "de": "in 4 Schritten."
+  },
+  "10 unități": {
+    "en": "10 units",
+    "fr": "10 unités",
+    "it": "10 unità",
+    "es": "10 unidades",
+    "nl": "10 eenheden",
+    "de": "10 Einheiten"
+  },
+  "12 unități": {
+    "en": "12 units",
+    "fr": "12 unités",
+    "it": "12 unità",
+    "es": "12 unidades",
+    "nl": "12 eenheden",
+    "de": "12 Einheiten"
+  },
+  "24 unități": {
+    "en": "24 units",
+    "fr": "24 unités",
+    "it": "24 unità",
+    "es": "24 unidades",
+    "nl": "24 eenheden",
+    "de": "24 Einheiten"
+  },
+  "3% vacanță": {
+    "en": "3% vacancy",
+    "fr": "3 % de vacance",
+    "it": "3% vacanza",
+    "es": "3% vacancia",
+    "nl": "3% leegstand",
+    "de": "3 % Leerstand"
+  },
+  "Ce schimbă": {
+    "en": "What changes",
+    "fr": "Ce qui change",
+    "it": "Cosa cambia",
+    "es": "Qué cambia",
+    "nl": "Wat verandert",
+    "de": "Was ändert"
+  },
+  "Clasă A+++": {
+    "en": "A+++ class",
+    "fr": "Classe A+++",
+    "it": "Classe A+++",
+    "es": "Clase A+++",
+    "nl": "A+++ klasse",
+    "de": "A+++ Klasse"
+  },
+  "Consultați": {
+    "en": "See",
+    "fr": "Consultez",
+    "it": "Consultate",
+    "es": "Consulte",
+    "nl": "Raadpleeg",
+    "de": "Einsehen"
+  },
+  "De adăugat": {
+    "en": "To add",
+    "fr": "À ajouter",
+    "it": "Da aggiungere",
+    "es": "Por añadir",
+    "nl": "Toe te voegen",
+    "de": "Hinzuzufügen"
+  },
+  "Despre noi": {
+    "en": "About us",
+    "fr": "À propos",
+    "it": "Chi siamo",
+    "es": "Sobre nosotros",
+    "nl": "Over ons",
+    "de": "Über uns"
+  },
+  "Protecție:": {
+    "en": "Protection:",
+    "fr": "Protection :",
+    "it": "Protezione:",
+    "es": "Protección:",
+    "nl": "Bescherming:",
+    "de": "Schutz:"
+  },
+  "Referință:": {
+    "en": "Reference:",
+    "fr": "Référence :",
+    "it": "Riferimento:",
+    "es": "Referencia:",
+    "nl": "Referentie:",
+    "de": "Referenz:"
+  },
+  "Rădăcinile": {
+    "en": "The roots",
+    "fr": "Les racines",
+    "it": "Le radici",
+    "es": "Las raíces",
+    "nl": "De wortels",
+    "de": "Die Wurzeln"
+  },
+  "Spațiu Pro": {
+    "en": "Pro Space",
+    "fr": "Espace Pro",
+    "it": "Spazio Pro",
+    "es": "Espacio Pro",
+    "nl": "Pro Space",
+    "de": "Pro Space"
+  },
+  "Un șantier": {
+    "en": "One construction site",
+    "fr": "Un chantier",
+    "it": "Un cantiere",
+    "es": "Una obra",
+    "nl": "Eén bouwplaats",
+    "de": "Eine Baustelle"
+  },
+  "integrată.": {
+    "en": "integrated.",
+    "fr": "intégrée.",
+    "it": "integrata.",
+    "es": "integrada.",
+    "nl": "geïntegreerd.",
+    "de": "integriert."
+  },
+  "prioritară": {
+    "en": "priority",
+    "fr": "prioritaire",
+    "it": "prioritaria",
+    "es": "prioritaria",
+    "nl": "prioritair",
+    "de": "prioritär"
+  },
+  "Șantierul,": {
+    "en": "The construction site,",
+    "fr": "Le chantier,",
+    "it": "Il cantiere,",
+    "es": "La obra,",
+    "nl": "De bouwplaats,",
+    "de": "Die Baustelle,"
+  },
+  "Știm ce vă": {
+    "en": "We know what",
+    "fr": "Nous savons ce que vous",
+    "it": "Sappiamo cosa vi",
+    "es": "Sabemos qué le",
+    "nl": "We weten wat u",
+    "de": "Wir wissen, was Sie"
+  },
+  "8 unități": {
+    "en": "8 units",
+    "fr": "8 unités",
+    "it": "8 unità",
+    "es": "8 unidades",
+    "nl": "8 eenheden",
+    "de": "8 Einheiten"
+  },
+  "Acceptați": {
+    "en": "Accept",
+    "fr": "Accepter",
+    "it": "Accetta",
+    "es": "Aceptar",
+    "nl": "Accepteren",
+    "de": "Akzeptieren"
+  },
+  "Comparați": {
+    "en": "Compare",
+    "fr": "Comparez",
+    "it": "Confrontate",
+    "es": "Compare",
+    "nl": "Vergelijk",
+    "de": "Vergleichen"
+  },
+  "Cât costă": {
+    "en": "How much does it cost",
+    "fr": "Combien coûte",
+    "it": "Quanto costa",
+    "es": "Cuánto cuesta",
+    "nl": "Wat kost het",
+    "de": "Was kostet"
+  },
+  "Diferența": {
+    "en": "The difference",
+    "fr": "La différence",
+    "it": "La differenza",
+    "es": "La diferencia",
+    "nl": "Het verschil",
+    "de": "Der Unterschied"
+  },
+  "Diferențe": {
+    "en": "Differences",
+    "fr": "Différences",
+    "it": "Differenze",
+    "es": "Diferencias",
+    "nl": "Verschillen",
+    "de": "Unterschiede"
+  },
+  "Logistică": {
+    "en": "Logistics",
+    "fr": "Logistique",
+    "it": "Logistica",
+    "es": "Logística",
+    "nl": "Logistiek",
+    "de": "Logistik"
+  },
+  "Mulțumim!": {
+    "en": "Thank you!",
+    "fr": "Merci !",
+    "it": "Grazie!",
+    "es": "¡Gracias!",
+    "nl": "Bedankt!",
+    "de": "Vielen Dank!"
+  },
+  "Pentru că": {
+    "en": "Because",
+    "fr": "Parce que",
+    "it": "Perché",
+    "es": "Porque",
+    "nl": "Omdat",
+    "de": "Weil"
+  },
+  "Planșeele": {
+    "en": "The floors",
+    "fr": "Les planchers",
+    "it": "I solai",
+    "es": "Los forjados",
+    "nl": "De vloeren",
+    "de": "Die Decken"
+  },
+  "Realizări": {
+    "en": "Projects",
+    "fr": "Réalisations",
+    "it": "Realizzazioni",
+    "es": "Proyectos",
+    "nl": "Realisaties",
+    "de": "Referenzen"
+  },
+  "Răspunsul": {
+    "en": "The answer",
+    "fr": "La réponse",
+    "it": "La risposta",
+    "es": "La respuesta",
+    "nl": "Het antwoord",
+    "de": "Die Antwort"
+  },
+  "Structură": {
+    "en": "Structure",
+    "fr": "Structure",
+    "it": "Struttura",
+    "es": "Estructura",
+    "nl": "Structuur",
+    "de": "Struktur"
+  },
+  "Suprafață": {
+    "en": "Surface area",
+    "fr": "Surface",
+    "it": "Superficie",
+    "es": "Superficie",
+    "nl": "Oppervlakte",
+    "de": "Fläche"
+  },
+  "Să vorbim": {
+    "en": "Let's talk",
+    "fr": "Parlons-en",
+    "it": "Parliamone",
+    "es": "Hablemos",
+    "nl": "Laten we praten",
+    "de": "Sprechen wir"
+  },
+  "Tarife și": {
+    "en": "Rates and",
+    "fr": "Tarifs et",
+    "it": "Tariffe e",
+    "es": "Tarifas y",
+    "nl": "Tarieven en",
+    "de": "Tarife und"
+  },
+  "Un sistem": {
+    "en": "One system",
+    "fr": "Un système",
+    "it": "Un sistema",
+    "es": "Un sistema",
+    "nl": "Eén systeem",
+    "de": "Ein System"
+  },
+  "În 5 pași": {
+    "en": "In 5 steps",
+    "fr": "En 5 étapes",
+    "it": "In 5 passi",
+    "es": "En 5 pasos",
+    "nl": "In 5 stappen",
+    "de": "In 5 Schritten"
+  },
+  "În curând": {
+    "en": "Coming soon",
+    "fr": "Bientôt",
+    "it": "Prossimamente",
+    "es": "Próximamente",
+    "nl": "Binnenkort",
+    "de": "Demnächst"
+  },
+  "Încredere": {
+    "en": "Trust",
+    "fr": "Confiance",
+    "it": "Fiducia",
+    "es": "Confianza",
+    "nl": "Vertrouwen",
+    "de": "Vertrauen"
+  },
+  "Șantierul": {
+    "en": "The construction site",
+    "fr": "Le chantier",
+    "it": "Il cantiere",
+    "es": "La obra",
+    "nl": "De bouwplaats",
+    "de": "Die Baustelle"
+  },
+  "1 echipă": {
+    "en": "1 team",
+    "fr": "1 équipe",
+    "it": "1 squadra",
+    "es": "1 equipo",
+    "nl": "1 team",
+    "de": "1 Team"
+  },
+  "Casa ta,": {
+    "en": "Your home,",
+    "fr": "Votre maison,",
+    "it": "La tua casa,",
+    "es": "Tu casa,",
+    "nl": "Jouw huis,",
+    "de": "Dein Haus,"
+  },
+  "Deveniți": {
+    "en": "Become",
+    "fr": "Devenez",
+    "it": "Diventate",
+    "es": "Conviértase en",
+    "nl": "Word",
+    "de": "Werden Sie"
+  },
+  "Dialogăm": {
+    "en": "Let's talk",
+    "fr": "Dialoguons",
+    "it": "Dialoghiamo",
+    "es": "Dialoguemos",
+    "nl": "In gesprek",
+    "de": "Im Dialog"
+  },
+  "FRANCEZĂ": {
+    "en": "FRENCH",
+    "fr": "FRANÇAIS",
+    "it": "FRANCESE",
+    "es": "FRANCÉS",
+    "nl": "FRANS",
+    "de": "FRANZÖSISCH"
+  },
+  "Locuințe": {
+    "en": "Homes",
+    "fr": "Logements",
+    "it": "Abitazioni",
+    "es": "Viviendas",
+    "nl": "Woningen",
+    "de": "Wohnungen"
+  },
+  "Ofertă →": {
+    "en": "Quote →",
+    "fr": "Devis →",
+    "it": "Preventivo →",
+    "es": "Presupuesto →",
+    "nl": "Offerte →",
+    "de": "Angebot →"
+  },
+  "Prezență": {
+    "en": "Presence",
+    "fr": "Présence",
+    "it": "Presenza",
+    "es": "Presencia",
+    "nl": "Aanwezigheid",
+    "de": "Präsenz"
+  },
+  "Refuzați": {
+    "en": "Decline",
+    "fr": "Refuser",
+    "it": "Rifiuta",
+    "es": "Rechazar",
+    "nl": "Weigeren",
+    "de": "Ablehnen"
+  },
+  "gratuită": {
+    "en": "free",
+    "fr": "gratuite",
+    "it": "gratuita",
+    "es": "gratuita",
+    "nl": "gratis",
+    "de": "kostenlos"
+  },
+  "în plus.": {
+    "en": "extra.",
+    "fr": "en plus.",
+    "it": "in più.",
+    "es": "extra.",
+    "nl": "extra.",
+    "de": "extra."
+  },
+  "5 în 1.": {
+    "en": "5 in 1.",
+    "fr": "5 en 1.",
+    "it": "5 in 1.",
+    "es": "5 en 1.",
+    "nl": "5 in 1.",
+    "de": "5 in 1."
+  },
+  "5-în-1.": {
+    "en": "5-in-1.",
+    "fr": "5-en-1.",
+    "it": "5-in-1.",
+    "es": "5-en-1.",
+    "nl": "5-in-1.",
+    "de": "5-in-1."
+  },
+  "Alegeți": {
+    "en": "Choose",
+    "fr": "Choisissez",
+    "it": "Scegliete",
+    "es": "Elija",
+    "nl": "Kies",
+    "de": "Wählen Sie"
+  },
+  "Durată:": {
+    "en": "Duration:",
+    "fr": "Durée :",
+    "it": "Durata:",
+    "es": "Duración:",
+    "nl": "Duur:",
+    "de": "Dauer:"
+  },
+  "Elveția": {
+    "en": "Switzerland",
+    "fr": "Suisse",
+    "it": "Svizzera",
+    "es": "Suiza",
+    "nl": "Zwitserland",
+    "de": "Schweiz"
+  },
+  "O casă.": {
+    "en": "One house.",
+    "fr": "Une maison.",
+    "it": "Una casa.",
+    "es": "Una casa.",
+    "nl": "Eén huis.",
+    "de": "Ein Haus."
+  },
+  "Sunteți": {
+    "en": "Are you",
+    "fr": "Vous êtes",
+    "it": "Siete",
+    "es": "Está",
+    "nl": "Bent u",
+    "de": "Sind Sie"
+  },
+  "În curs": {
+    "en": "In progress",
+    "fr": "En cours",
+    "it": "In corso",
+    "es": "En curso",
+    "nl": "Bezig",
+    "de": "In Bearbeitung"
+  },
+  "Început": {
+    "en": "Start",
+    "fr": "Début",
+    "it": "Inizio",
+    "es": "Inicio",
+    "nl": "Begin",
+    "de": "Anfang"
+  },
+  "Închide": {
+    "en": "Close",
+    "fr": "Fermer",
+    "it": "Chiudi",
+    "es": "Cerrar",
+    "nl": "Sluiten",
+    "de": "Schließen"
+  },
+  "2-în-1": {
+    "en": "2-in-1",
+    "fr": "2-en-1",
+    "it": "2-in-1",
+    "es": "2-en-1",
+    "nl": "2-in-1",
+    "de": "2-in-1"
+  },
+  "5-în-1": {
+    "en": "5-in-1",
+    "fr": "5-en-1",
+    "it": "5-in-1",
+    "es": "5-en-1",
+    "nl": "5-in-1",
+    "de": "5-in-1"
+  },
+  "Scăzut": {
+    "en": "Low",
+    "fr": "Faible",
+    "it": "Basso",
+    "es": "Bajo",
+    "nl": "Laag",
+    "de": "Niedrig"
+  },
+  "Sistem": {
+    "en": "System",
+    "fr": "Système",
+    "it": "Sistema",
+    "es": "Sistema",
+    "nl": "Systeem",
+    "de": "System"
+  },
+  "sau să": {
+    "en": "or to",
+    "fr": "ou de",
+    "it": "o di",
+    "es": "o",
+    "nl": "of",
+    "de": "oder"
+  },
+  "€/lună": {
+    "en": "€/month",
+    "fr": "€/mois",
+    "it": "€/mese",
+    "es": "€/mes",
+    "nl": "€/maand",
+    "de": "€/Monat"
+  },
+  "Ce vă": {
+    "en": "What you",
+    "fr": "Ce que vous",
+    "it": "Cosa vi",
+    "es": "Qué le",
+    "nl": "Wat u",
+    "de": "Was Sie"
+  },
+  "Notă:": {
+    "en": "Note:",
+    "fr": "Note :",
+    "it": "Nota:",
+    "es": "Nota:",
+    "nl": "Opmerking:",
+    "de": "Hinweis:"
+  },
+  "săpt.": {
+    "en": "wk.",
+    "fr": "sem.",
+    "it": "sett.",
+    "es": "sem.",
+    "nl": "wk.",
+    "de": "Wo."
+  },
+  "și tu": {
+    "en": "you too",
+    "fr": "vous aussi",
+    "it": "anche tu",
+    "es": "tú también",
+    "nl": "jij ook",
+    "de": "du auch"
+  },
+  "Ești": {
+    "en": "Are you",
+    "fr": "Vous êtes",
+    "it": "Sei",
+    "es": "¿Eres",
+    "nl": "Ben je",
+    "de": "Bist du"
+  },
+  "în 1": {
+    "en": "in 1",
+    "fr": "en 1",
+    "it": "in 1",
+    "es": "en 1",
+    "nl": "in 1",
+    "de": "in 1"
+  }
+}

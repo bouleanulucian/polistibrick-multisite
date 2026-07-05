@@ -50,19 +50,26 @@ def apply_dict(text: str, translations: dict) -> str:
 def chain_apply_lang(lang: str):
     en_dict = json.loads((TRANSLATIONS_DIR / "en.json").read_text(encoding="utf-8"))
     lang_path = TRANSLATIONS_DIR / f"{lang}.json"
+    if not lang_path.exists() and lang == "ie":
+        lang_path = TRANSLATIONS_DIR / "en.json"
     if not lang_path.exists():
-        print(f"  ✗ {lang}.json missing"); return
+        print(f"  ✗ {lang_path.name} missing")
+        return
     lang_dict = json.loads(lang_path.read_text(encoding="utf-8"))
     country_dir = COUNTRIES_DIR / lang
+    if not country_dir.exists():
+        print(f"  ✗ countries/{lang}/ missing")
+        return
     files = sorted(country_dir.rglob("*.html"))
     print(f"\n=== {lang.upper()}: chain-applying EN ({len(en_dict)}) then {lang.upper()} ({len(lang_dict)}) ===")
     changed = 0
     for f in files:
         original = f.read_text(encoding="utf-8")
         text = original
-        if lang != "en":
+        if lang not in ("en", "ie"):
             text = apply_dict(text, en_dict)
-        text = apply_dict(text, lang_dict)
+        if lang != "ie" or lang_path.name == "en.json":
+            text = apply_dict(text, lang_dict)
         if text != original:
             f.write_text(text, encoding="utf-8")
             changed += 1
@@ -70,7 +77,11 @@ def chain_apply_lang(lang: str):
 
 
 def main():
-    for lang in ["en", "fr", "it", "es", "nl", "de"]:
+    import sys
+    args = sys.argv[1:]
+    if not args:
+        args = ["en", "fr", "it", "es", "nl", "de", "ie"]
+    for lang in args:
         chain_apply_lang(lang)
 
 

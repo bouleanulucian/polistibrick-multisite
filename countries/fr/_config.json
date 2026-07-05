@@ -87,6 +87,7 @@
 
   "devis_app": {
     "url": "https://devis.polistibrick.fr",
+    "preview_url": "https://polistibrick-configurator.vercel.app",
     "pays": "FR"
   }
 }

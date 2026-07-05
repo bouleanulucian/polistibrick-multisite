@@ -1,6 +1,5 @@
 {
   "_doc": "RO words/phrases STILL present in FR builds. Each is RO-only (not valid FR). Apply word-replacement.",
-
   "Casa premium <em>sans factures.</em>": "Maison premium <em>sans factures.</em>",
   "Système flexible. <em>Suport complet.</em>": "Système flexible. <em>Support complet.</em>",
   "ROI maxim. <em>Risc minim.</em>": "ROI maximum. <em>Risque minimum.</em>",
@@ -16,7 +15,6 @@
   "ARHITECT · INGINER": "ARCHITECTE · INGÉNIEUR",
   "DEZVOLTATOR": "PROMOTEUR",
   "Pentru cine este Polistibrick": "Pour qui est Polistibrick",
-
   ">Accesorii<": ">Accessoires<",
   ">Compania<": ">L'entreprise<",
   ">Fabrici<": ">Usines<",
@@ -29,31 +27,25 @@
   ">Calculator<": ">Calculateur<",
   ">Facturi<": ">Factures<",
   ">Schimbă țara<": ">Changer de pays<",
-
   "Sistem brevetat european · ICF": "Système breveté européen · ICF",
   "Sistem brevetat ICF complet": "Système breveté ICF complet",
   "Calculul folosește metrice medii": "Le calcul utilise des métriques moyennes",
   "Bazat pe consumul tipic per climă": "Basé sur la consommation typique par climat",
-
   "5 în 1": "5 en 1",
   "5-în-1": "5-en-1",
   "1 lună": "1 mois",
   "lună": "mois",
   "luni": "mois",
-  "ani": "ans",
-
   "Suntem singurul sistem": "Nous sommes le seul système",
   "Suntem mereu": "Nous sommes toujours",
   "Construit pentru": "Conçu pour",
   "Construit în": "Construit en",
   "construit în": "construit en",
   "Echipa noastră": "Notre équipe",
-
   "Pentru proprietari": "Pour les propriétaires",
   "Pentru arhitecți": "Pour les architectes",
   "Pentru constructori": "Pour les constructeurs",
   "Pentru investitori": "Pour les investisseurs",
-
   " Suport ": " Support ",
   " suport ": " support ",
   " Risc ": " Risque ",
@@ -63,10 +55,8 @@
   "maxim ": "maximum ",
   "risc minim": "risque minimum",
   "Risc minim": "Risque minimum",
-
   "discount-uri": "remises",
   "discount uri": "remises",
-
   " pereți ": " murs ",
   " Pereți ": " Murs ",
   " perete ": " mur ",
@@ -78,33 +68,26 @@
   " acoperiș ": " toit ",
   " Acoperiș ": " Toit ",
   " acoperișul ": " le toit ",
-
   "Casă pasivă": "Maison passive",
   "casă pasivă": "maison passive",
   "casa pasivă": "maison passive",
   "Casa pasivă": "Maison passive",
-
   "Sustenabilitate": "Développement durable",
   "sustenabilitate": "développement durable",
   "Confidențialitate": "Confidentialité",
   "confidențialitate": "confidentialité",
   "Termeni": "Conditions",
-
   " în 4 săptămâni": " en 4 semaines",
   "în 4 săptămâni": "en 4 semaines",
-
   "Cere ofertă": "Demander un devis",
   "Cere o ofertă": "Demander un devis",
-
   "Sistem unic, brevetat și protejat": "Système unique, breveté et protégé",
   "brevetat și protejat": "breveté et protégé",
   "fără facturi": "sans factures",
   "Fără facturi": "Sans factures",
   "fără facturi mari": "sans grosses factures",
-
   "Construiește cu noi": "Construisez avec nous",
   "CONSTRUIEȘTE CU NOI": "CONSTRUISEZ AVEC NOUS",
-
   "Sistem ICF complet — murs, planchers, toit. Standard A+++. Construit en 4 semaines. Fără compromis, sans factures.": "Système ICF complet — murs, planchers, toit. Standard A+++. Construit en 4 semaines. Sans compromis, sans factures.",
   "Sistem ICF complet pentru casa A+++. Murs, planșee, toit — un sistem premium.": "Système ICF complet pour maison A+++. Murs, planchers, toit — un système premium.",
   "<h3>Mursi <em>respire.</em><br>La maison reste chaude.</h3>": "<h3>Les murs <em>respirent.</em><br>La maison reste chaude.</h3>",
@@ -113,7 +96,6 @@
   "alt=\"Cofraj asamblat cu sprijin lateral\"": "alt=\"Coffrage assemblé avec étaiement latéral\"",
   "alt=\"Armature oțel-beton pe planșeu\"": "alt=\"Armature acier-béton sur plancher\"",
   "<h3>Cofraj</h3>": "<h3>Coffrage</h3>",
-
   "<span class=\"pentru-tag\">Proprietar</span>": "<span class=\"pentru-tag\">Propriétaire</span>",
   "<span class=\"pentru-tag\">Arhitect · Inginer</span>": "<span class=\"pentru-tag\">Architecte · Ingénieur</span>",
   "<span class=\"pentru-tag\">Dezvoltator</span>": "<span class=\"pentru-tag\">Promoteur</span>",
@@ -124,7 +106,6 @@
   "Echipe diferite. Costuri diferite. Erori diferite.": "Équipes différentes. Coûts différents. Erreurs différentes.",
   "un singur panou. Une seule installation.": "un seul panneau. Une seule installation.",
   "Un singur panou.<br><em>Une maison complète.</em>": "Un seul panneau.<br><em>Une maison complète.</em>",
-
   "alt=\"Maison Polistibrick — în construcție\"": "alt=\"Maison Polistibrick — en construction\"",
   "alt=\"Maison Polistibrick — finalizată\"": "alt=\"Maison Polistibrick — finalisée\"",
   "alt=\"Maison Polistibrick — montaj\"": "alt=\"Maison Polistibrick — montage\"",
@@ -142,7 +123,6 @@
   ">3 luni<": ">3 mois<",
   "Casa <em>": "Maison <em>",
   "<em>Casa": "<em>Maison",
-
   "<span class=\"wm-half wm-top\">Sistem</span>": "<span class=\"wm-half wm-top\">Système</span>",
   "<span class=\"wm-half wm-bottom\">Sistem</span>": "<span class=\"wm-half wm-bottom\">Système</span>",
   "<span class=\"wm-half wm-top\">Montaj</span>": "<span class=\"wm-half wm-top\">Montage</span>",

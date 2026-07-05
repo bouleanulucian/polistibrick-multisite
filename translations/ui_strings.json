@@ -302,7 +302,16 @@
     "mobile_contact_aria": "Contact rapide",
     "mobile_call_aria": "Appeler Polistibrick",
     "mobile_call_label": "Appeler",
-    "mobile_email_aria": "Envoyer un email"
+    "mobile_email_aria": "Envoyer un email",
+    "mobile_email_label": "E-mail",
+    "email_label": "E-mail",
+    "country_fr": "France",
+    "country_it": "Italie",
+    "country_es": "Espagne",
+    "country_be": "Belgique",
+    "country_ie": "Irlande",
+    "country_uk": "Royaume-Uni",
+    "country_ch": "Suisse"
   },
   "it": {
     "home_aria": "Polistibrick — home",

@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Per costruttori · Program partener Polistibrick</title>
+  <meta name="description" content="Polistibrick pentru constructori: sistem 5-în-1 = marje până la 50% (o echipă = 5 echipe), structură în 4–6 settimane, formare certificată gratuită, lead-uri transmise. Deveniți Constructor Certificat Polistibrick.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/site.css">
+  <style>
+    /* Light Premium & Airy (aliniat cu arhitecți / investitori) */
+    html, body {
+      background: var(--cream);
+      color: var(--ink-soft);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Ambient Glow Effects */
+    .glow-ambient {
+      position: absolute;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(226, 62, 68, 0.04) 0%, rgba(247, 244, 237, 0) 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .glow-1 { top: -100px; left: -200px; }
+    .glow-2 { top: 800px; right: -250px; }
+    .glow-3 { bottom: 300px; left: 15%; }
+
+    /* Hero Section - Luxurious & Airy */
+    .hero-builders {
+      padding: clamp(140px, 16vh, 200px) 0 80px 0;
+      position: relative;
+      z-index: 1;
+      background: var(--cream);
+    }
+    .hero-builders-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .hero-builders-text {
+      padding-right: 20px;
+    }
+    .hero-builders-tag {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: var(--red);
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+    .hero-builders-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(38px, 4.5vw, 64px);
+      font-weight: 300;
+      line-height: 1.1;
+      margin: 0 0 24px 0;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+    }
+    .hero-builders-title em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--red);
+    }
+    .hero-builders-desc {
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--gray);
+      margin-bottom: 24px;
+      font-weight: 300;
+    }
+    .hero-builders-desc strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+    .hero-builders-cta {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+
+    /* Hero Visual Panel - Light Framed Image */
+    .hero-builders-visual {
+      background: linear-gradient(180deg, var(--cream-light) 0%, var(--cream-dark) 100%);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 12px;
+      box-shadow: var(--shadow-md);
+      aspect-ratio: 1/1;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-builders-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+
+    /* Concerns Section */
+    .pains-section {
+      padding: 100px 0;
+      background: #fff;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      z-index: 1;
+    }
+    .section-intro {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 60px;
+      padding: 0 40px;
+    }
+    .section-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--red);
+      margin-bottom: 16px;
+      display: inline-block;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 3.8vw, 48px);
+      font-weight: 300;
+      line-height: 1.2;
+      margin: 0 0 16px 0;
+      color: var(--ink);
+    }
+    .section-title em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--red);
+    }
+    .section-desc {
+      font-size: 15.5px;
+      line-height: 1.7;
+      color: var(--gray);
+      font-weight: 300;
+    }
+
+    .pains-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 40px;
+      box-sizing: border-box;
+    }
+    .pain-card {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--red);
+      border-radius: 20px;
+      padding: 36px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+    }
+    .pain-card:hover {
+      border-color: var(--border-strong);
+      border-left-color: var(--red);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+    .pain-q {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 19px;
+      font-style: italic;
+      color: var(--ink);
+      margin-bottom: 16px;
+      line-height: 1.4;
+      display: flex;
+      gap: 12px;
+    }
+    .pain-q::before {
+      content: '✕';
+      color: var(--red);
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      margin-top: 2px;
+    }
+    .pain-a {
+      font-size: 13.5px;
+      color: var(--gray);
+      line-height: 1.65;
+      font-weight: 300;
+      padding-left: 20px;
+    }
+    .pain-a strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+    .pain-a::before {
+      content: '✓';
+      color: #10b981;
+      font-weight: 700;
+      margin-right: 8px;
+    }
+
+    /* Advantages Section */
+    .atouts-section {
+      padding: 100px 0;
+      position: relative;
+      z-index: 1;
+      background: var(--cream);
+    }
+    .atouts-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      box-sizing: border-box;
+    }
+    .atout-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 48px 36px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .atout-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--red);
+      box-shadow: var(--shadow-lg);
+    }
+    .atout-icon {
+      width: 72px; height: 72px;
+      background: var(--red-soft);
+      border: 1px solid rgba(226,62,68,0.15);
+      border-radius: 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 28px;
+      color: var(--red);
+      transition: all 0.3s ease;
+    }
+    .atout-card:hover .atout-icon {
+      background: var(--red);
+      color: white;
+      transform: scale(1.05);
+    }
+    .atout-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+    .atout-card h3 em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--red);
+    }
+    .atout-card p {
+      font-size: 13.5px;
+      color: var(--gray);
+      line-height: 1.7;
+      margin: 0;
+      font-weight: 300;
+    }
+
+    /* Certified Partner Program Advantages */
+    .partner-section {
+      padding: 100px 0;
+      background: #fff;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      z-index: 1;
+    }
+    .partner-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      box-sizing: border-box;
+    }
+    .partner-card {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 36px 30px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+    }
+    .partner-card:hover {
+      border-color: var(--border-strong);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+    .partner-card-icon {
+      font-size: 24px;
+      width: 48px; height: 48px;
+      background: var(--red-soft);
+      border: 1px solid rgba(226,62,68,0.12);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .partner-card h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 19px;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+    .partner-card h4 em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--red);
+    }
+    .partner-card p {
+      font-size: 13px;
+      color: var(--gray);
+      line-height: 1.65;
+      margin: 0;
+      font-weight: 300;
+    }
+    .partner-card p strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    /* 4-Step Process Section - Clean Connected Timeline */
+    .process-section {
+      padding: 100px 0;
+      position: relative;
+      z-index: 1;
+      background: var(--cream);
+    }
+    .process-timeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      box-sizing: border-box;
+      position: relative;
+    }
+    .process-timeline::before {
+      content: '';
+      position: absolute;
+      top: 58px; left: 60px; right: 60px;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(226,62,68,0) 0%, rgba(226,62,68,0.3) 15%, rgba(226,62,68,0.3) 85%, rgba(226,62,68,0) 100%);
+      z-index: 0;
+    }
+    .process-step {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+    .process-num-wrap {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: var(--red);
+      border: 1px solid var(--red);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      box-shadow: 0 6px 16px rgba(226,62,68,0.2);
+      transition: all 0.3s ease;
+    }
+    .process-step:hover .process-num-wrap {
+      box-shadow: 0 8px 22px rgba(226,62,68,0.35);
+      transform: scale(1.05);
+    }
+    .process-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 500;
+      color: white;
+    }
+    .process-step h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 12px;
+    }
+    .process-step p {
+      font-size: 13px;
+      color: var(--gray);
+      line-height: 1.6;
+      margin-bottom: 16px;
+      font-weight: 300;
+    }
+    .step-duration {
+      display: inline-block;
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--red);
+      background: rgba(226,62,68,0.06);
+      border: 1px solid rgba(226,62,68,0.12);
+      padding: 4px 10px;
+      border-radius: 100px;
+    }
+
+    /* Testimonial Section */
+    .testim-section {
+      padding: 100px 0;
+      background: #fff;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      z-index: 1;
+    }
+    .testim-card {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px;
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      box-shadow: var(--shadow-sm);
+      box-sizing: border-box;
+      position: relative;
+    }
+    .testim-card::before {
+      content: '“';
+      position: absolute;
+      top: 20px; left: 40px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 140px;
+      color: rgba(226,62,68,0.08);
+      line-height: 1;
+    }
+    .testim-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(20px, 2.8vw, 26px);
+      font-style: italic;
+      color: var(--ink-soft);
+      line-height: 1.55;
+      margin-bottom: 32px;
+      position: relative;
+      z-index: 1;
+    }
+    .testim-author {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+    }
+    .testim-author-avatar {
+      width: 60px; height: 60px;
+      border-radius: 50%;
+      background: var(--red-soft);
+      border: 1px solid rgba(226,62,68,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .testim-author-info {
+      font-size: 13px;
+      color: var(--gray);
+    }
+    .testim-author-info strong {
+      display: block;
+      color: var(--ink);
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    /* Resources Dashboard (Espace Pro) */
+    .espace-pro-section {
+      padding: 100px 0;
+      position: relative;
+      z-index: 1;
+      background: var(--cream);
+    }
+    .download-groups {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+    }
+    .download-group {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: var(--shadow-sm);
+    }
+    .download-group-head {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    .download-group-icon {
+      font-size: 20px;
+      width: 44px; height: 44px;
+      background: var(--red-soft);
+      border: 1px solid rgba(226,62,68,0.12);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .download-group h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--ink);
+      margin: 0;
+    }
+    
+    .download-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .download-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 20px;
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      color: var(--ink);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+      text-align: left;
+      width: 100%;
+    }
+    .download-item:hover {
+      background: var(--cream-dark);
+      border-color: var(--border-strong);
+      transform: translateX(4px);
+    }
+    .download-icon {
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+    .download-info {
+      flex: 1;
+      min-width: 0;
+    }
+    .download-label {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.4;
+      display: block;
+    }
+    .download-meta {
+      font-size: 11px;
+      color: #a8740e;
+      margin-top: 3px;
+      font-weight: 600;
+      display: block;
+      letter-spacing: 0.05em;
+    }
+    .download-arrow {
+      color: var(--red);
+      font-size: 16px;
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+    .download-item:hover .download-arrow {
+      transform: translateX(3px);
+    }
+
+    /* Product Guides Layout */
+    .product-cols {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .product-col {
+      background: var(--cream-light);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .product-col-head {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      padding: 0 4px 12px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 4px;
+    }
+    .product-col-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--ink);
+    }
+    .product-col-desc {
+      font-size: 9px;
+      color: var(--gray);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .product-col .download-item {
+      background: #fff;
+    }
+
+    /* Bottom CTA Section */
+    .cta-esc-section {
+      padding: 100px 0;
+      position: relative;
+      z-index: 1;
+      background: #fff;
+    }
+    .cta-esc-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      box-sizing: border-box;
+    }
+    .cta-esc-card {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 44px 32px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .cta-esc-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--red);
+      box-shadow: var(--shadow-lg);
+    }
+    .cta-esc-card--primary {
+      background: var(--ink);
+      border-color: var(--ink);
+    }
+    .cta-esc-card--primary:hover {
+      background: var(--ink-soft);
+      border-color: var(--red);
+    }
+    .cta-esc-icon {
+      font-size: 28px;
+      width: 56px; height: 56px;
+      background: var(--red-soft);
+      border: 1px solid rgba(226,62,68,0.12);
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 24px;
+    }
+    .cta-esc-card--primary .cta-esc-icon {
+      background: rgba(226,62,68,0.25);
+      border-color: rgba(226,62,68,0.4);
+      color: white;
+    }
+    .cta-esc-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 21px;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 12px;
+    }
+    .cta-esc-card--primary .cta-esc-title {
+      color: var(--cream);
+    }
+    .cta-esc-desc {
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: var(--gray);
+      margin-bottom: 28px;
+      flex: 1;
+      font-weight: 300;
+    }
+    .cta-esc-card--primary .cta-esc-desc {
+      color: rgba(247,244,237,0.75);
+    }
+    .cta-esc-btn {
+      display: inline-block;
+      padding: 12px 28px;
+      border-radius: 100px;
+      background: var(--red);
+      border: 1px solid var(--red);
+      color: white;
+      font-size: 13px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .cta-esc-card:hover .cta-esc-btn {
+      background: var(--ink);
+      color: var(--cream);
+      border-color: var(--ink);
+    }
+    .cta-esc-card--primary .cta-esc-btn {
+      background: white;
+      color: var(--ink);
+      border-color: white;
+    }
+    .cta-esc-card--primary:hover .cta-esc-btn {
+      background: var(--red);
+      color: white;
+      border-color: var(--red);
+    }
+
+    /* Responsive adjusts */
+    @media (max-width: 1200px) {
+      .hero-builders-inner { grid-template-columns: 1fr; gap: 50px; text-align: center; }
+      .hero-builders-text { padding-right: 0; }
+      .hero-builders-cta { justify-content: center; }
+      .hero-builders-visual { max-width: 600px; margin: 0 auto; }
+      .partner-grid { grid-template-columns: repeat(2, 1fr); }
+      .process-timeline { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+      .process-timeline::before { display: none; }
+    }
+    @media (max-width: 900px) {
+      .pains-grid { grid-template-columns: 1fr; }
+      .atouts-grid { grid-template-columns: 1fr; }
+      .download-list { grid-template-columns: 1fr; }
+      .product-cols { grid-template-columns: 1fr; }
+      .cta-esc-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .partner-grid { grid-template-columns: 1fr; }
+      .process-timeline { grid-template-columns: 1fr; }
+      .testim-card { padding: 40px 24px; }
+      .download-group { padding: 24px; }
+    }
+
+    /* CTA Section styling */
+    .cta-cert-section {
+      max-width: 1400px;
+      margin: 0 auto 120px;
+      padding: 80px 40px 0;
+      box-sizing: border-box;
+    }
+    .cta-cert-card {
+      background: var(--ink);
+      border: 1px solid var(--ink);
+      border-radius: 32px;
+      padding: clamp(60px, 8vw, 90px) clamp(40px, 6vw, 80px);
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+    .cta-cert-card::after {
+      content: '';
+      position: absolute;
+      right: 0; bottom: 0;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(226, 62, 68, 0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cta-cert-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 300;
+      color: var(--cream);
+      margin: 0 0 20px 0;
+      line-height: 1.15;
+    }
+    .cta-cert-desc {
+      font-size: 15px;
+      line-height: 1.75;
+      color: rgba(247,244,237,0.75);
+      margin: 0;
+      font-weight: 300;
+      max-width: 720px;
+    }
+    .cta-cert-action {
+      justify-self: end;
+    }
+    .btn-circle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 18px 40px;
+      background: var(--red);
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      border-radius: 100px;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 10px 30px rgba(226, 62, 68, 0.2);
+    }
+    .btn-circle:hover {
+      background: white;
+      color: black;
+      transform: translateY(-2px);
+      box-shadow: 0 15px 35px rgba(255,255,255,0.25);
+    }
+  </style>
+</head>
+<body data-base="../../">
+
+<div class="glow-ambient glow-1"></div>
+<div class="glow-ambient glow-2"></div>
+<div class="glow-ambient glow-3"></div>
+
+<header class="nav" data-include="nav"></header>
+
+<!-- 1. HERO -->
+<section class="hero-builders">
+  <div class="hero-builders-inner">
+    <div class="hero-builders-text">
+      <span class="hero-builders-tag">Per costruttori și antreprenori</span>
+      <h1 class="hero-builders-title">Știți să montați gips-carton? <br><em>Știți să construiți con Polistibrick.</em></h1>
+      <p class="hero-builders-desc">Este un <strong>cassero clasic</strong>: îl măsurați, îl tăiați, îl fixați — exact ca orice alt sistem de cassero. Singura regulă pe șantier: <strong>precizie la măsurători</strong> și să nu tăiați panoul cu 5 cm prea scurt. Restul este montaj ghidat.</p>
+      <p class="hero-builders-desc">Datorită sistemului structural 5-în-1, <strong>o singură echipă face munca a 5 meserii</strong> (structură, isolamento, etanșare, acusticoooă și finisaje). Marjele operaționale pot ajunge la <strong>50%</strong> pe proiect, recuperând valoarea anterior subcontractată.</p>
+      
+      <div class="hero-builders-cta">
+        <a href="#programme" class="btn btn-primary btn-arrow">Descoperiți programul partener</a>
+        <a href="../../devenir-partenaire/" class="btn btn-ghost">Aplicați acum</a>
+      </div>
+    </div>
+    
+    <div class="hero-builders-visual">
+      <img src="../../images/personas/pour-constructeur.jpg" alt="Șantier Polistibrick: turnare calcestruzzo într-un lot de case" loading="eager">
+    </div>
+  </div>
+</section>
+
+<!-- 2. PROBLÈMES / INQUIÉTUDES -->
+<section class="pains-section">
+  <div class="section-intro">
+    <span class="section-eyebrow">Preocupările de pe șantier</span>
+    <h2 class="section-title">Ce vă reține să adoptați <em>un procedeu nou.</em></h2>
+    <p class="section-desc">Am conceput programul nostru pentru a elimina riscurile inerente adoptării unui sistem constructiv inovator.</p>
+  </div>
+
+  <div class="pains-grid">
+    <div class="pain-card">
+      <h3 class="pain-q">« Mi-e teamă să pierd bani până învață echipa. »</h3>
+      <p class="pain-a">Formare tehnică de <strong>2–3 giorni gratuită în fabrică</strong> + <strong>asistență tehnică directă pe primul șantier</strong>. Squadra este productivă din prima giorno de montaj.</p>
+    </div>
+    
+    <div class="pain-card">
+      <h3 class="pain-q">« Dacă apare o problemă, rămân singur față de beneficiar. »</h3>
+      <p class="pain-a">Inginerii noștri structurali <strong>răspund în 24 de ore</strong> la orice întrebare tehnică. Garanția decenală clasică acoperă lucrările, susținută de garanția producătorului Polistibrick.</p>
+    </div>
+    
+    <div class="pain-card">
+      <h3 class="pain-q">« Întârzierile de livrare pe șantier mă vor costa scump. »</h3>
+      <p class="pain-a">Cu cele 2 fabrici de producție, expediem structura completoooa a unei case în <strong>1–2 camioane</strong>. Termenele sunt ferme și garantate contractual.</p>
+    </div>
+    
+    <div class="pain-card">
+      <h3 class="pain-q">« Cum conving clienții și găsesc proiecte noi? »</h3>
+      <p class="pain-a">Vă <strong>transmitem lead-uri calificate</strong> de la arhitecți și proprietari din județul dumneavoastră. Beneficiați și de co-branding pe materialele noastre regionale.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 3. ATOUTS UNIQUES -->
+<section class="atouts-section">
+  <div class="section-intro">
+    <span class="section-eyebrow">Performanță și marje</span>
+    <h2 class="section-title">Ce schimbă <em>performanța financiară.</em></h2>
+  </div>
+
+  <div class="atouts-grid">
+    <!-- Atout 1: Marges -->
+    <article class="atout-card">
+      <div class="atout-icon">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 2" opacity="0.4"/>
+          <path d="M12 21L16 17L19 20L23 15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <polyline points="20,15 23,15 23,18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M10 11H22" stroke="currentColor" stroke-width="1.2" opacity="0.5"/>
+        </svg>
+      </div>
+      <h3>Marje <em>până la 50%</em></h3>
+      <p>Integrați în structura proprie valoarea adăugată a isolamentoi exterioare, finisajelor și acusticoooii. Maximizați câștigul pe metru pătrat costruito.</p>
+    </article>
+
+    <!-- Atout 2: Vitesse -->
+    <article class="atout-card">
+      <div class="atout-icon">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M13 6L21 14L11 16L19 26" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+        </svg>
+      </div>
+      <h3>Structură în <em>4–6 settimane</em></h3>
+      <p>Esecuzione de 2–3 ori mai rapidă decât zidăria tradițională. Enchideți mai multe proiecte pe anno fără a mări echipele.</p>
+    </article>
+
+    <!-- Atout 3: Fiabilité -->
+    <article class="atout-card">
+      <div class="atout-icon">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 8V24M8 16H24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+          <rect x="6" y="6" width="20" height="20" rx="4" stroke="currentColor" stroke-width="1.8"/>
+        </svg>
+      </div>
+      <h3>Zero incidente, <em>zero stres</em></h3>
+      <p>Tehnologie solidă de calcestruzzo armat turnat în cassero izolant calibrat dalla fabbrica. Riscurile de tăiere greșită și defecte termice sunt eliminate.</p>
+    </article>
+  </div>
+</section>
+
+<!-- 4. PROGRAMME PARTENAIRE -->
+<section class="partner-section" id="programme">
+  <div class="section-intro">
+    <span class="section-eyebrow">Sprijin și creștere</span>
+    <h2 class="section-title">Deveniți <em>Constructor Certificat Polistibrick.</em></h2>
+    <p class="section-desc">Un parteneriat axat pe formarea echipelor și accesul la piețe noi.</p>
+  </div>
+
+  <div class="partner-grid">
+    <div class="partner-card">
+      <div class="partner-card-icon">🎓</div>
+      <h4>Formare certificată <em>gratuită</em></h4>
+      <p>2–3 giorni intensive în fabricile noastre. Practică reală de montaj și tăiere panouri. Certificare oficială constructor.</p>
+    </div>
+    
+    <div class="partner-card">
+      <div class="partner-card-icon">🛠️</div>
+      <h4>Suport <em>pe șantiere</em></h4>
+      <p>Un tehnician de aplicare vă însoțește la prima punere în operă pentru validarea calepinajului și turnării calcestruzzoului.</p>
+    </div>
+    
+    <div class="partner-card">
+      <div class="partner-card-icon">📞</div>
+      <h4>Lead-uri clienți <em>directe</em></h4>
+      <p>Redirecționăm cererile de ofertă geolocalizate de la proprietari și dezvoltatori din regiunea dumneavoastră direct către firma dumneavoastră.</p>
+    </div>
+    
+    <div class="partner-card">
+      <div class="partner-card-icon">🏆</div>
+      <h4>Co-branding <em>regional</em></h4>
+      <p>Promovarea șantierelor pe materialele noastre naționale pentru a consolida reputația de constructor pasiv premium.</p>
+    </div>
+    
+    <div class="partner-card">
+      <div class="partner-card-icon">📋</div>
+      <h4>Tarife și <em>condiții preferențiale</em></h4>
+      <p>Reduceri comerciale dedicate și termene de aprovizionare rezervate pentru securizarea rentabilității ofertelor.</p>
+    </div>
+    
+    <div class="partner-card">
+      <div class="partner-card-icon">🚚</div>
+      <h4>Logistică <em>prioritară</em></h4>
+      <p>Comengiorni din fabrică sunt procesate prioritar pentru livrare conform planificării exacte a șantierului.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 5. PROCESS TIMELINE -->
+<section class="process-section">
+  <div class="section-intro">
+    <span class="section-eyebrow">Parcursul parteneriatului</span>
+    <h2 class="section-title">În 4 pași clari spre <em>certificarea Polistibrick.</em></h2>
+  </div>
+
+  <div class="process-timeline">
+    <div class="process-step">
+      <div class="process-num-wrap">
+        <span class="process-num">1</span>
+      </div>
+      <h4>Candidatură</h4>
+      <p>Completoooați formularul rapid de partener. Serviciul tehnic validează competențele.</p>
+      <span class="step-duration">În 48 de ore</span>
+    </div>
+    
+    <div class="process-step">
+      <div class="process-num-wrap">
+        <span class="process-num">2</span>
+      </div>
+      <h4>Imersiune fabrică</h4>
+      <p>Vizitați unul dintre centrele de producție pentru a descoperi fabricarea automatizată a sistemelor.</p>
+      <span class="step-duration">1 giorno</span>
+    </div>
+    
+    <div class="process-step">
+      <div class="process-num-wrap">
+        <span class="process-num">3</span>
+      </div>
+      <h4>Certificare</h4>
+      <p>Formare practică la calepinaj, etajare și turnare cu formatorii noștri de șantier.</p>
+      <span class="step-duration">2–3 giorni</span>
+    </div>
+    
+    <div class="process-step">
+      <div class="process-num-wrap">
+        <span class="process-num">4</span>
+      </div>
+      <h4>Primul șantier</h4>
+      <p>Începeți lucrările liniștit, cu prezența inginerului nostru de aplicare.</p>
+      <span class="step-duration">Suport Pro</span>
+    </div>
+  </div>
+</section>
+
+<!-- 6. TESTIMONIAL -->
+<section class="testim-section">
+  <div class="container">
+    <div class="testim-card">
+      <p class="testim-quote">La început, echipa avea rezerve despre învățarea unui sistem nou de panouri. Totuși, sprijinul tehnicianului lor pe primul nostru șantier a deblocat totul. Câștigul de timp este uriaș, finisajele impecabile, clienții încântați.</p>
+      <div class="testim-author">
+        <div class="testim-author-avatar">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="16" cy="12" r="6" stroke="var(--red)" stroke-width="1.5"/>
+            <path d="M6 26C6 21 10 18 16 18C22 18 26 21 26 26" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="testim-author-info">
+          <strong>Ion Popescu</strong>
+          Director execuție · Construct Pro SRL (Cluj)
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px;">
+      <a href="../../temoignages/" class="btn btn-ghost btn-arrow">Consultați testimonialele</a>
+    </div>
+  </div>
+</section>
+
+<!-- 7. CTA PARTENARIAT -->
+<section class="cta-cert-section" style="margin-top: 60px;">
+  <div class="cta-cert-card">
+    <div>
+      <h2 class="cta-cert-title">Gata să transformați șantierele?</h2>
+      <p class="cta-cert-desc">Deveniți Constructor Certificat Polistibrick. Accesați formările tehnice gratuite, beneficiați de lead-uri calificate în regiune și maximizați marjele operaționale.</p>
+    </div>
+    <div class="cta-cert-action">
+      <a href="../../devenir-partenaire/" class="btn-circle" style="white-space: nowrap;">
+        Diventa partner
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2.5 7H11.5M11.5 7L8 3.5M11.5 7L8 10.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" data-include="footer"></footer>
+
+<script src="../../assets/js/site.js"></script>
+</body>
+</html>

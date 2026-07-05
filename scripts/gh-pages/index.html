@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Polistibrick</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="fr/images/logo.png">
+<style>
+  html,body{margin:0;height:100%;background:#0f0e0c;color:#f7f4ed;
+    font-family:-apple-system,BlinkMacSystemFont,"Inter","Helvetica Neue",sans-serif;
+    display:flex;align-items:center;justify-content:center;-webkit-font-smoothing:antialiased}
+  .box{text-align:center;padding:24px}
+  .spin{width:36px;height:36px;border:3px solid rgba(255,255,255,.18);
+    border-top-color:#C8102E;border-radius:50%;margin:0 auto 20px;animation:s .8s linear infinite}
+  @keyframes s{to{transform:rotate(360deg)}}
+  .t{font-size:15px;letter-spacing:.02em;color:#cfcad0}
+  .manual{margin-top:24px;font-size:13px;color:#8b8b9a;opacity:0;transition:opacity .4s ease}
+  .manual.show{opacity:1}
+  .manual a{color:#C8102E;text-decoration:none;font-weight:600}
+  .manual a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+  <div class="box">
+    <div class="spin" aria-hidden="true"></div>
+    <div class="t">Polistibrick…</div>
+    <div class="manual" id="manual">
+      Pas redirigé&nbsp;? <a href="fr/">Continuer vers le site →</a>
+    </div>
+    <noscript><p style="margin-top:16px"><a href="fr/" style="color:#C8102E">Entrer sur le site →</a></p></noscript>
+  </div>
+<script>
+(function(){
+  // Pays dont le site est EN LIGNE (ajouter ici quand un nouveau pays est déployé).
+  var AVAILABLE = { fr:'fr/', ro:'ro/' };
+  var DEFAULT = 'fr/';
+  // Code pays ISO (géo IP) -> dossier de site souhaité.
+  var MAP = {
+    FR:'fr', BE:'fr', LU:'fr', MC:'fr', CH:'fr',
+    RO:'ro', MD:'ro',
+    GB:'en', IE:'en', US:'en',
+    IT:'it', ES:'es', DE:'de', AT:'de', NL:'nl'
+  };
+  var done=false;
+  function go(p){ if(done) return; done=true; location.replace(p); }
+  function decide(cc){
+    var key = MAP[(cc||'').toUpperCase()];
+    if (key && AVAILABLE[key]) return go(AVAILABLE[key]);
+    var lang = (navigator.language||'').slice(0,2).toLowerCase();
+    var byLang = ({fr:'fr',ro:'ro',en:'en',it:'it',es:'es',de:'de',nl:'nl'})[lang];
+    if (byLang && AVAILABLE[byLang]) return go(AVAILABLE[byLang]);
+    return go(DEFAULT);
+  }
+  // Preview GitHub Pages: redirect imediat, fără API geo (lent).
+  if (location.hostname.includes('github.io')) {
+    decide(null);
+    return;
+  }
+  // Sécurité : si la géo IP tarde trop, on décide quand même.
+  var t = setTimeout(function(){ decide(null); }, 2500);
+  // Lien manuel après un court instant.
+  setTimeout(function(){ var m=document.getElementById('manual'); if(m) m.className='manual show'; }, 1400);
+  fetch('https://ipapi.co/json/').then(function(r){return r.json();}).then(function(d){
+    clearTimeout(t); decide(d && d.country_code);
+  }).catch(function(){
+    fetch('https://ipwho.is/').then(function(r){return r.json();}).then(function(d){
+      clearTimeout(t); decide(d && d.country_code);
+    }).catch(function(){ clearTimeout(t); decide(null); });
+  });
+})();
+</script>
+</body>
+</html>
