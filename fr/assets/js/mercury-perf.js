@@ -1,5 +1,5 @@
 /**
- * Homepage media: hero poster-first, lazy below-fold videos, staggered montaj.
+ * Homepage media: ZURU-style poster-first hero, lazy below-fold videos.
  */
 (function () {
   'use strict';
@@ -12,10 +12,32 @@
 
   function schedule(fn) {
     if (window.requestIdleCallback) {
-      window.requestIdleCallback(fn, { timeout: 800 });
+      window.requestIdleCallback(fn, { timeout: 400 });
     } else {
-      setTimeout(fn, 150);
+      setTimeout(fn, 80);
     }
+  }
+
+  function pickHeroUrls(video) {
+    var desktop = video.dataset.srcDesktop;
+    var mobile = video.dataset.srcMobile;
+    var desktopWebm = video.dataset.srcDesktopWebm;
+    var mobileWebm = video.dataset.srcMobileWebm;
+    if (isMobile()) {
+      return {
+        mp4: mobile,
+        webm: mobileWebm && canPlayWebm() ? mobileWebm : null
+      };
+    }
+    return {
+      mp4: desktop,
+      webm: desktopWebm && canPlayWebm() ? desktopWebm : null
+    };
+  }
+
+  function canPlayWebm() {
+    var v = document.createElement('video');
+    return v.canPlayType('video/webm; codecs="vp9"') !== '';
   }
 
   function bootHero() {
@@ -23,13 +45,22 @@
     if (!video || video.dataset.booted === '1') return;
     video.dataset.booted = '1';
 
-    var url = isMobile() ? video.dataset.srcMobile : video.dataset.srcDesktop;
-    if (!url) return;
+    var urls = pickHeroUrls(video);
+    if (!urls.mp4 && !urls.webm) return;
 
-    var source = document.createElement('source');
-    source.src = url;
-    source.type = 'video/mp4';
-    video.appendChild(source);
+    if (urls.webm) {
+      var webm = document.createElement('source');
+      webm.src = urls.webm;
+      webm.type = 'video/webm';
+      video.appendChild(webm);
+    }
+    if (urls.mp4) {
+      var mp4 = document.createElement('source');
+      mp4.src = urls.mp4;
+      mp4.type = 'video/mp4';
+      video.appendChild(mp4);
+    }
+
     video.load();
 
     function reveal() {

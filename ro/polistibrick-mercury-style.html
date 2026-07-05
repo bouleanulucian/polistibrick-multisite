@@ -3545,6 +3545,10 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   .hero-bg video.hero-bg-video.is-playing {
     opacity: 1;
   }
+  .hero-bg.is-video-playing .hero-bg-poster {
+    opacity: 0;
+    transition: opacity 0.45s ease;
+  }
   /* Scrim — întunecat progresiv la scroll (JS: --hero-progress 0→1) */
   .hero-bg-scrim {
     display: block;
@@ -3889,7 +3893,9 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     <video id="heroVideo" class="hero-bg-video" muted loop playsinline preload="none"
            poster="images/hero/hero-house-1.webp"
            data-src-desktop="images/hero/hero-houses-reel-desktop.mp4"
-           data-src-mobile="images/hero/hero-houses-reel-mobile.mp4"></video>
+           data-src-mobile="images/hero/hero-houses-reel-mobile.mp4"
+           data-src-desktop-webm="images/hero/hero-houses-reel-desktop.webm"
+           data-src-mobile-webm="images/hero/hero-houses-reel-mobile.webm"></video>
     <div class="hero-bg-scrim"></div>
   </div>
   <h1 class="hero-teaser text-stilizat"><span class="hero-teaser-line">O tehnologie</span><span class="hero-teaser-line">cu 5 avantaje</span></h1>
@@ -7852,7 +7858,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   </a>
 </div>
 
-<script src="assets/js/mercury-perf.js?v=4" defer></script>
+<script src="assets/js/mercury-perf.js?v=5" defer></script>
 
 </body>
 </html>
