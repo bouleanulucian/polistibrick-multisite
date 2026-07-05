@@ -12,7 +12,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=Manrope:wght@600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=Manrope:wght@600&display=swap"></noscript>
-<link rel="preload" as="image" href="images/hero/hero-house-1.webp" type="image/webp">
+<link rel="preload" as="image" href="images/hero/hero-house-1.webp" type="image/webp" fetchpriority="high">
+<link rel="preload" as="video" href="images/hero/hero-houses-reel-mobile.mp4" type="video/mp4" media="(max-width: 809px)">
+<link rel="preload" as="video" href="images/hero/hero-houses-reel-desktop.mp4" type="video/mp4" media="(min-width: 810px)">
 <style>
   :root {
     --cream: #F7F4ED;
@@ -3524,29 +3526,10 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     object-fit: cover;
     object-position: center;
   }
-  .hero-bg-poster {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    transition: opacity 0.55s ease;
-  }
-  .hero-bg-poster img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-  }
   .hero-bg video.hero-bg-video {
     z-index: 1;
-    opacity: 0;
-    transition: opacity 0.55s ease;
-  }
-  .hero-bg video.hero-bg-video.is-playing {
     opacity: 1;
-  }
-  .hero-bg.is-video-playing .hero-bg-poster {
-    opacity: 0;
+    background: #14120F;
   }
   /* Scrim — întunecat progresiv la scroll (JS: --hero-progress 0→1) */
   .hero-bg-scrim {
@@ -3887,10 +3870,6 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
 <div class="hero-scroll-track" id="heroScrollTrack">
 <section class="hero hero--photo" id="heroSection">
   <div class="hero-bg" aria-hidden="true">
-    <picture class="hero-bg-poster">
-      <source type="image/webp" srcset="images/hero/hero-house-1.webp">
-      <img src="images/hero/hero-house-1.jpg" alt="" width="1920" height="1080" decoding="async" fetchpriority="high">
-    </picture>
     <video id="heroVideo" class="hero-bg-video" muted loop playsinline autoplay preload="auto"
            poster="images/hero/hero-house-1.webp">
       <source src="images/hero/hero-houses-reel-mobile.mp4" media="(max-width: 809px)" type="video/mp4">
@@ -3917,24 +3896,6 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     </div>
   </div>
 </section>
-<script>
-(function () {
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var v = document.getElementById('heroVideo');
-  var bg = v && v.closest('.hero-bg');
-  if (!v || !bg) return;
-  function revealVideo() {
-    v.classList.add('is-playing');
-    bg.classList.add('is-video-playing');
-  }
-  v.addEventListener('playing', revealVideo);
-  if (!v.paused && v.currentTime > 0) revealVideo();
-  else {
-    var p = v.play();
-    if (p && p.then) p.then(revealVideo).catch(function () {});
-  }
-})();
-</script>
 </div>
 
 <!-- MORPH — un seul système, toutes les architectures (vidéo full-bleed, texte superposé) -->
