@@ -3889,9 +3889,11 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
       <source type="image/webp" srcset="images/hero/hero-house-1.webp">
       <img src="images/hero/hero-house-1.jpg" alt="" width="1920" height="1080" decoding="async" fetchpriority="high">
     </picture>
-    <video id="heroVideo" class="hero-bg-video" muted loop playsinline preload="none"
-           data-src-desktop="images/hero/hero-houses-reel-desktop.mp4"
-           data-src-mobile="images/hero/hero-houses-reel-mobile.mp4"></video>
+    <video id="heroVideo" class="hero-bg-video" muted loop playsinline autoplay preload="auto"
+           poster="images/hero/hero-house-1.webp">
+      <source src="images/hero/hero-houses-reel-mobile.mp4" media="(max-width: 809px)" type="video/mp4">
+      <source src="images/hero/hero-houses-reel-desktop.mp4" type="video/mp4">
+    </video>
     <div class="hero-bg-scrim"></div>
   </div>
   <h1 class="hero-teaser text-stilizat"><span class="hero-teaser-line">O tehnologie</span><span class="hero-teaser-line">cu 5 avantaje</span></h1>
@@ -3912,6 +3914,24 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     </div>
   </div>
 </section>
+<script>
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var v = document.getElementById('heroVideo');
+  var bg = v && v.closest('.hero-bg');
+  if (!v || !bg) return;
+  function revealVideo() {
+    v.classList.add('is-playing');
+    bg.classList.add('is-video-playing');
+  }
+  v.addEventListener('playing', revealVideo);
+  if (!v.paused && v.currentTime > 0) revealVideo();
+  else {
+    var p = v.play();
+    if (p && p.then) p.then(revealVideo).catch(function () {});
+  }
+})();
+</script>
 </div>
 
 <!-- MORPH — un seul système, toutes les architectures (vidéo full-bleed, texte superposé) -->
