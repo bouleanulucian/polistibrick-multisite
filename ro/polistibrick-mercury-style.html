@@ -2941,7 +2941,8 @@
      Override per-element font sizes to fit content better on phones.
      Only applies to ≤768px — desktop unaffected. */
   @media (max-width: 768px) {
-    .hero h1 { font-size: clamp(22px, 5.5vw, 34px); line-height: 1.08; }
+    .hero:not(.hero--photo) h1,
+    .hero-full-content h1 { font-size: clamp(22px, 5.5vw, 34px); line-height: 1.08; }
     .hero-sub { font-size: 12.5px; line-height: 1.5; }
     .hero-eyebrow { font-size: 9.5px; }
     .hero-actions .btn { font-size: 12px; padding: 10px 16px; }
