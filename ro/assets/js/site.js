@@ -7,100 +7,109 @@
 
 (function () {
   const BASE = (function () {
-    // Determine path prefix back to root. Pages can override by setting
-    // <body data-base="/"> or similar. Default: compute from current depth.
-    const explicit = document.body.dataset.base;
-    if (explicit) return explicit;
-    const depth = (window.location.pathname.replace(/\/$/, '').match(/\//g) || []).length;
+    const explicit = document.body.getAttribute('data-base');
+    if (explicit !== null) return explicit;
+
+    const parts = window.location.pathname.split('/').filter(Boolean);
+    const countryFolders = ['ro', 'fr', 'it', 'es', 'nl', 'ie', 'en', 'de'];
+    const countryIdx = parts.findIndex(function (p) { return countryFolders.includes(p); });
+
+    // GitHub Pages preview: /user/repo/ro/oferta/ → depth from country folder
+    if (location.hostname.includes('github.io') && countryIdx >= 0) {
+      var depth = parts.length - countryIdx - 1;
+      return depth <= 0 ? '' : '../'.repeat(depth);
+    }
+
+    var depth = (window.location.pathname.replace(/\/$/, '').match(/\//g) || []).length;
     return depth <= 1 ? '' : '../'.repeat(depth - 1);
   })();
 
   const NAV_HTML = `
     <div class="nav-inner">
-      <a href="${BASE}" class="logo nav-logo" aria-label="{{ui.home_aria}}">
+      <a href="${BASE}" class="logo nav-logo" aria-label="Polistibrick — acasă">
         <img src="${BASE}images/logo.png" alt="Polistibrick" class="logo-img" loading="eager">
       </a>
       <div class="nav-cta">
         <!-- COUNTRY SWITCHER -->
         <div class="country-switcher" data-country-switcher>
-          <button class="country-switcher-trigger" type="button" aria-label="{{ui.cp_label}}" aria-expanded="false">
+          <button class="country-switcher-trigger" type="button" aria-label="Alege țara" aria-expanded="false">
             <span class="country-switcher-flag">🇷🇴</span>
             <span class="country-switcher-code">RO</span>
             <svg class="country-switcher-caret" viewBox="0 0 12 12" width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,5 6,8 9,5"/></svg>
           </button>
           <div class="country-switcher-panel" role="menu" aria-hidden="true">
-            <div class="country-switcher-header">{{ui.cp_eyebrow}}</div>
+            <div class="country-switcher-header">🌍 Alege țara ta</div>
             <a href="#" data-country="ro" data-domain="https://polistibrick.ro" data-folder="ro" class="country-switcher-item"><span class="flag">🇷🇴</span><span class="name">România</span><span class="domain">polistibrick.ro</span></a>
-            <a href="#" data-country="fr" data-domain="https://polistibrick.fr" data-folder="fr" class="country-switcher-item"><span class="flag">🇫🇷</span><span class="name">{{ui.country_fr}}</span><span class="domain">polistibrick.fr</span></a>
-            <a href="#" data-country="it" data-domain="https://polistibrick.it" data-folder="it" class="country-switcher-item"><span class="flag">🇮🇹</span><span class="name">{{ui.country_it}}</span><span class="domain">polistibrick.it</span></a>
-            <a href="#" data-country="es" data-domain="https://polistibrick.es" data-folder="es" class="country-switcher-item"><span class="flag">🇪🇸</span><span class="name">{{ui.country_es}}</span><span class="domain">polistibrick.es</span></a>
-            <a href="#" data-country="be" data-domain="https://polistibrick.be" data-folder="nl" class="country-switcher-item"><span class="flag">🇧🇪</span><span class="name">{{ui.country_be}}</span><span class="domain">polistibrick.be</span></a>
-            <a href="#" data-country="ie" data-domain="https://polistibrick.ie" data-folder="ie" class="country-switcher-item"><span class="flag">🇮🇪</span><span class="name">{{ui.country_ie}}</span><span class="domain">polistibrick.ie</span></a>
-            <a href="#" data-country="uk" data-domain="https://polistibrick.uk" data-folder="en" class="country-switcher-item"><span class="flag">🇬🇧</span><span class="name">{{ui.country_uk}}</span><span class="domain">polistibrick.uk</span></a>
-            <a href="#" data-country="ch" data-domain="https://polistibrick.com" data-folder="de" class="country-switcher-item"><span class="flag">🇨🇭</span><span class="name">{{ui.country_ch}}</span><span class="domain">polistibrick.com</span></a>
+            <a href="#" data-country="fr" data-domain="https://polistibrick.fr" data-folder="fr" class="country-switcher-item"><span class="flag">🇫🇷</span><span class="name">Franța</span><span class="domain">polistibrick.fr</span></a>
+            <a href="#" data-country="it" data-domain="https://polistibrick.it" data-folder="it" class="country-switcher-item"><span class="flag">🇮🇹</span><span class="name">Italia</span><span class="domain">polistibrick.it</span></a>
+            <a href="#" data-country="es" data-domain="https://polistibrick.es" data-folder="es" class="country-switcher-item"><span class="flag">🇪🇸</span><span class="name">Spania</span><span class="domain">polistibrick.es</span></a>
+            <a href="#" data-country="be" data-domain="https://polistibrick.be" data-folder="nl" class="country-switcher-item"><span class="flag">🇧🇪</span><span class="name">Belgia</span><span class="domain">polistibrick.be</span></a>
+            <a href="#" data-country="ie" data-domain="https://polistibrick.ie" data-folder="ie" class="country-switcher-item"><span class="flag">🇮🇪</span><span class="name">Irlanda</span><span class="domain">polistibrick.ie</span></a>
+            <a href="#" data-country="uk" data-domain="https://polistibrick.uk" data-folder="en" class="country-switcher-item"><span class="flag">🇬🇧</span><span class="name">Regatul Unit</span><span class="domain">polistibrick.uk</span></a>
+            <a href="#" data-country="ch" data-domain="https://polistibrick.com" data-folder="de" class="country-switcher-item"><span class="flag">🇨🇭</span><span class="name">Elveția</span><span class="domain">polistibrick.com</span></a>
           </div>
         </div>
-        <a href="${BASE}oferta/" class="btn btn-primary nav-cta-devis">{{ui.cere_oferta_court}} →</a>
-        <button class="nav-burger nav-toggle" type="button" aria-label="{{ui.nav_menu_aria}}" aria-expanded="false" aria-controls="navDrawerShared">
+        <a href="${BASE}oferta/" class="btn btn-primary nav-cta-devis">Ofertă gratuită →</a>
+        <button class="nav-burger nav-toggle" type="button" aria-label="Deschide meniul" aria-expanded="false" aria-controls="navDrawerShared">
           <span></span><span></span><span></span>
         </button>
       </div>
     </div>
 
     <div class="nav-drawer-overlay" data-nav-overlay aria-hidden="true"></div>
-    <aside class="nav-drawer" id="navDrawerShared" aria-label="{{ui.nav_drawer_aria}}" aria-hidden="true">
+    <aside class="nav-drawer" id="navDrawerShared" aria-label="Meniu navigare" aria-hidden="true">
       <div class="nav-drawer-group">
-        <button class="nav-drawer-title" aria-expanded="false">{{ui.produse}}<span class="nd-caret">▾</span></button>
+        <button class="nav-drawer-title" aria-expanded="false">Produse<span class="nd-caret">▾</span></button>
         <div class="nav-acc">
-          <a href="${BASE}produse/pereti-mbk/">{{ui.pereti_mbk}}</a>
-          <a href="${BASE}produse/planseu-pbk/">{{ui.planseu_pbk}}</a>
-          <a href="${BASE}produse/acoperis-tbk/">{{ui.acoperis_tbk}}</a>
+          <a href="${BASE}produse/pereti-mbk/">Pereți MBK</a>
+          <a href="${BASE}produse/planseu-pbk/">Planșee PBK</a>
+          <a href="${BASE}produse/acoperis-tbk/">Acoperiș TBK</a>
         </div>
       </div>
       <div class="nav-drawer-group">
-        <button class="nav-drawer-title" aria-expanded="false">{{ui.solutii}}<span class="nd-caret">▾</span></button>
+        <button class="nav-drawer-title" aria-expanded="false">Soluții<span class="nd-caret">▾</span></button>
         <div class="nav-acc">
-          <a href="${BASE}pentru/proprietari/">{{ui.pentru_proprietari}}</a>
-          <a href="${BASE}pentru/arhitecti/">{{ui.pentru_arhitecti}}</a>
-          <a href="${BASE}pentru/constructori/">{{ui.pentru_constructori}}</a>
-          <a href="${BASE}pentru/investitori/">{{ui.pentru_investitori}}</a>
-          <a href="${BASE}devino-partener/" class="partner-link">{{ui.devino_partener}}</a>
+          <a href="${BASE}pentru/proprietari/">Pentru proprietari</a>
+          <a href="${BASE}pentru/arhitecti/">Pentru arhitecți</a>
+          <a href="${BASE}pentru/constructori/">Pentru constructori</a>
+          <a href="${BASE}pentru/investitori/">Pentru investitori</a>
+          <a href="${BASE}devino-partener/" class="partner-link">→ Devino partener</a>
         </div>
       </div>
       <div class="nav-drawer-group">
-        <button class="nav-drawer-title" aria-expanded="false">{{ui.proiecte}}<span class="nd-caret">▾</span></button>
+        <button class="nav-drawer-title" aria-expanded="false">Proiecte<span class="nd-caret">▾</span></button>
         <div class="nav-acc">
-          <a href="${BASE}proiecte/">{{ui.case_construite}}</a>
-          <a href="${BASE}testimoniale/">{{ui.testimoniale}}</a>
+          <a href="${BASE}proiecte/">Case construite</a>
+          <a href="${BASE}testimoniale/">Testimoniale (video)</a>
         </div>
       </div>
       <div class="nav-drawer-group">
-        <button class="nav-drawer-title" aria-expanded="false">{{ui.calculator}}<span class="nd-caret">▾</span></button>
+        <button class="nav-drawer-title" aria-expanded="false">Calculator<span class="nd-caret">▾</span></button>
         <div class="nav-acc">
-          <a href="${BASE}calculator/">{{ui.calc_cost}}</a>
-          <a href="${BASE}economii/">{{ui.calc_econ}}</a>
+          <a href="${BASE}calculator/">Calculator cost</a>
+          <a href="${BASE}economii/">Calculator economii</a>
         </div>
       </div>
       <div class="nav-drawer-group">
-        <button class="nav-drawer-title" aria-expanded="false">{{ui.resurse}}<span class="nd-caret">▾</span></button>
+        <button class="nav-drawer-title" aria-expanded="false">Resurse<span class="nd-caret">▾</span></button>
         <div class="nav-acc">
-          <a href="${BASE}resurse/blog/">{{ui.blog}}</a>
-          <a href="${BASE}resurse/faq/">{{ui.faq}}</a>
+          <a href="${BASE}resurse/blog/">Articole</a>
+          <a href="${BASE}resurse/faq/">Întrebări frecvente</a>
         </div>
       </div>
       <div class="nav-drawer-group">
-        <button class="nav-drawer-title" aria-expanded="false">{{ui.despre}}<span class="nd-caret">▾</span></button>
+        <button class="nav-drawer-title" aria-expanded="false">Despre<span class="nd-caret">▾</span></button>
         <div class="nav-acc">
-          <a href="${BASE}despre/">{{ui.compania}}</a>
-          <a href="${BASE}despre/patent/">{{ui.patent}}</a>
-          <a href="${BASE}despre/certificari/">{{ui.certificari}}</a>
-          <a href="${BASE}despre/fabrici/">{{ui.fabrici}}</a>
-          <a href="${BASE}despre/echipa/">{{ui.echipa}}</a>
+          <a href="${BASE}despre/">Compania</a>
+          <a href="${BASE}despre/patent/">Patentul Polistibrick</a>
+          <a href="${BASE}despre/certificari/">Certificări</a>
+          <a href="${BASE}despre/fabrici/">Fabricile noastre</a>
+          <a href="${BASE}despre/echipa/">Echipa</a>
         </div>
       </div>
       <div class="nav-drawer-cta">
-        <a href="${BASE}contact/" class="btn btn-ghost">{{ui.contact}}</a>
-        <a href="${BASE}oferta/" class="btn btn-primary">{{ui.cere_oferta}}</a>
+        <a href="${BASE}contact/" class="btn btn-ghost">Contact</a>
+        <a href="${BASE}oferta/" class="btn btn-primary">Cere ofertă</a>
       </div>
     </aside>
   `;
@@ -112,53 +121,53 @@
           <a href="${BASE}" class="footer-logo">
             <img src="${BASE}images/logo.png" alt="Polistibrick" style="height:32px;">
           </a>
-          <p class="footer-brand-tagline">{{ui.footer_tagline}}</p>
+          <p class="footer-brand-tagline">Sistemul ICF brevetat pentru case pasive premium, fără facturi de energie. Fabricat în UE.</p>
         </div>
         <div class="footer-col">
-          <h5>{{ui.footer_h_produse}}</h5>
+          <h5>Produse</h5>
           <ul>
-            <li><a href="${BASE}produse/pereti-mbk/">{{ui.pereti_mbk}}</a></li>
-            <li><a href="${BASE}produse/planseu-pbk/">{{ui.planseu_pbk}}</a></li>
-            <li><a href="${BASE}produse/acoperis-tbk/">{{ui.acoperis_tbk}}</a></li>
+            <li><a href="${BASE}produse/pereti-mbk/">Pereți MBK</a></li>
+            <li><a href="${BASE}produse/planseu-pbk/">Planșee PBK</a></li>
+            <li><a href="${BASE}produse/acoperis-tbk/">Acoperiș TBK</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h5>{{ui.footer_h_solutii}}</h5>
+          <h5>Soluții</h5>
           <ul>
-            <li><a href="${BASE}pentru/proprietari/">{{ui.footer_proprietari}}</a></li>
-            <li><a href="${BASE}pentru/arhitecti/">{{ui.footer_arhitecti}}</a></li>
-            <li><a href="${BASE}pentru/constructori/">{{ui.footer_constructori}}</a></li>
-            <li><a href="${BASE}pentru/investitori/">{{ui.footer_investitori}}</a></li>
+            <li><a href="${BASE}pentru/proprietari/">Proprietari</a></li>
+            <li><a href="${BASE}pentru/arhitecti/">Arhitecți</a></li>
+            <li><a href="${BASE}pentru/constructori/">Constructori</a></li>
+            <li><a href="${BASE}pentru/investitori/">Investitori</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h5>{{ui.footer_h_resurse}}</h5>
+          <h5>Resurse</h5>
           <ul>
-            <li><a href="${BASE}proiecte/">{{ui.footer_proiecte_realizate}}</a></li>
-            <li><a href="${BASE}resurse/blog/">{{ui.blog}}</a></li>
-            <li><a href="${BASE}resurse/faq/">{{ui.faq}}</a></li>
-            <li><a href="${BASE}calculator/">{{ui.calc_cost}}</a></li>
+            <li><a href="${BASE}proiecte/">Proiecte realizate</a></li>
+            <li><a href="${BASE}resurse/blog/">Articole</a></li>
+            <li><a href="${BASE}resurse/faq/">Întrebări frecvente</a></li>
+            <li><a href="${BASE}calculator/">Calculator cost</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h5>{{ui.footer_h_companie}}</h5>
+          <h5>Companie</h5>
           <ul>
-            <li><a href="${BASE}despre/">{{ui.footer_despre_noi}}</a></li>
-            <li><a href="${BASE}despre/patent/">{{ui.patent}}</a></li>
-            <li><a href="${BASE}despre/certificari/">{{ui.certificari}}</a></li>
-            <li><a href="${BASE}despre/fabrici/">{{ui.fabrici}}</a></li>
-            <li><a href="${BASE}contact/">{{ui.contact}}</a></li>
+            <li><a href="${BASE}despre/">Despre noi</a></li>
+            <li><a href="${BASE}despre/patent/">Patentul Polistibrick</a></li>
+            <li><a href="${BASE}despre/certificari/">Certificări</a></li>
+            <li><a href="${BASE}despre/fabrici/">Fabricile noastre</a></li>
+            <li><a href="${BASE}contact/">Contact</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>{{ui.footer_copyright}}</span>
+        <span>© 2026 Polistibrick. Toate drepturile rezervate. Sistem brevetat.</span>
         <div class="footer-bottom-links">
-          <a href="${BASE}legal/mentiuni-legale/">{{ui.footer_mentions}}</a>
-          <a href="${BASE}legal/termeni/">{{ui.footer_termeni}}</a>
-          <a href="${BASE}legal/confidentialitate/">{{ui.footer_confidentialitate}}</a>
-          <a href="${BASE}legal/cookies/">{{ui.footer_cookies}}</a>
-          <a href="${BASE}legal/sustenabilitate/">{{ui.footer_sustenabilitate}}</a>
+          <a href="${BASE}legal/mentiuni-legale/">Mențiuni legale</a>
+          <a href="${BASE}legal/termeni/">Termeni</a>
+          <a href="${BASE}legal/confidentialitate/">Confidențialitate</a>
+          <a href="${BASE}legal/cookies/">Politică cookies</a>
+          <a href="${BASE}legal/sustenabilitate/">Sustenabilitate</a>
         </div>
       </div>
     </div>
@@ -175,15 +184,15 @@
     if (!document.querySelector('.mobile-contact-bar')) {
       const bar = document.createElement('div');
       bar.className = 'mobile-contact-bar';
-      bar.setAttribute('aria-label', '{{ui.mobile_contact_aria}}');
+      bar.setAttribute('aria-label', 'Contact rapid');
       bar.innerHTML =
-        '<a href="tel:+40371550550" class="mcb-btn mcb-call" aria-label="{{ui.mobile_call_aria}}">' +
+        '<a href="tel:+40371550550" class="mcb-btn mcb-call" aria-label="Sună Polistibrick">' +
           '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>' +
-          '<span>{{ui.mobile_call_label}}</span>' +
+          '<span>Sună</span>' +
         '</a>' +
-        '<a href="mailto:contact@polistibrick.ro" class="mcb-btn mcb-email" aria-label="{{ui.mobile_email_aria}}">' +
+        '<a href="mailto:contact@polistibrick.ro" class="mcb-btn mcb-email" aria-label="Trimite e-mail">' +
           '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>' +
-          '<span>{{ui.mobile_email_label}}</span>' +
+          '<span>E-mail</span>' +
         '</a>';
       document.body.appendChild(bar);
     }
@@ -433,26 +442,26 @@
     modal.className = 'country-picker';
     modal.setAttribute('role', 'dialog');
     modal.setAttribute('aria-modal', 'true');
-    modal.setAttribute('aria-label', '{{ui.cp_label}}');
+    modal.setAttribute('aria-label', 'Alege țara');
     modal.innerHTML = `
       <div class="country-picker-backdrop"></div>
       <div class="country-picker-panel">
-        <button class="country-picker-close" aria-label="{{ui.cp_close}}">×</button>
+        <button class="country-picker-close" aria-label="Închide">×</button>
         <div class="country-picker-header">
-          <span class="country-picker-eyebrow">{{ui.cp_eyebrow}}</span>
-          <h2 class="country-picker-title">{{ui.cp_title}} <em>{{ui.cp_title_em}}</em></h2>
-          <p class="country-picker-sub">{{ui.cp_sub}}</p>
+          <span class="country-picker-eyebrow">🌍 Alege țara ta</span>
+          <h2 class="country-picker-title">În ce țară <em>construiești?</em></h2>
+          <p class="country-picker-sub">Te redirecționăm la site-ul țării tale cu echipă locală, contact direct și ofertă în limba ta.</p>
         </div>
         <div class="country-picker-grid">
           ${Object.entries(POLISTIBRICK_COUNTRIES).map(([code, c]) => `
             <a href="${c.url}" class="country-picker-item ${code === detectedCountry ? 'is-detected' : ''}" data-country="${code}" target="_blank" rel="noopener">
               <span class="country-picker-flag">${c.flag}</span>
               <span class="country-picker-name">${c.name}</span>
-              ${code === detectedCountry ? '<span class="country-picker-tag">{{ui.cp_your_country}}</span>' : ''}
+              ${code === detectedCountry ? '<span class="country-picker-tag">★ Țara ta</span>' : ''}
             </a>
           `).join('')}
         </div>
-        <p class="country-picker-foot">{{ui.cp_foot}} <a href="mailto:info@polistibrick.eu">info@polistibrick.eu</a></p>
+        <p class="country-picker-foot">Țara ta nu e listată? Scrie-ne la <a href="mailto:info@polistibrick.eu">info@polistibrick.eu</a></p>
       </div>
     `;
     document.body.appendChild(modal);

@@ -20,18 +20,18 @@
   };
 
   const MSG = {
-    errPrivacy: '{{ui.form_err_privacy}}',
-    errRatingName: '{{ui.form_err_rating_name}}',
-    errVideo: '{{ui.form_err_video}}',
-    errReviewText: '{{ui.form_err_review_text}}',
-    errNetwork: '{{ui.form_err_network}}',
-    errSend: '{{ui.form_err_send}}',
-    loading: '{{ui.form_loading}}',
-    blockedNoKeyPrefix: '{{ui.form_blocked_no_key_prefix}}',
-    blockedNoKeySuffix: '{{ui.form_blocked_no_key_suffix}}',
-    blockedPreviewPrefix: '{{ui.form_blocked_preview_prefix}}',
-    blockedPreviewMid: '{{ui.form_blocked_preview_mid}}',
-    blockedUnavailable: '{{ui.form_blocked_unavailable}}',
+    errPrivacy: 'Acceptați politica de confidențialitate pentru a continua.',
+    errRatingName: 'Indicați cel puțin: o notă și numele / firma.',
+    errVideo: 'Adăugați videoclipul — sau alegeți « Text + poze ».',
+    errReviewText: 'Scrieți recenzia.',
+    errNetwork: 'Eroare de rețea. Încercați din nou peste câteva momente.',
+    errSend: 'Trimitere imposibilă. Reîncercați sau contactați-ne prin email.',
+    loading: 'Se trimite…',
+    blockedNoKeyPrefix: 'Adăugați cheia Web3Forms în _config.json (domeniu:',
+    blockedNoKeySuffix: '). Între timp:',
+    blockedPreviewPrefix: 'Previzualizare — trimiterea funcționează pe',
+    blockedPreviewMid: 'sau local (localhost). Contact:',
+    blockedUnavailable: 'Formular indisponibil. Contact:',
   };
 
   function resolved(str, fallback) {

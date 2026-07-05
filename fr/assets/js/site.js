@@ -7,11 +7,20 @@
 
 (function () {
   const BASE = (function () {
-    // Determine path prefix back to root. Pages can override by setting
-    // <body data-base="/"> or similar. Default: compute from current depth.
-    const explicit = document.body.dataset.base;
-    if (explicit) return explicit;
-    const depth = (window.location.pathname.replace(/\/$/, '').match(/\//g) || []).length;
+    const explicit = document.body.getAttribute('data-base');
+    if (explicit !== null) return explicit;
+
+    const parts = window.location.pathname.split('/').filter(Boolean);
+    const countryFolders = ['ro', 'fr', 'it', 'es', 'nl', 'ie', 'en', 'de'];
+    const countryIdx = parts.findIndex(function (p) { return countryFolders.includes(p); });
+
+    // GitHub Pages preview: /user/repo/ro/devis/ → depth from country folder
+    if (location.hostname.includes('github.io') && countryIdx >= 0) {
+      var depth = parts.length - countryIdx - 1;
+      return depth <= 0 ? '' : '../'.repeat(depth);
+    }
+
+    var depth = (window.location.pathname.replace(/\/$/, '').match(/\//g) || []).length;
     return depth <= 1 ? '' : '../'.repeat(depth - 1);
   })();
 
