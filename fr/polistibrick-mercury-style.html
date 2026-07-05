@@ -3558,7 +3558,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     left: 48px;
     z-index: 3;
     margin: 0;
-    max-width: min(calc(100vw - 96px), 420px);
+    max-width: none;
     font-family: 'Manrope', 'Manrope Placeholder', sans-serif;
     font-size: 60px;
     font-weight: 600;
@@ -3572,6 +3572,10 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     transform: translateY(calc(var(--hero-progress, 0) * -18px));
     transition: opacity 0.35s ease, transform 0.35s ease;
     pointer-events: none;
+  }
+  .hero-teaser-line {
+    display: block;
+    white-space: nowrap;
   }
   @media (min-width: 810px) and (max-width: 1199px) {
     .hero-teaser.text-stilizat,
