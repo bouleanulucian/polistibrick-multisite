@@ -3552,21 +3552,24 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   .hero-teaser {
     position: absolute;
     left: clamp(20px, 5vw, 64px);
-    bottom: clamp(52px, 11vh, 128px);
+    bottom: clamp(40px, 8vh, 112px);
     z-index: 3;
     margin: 0;
-    max-width: min(88vw, 720px);
-    font-family: var(--serif);
-    font-size: clamp(26px, 4.8vw, 54px);
-    font-weight: 400;
-    line-height: 1.06;
-    letter-spacing: -0.03em;
+    max-width: min(92vw, 920px);
+    font-family: var(--sans);
+    font-size: clamp(42px, 7.2vw, 96px);
+    font-weight: 600;
+    line-height: 0.92;
+    letter-spacing: -0.045em;
     color: #FFFFFF;
-    text-shadow: 0 2px 28px rgba(0, 0, 0, 0.55), 0 1px 6px rgba(0, 0, 0, 0.35);
+    text-shadow: 0 2px 32px rgba(0, 0, 0, 0.5), 0 1px 8px rgba(0, 0, 0, 0.35);
     opacity: calc(1 - min(var(--hero-progress, 0) * 2.2, 1));
     transform: translateY(calc(var(--hero-progress, 0) * -18px));
     transition: opacity 0.35s ease, transform 0.35s ease;
     pointer-events: none;
+  }
+  .hero-teaser-line {
+    display: block;
   }
   .hero-scroll-cue {
     position: absolute;
@@ -3805,7 +3808,12 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     .hero-full-content { padding-top: 68px; }
     .hero--photo .container { padding-bottom: 0; }
     .hero--photo .container > .hero-text-col { max-width: 100%; transform: none; }
-    .hero-teaser { font-size: clamp(22px, 6.5vw, 32px); bottom: clamp(44px, 12vh, 96px); }
+    .hero-teaser {
+      font-size: clamp(36px, 10.5vw, 56px);
+      line-height: 0.93;
+      bottom: clamp(28px, 7vh, 64px);
+      left: clamp(16px, 5vw, 28px);
+    }
     .hero--photo h1 { font-size: clamp(22px, 6.8vw, 30px); }
     .hero--photo .hero-robot-wrap {
       max-width: clamp(120px, 34vw, 168px);
@@ -3825,7 +3833,10 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     </video>
     <div class="hero-bg-scrim"></div>
   </div>
-  <p class="hero-teaser">Construisez plus de maisons.</p>
+  <p class="hero-teaser">
+    <span class="hero-teaser-line">Une technologie</span>
+    <span class="hero-teaser-line">avec 5 avantages premium</span>
+  </p>
   <div class="hero-scroll-cue" aria-hidden="true"></div>
   <div class="hero-full-content">
     <div class="container">
