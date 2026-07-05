@@ -1,10 +1,11 @@
 /**
- * Homepage media: ZURU-style poster-first hero, lazy below-fold videos.
+ * Homepage media — ZURU-style: poster-first, lazy MP4, one playing video at a time.
  */
 (function () {
   'use strict';
 
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var activeVideo = null;
 
   function isMobile() {
     return window.matchMedia('(max-width: 809px)').matches;
@@ -13,9 +14,9 @@
   function schedule(fn) {
     function run() {
       if ('requestIdleCallback' in window) {
-        requestIdleCallback(fn, { timeout: 1200 });
+        requestIdleCallback(fn, { timeout: 800 });
       } else {
-        setTimeout(fn, 200);
+        setTimeout(fn, 150);
       }
     }
     if (document.readyState === 'loading') {
@@ -25,47 +26,47 @@
     }
   }
 
-  function pickHeroUrls(video) {
-    /* ZURU livrează doar MP4 — WebM hero era 8.7MB vs 4.3MB MP4, încetinea Chrome. */
-    if (isMobile()) {
-      return { mp4: video.dataset.srcMobile, webm: null };
+  function revealVideo(video) {
+    video.classList.add('is-playing');
+    var wrap = video.closest('.hero-bg');
+    if (wrap) wrap.classList.add('is-video-playing');
+  }
+
+  function setActive(video) {
+    if (activeVideo && activeVideo !== video && !activeVideo.paused) {
+      activeVideo.pause();
     }
-    return { mp4: video.dataset.srcDesktop, webm: null };
+    activeVideo = video;
+  }
+
+  function pickHeroUrls(video) {
+    if (isMobile()) {
+      return video.dataset.srcMobile || null;
+    }
+    return video.dataset.srcDesktop || null;
   }
 
   function bootHero() {
     var video = document.getElementById('heroVideo');
     if (!video || video.dataset.booted === '1') return;
+    var url = pickHeroUrls(video);
+    if (!url) return;
     video.dataset.booted = '1';
 
-    var urls = pickHeroUrls(video);
-    if (!urls.mp4 && !urls.webm) return;
-
-    if (urls.webm) {
-      var webm = document.createElement('source');
-      webm.src = urls.webm;
-      webm.type = 'video/webm';
-      video.appendChild(webm);
-    }
-    if (urls.mp4) {
-      var mp4 = document.createElement('source');
-      mp4.src = urls.mp4;
-      mp4.type = 'video/mp4';
-      video.appendChild(mp4);
-    }
-
+    var mp4 = document.createElement('source');
+    mp4.src = url;
+    mp4.type = 'video/mp4';
+    video.appendChild(mp4);
     video.load();
 
-    function reveal() {
-      video.classList.add('is-playing');
-      var bg = video.closest('.hero-bg');
-      if (bg) bg.classList.add('is-video-playing');
-    }
+    video.addEventListener('playing', function () {
+      revealVideo(video);
+      setActive(video);
+    }, { once: true });
 
-    video.addEventListener('playing', reveal, { once: true });
     var play = video.play();
     if (play && play.then) {
-      play.then(reveal).catch(function () {});
+      play.then(function () { revealVideo(video); setActive(video); }).catch(function () {});
     }
   }
 
@@ -83,25 +84,46 @@
     }
     lazySource.src = url;
     video.load();
-    var p = video.play();
-    if (p && p.catch) p.catch(function () {});
   }
 
-  function watchPlayPause(video, threshold) {
-    if (!('IntersectionObserver' in window)) {
+  function watchVideo(video, opts) {
+    opts = opts || {};
+    var threshold = opts.threshold || 0.15;
+    var rootMargin = opts.rootMargin || '120px 0px';
+    var delay = parseInt(video.dataset.bootDelay || '0', 10) || 0;
+
+    function onVisible() {
       bootVideo(video);
+      setActive(video);
+      video.play().then(function () {
+        video.classList.add('is-playing');
+      }).catch(function () {});
+    }
+
+    function onHidden() {
+      if (!video.paused) video.pause();
+      if (activeVideo === video) activeVideo = null;
+    }
+
+    if (!('IntersectionObserver' in window)) {
+      onVisible();
       return;
     }
+
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
-          bootVideo(video);
-          video.play().catch(function () {});
+          if (delay > 0) {
+            setTimeout(onVisible, delay);
+          } else {
+            onVisible();
+          }
         } else {
-          video.pause();
+          onHidden();
         }
       });
-    }, { threshold: threshold || 0.12 });
+    }, { rootMargin: rootMargin, threshold: threshold });
+
     io.observe(video);
   }
 
@@ -109,38 +131,13 @@
     var hero = document.getElementById('heroVideo');
     if (hero && hero.dataset.srcDesktop) {
       schedule(bootHero);
+      watchVideo(hero, { threshold: 0.2, rootMargin: '0px' });
     }
   }
 
   document.querySelectorAll('video.lazy-video').forEach(function (video) {
-    if (video.id === 'morphVideo') {
-      watchPlayPause(video, 0.12);
-      return;
-    }
-
-    var delay = parseInt(video.dataset.bootDelay || '0', 10) || 0;
-    var rootMargin = video.classList.contains('montaj-bg') ? '200px 0px' : '120px 0px';
-
-    function trigger() {
-      if (delay > 0) {
-        setTimeout(function () { bootVideo(video); }, delay);
-      } else {
-        bootVideo(video);
-      }
-    }
-
-    if ('IntersectionObserver' in window) {
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            trigger();
-            io.unobserve(entry.target);
-          }
-        });
-      }, { rootMargin: rootMargin, threshold: 0.01 });
-      io.observe(video);
-    } else {
-      trigger();
-    }
+    if (video.id === 'heroVideo') return;
+    var rootMargin = video.classList.contains('montaj-bg') ? '180px 0px' : '120px 0px';
+    watchVideo(video, { rootMargin: rootMargin });
   });
 })();
