@@ -11,33 +11,21 @@
   }
 
   function schedule(fn) {
-    if (window.requestIdleCallback) {
-      window.requestIdleCallback(fn, { timeout: 400 });
-    } else {
-      setTimeout(fn, 80);
+    if (document.readyState === 'complete') {
+      setTimeout(fn, 600);
+      return;
     }
+    window.addEventListener('load', function () {
+      setTimeout(fn, 600);
+    }, { once: true });
   }
 
   function pickHeroUrls(video) {
-    var desktop = video.dataset.srcDesktop;
-    var mobile = video.dataset.srcMobile;
-    var desktopWebm = video.dataset.srcDesktopWebm;
-    var mobileWebm = video.dataset.srcMobileWebm;
+    /* ZURU livrează doar MP4 — WebM hero era 8.7MB vs 4.3MB MP4, încetinea Chrome. */
     if (isMobile()) {
-      return {
-        mp4: mobile,
-        webm: mobileWebm && canPlayWebm() ? mobileWebm : null
-      };
+      return { mp4: video.dataset.srcMobile, webm: null };
     }
-    return {
-      mp4: desktop,
-      webm: desktopWebm && canPlayWebm() ? desktopWebm : null
-    };
-  }
-
-  function canPlayWebm() {
-    var v = document.createElement('video');
-    return v.canPlayType('video/webm; codecs="vp9"') !== '';
+    return { mp4: video.dataset.srcDesktop, webm: null };
   }
 
   function bootHero() {
