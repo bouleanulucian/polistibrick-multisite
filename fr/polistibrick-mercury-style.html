@@ -10,8 +10,8 @@
 <meta property="og:image" content="images/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap"></noscript>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&family=Manrope:wght@600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&family=Manrope:wght@600&display=swap"></noscript>
 <style>
   :root {
     --cream: #F7F4ED;
@@ -3550,26 +3550,45 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
       min-height: max(180dvh, calc(100dvh + 320px));
     }
   }
+  /* ZURU Tech hero type — Manrope 600, preset z2aqgr (măsurat de pe zuru.tech) */
   .hero-teaser.text-stilizat,
   .hero-teaser {
     position: absolute;
-    bottom: 40px;
-    left: 40px;
+    bottom: 48px;
+    left: 48px;
     z-index: 3;
     margin: 0;
-    max-width: min(88vw, 720px);
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: clamp(2rem, 4.5vw, 4.5rem);
-    font-weight: 700;
-    line-height: 1.05;
-    letter-spacing: -0.03em;
-    color: #ffffff;
+    max-width: min(calc(100vw - 96px), 420px);
+    font-family: 'Manrope', 'Manrope Placeholder', sans-serif;
+    font-size: 60px;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    color: #f7f7f7;
     text-align: left;
-    text-shadow: 0 1px 20px rgba(0, 0, 0, 0.35);
+    text-shadow: none;
     opacity: calc(1 - min(var(--hero-progress, 0) * 2.2, 1));
     transform: translateY(calc(var(--hero-progress, 0) * -18px));
     transition: opacity 0.35s ease, transform 0.35s ease;
     pointer-events: none;
+  }
+  @media (min-width: 810px) and (max-width: 1199px) {
+    .hero-teaser.text-stilizat,
+    .hero-teaser {
+      font-size: 48px;
+      letter-spacing: -0.04em;
+    }
+  }
+  @media (max-width: 809px) {
+    .hero-teaser.text-stilizat,
+    .hero-teaser {
+      font-size: 40px;
+      letter-spacing: -0.03em;
+      bottom: 26px;
+      left: 26px;
+      max-width: calc(100vw - 52px);
+    }
   }
   .hero-scroll-cue {
     position: absolute;
@@ -3808,12 +3827,6 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     .hero-full-content { padding-top: 68px; }
     .hero--photo .container { padding-bottom: 0; }
     .hero--photo .container > .hero-text-col { max-width: 100%; transform: none; }
-    .hero-teaser {
-      font-size: clamp(1.625rem, 8.5vw, 2.5rem);
-      line-height: 1.05;
-      bottom: 28px;
-      left: 24px;
-    }
     .hero-full-content h1 { font-size: clamp(22px, 6.8vw, 30px); }
     .hero--photo .hero-robot-wrap {
       max-width: clamp(120px, 34vw, 168px);
