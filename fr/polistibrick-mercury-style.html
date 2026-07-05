@@ -145,10 +145,10 @@
       scroll-snap-type: none;
       scroll-padding-top: 0;
       scroll-behavior: auto;
-      /* Pe mobil, watermark-urile la 100vw pot cauza scroll orizontal — clipping */
-      overflow-x: hidden;
+      /* clip (nu hidden) — hidden strică position:sticky pe iOS Safari */
+      overflow-x: clip;
     }
-    .hero, .stats-section, .system-section, .bundle-section, .pentru-section,
+    .hero:not(.hero--photo), .stats-section, .system-section, .bundle-section, .pentru-section,
     .reach-section, .sistem-section, .montaj-section, .testimonial-section,
     .proces-section, .why-section, .comparison-section, .cta-section {
       min-height: auto;
@@ -165,7 +165,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     line-height: 1.5;
-    overflow-x: hidden;
+    overflow-x: clip;
   }
 
   .container {
@@ -2917,7 +2917,7 @@
     .stats-grid, .steps-grid, .products-grid, .why-grid, .footer-grid {
       grid-template-columns: 1fr 1fr;
     }
-    .hero { padding: 120px 0 60px; }
+    .hero:not(.hero--photo) { padding: 120px 0 60px; }
     .hero-visual { height: clamp(360px, 65vh, 600px); }
     .stat-floating.s1 { top: 16px; left: 24px; }
     .stat-floating.s2 { bottom: 16px; right: 24px; }
@@ -3536,10 +3536,14 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   /* === ZURU-style scroll hero: video gol → scroll → mesaje + robot === */
   .hero-scroll-track {
     position: relative;
-    height: 200vh;
+    height: 200dvh;
+    min-height: 200dvh;
   }
   @media (max-width: 768px) {
-    .hero-scroll-track { height: 175vh; }
+    .hero-scroll-track {
+      height: max(180dvh, calc(100dvh + 320px));
+      min-height: max(180dvh, calc(100dvh + 320px));
+    }
   }
   .hero-teaser {
     position: absolute;
@@ -3597,10 +3601,11 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     justify-content: center;
     align-items: center;
     padding: clamp(72px, 11vh, 108px) clamp(16px, 4vw, 32px) clamp(28px, 5vh, 48px);
-    --hero-content-in: clamp(calc((var(--hero-progress, 0) - 0.12) / 0.58), 0, 1);
-    opacity: var(--hero-content-in);
-    transform: translateY(calc((1 - var(--hero-content-in)) * 36px));
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(36px);
     pointer-events: none;
+    will-change: opacity, transform;
   }
   .hero-full-content .container {
     width: 100%;
@@ -3683,11 +3688,12 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   }
 
   section.hero.hero--photo {
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
-    height: 100vh;
-    min-height: 100vh;
-    max-height: 100vh;
+    height: 100dvh;
+    min-height: 100dvh;
+    max-height: 100dvh;
     justify-content: flex-end;
     padding: 0;
     --hero-progress: 0;
@@ -7058,11 +7064,11 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
       ? { threshold: 0, rootMargin: '0px 0px 120px 0px' }
       : { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    document.querySelectorAll('.reveal:not(.hero-full-content .reveal)').forEach(el => observer.observe(el));
 
     // Plasă de siguranță: dacă ceva rămâne ascuns după 2.5s (edge case), arată-l.
     setTimeout(() => {
-      document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
+      document.querySelectorAll('.reveal:not(.visible):not(.hero-full-content .reveal)').forEach(el => {
         const r = el.getBoundingClientRect();
         if (r.top < window.innerHeight && r.bottom > 0) el.classList.add('visible');
       });
@@ -7102,28 +7108,57 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   (function heroScrollReveal() {
     const track = document.getElementById('heroScrollTrack');
     const hero = document.getElementById('heroSection');
-    if (!track || !hero) return;
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reduced) {
-      hero.style.setProperty('--hero-progress', '1');
-      hero.classList.add('hero-expanded');
-      return;
+    const full = hero ? hero.querySelector('.hero-full-content') : null;
+    if (!track || !hero || !full) return;
+
+    function viewH() {
+      return (window.visualViewport && window.visualViewport.height) || window.innerHeight;
     }
+
     function clamp(v, min, max) { return Math.max(min, Math.min(max, v)); }
-    function update() {
-      const range = track.offsetHeight - window.innerHeight;
-      if (range <= 0) {
-        hero.style.setProperty('--hero-progress', '1');
-        hero.classList.add('hero-expanded');
-        return;
-      }
-      const scrolled = window.scrollY - track.offsetTop;
-      const p = clamp(scrolled / range, 0, 1);
+
+    function applyProgress(p) {
       hero.style.setProperty('--hero-progress', p.toFixed(4));
       hero.classList.toggle('hero-expanded', p >= 0.92);
+      const contentIn = clamp((p - 0.12) / 0.58, 0, 1);
+      full.style.opacity = String(contentIn);
+      full.style.transform = 'translateY(' + ((1 - contentIn) * 36) + 'px)';
+      full.style.visibility = contentIn > 0.02 ? 'visible' : 'hidden';
+      full.style.pointerEvents = contentIn > 0.45 ? 'auto' : 'none';
     }
+
+    function revealAll() {
+      hero.style.setProperty('--hero-progress', '1');
+      hero.classList.add('hero-expanded');
+      full.style.opacity = '1';
+      full.style.transform = 'translateY(0)';
+      full.style.visibility = 'visible';
+      full.style.pointerEvents = 'auto';
+    }
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      revealAll();
+      return;
+    }
+
+    function update() {
+      const trackRect = track.getBoundingClientRect();
+      const trackTop = window.scrollY + trackRect.top;
+      const range = track.offsetHeight - viewH();
+      if (range <= 8) {
+        revealAll();
+        return;
+      }
+      const scrolled = window.scrollY - trackTop;
+      applyProgress(clamp(scrolled / range, 0, 1));
+    }
+
     window.addEventListener('scroll', update, { passive: true });
     window.addEventListener('resize', update);
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener('resize', update);
+      window.visualViewport.addEventListener('scroll', update);
+    }
     update();
   })();
 
