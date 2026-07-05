@@ -3522,6 +3522,30 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     object-fit: cover;
     object-position: center;
   }
+  .hero-bg-poster {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  .hero-bg-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+  .hero-bg video.hero-bg-video {
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.55s ease;
+  }
+  .hero-bg video.hero-bg-video.is-playing {
+    opacity: 1;
+  }
+  .hero-bg.is-video-playing .hero-bg-poster {
+    opacity: 0;
+    transition: opacity 0.45s ease;
+  }
   /* Scrim pentru lizibilitate: întunecat în stânga (text) + jos, transparent în rest */
   /* FĂRĂ scrim — imaginea e 100% naturală, luminoasă.
      Lizibilitatea textului vine doar din text-shadow. */
@@ -3665,16 +3689,22 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
 </style>
 <section class="hero hero--photo">
   <div class="hero-bg" aria-hidden="true">
-    <video id="heroVideo" autoplay muted loop playsinline preload="none"
-           poster="images/hero/hero-house-1.jpg">
-      <source src="images/hero/hero-houses-reel.mp4" type="video/mp4">
-    </video>
+    <picture class="hero-bg-poster">
+      <source type="image/webp" srcset="images/hero/hero-house-1.webp">
+      <img src="images/hero/hero-house-1.jpg" alt="" width="2560" height="1440" decoding="async" fetchpriority="high">
+    </picture>
+    <video id="heroVideo" class="hero-bg-video" muted loop playsinline preload="none"
+           poster="images/hero/hero-house-1.webp"
+           data-src-desktop="images/hero/hero-houses-reel-desktop.mp4"
+           data-src-mobile="images/hero/hero-houses-reel-mobile.mp4"
+           data-src-desktop-webm="images/hero/hero-houses-reel-desktop.webm"
+           data-src-mobile-webm="images/hero/hero-houses-reel-mobile.webm"></video>
     <div class="hero-bg-scrim"></div>
   </div>
   <div class="container">
     <div class="hero-text-col">
       <picture>
-        <img class="hero-robot reveal" src="images/robot.webp" alt="Polistibrick — Costruzione inteligentă" fetchpriority="high" width="1500" height="1362">
+        <img class="hero-robot reveal" src="images/robot.webp" alt="Polistibrick — Costruzione inteligentă" fetchpriority="low" loading="lazy" width="1500" height="1362">
       </picture>
       <h1 class="reveal">Construiești mai multe case.<br><span class="h1-l2">Cu mai puțină manoperă.</span></h1>
       <p class="hero-sub reveal">Polistibrick inlocuiește 5 materiale diferite și 5 echipe de costruzione. Un singur produs, o singură echipă — și casa este finalizată. <strong>Innovazione brevettata.</strong></p>
@@ -5008,18 +5038,11 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   }
   .passif-media { position: relative; }
   .passif-video { display: block; width: 100%; height: auto; }
-  /* Slideshow 4 saisons — fondu enchaîné, 1,5 s par image */
+  /* Iarnă statică — fără slideshow, fără video */
   .passif-slides { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; }
-  .passif-slides .ps {
+  .passif-slides .passif-photo {
     position: absolute; inset: 0; width: 100%; height: 100%;
-    object-fit: cover; opacity: 0;
-    transition: opacity .9s ease-in-out; will-change: opacity;
-  }
-  .passif-slides .ps.active { opacity: 1; }
-  /* Prim-plan fix: intérieur identique, seul le paysage derrière la vitre change */
-  .passif-slides .passif-fg {
-    position: absolute; inset: 0; width: 100%; height: 100%;
-    object-fit: cover; z-index: 5; pointer-events: none;
+    object-fit: cover; object-position: center;
   }
   /* Scrim — aceeași gramatică precum caruselul: gradient închis jos pentru lizibilitate */
   .passif-scrim {
@@ -5102,12 +5125,8 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     <a href="devis/" class="btn btn-red passif-cta reveal">Preventivo gratuită →</a>
   </div>
   <div class="passif-media">
-    <div class="passif-slides" aria-label="Aceeași casa Polistibrick in cele patru anotimpuri: afară totul se schimbă, înăuntru confortul rămâne constant">
-      <img class="ps active" src="images/passive/passive-spring.jpg?v=3" alt="Vederea din living primăestate" fetchpriority="low" loading="lazy">
-      <img class="ps" src="images/passive/passive-summer.jpg?v=3" alt="Vederea din living estate" loading="lazy">
-      <img class="ps" src="images/passive/passive-autumn.jpg?v=3" alt="Vederea din living toamna" loading="lazy">
-      <img class="ps" src="images/passive/passive-winter.jpg?v=3" alt="Vederea din living inverno" loading="lazy">
-      <img class="passif-fg" src="images/passive/passive-interior-fg.png?v=3" alt="" aria-hidden="true" loading="lazy">
+    <div class="passif-slides" aria-label="Polistibrick home in winter: constant indoor comfort">
+      <img class="passif-photo" src="images/passive/passive-winter.jpg?v=5" alt="Living room view in winter — constant comfort" loading="lazy">
     </div>
     <div class="passif-scrim"></div>
   </div>
@@ -6013,7 +6032,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
           <article class="montaj-card">
             <div class="montaj-num">02</div>
             <div class="montaj-img">
-              <img src="images/construction/stage3-planseu.jpg" alt="Solaio PBK montat" loading="lazy">
+              <picture><source type="image/webp" srcset="images/construction/stage3-planseu.webp"><img src="images/construction/stage3-planseu.jpg" alt="Solaio PBK montat" loading="lazy" decoding="async" width="800" height="600"></picture>
             </div>
             <div class="montaj-card-body">
               <h3>Solaio</h3>
@@ -6035,7 +6054,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
           <article class="montaj-card">
             <div class="montaj-num">04</div>
             <div class="montaj-img">
-              <img src="images/construction/stage4-final.jpg" alt="Cassero închis, gata pentru turnarea calcestruzzoului" loading="lazy">
+              <picture><source type="image/webp" srcset="images/construction/stage4-final.webp"><img src="images/construction/stage4-final.jpg" alt="Cassero închis, gata pentru turnarea calcestruzzoului" loading="lazy" decoding="async" width="800" height="600"></picture>
             </div>
             <div class="montaj-card-body">
               <h3>Chiusura del cassero</h3>
@@ -6352,7 +6371,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
 
       <!-- Avis 1 — VIDÉO -->
       <div class="conf-slide is-active">
-        <div class="conf-feature" data-conf-video="images/hero/hero-houses-reel.mp4">
+        <div class="conf-feature" data-conf-video="images/hero/hero-houses-reel-desktop.mp4">
           <video poster="images/hero/hero-house-2.jpg" loop muted playsinline preload="none"></video>
           <div class="conf-feature-scrim" aria-hidden="true"></div>
           <span class="conf-vbadge">Testimonial video</span>
@@ -6549,7 +6568,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
 
       <!-- Témoignage 1 -->
       <div class="histoire-slide is-active">
-        <img class="histoire-bg" src="images/hero/hero-house-2.jpg" alt="La La La Casa costruitoă de o firmă cu sistemul Polistibrick">
+        <img class="histoire-bg" src="images/hero/hero-house-2.jpg" loading="lazy" alt="La La La Casa costruitoă de o firmă cu sistemul Polistibrick">
         <div class="histoire-scrim" aria-hidden="true"></div>
         <div class="histoire-card">
           <div class="histoire-card-inner">
@@ -6570,7 +6589,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
 
       <!-- Témoignage 2 -->
       <div class="histoire-slide">
-        <img class="histoire-bg" src="images/hero/hero-house-1.jpg" alt="La La La Casa realizată de un constructor cu sistemul Polistibrick">
+        <img class="histoire-bg" src="images/hero/hero-house-1.jpg" loading="lazy" alt="La La La Casa realizată de un constructor cu sistemul Polistibrick">
         <div class="histoire-scrim" aria-hidden="true"></div>
         <div class="histoire-card">
           <div class="histoire-card-inner">
@@ -6591,7 +6610,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
 
       <!-- Témoignage 3 -->
       <div class="histoire-slide">
-        <img class="histoire-bg" src="images/hero/hero-house-3.jpg" alt="Program de case realizat de o firmă cu sistemul Polistibrick">
+        <img class="histoire-bg" src="images/hero/hero-house-3.jpg" loading="lazy" alt="Program de case realizat de o firmă cu sistemul Polistibrick">
         <div class="histoire-scrim" aria-hidden="true"></div>
         <div class="histoire-card">
           <div class="histoire-card-inner">
@@ -7008,24 +7027,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     }
   })();
 
-  ['morphVideo', 'heroVideo'].forEach((id) => {
-    const v = document.getElementById(id);
-    if (!v) return;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      v.removeAttribute('autoplay');
-      v.pause();
-      return;
-    }
-    if ('IntersectionObserver' in window) {
-      const vio = new IntersectionObserver((entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) { v.play().catch(() => {}); }
-          else { v.pause(); }
-        });
-      }, { threshold: 0.1 });
-      vio.observe(v);
-    }
-  });
+  /* video IO → assets/js/mercury-perf.js */
 
 
   // (Floating product system removed — images now flow inline within sections.)
@@ -7600,34 +7602,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   </a>
 </div>
 
-<script>
-(function(){
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  function bootVideo(v){
-    var s=v.querySelector('source[data-src]');
-    if(!s||s.src) return;
-    var mobile=v.dataset.srcMobile;
-    if(mobile&&window.matchMedia('(max-width:1080px)').matches){
-      s.dataset.src=mobile;
-      if(v.dataset.posterMobile) v.poster=v.dataset.posterMobile;
-    }
-    s.src=s.dataset.src;
-    v.load();
-    var p=v.play();
-    if(p&&p.catch) p.catch(function(){});
-  }
-  var vids=document.querySelectorAll('video.lazy-video');
-  if(!vids.length) return;
-  if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if(e.isIntersecting){ bootVideo(e.target); io.unobserve(e.target); }
-      });
-    },{rootMargin:'80px 0px',threshold:0.01});
-    vids.forEach(function(v){ io.observe(v); });
-  } else { vids.forEach(bootVideo); }
-})();
-</script>
+<script src="assets/js/mercury-perf.js?v=6" defer></script>
 
 </body>
 </html>
