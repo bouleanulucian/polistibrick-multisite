@@ -13,8 +13,6 @@
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=Manrope:wght@600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=Manrope:wght@600&display=swap"></noscript>
 <link rel="preload" as="image" href="images/hero/hero-house-1.webp" type="image/webp" fetchpriority="high">
-<link rel="preload" as="video" href="images/hero/hero-houses-reel-mobile.mp4" type="video/mp4" media="(max-width: 809px)">
-<link rel="preload" as="video" href="images/hero/hero-houses-reel-desktop.mp4" type="video/mp4" media="(min-width: 810px)">
 <style>
   :root {
     --cream: #F7F4ED;
@@ -3526,10 +3524,26 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     object-fit: cover;
     object-position: center;
   }
+  .hero-bg-poster {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  .hero-bg-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
   .hero-bg video.hero-bg-video {
     z-index: 1;
-    opacity: 1;
+    opacity: 0;
+    transition: opacity 0.45s ease;
     background: #14120F;
+  }
+  .hero-bg video.hero-bg-video.is-playing {
+    opacity: 1;
   }
   /* Scrim — întunecat progresiv la scroll (JS: --hero-progress 0→1) */
   .hero-bg-scrim {
@@ -3870,11 +3884,14 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
 <div class="hero-scroll-track" id="heroScrollTrack">
 <section class="hero hero--photo" id="heroSection">
   <div class="hero-bg" aria-hidden="true">
-    <video id="heroVideo" class="hero-bg-video" muted loop playsinline autoplay preload="auto"
-           poster="images/hero/hero-house-1.webp">
-      <source src="images/hero/hero-houses-reel-mobile.mp4" media="(max-width: 809px)" type="video/mp4">
-      <source src="images/hero/hero-houses-reel-desktop.mp4" type="video/mp4">
-    </video>
+    <picture class="hero-bg-poster">
+      <source type="image/webp" srcset="images/hero/hero-house-1.webp">
+      <img src="images/hero/hero-house-1.jpg" alt="" width="1920" height="1080" decoding="async" fetchpriority="high">
+    </picture>
+    <video id="heroVideo" class="hero-bg-video" muted loop playsinline preload="none"
+           poster="images/hero/hero-house-1.webp"
+           data-src-desktop="images/hero/hero-houses-reel-desktop.mp4"
+           data-src-mobile="images/hero/hero-houses-reel-mobile.mp4"></video>
     <div class="hero-bg-scrim"></div>
   </div>
   <h1 class="hero-teaser text-stilizat"><span class="hero-teaser-line">Une technologie</span><span class="hero-teaser-line">avec 5 avantages</span></h1>
@@ -6214,7 +6231,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
           <article class="montaj-card">
             <div class="montaj-num">02</div>
             <div class="montaj-img">
-              <img src="images/construction/stage3-planseu.jpg" alt="Plancher PBK monté" loading="lazy">
+              <picture><source type="image/webp" srcset="images/construction/stage3-planseu.webp"><img src="images/construction/stage3-planseu.jpg" alt="Plancher PBK monté" loading="lazy" decoding="async" width="800" height="600"></picture>
             </div>
             <div class="montaj-card-body">
               <h3>Plancher</h3>
@@ -6236,7 +6253,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
           <article class="montaj-card">
             <div class="montaj-num">04</div>
             <div class="montaj-img">
-              <img src="images/construction/stage4-final.jpg" alt="Coffrage fermé, prêt pour le coulage du béton" loading="lazy">
+              <picture><source type="image/webp" srcset="images/construction/stage4-final.webp"><img src="images/construction/stage4-final.jpg" alt="Coffrage fermé, prêt pour le coulage du béton" loading="lazy" decoding="async" width="800" height="600"></picture>
             </div>
             <div class="montaj-card-body">
               <h3>Fermeture du coffrage</h3>
@@ -7837,7 +7854,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   </a>
 </div>
 
-<script src="assets/js/mercury-perf.js?v=2" defer></script>
+<script src="assets/js/mercury-perf.js?v=4" defer></script>
 
 </body>
 </html>
