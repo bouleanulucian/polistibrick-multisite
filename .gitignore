@@ -46,3 +46,5 @@ countries/*/images/presence/presence_*.png
 countries/*/images/presence/presence_frame*.png
 countries/*/images/presence/factory-*.png
 countries/*/images/presence/frame*.png
+.gh-pages-worktree/
+.tmp/
