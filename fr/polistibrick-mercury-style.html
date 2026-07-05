@@ -404,23 +404,36 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    height: 36px;
-    background: rgba(15, 15, 15, 0.05);
+    height: auto;
+    min-height: 36px;
+    background: transparent;
     color: #0F0F0F;
-    border: 1px solid rgba(15, 15, 15, 0.14);
-    border-radius: 10px;
-    padding: 0 18px;
+    border: none;
+    border-radius: 0;
+    padding: 0 8px;
     font-weight: 600;
+    box-shadow: none;
+    transition: opacity .15s ease, color .15s ease;
   }
-  nav:not(.scrolled) .nav-cta-devis {
-    background: rgba(255, 255, 255, 0.14);
-    color: #FFFFFF;
-    border: 1px solid rgba(255, 255, 255, 0.38);
+  .btn.nav-cta-devis:hover {
+    background: transparent;
+    border: none;
+    opacity: 0.72;
+    transform: none;
+    box-shadow: none;
   }
-  nav:not(.scrolled) .nav-cta-devis:hover {
-    background: rgba(255, 255, 255, 0.24);
-    border-color: rgba(255, 255, 255, 0.60);
+  nav:not(.scrolled) .nav-cta-devis,
+  nav:not(.scrolled) .nav-cta .btn-primary.nav-cta-devis {
+    background: transparent;
+    border: none;
     color: #FFFFFF;
+  }
+  nav:not(.scrolled) .nav-cta-devis:hover,
+  nav:not(.scrolled) .nav-cta .btn-primary.nav-cta-devis:hover {
+    background: transparent;
+    border: none;
+    color: #FFFFFF;
+    opacity: 0.72;
   }
 
   /* === MENU (added in nav between logo and CTA) === */

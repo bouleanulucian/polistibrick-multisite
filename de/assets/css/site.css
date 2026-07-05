@@ -1209,30 +1209,39 @@ html { scroll-behavior: auto !important; }
 .country-switcher-panel { min-width: 204px; background: rgba(255,255,255,0.55); -webkit-backdrop-filter: blur(22px) saturate(1.4); backdrop-filter: blur(22px) saturate(1.4); border-color: rgba(255,255,255,0.55); }
 .country-switcher-item:hover { background: rgba(255,255,255,0.55); }
 
-/* CTA bar = pilule glassy sombre (équivalent du translucide blanc du homepage, adapté au fond clair) */
+/* CTA nav — text simplu, fără cadru/fundal (ca country switcher) */
 .nav-cta-devis {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 36px;
-  background: rgba(15,15,15,0.05);
+  height: auto;
+  min-height: 36px;
+  background: transparent;
   color: #0F0F0F;
-  border: 1px solid rgba(15,15,15,0.14);
-  border-radius: 10px;
-  padding: 0 18px;
+  border: none;
+  border-radius: 0;
+  padding: 0 8px;
   font-weight: 600;
-  transition: background .2s ease, border-color .2s ease;
+  transition: opacity .15s ease, color .15s ease;
   box-shadow: none;
   transform: none;
 }
 .btn-primary.nav-cta-devis,
 .btn.nav-cta-devis {
-  background: rgba(15,15,15,0.05);
+  background: transparent;
   color: #0F0F0F;
-  border: 1px solid rgba(15,15,15,0.14);
+  border: none;
 }
 .nav-cta-devis:hover,
-.btn-primary.nav-cta-devis:hover { background: rgba(15,15,15,0.10); border-color: rgba(15,15,15,0.24); color: #0F0F0F; transform: none; box-shadow: none; }
+.btn-primary.nav-cta-devis:hover,
+.btn.nav-cta-devis:hover {
+  background: transparent;
+  border: none;
+  color: #0F0F0F;
+  opacity: 0.72;
+  transform: none;
+  box-shadow: none;
+}
 
 /* ============================================================
    MOBILE NAV BAR — identic homepage (≤768px)
