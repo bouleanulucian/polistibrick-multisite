@@ -158,7 +158,7 @@ def optimize_html(text: str) -> str:
     )
     text = re.sub(
         r'(<script\s+src=")([^"]*mercury-perf\.js)(?:\?[^"]*)?(")(\s*defer)?>',
-        r'\1\2?v=6\3 defer>',
+        r'\1\2?v=7\3 defer>',
         text,
     )
     text = re.sub(
