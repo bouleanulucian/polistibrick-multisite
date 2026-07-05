@@ -3518,11 +3518,108 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     object-fit: cover;
     object-position: center;
   }
-  /* Scrim pentru lizibilitate: întunecat în stânga (text) + jos, transparent în rest */
-  /* FĂRĂ scrim — imaginea e 100% naturală, luminoasă.
-     Lizibilitatea textului vine doar din text-shadow. */
-  .hero-bg-scrim { display: none; }
+  /* Scrim — întunecat progresiv la scroll (JS: --hero-progress 0→1) */
+  .hero-bg-scrim {
+    display: block;
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(180deg,
+      rgba(8, 7, 6, 0.28) 0%,
+      rgba(8, 7, 6, 0.55) 45%,
+      rgba(8, 7, 6, 0.82) 100%);
+    opacity: var(--hero-progress, 0);
+  }
   .hero--photo .container { position: relative; z-index: 2; }
+
+  /* === ZURU-style scroll hero: video gol → scroll → mesaje + robot === */
+  .hero-scroll-track {
+    position: relative;
+    height: 200vh;
+  }
+  @media (max-width: 768px) {
+    .hero-scroll-track { height: 175vh; }
+  }
+  .hero-teaser {
+    position: absolute;
+    left: clamp(20px, 5vw, 64px);
+    bottom: clamp(52px, 11vh, 128px);
+    z-index: 3;
+    margin: 0;
+    max-width: min(88vw, 720px);
+    font-family: var(--serif);
+    font-size: clamp(26px, 4.8vw, 54px);
+    font-weight: 400;
+    line-height: 1.06;
+    letter-spacing: -0.03em;
+    color: #FFFFFF;
+    text-shadow: 0 2px 28px rgba(0, 0, 0, 0.55), 0 1px 6px rgba(0, 0, 0, 0.35);
+    opacity: calc(1 - min(var(--hero-progress, 0) * 2.2, 1));
+    transform: translateY(calc(var(--hero-progress, 0) * -18px));
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    pointer-events: none;
+  }
+  .hero-scroll-cue {
+    position: absolute;
+    right: clamp(20px, 4vw, 48px);
+    bottom: 28px;
+    z-index: 3;
+    width: 22px;
+    height: 34px;
+    border: 2px solid rgba(255, 255, 255, 0.62);
+    border-radius: 11px;
+    opacity: calc(1 - min(var(--hero-progress, 0) * 3, 1));
+    pointer-events: none;
+  }
+  .hero-scroll-cue::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 7px;
+    width: 3px;
+    height: 7px;
+    margin-left: -1.5px;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.88);
+    animation: scrollCueBob 1.85s ease-in-out infinite;
+  }
+  @keyframes scrollCueBob {
+    0%, 100% { transform: translateY(0); opacity: 0.55; }
+    50% { transform: translateY(7px); opacity: 1; }
+  }
+  .hero-full-content {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 110px 0 0;
+    --hero-content-in: clamp(calc((var(--hero-progress, 0) - 0.12) / 0.58), 0, 1);
+    opacity: var(--hero-content-in);
+    transform: translateY(calc((1 - var(--hero-content-in)) * 36px));
+    pointer-events: none;
+  }
+  .hero-full-content .hero-actions,
+  .hero-full-content a { pointer-events: auto; }
+  .hero.hero--photo.hero-expanded .hero-teaser,
+  .hero.hero--photo.hero-expanded .hero-scroll-cue {
+    opacity: 0 !important;
+    visibility: hidden;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-scroll-track { height: auto; }
+    .hero-scroll-cue { display: none; }
+    .hero-teaser { display: none; }
+    .hero-full-content {
+      position: relative;
+      opacity: 1 !important;
+      transform: none !important;
+      pointer-events: auto;
+    }
+    .hero-bg-scrim { opacity: 0.72 !important; }
+  }
 
   /* Fascicul de "fum negru" sub meniu — gradient discret doar în partea
      de sus a hero-ului, pentru lizibilitatea textului alb din nav.
@@ -3556,19 +3653,25 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
       rgba(8, 7, 6, 0) 100%);
     z-index: 1;
     pointer-events: none;
+    opacity: var(--hero-progress, 0);
   }
 
-  /* DEGAJAT, stil zuru: textul jos-stânga (2 rânduri), robotul jos-dreapta,
-     poziționat absolut — fotografia respiră, nimic nu se bate cu nimic. */
+  /* Sticky full-viewport — scroll-ul din .hero-scroll-track animează conținutul */
   section.hero.hero--photo {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    min-height: 100vh;
+    max-height: 100vh;
     justify-content: flex-end;
-    padding: 110px 0 0;
-    min-height: calc(100vh + 20mm); /* imaginea extinsă 20mm în jos — pagina 2+ coboară */
+    padding: 0;
+    --hero-progress: 0;
+    overflow: hidden;
   }
   .hero--photo .container {
-    display: block;            /* fără grid — textul e singur, pe lățimea lui */
-    width: 100%;               /* flex-item: fără shrink-to-fit */
-    padding-bottom: calc(64px + 20mm); /* textul rămâne la poziția inițială */
+    display: block;
+    width: 100%;
+    padding-bottom: calc(64px + 20mm);
   }
   .hero--photo .container > .hero-text-col {
     max-width: min(74%, 900px);
@@ -3651,7 +3754,8 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   .hero-stats-row li strong { color: #fff; font-weight: 800; font-size: 1.2em; margin-right: 5px; }
   @media (max-width: 968px) {
     .hero--photo .container { padding-bottom: calc(40mm + 36px); }
-    .hero--photo .container > .hero-text-col { max-width: 100%; transform: translateY(40mm); }
+    .hero--photo .container > .hero-text-col { max-width: 100%; transform: none; }
+    .hero-teaser { font-size: clamp(22px, 6.5vw, 32px); bottom: clamp(44px, 12vh, 96px); }
     .hero--photo h1 { font-size: clamp(22px, 6.8vw, 30px); }
     .hero--photo .hero-robot { max-width: 158px; margin-bottom: 14px; }
     .hero--photo .hero-sub { font-size: 13px; line-height: 1.5; margin-bottom: 14px; }
@@ -3659,7 +3763,8 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     .hero-stats-row li { font-size: 12px; }
   }
 </style>
-<section class="hero hero--photo">
+<div class="hero-scroll-track" id="heroScrollTrack">
+<section class="hero hero--photo" id="heroSection">
   <div class="hero-bg" aria-hidden="true">
     <video id="heroVideo" autoplay muted loop playsinline preload="none"
            poster="images/hero/hero-house-1.jpg">
@@ -3667,20 +3772,25 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     </video>
     <div class="hero-bg-scrim"></div>
   </div>
-  <div class="container">
-    <div class="hero-text-col">
-      <picture>
-        <img class="hero-robot reveal" src="images/robot.webp" alt="Polistibrick — Construcție inteligentă" fetchpriority="high" width="1500" height="1362">
-      </picture>
-      <h1 class="reveal">Construiești mai multe case.<br><span class="h1-l2">Cu mai puțină manoperă.</span></h1>
-      <p class="hero-sub reveal">Polistibrick înlocuiește 5 materiale diferite și 5 echipe de construcție. Un singur produs, o singură echipă — și casa este finalizată. <strong>Inovație brevetată.</strong></p>
-      <div class="hero-actions reveal">
-        <a href="oferta/" class="btn btn-red btn-large">Primește oferta ta gratuită →</a>
-        <a href="montaj/" class="btn btn-ghost btn-large">Construiesc singur →</a>
+  <p class="hero-teaser">Construiești mai multe case.</p>
+  <div class="hero-scroll-cue" aria-hidden="true"></div>
+  <div class="hero-full-content">
+    <div class="container">
+      <div class="hero-text-col">
+        <picture>
+          <img class="hero-robot" src="images/robot.webp" alt="Polistibrick — Construcție inteligentă" fetchpriority="high" width="1500" height="1362">
+        </picture>
+        <h1>Construiești mai multe case.<br><span class="h1-l2">Cu mai puțină manoperă.</span></h1>
+        <p class="hero-sub">Polistibrick înlocuiește 5 materiale diferite și 5 echipe de construcție. Un singur produs, o singură echipă — și casa este finalizată. <strong>Inovație brevetată.</strong></p>
+        <div class="hero-actions">
+          <a href="oferta/" class="btn btn-red btn-large">Primește oferta ta gratuită →</a>
+          <a href="montaj/" class="btn btn-ghost btn-large">Construiesc singur →</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
+</div>
 
 <!-- MORPH — un seul système, toutes les architectures (vidéo full-bleed, texte superposé) -->
 <style>
@@ -6911,7 +7021,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
       ? { threshold: 0, rootMargin: '0px 0px 120px 0px' }
       : { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    document.querySelectorAll('.reveal:not(.hero-full-content .reveal)').forEach(el => observer.observe(el));
 
     // Plasă de siguranță: dacă ceva rămâne ascuns după 2.5s (edge case), arată-l.
     setTimeout(() => {
@@ -6946,11 +7056,39 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
 
   const heroSection = document.querySelector('.hero');
   function onScroll() {
-    // Nav mereu transparent cu fum negru sub text (ca pe hero) — nu se mai albeste
     nav.classList.remove('scrolled');
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
+
+  // === HERO ZURU-style: video gol → scroll → overlay + robot + mesaje ===
+  (function heroScrollReveal() {
+    const track = document.getElementById('heroScrollTrack');
+    const hero = document.getElementById('heroSection');
+    if (!track || !hero) return;
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduced) {
+      hero.style.setProperty('--hero-progress', '1');
+      hero.classList.add('hero-expanded');
+      return;
+    }
+    function clamp(v, min, max) { return Math.max(min, Math.min(max, v)); }
+    function update() {
+      const range = track.offsetHeight - window.innerHeight;
+      if (range <= 0) {
+        hero.style.setProperty('--hero-progress', '1');
+        hero.classList.add('hero-expanded');
+        return;
+      }
+      const scrolled = window.scrollY - track.offsetTop;
+      const p = clamp(scrolled / range, 0, 1);
+      hero.style.setProperty('--hero-progress', p.toFixed(4));
+      hero.classList.toggle('hero-expanded', p >= 0.92);
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  })();
 
   // === MORPH video: redă doar când e vizibil; static pentru reduced-motion ===
   // === PERSONAS carusel: rotire automata, pauza la hover/offscreen, sageti, puncte, swipe ===
