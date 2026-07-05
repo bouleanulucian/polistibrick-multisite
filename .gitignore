@@ -26,6 +26,9 @@ venv/
 .env
 .env.local
 
+# Local masters (4K sources — never deploy)
+masters/
+
 # Duplicate / dev-only folders
 countries/fr 2/
 drafts/

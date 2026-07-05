@@ -127,6 +127,13 @@ def should_skip_asset(rel: Path) -> bool:
 
 def optimize_html(text: str) -> str:
     """Non-blocking fonts, lighter weights, deferred shared JS."""
+    if "fonts.googleapis.com" in text and "preconnect" not in text:
+        text = text.replace(
+            "</head>",
+            '  <link rel="preconnect" href="https://fonts.googleapis.com">\n'
+            '  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n</head>',
+            1,
+        )
     text = text.replace(
         "Inter:wght@400;500;600;700;800",
         "Inter:wght@400;500;600;700",
@@ -145,8 +152,13 @@ def optimize_html(text: str) -> str:
         text,
     )
     text = re.sub(
-        r'(<script\s+src="[^"]*site\.js")(?!\s+defer)>',
-        r"\1 defer>",
+        r'(<script\s+src=")([^"]*site\.js)(?:\?[^"]*)?(")(\s*defer)?>',
+        r'\1\2?v=2\3 defer>',
+        text,
+    )
+    text = re.sub(
+        r'(<script\s+src=")([^"]*mercury-perf\.js)(?:\?[^"]*)?(")(\s*defer)?>',
+        r'\1\2?v=6\3 defer>',
         text,
     )
     text = re.sub(

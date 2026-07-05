@@ -1,18 +1,16 @@
 <!DOCTYPE html>
-<html lang="ro">
+<html lang="it">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Polistibrick — O casă. Un sistem. Fără compromis.</title>
-<meta name="description" content="Sistem ICF complet — pereți, planșee, acoperiș. Standard A+++. Construit în 4 săptămâni. Fără compromis, fără facturi.">
-<meta property="og:title" content="Polistibrick — O casă. Un sistem.">
-<meta property="og:description" content="Sistem ICF complet pentru casă A+++. Pereți, planșee, acoperiș — un sistem premium.">
+<title>Polistibrick — Una casa. Un sistema. Senza compromessi.</title>
+<meta name="description" content="Sistem ICF completooo — pareti, solai, tetto. standard A+++. Costruito in 4 settimane. Senza compromessi, senza bollette.">
+<meta property="og:title" content="Polistibrick — Una casa. Un sistema.">
+<meta property="og:description" content="Sistem ICF completooo pentru casa A+++. Pareti, solai, tetto — un sistem premium.">
 <meta property="og:image" content="images/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=Manrope:wght@600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=Manrope:wght@600&display=swap"></noscript>
-<link rel="preload" as="image" href="images/hero/hero-house-1.webp" type="image/webp" fetchpriority="high">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --cream: #F7F4ED;
@@ -146,10 +144,10 @@
       scroll-snap-type: none;
       scroll-padding-top: 0;
       scroll-behavior: auto;
-      /* clip (nu hidden) — hidden strică position:sticky pe iOS Safari */
-      overflow-x: clip;
+      /* Pe mobil, watermark-urile la 100vw pot cauza scroll orizontal — clipping */
+      overflow-x: hidden;
     }
-    .hero:not(.hero--photo), .stats-section, .system-section, .bundle-section, .pentru-section,
+    .hero, .stats-section, .system-section, .bundle-section, .pentru-section,
     .reach-section, .sistem-section, .montaj-section, .testimonial-section,
     .proces-section, .why-section, .comparison-section, .cta-section {
       min-height: auto;
@@ -166,7 +164,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     line-height: 1.5;
-    overflow-x: clip;
+    overflow-x: hidden;
   }
 
   .container {
@@ -2922,7 +2920,7 @@
     .stats-grid, .steps-grid, .products-grid, .why-grid, .footer-grid {
       grid-template-columns: 1fr 1fr;
     }
-    .hero:not(.hero--photo) { padding: 120px 0 60px; }
+    .hero { padding: 120px 0 60px; }
     .hero-visual { height: clamp(360px, 65vh, 600px); }
     .stat-floating.s1 { top: 16px; left: 24px; }
     .stat-floating.s2 { bottom: 16px; right: 24px; }
@@ -2946,8 +2944,7 @@
      Override per-element font sizes to fit content better on phones.
      Only applies to ≤768px — desktop unaffected. */
   @media (max-width: 768px) {
-    .hero:not(.hero--photo) h1,
-    .hero-full-content h1 { font-size: clamp(22px, 5.5vw, 34px); line-height: 1.08; }
+    .hero h1 { font-size: clamp(22px, 5.5vw, 34px); line-height: 1.08; }
     .hero-sub { font-size: 12.5px; line-height: 1.5; }
     .hero-eyebrow { font-size: 9.5px; }
     .hero-actions .btn { font-size: 12px; padding: 10px 16px; }
@@ -3250,16 +3247,16 @@ section, .reveal, .stat-card, .pentru-card, .sistem-card,
 nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.05); }
 </style>
 </head>
-<body data-base="">
+<body>
 
 <!-- COUNTRY SUGGESTION BANNER (auto-detect) -->
 <div class="country-banner" id="countryBanner" hidden role="region" aria-live="polite">
   <div class="country-banner-inner">
     <span class="country-banner-flag" id="bannerFlag">🌍</span>
-    <span class="country-banner-text" id="bannerText">Detectăm că ești în <strong id="bannerCountry">...</strong>. Vizitezi <strong id="bannerDomain">polistibrick.??</strong>?</span>
+    <span class="country-banner-text" id="bannerText">Rileviamo che sei in <strong id="bannerCountry">...</strong>. Vizitezi <strong id="bannerDomain">polistibrick.??</strong>?</span>
     <div class="country-banner-actions">
       <button class="country-banner-btn primary" id="bannerYes">Da, mergi</button>
-      <button class="country-banner-btn ghost" id="bannerNo">Rămân aici</button>
+      <button class="country-banner-btn ghost" id="bannerNo">Rimango qui</button>
     </div>
   </div>
 </div>
@@ -3272,69 +3269,69 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     </a>
     <div class="nav-menu" aria-label="Navigare principală">
       <div class="nav-menu-item">
-        <a href="#" class="nav-menu-link" role="button" aria-haspopup="true" aria-expanded="false" onclick="event.preventDefault(); return false;">Produse <span class="nav-menu-caret">▾</span></a>
+        <a href="#" class="nav-menu-link" role="button" aria-haspopup="true" aria-expanded="false" onclick="event.preventDefault(); return false;">Prodotti <span class="nav-menu-caret">▾</span></a>
         <div class="nav-menu-dropdown">
-          <a href="produse/pereti-mbk/">Pereți MBK</a>
-          <a href="produse/planseu-pbk/">Planșee PBK</a>
-          <a href="produse/acoperis-tbk/">Acoperiș TBK</a>
+          <a href="produits/murs-mbk/">Pareti MBK</a>
+          <a href="produits/planchers-pbk/">Solai PBK</a>
+          <a href="produits/toit-tbk/">Tetto TBK</a>
         </div>
       </div>
       <div class="nav-menu-item">
-        <a href="#" class="nav-menu-link" role="button" aria-haspopup="true" aria-expanded="false" onclick="event.preventDefault(); return false;">Soluții <span class="nav-menu-caret">▾</span></a>
+        <a href="#" class="nav-menu-link" role="button" aria-haspopup="true" aria-expanded="false" onclick="event.preventDefault(); return false;">Soluzioni <span class="nav-menu-caret">▾</span></a>
         <div class="nav-menu-dropdown">
-          <a href="pentru/proprietari/">Pentru proprietari</a>
-          <a href="pentru/arhitecti/">Pentru arhitecți</a>
-          <a href="pentru/constructori/">Pentru constructori</a>
-          <a href="pentru/investitori/">Pentru investitori</a>
-          <a href="devino-partener/" style="color:var(--red);font-weight:600;">→ Devino partener</a>
+          <a href="pour/proprietaires/">Per proprietari</a>
+          <a href="pour/architectes/">Per architetti</a>
+          <a href="pour/constructeurs/">Per costruttori</a>
+          <a href="pour/investisseurs/">Per investitori</a>
+          <a href="devenir-partenaire/" style="color:var(--red);font-weight:600;">→ Diventa partner</a>
         </div>
       </div>
       <div class="nav-menu-item">
-        <a href="#" class="nav-menu-link" role="button" aria-haspopup="true" aria-expanded="false" onclick="event.preventDefault(); return false;">Proiecte <span class="nav-menu-caret">▾</span></a>
+        <a href="#" class="nav-menu-link" role="button" aria-haspopup="true" aria-expanded="false" onclick="event.preventDefault(); return false;">Progetti <span class="nav-menu-caret">▾</span></a>
         <div class="nav-menu-dropdown">
-          <a href="proiecte/">Case construite</a>
-          <a href="testimoniale/">Testimoniale (video)</a>
+          <a href="projets/">Case costruite</a>
+          <a href="temoignages/">Testimonianze (video)</a>
         </div>
       </div>
       <div class="nav-menu-item">
-        <a href="#" class="nav-menu-link" role="button" aria-haspopup="true" aria-expanded="false" onclick="event.preventDefault(); return false;">Calculator <span class="nav-menu-caret">▾</span></a>
+        <a href="#" class="nav-menu-link" role="button" aria-haspopup="true" aria-expanded="false" onclick="event.preventDefault(); return false;">Calcolatore <span class="nav-menu-caret">▾</span></a>
         <div class="nav-menu-dropdown">
-          <a href="calculator/">Calculator cost</a>
-          <a href="economii/">Calculator economii (vs cărămidă)</a>
+          <a href="calculateur/">Calcolatore costi</a>
+          <a href="economies/">Calcolatore di risparmi (vs mattone)</a>
         </div>
       </div>
       <div class="nav-menu-item">
-        <a href="#" class="nav-menu-link" role="button" aria-haspopup="true" aria-expanded="false" onclick="event.preventDefault(); return false;">Resurse <span class="nav-menu-caret">▾</span></a>
+        <a href="#" class="nav-menu-link" role="button" aria-haspopup="true" aria-expanded="false" onclick="event.preventDefault(); return false;">Risorse <span class="nav-menu-caret">▾</span></a>
         <div class="nav-menu-dropdown">
-          <a href="resurse/faq/">Întrebări frecvente</a>
+          <a href="ressources/faq/">FAQ</a>
         </div>
       </div>
       <div class="nav-menu-item">
-        <a href="#" class="nav-menu-link" role="button" aria-haspopup="true" aria-expanded="false" onclick="event.preventDefault(); return false;">Despre <span class="nav-menu-caret">▾</span></a>
+        <a href="#" class="nav-menu-link" role="button" aria-haspopup="true" aria-expanded="false" onclick="event.preventDefault(); return false;">Su di noi <span class="nav-menu-caret">▾</span></a>
         <div class="nav-menu-dropdown">
-          <a href="despre/">Compania</a>
-          <a href="despre/patent/">Patent</a>
-          <a href="despre/certificari/">Certificări</a>
-          <a href="despre/fabrici/">Fabricile noastre</a>
-          <a href="despre/echipa/">Fondatorul</a>
+          <a href="a-propos/">L'azienda</a>
+          <a href="a-propos/brevet/">Brevetto</a>
+          <a href="a-propos/certifications/">Certificazioni</a>
+          <a href="a-propos/usines/">Fabbrichele noastre</a>
+          <a href="a-propos/fondateur/">Fondatorul</a>
         </div>
       </div>
     </div>
     <div class="nav-cta">
       <!-- COUNTRY SELECTOR -->
       <div class="country-switcher" id="countrySwitcher">
-        <button class="country-switcher-trigger" id="countrySwitcherTrigger" aria-label="Alege țara" aria-expanded="false">
+        <button class="country-switcher-trigger" id="countrySwitcherTrigger" aria-label="Scegli il paese" aria-expanded="false">
           <span class="country-switcher-flag">{{country_flag}}</span>
           <span class="country-switcher-code">{{country}}</span>
           <svg class="country-switcher-caret" viewBox="0 0 12 12" width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,5 6,8 9,5"/></svg>
         </button>
         <div class="country-switcher-panel" id="countrySwitcherPanel" role="menu" aria-hidden="true">
-          <div class="country-switcher-header">Alege țara</div>
+          <div class="country-switcher-header">Scegli il paese</div>
           <a href="#" data-country="ro" data-domain="https://polistibrick.ro" data-folder="ro" class="country-switcher-item">
-            <span class="flag">🇷🇴</span><span class="name">România</span><span class="domain">polistibrick.ro</span>
+            <span class="flag">🇷🇴</span><span class="name">Romania</span><span class="domain">polistibrick.ro</span>
           </a>
           <a href="#" data-country="fr" data-domain="https://polistibrick.fr" data-folder="fr" class="country-switcher-item">
-            <span class="flag">🇫🇷</span><span class="name">Franța</span><span class="domain">polistibrick.fr</span>
+            <span class="flag">🇫🇷</span><span class="name">Francia</span><span class="domain">polistibrick.fr</span>
           </a>
           <a href="#" data-country="it" data-domain="https://polistibrick.it" data-folder="it" class="country-switcher-item">
             <span class="flag">🇮🇹</span><span class="name">Italia</span><span class="domain">polistibrick.it</span>
@@ -3357,8 +3354,8 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
         </div>
       </div>
       <!-- /COUNTRY SELECTOR -->
-      <a href="contact/" class="btn btn-ghost">Contact</a>
-      <a href="oferta/" class="btn btn-primary nav-cta-devis">Ofertă</a>
+      <a href="contact/" class="btn btn-ghost">Contatti</a>
+      <a href="devis/" class="btn btn-primary nav-cta-devis">Preventivo</a>
       <button class="nav-burger" id="navBurger" aria-label="Deschide meniul" aria-expanded="false" aria-controls="navDrawer">
         <span></span><span></span><span></span>
       </button>
@@ -3375,62 +3372,62 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   </button>
 
   <div class="nav-drawer-group">
-    <button class="nav-drawer-title" aria-expanded="false">Produse<span class="nd-caret">▾</span></button>
+    <button class="nav-drawer-title" aria-expanded="false">Prodotti<span class="nd-caret">▾</span></button>
     <div class="nav-acc">
-      <a href="produse/pereti-mbk/">Pereți MBK</a>
-      <a href="produse/planseu-pbk/">Planșee PBK</a>
-      <a href="produse/acoperis-tbk/">Acoperiș TBK</a>
+      <a href="produits/murs-mbk/">Pareti MBK</a>
+      <a href="produits/planchers-pbk/">Solai PBK</a>
+      <a href="produits/toit-tbk/">Tetto TBK</a>
     </div>
   </div>
 
   <div class="nav-drawer-group">
-    <button class="nav-drawer-title" aria-expanded="false">Soluții<span class="nd-caret">▾</span></button>
+    <button class="nav-drawer-title" aria-expanded="false">Soluzioni<span class="nd-caret">▾</span></button>
     <div class="nav-acc">
-      <a href="pentru/proprietari/">Pentru proprietari</a>
-      <a href="pentru/arhitecti/">Pentru arhitecți</a>
-      <a href="pentru/constructori/">Pentru constructori</a>
-      <a href="pentru/investitori/">Pentru investitori</a>
-      <a href="devino-partener/" class="partner-link">→ Devino partener</a>
+      <a href="pour/proprietaires/">Per proprietari</a>
+      <a href="pour/architectes/">Per architetti</a>
+      <a href="pour/constructeurs/">Per costruttori</a>
+      <a href="pour/investisseurs/">Per investitori</a>
+      <a href="devenir-partenaire/" class="partner-link">→ Diventa partner</a>
     </div>
   </div>
 
   <div class="nav-drawer-group">
-    <button class="nav-drawer-title" aria-expanded="false">Proiecte<span class="nd-caret">▾</span></button>
+    <button class="nav-drawer-title" aria-expanded="false">Progetti<span class="nd-caret">▾</span></button>
     <div class="nav-acc">
-      <a href="proiecte/">Case construite</a>
-      <a href="testimoniale/">Testimoniale video</a>
+      <a href="projets/">Case costruite</a>
+      <a href="temoignages/">Testimonianze video</a>
     </div>
   </div>
 
   <div class="nav-drawer-group">
-    <button class="nav-drawer-title" aria-expanded="false">Calculator<span class="nd-caret">▾</span></button>
+    <button class="nav-drawer-title" aria-expanded="false">Calcolatore<span class="nd-caret">▾</span></button>
     <div class="nav-acc">
-      <a href="calculator/">Calculator cost</a>
-      <a href="economii/">Calculator economii</a>
+      <a href="calculateur/">Calcolatore costi</a>
+      <a href="economies/">Calcolatore economii</a>
     </div>
   </div>
 
   <div class="nav-drawer-group">
-    <button class="nav-drawer-title" aria-expanded="false">Resurse<span class="nd-caret">▾</span></button>
+    <button class="nav-drawer-title" aria-expanded="false">Risorse<span class="nd-caret">▾</span></button>
     <div class="nav-acc">
-      <a href="resurse/faq/">Întrebări frecvente</a>
+      <a href="ressources/faq/">FAQ</a>
     </div>
   </div>
 
   <div class="nav-drawer-group">
-    <button class="nav-drawer-title" aria-expanded="false">Despre<span class="nd-caret">▾</span></button>
+    <button class="nav-drawer-title" aria-expanded="false">Su di noi<span class="nd-caret">▾</span></button>
     <div class="nav-acc">
-      <a href="despre/">Compania</a>
-      <a href="despre/patent/">Patent</a>
-      <a href="despre/certificari/">Certificări</a>
-      <a href="despre/fabrici/">Fabricile noastre</a>
-      <a href="despre/echipa/">Fondatorul</a>
+      <a href="a-propos/">L'azienda</a>
+      <a href="a-propos/brevet/">Brevetto</a>
+      <a href="a-propos/certifications/">Certificazioni</a>
+      <a href="a-propos/usines/">Fabbrichele noastre</a>
+      <a href="a-propos/fondateur/">Fondatorul</a>
     </div>
   </div>
 
   <div class="nav-drawer-cta">
-    <a href="contact/" class="btn btn-ghost">Contact</a>
-    <a href="oferta/" class="btn btn-primary">Cere o ofertă →</a>
+    <a href="contact/" class="btn btn-ghost">Contatti</a>
+    <a href="devis/" class="btn btn-primary">Richiedi un preventivo →</a>
   </div>
 
 </aside>
@@ -3533,10 +3530,9 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     display: block;
   }
   .hero-bg video.hero-bg-video {
-    z-index: 1;
+    z-index: 0;
     opacity: 0;
-    transition: opacity 0.45s ease;
-    background: #14120F;
+    transition: opacity 0.55s ease;
   }
   .hero-bg video.hero-bg-video.is-playing {
     opacity: 1;
@@ -3545,192 +3541,11 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     opacity: 0;
     transition: opacity 0.45s ease;
   }
-  /* Scrim — întunecat progresiv la scroll (JS: --hero-progress 0→1) */
-  .hero-bg-scrim {
-    display: block;
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    pointer-events: none;
-    background: linear-gradient(180deg,
-      rgba(8, 7, 6, 0.38) 0%,
-      rgba(8, 7, 6, 0.65) 45%,
-      rgba(8, 7, 6, 0.92) 100%);
-    opacity: var(--hero-progress, 0);
-  }
+  /* Scrim pentru lizibilitate: întunecat în stânga (text) + jos, transparent în rest */
+  /* FĂRĂ scrim — imaginea e 100% naturală, luminoasă.
+     Lizibilitatea textului vine doar din text-shadow. */
+  .hero-bg-scrim { display: none; }
   .hero--photo .container { position: relative; z-index: 2; }
-
-  /* === ZURU-style scroll hero: video gol → scroll → mesaje + robot === */
-  .hero-scroll-track {
-    position: relative;
-    height: 200vh;
-    min-height: 200vh;
-    height: 200dvh;
-    min-height: 200dvh;
-  }
-  @media (max-width: 768px) {
-    .hero-scroll-track {
-      height: 180vh;
-      min-height: 180vh;
-      height: max(180dvh, calc(100dvh + 320px));
-      min-height: max(180dvh, calc(100dvh + 320px));
-    }
-  }
-  /* ZURU Tech hero type — Manrope 600, preset z2aqgr (măsurat de pe zuru.tech) */
-  .hero-teaser.text-stilizat,
-  .hero-teaser {
-    position: absolute;
-    bottom: 48px;
-    left: 48px;
-    z-index: 3;
-    margin: 0;
-    max-width: none;
-    font-family: 'Manrope', 'Manrope Placeholder', sans-serif;
-    font-size: 60px;
-    font-weight: 600;
-    font-style: normal;
-    line-height: 1.1;
-    letter-spacing: -0.04em;
-    color: #f7f7f7;
-    text-align: left;
-    text-shadow: none;
-    opacity: calc(1 - min(var(--hero-progress, 0) * 2.2, 1));
-    transform: translateY(calc(var(--hero-progress, 0) * -18px));
-    transition: opacity 0.35s ease, transform 0.35s ease;
-    pointer-events: none;
-  }
-  .hero-teaser-line {
-    display: block;
-    white-space: nowrap;
-  }
-  @media (min-width: 810px) and (max-width: 1199px) {
-    .hero-teaser.text-stilizat,
-    .hero-teaser {
-      font-size: 48px;
-      letter-spacing: -0.04em;
-    }
-  }
-  @media (max-width: 809px) {
-    .hero-teaser.text-stilizat,
-    .hero-teaser {
-      font-size: 40px;
-      letter-spacing: -0.03em;
-      bottom: 26px;
-      left: 26px;
-      max-width: none;
-    }
-  }
-  .hero-scroll-cue {
-    position: absolute;
-    right: clamp(20px, 4vw, 48px);
-    bottom: 28px;
-    z-index: 3;
-    width: 22px;
-    height: 34px;
-    border: 2px solid rgba(255, 255, 255, 0.62);
-    border-radius: 11px;
-    opacity: calc(1 - min(var(--hero-progress, 0) * 3, 1));
-    pointer-events: none;
-  }
-  .hero-scroll-cue::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 7px;
-    width: 3px;
-    height: 7px;
-    margin-left: -1.5px;
-    border-radius: 2px;
-    background: rgba(255, 255, 255, 0.88);
-    animation: scrollCueBob 1.85s ease-in-out infinite;
-  }
-  @keyframes scrollCueBob {
-    0%, 100% { transform: translateY(0); opacity: 0.55; }
-    50% { transform: translateY(7px); opacity: 1; }
-  }
-  .hero-full-content {
-    position: absolute;
-    inset: 0;
-    z-index: 4;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: clamp(72px, 11vh, 108px) clamp(16px, 4vw, 32px) clamp(28px, 5vh, 48px);
-    opacity: 1;
-    visibility: hidden;
-    transform: translateY(36px);
-    pointer-events: none;
-    will-change: transform;
-  }
-  .hero-full-content .container {
-    width: 100%;
-    max-width: 100%;
-    padding: 0 clamp(16px, 4vw, 32px);
-    padding-bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .hero-full-content .hero-text-col {
-    width: 100%;
-    max-width: min(92vw, 820px);
-    margin: 0 auto;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .hero-full-content picture,
-  .hero-full-content .hero-robot-wrap {
-    display: block;
-    margin: 0 auto 18px;
-  }
-  .hero-full-content h1 {
-    width: 100%;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .hero-full-content .hero-sub {
-    width: 100%;
-    max-width: 640px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-  }
-  .hero-full-content .hero-actions {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 0;
-  }
-  .hero-full-content .hero-actions,
-  .hero-full-content a { pointer-events: auto; }
-  .hero.hero--photo:not(.hero-expanded) .hero-full-content {
-    visibility: hidden;
-    pointer-events: none;
-  }
-  .hero-full-content .hero-eyebrow { display: none !important; }
-  .hero.hero--photo.hero-expanded .hero-teaser,
-  .hero.hero--photo.hero-expanded .hero-scroll-cue {
-    opacity: 0 !important;
-    visibility: hidden;
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .hero-scroll-track { height: auto; }
-    .hero-scroll-cue { display: none; }
-    .hero-teaser { display: none; }
-    .hero-full-content {
-      position: relative;
-      opacity: 1 !important;
-      transform: none !important;
-      pointer-events: auto;
-    }
-    .hero-bg-scrim { opacity: 0.82 !important; }
-  }
 
   /* Fascicul de "fum negru" sub meniu — gradient discret doar în partea
      de sus a hero-ului, pentru lizibilitatea textului alb din nav.
@@ -3757,41 +3572,31 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     left: 0; right: 0; bottom: 0;
     height: clamp(360px, 58vh, 640px);
     background: linear-gradient(0deg,
-      rgba(8, 7, 6, 0.84) 0%,
-      rgba(8, 7, 6, 0.62) 30%,
-      rgba(8, 7, 6, 0.38) 58%,
-      rgba(8, 7, 6, 0.18) 82%,
+      rgba(8, 7, 6, 0.74) 0%,
+      rgba(8, 7, 6, 0.52) 30%,
+      rgba(8, 7, 6, 0.28) 58%,
+      rgba(8, 7, 6, 0.08) 82%,
       rgba(8, 7, 6, 0) 100%);
     z-index: 1;
     pointer-events: none;
-    opacity: var(--hero-progress, 0);
   }
 
-  /* Sticky full-viewport — scroll-ul din .hero-scroll-track animează conținutul */
+  /* DEGAJAT, stil zuru: textul jos-stânga (2 rânduri), robotul jos-dreapta,
+     poziționat absolut — fotografia respiră, nimic nu se bate cu nimic. */
   section.hero.hero--photo {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    min-height: 100vh;
-    max-height: 100vh;
-    height: 100dvh;
-    min-height: 100dvh;
-    max-height: 100dvh;
     justify-content: flex-end;
-    padding: 0;
-    --hero-progress: 0;
-    overflow: hidden;
+    padding: 110px 0 0;
+    min-height: calc(100vh + 20mm); /* imaginea extinsă 20mm în jos — pagina 2+ coboară */
   }
   .hero--photo .container {
-    display: block;
-    width: 100%;
-    padding-bottom: calc(64px + 20mm);
+    display: block;            /* fără grid — textul e singur, pe lățimea lui */
+    width: 100%;               /* flex-item: fără shrink-to-fit */
+    padding-bottom: calc(64px + 20mm); /* textul rămâne la poziția inițială */
   }
   .hero--photo .container > .hero-text-col {
     max-width: min(74%, 900px);
   }
-  .hero-full-content h1 {
+  .hero--photo h1 {
     color: #FFFFFF;
     /* titlu pe 3 rânduri: 2 albe + 1 roșu jos (ca secțiunea morph) */
     font-size: clamp(40px, 5vw, 72px);
@@ -3799,14 +3604,14 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     margin-bottom: 26px;
     text-shadow: 0 2px 36px rgba(0, 0, 0, 0.55), 0 1px 6px rgba(0, 0, 0, 0.40);
   }
-  .hero-full-content h1 em { color: #FFD9DE; } /* italic alb-rozat cald — accent subtil */
+  .hero--photo h1 em { color: #FFD9DE; } /* italic alb-rozat cald — accent subtil */
   /* Rândul 2 decalat — "Un système." începe sub "maison" */
-  .hero-full-content h1 .h1-l2 {
-    display: block;
+  .hero--photo h1 .h1-l2 {
+    display: inline-block;
     color: var(--red);
     font-style: italic;
   }
-  .hero-full-content h1 .h1-l3 {
+  .hero--photo h1 .h1-l3 {
     display: inline-block;
     padding-left: 3.56em; /* a doua treaptă a cascadei */
   }
@@ -3820,14 +3625,13 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     background: rgba(255, 255, 255, 0.18);
     border-color: #FFFFFF;
   }
-  .hero-full-content .hero-robot-wrap {
-    max-width: clamp(180px, 22vw, 280px);
-  }
-  .hero-full-content .hero-robot {
+  /* Robotul — în stânga, deasupra titlului. */
+  .hero--photo .hero-robot {
     display: block;
-    width: 100%;
+    width: auto;
     height: auto;
-    margin: 0 auto;
+    max-width: clamp(216px, 22.8vw, 324px);
+    margin: 0 0 20px;
     filter: drop-shadow(0 24px 44px rgba(0, 0, 0, 0.45));
   }
   /* Reduced motion / fallback: doar prima imagine, fixă */
@@ -3869,18 +3673,16 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   }
   .hero-stats-row li strong { color: #fff; font-weight: 800; font-size: 1.2em; margin-right: 5px; }
   @media (max-width: 968px) {
-    .hero-full-content { padding-top: 68px; }
-    .hero--photo .container { padding-bottom: 0; }
-    .hero--photo .container > .hero-text-col { max-width: 100%; transform: none; }
-    .hero-full-content h1 { font-size: clamp(22px, 6.8vw, 30px); }
-    .hero--photo .hero-robot { max-width: clamp(120px, 34vw, 168px); margin-bottom: 12px; }
+    .hero--photo .container { padding-bottom: calc(40mm + 36px); }
+    .hero--photo .container > .hero-text-col { max-width: 100%; transform: translateY(40mm); }
+    .hero--photo h1 { font-size: clamp(22px, 6.8vw, 30px); }
+    .hero--photo .hero-robot { max-width: 158px; margin-bottom: 14px; }
     .hero--photo .hero-sub { font-size: 13px; line-height: 1.5; margin-bottom: 14px; }
     .hero-stats-row { gap: 6px 18px; margin-bottom: 18px; }
     .hero-stats-row li { font-size: 12px; }
   }
 </style>
-<div class="hero-scroll-track" id="heroScrollTrack">
-<section class="hero hero--photo" id="heroSection">
+<section class="hero hero--photo">
   <div class="hero-bg" aria-hidden="true">
     <picture class="hero-bg-poster">
       <source type="image/webp" srcset="images/hero/hero-house-1.webp">
@@ -3894,25 +3696,20 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
            data-src-mobile-webm="images/hero/hero-houses-reel-mobile.webm"></video>
     <div class="hero-bg-scrim"></div>
   </div>
-  <h1 class="hero-teaser text-stilizat"><span class="hero-teaser-line">O tehnologie</span><span class="hero-teaser-line">cu 5 avantaje</span></h1>
-  <div class="hero-scroll-cue" aria-hidden="true"></div>
-  <div class="hero-full-content">
-    <div class="container">
-      <div class="hero-text-col">
-        <picture class="hero-robot-wrap">
-          <img class="hero-robot" src="images/robot.webp" alt="Polistibrick — Construcție inteligentă" fetchpriority="low" loading="lazy" width="1500" height="1362">
-        </picture>
-        <h1>Construiești mai multe locuințe.<br><span class="h1-l2">Cu o singură echipă.</span></h1>
-        <p class="hero-sub">Polistibrick înlocuiește 5 materiale diferite și 5 echipe de construcție. Un singur produs, o singură echipă — și casa este finalizată. <strong>Inovație brevetată.</strong></p>
-        <div class="hero-actions">
-          <a href="oferta/" class="btn btn-red btn-large">Primește oferta ta gratuită →</a>
-          <a href="montaj/" class="btn btn-ghost btn-large">Construiesc singur →</a>
-        </div>
+  <div class="container">
+    <div class="hero-text-col">
+      <picture>
+        <img class="hero-robot reveal" src="images/robot.webp" alt="Polistibrick — Costruzione inteligentă" fetchpriority="low" loading="lazy" width="1500" height="1362">
+      </picture>
+      <h1 class="reveal">Construiești mai multe case.<br><span class="h1-l2">Cu mai puțină manoperă.</span></h1>
+      <p class="hero-sub reveal">Polistibrick inlocuiește 5 materiale diferite și 5 echipe de costruzione. Un singur produs, o singură echipă — și casa este finalizată. <strong>Innovazione brevettata.</strong></p>
+      <div class="hero-actions reveal">
+        <a href="devis/" class="btn btn-red btn-large">Primește oferta ta gratuită →</a>
+        <a href="montage/" class="btn btn-ghost btn-large">Construiesc singur →</a>
       </div>
     </div>
   </div>
 </section>
-</div>
 
 <!-- MORPH — un seul système, toutes les architectures (vidéo full-bleed, texte superposé) -->
 <style>
@@ -4072,15 +3869,15 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   </div>
 <section class="morph-section" id="morph">
   <div class="morph-overlay">
-    <span class="morph-eyebrow reveal">Libertate arhitecturală</span>
+    <span class="morph-eyebrow reveal">Libertà architettonica</span>
     <h2 class="reveal">«&nbsp;Cum construiesc asta&nbsp;?&nbsp;»<br><em>Cu Polistibrick, este posibil.</em></h2>
     <p class="morph-sub reveal">Libertate totală la execuție, ca și la proiectare.</p>
-    <a href="oferta/" class="btn btn-red morph-cta reveal">Ofertă gratuită →</a>
+    <a href="devis/" class="btn btn-red morph-cta reveal">Preventivo gratuită →</a>
   </div>
   <div class="morph-media">
     <video id="morphVideo" class="morph-video lazy-video" muted loop playsinline preload="none"
            poster="images/morph/morph-poster.jpg"
-           aria-label="Sistemul Polistibrick se reconfigurează: casă parter, vilă cu etaj, mic bloc colectiv">
+           aria-label="Sistemul Polistibrick se reconfigurează: casa parter, vilă cu etaj, mic bloc colectiv">
       <source data-src="images/morph/morphing-polistibrick.mp4" type="video/mp4">
     </video>
   </div>
@@ -4487,7 +4284,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     <span class="wm-half wm-top">Diferențe</span>
     <span class="wm-half wm-bottom">Diferențe</span>
   </div>
-<section class="differences-section" id="difference" aria-label="Diferența Polistibrick">
+<section class="differences-section" id="difference" aria-label="La differenza Polistibrick">
   <video class="differences-bg lazy-video" muted loop playsinline preload="none" poster="images/wall.jpg">
     <source data-src="images/wall.mp4?v=2" type="video/mp4">
   </video>
@@ -4515,7 +4312,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
                   <h4>Sistem Polistibrick</h4>
                 </div>
                 <p class="card-team">👤 O echipă — 3 persoane</p>
-                <p class="card-materials">📦 <strong>3 materiale</strong> : Cofraj Polistibrick • Beton • Oțel</p>
+                <p class="card-materials">📦 <strong>3 materiale</strong> : Cassero Polistibrick • Calcestruzzo • Oțel</p>
               </div>
             </div>
           </div>
@@ -4535,7 +4332,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
                   <h4>Sistem tradițional</h4>
                 </div>
                 <p class="card-team">👤👤👤👤👤 5 echipe — 15 persoane</p>
-                <p class="card-materials">📦 <strong>9 materiale</strong> : Blocuri • Mortar • Cofraj • Fier • Beton • Izolație • Placare • Șuruburi • etc.</p>
+                <p class="card-materials">📦 <strong>9 materiale</strong> : Blocuri • Mortar • Cassero • Fier • Calcestruzzo • Isolamento • Placare • Șuruburi • etc.</p>
               </div>
             </div>
           </div>
@@ -5127,52 +4924,52 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
 </style>
 <div class="personas-wrap">
   <div class="personas-watermark" aria-hidden="true">
-    <span class="wm-half wm-top">Pentru tine</span>
-    <span class="wm-half wm-bottom">Pentru tine</span>
+    <span class="wm-half wm-top">Per tine</span>
+    <span class="wm-half wm-bottom">Per tine</span>
   </div>
-<section class="personas-section" id="pour" aria-label="Ești…? Soluții pe rol">
+<section class="personas-section" id="pour" aria-label="Ești…? Soluzioni pe rol">
 
-  <div class="persona-slide active" data-href="pentru/constructori/">
-    <img src="images/personas/pour-constructeur.jpg" alt="Șantier Polistibrick: turnare beton într-un lot de case" fetchpriority="low" loading="lazy">
+  <div class="persona-slide active" data-href="pour/constructeurs/">
+    <img src="images/personas/pour-constructeur.jpg" alt="Șantier Polistibrick: turnare calcestruzzo într-un lot de case" fetchpriority="low" loading="lazy">
     <div class="persona-scrim"></div>
     <div class="persona-content">
       <span class="persona-overline">Ești… Constructor?</span>
       <h2>De 2× mai rapid. <em>Marje protejate.</em></h2>
       <div class="persona-metric">O singură echipă = marja a 5 echipe — până la 50%</div>
-      <a class="persona-cta" href="pentru/constructori/">Vezi pentru constructori →</a>
+      <a class="persona-cta" href="pour/constructeurs/">Vezi pentru constructori →</a>
     </div>
   </div>
 
-  <div class="persona-slide" data-href="pentru/arhitecti/">
-    <img src="images/personas/pour-architecte.jpg" alt="Casă de arhitect contemporană cu console, realizată cu Polistibrick" loading="lazy">
+  <div class="persona-slide" data-href="pour/architectes/">
+    <img src="images/personas/pour-architecte.jpg" alt="La La La Casa de arhitect contemporană cu console, realizată cu Polistibrick" loading="lazy">
     <div class="persona-scrim"></div>
     <div class="persona-content">
       <span class="persona-overline">Ești… Arhitect · Inginer?</span>
       <h2>Tu proiectezi,<br><em>Polistibrick execută.</em></h2>
-      <div class="persona-metric">Pentru prima dată, imaginația ta nu mai are limite — console generoase și deschideri ample, în calcule Eurocode 2 clasice.</div>
-      <a class="persona-cta" href="pentru/arhitecti/">Vezi pentru arhitecți →</a>
+      <div class="persona-metric">Per prima dată, imaginația ta nu mai are limite — console generoase și deschideri ample, în calcule Eurocode 2 clasice.</div>
+      <a class="persona-cta" href="pour/architectes/">Vedi per architetti →</a>
     </div>
   </div>
 
-  <div class="persona-slide" data-href="pentru/proprietari/">
+  <div class="persona-slide" data-href="pour/proprietaires/">
     <img src="images/personas/pour-proprietaire.jpg" alt="Cuplu pe terasa unei case Polistibrick la apus" loading="lazy">
     <div class="persona-scrim"></div>
     <div class="persona-content">
       <span class="persona-overline">Ești… Proprietar?</span>
-      <h2>Casă premium, <em>fără facturi.</em></h2>
-      <div class="persona-metric">−90% la facturile de energie, pe viață</div>
-      <a class="persona-cta" href="pentru/proprietari/">Vezi pentru proprietari →</a>
+      <h2>La La La Casa premium, <em>senza bollette.</em></h2>
+      <div class="persona-metric">−90% la bollettele de energie, pe viață</div>
+      <a class="persona-cta" href="pour/proprietaires/">Vedi per proprietari →</a>
     </div>
   </div>
 
-  <div class="persona-slide" data-href="pentru/investitori/">
+  <div class="persona-slide" data-href="pour/investisseurs/">
     <img src="images/personas/persona-promoteur.jpg" alt="" loading="lazy">
     <div class="persona-scrim"></div>
     <div class="persona-content">
       <span class="persona-overline">Ești… Dezvoltator?</span>
       <h2>ROI maxim. <em>Risc minim.</em></h2>
       <div class="persona-metric">+15–25% la revânzare, structura de 2× mai rapid</div>
-      <a class="persona-cta" href="pentru/investitori/">Vezi pentru investitori →</a>
+      <a class="persona-cta" href="pour/investisseurs/">Vezi pentru investitori →</a>
     </div>
   </div>
 
@@ -5315,16 +5112,16 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     <span class="wm-half wm-top">Pasiv</span>
     <span class="wm-half wm-bottom">Pasiv</span>
   </div>
-<section class="passif-section" id="passif" aria-label="Standardul casă pasivă">
+<section class="passif-section" id="passif" aria-label="Standardul casa passiva">
   <div class="passif-content">
     <span class="passif-overline reveal">Cel mai bun argument de vânzare</span>
     <h2 class="reveal">Oferă pasiv clienților tăi,<br><em>la prețul celui clasic.</em></h2>
-    <div class="passif-metric reveal">Clasă A+++<span class="sep">·</span>−90% facturi<span class="sep">·</span>15 kWh/m²/an<span class="sep">·</span>21 °C constant</div>
-    <a href="oferta/" class="btn btn-red passif-cta reveal">Ofertă gratuită →</a>
+    <div class="passif-metric reveal">Clasă A+++<span class="sep">·</span>−90% bollette<span class="sep">·</span>15 kWh/m²/anno<span class="sep">·</span>21 °C constant</div>
+    <a href="devis/" class="btn btn-red passif-cta reveal">Preventivo gratuită →</a>
   </div>
   <div class="passif-media">
-    <div class="passif-slides" aria-label="Casă Polistibrick iarna: confort constant în interior">
-      <img class="passif-photo" src="images/passive/passive-winter.jpg?v=5" alt="Vederea din living iarna — confort constant" loading="lazy">
+    <div class="passif-slides" aria-label="Polistibrick home in winter: constant indoor comfort">
+      <img class="passif-photo" src="images/passive/passive-winter.jpg?v=5" alt="Living room view in winter — constant comfort" loading="lazy">
     </div>
     <div class="passif-scrim"></div>
   </div>
@@ -5488,13 +5285,13 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     <span class="wm-half wm-top">De serie</span>
     <span class="wm-half wm-bottom">De serie</span>
   </div>
-<section class="cinq-section" id="cinq" aria-label="Diferența Polistibrick: cinci produse într-un singur panou">
+<section class="cinq-section" id="cinq" aria-label="La differenza Polistibrick: cinci produse într-un singur panou">
   <div class="cinq-media">
   <div class="cinq-overlay">
-    <span class="cinq-eyebrow reveal">Diferența Polistibrick</span>
-    <h2 class="reveal">Cinci linii în minus pe ofertă,<br><em>premium în plus pentru tine.</em></h2>
-    <div class="cinq-metric reveal"><strong>Foc, hidrofug, etanșeitate la aer, izolație pasivă, fonoizolație, fixare</strong>: în altă parte, le calculezi, le transporti și le montezi conform unor norme stricte — la preț mare. Polistibrick le integrează din fabrică, avantajele cele mai dorite din 2026. Clientul tău le primește fără cost suplimentar — o casă pe care puțini o au.</div>
-    <a href="oferta/" class="btn btn-red cinq-cta reveal">Ofertă gratuită →</a>
+    <span class="cinq-eyebrow reveal">La differenza Polistibrick</span>
+    <h2 class="reveal">Cinci linii în minus pe ofertă,<br><em>premium în plus per te.</em></h2>
+    <div class="cinq-metric reveal"><strong>Foc, impermeabile, etanșeitate la aer, isolamento pasivă, fonoisolamento, fixare</strong>: în altă parte, le calculezi, le transporti și le montezi conform unor norme stricte — la preț mare. Polistibrick le integrează din fabrică, avantajele cele mai dorite din 2026. Clientul tău le primește fără cost suplimentar — o casa pe care puțini o au.</div>
+    <a href="devis/" class="btn btn-red cinq-cta reveal">Preventivo gratuită →</a>
   </div>
     <video class="cinq-video lazy-video" muted loop playsinline preload="none"
            poster="images/bundle/bundle-test-poster.jpg?v=3"
@@ -5507,7 +5304,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   <div class="cinq-legend">
       <div class="cinq-item">
         <div class="ci-name">Securitate la foc integrată</div>
-        <div class="ci-val">Fibrociment A1 + beton armat.</div>
+        <div class="ci-val">Fibrociment A1 + calcestruzzo armat.</div>
       </div>
       <div class="cinq-item">
         <div class="ci-name">Etanș peste tot</div>
@@ -5515,11 +5312,11 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
       </div>
       <div class="cinq-item">
         <div class="ci-name">Silence de serie</div>
-        <div class="ci-val">Fonoizolație ≥ 65 dB de serie.</div>
+        <div class="ci-val">Fonoisolamento ≥ 65 dB de serie.</div>
       </div>
       <div class="cinq-item">
-        <div class="ci-name">Structură antiseismică</div>
-        <div class="ci-val">Beton armat monolitic durabil pe viață.</div>
+        <div class="ci-name">Structură antisismicoă</div>
+        <div class="ci-val">Calcestruzzo armat monolitic durabil pe viață.</div>
       </div>
       <div class="cinq-item">
         <div class="ci-name">Fixare directă</div>
@@ -5600,10 +5397,10 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   <div class="presence-scrim"></div>
 
   <div class="presence-content">
-    <span class="presence-overline reveal">Producție · Polistibrick</span>
+    <span class="presence-overline reveal">Produzione · Polistibrick</span>
     <h2 class="reveal">Capacitate industrială <em>& logistică.</em></h2>
     <div class="presence-metric reveal">2 fabrici proprii<span class="sep">·</span>9 țări livrate<span class="sep">·</span>direct pe șantier</div>
-    <a href="oferta/" class="btn btn-red presence-cta reveal">Ofertă gratuită →</a>
+    <a href="devis/" class="btn btn-red presence-cta reveal">Preventivo gratuită →</a>
   </div>
 
   <div class="presence-mapcard">
@@ -5694,7 +5491,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
  </path>
  <path class="pm-cc pm-on" d="M420.4 584.7l-0.4 1-2-0.4 0-1.5 1.2-1.6 2.7-0.7 0.8 1.3-2.3 1.9z m21.7-13.6l1.2 0.5 1.3-0.5 1.4 0.4 0.2 1-2.2 3.5-0.6 1.4-2.1 1.3-4-1.7-0.3-1.6-1.4-0.7-1.7 1.3-1.4-1-0.3-1.2 5.3-3.7 1.5-0.9 3.2-0.9 0.5 1.2-0.6 1.6z m14.7-0.8l-0.3 0.2-3.9-1.9-1.6-0.4 0.1-1.4 2.6-0.2 2.1 0.7 1.2 1.8-0.2 1.2z m-77.4-55.5l0.5 1.3 4.3 1.3-0.3 3.2 1.8-0.4 4.4 1.7 2.2 0.2 2.2 2.1 3.6-0.4 3.2 2.1 3.1-0.4 0.7 0.4 4.7 0 0.8-2.4 4 1.1 2.5 1 1.7 0.3 1.1 1.5 0 2.1 0.7 0.4 2.8-1.1 2.8 1.2 1.3 1.2 2.1-1.1 4.7 1.2 1.2-0.8 3.8-1.1 3.1 0.6 1.2 2.2-1.8 0.5-0.2 1.4 1.2 1.3 0.1 2.1-3 2.8-8.7 4.7-2.9 2.7-6.6 1.5-4.5 1.5-2.2 0.5-4.1 3.8 1.1 0.3 1.2 1.2-0.4 0.6-2.5 1.1-0.9 0-2.9 4.6-2.6 3.3-1.5 1.5-1.5 2.1-3.2 5.6-0.1 1.6 1.6 5.5 2.2 2.7 2.4 1.1 0.6 1-0.8 1-2.4 1.7-4.3 2.3-1.8 1.9-0.3 1.8-1.3 0.8-0.5 2.5-1.8 4.4 1.3 1.2-1.3 0.8-6.5 0.3-4.1 2.8-2 2.4-1.9 4.5-2.2 2.6-1 0.5-1.5-1.2-1.9-0.1-1.9 0.3-1 1-1.5 0.5-1.5-0.5-4.6-0.2-2.3 0.8-1.9-0.5-3.2-0.3-7 0.6-4 3.4-3.4 0-3.1 1.2-2.1 3-0.5 1.6-1-0.3-0.3 1.2-2.1 0.8-2.4-1-2-1.5-1-0.1-1.6-2.2-1.2-3.1 0-1.1-1.5-0.6-0.3-1.4 0.2-1.6-1.2-2-5-3.7-3.7-0.3-3 0.5-1.1-6.4 0.8-2.2 3.5-4.3 2.1-0.6 0.7-2.4-1.7 0.2-3-4.3 0.9-4 3.2-3 0.6-2.4-0.5-0.8-1.7-0.4-1.6-3.2-0.3-1.9-1.4-1.2-1.1-1.9 1.1-0.3 4.3 0 1-0.5 1.7-3.5 0-1.9-1.4-1.3 0.2-1 2.7-2.1-0.4-1.1 0.4-3.8-0.4-3.5-0.8-2 2-1.6 1.1-1.6 1.6-1.4 2.1-1.1 2.5-2.5-0.3-1.1-1.9-0.9-1.9-0.2-0.1-3.1-0.7-1.1-5.2-0.1-1.5-0.5-0.8 1.4-2.5 0.9-1.4 0-2.2-0.8-2.9 0.1-3 1.1-0.9-1.3 1.3-1.9-1-1.8-4.1 1-1.9 0.9-1.2 1.1-1.3-0.1 0-2.5 2.6-2.6-1.6-0.2 1.2-1.9-1-1 0.1-2.6-2.3 0.9-0.5-1.2 1.4-2.2-1.4-0.2-2.3-2.5 0.8-3.1 2-1 1.9-1.5 2.6 0.3 1.7-0.3 3.6-1.6-0.4-1.5 0.4-0.7 3.2-1.7 2-0.2 1.9-0.9 1.3 0.5 1.1-0.1 1.3 0.6 1.7 1.6 2.5 0.6 2-0.5 3.6-0.1 1.7 0.2 3.2-0.3 1.8 0.1 2.9-0.8 2.3 1 4.4 0.4 2.6 0.8 7.2 1.4 2.7 0 3.7-0.8 1.6-0.5 1.5 0.3 2.1-0.6 2.3 1 4.7 1.3 2.1-1.3 3.4 0.6 3.3 1.3 1.8 0.1 2.6-0.3 2.5-1z" id="ES" name="Spain">
  </path>
- <path class="pm-cc pm-on" d="M521.2 524.1l-0.3 2.3 1 1.7 0.6 6.5-1.8 3.2 0.1 3-1.6 4.3-0.8 1.1-3.8-2-1.2-1.1 1-1.8-2.2-0.9 0.4-1.7-0.2-0.9-1.6-0.5 1-1.3 0-0.8-1.5-1-0.3-0.9 1.3-1.1-0.6-0.9 0.1-1.3 0.9-1.9 1.2-0.9 2.8-0.8 1.2-1.1 1.9 0.6 0.6-1.2-0.2-2.7 0.3-1.1 1.3 0.5 0.4 2.7z m-133.9-47.9l-0.4 1.4-1.9-2.4 1-0.5 1.3 1.5z m84.4-55.6l2.1 1.2 1.4 0 2-0.6 1.3 0.7 1.4 0.1 3.5 4.3 1.8-0.7 1.4 0.4 0.3 0.9 2.1 0.1 3-0.6 2 1.4 4.8 0.8 1.6 0.6 0.1 1.3-3.5 3.8-1.4 5.5-1 1.8-0.3 1.5 0.2 2.4-0.6 2 0 1.5 1.1 1.3-1.5 0.7-0.8 1.4-2.7 0.3-0.8-0.8-1.1 0-1.8 1.4 1.3 1.1-0.6 0.9-3.8 4-2.1 0.9-0.5 2.9-3 2.2-1.1 2.9 0.8 0.7-0.3 1.5-1.5 1 0 1 1.4 0.1 2.3-1.6-0.5-1.3 2.3-1.5 1.9-0.1 2.2 0.3 0.8 2.2-0.5 1.7 2.3 2.3 0.9 1.4-2.6 1.7 0.1 1.6 0.9 0.6 1.7 2.6 1.8 1.6-0.8 2.5-1.2 0.3-1.7 1.3-1.9-0.2-0.8 0.4 1.5 3.1 3.2 1.4 0.5 1.7-0.8 0.7-1.4 2.5 0.7 1.3 0.1 1.4 0.9 0.9 5.1 2.4 3.3-0.6 0.3 2-2.1 2.6 0.2 1.5-0.6 0.3-0.8 0.3-2.4 1.1-3.9 3.4-1.8 1-0.7 1.8-2 1.4-2.4 0.5-2.3 1-1.1-0.4-2.8 0-1.7-1.2-3.4-0.8-1.1-1.8-2.5-0.1-0.8-1.5-1.9 0.3-1.5 0.7-2-0.1-5.9-1.8-1.4-1.4-1.7 0.5-1.6 1.6-6.5 4.1-2.6 4.3-0.1 1.2 0.7 3.9 1.6 2.5-3.1-0.6-3.8 1.1-1.2 0.8-4.7-1.2-2.1 1.1-1.3-1.2-2.8-1.2 0-1.5-2.6-0.6-0.9 0.7-1.1-1.5-1.7-0.3-2.5-1-4-1.1-0.8 2.4-4.7 0-0.7-0.4-3.1 0.4-3.2-2.1-3.6 0.4-2.2-2.1-2.2-0.2-4.4-1.7-1.8 0.4 0.3-3.2-4.3-1.3-0.5-1.3 2-0.5 1.9-1.9 1.7-7.1 1.3-8.3 1-1.6 1.2-0.4-1-1.2-1.1 1.5 0.7-7.6 0.5-2.8 0.9-3 3.1 2.4 0.8 1 0.9 3.4 0.6 0.1-1.1-4.6-1.8-2.3-3.6-2.3-0.5-1.3 1.8-0.6-0.5-1.8-0.5-5.9-3-0.6-4.8-2.6-1.7-2.6-1.6-1.9-0.4-1.7 0.9-1.8-0.8-1.1-1.4-0.8 1.1-1.6-3-0.2-1.8-0.5-0.3-1.1 1.3-1.4-1.6-0.8-2.6 0.2-0.2-1.7-2.2 0.3-1.2-0.3-1.1-1.1-1.3 0.2-2.2-0.4-0.8-0.7-4.8-1.3-2-0.1-1.9 0.6-1.1-0.3-1.3-2.2-3.1-1.1 0.6-0.7 3.1-0.6 0.6-0.7-2.2-0.9-0.2-1.2 1.6 0.3 0.1-1.2-4 0.1-0.4-1.3 0.5-1.4 2.3-1.2 5.8-1.4 2.5 0.2 1.7-0.2 3-1.6 2.9-0.4 2.7 0.8 2.5 2.8 1.2 1 3.1-1.7 4.4 0.1 0.9 0.9 1.2-1.7 1 1 4.7-0.2-1.5-2.5-0.2-6-1.3-1.7-2.1-4.3 0.2-1.4 3.2 0.3 2.7-0.6 1.3 0.4 0.3 2.8 1.1 1.6 2.2 0 2.3 0.5 3 0.1 4.3 0.8 1.8-0.5 3.5-2-1.8-0.7-0.2-0.7 0.9-2.2 5.2-2.5 3.7-0.7 3.8-1.3 2-1.4 1.2-1.8 0.5-1.3 0.3-6.8 1-2.2 2.9-1.6 6.4-1.1 0.9-0.5 0.9 2.2 0 1.2 2.9 2.4 3.2-1 1.6 1.8 0.5 2 4.2 1.1 0.6 2 0.9-0.3 3.6 0.4 1.6 1.1-0.4 1.6 0.7 0.7-0.7 1.4 0.5 0.6 2.3 0.3 2.2-0.3 1.3-0.6 0.5-1.4 1.9-0.6-0.8 2.7 0.6 0.6 0.4 2 1.7 0.1 3.3 1.5 2.8 2.6 3.4-0.4z" id="FR" name="Franța">
+ <path class="pm-cc pm-on" d="M521.2 524.1l-0.3 2.3 1 1.7 0.6 6.5-1.8 3.2 0.1 3-1.6 4.3-0.8 1.1-3.8-2-1.2-1.1 1-1.8-2.2-0.9 0.4-1.7-0.2-0.9-1.6-0.5 1-1.3 0-0.8-1.5-1-0.3-0.9 1.3-1.1-0.6-0.9 0.1-1.3 0.9-1.9 1.2-0.9 2.8-0.8 1.2-1.1 1.9 0.6 0.6-1.2-0.2-2.7 0.3-1.1 1.3 0.5 0.4 2.7z m-133.9-47.9l-0.4 1.4-1.9-2.4 1-0.5 1.3 1.5z m84.4-55.6l2.1 1.2 1.4 0 2-0.6 1.3 0.7 1.4 0.1 3.5 4.3 1.8-0.7 1.4 0.4 0.3 0.9 2.1 0.1 3-0.6 2 1.4 4.8 0.8 1.6 0.6 0.1 1.3-3.5 3.8-1.4 5.5-1 1.8-0.3 1.5 0.2 2.4-0.6 2 0 1.5 1.1 1.3-1.5 0.7-0.8 1.4-2.7 0.3-0.8-0.8-1.1 0-1.8 1.4 1.3 1.1-0.6 0.9-3.8 4-2.1 0.9-0.5 2.9-3 2.2-1.1 2.9 0.8 0.7-0.3 1.5-1.5 1 0 1 1.4 0.1 2.3-1.6-0.5-1.3 2.3-1.5 1.9-0.1 2.2 0.3 0.8 2.2-0.5 1.7 2.3 2.3 0.9 1.4-2.6 1.7 0.1 1.6 0.9 0.6 1.7 2.6 1.8 1.6-0.8 2.5-1.2 0.3-1.7 1.3-1.9-0.2-0.8 0.4 1.5 3.1 3.2 1.4 0.5 1.7-0.8 0.7-1.4 2.5 0.7 1.3 0.1 1.4 0.9 0.9 5.1 2.4 3.3-0.6 0.3 2-2.1 2.6 0.2 1.5-0.6 0.3-0.8 0.3-2.4 1.1-3.9 3.4-1.8 1-0.7 1.8-2 1.4-2.4 0.5-2.3 1-1.1-0.4-2.8 0-1.7-1.2-3.4-0.8-1.1-1.8-2.5-0.1-0.8-1.5-1.9 0.3-1.5 0.7-2-0.1-5.9-1.8-1.4-1.4-1.7 0.5-1.6 1.6-6.5 4.1-2.6 4.3-0.1 1.2 0.7 3.9 1.6 2.5-3.1-0.6-3.8 1.1-1.2 0.8-4.7-1.2-2.1 1.1-1.3-1.2-2.8-1.2 0-1.5-2.6-0.6-0.9 0.7-1.1-1.5-1.7-0.3-2.5-1-4-1.1-0.8 2.4-4.7 0-0.7-0.4-3.1 0.4-3.2-2.1-3.6 0.4-2.2-2.1-2.2-0.2-4.4-1.7-1.8 0.4 0.3-3.2-4.3-1.3-0.5-1.3 2-0.5 1.9-1.9 1.7-7.1 1.3-8.3 1-1.6 1.2-0.4-1-1.2-1.1 1.5 0.7-7.6 0.5-2.8 0.9-3 3.1 2.4 0.8 1 0.9 3.4 0.6 0.1-1.1-4.6-1.8-2.3-3.6-2.3-0.5-1.3 1.8-0.6-0.5-1.8-0.5-5.9-3-0.6-4.8-2.6-1.7-2.6-1.6-1.9-0.4-1.7 0.9-1.8-0.8-1.1-1.4-0.8 1.1-1.6-3-0.2-1.8-0.5-0.3-1.1 1.3-1.4-1.6-0.8-2.6 0.2-0.2-1.7-2.2 0.3-1.2-0.3-1.1-1.1-1.3 0.2-2.2-0.4-0.8-0.7-4.8-1.3-2-0.1-1.9 0.6-1.1-0.3-1.3-2.2-3.1-1.1 0.6-0.7 3.1-0.6 0.6-0.7-2.2-0.9-0.2-1.2 1.6 0.3 0.1-1.2-4 0.1-0.4-1.3 0.5-1.4 2.3-1.2 5.8-1.4 2.5 0.2 1.7-0.2 3-1.6 2.9-0.4 2.7 0.8 2.5 2.8 1.2 1 3.1-1.7 4.4 0.1 0.9 0.9 1.2-1.7 1 1 4.7-0.2-1.5-2.5-0.2-6-1.3-1.7-2.1-4.3 0.2-1.4 3.2 0.3 2.7-0.6 1.3 0.4 0.3 2.8 1.1 1.6 2.2 0 2.3 0.5 3 0.1 4.3 0.8 1.8-0.5 3.5-2-1.8-0.7-0.2-0.7 0.9-2.2 5.2-2.5 3.7-0.7 3.8-1.3 2-1.4 1.2-1.8 0.5-1.3 0.3-6.8 1-2.2 2.9-1.6 6.4-1.1 0.9-0.5 0.9 2.2 0 1.2 2.9 2.4 3.2-1 1.6 1.8 0.5 2 4.2 1.1 0.6 2 0.9-0.3 3.6 0.4 1.6 1.1-0.4 1.6 0.7 0.7-0.7 1.4 0.5 0.6 2.3 0.3 2.2-0.3 1.3-0.6 0.5-1.4 1.9-0.6-0.8 2.7 0.6 0.6 0.4 2 1.7 0.1 3.3 1.5 2.8 2.6 3.4-0.4z" id="FR" name="Francia">
  </path>
  <path class="pm-cc" d="M843.2 646.3l-0.1 0-0.1 0 0.1-0.1 0.1 0.1z m0 0l0.1 0 0.1 0 0.1 0.1-0.1 0-0.1 0-0.1 0 0-0.1z m-0.4-0.3l-0.1 0 0-0.1 0.1 0 0-0.1 0.1 0.1 0 0.1-0.1 0z m3.5-0.8l0.2 0.1 0.3 0.3 0.2 0.4 0.1 0.3 0.2 0.2 0.2 0.1-0.2 0-0.3 0-0.3-0.1-0.2-0.2-0.2 0-0.7 0.1-0.6 0.1-0.1 0.1-0.1 0.1-0.3 0-0.3 0-0.1-0.1 0.2-0.1 0.1 0-0.1-0.3-0.2 0-0.2-0.1 0-0.4-0.1-0.1-0.3-0.1 0-0.2 0.1-0.1 0.2-0.1 0.1 0.1 0.1 0.1 0.2-0.1 0.1-0.1 0.1-0.1 0.1-0.1 0.2 0.2 0.2 0.1 0.1 0 0.2 0.1 0.1 0 0.3-0.1 0.2 0 0.1 0.1 0.2 0 0.1 0 0.1 0 0-0.1z m-4 1.1l0 0.2-0.3 0.1-0.3 0.3 0 0.2-0.1 0.3 0 0.3 0 0.3 0 0.3 0 0.1-0.1 0-0.1 0.1 0 0.3-0.1 0.1-0.2 0-0.4 0-0.2 0.1-0.1 0.1-0.1 0.2-0.1 0.1-0.2 0.1-0.4 0.1-0.4 0.2-0.3 0.1-0.2-0.3 0.1 0.5-0.4 0.2-0.9 0.2-0.2 0.1-0.1 0.1-0.2 0.1-0.2 0-0.9-0.1-1 0.1-0.1 0.1-0.2 0.1-0.6 0.5-0.1 0.3-0.3 0-0.3 0.1 0 0.1-0.1-0.1-0.1-0.2 0.1-0.2 0.1 0.1 0.3 0-0.1-0.4-0.4-0.1-0.2 0.2-0.1 0.1-0.2-0.1 0 0.1-0.4-0.1-0.3-0.2-0.1-0.1 0-0.2-0.1 0-0.1 0-0.1 0-0.1 0-0.1 0.1 0 0.1-0.2 0-0.1 0.2-0.2 0-0.2 0-0.1 0.1 0.1 0.2-0.2 0.1-0.5 0-0.6-0.1-0.5-0.2-0.7-0.4-0.3-0.1-0.3-0.1-0.5 0-0.3-0.1-0.2-0.2-0.6-0.4-0.1-0.1-0.1-0.4 0-0.1-0.1-0.1-0.4-0.9-0.1-0.1-0.3-0.2-0.2-0.1-0.1-0.1-0.1-0.2 0-0.2 0.1-0.2-0.3-0.4-0.1-0.2 0-0.4-0.1-0.2-0.3-0.5-0.2-0.3-0.1-0.4 0.1-0.3 0.1 0 0.3 0.1 0.4 0.5 0.3 0.1 0.2 0.1 0.6 0 0.4-0.2 0.3-0.4 0.3-0.4 0.1-0.5 0.1-0.3 0.2-0.1 0.1-0.1 0-0.1 0.1 0 0.1 0.1 0.1 0 0.2 0 0.1 0.1 0.2 0.2 0.2 0 0.1 0 0.2-0.2 0.1-0.2 0-0.2 0.4 0.1 0.2 0.4 0.1 0.2 0.1 0.2 0.2 0.1 0.4 0.1 0.3 0.1 0.2 0.2 0.2 0.1 0.1 0.2 0 0.2 0.1 0.1 0.1 0.1 0.1 0 0.4-0.1 0.1-0.2 0.1-0.2 0.1-0.1 0.1 0.1 0.1 0.1 0.2 0.1 0.2 0 0.2-0.1 0.2-0.2 0.2-0.2 0.2-0.1 0.3-0.2 0.1-0.2 0.2 0 0.3 0.1 0.3 0 0.4 0 0.1-0.1 0.1 0 0.1-0.2 0.3-0.2 0.2 0 0.2 0.1 0.1 0.1 0.2 0 0.1 0 0.2 0.2 0.2 0.2 0.2 0.1 0.3 0.1 0.1 0 0.1-0.1 0-0.1 0.1-0.2 0.3-0.3 0.1 0 0.2 0 0.3 0 0.2 0 0.1 0 0 0.2 0.1 0.2 0.1 0.1 0.2 0.2 0.2 0.2 0 0.1 0.1 0.3 0 0.2 0 0.3 0 0.4-0.1 0.3 0.1 0.2 0.1 0.1 0.2 0 0.2 0 0-0.3 0-0.4 0.1-0.1 0.1-0.1 0.1-0.1 0.1 0.1 0.1 0.4 0.1 0.2 0.1 0.1 0.3-0.1 0-0.2 0.1-0.1 0.2 0 0.1 0.1 0.2 0 0.1-0.1 0.1 0.1 0.1 0 0.3 0.2 0.2 0 0.1 0 0.3 0.2z" id="CY" name="Cyprus">
  </path>
@@ -5704,11 +5501,11 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
  </circle>
  <circle cx="521" cy="266.6" id="2">
  </circle>
-</g><g class="pm-markers"><text class="pm-lbl" x="372" y="330">UK</text><text class="pm-lbl" x="300" y="362">Irlanda</text><text class="pm-lbl" x="492" y="396">Belgia</text><text class="pm-lbl" x="425" y="480">Franța</text><text class="pm-lbl" x="566" y="447">Austria</text><text class="pm-lbl" x="548" y="522">Italia</text><text class="pm-lbl" x="715" y="470">România</text><text class="pm-lbl" x="350" y="565">Spania</text><text class="pm-lbl" x="648" y="552">Muntenegru</text><circle class="pm-fdot" cx="414" cy="556" r="4.5"/><text class="pm-flbl" x="414" y="582">VALENCIA</text><text class="pm-fsub" x="414" y="592">Fabrică · Spania</text><circle class="pm-fdot" cx="695" cy="482" r="4.5"/><text class="pm-flbl" x="695" y="502">CRAIOVA</text><text class="pm-fsub" x="695" y="512">Fabrică · România</text></g></svg>
+</g><g class="pm-markers"><text class="pm-lbl" x="372" y="330">UK</text><text class="pm-lbl" x="300" y="362">Irlanda</text><text class="pm-lbl" x="492" y="396">Belgia</text><text class="pm-lbl" x="425" y="480">Francia</text><text class="pm-lbl" x="566" y="447">Austria</text><text class="pm-lbl" x="548" y="522">Italia</text><text class="pm-lbl" x="715" y="470">Romania</text><text class="pm-lbl" x="350" y="565">Spania</text><text class="pm-lbl" x="648" y="552">Muntenegru</text><circle class="pm-fdot" cx="414" cy="556" r="4.5"/><text class="pm-flbl" x="414" y="582">VALENCIA</text><text class="pm-fsub" x="414" y="592">Fabbrica · Spagna</text><circle class="pm-fdot" cx="695" cy="482" r="4.5"/><text class="pm-flbl" x="695" y="502">CRAIOVA</text><text class="pm-fsub" x="695" y="512">Fabbrica · Romania</text></g></svg>
           </div>
           <div class="presence-legend">
-            <span class="legend-item"><span class="legend-dot legend-dot--factory"></span> Fabrici</span>
-            <span class="legend-item"><span class="legend-dot legend-dot--country"></span> Țări de prezență</span>
+            <span class="legend-item"><span class="legend-dot legend-dot--factory"></span> Fabbriche</span>
+            <span class="legend-item"><span class="legend-dot legend-dot--country"></span> Paesi di presenza</span>
           </div>
     </div>
   </div>
@@ -5892,48 +5689,48 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     <div class="sistem-stage-wrap reveal">
       <div class="sistem-stage">
         <div class="sistem-intro">
-          <h2>O casă. <em>Trei produse.</em></h2>
+          <h2>O casa. <em>Trei produse.</em></h2>
         </div>
 
         <div class="sistem-layout">
         <div class="sistem-grid">
 
-          <a href="produse/pereti-mbk/" class="sistem-card" data-part="murs">
+          <a href="produits/murs-mbk/" class="sistem-card" data-part="murs">
             <div class="sistem-card-img">
               <img src="images/systeme/systeme-mbk.png" alt="Polistibrick MBK — perete premium" loading="lazy">
             </div>
             <div class="sistem-card-text">
-            <span class="bubble-tag">Pereți · MBK</span>
+            <span class="bubble-tag">Pareti · MBK</span>
             <h3>Gata <em>5-în-1.</em></h3>
-            <p>3 modele premium (210/270/300) plus producție la comandă fără cost suplimentar. Singurul ICF cu această garanție.</p>
+            <p>3 modelli premium (210/270/300) più produzione su misura senza costo aggiuntivo. L'unico ICF con questa garanzia.</p>
             <div class="sistem-card-spec">
               <strong>U=0,10–0,14</strong> W/m²K · Foc A1 · Antiseismic
             </div>
             </div>
           </a>
 
-          <a href="produse/planseu-pbk/" class="sistem-card" data-part="plancher">
+          <a href="produits/planchers-pbk/" class="sistem-card" data-part="plancher">
             <div class="sistem-card-img">
               <img src="images/systeme/systeme-pbk.png" alt="Polistibrick PBK — planșeu premium" loading="lazy">
             </div>
             <div class="sistem-card-text">
-            <span class="bubble-tag">Planșee · PBK</span>
-            <h3>Deschideri <em>până la 9 m.</em></h3>
-            <p>Sistem prefabricat ușor și ultra-rezistent: polistiren + fibrociment + beton armat. Defazaj termic 10,8 h.</p>
+            <span class="bubble-tag">Solai · PBK</span>
+            <h3>Deschideri <em>fino a 9 m.</em></h3>
+            <p>Sistem prefabricat ușor și ultra-rezistent: polistireneee + fibrociment + calcestruzzo armat. Defazaj termic 10,8 h.</p>
             <div class="sistem-card-spec">
               <strong>9 m</strong> deschidere · 65 kg/m² · Acustic ≥ 52 dB
             </div>
             </div>
           </a>
 
-          <a href="produse/acoperis-tbk/" class="sistem-card" data-part="toit">
+          <a href="produits/toit-tbk/" class="sistem-card" data-part="toit">
             <div class="sistem-card-img">
-              <img src="images/systeme/systeme-tbk.png" alt="Polistibrick TBK — acoperiș Passivhaus" loading="lazy">
+              <img src="images/systeme/systeme-tbk.png" alt="Polistibrick TBK — tetto Passivhaus" loading="lazy">
             </div>
             <div class="sistem-card-text">
-            <span class="bubble-tag">Acoperiș · TBK</span>
-            <h3>Passivhaus <em>din fabrică.</em></h3>
-            <p>U=0,13 W/m²K, grosime 25 cm, doar 22 kg/m². Cel mai performant acoperiș din categoria sa. Fără izolație suplimentară.</p>
+            <span class="bubble-tag">Tetto · TBK</span>
+            <h3>Passivhaus <em>dalla fabbrica.</em></h3>
+            <p>U=0,13 W/m²K, grosime 25 cm, doar 22 kg/m². Cel mai performant tetto din categoria sa. Fără isolamento suplimentară.</p>
             <div class="sistem-card-spec">
               <strong>U=0,13</strong> W/m²K · 22 kg/m² · Passivhaus
             </div>
@@ -5943,7 +5740,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
         </div>
         <div class="sistem-hero reveal" id="sistemHero">
           <div class="sistem-hero-inner">
-            <img class="sh-layer sh-sizer" data-layer="murs" src="images/systeme/systeme-part-murs.png" alt="Casă Polistibrick în vedere explodată: acoperiș TBK, planșeu PBK, pereți MBK" loading="lazy">
+            <img class="sh-layer sh-sizer" data-layer="murs" src="images/systeme/systeme-part-murs.png" alt="La La La Casa Polistibrick in vedere explodată: tetto TBK, planșeu PBK, pareti MBK" loading="lazy">
             <img class="sh-layer" data-layer="plancher" src="images/systeme/systeme-part-plancher.png" alt="" aria-hidden="true" loading="lazy">
             <img class="sh-layer" data-layer="toit" src="images/systeme/systeme-part-toit.png" alt="" aria-hidden="true" loading="lazy">
           </div>
@@ -6197,8 +5994,8 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
 </style>
 
 <section class="montaj-section">
-  <video class="montaj-bg lazy-video" muted loop playsinline preload="none" data-boot-delay="700" poster="images/montaj/montage-houses-poster.webp">
-    <source data-src="images/montaj/montage-houses.mp4" type="video/mp4">
+  <video class="montaj-bg lazy-video" muted loop playsinline preload="none" poster="images/montage/montage-houses-poster.jpg">
+    <source data-src="images/montage/montage-houses.mp4" type="video/mp4">
   </video>
   <div class="montaj-scrim" aria-hidden="true"></div>
   <div class="montaj-watermark" aria-hidden="true">
@@ -6209,9 +6006,9 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     <div class="montaj-stage-wrap reveal">
       <div class="montaj-stage">
         <div class="montaj-intro">
-          <span class="bubble-tag">Etape de montaj</span>
-          <h2>O casă completă <em>în 4 etape.</em></h2>
-          <p>De la fundație la cofrajul închis — gata pentru turnarea betonului. Întregul proces în câteva săptămâni, cu doar 2–3 persoane pe șantier.</p>
+          <span class="bubble-tag">Fasi di montaggio</span>
+          <h2>O casa completoooa <em>în 4 etape.</em></h2>
+          <p>Dalle fondazioni alle casseroul închis — gata pentru turnarea calcestruzzoului. Întregul proces în câteva settimane, cu doar 2–3 persoane pe șantier.</p>
         </div>
 
         <div class="montaj-grid">
@@ -6219,21 +6016,21 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
           <article class="montaj-card">
             <div class="montaj-num">01</div>
             <div class="montaj-img">
-              <picture><source type="image/webp" srcset="images/construction/stage1-cofraj.webp"><img src="images/construction/stage1-cofraj.jpg" alt="Cofraj asamblat cu sprijin lateral" loading="lazy" decoding="async" width="800" height="600"></picture>
+              <img src="images/construction/stage1-cassero.jpg" alt="Cassero asamblat cu sprijin lateral" loading="lazy">
             </div>
             <div class="montaj-card-body">
-              <h3>Cofraj</h3>
-              <p>Pereți EPS ridicați și fixați cu sprijin lateral de lemn pe fundație. Fără mortar, fără pierderi de izolație.</p>
+              <h3>Cassero</h3>
+              <p>Pareti EPS ridicați și fixați cu sprijin lateral de lemn pe fundație. Fără mortar, fără pierderi de isolamento.</p>
             </div>
           </article>
 
           <article class="montaj-card">
             <div class="montaj-num">02</div>
             <div class="montaj-img">
-              <picture><source type="image/webp" srcset="images/construction/stage3-planseu.webp"><img src="images/construction/stage3-planseu.jpg" alt="Planșeu PBK montat" loading="lazy" decoding="async" width="800" height="600"></picture>
+              <picture><source type="image/webp" srcset="images/construction/stage3-planseu.webp"><img src="images/construction/stage3-planseu.jpg" alt="Solaio PBK montat" loading="lazy" decoding="async" width="800" height="600"></picture>
             </div>
             <div class="montaj-card-body">
-              <h3>Planșeu</h3>
+              <h3>Solaio</h3>
               <p>Panouri PBK 250 montate orizontal — straturi EPS-Grafit + fibrociment gata pentru armătură.</p>
             </div>
           </article>
@@ -6241,32 +6038,32 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
           <article class="montaj-card">
             <div class="montaj-num">03</div>
             <div class="montaj-img">
-              <picture><source type="image/webp" srcset="images/construction/stage2-fierbeton.webp"><img src="images/construction/stage2-fierbeton.jpg" alt="Armătură oțel-beton pe planșeu" loading="lazy" decoding="async" width="800" height="600"></picture>
+              <img src="images/construction/stage2-fiercalcestruzzo.jpg" alt="Armatura oțel-calcestruzzo pe planșeu" loading="lazy">
             </div>
             <div class="montaj-card-body">
-              <h3>Armătură</h3>
-              <p>Plasele de oțel-beton se așază între nervurile EPS-Grafit. Legătură monolitică între pereți și planșeu.</p>
+              <h3>Armatura</h3>
+              <p>Plasele de oțel-calcestruzzo se așază între nervurile EPS-Grafit. Legătură monolitică între pareti și planșeu.</p>
             </div>
           </article>
 
           <article class="montaj-card">
             <div class="montaj-num">04</div>
             <div class="montaj-img">
-              <picture><source type="image/webp" srcset="images/construction/stage4-final.webp"><img src="images/construction/stage4-final.jpg" alt="Cofraj închis, gata pentru turnarea betonului" loading="lazy" decoding="async" width="800" height="600"></picture>
+              <picture><source type="image/webp" srcset="images/construction/stage4-final.webp"><img src="images/construction/stage4-final.jpg" alt="Cassero închis, gata pentru turnarea calcestruzzoului" loading="lazy" decoding="async" width="800" height="600"></picture>
             </div>
             <div class="montaj-card-body">
-              <h3>Închiderea cofrajului</h3>
-              <p>Toate elementele asamblate și verificate. <strong>Suntem gata pentru turnarea betonului.</strong></p>
+              <h3>Chiusura del cassero</h3>
+              <p>Tutti gli elementi assemblati e verificati. <strong>Suntem gata pentru turnarea calcestruzzoului.</strong></p>
             </div>
           </article>
 
         </div>
 
         <div class="montaj-cta">
-          <p>După turnarea betonului, structura devine <strong>monolitică în 24 de ore</strong> — pereți, planșee, acoperiș, izolate continuu, fără punți termice.</p>
+          <p>Dopo il getto del calcestruzzo, la struttura diventa <strong>monolitică în 24 de ore</strong> — pareti, solai, tetto, izolate continuu, fără punți termice.</p>
           <div class="montaj-cta-actions">
-            <a href="montaj/" class="btn btn-on-dark-ghost btn-arrow">Vezi tot montajul</a>
-            <a href="oferta/" class="btn btn-primary btn-arrow">Cere o ofertă personalizată</a>
+            <a href="montage/" class="btn btn-on-dark-ghost btn-arrow">Vezi tot montajul</a>
+            <a href="devis/" class="btn btn-primary btn-arrow">Richiedi un preventivo personalizzato</a>
           </div>
         </div>
 
@@ -6561,7 +6358,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
 
     <div class="conf-head reveal">
       <span class="conf-overline">Recenzii verificate · Constructori</span>
-      <p class="conf-sub">Au construit cu Polistibrick — <em>vorbesc despre asta.</em></p>
+      <p class="conf-sub">Au costruito cu Polistibrick — <em>vorbesc despre asta.</em></p>
     </div>
 
     <!-- Carrousel d'avis : vidéo OU texte, même grand format -->
@@ -6593,8 +6390,8 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
 
       <!-- Avis 2 — VIDÉO -->
       <div class="conf-slide">
-        <div class="conf-feature" data-conf-video="images/montaj/montage-houses.mp4">
-          <video poster="images/montaj/montage-houses-poster.webp" loop muted playsinline preload="none"></video>
+        <div class="conf-feature" data-conf-video="images/montage/montage-houses.mp4">
+          <video poster="images/montage/montage-houses-poster.jpg" loop muted playsinline preload="none"></video>
           <div class="conf-feature-scrim" aria-hidden="true"></div>
           <span class="conf-vbadge">Testimonial video</span>
           <button type="button" class="conf-play" aria-label="Redă videoclipul">
@@ -6602,7 +6399,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
           </button>
           <div class="conf-fcaption">
             <div class="conf-stars" aria-label="5 din 5">★★★★★</div>
-            <p class="conf-fquote">Cu aceeași echipă, construiesc <em>mult mai multe case</em> pe an. Planificarea ține în sfârșit.</p>
+            <p class="conf-fquote">Cu aceeași echipă, construiesc <em>mult mai multe case</em> pe anno. Planificarea ține în sfârșit.</p>
             <div class="conf-author">
               <img src="images/personas/persona-architecte.jpg" alt="">
               <div>
@@ -6623,7 +6420,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
           <span class="conf-vbadge">Recenzie verificată</span>
           <div class="conf-fcaption">
             <div class="conf-stars" aria-label="5 din 5">★★★★★</div>
-            <p class="conf-fquote">Cea mai mare satisfacție&nbsp;? Finalizez <em>o ofertă în 5 minute</em>. Am doar fierul, betonul și cofrajul Polistibrick — sigur și fără erori.</p>
+            <p class="conf-fquote">Cea mai mare satisfacție&nbsp;? Finalizez <em>o ofertă în 5 minute</em>. Am doar fierul, calcestruzzoul și casseroul Polistibrick — sigur și fără erori.</p>
             <div class="conf-author">
               <img src="images/personas/persona-promoteur.jpg" alt="">
               <div>
@@ -6649,7 +6446,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
               <img src="images/personas/persona-proprietaire.jpg" alt="">
               <div>
                 <span class="ca-name">Camille Roy</span>
-                <span class="ca-loc">Casă individuală · Bordeaux</span>
+                <span class="ca-loc">La La La Casa individuală · Bordeaux</span>
                 <span class="ca-verif">✓ Client verificat</span>
               </div>
             </div>
@@ -6662,7 +6459,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
 
     <div class="conf-actions reveal">
       <button type="button" class="histoire-review-btn" data-review-trigger>Lasă o recenzie →</button>
-      <a href="testimoniale/" class="histoire-link">Vezi toate recenziile →</a>
+      <a href="temoignages/" class="histoire-link">Vezi toate recenziile →</a>
       <span class="conf-note">Video sau mesaj + poze · publicat după validare</span>
     </div>
 
@@ -6766,13 +6563,13 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
 
       <!-- Témoignage 1 -->
       <div class="histoire-slide is-active">
-        <img class="histoire-bg" src="images/hero/hero-house-2.jpg" loading="lazy" alt="Casă construită de o firmă cu sistemul Polistibrick">
+        <img class="histoire-bg" src="images/hero/hero-house-2.jpg" loading="lazy" alt="La La La Casa costruitoă de o firmă cu sistemul Polistibrick">
         <div class="histoire-scrim" aria-hidden="true"></div>
         <div class="histoire-card">
           <div class="histoire-card-inner">
             <span class="testimonial-tag">Recenzie verificată</span>
-            <div class="histoire-stars" aria-label="5 din 5">★★★★★ <span class="histoire-date">acum 3 luni</span></div>
-            <p class="histoire-quote">L-am testat pe primul șantier și, sincer, <em>e o minune</em>. Băieții au prins metoda în două zile, peretele se ridică aproape singur. Nu ne întoarcem înapoi.</p>
+            <div class="histoire-stars" aria-label="5 din 5">★★★★★ <span class="histoire-date">acum 3 mesi</span></div>
+            <p class="histoire-quote">L-am testat pe primul șantier și, sincer, <em>e o minune</em>. Băieții au prins metoda în două giorni, peretele se ridică aproape singur. Nu ne întoarcem înapoi.</p>
             <div class="histoire-author">
               <img src="images/personas/persona-constructeur.jpg" alt="">
               <div>
@@ -6787,13 +6584,13 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
 
       <!-- Témoignage 2 -->
       <div class="histoire-slide">
-        <img class="histoire-bg" src="images/hero/hero-house-1.jpg" loading="lazy" alt="Casă realizată de un constructor cu sistemul Polistibrick">
+        <img class="histoire-bg" src="images/hero/hero-house-1.jpg" loading="lazy" alt="La La La Casa realizată de un constructor cu sistemul Polistibrick">
         <div class="histoire-scrim" aria-hidden="true"></div>
         <div class="histoire-card">
           <div class="histoire-card-inner">
             <span class="testimonial-tag">Recenzie verificată</span>
-            <div class="histoire-stars" aria-label="5 din 5">★★★★★ <span class="histoire-date">acum 5 luni</span></div>
-            <p class="histoire-quote">Sunt cu adevărat mulțumit că am descoperit acest sistem. Cu aceeași echipă, construiesc astăzi <em>mult mai multe case</em> pe an.</p>
+            <div class="histoire-stars" aria-label="5 din 5">★★★★★ <span class="histoire-date">acum 5 mesi</span></div>
+            <p class="histoire-quote">Sunt cu adevărat mulțumit că am descoperit acest sistem. Cu aceeași echipă, construiesc astăzi <em>mult mai multe case</em> pe anno.</p>
             <div class="histoire-author">
               <img src="images/personas/persona-architecte.jpg" alt="">
               <div>
@@ -6813,8 +6610,8 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
         <div class="histoire-card">
           <div class="histoire-card-inner">
             <span class="testimonial-tag">Recenzie verificată</span>
-            <div class="histoire-stars" aria-label="5 din 5">★★★★★ <span class="histoire-date">acum 2 luni</span></div>
-            <p class="histoire-quote">Cea mai mare satisfacție&nbsp;? Finalizez <em>o ofertă în 5 minute</em>. Am doar fierul, betonul și cofrajul Polistibrick — e sigur și fără erori.</p>
+            <div class="histoire-stars" aria-label="5 din 5">★★★★★ <span class="histoire-date">acum 2 mesi</span></div>
+            <p class="histoire-quote">Cea mai mare satisfacție&nbsp;? Finalizez <em>o ofertă în 5 minute</em>. Am doar fierul, calcestruzzoul și casseroul Polistibrick — e sigur și fără erori.</p>
             <div class="histoire-author">
               <img src="images/personas/persona-promoteur.jpg" alt="">
               <div>
@@ -6841,7 +6638,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
 
     <div class="histoire-actions">
       <button type="button" class="histoire-review-btn" data-review-trigger>Lasă o recenzie →</button>
-      <a href="testimoniale/" class="histoire-link">Vezi toate recenziile →</a>
+      <a href="temoignages/" class="histoire-link">Vezi toate recenziile →</a>
       <span class="histoire-cta-note">Video sau mesaj + poze · publicat după validare</span>
     </div>
   </div>
@@ -6978,14 +6775,14 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
 <!-- CTA -->
 <section class="cta-section" id="contact">
   <div class="cta-watermark" aria-hidden="true">
-    <span class="wm-half wm-top">Contact</span>
-    <span class="wm-half wm-bottom">Contact</span>
+    <span class="wm-half wm-top">Contatti</span>
+    <span class="wm-half wm-bottom">Contatti</span>
   </div>
   <div class="container">
     <div class="cta-box reveal">
-      <div class="cta-box-eyebrow">CONSTRUIEȘTE CU NOI</div>
-      <h2>Construim împreună<br><em>casa ta din viitor.</em></h2>
-      <p>Spune-ne despre proiectul tău. Îți pregătim o ofertă personalizată în 48 de ore — fără obligație.</p>
+      <div class="cta-box-eyebrow">COSTRUISCI CON NOI</div>
+      <h2>Construim împreună<br><em>la tua casa del futuro.</em></h2>
+      <p>Spune-ne despre il tuo progetto. Îți pregătim o ofertă personalizată în 48 de ore — fără obligație.</p>
       <ul class="cta-info">
         <li><span class="cti-ic">📍</span> {{company.address_street}}, {{company.address_zip}} {{company.address_city}} · {{company.address_country}}</li>
         <li><span class="cti-ic">🕘</span> {{contact.hours}}</li>
@@ -7010,7 +6807,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
       </div>
     </div>
     <div class="cta-image-col">
-      <img class="mobile-product" src="images/robot.webp" alt="Polistibrick — Construcție inteligentă" loading="lazy">
+      <img class="mobile-product" src="images/robot.webp" alt="Polistibrick — Costruzione inteligentă" loading="lazy">
     </div>
   </div>
 </section>
@@ -7020,15 +6817,15 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   <div class="container">
     <!-- Certifications strip — compact row at the top of the footer -->
     <div class="footer-certs">
-      <span class="footer-certs-label">Certificat și recunoscut internațional</span>
+      <span class="footer-certs-label">Certificato e riconosciuto internazionalmente</span>
       <div class="footer-certs-items">
         <span class="trust-item"><span class="trust-icon">ISO</span>9001</span>
         <span class="trust-item"><span class="trust-icon">ISO</span>14001</span>
         <span class="trust-item"><span class="trust-icon">ISO</span>45001</span>
-        <span class="trust-item"><span class="trust-icon">EP</span>Patent european</span>
+        <span class="trust-item"><span class="trust-icon">EP</span>Brevetto european</span>
         <span class="trust-item"><span class="trust-icon">AT</span>Agrement tehnic</span>
         <span class="trust-item"><span class="trust-icon">CE</span>Standard european</span>
-        <span class="trust-item"><span class="trust-icon">A+</span>Casă pasivă</span>
+        <span class="trust-item"><span class="trust-icon">A+</span>La La La Casa passiva</span>
       </div>
     </div>
     <div class="footer-grid">
@@ -7041,35 +6838,35 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
       <div class="footer-col">
         <h4>Sistem</h4>
         <ul>
-          <li><a href="produse/pereti-mbk/">Pereți MBK</a></li>
-          <li><a href="produse/planseu-pbk/">Planșee PBK</a></li>
-          <li><a href="produse/acoperis-tbk/">Acoperiș TBK</a></li>
-          <li><a href="#cinq">Cum funcționează</a></li>
+          <li><a href="produits/murs-mbk/">Pareti MBK</a></li>
+          <li><a href="produits/planchers-pbk/">Solai PBK</a></li>
+          <li><a href="produits/toit-tbk/">Tetto TBK</a></li>
+          <li><a href="#cinq">Come funziona</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Companie</h4>
         <ul>
-          <li><a href="despre/">Despre</a></li>
-          <li><a href="proiecte/">Proiecte</a></li>
-          <li><a href="despre/certificari/">Certificări</a></li>
-          <li><a href="despre/fabrici/">Fabricile noastre</a></li>
-          <li><a href="contact/">Contact</a></li>
+          <li><a href="a-propos/">Su di noi</a></li>
+          <li><a href="projets/">Progetti</a></li>
+          <li><a href="a-propos/certifications/">Certificazioni</a></li>
+          <li><a href="a-propos/usines/">Fabbrichele noastre</a></li>
+          <li><a href="contact/">Contatti</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Informații legale</h4>
         <ul>
-          <li><a href="legal/mentiuni-legale/">Mențiuni legale</a></li>
-          <li><a href="legal/confidentialitate/">Politica de confidențialitate</a></li>
-          <li><a href="legal/termeni/">Termeni și condiții</a></li>
+          <li><a href="legal/mentions-legales/">Mențiuni legale</a></li>
+          <li><a href="legal/confidentialite/">Privacy</a></li>
+          <li><a href="legal/conditions/">Termini e condizioni</a></li>
           <li><a href="legal/cookies/">Politica de cookies</a></li>
-          <li><a href="legal/sustenabilitate/">Sustenabilitate</a></li>
+          <li><a href="legal/durabilite/">Sostenibilità</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <div>© 2026 Polistibrick. Toate drepturile rezervate.</div>
+      <div>© 2026 Polistibrick. Tutti i diritti riservati.</div>
       <div>Fabricat cu ⚒ în Europa • ISO 9001 / 14001 / 45001</div>
     </div>
   </div>
@@ -7132,11 +6929,11 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
       ? { threshold: 0, rootMargin: '0px 0px 120px 0px' }
       : { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
-    document.querySelectorAll('.reveal:not(.hero-full-content .reveal)').forEach(el => observer.observe(el));
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
     // Plasă de siguranță: dacă ceva rămâne ascuns după 2.5s (edge case), arată-l.
     setTimeout(() => {
-      document.querySelectorAll('.reveal:not(.visible):not(.hero-full-content .reveal)').forEach(el => {
+      document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
         const r = el.getBoundingClientRect();
         if (r.top < window.innerHeight && r.bottom > 0) el.classList.add('visible');
       });
@@ -7167,65 +6964,11 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
 
   const heroSection = document.querySelector('.hero');
   function onScroll() {
+    // Nav mereu transparent cu fum negru sub text (ca pe hero) — nu se mai albeste
     nav.classList.remove('scrolled');
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
-
-  // === HERO ZURU-style: video gol → scroll → overlay + robot + mesaje ===
-  (function heroScrollReveal() {
-    const track = document.getElementById('heroScrollTrack');
-    const hero = document.getElementById('heroSection');
-    const full = hero ? hero.querySelector('.hero-full-content') : null;
-    if (!track || !hero || !full) return;
-
-    function viewH() {
-      return (window.visualViewport && window.visualViewport.height) || window.innerHeight;
-    }
-
-    function clamp(v, min, max) { return Math.max(min, Math.min(max, v)); }
-
-    function applyProgress(p) {
-      hero.style.setProperty('--hero-progress', p.toFixed(4));
-      hero.classList.toggle('hero-expanded', p >= 0.92);
-      const contentIn = clamp((p - 0.12) / 0.58, 0, 1);
-      full.style.opacity = '1';
-      full.style.transform = 'translateY(' + ((1 - contentIn) * 36) + 'px)';
-      full.style.visibility = contentIn > 0.02 ? 'visible' : 'hidden';
-      full.style.pointerEvents = contentIn > 0.45 ? 'auto' : 'none';
-    }
-
-    function revealAll() {
-      hero.style.setProperty('--hero-progress', '1');
-      hero.classList.add('hero-expanded');
-      full.style.opacity = '1';
-      full.style.transform = 'translateY(0)';
-      full.style.visibility = 'visible';
-      full.style.pointerEvents = 'auto';
-    }
-
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      revealAll();
-      return;
-    }
-
-    function update() {
-      const trackRect = track.getBoundingClientRect();
-      const trackTop = window.scrollY + trackRect.top;
-      const vh = viewH();
-      const range = Math.max(track.offsetHeight - vh, vh * 0.75);
-      const scrolled = window.scrollY - trackTop;
-      applyProgress(clamp(scrolled / range, 0, 1));
-    }
-
-    window.addEventListener('scroll', update, { passive: true });
-    window.addEventListener('resize', update);
-    if (window.visualViewport) {
-      window.visualViewport.addEventListener('resize', update);
-      window.visualViewport.addEventListener('scroll', update);
-    }
-    update();
-  })();
 
   // === MORPH video: redă doar când e vizibil; static pentru reduced-motion ===
   // === PERSONAS carusel: rotire automata, pauza la hover/offscreen, sageti, puncte, swipe ===
@@ -7624,7 +7367,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
 
     <form class="avis-form pb-form" id="avisForm" data-pb-form="review" novalidate>
       <h3 id="avisTitle">Lasă o recenzie</h3>
-      <p class="avis-sub">Împărtășește experiența ta cu Polistibrick. Publicat după validare.</p>
+      <p class="avis-sub">Împărtășește experiența ta con Polistibrick. Publicat după validare.</p>
 
       <div class="avis-field">
         <label>Nota ta</label>
@@ -7640,7 +7383,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
       <div class="avis-row">
         <div class="avis-field">
           <label for="avisNom">Nume / Firmă</label>
-          <input type="text" id="avisNom" name="nom" autocomplete="name">
+          <input type="text" id="avisNom" name="nom" autocompletoooe="name">
         </div>
         <div class="avis-field">
           <label for="avisRole">Ești</label>
@@ -7683,7 +7426,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
 
       <div class="avis-field" id="avisPhotosField">
         <label>Poze de pe proiect (opțional)</label>
-        <label class="avis-drop" for="avisPhotos">📷 Adaugă poze de pe șantier / casă
+        <label class="avis-drop" for="avisPhotos">📷 Adaugă poze de pe șantier / casa
           <input type="file" id="avisPhotos" accept="image/*" multiple>
         </label>
         <div class="avis-thumbs" id="avisThumbs"></div>
@@ -7699,11 +7442,11 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
         </div>
       </div>
 
-      <div class="avis-err" id="avisErr">Completează cel puțin: notă, nume și recenzie.</div>
+      <div class="avis-err" id="avisErr">Completoooează cel puțin: notă, nume și recenzie.</div>
       <div class="pb-form-consent" style="margin-bottom:10px;">
         <label class="pb-consent-label">
           <input type="checkbox" name="privacy_consent" value="1" required>
-          <span>Accept că datele mele sunt prelucrate conform <a href="legal/confidentialitate/" target="_blank" rel="noopener">politicii de confidențialitate (GDPR)</a>. *</span>
+          <span>Accept că datele mele sunt prelucrate conform <a href="legal/confidentialite/" target="_blank" rel="noopener">politicii de confidențialitate (GDPR)</a>. *</span>
         </label>
       </div>
       <button type="submit" class="avis-submit">Trimite recenzia →</button>
