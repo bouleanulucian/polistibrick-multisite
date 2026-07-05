@@ -10,8 +10,9 @@
 <meta property="og:image" content="images/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&family=Manrope:wght@600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&family=Manrope:wght@600&display=swap"></noscript>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=Manrope:wght@600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=Manrope:wght@600&display=swap"></noscript>
+<link rel="preload" as="image" href="images/hero/hero-house-1.webp" type="image/webp">
 <style>
   :root {
     --cream: #F7F4ED;
@@ -3523,6 +3524,26 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     object-fit: cover;
     object-position: center;
   }
+  .hero-bg-poster {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  .hero-bg-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+  .hero-bg video.hero-bg-video {
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.55s ease;
+  }
+  .hero-bg video.hero-bg-video.is-playing {
+    opacity: 1;
+  }
   /* Scrim — întunecat progresiv la scroll (JS: --hero-progress 0→1) */
   .hero-bg-scrim {
     display: block;
@@ -3862,10 +3883,13 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
 <div class="hero-scroll-track" id="heroScrollTrack">
 <section class="hero hero--photo" id="heroSection">
   <div class="hero-bg" aria-hidden="true">
-    <video id="heroVideo" autoplay muted loop playsinline preload="none"
-           poster="images/hero/hero-house-1.jpg">
-      <source src="images/hero/hero-houses-reel.mp4" type="video/mp4">
-    </video>
+    <picture class="hero-bg-poster">
+      <source type="image/webp" srcset="images/hero/hero-house-1.webp">
+      <img src="images/hero/hero-house-1.jpg" alt="" width="1920" height="1080" decoding="async" fetchpriority="high">
+    </picture>
+    <video id="heroVideo" class="hero-bg-video" muted loop playsinline preload="none"
+           data-src-desktop="images/hero/hero-houses-reel-desktop.mp4"
+           data-src-mobile="images/hero/hero-houses-reel-mobile.mp4"></video>
     <div class="hero-bg-scrim"></div>
   </div>
   <h1 class="hero-teaser text-stilizat"><span class="hero-teaser-line">Une technologie</span><span class="hero-teaser-line">avec 5 avantages</span></h1>
@@ -3875,7 +3899,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
       <div class="hero-text-col">
         <picture class="hero-robot-wrap">
           <source srcset="images/robot.webp" type="image/webp">
-          <img class="hero-robot" src="images/robot.webp" alt="Polistibrick — Construction intelligente" fetchpriority="high" width="1500" height="1362">
+          <img class="hero-robot" src="images/robot.webp" alt="Polistibrick — Construction intelligente" fetchpriority="low" loading="lazy" width="1500" height="1362">
         </picture>
         <h1>Construisez plus de maisons.<br><span class="h1-l2">Avec moins de main-d'œuvre.</span></h1>
         <p class="hero-sub">Polistibrick remplace 5 matériaux différents et 5 équipes de construction. Un seul produit, une seule équipe — et la maison est achevée. <strong>Innovation brevetée.</strong></p>
@@ -6555,7 +6579,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
 
       <!-- Avis 1 — VIDÉO -->
       <div class="conf-slide is-active">
-        <div class="conf-feature" data-conf-video="images/hero/hero-houses-reel.mp4">
+        <div class="conf-feature" data-conf-video="images/hero/hero-houses-reel-desktop.mp4">
           <video poster="images/hero/hero-house-2.jpg" loop muted playsinline preload="none"></video>
           <div class="conf-feature-scrim" aria-hidden="true"></div>
           <span class="conf-vbadge">Témoignage vidéo</span>
@@ -6752,7 +6776,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
 
       <!-- Témoignage 1 -->
       <div class="histoire-slide is-active">
-        <img class="histoire-bg" src="images/hero/hero-house-2.jpg" alt="Maison construite par une entreprise avec le système Polistibrick">
+        <img class="histoire-bg" src="images/hero/hero-house-2.jpg" loading="lazy" alt="Maison construite par une entreprise avec le système Polistibrick">
         <div class="histoire-scrim" aria-hidden="true"></div>
         <div class="histoire-card">
           <div class="histoire-card-inner">
@@ -6773,7 +6797,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
 
       <!-- Témoignage 2 -->
       <div class="histoire-slide">
-        <img class="histoire-bg" src="images/hero/hero-house-1.jpg" alt="Maison réalisée par un constructeur avec le système Polistibrick">
+        <img class="histoire-bg" src="images/hero/hero-house-1.jpg" loading="lazy" alt="Maison réalisée par un constructeur avec le système Polistibrick">
         <div class="histoire-scrim" aria-hidden="true"></div>
         <div class="histoire-card">
           <div class="histoire-card-inner">
@@ -6794,7 +6818,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
 
       <!-- Témoignage 3 -->
       <div class="histoire-slide">
-        <img class="histoire-bg" src="images/hero/hero-house-3.jpg" alt="Programme de maisons réalisé par une entreprise avec le système Polistibrick">
+        <img class="histoire-bg" src="images/hero/hero-house-3.jpg" loading="lazy" alt="Programme de maisons réalisé par une entreprise avec le système Polistibrick">
         <div class="histoire-scrim" aria-hidden="true"></div>
         <div class="histoire-card">
           <div class="histoire-card-inner">
@@ -7265,24 +7289,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     }
   })();
 
-  ['morphVideo', 'heroVideo'].forEach((id) => {
-    const v = document.getElementById(id);
-    if (!v) return;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      v.removeAttribute('autoplay');
-      v.pause();
-      return;
-    }
-    if ('IntersectionObserver' in window) {
-      const vio = new IntersectionObserver((entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) { v.play().catch(() => {}); }
-          else { v.pause(); }
-        });
-      }, { threshold: 0.1 });
-      vio.observe(v);
-    }
-  });
+  /* video IO → assets/js/mercury-perf.js */
 
 
   // (Floating product system removed — images now flow inline within sections.)
@@ -7856,34 +7863,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   </a>
 </div>
 
-<script>
-(function(){
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  function bootVideo(v){
-    var s=v.querySelector('source[data-src]');
-    if(!s||s.src) return;
-    var mobile=v.dataset.srcMobile;
-    if(mobile&&window.matchMedia('(max-width:1080px)').matches){
-      s.dataset.src=mobile;
-      if(v.dataset.posterMobile) v.poster=v.dataset.posterMobile;
-    }
-    s.src=s.dataset.src;
-    v.load();
-    var p=v.play();
-    if(p&&p.catch) p.catch(function(){});
-  }
-  var vids=document.querySelectorAll('video.lazy-video');
-  if(!vids.length) return;
-  if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if(e.isIntersecting){ bootVideo(e.target); io.unobserve(e.target); }
-      });
-    },{rootMargin:'80px 0px',threshold:0.01});
-    vids.forEach(function(v){ io.observe(v); });
-  } else { vids.forEach(bootVideo); }
-})();
-</script>
+<script src="assets/js/mercury-perf.js?v=1" defer></script>
 
 </body>
 </html>
