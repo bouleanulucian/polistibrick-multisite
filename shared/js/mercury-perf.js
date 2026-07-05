@@ -46,8 +46,8 @@
     return video.dataset.srcDesktop || null;
   }
 
-  function bootHero() {
-    var video = document.getElementById('heroVideo');
+  function bootHero(video) {
+    video = video || document.getElementById('heroVideo');
     if (!video || video.dataset.booted === '1') return;
     var url = pickHeroUrls(video);
     if (!url) return;
@@ -72,6 +72,14 @@
 
   function bootVideo(video) {
     if (video.dataset.booted === '1') return;
+
+    // Vidéos type héros (sources via data-src-desktop/mobile, sans <source data-src>)
+    // doivent passer par bootHero — sinon on les marque "booted" sans jamais charger la source.
+    if (video.dataset.srcDesktop && !video.querySelector('source[data-src]')) {
+      bootHero(video);
+      return;
+    }
+
     video.dataset.booted = '1';
 
     var lazySource = video.querySelector('source[data-src]');
@@ -130,7 +138,10 @@
   if (!reduced) {
     var hero = document.getElementById('heroVideo');
     if (hero && hero.dataset.srcDesktop) {
-      schedule(bootHero);
+      // Démarrage IMMÉDIAT (pas d'attente idle) — le poster couvre le premier instant,
+      // la vidéo prend le relais dès que le réseau la livre.
+      bootHero(hero);
+      // Déclencheur visibilité : pause dès qu'on scrolle au-delà du héros, reprise au retour.
       watchVideo(hero, { threshold: 0.2, rootMargin: '0px' });
     }
   }
