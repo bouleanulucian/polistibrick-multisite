@@ -1,29 +1,13 @@
 /**
- * Homepage media — ZURU-style: poster-first, lazy MP4, one playing video at a time.
+ * Homepage media — poster-first, lazy below-fold MP4, one playing video at a time.
  */
 (function () {
   'use strict';
 
-  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var activeVideo = null;
 
   function isMobile() {
     return window.matchMedia('(max-width: 809px)').matches;
-  }
-
-  function schedule(fn) {
-    function run() {
-      if ('requestIdleCallback' in window) {
-        requestIdleCallback(fn, { timeout: 800 });
-      } else {
-        setTimeout(fn, 150);
-      }
-    }
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', run, { once: true });
-    } else {
-      run();
-    }
   }
 
   function revealVideo(video) {
@@ -39,17 +23,13 @@
     activeVideo = video;
   }
 
-  function pickHeroUrls(video) {
-    if (isMobile()) {
-      return video.dataset.srcMobile || null;
-    }
-    return video.dataset.srcDesktop || null;
+  function heroUrl(video) {
+    return isMobile() ? video.dataset.srcMobile : video.dataset.srcDesktop;
   }
 
-  function bootHero() {
-    var video = document.getElementById('heroVideo');
+  function bootHero(video) {
     if (!video || video.dataset.booted === '1') return;
-    var url = pickHeroUrls(video);
+    var url = heroUrl(video);
     if (!url) return;
     video.dataset.booted = '1';
 
@@ -66,16 +46,18 @@
 
     var play = video.play();
     if (play && play.then) {
-      play.then(function () { revealVideo(video); setActive(video); }).catch(function () {});
+      play.then(function () {
+        revealVideo(video);
+        setActive(video);
+      }).catch(function () {});
     }
   }
 
-  function bootVideo(video) {
+  function bootLazy(video) {
     if (video.dataset.booted === '1') return;
-    video.dataset.booted = '1';
-
     var lazySource = video.querySelector('source[data-src]');
     if (!lazySource) return;
+    video.dataset.booted = '1';
 
     var url = lazySource.dataset.src;
     if (isMobile() && video.dataset.srcMobile) {
@@ -86,18 +68,26 @@
     video.load();
   }
 
-  function watchVideo(video, opts) {
+  function observe(video, opts) {
     opts = opts || {};
-    var threshold = opts.threshold || 0.15;
+    var threshold = opts.threshold || 0.12;
     var rootMargin = opts.rootMargin || '120px 0px';
     var delay = parseInt(video.dataset.bootDelay || '0', 10) || 0;
+    var lazy = opts.lazy !== false;
+
+    function playNow() {
+      setActive(video);
+      var play = video.play();
+      if (play && play.then) {
+        play.then(function () {
+          video.classList.add('is-playing');
+        }).catch(function () {});
+      }
+    }
 
     function onVisible() {
-      bootVideo(video);
-      setActive(video);
-      video.play().then(function () {
-        video.classList.add('is-playing');
-      }).catch(function () {});
+      if (lazy) bootLazy(video);
+      playNow();
     }
 
     function onHidden() {
@@ -127,17 +117,15 @@
     io.observe(video);
   }
 
-  if (!reduced) {
-    var hero = document.getElementById('heroVideo');
-    if (hero && hero.dataset.srcDesktop) {
-      schedule(bootHero);
-      watchVideo(hero, { threshold: 0.2, rootMargin: '0px' });
-    }
+  var hero = document.getElementById('heroVideo');
+  if (hero && hero.dataset.srcDesktop) {
+    bootHero(hero);
+    observe(hero, { lazy: false, threshold: 0.2, rootMargin: '0px' });
   }
 
   document.querySelectorAll('video.lazy-video').forEach(function (video) {
     if (video.id === 'heroVideo') return;
     var rootMargin = video.classList.contains('montaj-bg') ? '180px 0px' : '120px 0px';
-    watchVideo(video, { rootMargin: rootMargin });
+    observe(video, { rootMargin: rootMargin });
   });
 })();
