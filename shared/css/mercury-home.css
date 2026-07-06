@@ -3249,27 +3249,14 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     object-fit: cover;
   }
   .morph-media { position: relative; }
-  .morph-media .morph-video {
-    position: relative;
-    z-index: 1;
-    opacity: 0;
-    transition: opacity 0.35s ease;
-  }
   .morph-media .morph-video.is-playing { opacity: 1; }
   .presence-section { position: relative; }
   .presence-poster { z-index: 0; }
-  .presence-bg {
-    opacity: 0;
-    transition: opacity 0.35s ease;
-  }
-  .presence-bg.is-playing { opacity: 0.55; }
+  /* Video visible via native poster; slight fade-in when frames play */
+  .presence-bg.is-playing { opacity: 1; }
   .montaj-section { position: relative; }
-  .montaj-bg {
-    opacity: 0;
-    transition: opacity 0.35s ease;
-  }
   .montaj-bg.is-playing { opacity: 1; }
-  /* cinq: poster nativ pe <video> — mix-blend + clip-path; fără layer .media-poster */
+  /* cinq: mix-blend on video element — no opacity trap */
 
 /* --- section --- */
 
