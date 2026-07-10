@@ -6,7 +6,6 @@
   "country_flag": "🇬🇧",
   "domain": "polistibrick.uk",
   "domain_url": "https://polistibrick.uk",
-
   "company": {
     "name_legal": "Polistibrick Ltd",
     "name_short": "Polistibrick",
@@ -17,7 +16,6 @@
     "address_zip": "[fill]",
     "address_country": "United Kingdom"
   },
-
   "contact": {
     "phone": "+44 [fill]",
     "phone_raw": "+44[fill]",
@@ -33,35 +31,40 @@
       "youtube": ""
     }
   },
-
   "team": [
     {
       "name": "[Name Manager]",
       "role": "Sales Director UK & International",
       "email": "[email]@polistibrick.com",
       "phone": "[phone]",
-      "languages": ["EN"],
+      "languages": [
+        "EN"
+      ],
       "photo": "team/manager-uk.jpg",
       "linkedin": ""
     }
   ],
-
   "currency": "GBP",
   "currency_symbol": "£",
   "currency_display_format": "£{value}",
   "vat_rate": 20,
-
   "form_submit_email": "contact@polistibrick.com",
   "form_cc_email": "info@polistibrick.eu",
-
   "factory": {
     "name": "Valencia",
     "address": "[fill]",
     "year_built": 2014
   },
-
   "metadata": {
     "og_locale": "en_GB",
     "hreflang": "en-GB"
+  },
+  "legal": {
+    "privacy_slug": "privacy"
+  },
+  "devis_app": {
+    "url": "https://devis.polistibrick.uk",
+    "preview_url": "https://polistibrick-configurator.vercel.app",
+    "pays": "GB"
   }
 }

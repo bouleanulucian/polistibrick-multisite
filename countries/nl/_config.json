@@ -6,7 +6,6 @@
   "country_flag": "🇧🇪",
   "domain": "polistibrick.be",
   "domain_url": "https://polistibrick.be",
-
   "company": {
     "name_legal": "Polistibrick België BVBA",
     "name_short": "Polistibrick België",
@@ -17,7 +16,6 @@
     "address_zip": "[in te vullen]",
     "address_country": "België"
   },
-
   "contact": {
     "phone": "+32 [in te vullen]",
     "phone_raw": "+32[in te vullen]",
@@ -33,35 +31,42 @@
       "youtube": ""
     }
   },
-
   "team": [
     {
       "name": "[Naam Manager]",
       "role": "Commercieel directeur België",
       "email": "[email]@polistibrick.com",
       "phone": "[telefoon]",
-      "languages": ["NL", "FR", "EN"],
+      "languages": [
+        "NL",
+        "FR",
+        "EN"
+      ],
       "photo": "team/manager-be.jpg",
       "linkedin": ""
     }
   ],
-
   "currency": "EUR",
   "currency_symbol": "€",
   "currency_display_format": "€ {value}",
   "vat_rate": 21,
-
   "form_submit_email": "contact@polistibrick.com",
   "form_cc_email": "info@polistibrick.eu",
-
   "factory": {
     "name": "Valencia",
     "address": "[Spanje]",
     "year_built": 2014
   },
-
   "metadata": {
     "og_locale": "nl_BE",
     "hreflang": "nl-BE"
+  },
+  "legal": {
+    "privacy_slug": "privacy"
+  },
+  "devis_app": {
+    "url": "https://devis.polistibrick.nl",
+    "preview_url": "https://polistibrick-configurator.vercel.app",
+    "pays": "NL"
   }
 }

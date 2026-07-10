@@ -6,7 +6,6 @@
   "country_flag": "🇨🇭",
   "domain": "polistibrick.com",
   "domain_url": "https://polistibrick.com",
-
   "company": {
     "name_legal": "Polistibrick Schweiz GmbH",
     "name_short": "Polistibrick Schweiz",
@@ -17,7 +16,6 @@
     "address_zip": "[ausfüllen]",
     "address_country": "Schweiz"
   },
-
   "contact": {
     "phone": "+41 [ausfüllen]",
     "phone_raw": "+41[ausfüllen]",
@@ -33,35 +31,43 @@
       "youtube": ""
     }
   },
-
   "team": [
     {
       "name": "[Name Manager]",
       "role": "Verkaufsleiter Schweiz",
       "email": "[email]@polistibrick.com",
       "phone": "[Telefon]",
-      "languages": ["DE", "FR", "IT", "EN"],
+      "languages": [
+        "DE",
+        "FR",
+        "IT",
+        "EN"
+      ],
       "photo": "team/manager-ch.jpg",
       "linkedin": ""
     }
   ],
-
   "currency": "CHF",
   "currency_symbol": "CHF",
   "currency_display_format": "CHF {value}",
   "vat_rate": 8.1,
-
   "form_submit_email": "contact@polistibrick.com",
   "form_cc_email": "info@polistibrick.eu",
-
   "factory": {
     "name": "Valencia",
     "address": "[Spanien]",
     "year_built": 2014
   },
-
   "metadata": {
     "og_locale": "de_CH",
     "hreflang": "de-CH"
+  },
+  "legal": {
+    "privacy_slug": "datenschutz"
+  },
+  "devis_app": {
+    "url": "https://devis.polistibrick.de",
+    "preview_url": "https://polistibrick-configurator.vercel.app",
+    "pays": "DE"
   }
 }

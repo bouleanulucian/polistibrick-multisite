@@ -6,7 +6,6 @@
   "country_flag": "🇪🇸",
   "domain": "polistibrick.es",
   "domain_url": "https://polistibrick.es",
-
   "company": {
     "name_legal": "Polistibrick España S.L.",
     "name_short": "Polistibrick España",
@@ -17,7 +16,6 @@
     "address_zip": "[a completar]",
     "address_country": "España"
   },
-
   "contact": {
     "phone": "+34 642 777 216",
     "phone_raw": "+34642777216",
@@ -33,35 +31,41 @@
       "youtube": ""
     }
   },
-
   "team": [
     {
       "name": "[Nombre Manager]",
       "role": "Director comercial España",
       "email": "[email]@polistibrick.es",
       "phone": "[teléfono]",
-      "languages": ["ES", "EN"],
+      "languages": [
+        "ES",
+        "EN"
+      ],
       "photo": "team/manager-es.jpg",
       "linkedin": ""
     }
   ],
-
   "currency": "EUR",
   "currency_symbol": "€",
   "currency_display_format": "{value} €",
   "vat_rate": 21,
-
   "form_submit_email": "info@polistibrick.es",
   "form_cc_email": "info@polistibrick.eu",
-
   "factory": {
     "name": "Valencia",
     "address": "[direccion fabrica Valencia]",
     "year_built": 2014
   },
-
   "metadata": {
     "og_locale": "es_ES",
     "hreflang": "es-ES"
+  },
+  "legal": {
+    "privacy_slug": "privacidad"
+  },
+  "devis_app": {
+    "url": "https://devis.polistibrick.es",
+    "preview_url": "https://polistibrick-configurator.vercel.app",
+    "pays": "ES"
   }
 }

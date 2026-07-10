@@ -33,9 +33,24 @@ Preview: `python3 -m http.server 8080` → `http://localhost:8080/build/en/`
 
 ## URL paths
 
-Interior pages use **French folder names** (`produits/`, `pour/`, `devis/`, …). Shared `site.js` still references RO paths; `build.py` rewrites them to French paths for every non-RO country.
+Each country uses **URL slugs in its own language** (SEO local).
 
-Do **not** rename folders per language unless you add matching entries to `PATH_REWRITES` in `build/build.py`.
+| Country | Example paths |
+|---------|----------------|
+| RO | `/pentru/proprietari/`, `/oferta/`, `/despre/` |
+| FR | `/pour/proprietaires/`, `/devis/`, `/a-propos/` |
+| IT | `/per/proprietari/`, `/preventivo/`, `/chi-siamo/` |
+| EN | `/for/homeowners/`, `/quote/`, `/about/` |
+| ES | `/para/propietarios/`, `/presupuesto/`, `/sobre-nosotros/` |
+
+After seeding from FR, localize folders:
+
+```bash
+python3 translations/localize_country_paths.py it   # one country
+python3 translations/localize_country_paths.py all  # it en es nl de ie
+```
+
+Maps live in `translations/path_maps.py`. `build.py` rewrites shared `site.js` (RO paths) → local paths per lang.
 
 ## Forms (live email)
 

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diventa partner Polistibrick · Costruttore certificato in 9 paesi europei</title>
+  <meta name="description" content="Diventa costruttore partner Polistibrick. Lead trasmessi da noi, formazione gratuita, margini superiori, esclusività regionale. Candidati in 5 minuti.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <style>
+    /* === Card cu watermark — pattern de la home Fabrici === */
+    .partner-section {
+      padding: clamp(60px, 8vw, 100px) 0;
+      background: var(--cream);
+    }
+    .partner-stage-wrap {
+      position: relative;
+      margin: 70px auto 0;
+      max-width: 1480px;
+    }
+    .partner-watermark {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 100vw;
+      margin-left: -50vw;
+      pointer-events: none;
+      user-select: none;
+      transform: translateY(-50%);
+      height: 1em;
+      line-height: 1;
+      text-align: center;
+      text-transform: uppercase;
+      font-family: var(--serif);
+      font-size: clamp(64px, 12vw, 200px);
+      font-weight: 500;
+      letter-spacing: -0.06em;
+      z-index: 2;
+    }
+    .partner-watermark .wm-half {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      display: block;
+    }
+    .partner-watermark .wm-top {
+      color: transparent;
+      -webkit-text-stroke: 1.4px rgba(15, 15, 15, 0.30);
+      text-stroke: 1.4px rgba(15, 15, 15, 0.30);
+      clip-path: inset(0 0 50% 0);
+    }
+    .partner-watermark .wm-bottom {
+      color: var(--cream-dark);
+      opacity: 0.65;
+      clip-path: inset(50% 0 0 0);
+    }
+    .partner-stage {
+      position: relative;
+      background: var(--cream-light);
+      border: 1px solid var(--border);
+      border-radius: 32px;
+      padding: 56px;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+    }
+    .partner-content {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 56px;
+      width: 100%;
+      align-items: start;
+    }
+    .partner-text { padding-right: 8px; }
+    .partner-text .bubble-tag {
+      display: inline-block;
+      background: var(--red-soft);
+      color: var(--red);
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .partner-text h2 {
+      font-family: var(--serif);
+      font-size: clamp(28px, 3.2vw, 44px);
+      font-weight: 500;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      margin-bottom: 18px;
+    }
+    .partner-text h2 em {
+      font-style: italic;
+      color: var(--red);
+      font-weight: 400;
+    }
+    .partner-text p {
+      font-size: 15px;
+      color: var(--gray);
+      line-height: 1.65;
+      margin-bottom: 14px;
+    }
+    .partner-text p strong { color: var(--ink); font-weight: 600; }
+    .partner-benefits {
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .partner-benefit {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      font-size: 14.5px;
+      line-height: 1.5;
+      color: var(--ink-soft);
+    }
+    .partner-benefit::before {
+      content: '✓';
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      background: var(--red);
+      color: white;
+      border-radius: 50%;
+      font-size: 12px;
+      font-weight: 700;
+      margin-top: 1px;
+    }
+    .partner-tiers-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 24px;
+      font-size: 13.5px;
+      color: var(--red);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .partner-tiers-link:hover { gap: 10px; transition: gap 0.2s ease; }
+
+    /* Form column */
+    .partner-form {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 36px;
+      box-shadow: var(--shadow-md);
+    }
+    .partner-form h3 {
+      font-family: var(--serif);
+      font-size: 24px;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+    .partner-form > p {
+      font-size: 13px;
+      color: var(--gray);
+      margin-bottom: 24px;
+    }
+
+    @media (max-width: 1100px) {
+      .partner-content { grid-template-columns: 1fr; gap: 32px; }
+      .partner-stage { padding: 36px; min-height: auto; }
+    }
+    @media (max-width: 768px) {
+      .partner-stage { padding: 28px 20px; }
+      .partner-form { padding: 24px; }
+    }
+  </style>
+</head>
+<body data-base="../">
+
+<header class="nav" data-include="nav"></header>
+
+<!-- ============ CARDUL PRINCIPAL CU WATERMARK ============ -->
+<section class="partner-section">
+  <div class="container">
+    <div class="partner-stage-wrap reveal">
+      <div class="partner-watermark" aria-hidden="true">
+        <span class="wm-half wm-top">Partner</span>
+        <span class="wm-half wm-bottom">Partner</span>
+      </div>
+
+      <div class="partner-stage">
+        <div class="partner-content">
+
+          <!-- LEFT: text -->
+          <div class="partner-text">
+            <span class="bubble-tag">Per costruttori certificati</span>
+            <h2>Costruisci <em>10× più case.</em></h2>
+            <p>Un cliente diretto costruisce una casa. <strong>Un partner Polistibrick ne costruisce da 10 a 50 all'anno.</strong> E lo fa più rapidamente, con un team più ridotto e margini superiori rispetto al sistema classico.</p>
+            <p>Candidati per diventare partner certificato. Entro 3 giorni lavorativi ti contattiamo per fissare la data del corso di certificazione (3 giorni, gratuito) e della tua prima visita in fabbrica.</p>
+
+            <div class="partner-benefits">
+              <div class="partner-benefit"><span><strong>Lead trasmessi da noi</strong> — i clienti che arrivano su polistibrick.eu vengono indirizzati ai partner certificati della regione</span></div>
+              <div class="partner-benefit"><span><strong>Margini +15-25 %</strong> rispetto al mattone grazie alla rapidità di esecuzione e a una manodopera ridotta</span></div>
+              <div class="partner-benefit"><span><strong>Formazione gratuita</strong> — corso di 3 giorni + certificazione ufficiale</span></div>
+              <div class="partner-benefit"><span><strong>Materiali marketing co-branded</strong> — brochure, presentazioni, contenuti digitali</span></div>
+              <div class="partner-benefit"><span><strong>Supporto tecnico in cantiere</strong> — un ingegnere Polistibrick ti accompagna sul tuo primo progetto</span></div>
+              <div class="partner-benefit"><span><strong>Tariffe preferenziali</strong> per i partner certificati + consegna prioritaria in cantiere</span></div>
+            </div>
+
+            <a href="../per/costruttori/" class="partner-tiers-link">Scopri tutti i dettagli della partnership →</a>
+          </div>
+
+          <!-- RIGHT: formular -->
+          <div class="partner-form">
+            <h3>Candidati per la partnership.</h3>
+            <p>Risposta entro 3 giorni lavorativi. Tutti i dati restano riservati.</p>
+
+            <form id="partnerForm" class="pb-form" data-pb-form="partner">
+
+              <div class="form-row form-row--split">
+                <div>
+                  <label class="form-label" for="pname">Nome del referente *</label>
+                  <input class="form-input" type="text" id="pname" name="contact_name" required placeholder="Il tuo nome">
+                </div>
+                <div>
+                  <label class="form-label" for="prole">Ruolo in azienda *</label>
+                  <select class="form-select" id="prole" name="role" required>
+                    <option value="">Seleziona</option>
+                    <option>Titolare / Amministratore delegato</option>
+                    <option>Direttore tecnico / Capo cantiere</option>
+                    <option>Responsabile sviluppo</option>
+                    <option>Altro</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-row form-row--split">
+                <div>
+                  <label class="form-label" for="pcompany">Azienda *</label>
+                  <input class="form-input" type="text" id="pcompany" name="company" required placeholder="Nome dell'azienda">
+                </div>
+                <div>
+                  <label class="form-label" for="pcui">P.IVA / N° di registrazione</label>
+                  <input class="form-input" type="text" id="pcui" name="registration" placeholder="facoltativo, ma accelera la verifica">
+                </div>
+              </div>
+
+              <div class="form-row form-row--split">
+                <div>
+                  <label class="form-label" for="pregion">Regione / Paese *</label>
+                  <input class="form-input" type="text" id="pregion" name="region" required placeholder="es. Lombardia, IT / Cluj, RO">
+                </div>
+                <div>
+                  <label class="form-label" for="pteam">Team (persone)</label>
+                  <select class="form-select" id="pteam" name="team_size">
+                    <option value="">Seleziona</option>
+                    <option>1-3</option>
+                    <option>4-10</option>
+                    <option>11-25</option>
+                    <option>26+</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-row form-row--split">
+                <div>
+                  <label class="form-label" for="pyears">Anni di esperienza</label>
+                  <select class="form-select" id="pyears" name="experience_years">
+                    <option value="">Seleziona</option>
+                    <option>Meno di 2 anni</option>
+                    <option>2-5 anni</option>
+                    <option>6-10 anni</option>
+                    <option>10+ anni</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="form-label" for="pprojects">Case costruite/anno</label>
+                  <select class="form-select" id="pprojects" name="houses_per_year">
+                    <option value="">Seleziona</option>
+                    <option>Meno di 5</option>
+                    <option>5-15</option>
+                    <option>16-30</option>
+                    <option>30+</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <label class="form-label">Sistema principale attualmente utilizzato</label>
+                <div class="form-radio-group">
+                  <div class="form-radio">
+                    <input type="checkbox" id="sys-brick" name="current_system" value="brique"><label for="sys-brick">Mattone</label>
+                  </div>
+                  <div class="form-radio">
+                    <input type="checkbox" id="sys-bca" name="current_system" value="béton-cellulaire"><label for="sys-bca">Calcestruzzo cellulare</label>
+                  </div>
+                  <div class="form-radio">
+                    <input type="checkbox" id="sys-wood" name="current_system" value="bois-clt"><label for="sys-wood">Legno / CLT</label>
+                  </div>
+                  <div class="form-radio">
+                    <input type="checkbox" id="sys-icf" name="current_system" value="autre-icf"><label for="sys-icf">Altro ICF</label>
+                  </div>
+                  <div class="form-radio">
+                    <input type="checkbox" id="sys-other" name="current_system" value="autre"><label for="sys-other">Altro</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <label class="form-label" for="pmotivation">Perché desideri diventare partner?</label>
+                <textarea class="form-textarea" id="pmotivation" name="motivation" placeholder="In poche parole: cosa ti ha portato a scoprire Polistibrick, i progetti che desideri realizzare..."></textarea>
+              </div>
+
+              <div class="form-row form-row--split">
+                <div>
+                  <label class="form-label" for="pemail">Email *</label>
+                  <input class="form-input" type="email" id="pemail" name="email" required placeholder="contatto@azienda.it">
+                </div>
+                <div>
+                  <label class="form-label" for="pphone">Telefono *</label>
+                  <input class="form-input" type="tel" id="pphone" name="phone" required placeholder="+39 XXX XXX XXXX">
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-large btn-arrow" style="width:100%;justify-content:center;margin-top:8px;">Invia la candidatura</button>
+
+              <div class="pb-form-consent">
+                <label class="pb-consent-label">
+                  <input type="checkbox" name="privacy_consent" value="1" required>
+                  <span>Accetto che i miei dati siano trattati conformemente alla <a href="../legal/privacy/" target="_blank" rel="noopener">politica sulla privacy (GDPR)</a>. *</span>
+                </label>
+              </div>
+
+              <div class="pb-form-thanks" hidden>
+                <h3>Candidatura inviata ✓</h3>
+                <p>Grazie! Il nostro team B2B ti contatta entro 48 ore lavorative.</p>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT HAPPENS NEXT -->
+<section class="section section--cream">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 50px;">
+      <span class="eyebrow">Le fasi dopo la candidatura</span>
+      <h2>Il processo, <em>passo dopo passo.</em></h2>
+    </div>
+    <div class="grid grid-4 reveal" style="gap:32px;">
+      <div>
+        <div style="font-family:var(--serif);font-size:48px;color:var(--red);line-height:1;margin-bottom:14px;">01</div>
+        <h4 style="margin-bottom:8px;">Candidatura</h4>
+        <p style="font-size:14px;">Compili il modulo. Tutti i dati restano riservati e vengono verificati dal nostro team B2B.</p>
+      </div>
+      <div>
+        <div style="font-family:var(--serif);font-size:48px;color:var(--red);line-height:1;margin-bottom:14px;">02</div>
+        <h4 style="margin-bottom:8px;">Contatto + verifica</h4>
+        <p style="font-size:14px;">Ti contattiamo entro 3 giorni lavorativi per una telefonata di 30 min. Verifichiamo l'azienda e la sua serietà.</p>
+      </div>
+      <div>
+        <div style="font-family:var(--serif);font-size:48px;color:var(--red);line-height:1;margin-bottom:14px;">03</div>
+        <h4 style="margin-bottom:8px;">Corso di certificazione</h4>
+        <p style="font-size:14px;">3 giorni a Valencia o Craiova — teoria + pratica + esame. Alloggio e pasti inclusi per i partner internazionali.</p>
+      </div>
+      <div>
+        <div style="font-family:var(--serif);font-size:48px;color:var(--red);line-height:1;margin-bottom:14px;">04</div>
+        <h4 style="margin-bottom:8px;">Primo progetto</h4>
+        <p style="font-size:14px;">Un ingegnere Polistibrick si reca sul cantiere del tuo primo progetto. Ricevi i lead e inizi a percepire le tue commissioni.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNER TESTIMONIAL -->
+<section class="section">
+  <div class="container container--narrow">
+    <div class="reveal card" style="padding:48px;text-align:center;background:white;">
+      <p style="font-family:var(--serif);font-size:clamp(22px,2.4vw,30px);line-height:1.35;color:var(--ink);margin-bottom:24px;">
+        <em style="color:var(--red);font-style:normal;">"</em>
+        Dopo 12 case Polistibrick consegnate, non ho più perso una singola gara d'appalto per case passive. I miei clienti pagano di più, i miei margini sono superiori, e il cantiere si conclude in 6 settimane, non in 6 mesi.
+        <em style="color:var(--red);font-style:normal;">"</em>
+      </p>
+      <div style="font-size:13px;color:var(--gray);">
+        <strong style="color:var(--ink);font-size:14px;display:block;margin-bottom:4px;">Jean-François Roux</strong>
+        Partner certificato · Bâti-Innov SAS · Auvergne-Rhône-Alpes · 12 progetti consegnati
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="section section--tight">
+  <div class="cta-band reveal">
+    <h2>Ci stiamo espandendo in <em>9 paesi.</em></h2>
+    <p>Vuoi far crescere la tua attività? Vuoi essere il primo nella tua zona a proporre case passive? Candidati subito.</p>
+    <div class="cta-band-actions">
+      <a href="#" onclick="document.querySelector('.partner-form').scrollIntoView({behavior:'smooth'});return false;" class="btn btn-on-dark btn-large btn-arrow">Candidati ora</a>
+      <a href="../contact/" class="btn btn-on-dark-ghost btn-large">Facci prima una domanda</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" data-include="footer"></footer>
+<script src="../assets/js/site.js" defer></script>
+<script src="../assets/js/forms.js" defer></script>
+</body>
+</html>

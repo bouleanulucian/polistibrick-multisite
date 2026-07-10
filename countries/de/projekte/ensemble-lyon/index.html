@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wohnanlage · Lyon, Frankreich · Studiu de caz Polistibrick</title>
+  <meta name="description" content="Studiu de caz Polistibrick: ansamblu rezidențial de 24 Einheiten × 120 m² la Lyon, certificat Passivhaus. Bau în 6 Monate cu MBK 270.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/site.css">
+  <style>
+    /* === Card cu watermark === */
+    .wm-section { padding: clamp(60px, 8vw, 100px) 0; background: var(--cream); }
+    .wm-stage-wrap { position: relative; margin: 70px auto 0; max-width: 1480px; }
+    .wm-watermark { position: absolute; top: 0; left: 50%; width: 100vw; margin-left: -50vw; pointer-events: none; user-select: none; transform: translateY(-50%); height: 1em; line-height: 1; text-align: center; text-transform: uppercase; font-family: var(--serif); font-size: clamp(64px, 12vw, 200px); font-weight: 500; letter-spacing: -0.06em; z-index: 2; }
+    .wm-watermark .wm-half { position: absolute; inset: 0; width: 100%; display: block; }
+    .wm-watermark .wm-top { color: transparent; -webkit-text-stroke: 1.4px rgba(15,15,15,0.30); clip-path: inset(0 0 50% 0); }
+    .wm-watermark .wm-bottom { color: var(--cream-dark); opacity: 0.65; clip-path: inset(50% 0 0 0); }
+    .wm-stage { position: relative; background: var(--cream-light); border: 1px solid var(--border); border-radius: 32px; padding: 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    .wm-text { padding-right: 8px; }
+    .wm-text .bubble-tag { display: inline-block; background: var(--red-soft); color: var(--red); padding: 4px 12px; border-radius: 4px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 16px; }
+    .wm-text h1 { font-family: var(--serif); font-size: clamp(30px, 3.6vw, 48px); font-weight: 500; color: var(--ink); letter-spacing: -0.02em; line-height: 1.08; margin-bottom: 18px; }
+    .wm-text h1 em { font-style: italic; color: var(--red); font-weight: 400; }
+    .wm-text p.lead { font-size: 15.5px; color: var(--gray); line-height: 1.65; }
+    .wm-visual { background: white; border: 1px solid var(--border); border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-md); margin-top: 10mm; aspect-ratio: 4/3; }
+    .wm-visual .img-placeholder { width: 100%; height: 100%; aspect-ratio: auto; border-radius: 0; border: none; margin: 0; }
+    @media (max-width: 1100px) {
+      .wm-stage { grid-template-columns: 1fr; gap: 32px; padding: 36px; }
+      .wm-visual { margin-top: 0; aspect-ratio: 16/10; }
+    }
+    @media (max-width: 768px) { .wm-stage { padding: 28px 20px; } }
+    .cs-quote {
+      font-family: var(--serif);
+      font-size: clamp(22px, 2.6vw, 32px);
+      line-height: 1.35;
+      color: var(--ink);
+      padding: 36px 40px;
+      border-left: 4px solid var(--red);
+      background: var(--cream-light);
+      border-radius: 0 20px 20px 0;
+      margin: 0;
+    }
+    .cs-quote::before { content: '"'; color: var(--red); font-size: 1.2em; }
+    .cs-quote::after { content: '"'; color: var(--red); font-size: 1.2em; }
+    .cs-quote-author {
+      display: block;
+      margin-top: 20px;
+      font-family: var(--sans);
+      font-size: 14px;
+      font-style: normal;
+      color: var(--gray);
+    }
+    .cs-quote-author strong { color: var(--ink); display: block; font-size: 15px; }
+    .cs-timeline { list-style: none; padding: 0; position: relative; }
+    .cs-timeline::before {
+      content: '';
+      position: absolute;
+      left: 14px; top: 0; bottom: 0;
+      width: 2px;
+      background: var(--border);
+    }
+    .cs-timeline-item {
+      position: relative;
+      padding-left: 50px;
+      margin-bottom: 28px;
+    }
+    .cs-timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 6px; top: 8px;
+      width: 18px; height: 18px;
+      background: var(--red);
+      border: 4px solid var(--cream);
+      border-radius: 50%;
+      box-shadow: 0 0 0 2px var(--red);
+    }
+    .cs-timeline-week {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 4px;
+    }
+    .cs-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    @media (max-width: 768px) { .cs-gallery { grid-template-columns: 1fr; } }
+    .cs-bill {
+      background: linear-gradient(135deg, #2A2520 0%, #393229 100%);
+      color: var(--cream);
+      padding: 36px;
+      border-radius: 20px;
+      text-align: center;
+    }
+    .cs-bill-num {
+      font-family: var(--serif);
+      font-size: clamp(48px, 7vw, 80px);
+      color: var(--red);
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      margin: 12px 0 6px;
+    }
+    .cs-bill-num small { font-size: 0.35em; color: rgba(255,255,255,0.55); margin-left: 4px; }
+  </style>
+</head>
+<body data-base="../../">
+
+<header class="nav" data-include="nav"></header>
+
+<!-- HERO cu watermark -->
+<section class="wm-section">
+  <div class="container">
+    <div class="wm-stage-wrap reveal">
+      <div class="wm-watermark" aria-hidden="true">
+        <span class="wm-half wm-top">Lyon</span>
+        <span class="wm-half wm-bottom">Lyon</span>
+      </div>
+
+      <div class="wm-stage">
+        <div class="wm-text">
+          <span class="bubble-tag">Wohnanlage · Frankreich</span>
+          <h1>Wohnanlage <em>la Lyon.</em></h1>
+          <p class="lead">Dezvoltatorul [Numele companiei] căuta un sistem care combină viteza, performanța Passivhaus și marja de profit. A ales Polistibrick MBK 270 pentru cele 24 de Einheiten. Cele 24 de case au fost livrate în 6 Monate în total. Toate certificate Passivhaus din prima. Vândute în 4 Wochen cu o primă de 18% peste media sectorului.</p>
+        </div>
+        <div class="wm-visual" style="padding:0;overflow:hidden;">
+          <img src="../../images/projekte/ensemble-lyon.png" alt="Ansamblu Lyon" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KEY FACTS -->
+<section class="section section--tight">
+  <div class="container">
+    <div class="grid grid-4 reveal">
+      <div class="fact"><span class="fact-num">24<small> Einheiten</small></span><span class="fact-label">Gelieferte Wohnungen</span></div>
+      <div class="fact"><span class="fact-num">6<small> Monate</small></span><span class="fact-label">Ausführung totală</span></div>
+      <div class="fact"><span class="fact-num">100<small> %</small></span><span class="fact-label">Certificate Passivhaus</span></div>
+      <div class="fact"><span class="fact-num">+18<small> %</small></span><span class="fact-label">Primă la prețul de vânzare</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="section section--cream section--tight">
+  <div class="container container--narrow">
+    <blockquote class="cs-quote reveal">
+      Es war das erste Mal, dass wir eine Passivhaus-Wohnanlage gebaut haben. Termenul nostru era de 12 Monate. Cu Polistibrick, am livrat în 6 Monate — am avut 6 Monate în plus pentru comercializarea proiectului. Și cum întregul proiect a obținut certificarea de la prima vizită PHPP, am putut vinde la +18% peste piață. Un ROI de alt nivel.
+      <span class="cs-quote-author"><strong>[Numele directorului]</strong>Director de proiect · [Numele companiei] · Lyon, FR</span>
+    </blockquote>
+  </div>
+</section>
+
+<!-- PROJECT DETAILS -->
+<section class="section">
+  <div class="container">
+    <div class="grid grid-2" style="gap:48px;align-items:start;">
+      <div class="reveal">
+        <span class="eyebrow">Über uns proiect</span>
+        <h2 style="margin-bottom:18px;">ROI accelerat de viteză.</h2>
+        <p style="margin-bottom:14px;">Dezvoltatorul a achiziționat terenul în martie 2023, cu obiectivul de a livra 24 de case pasive în 2024. Buget: 5,8 M €.</p>
+        <p style="margin-bottom:14px;">A evaluat 3 sisteme: Ziegel + ETICS, Haus din lemn (CLT), Polistibrick. Polistibrick gewann in 3 Bereichen: <strong>termen</strong> (6 Monate față de 14 Monate pentru Ziegel), <strong>cost</strong> (abia 5% peste Ziegel, dar cu performanță A+++), <strong>predictibilitate</strong> (vorgefertigte Paneele, keine Überraschungen auf der Baustelle).</p>
+        <p style="margin-bottom:14px;">Der Bau begann im Juli 2023. Cele 24 de Einheiten au fost grupate în 4 module de câte 6 case fiecare. Team permanentă de 12 persoane a lucrat simultan pe 2 module.</p>
+        <p>Abnahme finală: ianuarie 2024. Vânzare: 24 de Einheiten în 28 de Tage, toate la +18% peste media sectorului.</p>
+      </div>
+      <div class="reveal">
+        <div class="card" style="padding:32px;">
+          <h4 style="margin-bottom:18px;">Spezifikationen</h4>
+          <div class="spec-table" style="border-radius:10px;">
+            
+            <div class="spec-table-row" style="grid-template-columns:1fr 1fr;"><div class="spec-table-cell spec-table-cell--label">Standort</div><div class="spec-table-cell spec-table-cell--value">Lyon, Frankreich</div></div>
+            <div class="spec-table-row" style="grid-template-columns:1fr 1fr;"><div class="spec-table-cell spec-table-cell--label">Tip</div><div class="spec-table-cell spec-table-cell--value">Ansamblu de 24 Einheiten</div></div>
+            <div class="spec-table-row" style="grid-template-columns:1fr 1fr;"><div class="spec-table-cell spec-table-cell--label">Fläche pro Einheit</div><div class="spec-table-cell spec-table-cell--value">120 m²</div></div>
+            <div class="spec-table-row" style="grid-template-columns:1fr 1fr;"><div class="spec-table-cell spec-table-cell--label">Gesamtfläche</div><div class="spec-table-cell spec-table-cell--value">2.880 m²</div></div>
+            <div class="spec-table-row" style="grid-template-columns:1fr 1fr;"><div class="spec-table-cell spec-table-cell--label">Sistem</div><div class="spec-table-cell spec-table-cell--value">MBK 270 + PBK 250 + TBK</div></div>
+            <div class="spec-table-row" style="grid-template-columns:1fr 1fr;"><div class="spec-table-cell spec-table-cell--label">Certificare</div><div class="spec-table-cell spec-table-cell--value">100% Passivhaus</div></div>
+            <div class="spec-table-row" style="grid-template-columns:1fr 1fr;"><div class="spec-table-cell spec-table-cell--label">Cost total proiect</div><div class="spec-table-cell spec-table-cell--value">~4,8 M €</div></div>
+            <div class="spec-table-row" style="grid-template-columns:1fr 1fr;"><div class="spec-table-cell spec-table-cell--label">Început</div><div class="spec-table-cell spec-table-cell--value">Iulie 2023</div></div>
+            <div class="spec-table-row" style="grid-template-columns:1fr 1fr;"><div class="spec-table-cell spec-table-cell--label">Abnahme</div><div class="spec-table-cell spec-table-cell--value">Ianuarie 2024</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BILL HIGHLIGHT -->
+<section class="section section--tight">
+  <div class="container container--narrow">
+    <div class="cs-bill reveal">
+      <span class="eyebrow" style="color:rgba(247,244,237,0.6);">Factură reală electricitate + gaz</span>
+      <div class="cs-bill-num">45<small> €/Monat</small></div>
+      <p style="color:rgba(247,244,237,0.75);font-size:14px;">Factură medie per unitate locuită, după primul Jahr. Toate cele 24 de Einheiten prezintă consumuri sub 25 kWh/m²/Jahr conform PHPP.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="section section--cream">
+  <div class="container container--narrow">
+    <div class="reveal">
+      <span class="eyebrow">Ausführungszeitplan</span>
+      <h2 style="margin-bottom:30px;">De la fundații la <em>predarea cheilor.</em></h2>
+      <ol class="cs-timeline">
+        
+        <li class="cs-timeline-item"><span class="cs-timeline-week">Luna 1</span><h4>Fundații + plăci de fundație</h4><p style="font-size:14px;color:var(--gray);">Săpătură și fundații pentru cele 24 de Einheiten. Echipă locală, 4 Wochen.</p></li>
+        <li class="cs-timeline-item"><span class="cs-timeline-week">Luna 2-3</span><h4>Module 1+2: Wände + Decken + Dach</h4><p style="font-size:14px;color:var(--gray);">12 case structurale montate în 8 Wochen. Echipă de 12 persoane repartizată pe 2 case simultan.</p></li>
+        <li class="cs-timeline-item"><span class="cs-timeline-week">Luna 3-4</span><h4>Module 3+4: Wände + Decken + Dach</h4><p style="font-size:14px;color:var(--gray);">Cele 12 case rămase sunt montate. În paralel, modulele 1+2 intră în faza de finisaje.</p></li>
+        <li class="cs-timeline-item"><span class="cs-timeline-week">Luna 4-5</span><h4>Haustechnik + tâmplărie + finisaje</h4><p style="font-size:14px;color:var(--gray);">Ventilație, electricitate, instalații sanitare pentru toate Einheitenle. Passivhaus-zertifizierte Fenster und Türen.</p></li>
+        <li class="cs-timeline-item"><span class="cs-timeline-week">Luna 6</span><h4>PHPP-Prüfung + Abnahme</h4><p style="font-size:14px;color:var(--gray);">Blower Door für jede Einheit. Toate obțin certificarea Passivhaus din prima.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY (with tabs + lightbox) -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="text-align:center;margin-bottom:30px;">
+      <span class="eyebrow">Galerie foto</span>
+      <h2>Cum a decurs, <em>Schritt für Schritt.</em></h2>
+      <p class="lead" style="margin-top:14px;max-width:620px;margin-left:auto;margin-right:auto;">Fotografiile de șantier vor fi publicate în curând.</p>
+    </div>
+
+    <div class="reveal pb-section-hidden" data-gallery>
+      <div class="gallery-tabs">
+        <button class="gallery-tab is-active" data-filter="all">Toate <span class="gallery-tab-count"></span></button>
+        <button class="gallery-tab" data-filter="construction">În Bau <span class="gallery-tab-count"></span></button>
+        <button class="gallery-tab" data-filter="final">Finalizate <span class="gallery-tab-count"></span></button>
+      </div>
+
+      <div class="gallery-grid">
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Randare de arhitect a ansamblului final.">
+          <div class="gallery-item-placeholder">[Foto: Randare proiect]</div>
+          <span class="gallery-item-tag">Bau</span>
+          <div class="gallery-item-caption">Randare de arhitect a ansamblului final.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Lucrări de săpătură pentru cele 24 de Einheiten.">
+          <div class="gallery-item-placeholder">[Foto: Luna 1 — Săpătură]</div>
+          <span class="gallery-item-tag">Bau</span>
+          <div class="gallery-item-caption">Lucrări de săpătură pentru cele 24 de Einheiten.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Fundații continue pentru modulele 1+2.">
+          <div class="gallery-item-placeholder">[Foto: Monat 1 — Fundamente Module 1+2]</div>
+          <span class="gallery-item-tag">Bau</span>
+          <div class="gallery-item-caption">Fundații continue pentru modulele 1+2.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Koordinierte Montage Jahr 2 Einheiten gleichzeitig.">
+          <div class="gallery-item-placeholder">[Foto: Luna 2 — Module 1+2]</div>
+          <span class="gallery-item-tag">Bau</span>
+          <div class="gallery-item-caption">Koordinierte Montage Jahr 2 Einheiten gleichzeitig.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="MBK Wände 270 montați pe mai multe case.">
+          <div class="gallery-item-placeholder">[Foto: Luna 2 — Wände]</div>
+          <span class="gallery-item-tag">Bau</span>
+          <div class="gallery-item-caption">MBK Wände 270 montați pe mai multe case.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Modulele 3+4 pornesc în paralel cu finisajele pe primele.">
+          <div class="gallery-item-placeholder">[Foto: Luna 3 — Module 3+4]</div>
+          <span class="gallery-item-tag">Bau</span>
+          <div class="gallery-item-caption">Modulele 3+4 pornesc în paralel cu finisajele pe primele.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Dachuri TBK pentru cele 24 de Einheiten.">
+          <div class="gallery-item-placeholder">[Foto: Luna 3 — Dachuri]</div>
+          <span class="gallery-item-tag">Bau</span>
+          <div class="gallery-item-caption">Dachuri TBK pentru cele 24 de Einheiten.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Vedere aeriană a șantierului la jumătatea execuției.">
+          <div class="gallery-item-placeholder">[Foto: Luna 4 — Vedere dronă]</div>
+          <span class="gallery-item-tag">Bau</span>
+          <div class="gallery-item-caption">Vedere aeriană a șantierului la jumătatea execuției.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Passivhaus-zertifizierte Fenster und Türen Jahr den letzten Häusern.">
+          <div class="gallery-item-placeholder">[Foto: Monat 4 — Fenster und Türen]</div>
+          <span class="gallery-item-tag">Bau</span>
+          <div class="gallery-item-caption">Passivhaus-zertifizierte Fenster und Türen Jahr den letzten Häusern.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Haustechnik de ventilație pentru toate Einheitenle.">
+          <div class="gallery-item-placeholder">[Foto: Luna 5 — Haustechnik]</div>
+          <span class="gallery-item-tag">Bau</span>
+          <div class="gallery-item-caption">Haustechnik de ventilație pentru toate Einheitenle.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Test Blower Door pe primul modul.">
+          <div class="gallery-item-placeholder">[Foto: Luna 5 — Test]</div>
+          <span class="gallery-item-tag">Bau</span>
+          <div class="gallery-item-caption">Test Blower Door pe primul modul.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Abnahme tehnică cu autoritățile locale.">
+          <div class="gallery-item-placeholder">[Foto: Monat 6 — Abnahme]</div>
+          <span class="gallery-item-tag">Bau</span>
+          <div class="gallery-item-caption">Abnahme tehnică cu autoritățile locale.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="final" data-caption="Vedere finală a ansamblului — 24 de case.">
+          <div class="gallery-item-placeholder">[Foto: Ansamblu finalizat]</div>
+          <span class="gallery-item-tag">Finalizat</span>
+          <div class="gallery-item-caption">Vedere finală a ansamblului — 24 de case.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="final" data-caption="Einzelne Einheit — fertige Fassade.">
+          <div class="gallery-item-placeholder">[Foto: Unitate model]</div>
+          <span class="gallery-item-tag">Finalizat</span>
+          <div class="gallery-item-caption">Einzelne Einheit — fertige Fassade.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="final" data-caption="Spațiu verde comun între Einheiten.">
+          <div class="gallery-item-placeholder">[Foto: Gemeinschaftsbereich]</div>
+          <span class="gallery-item-tag">Finalizat</span>
+          <div class="gallery-item-caption">Spațiu verde comun între Einheiten.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="final" data-caption="Die Hauptstraße der Wohnanlage.">
+          <div class="gallery-item-placeholder">[Foto: Stradă interioară]</div>
+          <span class="gallery-item-tag">Finalizat</span>
+          <div class="gallery-item-caption">Die Hauptstraße der Wohnanlage.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="final" data-caption="Detaliu de fațadă cu balcoane.">
+          <div class="gallery-item-placeholder">[Foto: Fassadendetail]</div>
+          <span class="gallery-item-tag">Finalizat</span>
+          <div class="gallery-item-caption">Detaliu de fațadă cu balcoane.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="final" data-caption="Interior model — living open space.">
+          <div class="gallery-item-placeholder">[Foto: Interior 1]</div>
+          <span class="gallery-item-tag">Finalizat</span>
+          <div class="gallery-item-caption">Interior model — living open space.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="final" data-caption="Musterküche — moderne Ausstattung.">
+          <div class="gallery-item-placeholder">[Foto: Musterküche]</div>
+          <span class="gallery-item-tag">Finalizat</span>
+          <div class="gallery-item-caption">Musterküche — moderne Ausstattung.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="final" data-caption="Certificat Passivhaus pentru cele 24 de Einheiten.">
+          <div class="gallery-item-placeholder">[Foto: Certificat oficial]</div>
+          <span class="gallery-item-tag">Finalizat</span>
+          <div class="gallery-item-caption">Certificat Passivhaus pentru cele 24 de Einheiten.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="final" data-caption="Predarea cheilor primilor locatari.">
+          <div class="gallery-item-placeholder">[Foto: Predare chei]</div>
+          <span class="gallery-item-tag">Finalizat</span>
+          <div class="gallery-item-caption">Predarea cheilor primilor locatari.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="final" data-caption="Locatari instalați după 6 Monate.">
+          <div class="gallery-item-placeholder">[Foto: Ocupare]</div>
+          <span class="gallery-item-tag">Finalizat</span>
+          <div class="gallery-item-caption">Locatari instalați după 6 Monate.</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX (at body level, click any gallery item to open) -->
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Galerie foto">
+  <span class="lightbox-counter">1 / 1</span>
+  <button class="lightbox-close" aria-label="Închide">×</button>
+  <button class="lightbox-prev" aria-label="Imaginea anterioară">‹</button>
+  <button class="lightbox-next" aria-label="Imaginea următoare">›</button>
+  <img class="lightbox-img" src="" alt="">
+  <div class="lightbox-caption"></div>
+</div>
+
+<!-- CTA -->
+<section class="section section--tight">
+  <div class="cta-band reveal">
+    <h2>Möchten auch Sie <em>o Haus ca asta?</em></h2>
+    <p>Individuelles Angebot anfordern — calculăm precis pentru proiectul tău, pe baza planurilor tale.</p>
+    <div class="cta-band-actions">
+      <a href="../../angebot/" class="btn btn-on-dark btn-large btn-arrow">Individuelles Angebot anfordern</a>
+      <a href="../../rechner/" class="btn btn-on-dark-ghost btn-large">Kostenrechner</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" data-include="footer"></footer>
+<script src="../../assets/js/site.js"></script>
+</body>
+</html>

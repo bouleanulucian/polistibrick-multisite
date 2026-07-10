@@ -64,24 +64,16 @@ def apply_placeholders(text: str, config: dict) -> str:
 
 
 # Per-language URL path rewriting (RO → target lang folder names)
-PATH_REWRITES = {
-    "fr": {
-        "produse": "produits", "pentru": "pour", "despre": "a-propos",
-        "resurse": "ressources", "proiecte": "projets", "economii": "economies",
-        "oferta": "devis", "comparatie": "comparaison", "calculator": "calculateur",
-        "testimoniale": "temoignages", "devino-partener": "devenir-partenaire",
-        "pereti-mbk": "murs-mbk", "planseu-pbk": "planchers-pbk",
-        "acoperis-tbk": "toit-tbk", "accesorii": "accessoires",
-        "proprietari": "proprietaires", "arhitecti": "architectes",
-        "constructori": "constructeurs", "investitori": "investisseurs",
-        "certificari": "certifications", "fabrici": "usines",
-        "echipa": "fondateur", "patent": "brevet",
-        "casa-cluj-napoca": "maison-cluj-napoca", "ansamblu-lyon": "ensemble-lyon",
-        "confidentialitate": "confidentialite", "sustenabilitate": "durabilite",
-        "termeni": "conditions",
-        "mentiuni-legale": "mentions-legales",
-    },
-}
+# FR map kept for backward compatibility; prefer RO_TO_LANG from path_maps.
+from pathlib import Path as _Path
+import sys as _sys
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "translations"))
+try:
+    from path_maps import RO_TO_LANG as _RO_TO_LANG
+except ImportError:
+    _RO_TO_LANG = {}
+
+PATH_REWRITES = dict(_RO_TO_LANG)
 
 
 def rewrite_paths(text: str, lang: str) -> str:
@@ -192,10 +184,14 @@ def optimize_html_files(out_dir: Path):
 
 
 def path_rewrite_lang(country_code: str, lang: str) -> str | None:
-    """Countries seeded from the FR template use French URL slugs."""
+    """Return PATH_REWRITES key for shared site.js link rewriting at build."""
     if country_code == "ro" or lang == "ro":
         return None
-    return "fr"
+    if country_code == "ie":
+        return "en" if "en" in PATH_REWRITES else None
+    if lang in PATH_REWRITES:
+        return lang
+    return None
 
 
 def copy_tree(src: Path, dst: Path, transform: bool, config: dict, country_code: str = ""):

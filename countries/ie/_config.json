@@ -6,7 +6,6 @@
   "country_flag": "🇮🇪",
   "domain": "polistibrick.ie",
   "domain_url": "https://polistibrick.ie",
-
   "company": {
     "name_legal": "Polistibrick Ireland Ltd.",
     "name_short": "Polistibrick Ireland",
@@ -17,7 +16,6 @@
     "address_zip": "[to fill in]",
     "address_country": "Ireland"
   },
-
   "contact": {
     "phone": "+353 [to fill in]",
     "phone_raw": "+353[to fill in]",
@@ -33,35 +31,40 @@
       "youtube": ""
     }
   },
-
   "team": [
     {
       "name": "[Manager Name]",
       "role": "Sales Director Ireland",
       "email": "[email]@polistibrick.ie",
       "phone": "[phone]",
-      "languages": ["EN"],
+      "languages": [
+        "EN"
+      ],
       "photo": "team/manager-ie.jpg",
       "linkedin": ""
     }
   ],
-
   "currency": "EUR",
   "currency_symbol": "€",
   "currency_display_format": "€{value}",
   "vat_rate": 23,
-
   "form_submit_email": "contact@polistibrick.ie",
   "form_cc_email": "info@polistibrick.eu",
-
   "factory": {
     "name": "Valencia",
     "address": "[Spain]",
     "year_built": 2014
   },
-
   "metadata": {
     "og_locale": "en_IE",
     "hreflang": "en-IE"
+  },
+  "legal": {
+    "privacy_slug": "privacy"
+  },
+  "devis_app": {
+    "url": "https://devis.polistibrick.ie",
+    "preview_url": "https://polistibrick-configurator.vercel.app",
+    "pays": "IE"
   }
 }

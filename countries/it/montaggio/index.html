@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Il montaggio Polistibrick · Una casa assemblata a mano, in poche settimane</title>
+  <meta name="description" content="Come si monta una casa Polistibrick: assemblaggio a secco, senza gru, con 2-3 persone. Dalle fondazioni al cassero chiuso in poche settimane, monolitica in 24 ore dopo il getto.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <style>
+    /* --- Hero watermark (même pattern que les autres sous-pages) --- */
+    .wm-section { padding: clamp(60px, 8vw, 100px) 0; background: var(--cream); }
+    .wm-stage-wrap { position: relative; margin: 70px auto 0; max-width: 1480px; }
+    .wm-watermark {
+      position: absolute; top: 0; left: 50%; width: 100vw; margin-left: -50vw;
+      pointer-events: none; user-select: none; transform: translateY(-50%);
+      height: 1em; line-height: 1; text-align: center; text-transform: uppercase;
+      font-family: var(--serif); font-size: clamp(64px, 12vw, 200px);
+      font-weight: 500; letter-spacing: -0.06em; z-index: 2;
+    }
+    .wm-watermark .wm-half { position: absolute; inset: 0; width: 100%; display: block; }
+    .wm-watermark .wm-top { color: transparent; -webkit-text-stroke: 1.4px rgba(15,15,15,0.30); clip-path: inset(0 0 50% 0); }
+    .wm-watermark .wm-bottom { color: var(--cream-dark); opacity: 0.65; clip-path: inset(50% 0 0 0); }
+    .wm-stage { position: relative; background: var(--cream-light); border: 1px solid var(--border); border-radius: 32px; padding: 56px; }
+    .wm-content { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 48px; align-items: center; }
+    .wm-text { padding-right: 8px; }
+    .wm-text .bubble-tag { display: inline-block; background: var(--red-soft); color: var(--red); padding: 4px 12px; border-radius: 4px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 16px; }
+    .wm-text h1 { font-family: var(--serif); font-size: clamp(34px, 4vw, 56px); font-weight: 500; color: var(--ink); letter-spacing: -0.02em; line-height: 1.05; margin-bottom: 18px; }
+    .wm-text h1 em { font-style: italic; color: var(--red); font-weight: 400; }
+    .wm-text p { font-size: 16px; color: var(--gray); line-height: 1.65; }
+    .wm-text p strong { color: var(--ink); font-weight: 600; }
+    .wm-visual { background: linear-gradient(180deg, var(--cream-light) 0%, var(--cream-dark) 100%); border: 1px solid var(--border); border-radius: 20px; box-shadow: var(--shadow-md); aspect-ratio: 4/5; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+    .wm-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    @media (max-width: 1100px) {
+      .wm-content { grid-template-columns: 1fr; gap: 32px; }
+      .wm-stage { padding: 36px; }
+      .wm-visual { aspect-ratio: 16/10; }
+    }
+    @media (max-width: 768px) { .wm-stage { padding: 28px 20px; } }
+
+    /* --- Vidéo du montage --- */
+    .montage-video {
+      position: relative; width: 100%; aspect-ratio: 16/9;
+      border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-md);
+      background: #1A1A1A; display: block;
+    }
+    .montage-video--placeholder {
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px;
+      background:
+        linear-gradient(180deg, rgba(15,14,12,0.55), rgba(15,14,12,0.78)),
+        url('../images/construction/stage4-final.jpg') center/cover no-repeat;
+      color: #fff; text-align: center;
+    }
+    .montage-video--placeholder .mv-play {
+      width: 76px; height: 76px; border-radius: 50%;
+      background: var(--red); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 26px; padding-left: 5px;
+      box-shadow: 0 12px 40px rgba(200,16,46,0.45);
+    }
+    .montage-video--placeholder .mv-label { font-family: var(--serif); font-size: clamp(20px,2.4vw,28px); font-weight: 500; line-height: 1.2; }
+    .montage-video--placeholder .mv-label span { display: block; font-family: var(--sans); font-size: 13px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.8; margin-top: 8px; }
+    .montage-video-caption { text-align: center; font-size: 14px; color: var(--gray); margin-top: 16px; }
+
+    /* --- Étapes de montage --- */
+    .montage-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .montage-step { background: var(--cream-light); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; }
+    .montage-step .ms-img { position: relative; aspect-ratio: 4/3; overflow: hidden; background: var(--cream-dark); }
+    .montage-step .ms-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .montage-step .ms-num { position: absolute; top: 12px; left: 12px; width: 38px; height: 38px; border-radius: 50%; background: var(--red); color: #fff; font-family: var(--serif); font-weight: 600; font-size: 16px; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(0,0,0,0.25); }
+    .montage-step .ms-body { padding: 20px 20px 24px; }
+    .montage-step .ms-body h3 { font-family: var(--serif); font-size: 19px; font-weight: 500; color: var(--ink); margin-bottom: 8px; }
+    .montage-step .ms-body p { font-size: 14px; color: var(--gray); line-height: 1.55; }
+    @media (max-width: 1100px) { .montage-steps { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .montage-steps { grid-template-columns: 1fr; } }
+
+    /* bande de mise en avant après les étapes */
+    .montage-note { margin-top: 36px; background: var(--red-soft); border: 1px solid rgba(200,16,46,0.18); border-radius: 16px; padding: 24px 28px; text-align: center; font-size: 16px; color: var(--ink); }
+    .montage-note strong { color: var(--red); }
+
+    /* bande pro */
+    .montage-pro { display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; background: var(--cream-light); border:1px solid var(--border); border-radius:20px; padding:28px 32px; }
+    .montage-pro p { font-size:15px; color:var(--gray); max-width:640px; margin:0; }
+    .montage-pro p strong { color: var(--ink); }
+  </style>
+</head>
+<body data-base="../">
+
+<header class="nav" data-include="nav"></header>
+
+<!-- HERO -->
+<section class="wm-section">
+  <div class="container">
+    <div class="wm-stage-wrap reveal">
+      <div class="wm-watermark" aria-hidden="true">
+        <span class="wm-half wm-top">Montaggio</span>
+        <span class="wm-half wm-bottom">Montaggio</span>
+      </div>
+      <div class="wm-stage">
+        <div class="wm-content">
+          <div class="wm-text">
+            <span class="bubble-tag">Il cantiere</span>
+            <h1>Assemblata a mano, <em>in poche settimane.</em></h1>
+            <p>Nessuna gru. Nessun grosso opera interminabile. Il sistema Polistibrick si assembla <strong>a secco</strong>, elemento per elemento, con un team di <strong>2-3 persone</strong> — fino al cassero chiuso, pronto per il getto del calcestruzzo.</p>
+          </div>
+          <div class="wm-visual">
+            <img src="../images/construction/stage1-coffrage.jpg" alt="Montaggio dei muri Polistibrick in cantiere" loading="eager">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDÉO -->
+<section class="section section--tight">
+  <div class="container container--narrow reveal">
+    <!-- ▼▼▼ VIDÉO DU MONTAGE — À REMPLACER QUAND ELLE EST PRÊTE ▼▼▼
+         Mettez le fichier vidéo dans  images/montaggio/  puis remplacez TOUT le bloc
+         <div class="montage-video montage-video--placeholder"> ... </div>  par :
+
+         <video class="montage-video" controls playsinline preload="metadata"
+                poster="../images/construction/stage4-final.jpg">
+           <source src="../images/montaggio/montage-complet.mp4" type="video/mp4">
+         </video>
+         ▲▲▲ -->
+    <div class="montage-video montage-video--placeholder" role="img" aria-label="Video del montaggio — presto disponibile">
+      <div class="mv-play" aria-hidden="true">▶</div>
+      <div class="mv-label">Il montaggio in video<span>Presto disponibile</span></div>
+    </div>
+    <p class="montage-video-caption">Il montaggio completo, dal pavimento al cassero chiuso.</p>
+  </div>
+</section>
+
+<!-- ÉTAPES -->
+<section class="section section--cream">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 50px;">
+      <span class="eyebrow">Fasi di posa</span>
+      <h2>Una casa completa <em>in 4 fasi.</em></h2>
+      <p class="lead" style="margin-top:16px;">Dalle fondazioni al cassero chiuso. L'intero processo in poche settimane, con solo 2-3 persone in cantiere — senza malta e senza perdita di isolamento.</p>
+    </div>
+
+    <div class="montage-steps reveal">
+      <article class="montage-step">
+        <div class="ms-img"><span class="ms-num">1</span><img src="../images/construction/stage1-coffrage.jpg" alt="Cassero: muri EPS eretti con puntellamento" loading="lazy"></div>
+        <div class="ms-body"><h3>Cassero</h3><p>I muri EPS vengono eretti e fissati sulla fondazione con puntellamento laterale in legno. Assemblaggio a secco: senza malta, senza perdita di isolamento.</p></div>
+      </article>
+      <article class="montage-step">
+        <div class="ms-img"><span class="ms-num">2</span><img src="../images/construction/stage3-planseu.jpg" alt="Solaio PBK posato" loading="lazy"></div>
+        <div class="ms-body"><h3>Solaio</h3><p>I pannelli PBK 250 vengono posati orizzontalmente — strati EPS-Graphite + fibrocemento, pronti a ricevere l'armatura.</p></div>
+      </article>
+      <article class="montage-step">
+        <div class="ms-img"><span class="ms-num">3</span><img src="../images/construction/stage2-fierbéton.jpg" alt="Armatura in acciaio tra le nervature" loading="lazy"></div>
+        <div class="ms-body"><h3>Armatura</h3><p>Le reti in acciaio si posizionano tra le nervature EPS-Graphite. È questo che crea il collegamento monolitico tra muri e solaio.</p></div>
+      </article>
+      <article class="montage-step">
+        <div class="ms-img"><span class="ms-num">4</span><img src="../images/construction/stage4-final.jpg" alt="Cassero chiuso, pronto per il getto" loading="lazy"></div>
+        <div class="ms-body"><h3>Chiusura del cassero</h3><p>Tutti gli elementi sono assemblati e verificati. La casa è ora pronta per il getto del calcestruzzo.</p></div>
+      </article>
+    </div>
+
+    <div class="montage-note reveal">Dopo il getto, la struttura diventa <strong>monolitica in 24 ore</strong> — muri, solai e tetto isolati in continuo, senza ponti termici.</div>
+  </div>
+</section>
+
+<!-- POURQUOI DIFFÉRENT -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 50px;">
+      <span class="eyebrow">La differenza</span>
+      <h2>Un cantiere <em>più semplice, più rapido, più pulito.</em></h2>
+    </div>
+    <div class="grid grid-3 reveal">
+      <div class="card card--cream"><h3 style="margin-bottom:12px;">Senza gru</h3><p style="font-size:15px;">Gli elementi sono leggeri e si manipolano a mano. Nessun mezzo di sollevamento pesante, nessun accesso speciale richiesto sul terreno.</p></div>
+      <div class="card card--cream"><h3 style="margin-bottom:12px;">2-3 persone</h3><p style="font-size:15px;">Basta un piccolo team. Meno manodopera, meno coordinamento, meno costi di cantiere.</p></div>
+      <div class="card card--cream"><h3 style="margin-bottom:12px;">A secco, senza malta</h3><p style="font-size:15px;">L'assemblaggio è meccanico e a secco. Nessun tempo di asciugatura tra le fasi, nessun meteo che blocca il cantiere.</p></div>
+      <div class="card card--cream"><h3 style="margin-bottom:12px;">Poche settimane</h3><p style="font-size:15px;">Il grosso opera chiuso in settimane invece che in mesi. Vi trasferite prima e pagate meno interessi di cantiere.</p></div>
+      <div class="card card--cream"><h3 style="margin-bottom:12px;">Monolitica in 24 h</h3><p style="font-size:15px;">Dopo il getto, calcestruzzo e isolamento non fanno più che uno. Un guscio continuo, senza giunti né ponti termici.</p></div>
+      <div class="card card--cream"><h3 style="margin-bottom:12px;">Pulito e preciso</h3><p style="font-size:15px;">Pochi rifiuti, poca polvere, tolleranze di fabbrica. Un cantiere ordinato dall'inizio alla fine.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- EN CHIFFRES -->
+<section class="section section--cream">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 50px;">
+      <span class="eyebrow">Il montaggio in cifre</span>
+      <h2>Il cantiere, <em>ridotto all'essenziale.</em></h2>
+    </div>
+    <div class="grid grid-4 reveal">
+      <div class="fact"><span class="fact-num">~1<small> mese</small></span><span class="fact-label">Grosso opera chiuso (vs 4-5 mesi)</span></div>
+      <div class="fact"><span class="fact-num">2–3</span><span class="fact-label">Persone in cantiere</span></div>
+      <div class="fact"><span class="fact-num">0</span><span class="fact-label">Gru o mezzo di sollevamento pesante</span></div>
+      <div class="fact"><span class="fact-num">24<small> h</small></span><span class="fact-label">Per diventare monolitica</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PAR ÉLÉMENT -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 50px;">
+      <span class="eyebrow">Elemento per elemento</span>
+      <h2>Tre elementi, <em>un solo guscio.</em></h2>
+    </div>
+    <div class="grid grid-3 reveal">
+      <a href="../prodotti/pareti-mbk/" class="card card-hover" style="text-decoration:none;color:inherit;">
+        <span class="card-tag">Muri</span>
+        <h3 style="margin-bottom:10px;">Muri MBK</h3>
+        <p style="font-size:15px;margin-bottom:18px;">Il cassero isolante che si erge a mano. Isolamento integrato, pronto per il calcestruzzo.</p>
+        <span style="color:var(--red);font-weight:600;font-size:13px;">Scopri i muri MBK →</span>
+      </a>
+      <a href="../prodotti/solai-pbk/" class="card card-hover" style="text-decoration:none;color:inherit;">
+        <span class="card-tag">Solai</span>
+        <h3 style="margin-bottom:10px;">Solai PBK</h3>
+        <p style="font-size:15px;margin-bottom:18px;">Le lastre portanti EPS-Graphite + fibrocemento, posate orizzontalmente e armate in loco.</p>
+        <span style="color:var(--red);font-weight:600;font-size:13px;">Scopri i solai PBK →</span>
+      </a>
+      <a href="../prodotti/tetto-tbk/" class="card card-hover" style="text-decoration:none;color:inherit;">
+        <span class="card-tag">Tetto</span>
+        <h3 style="margin-bottom:10px;">Tetto TBK</h3>
+        <p style="font-size:15px;margin-bottom:18px;">La copertura Passivhaus che esce di fabbrica pronta da posare. A tenuta d'aria, senza ponte termico.</p>
+        <span style="color:var(--red);font-weight:600;font-size:13px;">Scopri il tetto TBK →</span>
+      </a>
+    </div>
+
+    <div class="montage-pro reveal" style="margin-top:36px;">
+      <p><strong>Sei un costruttore?</strong> Manuali di montaggio dettagliati, video per elemento (muri, solai, tetto) e schede tecniche sono disponibili nell'area professionale.</p>
+      <a href="../per/costruttori/" class="btn btn-primary btn-arrow">Area costruttori</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section--tight">
+  <div class="cta-band reveal">
+    <span class="eyebrow" style="color:rgba(247,244,237,0.6);">Il tuo progetto</span>
+    <h2>Pronto a vedere la tua casa <em>prendere forma?</em></h2>
+    <p>Inviaci il tuo progetto e ricevi un preventivo personalizzato entro 48 ore. Senza impegno, senza costi nascosti.</p>
+    <div class="cta-band-actions">
+      <a href="../preventivo/" class="btn btn-on-dark btn-large btn-arrow">Richiedi un preventivo</a>
+      <a href="../contact/" class="btn btn-on-dark-ghost btn-large">Parla con noi</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" data-include="footer"></footer>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

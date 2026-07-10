@@ -6,7 +6,6 @@
   "country_flag": "🇮🇹",
   "domain": "polistibrick.it",
   "domain_url": "https://polistibrick.it",
-
   "company": {
     "name_legal": "Polistibrick Italia SRL",
     "name_short": "Polistibrick Italia",
@@ -17,7 +16,6 @@
     "address_zip": "[da inserire]",
     "address_country": "Italia"
   },
-
   "contact": {
     "phone": "+39 [da inserire]",
     "phone_raw": "+39[da inserire]",
@@ -33,35 +31,55 @@
       "youtube": ""
     }
   },
-
   "team": [
     {
       "name": "[Nome Manager]",
       "role": "Direttore commerciale Italia",
       "email": "[email]@polistibrick.com",
       "phone": "[telefono]",
-      "languages": ["IT", "EN"],
+      "languages": [
+        "IT",
+        "EN"
+      ],
       "photo": "team/manager-it.jpg",
       "linkedin": ""
     }
   ],
-
   "currency": "EUR",
   "currency_symbol": "€",
   "currency_display_format": "{value} €",
   "vat_rate": 22,
-
   "form_submit_email": "contact@polistibrick.com",
   "form_cc_email": "info@polistibrick.eu",
-
+  "forms": {
+    "access_key": "",
+    "provider": "web3forms",
+    "subjects": {
+      "contact": "Contatto — Polistibrick Italia",
+      "devis": "Richiesta preventivo — Polistibrick Italia",
+      "partner": "Candidatura partner — Polistibrick Italia",
+      "review": "Nuova recensione cliente — Polistibrick Italia"
+    }
+  },
+  "legal": {
+    "publication_director": "Lucian Bouleanu",
+    "hosting_provider": "Cloudflare, Inc.",
+    "hosting_address": "101 Townsend St, San Francisco, CA 94107, USA",
+    "privacy_contact_email": "contact@polistibrick.com",
+    "privacy_slug": "privacy"
+  },
   "factory": {
     "name": "Valencia",
     "address": "[Spagna]",
     "year_built": 2014
   },
-
   "metadata": {
     "og_locale": "it_IT",
     "hreflang": "it-IT"
+  },
+  "devis_app": {
+    "url": "https://devis.polistibrick.it",
+    "preview_url": "https://polistibrick-configurator.vercel.app",
+    "pays": "IT"
   }
 }

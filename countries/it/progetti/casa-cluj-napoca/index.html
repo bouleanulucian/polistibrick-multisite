@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casa unifamiliare · Cluj-Napoca · Caso studio Polistibrick</title>
+  <meta name="description" content="Caso studio Polistibrick: casa unifamiliare di 180 m² a Cluj-Napoca, costruita con MBK 270 + PBK 250 + TBK in 5 settimane. Bolletta elettrica reale: 38 €/mese.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/site.css">
+  <style>
+    /* === Card con watermark === */
+    .wm-section { padding: clamp(60px, 8vw, 100px) 0; background: var(--cream); }
+    .wm-stage-wrap { position: relative; margin: 70px auto 0; max-width: 1480px; }
+    .wm-watermark { position: absolute; top: 0; left: 50%; width: 100vw; margin-left: -50vw; pointer-events: none; user-select: none; transform: translateY(-50%); height: 1em; line-height: 1; text-align: center; text-transform: uppercase; font-family: var(--serif); font-size: clamp(64px, 12vw, 200px); font-weight: 500; letter-spacing: -0.06em; z-index: 2; }
+    .wm-watermark .wm-half { position: absolute; inset: 0; width: 100%; display: block; }
+    .wm-watermark .wm-top { color: transparent; -webkit-text-stroke: 1.4px rgba(15,15,15,0.30); clip-path: inset(0 0 50% 0); }
+    .wm-watermark .wm-bottom { color: var(--cream-dark); opacity: 0.65; clip-path: inset(50% 0 0 0); }
+    .wm-stage { position: relative; background: var(--cream-light); border: 1px solid var(--border); border-radius: 32px; padding: 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    .wm-text { padding-right: 8px; }
+    .wm-text .bubble-tag { display: inline-block; background: var(--red-soft); color: var(--red); padding: 4px 12px; border-radius: 4px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 16px; }
+    .wm-text h1 { font-family: var(--serif); font-size: clamp(30px, 3.6vw, 48px); font-weight: 500; color: var(--ink); letter-spacing: -0.02em; line-height: 1.08; margin-bottom: 18px; }
+    .wm-text h1 em { font-style: italic; color: var(--red); font-weight: 400; }
+    .wm-text p.lead { font-size: 15.5px; color: var(--gray); line-height: 1.65; }
+    .wm-visual { background: white; border: 1px solid var(--border); border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-md); margin-top: 10mm; aspect-ratio: 4/3; }
+    .wm-visual .img-placeholder { width: 100%; height: 100%; aspect-ratio: auto; border-radius: 0; border: none; margin: 0; }
+    @media (max-width: 1100px) {
+      .wm-stage { grid-template-columns: 1fr; gap: 32px; padding: 36px; }
+      .wm-visual { margin-top: 0; aspect-ratio: 16/10; }
+    }
+    @media (max-width: 768px) { .wm-stage { padding: 28px 20px; } }
+    .cs-quote {
+      font-family: var(--serif);
+      font-size: clamp(22px, 2.6vw, 32px);
+      line-height: 1.35;
+      color: var(--ink);
+      padding: 36px 40px;
+      border-left: 4px solid var(--red);
+      background: var(--cream-light);
+      border-radius: 0 20px 20px 0;
+      margin: 0;
+    }
+    .cs-quote::before { content: '"'; color: var(--red); font-size: 1.2em; }
+    .cs-quote::after { content: '"'; color: var(--red); font-size: 1.2em; }
+    .cs-quote-author {
+      display: block;
+      margin-top: 20px;
+      font-family: var(--sans);
+      font-size: 14px;
+      font-style: normal;
+      color: var(--gray);
+    }
+    .cs-quote-author strong { color: var(--ink); display: block; font-size: 15px; }
+    .cs-timeline { list-style: none; padding: 0; position: relative; }
+    .cs-timeline::before {
+      content: '';
+      position: absolute;
+      left: 14px; top: 0; bottom: 0;
+      width: 2px;
+      background: var(--border);
+    }
+    .cs-timeline-item {
+      position: relative;
+      padding-left: 50px;
+      margin-bottom: 28px;
+    }
+    .cs-timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 6px; top: 8px;
+      width: 18px; height: 18px;
+      background: var(--red);
+      border: 4px solid var(--cream);
+      border-radius: 50%;
+      box-shadow: 0 0 0 2px var(--red);
+    }
+    .cs-timeline-week {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 4px;
+    }
+    .cs-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    @media (max-width: 768px) { .cs-gallery { grid-template-columns: 1fr; } }
+    .cs-bill {
+      background: linear-gradient(135deg, #2A2520 0%, #393229 100%);
+      color: var(--cream);
+      padding: 36px;
+      border-radius: 20px;
+      text-align: center;
+    }
+    .cs-bill-num {
+      font-family: var(--serif);
+      font-size: clamp(48px, 7vw, 80px);
+      color: var(--red);
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      margin: 12px 0 6px;
+    }
+    .cs-bill-num small { font-size: 0.35em; color: rgba(255,255,255,0.55); margin-left: 4px; }
+  </style>
+</head>
+<body data-base="../../">
+
+<header class="nav" data-include="nav"></header>
+
+<!-- HERO con watermark -->
+<section class="wm-section">
+  <div class="container">
+    <div class="wm-stage-wrap reveal">
+      <div class="wm-watermark" aria-hidden="true">
+        <span class="wm-half wm-top">Cluj</span>
+        <span class="wm-half wm-bottom">Cluj</span>
+      </div>
+
+      <div class="wm-stage">
+        <div class="wm-text">
+          <span class="bubble-tag">Casa unifamiliare · Romania</span>
+          <h1>Casa passiva <em>a Cluj-Napoca.</em></h1>
+          <p class="lead">La famiglia Mureșan desiderava una casa passiva A+++ senza pagare il prezzo alto del mattone. Ha scelto Polistibrick per il 5% in più rispetto al mattone classico e una casa consegnata in 5 settimane invece di 5 mesi. Due anni dopo il trasloco, la bolletta elettrica media è di 38 €/mese.</p>
+        </div>
+        <div class="wm-visual" style="padding:0;overflow:hidden;">
+          <img src="../../images/progetti/projet-cluj.png" alt="Casa Cluj-Napoca" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KEY FACTS -->
+<section class="section section--tight">
+  <div class="container">
+    <div class="grid grid-4 reveal">
+      <div class="fact"><span class="fact-num">180<small> m²</small></span><span class="fact-label">Superficie costruita</span></div>
+      <div class="fact"><span class="fact-num">5<small> sem.</small></span><span class="fact-label">Esecuzione Polistibrick</span></div>
+      <div class="fact"><span class="fact-num">38<small> €/mesi</small></span><span class="fact-label">Bolletta elettrica media</span></div>
+      <div class="fact"><span class="fact-num">A+++<small> </small></span><span class="fact-label">Classe energetica</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="section section--cream section--tight">
+  <div class="container container--narrow">
+    <blockquote class="cs-quote reveal">
+      Ho esitato 6 mesi tra il mattone e Polistibrick. Dopo 2 inverni trascorsi qui, capisco che è stata la migliore decisione finanziaria della mia vita. I miei vicini in mattone pagano 350 € al mese in inverno, io ne pago 50. La differenza la investo nelle vacanze.
+      <span class="cs-quote-author"><strong>Andrei Mureșan</strong>Proprietario · Abita da gennaio 2024</span>
+    </blockquote>
+  </div>
+</section>
+
+<!-- PROJECT DETAILS -->
+<section class="section">
+  <div class="container">
+    <div class="grid grid-2" style="gap:48px;align-items:start;">
+      <div class="reveal">
+        <span class="eyebrow">Informazioni sul progetto</span>
+        <h2 style="margin-bottom:18px;">Come si è svolto.</h2>
+        <p style="margin-bottom:14px;">La famiglia ha acquistato il terreno a Cluj-Napoca nel 2023 con l'intenzione di costruire una casa per la vita. Ha consultato 4 architetti e 3 costruttori. Due hanno proposto il mattone, uno il BCA, un altro Polistibrick.</p>
+        <p style="margin-bottom:14px;">Dopo i calcoli, ha scoperto che lo scostamento di costo tra una casa passiva tradizionale (mattone + isolamento aggiuntivo) e Polistibrick raggiungeva quasi il <strong>30%</strong>. Con in più un tempo di esecuzione di 5 settimane contro 5 mesi.</p>
+        <p style="margin-bottom:14px;">La costruzione si è svolta tra aprile e maggio 2024. Il team di 3 persone del costruttore partner ha montato le pareti MBK 270 in 9 giorni, i solai PBK in 2 giorni, il tetto TBK in 3 giorni. Getto del calcestruzzo: un solo giorno. Finiture e impianti: 4 settimane.</p>
+        <p>La famiglia si è trasferita a luglio 2024.</p>
+      </div>
+      <div class="reveal">
+        <div class="card" style="padding:32px;">
+          <h4 style="margin-bottom:18px;">Specifiche</h4>
+          <div class="spec-table" style="border-radius:10px;">
+            
+            <div class="spec-table-row" style="grid-template-columns:1fr 1fr;"><div class="spec-table-cell spec-table-cell--label">Ubicazione</div><div class="spec-table-cell spec-table-cell--value">Cluj-Napoca</div></div>
+            <div class="spec-table-row" style="grid-template-columns:1fr 1fr;"><div class="spec-table-cell spec-table-cell--label">Superficie utile</div><div class="spec-table-cell spec-table-cell--value">180 m²</div></div>
+            <div class="spec-table-row" style="grid-template-columns:1fr 1fr;"><div class="spec-table-cell spec-table-cell--label">Piani</div><div class="spec-table-cell spec-table-cell--value">R+1</div></div>
+            <div class="spec-table-row" style="grid-template-columns:1fr 1fr;"><div class="spec-table-cell spec-table-cell--label">Pareti</div><div class="spec-table-cell spec-table-cell--value">MBK 270</div></div>
+            <div class="spec-table-row" style="grid-template-columns:1fr 1fr;"><div class="spec-table-cell spec-table-cell--label">Solai</div><div class="spec-table-cell spec-table-cell--value">PBK 250</div></div>
+            <div class="spec-table-row" style="grid-template-columns:1fr 1fr;"><div class="spec-table-cell spec-table-cell--label">Tetto</div><div class="spec-table-cell spec-table-cell--value">TBK 250</div></div>
+            <div class="spec-table-row" style="grid-template-columns:1fr 1fr;"><div class="spec-table-cell spec-table-cell--label">Costo totale (chiavi in mano)</div><div class="spec-table-cell spec-table-cell--value">~189 000 €</div></div>
+            <div class="spec-table-row" style="grid-template-columns:1fr 1fr;"><div class="spec-table-cell spec-table-cell--label">Inizio</div><div class="spec-table-cell spec-table-cell--value">Aprile 2024</div></div>
+            <div class="spec-table-row" style="grid-template-columns:1fr 1fr;"><div class="spec-table-cell spec-table-cell--label">Trasloco</div><div class="spec-table-cell spec-table-cell--value">Luglio 2024</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BILL HIGHLIGHT -->
+<section class="section section--tight">
+  <div class="container container--narrow">
+    <div class="cs-bill reveal">
+      <span class="eyebrow" style="color:rgba(247,244,237,0.6);">Bolletta reale elettricità + gas</span>
+      <div class="cs-bill-num">38<small> €/mesi</small></div>
+      <p style="color:rgba(247,244,237,0.75);font-size:14px;">Media su 24 mesi, inverno a −15 °C incluso. Abitazione di 180 m² con 4 persone, auto elettrica ricaricata a casa, 2 computer sempre accesi.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="section section--cream">
+  <div class="container container--narrow">
+    <div class="reveal">
+      <span class="eyebrow">Cronologia di esecuzione</span>
+      <h2 style="margin-bottom:30px;">Dalla fondazione alla <em>chiave in mano.</em></h2>
+      <ol class="cs-timeline">
+        
+        <li class="cs-timeline-item"><span class="cs-timeline-week">Settimana 1</span><h4>Fondazione + platea di supporto</h4><p style="font-size:14px;color:var(--gray);">Scavo, fondazione continua, platea di supporto per il piano terra. Team locale 4 giorni.</p></li>
+        <li class="cs-timeline-item"><span class="cs-timeline-week">Settimana 2-3</span><h4>Montaggio MBK + PBK + TBK</h4><p style="font-size:14px;color:var(--gray);">Il team partner Polistibrick (3 persone) assembla la cassaforma di pareti, solai e tetto. Come un LEGO.</p></li>
+        <li class="cs-timeline-item"><span class="cs-timeline-week">Settimana 4</span><h4>Getto calcestruzzo + serramenti</h4><p style="font-size:14px;color:var(--gray);">Un solo getto per tutto. Posa di finestre a triplo vetro e porte esterne.</p></li>
+        <li class="cs-timeline-item"><span class="cs-timeline-week">Settimana 5</span><h4>Impianti + copertura</h4><p style="font-size:14px;color:var(--gray);">Elettricità, idraulica, ventilazione a doppio flusso. Tegole ceramiche sul tetto.</p></li>
+        <li class="cs-timeline-item"><span class="cs-timeline-week">Mesi 2-3</span><h4>Finiture interne ed esterne</h4><p style="font-size:14px;color:var(--gray);">Intonaci, pittura, parquet, arredi cucina. Intonaco silicato sulla facciata.</p></li>
+        <li class="cs-timeline-item"><span class="cs-timeline-week">Mesi 4</span><h4>Trasloco + controlli finali</h4><p style="font-size:14px;color:var(--gray);">Test Blower Door (n50 = 0,48 — sotto il limite Passivhaus). Consegna e trasloco.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY (with tabs + lightbox) -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="text-align:center;margin-bottom:30px;">
+      <span class="eyebrow">Galleria fotografica</span>
+      <h2>Come si è svolto <em>passo dopo passo.</em></h2>
+      <p class="lead" style="margin-top:14px;max-width:620px;margin-left:auto;margin-right:auto;">Le foto del cantiere saranno pubblicate a breve.</p>
+    </div>
+
+    <div class="reveal pb-section-hidden" data-gallery>
+      <div class="gallery-tabs">
+        <button class="gallery-tab is-active" data-filter="all">Tutte <span class="gallery-tab-count"></span></button>
+        <button class="gallery-tab" data-filter="construction">In costruzione <span class="gallery-tab-count"></span></button>
+        <button class="gallery-tab" data-filter="final">Completato <span class="gallery-tab-count"></span></button>
+      </div>
+
+      <div class="gallery-grid">
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Scavo e fondazione continua su terreno stabile.">
+          <div class="gallery-item-placeholder">Sett. 1 — Fondazione</div>
+          <span class="gallery-item-tag">Costruzione</span>
+          <div class="gallery-item-caption">Scavo e fondazione continua su terreno stabile.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Platea di supporto per il piano terra, completata.">
+          <div class="gallery-item-placeholder">Sett. 1 — Platea di supporto</div>
+          <span class="gallery-item-tag">Costruzione</span>
+          <div class="gallery-item-caption">Platea di supporto per il piano terra, completata.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Prime file di pareti MBK 270 posate.">
+          <div class="gallery-item-placeholder">Sett. 2 — Pareti piano terra</div>
+          <span class="gallery-item-tag">Costruzione</span>
+          <div class="gallery-item-caption">Prime file di pareti MBK 270 posate.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Montaggio come un LEGO — team di 3 persone.">
+          <div class="gallery-item-placeholder">Sett. 2 — Montaggio team</div>
+          <span class="gallery-item-tag">Costruzione</span>
+          <div class="gallery-item-caption">Montaggio come un LEGO — team di 3 persone.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Pareti del piano terra completamente montate, pronte per il solaio.">
+          <div class="gallery-item-placeholder">Sett. 2 — Piano terra completo</div>
+          <span class="gallery-item-tag">Costruzione</span>
+          <div class="gallery-item-caption">Pareti del piano terra completamente montate, pronte per il solaio.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Posa del solaio PBK tra piano terra e primo piano.">
+          <div class="gallery-item-placeholder">Sett. 3 — Solaio PBK</div>
+          <span class="gallery-item-tag">Costruzione</span>
+          <div class="gallery-item-caption">Posa del solaio PBK tra piano terra e primo piano.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Pareti del primo piano posate e armatura pre-posizionata.">
+          <div class="gallery-item-placeholder">Sett. 3 — Primo piano</div>
+          <span class="gallery-item-tag">Costruzione</span>
+          <div class="gallery-item-caption">Pareti del primo piano posate e armatura pre-posizionata.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Tetto TBK: pannello prefabbricato posizionato.">
+          <div class="gallery-item-placeholder">Sett. 3 — Tetto TBK</div>
+          <span class="gallery-item-tag">Costruzione</span>
+          <div class="gallery-item-caption">Tetto TBK: pannello prefabbricato posizionato.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Getto del calcestruzzo in un'unica fase — tutta la struttura.">
+          <div class="gallery-item-placeholder">Sett. 4 — Getto calcestruzzo</div>
+          <span class="gallery-item-tag">Costruzione</span>
+          <div class="gallery-item-caption">Getto del calcestruzzo in un'unica fase — tutta la struttura.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Posa dei serramenti a triplo vetro — finestre e porte.">
+          <div class="gallery-item-placeholder">Sett. 4 — Serramenti</div>
+          <span class="gallery-item-tag">Costruzione</span>
+          <div class="gallery-item-caption">Posa dei serramenti a triplo vetro — finestre e porte.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Copertura in tegole ceramiche sul tetto.">
+          <div class="gallery-item-placeholder">Sett. 5 — Copertura</div>
+          <span class="gallery-item-tag">Costruzione</span>
+          <div class="gallery-item-caption">Copertura in tegole ceramiche sul tetto.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Ponteggio montato per gli intonaci esterni.">
+          <div class="gallery-item-placeholder">Sett. 5 — Preparazione facciata</div>
+          <span class="gallery-item-tag">Costruzione</span>
+          <div class="gallery-item-caption">Ponteggio montato per gli intonaci esterni.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="final" data-caption="Facciata principale finita con intonaco silicato color crema.">
+          <img src="../../images/progetti/projet-cluj.png" alt="Casa Cluj-Napoca" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <span class="gallery-item-tag">Completato</span>
+          <div class="gallery-item-caption">Facciata principale finita con intonaco silicato color crema.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="final" data-caption="Dettaglio di facciata con contorni delle finestre.">
+          <img src="../../images/progetti/projet-cluj.png" alt="Casa Cluj-Napoca" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <span class="gallery-item-tag">Completato</span>
+          <div class="gallery-item-caption">Dettaglio di facciata con contorni delle finestre.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="final" data-caption="Soggiorno aperto inondato di luce naturale.">
+          <img src="../../images/progetti/projet-cluj.png" alt="Casa Cluj-Napoca" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <span class="gallery-item-tag">Completato</span>
+          <div class="gallery-item-caption">Soggiorno aperto inondato di luce naturale.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="final" data-caption="Cucina aperta integrata.">
+          <img src="../../images/progetti/projet-cluj.png" alt="Casa Cluj-Napoca" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <span class="gallery-item-tag">Completato</span>
+          <div class="gallery-item-caption">Cucina aperta integrata.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="final" data-caption="Camera con vista sul giardino.">
+          <img src="../../images/progetti/projet-cluj.png" alt="Casa Cluj-Napoca" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <span class="gallery-item-tag">Completato</span>
+          <div class="gallery-item-caption">Camera con vista sul giardino.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="final" data-caption="Bagno principale con finiture moderne.">
+          <img src="../../images/progetti/projet-cluj.png" alt="Casa Cluj-Napoca" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <span class="gallery-item-tag">Completato</span>
+          <div class="gallery-item-caption">Bagno principale con finiture moderne.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="final" data-caption="Vista della casa dal giardino.">
+          <img src="../../images/progetti/projet-cluj.png" alt="Casa Cluj-Napoca" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <span class="gallery-item-tag">Completato</span>
+          <div class="gallery-item-caption">Vista della casa dal giardino.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="final" data-caption="La casa abitata, primo Natale (dicembre 2024).">
+          <img src="../../images/progetti/projet-cluj.png" alt="Casa Cluj-Napoca" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <span class="gallery-item-tag">Completato</span>
+          <div class="gallery-item-caption">La casa abitata, primo Natale (dicembre 2024).</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="final" data-caption="Bolletta elettrica gennaio 2025: 41 €. Inverno a −8 °C.">
+          <img src="../../images/progetti/projet-cluj.png" alt="Casa Cluj-Napoca" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <span class="gallery-item-tag">Completato</span>
+          <div class="gallery-item-caption">Bolletta elettrica gennaio 2025: 41 €. Inverno a −8 °C.</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX (at body level, click any gallery item to open) -->
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Galleria fotografica">
+  <span class="lightbox-counter">1 / 1</span>
+  <button class="lightbox-close" aria-label="Chiudi">×</button>
+  <button class="lightbox-prev" aria-label="Immagine precedente">‹</button>
+  <button class="lightbox-next" aria-label="Immagine successiva">›</button>
+  <img class="lightbox-img" src="" alt="">
+  <div class="lightbox-caption"></div>
+</div>
+
+<!-- CTA -->
+<section class="section section--tight">
+  <div class="cta-band reveal">
+    <h2>Vuoi anche tu <em>una casa come questa?</em></h2>
+    <p>Richiedi un preventivo personalizzato — calcoliamo esattamente per il tuo progetto, in base ai tuoi piani.</p>
+    <div class="cta-band-actions">
+      <a href="../../preventivo/" class="btn btn-on-dark btn-large btn-arrow">Richiedi un preventivo personalizzato</a>
+      <a href="../../calcolatore/" class="btn btn-on-dark-ghost btn-large">Calcolatore di costo</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" data-include="footer"></footer>
+<script src="../../assets/js/site.js"></script>
+</body>
+</html>
