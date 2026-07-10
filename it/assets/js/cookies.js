@@ -6,14 +6,14 @@
   var STORAGE_KEY = 'pb_cookie_consent';
 
   var TEXT = {
-    body: '{{ui.cookie_banner_text}}',
-    link: '{{ui.cookie_banner_link}}',
-    and: '{{ui.cookie_banner_and}}',
-    privacy: '{{ui.cookie_banner_privacy_link}}',
-    aria: '{{ui.cookie_banner_aria}}',
-    accept: '{{ui.cookie_accept}}',
-    refuse: '{{ui.cookie_refuse}}',
-    privacySlug: '{{legal.privacy_slug}}',
+    body: 'Utilizziamo cookie e servizi di terze parti per migliorare il sito. Consulta la nostra',
+    link: 'informativa sui cookie',
+    and: 'e',
+    privacy: 'informativa sulla privacy',
+    aria: 'Consenso cookie',
+    accept: 'Accetta',
+    refuse: 'Rifiuta',
+    privacySlug: 'privacy',
   };
 
   function basePath() {
@@ -69,7 +69,7 @@
     bar.innerHTML =
       '<div class="pb-cookie-inner">' +
         '<p class="pb-cookie-text">' + bodyText + ' ' +
-          '<a href="' + base + 'legal/cookies/">' + linkText + '</a> ' +
+          '<a href="' + base + 'legal/cookie/">' + linkText + '</a> ' +
           andText + ' <a href="' + base + 'legal/' + privacySlug + '/">' + privacyText + '</a>.</p>' +
         '<div class="pb-cookie-actions">' +
           '<button type="button" class="pb-cookie-btn pb-cookie-btn--ghost" data-pb-cookie="essential">' + refuseLabel + '</button>' +

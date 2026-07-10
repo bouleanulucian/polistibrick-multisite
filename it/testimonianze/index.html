@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testimonianze · I proprietari Polistibrick raccontano — bollette reali, storie reali</title>
+  <meta name="description" content="Video di proprietari Polistibrick che condividono la loro esperienza: bollette energetiche reali, cosa è cambiato, cosa avrebbero fatto diversamente.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap"></noscript>
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <style>
+    /* === Card cu watermark === */
+    .wm-section { padding: clamp(60px, 8vw, 100px) 0; background: var(--cream); }
+    .wm-stage-wrap { position: relative; margin: 70px auto 0; max-width: 1480px; }
+    .wm-watermark {
+      position: absolute; top: 0; left: 50%; width: 100vw; margin-left: -50vw;
+      pointer-events: none; user-select: none; transform: translateY(-50%);
+      height: 1em; line-height: 1; text-align: center; text-transform: uppercase;
+      font-family: var(--serif); font-size: clamp(64px, 12vw, 200px);
+      font-weight: 500; letter-spacing: -0.06em; z-index: 2;
+    }
+    .wm-watermark .wm-half { position: absolute; inset: 0; width: 100%; display: block; }
+    .wm-watermark .wm-top { color: transparent; -webkit-text-stroke: 1.4px rgba(15,15,15,0.30); clip-path: inset(0 0 50% 0); }
+    .wm-watermark .wm-bottom { color: var(--cream-dark); opacity: 0.65; clip-path: inset(50% 0 0 0); }
+    .wm-stage {
+      position: relative; background: var(--cream-light); border: 1px solid var(--border);
+      border-radius: 32px; padding: 56px; display: flex; flex-direction: column; gap: 40px;
+    }
+    .wm-content { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 48px; align-items: center; }
+    .wm-text { padding-right: 8px; }
+    .wm-text .bubble-tag {
+      display: inline-block; background: var(--red-soft); color: var(--red);
+      padding: 4px 12px; border-radius: 4px; font-size: 11px; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 16px;
+    }
+    .wm-text h2 {
+      font-family: var(--serif); font-size: clamp(28px, 3.2vw, 44px); font-weight: 500;
+      color: var(--ink); letter-spacing: -0.02em; line-height: 1.05; margin-bottom: 14px;
+    }
+    .wm-text h2 em { font-style: italic; color: var(--red); font-weight: 400; }
+    .wm-text p { font-size: 15px; color: var(--gray); line-height: 1.65; }
+    .wm-visual { background: white; border: 1px solid var(--border); border-radius: 20px; padding: 24px; box-shadow: var(--shadow-md); margin-top: 10mm; aspect-ratio: 4/5; display: flex; align-items: center; justify-content: center; color: var(--gray); text-align: center; font-size: 13px; }
+
+    /* Video cards */
+    .video-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+    .video-card {
+      background: white; border: 1px solid var(--border); border-radius: 20px;
+      overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .video-card:hover { transform: translateY(-4px); box-shadow: 0 24px 50px rgba(0,0,0,0.08); }
+    .video-thumb {
+      position: relative; aspect-ratio: 16/9;
+      background: linear-gradient(135deg, var(--cream-dark) 0%, var(--cream-light) 100%);
+      display: flex; align-items: center; justify-content: center; cursor: pointer; overflow: hidden;
+    }
+    .video-thumb-placeholder { color: var(--gray); font-size: 14px; text-align: center; padding: 24px; }
+    .video-play-btn {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      width: 72px; height: 72px; background: rgba(200, 16, 46, 0.92); color: white;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      transition: transform 0.25s ease, background 0.25s ease;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.20);
+    }
+    .video-card:hover .video-play-btn { transform: translate(-50%, -50%) scale(1.08); background: var(--red); }
+    .video-play-btn svg { width: 28px; height: 28px; margin-left: 4px; }
+    .video-meta { padding: 22px 24px; }
+    .video-quote {
+      font-family: var(--serif); font-size: 17px; line-height: 1.4; color: var(--ink);
+      margin-bottom: 16px; letter-spacing: -0.01em;
+    }
+    .video-quote::before { content: '"'; color: var(--red); font-size: 1.2em; }
+    .video-quote::after { content: '"'; color: var(--red); font-size: 1.2em; }
+    .video-author { display: flex; align-items: center; gap: 12px; padding-top: 16px; border-top: 1px solid var(--border); }
+    .video-author-avatar {
+      width: 42px; height: 42px; border-radius: 50%; background: var(--cream-dark);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+      color: var(--gray); font-size: 10.5px;
+    }
+    .video-author-info strong { display: block; font-size: 13.5px; color: var(--ink); font-weight: 600; line-height: 1.2; }
+    .video-author-info span { display: block; font-size: 11.5px; color: var(--gray); margin-top: 2px; }
+    .video-stats { display: flex; gap: 16px; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); }
+    .video-stat { flex: 1; }
+    .video-stat-num {
+      display: block; font-family: var(--serif); font-size: 20px;
+      color: var(--red); font-weight: 500; line-height: 1;
+    }
+    .video-stat-label {
+      display: block; font-size: 10px; color: var(--gray); letter-spacing: 0.08em;
+      text-transform: uppercase; margin-top: 4px; font-weight: 600;
+    }
+
+    .video-cta-note {
+      text-align: center; padding: 32px;
+      background: var(--cream); border-radius: 16px; border: 1px dashed var(--border-strong);
+    }
+    .video-cta-note p { font-size: 14px; color: var(--gray); margin: 0; }
+    .video-cta-note p + p { margin-top: 8px; }
+    .video-cta-note a { color: var(--red); }
+
+    @media (max-width: 1100px) {
+      .video-grid { grid-template-columns: 1fr; }
+      .wm-content { grid-template-columns: 1fr; gap: 32px; }
+      .wm-visual { margin-top: 0; aspect-ratio: 16/10; }
+      .wm-stage { padding: 36px; }
+    }
+    @media (max-width: 768px) {
+      .wm-stage { padding: 28px 20px; }
+    }
+  </style>
+<link rel="canonical" href="https://polistibrick.it/testimonianze/">
+<meta property="og:url" content="https://polistibrick.it/testimonianze/">
+<link rel="alternate" hreflang="it-IT" href="https://polistibrick.it/testimonianze/">
+<link rel="alternate" hreflang="x-default" href="https://polistibrick.it/testimonianze/">
+</head>
+<body data-base="../">
+
+<header class="nav" data-include="nav"></header>
+
+<!-- ============ CARTE PRINCIPALE AVEC FILIGRANE ============ -->
+<section class="wm-section">
+  <div class="container">
+    <div class="wm-stage-wrap reveal">
+      <div class="wm-watermark" aria-hidden="true">
+        <span class="wm-half wm-top">Storie</span>
+        <span class="wm-half wm-bottom">Storie</span>
+      </div>
+
+      <div class="wm-stage">
+
+        <div class="wm-content">
+          <div class="wm-text">
+            <span class="bubble-tag">I proprietari raccontano</span>
+            <h2>Storie reali, <em>numeri reali.</em></h2>
+            <p>Non cerchiamo di convincerti che Polistibrick funziona. Vogliamo che tu ascolti chi vive già in case costruite con il nostro sistema. Brevi video con bollette reali, cambiamenti reali, lezioni reali.</p>
+          </div>
+          <div class="wm-visual" style="padding:0;overflow:hidden;position:relative;cursor:pointer;">
+            <img src="../images/testimonianze/temoignages-hero.png" alt="Bolletta elettricità Polistibrick" style="width:100%;height:100%;object-fit:cover;display:block;">
+            <div class="video-play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+        </div>
+
+        <div class="video-grid">
+
+          <article class="video-card">
+            <div class="video-thumb">
+              <img src="../images/testimonianze/video-thumb-prop1.png" alt="Testimonianza Cluj-Napoca" style="width:100%;height:100%;object-fit:cover;display:block;">
+              <div class="video-play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+            </div>
+            <div class="video-meta">
+              <p class="video-quote">Dopo 2 inverni nella casa Polistibrick, non ho mai più riacceso la caldaia. Pago 38 €/mese, e i vicini in mattone pagano oltre 300.</p>
+              <div class="video-author">
+                <div class="video-author-avatar" style="padding:0;overflow:hidden;">
+                  <img src="../images/testimonianze/avatar-prop1.png" alt="Mihai D." style="width:100%;height:100%;object-fit:cover;display:block;">
+                </div>
+                <div class="video-author-info">
+                  <strong>Mihai D.</strong>
+                  <span>Cluj-Napoca, RO · Casa 180 m² · Abitata dal 2024</span>
+                </div>
+              </div>
+              <div class="video-stats">
+                <div class="video-stat"><span class="video-stat-num">38€</span><span class="video-stat-label">Bolletta elettricità/mese</span></div>
+                <div class="video-stat"><span class="video-stat-num">5</span><span class="video-stat-label">Settimane di cantiere</span></div>
+                <div class="video-stat"><span class="video-stat-num">A+++</span><span class="video-stat-label">Classe energetica</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <div class="video-thumb">
+              <img src="../images/testimonianze/video-thumb-prop2.png" alt="Testimonianza Valencia" style="width:100%;height:100%;object-fit:cover;display:block;">
+              <div class="video-play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+            </div>
+            <div class="video-meta">
+              <p class="video-quote">Il mio costruttore mi aveva consigliato il mattone. Per fortuna non l'ho ascoltato. 2 anni dopo il trasloco, la casa è silenziosa, calda, e posso dormire senza svegliarmi per i radiatori.</p>
+              <div class="video-author">
+                <div class="video-author-avatar" style="padding:0;overflow:hidden;">
+                  <img src="../images/testimonianze/avatar-prop2.png" alt="Elena M." style="width:100%;height:100%;object-fit:cover;display:block;">
+                </div>
+                <div class="video-author-info">
+                  <strong>Elena M.</strong>
+                  <span>Valencia, ES · Villa 280 m² · Abitata dal 2023</span>
+                </div>
+              </div>
+              <div class="video-stats">
+                <div class="video-stat"><span class="video-stat-num">0h</span><span class="video-stat-label">Condizionatore acceso in estate</span></div>
+                <div class="video-stat"><span class="video-stat-num">7</span><span class="video-stat-label">Settimane di cantiere</span></div>
+                <div class="video-stat"><span class="video-stat-num">−72%</span><span class="video-stat-label">Energia vs vicino</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <div class="video-thumb">
+              <img src="../images/testimonianze/video-thumb-prop3.png" alt="Testimonianza Lione" style="width:100%;height:100%;object-fit:cover;display:block;">
+              <div class="video-play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+            </div>
+            <div class="video-meta">
+              <p class="video-quote">Ho esitato per mesi a causa del polistirolo. Pensavo: «Sarà umidità, muffa, disastro.» Dopo 3 anni — niente. I muri sono asciutti, la casa respira, non ho mai attraversato una stagione difficile.</p>
+              <div class="video-author">
+                <div class="video-author-avatar" style="padding:0;overflow:hidden;">
+                  <img src="../images/testimonianze/avatar-prop3.png" alt="Thomas L." style="width:100%;height:100%;object-fit:cover;display:block;">
+                </div>
+                <div class="video-author-info">
+                  <strong>Thomas L.</strong>
+                  <span>Lione, FR · Casa 150 m² · Abitata dal 2022</span>
+                </div>
+              </div>
+              <div class="video-stats">
+                <div class="video-stat"><span class="video-stat-num">42€</span><span class="video-stat-label">Bolletta media/mese</span></div>
+                <div class="video-stat"><span class="video-stat-num">3</span><span class="video-stat-label">Anni di abitazione</span></div>
+                <div class="video-stat"><span class="video-stat-num">0</span><span class="video-stat-label">Problemi di umidità</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <div class="video-thumb">
+              <img src="../images/testimonianze/video-thumb-arch.png" alt="Testimonianza Sophie Chen" style="width:100%;height:100%;object-fit:cover;display:block;">
+              <div class="video-play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+            </div>
+            <div class="video-meta">
+              <p class="video-quote">Per gli architetti, Polistibrick è un regalo. Campate di 9 m senza trave, senza ponti termici da calcolare. Valido il PHPP al primo tentativo, senza aggiustamenti. E i clienti adorano il prezzo.</p>
+              <div class="video-author">
+                <div class="video-author-avatar" style="padding:0;overflow:hidden;">
+                  <img src="../images/testimonianze/avatar-arch.png" alt="Sophie Chen" style="width:100%;height:100%;object-fit:cover;display:block;">
+                </div>
+                <div class="video-author-info">
+                  <strong>Sophie Chen</strong>
+                  <span>Architetto partner · 12 progetti Polistibrick consegnati</span>
+                </div>
+              </div>
+              <div class="video-stats">
+                <div class="video-stat"><span class="video-stat-num">12</span><span class="video-stat-label">Progetti consegnati</span></div>
+                <div class="video-stat"><span class="video-stat-num">100%</span><span class="video-stat-label">Certificati Passivhaus</span></div>
+                <div class="video-stat"><span class="video-stat-num">9m</span><span class="video-stat-label">Campate max.</span></div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="video-cta-note">
+          <p>🎬 I video reali sostituiranno questi segnaposto man mano che li gireremo con i nostri proprietari.</p>
+          <p>Abiti in una casa Polistibrick? <a href="../contact/">Lasciaci filmare la tua storia</a> — 30 minuti in cantiere, pubblicazioni sui social offerte, offerta per il tuo prossimo progetto.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--cream">
+  <div class="container">
+    <div class="grid grid-2 reveal" style="gap:48px;align-items:center;">
+      <div>
+        <span class="eyebrow">Perché il video?</span>
+        <h2 style="margin-bottom:18px;">Perché <em>non si mente con i propri occhi.</em></h2>
+        <p style="font-size:15px;line-height:1.65;color:var(--gray);">Su Internet, chiunque può scrivere qualsiasi cosa. Ma non si può falsificare una bolletta da 38€/mese mostrata sullo schermo di un telefono, il volto di una persona stanca di pagare il gas, o la gioia di una famiglia che ha costruito senza stress.</p>
+        <p style="font-size:15px;line-height:1.65;color:var(--gray);margin-top:14px;">Vogliamo che tu sia certo che ciò che ti promettiamo si verifica nella vita reale di chi ha acquistato prima di te.</p>
+      </div>
+      <div>
+        <div class="img-placeholder img-placeholder--wide" style="border:none;padding:0;overflow:hidden;">
+          <img src="../images/testimonianze/facture-realite.png" alt="Proprietario che mostra la bolletta reale" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="cta-band reveal">
+    <h2>Vuoi <em>anche tu</em> comparire in un video come questo?</h2>
+    <p>Richiedi un preventivo personalizzato, costruisci con Polistibrick, e tra 2 anni la tua storia sarà qui per ispirare altre persone.</p>
+    <div class="cta-band-actions">
+      <a href="../preventivo/" class="btn btn-on-dark btn-large btn-arrow">Richiedi un preventivo personalizzato</a>
+      <a href="../risparmi/" class="btn btn-on-dark-ghost btn-large">Calcola i risparmi</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" data-include="footer"></footer>
+<script src="../assets/js/site.js?v=2" defer></script>
+</body>
+</html>

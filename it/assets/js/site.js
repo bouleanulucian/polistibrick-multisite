@@ -14,7 +14,7 @@
     const countryFolders = ['ro', 'fr', 'it', 'es', 'nl', 'ie', 'en', 'de'];
     const countryIdx = parts.findIndex(function (p) { return countryFolders.includes(p); });
 
-    // GitHub Pages preview: /user/repo/ro/devis/ → depth from country folder
+    // GitHub Pages preview: /user/repo/ro/preventivo/ → depth from country folder
     if (location.hostname.includes('github.io') && countryIdx >= 0) {
       var depth = parts.length - countryIdx - 1;
       return depth <= 0 ? '' : '../'.repeat(depth);
@@ -40,76 +40,76 @@
           <div class="country-switcher-panel" role="menu" aria-hidden="true">
             <div class="country-switcher-header">🌍 Scegli il tuo paese</div>
             <a href="#" data-country="ro" data-domain="https://polistibrick.ro" data-folder="ro" class="country-switcher-item"><span class="flag">🇷🇴</span><span class="name">România</span><span class="domain">polistibrick.ro</span></a>
-            <a href="#" data-country="fr" data-domain="https://polistibrick.fr" data-folder="fr" class="country-switcher-item"><span class="flag">🇫🇷</span><span class="name">{{ui.country_fr}}</span><span class="domain">polistibrick.fr</span></a>
-            <a href="#" data-country="it" data-domain="https://polistibrick.it" data-folder="it" class="country-switcher-item"><span class="flag">🇮🇹</span><span class="name">{{ui.country_it}}</span><span class="domain">polistibrick.it</span></a>
-            <a href="#" data-country="es" data-domain="https://polistibrick.es" data-folder="es" class="country-switcher-item"><span class="flag">🇪🇸</span><span class="name">{{ui.country_es}}</span><span class="domain">polistibrick.es</span></a>
-            <a href="#" data-country="be" data-domain="https://polistibrick.be" data-folder="nl" class="country-switcher-item"><span class="flag">🇧🇪</span><span class="name">{{ui.country_be}}</span><span class="domain">polistibrick.be</span></a>
-            <a href="#" data-country="ie" data-domain="https://polistibrick.ie" data-folder="ie" class="country-switcher-item"><span class="flag">🇮🇪</span><span class="name">{{ui.country_ie}}</span><span class="domain">polistibrick.ie</span></a>
-            <a href="#" data-country="uk" data-domain="https://polistibrick.uk" data-folder="en" class="country-switcher-item"><span class="flag">🇬🇧</span><span class="name">{{ui.country_uk}}</span><span class="domain">polistibrick.uk</span></a>
-            <a href="#" data-country="ch" data-domain="https://polistibrick.com" data-folder="de" class="country-switcher-item"><span class="flag">🇨🇭</span><span class="name">{{ui.country_ch}}</span><span class="domain">polistibrick.com</span></a>
+            <a href="#" data-country="fr" data-domain="https://polistibrick.fr" data-folder="fr" class="country-switcher-item"><span class="flag">🇫🇷</span><span class="name">Francia</span><span class="domain">polistibrick.fr</span></a>
+            <a href="#" data-country="it" data-domain="https://polistibrick.it" data-folder="it" class="country-switcher-item"><span class="flag">🇮🇹</span><span class="name">Italia</span><span class="domain">polistibrick.it</span></a>
+            <a href="#" data-country="es" data-domain="https://polistibrick.es" data-folder="es" class="country-switcher-item"><span class="flag">🇪🇸</span><span class="name">Spagna</span><span class="domain">polistibrick.es</span></a>
+            <a href="#" data-country="be" data-domain="https://polistibrick.be" data-folder="nl" class="country-switcher-item"><span class="flag">🇧🇪</span><span class="name">Belgio</span><span class="domain">polistibrick.be</span></a>
+            <a href="#" data-country="ie" data-domain="https://polistibrick.ie" data-folder="ie" class="country-switcher-item"><span class="flag">🇮🇪</span><span class="name">Irlanda</span><span class="domain">polistibrick.ie</span></a>
+            <a href="#" data-country="uk" data-domain="https://polistibrick.uk" data-folder="en" class="country-switcher-item"><span class="flag">🇬🇧</span><span class="name">Regno Unito</span><span class="domain">polistibrick.uk</span></a>
+            <a href="#" data-country="ch" data-domain="https://polistibrick.com" data-folder="de" class="country-switcher-item"><span class="flag">🇨🇭</span><span class="name">Svizzera</span><span class="domain">polistibrick.com</span></a>
           </div>
         </div>
-        <a href="${BASE}devis/" class="btn btn-primary nav-cta-devis">Preventivo gratis</a>
-        <button class="nav-burger nav-toggle" type="button" aria-label="{{ui.nav_menu_aria}}" aria-expanded="false" aria-controls="navDrawerShared">
+        <a href="${BASE}preventivo/" class="btn btn-primary nav-cta-devis">Preventivo gratis</a>
+        <button class="nav-burger nav-toggle" type="button" aria-label="Apri il menu" aria-expanded="false" aria-controls="navDrawerShared">
           <span></span><span></span><span></span>
         </button>
       </div>
     </div>
 
     <div class="nav-drawer-overlay" data-nav-overlay aria-hidden="true"></div>
-    <aside class="nav-drawer" id="navDrawerShared" aria-label="{{ui.nav_drawer_aria}}" aria-hidden="true">
+    <aside class="nav-drawer" id="navDrawerShared" aria-label="Menu di navigazione" aria-hidden="true">
       <div class="nav-drawer-group">
         <button class="nav-drawer-title" aria-expanded="false">Prodotti<span class="nd-caret">▾</span></button>
         <div class="nav-acc">
-          <a href="${BASE}produits/murs-mbk/">Pareti MBK</a>
-          <a href="${BASE}produits/planchers-pbk/">Solai PBK</a>
-          <a href="${BASE}produits/toit-tbk/">Tetto TBK</a>
+          <a href="${BASE}prodotti/pareti-mbk/">Pareti MBK</a>
+          <a href="${BASE}prodotti/solai-pbk/">Solai PBK</a>
+          <a href="${BASE}prodotti/tetto-tbk/">Tetto TBK</a>
         </div>
       </div>
       <div class="nav-drawer-group">
         <button class="nav-drawer-title" aria-expanded="false">Soluzioni<span class="nd-caret">▾</span></button>
         <div class="nav-acc">
-          <a href="${BASE}pour/proprietaires/">Per i proprietari</a>
-          <a href="${BASE}pour/architectes/">Per gli architetti</a>
-          <a href="${BASE}pour/constructeurs/">Per i costruttori</a>
-          <a href="${BASE}pour/investisseurs/">Per gli investitori</a>
-          <a href="${BASE}devenir-partenaire/" class="partner-link">→ Diventa partner</a>
+          <a href="${BASE}per/proprietari/">Per i proprietari</a>
+          <a href="${BASE}per/architetti/">Per gli architetti</a>
+          <a href="${BASE}per/costruttori/">Per i costruttori</a>
+          <a href="${BASE}per/investitori/">Per gli investitori</a>
+          <a href="${BASE}diventa-partner/" class="partner-link">→ Diventa partner</a>
         </div>
       </div>
       <div class="nav-drawer-group">
         <button class="nav-drawer-title" aria-expanded="false">Progetti<span class="nd-caret">▾</span></button>
         <div class="nav-acc">
-          <a href="${BASE}projets/">Case costruite</a>
-          <a href="${BASE}temoignages/">Testimonianze (video)</a>
+          <a href="${BASE}progetti/">Case costruite</a>
+          <a href="${BASE}testimonianze/">Testimonianze (video)</a>
         </div>
       </div>
       <div class="nav-drawer-group">
         <button class="nav-drawer-title" aria-expanded="false">Calcolatore<span class="nd-caret">▾</span></button>
         <div class="nav-acc">
-          <a href="${BASE}calculateur/">Calcolatore costi</a>
-          <a href="${BASE}economies/">Calcolatore risparmi</a>
+          <a href="${BASE}calcolatore/">Calcolatore costi</a>
+          <a href="${BASE}risparmi/">Calcolatore risparmi</a>
         </div>
       </div>
       <div class="nav-drawer-group">
         <button class="nav-drawer-title" aria-expanded="false">Risorse<span class="nd-caret">▾</span></button>
         <div class="nav-acc">
-          <a href="${BASE}ressources/blog/">Blog</a>
-          <a href="${BASE}ressources/faq/">Domande frequenti</a>
+          <a href="${BASE}risorse/blog/">Blog</a>
+          <a href="${BASE}risorse/faq/">Domande frequenti</a>
         </div>
       </div>
       <div class="nav-drawer-group">
         <button class="nav-drawer-title" aria-expanded="false">Chi siamo<span class="nd-caret">▾</span></button>
         <div class="nav-acc">
-          <a href="${BASE}a-propos/">L'azienda</a>
-          <a href="${BASE}a-propos/brevet/">Il brevetto Polistibrick</a>
-          <a href="${BASE}a-propos/certifications/">Certificazioni</a>
-          <a href="${BASE}a-propos/usines/">Le nostre fabbriche</a>
-          <a href="${BASE}a-propos/fondateur/">Il team</a>
+          <a href="${BASE}chi-siamo/">L'azienda</a>
+          <a href="${BASE}chi-siamo/brevetto/">Il brevetto Polistibrick</a>
+          <a href="${BASE}chi-siamo/certificazioni/">Certificazioni</a>
+          <a href="${BASE}chi-siamo/fabbriche/">Le nostre fabbriche</a>
+          <a href="${BASE}chi-siamo/fondatore/">Il team</a>
         </div>
       </div>
       <div class="nav-drawer-cta">
         <a href="${BASE}contact/" class="btn btn-ghost">Contatti</a>
-        <a href="${BASE}devis/" class="btn btn-primary">Richiedi un preventivo</a>
+        <a href="${BASE}preventivo/" class="btn btn-primary">Richiedi un preventivo</a>
       </div>
     </aside>
   `;
@@ -126,36 +126,36 @@
         <div class="footer-col">
           <h5>Prodotti</h5>
           <ul>
-            <li><a href="${BASE}produits/murs-mbk/">Pareti MBK</a></li>
-            <li><a href="${BASE}produits/planchers-pbk/">Solai PBK</a></li>
-            <li><a href="${BASE}produits/toit-tbk/">Tetto TBK</a></li>
+            <li><a href="${BASE}prodotti/pareti-mbk/">Pareti MBK</a></li>
+            <li><a href="${BASE}prodotti/solai-pbk/">Solai PBK</a></li>
+            <li><a href="${BASE}prodotti/tetto-tbk/">Tetto TBK</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h5>Soluzioni</h5>
           <ul>
-            <li><a href="${BASE}pour/proprietaires/">Proprietari</a></li>
-            <li><a href="${BASE}pour/architectes/">Architetti</a></li>
-            <li><a href="${BASE}pour/constructeurs/">Costruttori</a></li>
-            <li><a href="${BASE}pour/investisseurs/">Investitori</a></li>
+            <li><a href="${BASE}per/proprietari/">Proprietari</a></li>
+            <li><a href="${BASE}per/architetti/">Architetti</a></li>
+            <li><a href="${BASE}per/costruttori/">Costruttori</a></li>
+            <li><a href="${BASE}per/investitori/">Investitori</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h5>Risorse</h5>
           <ul>
-            <li><a href="${BASE}projets/">Progetti realizzati</a></li>
-            <li><a href="${BASE}ressources/blog/">Blog</a></li>
-            <li><a href="${BASE}ressources/faq/">Domande frequenti</a></li>
-            <li><a href="${BASE}calculateur/">Calcolatore costi</a></li>
+            <li><a href="${BASE}progetti/">Progetti realizzati</a></li>
+            <li><a href="${BASE}risorse/blog/">Blog</a></li>
+            <li><a href="${BASE}risorse/faq/">Domande frequenti</a></li>
+            <li><a href="${BASE}calcolatore/">Calcolatore costi</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h5>Azienda</h5>
           <ul>
-            <li><a href="${BASE}a-propos/">Chi siamo</a></li>
-            <li><a href="${BASE}a-propos/brevet/">Il brevetto Polistibrick</a></li>
-            <li><a href="${BASE}a-propos/certifications/">Certificazioni</a></li>
-            <li><a href="${BASE}a-propos/usines/">Le nostre fabbriche</a></li>
+            <li><a href="${BASE}chi-siamo/">Chi siamo</a></li>
+            <li><a href="${BASE}chi-siamo/brevetto/">Il brevetto Polistibrick</a></li>
+            <li><a href="${BASE}chi-siamo/certificazioni/">Certificazioni</a></li>
+            <li><a href="${BASE}chi-siamo/fabbriche/">Le nostre fabbriche</a></li>
             <li><a href="${BASE}contact/">Contatti</a></li>
           </ul>
         </div>
@@ -163,11 +163,11 @@
       <div class="footer-bottom">
         <span>© 2026 Polistibrick. Tutti i diritti riservati. Sistema brevettato.</span>
         <div class="footer-bottom-links">
-          <a href="${BASE}legal/mentions-legales/">Note legali</a>
-          <a href="${BASE}legal/conditions/">Termini</a>
-          <a href="${BASE}legal/confidentialite/">Privacy</a>
-          <a href="${BASE}legal/cookies/">Cookie</a>
-          <a href="${BASE}legal/durabilite/">Sostenibilità</a>
+          <a href="${BASE}legal/note-legali/">Note legali</a>
+          <a href="${BASE}legal/condizioni/">Termini</a>
+          <a href="${BASE}legal/privacy/">Privacy</a>
+          <a href="${BASE}legal/cookie/">Cookie</a>
+          <a href="${BASE}legal/sostenibilita/">Sostenibilità</a>
         </div>
       </div>
     </div>
@@ -192,7 +192,7 @@
         '</a>' +
         '<a href="mailto:contact@polistibrick.com" class="mcb-btn mcb-email" aria-label="Invia email">' +
           '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>' +
-          '<span>{{ui.mobile_email_label}}</span>' +
+          '<span>E-mail</span>' +
         '</a>';
       document.body.appendChild(bar);
     }

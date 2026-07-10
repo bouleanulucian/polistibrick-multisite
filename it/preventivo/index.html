@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Richiedi un preventivo · Polistibrick</title>
+  <meta name="description" content="Preventivo istantaneo con l'IA Polistibrick — carica i tuoi progetti e ricevi la stima sul posto. Oppure contattaci tramite il modulo, risposta entro 48 h.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap"></noscript>
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <style>
+    .wm-section {
+      padding: clamp(60px, 8vw, 100px) 0;
+      background: var(--cream);
+    }
+    .wm-stage-wrap {
+      position: relative;
+      margin: 70px auto 0;
+      max-width: 920px;
+    }
+    .wm-watermark {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 100vw;
+      margin-left: -50vw;
+      pointer-events: none;
+      user-select: none;
+      transform: translateY(-50%);
+      height: 1em;
+      line-height: 1;
+      text-align: center;
+      text-transform: uppercase;
+      font-family: var(--serif);
+      font-size: clamp(64px, 12vw, 200px);
+      font-weight: 500;
+      letter-spacing: -0.06em;
+      z-index: 2;
+    }
+    .wm-watermark .wm-half {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      display: block;
+    }
+    .wm-watermark .wm-top {
+      color: transparent;
+      -webkit-text-stroke: 1.4px rgba(15, 15, 15, 0.30);
+      clip-path: inset(0 0 50% 0);
+    }
+    .wm-watermark .wm-bottom {
+      color: var(--cream-dark);
+      opacity: 0.65;
+      clip-path: inset(50% 0 0 0);
+    }
+    .wm-stage {
+      position: relative;
+      background: var(--cream-light);
+      border: 1px solid var(--border);
+      border-radius: 32px;
+      padding: clamp(32px, 5vw, 56px);
+      text-align: center;
+    }
+    .wm-stage .bubble-tag {
+      display: inline-block;
+      background: var(--red-soft);
+      color: var(--red);
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .wm-stage h1 {
+      font-family: var(--serif);
+      font-size: clamp(28px, 3.8vw, 42px);
+      font-weight: 500;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+      line-height: 1.12;
+      margin-bottom: 16px;
+    }
+    .wm-stage h1 em {
+      font-style: italic;
+      color: var(--red);
+      font-weight: 400;
+    }
+    .oferta-lead {
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--gray);
+      max-width: 580px;
+      margin: 0 auto 12px;
+    }
+    .oferta-thanks {
+      font-size: 14px;
+      color: var(--ink-soft);
+      max-width: 520px;
+      margin: 0 auto 36px;
+      line-height: 1.55;
+    }
+    .oferta-choices {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      text-align: left;
+    }
+    @media (max-width: 640px) {
+      .oferta-choices { grid-template-columns: 1fr; }
+    }
+    .oferta-choice {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .oferta-choice:hover {
+      border-color: rgba(196, 62, 47, 0.35);
+      box-shadow: var(--shadow-sm);
+    }
+    .oferta-choice--primary {
+      border-color: rgba(196, 62, 47, 0.25);
+      background: linear-gradient(180deg, #fff 0%, #fffaf8 100%);
+    }
+    .oferta-choice-icon { font-size: 28px; line-height: 1; }
+    .oferta-choice h2 {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--ink);
+      margin: 0;
+      line-height: 1.2;
+    }
+    .oferta-choice p {
+      font-size: 13.5px;
+      color: var(--gray);
+      line-height: 1.5;
+      margin: 0;
+      flex: 1;
+    }
+    .oferta-choice .btn { width: 100%; justify-content: center; margin-top: 6px; }
+    .oferta-ai-panel { margin-top: 28px; text-align: left; }
+    .oferta-ai-panel[hidden] { display: none !important; }
+    .oferta-ai-panel-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+    .oferta-ai-panel-head h3 {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 500;
+      margin: 0;
+      color: var(--ink);
+    }
+    .oferta-ai-close {
+      background: none;
+      border: none;
+      color: var(--gray);
+      font-size: 13px;
+      cursor: pointer;
+      text-decoration: underline;
+      padding: 0;
+    }
+    .oferta-ai-close:hover { color: var(--ink); }
+    .wm-devis-embed {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+    .wm-devis-embed iframe {
+      display: block;
+      width: 100%;
+      min-height: 560px;
+      border: 0;
+      background: #f4f6f9;
+    }
+  </style>
+<link rel="canonical" href="https://polistibrick.it/preventivo/">
+<meta property="og:url" content="https://polistibrick.it/preventivo/">
+<link rel="alternate" hreflang="it-IT" href="https://polistibrick.it/preventivo/">
+<link rel="alternate" hreflang="x-default" href="https://polistibrick.it/preventivo/">
+</head>
+<body data-base="../">
+
+<header class="nav" data-include="nav"></header>
+
+<section class="wm-section">
+  <div class="container">
+    <div class="wm-stage-wrap reveal">
+      <div class="wm-watermark" aria-hidden="true">
+        <span class="wm-half wm-top">Preventivo</span>
+        <span class="wm-half wm-bottom">Preventivo</span>
+      </div>
+
+      <div class="wm-stage">
+        <h1>Il tuo preventivo, <em>senza attesa.</em></h1>
+        <p class="oferta-lead">
+          Possiamo darti una stima <strong>subito</strong> con l'IA Polistibrick.
+        </p>
+        <p class="oferta-thanks">
+          Oppure, se preferisci, continua tramite il modulo di contatto — uno specialista ti risponde entro 48 h.
+        </p>
+
+        <div class="oferta-choices">
+          <div class="oferta-choice oferta-choice--primary">
+            <span class="oferta-choice-icon" aria-hidden="true">⚡</span>
+            <h2>Generatore IA</h2>
+            <p>Carica i tuoi progetti (PDF, DWG, DXF) o descrivi il progetto — preventivo stimato in pochi minuti.</p>
+            <button type="button" class="btn btn-primary btn-arrow" id="btn-start-ai">Avvia il generatore</button>
+          </div>
+          <div class="oferta-choice">
+            <span class="oferta-choice-icon" aria-hidden="true">✉️</span>
+            <h2>Modulo di contatto</h2>
+            <p>Preferisci scriverci direttamente? Invia i dettagli — ti rispondiamo entro 48 h al massimo.</p>
+            <a href="../contact/?subject=Richiesta+di+preventivo&role=particulier" class="btn btn-ghost btn-arrow">Vai al contatto</a>
+          </div>
+        </div>
+
+        <div class="oferta-ai-panel" id="oferta-ai-panel" hidden>
+          <div class="oferta-ai-panel-head">
+            <h3>Configuratore IA Polistibrick</h3>
+            <button type="button" class="oferta-ai-close" id="btn-close-ai">Chiudi</button>
+          </div>
+          <div class="wm-devis-embed">
+            <iframe
+              id="pb-devis-frame"
+              title="Configuratore preventivo Polistibrick"
+              data-pays="IT"
+              data-app-url="https://devis.polistibrick.it"
+              data-preview-url="https://polistibrick-configurator.vercel.app"
+              data-lazy="true"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" data-include="footer"></footer>
+<script src="../assets/js/site.js?v=2" defer></script>
+<script src="../assets/js/devis-embed.js" defer></script>
+<script>
+(function () {
+  var panel = document.getElementById('oferta-ai-panel');
+  var frame = document.getElementById('pb-devis-frame');
+  var btnStart = document.getElementById('btn-start-ai');
+  var btnClose = document.getElementById('btn-close-ai');
+  if (!panel || !btnStart) return;
+
+  function loadIframe() {
+    if (!frame || frame.src) return;
+    if (typeof window.pbLoadDevisFrame === 'function') {
+      window.pbLoadDevisFrame(frame);
+    }
+  }
+
+  btnStart.addEventListener('click', function () {
+    panel.hidden = false;
+    loadIframe();
+    panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  if (btnClose) {
+    btnClose.addEventListener('click', function () {
+      panel.hidden = true;
+    });
+  }
+
+  if (window.location.hash === '#generator') {
+    panel.hidden = false;
+    loadIframe();
+  }
+})();
+</script>
+</body>
+</html>

@@ -4,7 +4,7 @@
    =========================================================================== */
 (function () {
   const CFG = {
-    accessKey: '{{forms.access_key}}',
+    accessKey: '',
     liveDomain: 'polistibrick.it',
     liveDomainUrl: 'https://polistibrick.it',
     ccEmail: 'info@polistibrick.eu',
@@ -12,26 +12,26 @@
     countryName: 'Italy',
     fallbackEmail: 'contact@polistibrick.com',
     subjects: {
-      contact: '{{forms.subjects.contact}}',
-      devis: '{{forms.subjects.devis}}',
-      partner: '{{forms.subjects.partner}}',
-      review: '{{forms.subjects.review}}',
+      contact: 'Contatto — Polistibrick Italia',
+      devis: 'Richiesta preventivo — Polistibrick Italia',
+      partner: 'Candidatura partner — Polistibrick Italia',
+      review: 'Nuova recensione cliente — Polistibrick Italia',
     },
   };
 
   const MSG = {
-    errPrivacy: '{{ui.form_err_privacy}}',
-    errRatingName: '{{ui.form_err_rating_name}}',
-    errVideo: '{{ui.form_err_video}}',
-    errReviewText: '{{ui.form_err_review_text}}',
-    errNetwork: '{{ui.form_err_network}}',
-    errSend: '{{ui.form_err_send}}',
-    loading: '{{ui.form_loading}}',
-    blockedNoKeyPrefix: '{{ui.form_blocked_no_key_prefix}}',
-    blockedNoKeySuffix: '{{ui.form_blocked_no_key_suffix}}',
-    blockedPreviewPrefix: '{{ui.form_blocked_preview_prefix}}',
-    blockedPreviewMid: '{{ui.form_blocked_preview_mid}}',
-    blockedUnavailable: '{{ui.form_blocked_unavailable}}',
+    errPrivacy: 'Accetta l'informativa sulla privacy per continuare.',
+    errRatingName: 'Indica almeno: una valutazione e il nome / l'azienda.',
+    errVideo: 'Aggiungi il video — oppure scegli « Testo + foto ».',
+    errReviewText: 'Scrivi la tua recensione.',
+    errNetwork: 'Errore di rete. Riprova tra qualche istante.',
+    errSend: 'Invio impossibile. Riprova o contattaci via email.',
+    loading: 'Invio in corso…',
+    blockedNoKeyPrefix: 'Aggiungi la chiave Web3Forms in _config.json (dominio:',
+    blockedNoKeySuffix: '). Nel frattempo:',
+    blockedPreviewPrefix: 'Anteprima — l'invio funziona su',
+    blockedPreviewMid: 'o in locale (localhost). Contatto:',
+    blockedUnavailable: 'Modulo non disponibile. Contatto:',
   };
 
   function resolved(str, fallback) {
