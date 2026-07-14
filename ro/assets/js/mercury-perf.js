@@ -125,7 +125,6 @@
 
   document.querySelectorAll('video.lazy-video').forEach(function (video) {
     if (video.id === 'heroVideo') return;
-    var rootMargin = video.classList.contains('montaj-bg') ? '180px 0px' : '120px 0px';
-    observe(video, { rootMargin: rootMargin });
+    observe(video, { rootMargin: '120px 0px' });
   });
 })();
