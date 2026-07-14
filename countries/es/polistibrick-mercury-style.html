@@ -4,28 +4,31 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Polistibrick — Una casa. Un sistema. Sin compromisos.</title>
-<meta name="description" content="Sistem ICF completooo — muros, forjados, tejado. estándar A+++. Construido en 4 semanas. Sin compromisos, sin facturas.">
+<meta name="description" content="Sistema ICF completo — muros, forjados, tejado. Standard A+++. Construido en 4 semanas. Sin compromisos, sin facturas.">
 <meta property="og:title" content="Polistibrick — Una casa. Un sistema.">
-<meta property="og:description" content="Sistem ICF completooo pentru casa A+++. Muros, forjados, tejado — un sistem premium.">
+<meta property="og:description" content="Sistema ICF completo para casa A+++. Muros, forjados, tejado — un sistema premium.">
 <meta property="og:image" content="images/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-
-
-
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=Manrope:wght@600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=Manrope:wght@600&display=swap"></noscript>
+<link rel="preload" as="image" href="images/hero/hero-house-1.webp" type="image/webp" fetchpriority="high">
 <link rel="stylesheet" href="assets/css/mercury-home.css?v=3">
+
+
+
+
+
 </head>
-<body>
+<body data-base="">
 
 <!-- COUNTRY SUGGESTION BANNER (auto-detect) -->
 <div class="country-banner" id="countryBanner" hidden role="region" aria-live="polite">
   <div class="country-banner-inner">
     <span class="country-banner-flag" id="bannerFlag">🌍</span>
-    <span class="country-banner-text" id="bannerText">Detectamos que estás en <strong id="bannerCountry">...</strong>. Vizitezi <strong id="bannerDomain">polistibrick.??</strong>?</span>
+    <span class="country-banner-text" id="bannerText">Detectamos que estás en <strong id="bannerCountry">...</strong>. Visiti <strong id="bannerDomain">polistibrick.??</strong>?</span>
     <div class="country-banner-actions">
-      <button class="country-banner-btn primary" id="bannerYes">Da, mergi</button>
+      <button class="country-banner-btn primary" id="bannerYes">Sí, ir</button>
       <button class="country-banner-btn ghost" id="bannerNo">Me quedo aquí</button>
     </div>
   </div>
@@ -37,7 +40,7 @@
     <a href="#" class="logo" aria-label="Polistibrick">
       <img src="images/logo.png" alt="Polistibrick" class="logo-img">
     </a>
-    <div class="nav-menu" aria-label="Navigare principală">
+    <div class="nav-menu" aria-label="Navegación principal">
       <div class="nav-menu-item">
         <a href="#" class="nav-menu-link" role="button" aria-haspopup="true" aria-expanded="false" onclick="event.preventDefault(); return false;">Productos <span class="nav-menu-caret">▾</span></a>
         <div class="nav-menu-dropdown">
@@ -59,7 +62,7 @@
       <div class="nav-menu-item">
         <a href="#" class="nav-menu-link" role="button" aria-haspopup="true" aria-expanded="false" onclick="event.preventDefault(); return false;">Proyectos <span class="nav-menu-caret">▾</span></a>
         <div class="nav-menu-dropdown">
-          <a href="proyectos/">La La Casas construidas</a>
+          <a href="proyectos/">Casas construidas</a>
           <a href="testimonios/">Testimonios (vídeo)</a>
         </div>
       </div>
@@ -73,60 +76,64 @@
       <div class="nav-menu-item">
         <a href="#" class="nav-menu-link" role="button" aria-haspopup="true" aria-expanded="false" onclick="event.preventDefault(); return false;">Recursos <span class="nav-menu-caret">▾</span></a>
         <div class="nav-menu-dropdown">
-          <a href="recursos/faq/">FAQ</a>
+          <a href="recursos/faq/">Preguntas frecuentes</a>
         </div>
       </div>
       <div class="nav-menu-item">
-        <a href="#" class="nav-menu-link" role="button" aria-haspopup="true" aria-expanded="false" onclick="event.preventDefault(); return false;">Acerca de <span class="nav-menu-caret">▾</span></a>
+        <a href="#" class="nav-menu-link" role="button" aria-haspopup="true" aria-expanded="false" onclick="event.preventDefault(); return false;">Sobre nosotros <span class="nav-menu-caret">▾</span></a>
         <div class="nav-menu-dropdown">
           <a href="sobre-nosotros/">La empresa</a>
-          <a href="sobre-nosotros/patente/">Patenteee</a>
+          <a href="sobre-nosotros/patente/">Patente</a>
           <a href="sobre-nosotros/certificaciones/">Certificaciones</a>
-          <a href="sobre-nosotros/fabricas/">Fábricasle noastre</a>
-          <a href="sobre-nosotros/fundador/">Fondatorul</a>
+          <a href="sobre-nosotros/fabricas/">Nuestras fábricas</a>
+          <a href="sobre-nosotros/fundador/">El fundador</a>
         </div>
       </div>
     </div>
     <div class="nav-cta">
       <!-- COUNTRY SELECTOR -->
       <div class="country-switcher" id="countrySwitcher">
-        <button class="country-switcher-trigger" id="countrySwitcherTrigger" aria-label="Elige el país" aria-expanded="false">
+        <button class="country-switcher-trigger" id="countrySwitcherTrigger" aria-label="Elige tu país" aria-expanded="false">
           <span class="country-switcher-flag">{{country_flag}}</span>
           <span class="country-switcher-code">{{country}}</span>
           <svg class="country-switcher-caret" viewBox="0 0 12 12" width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,5 6,8 9,5"/></svg>
         </button>
         <div class="country-switcher-panel" id="countrySwitcherPanel" role="menu" aria-hidden="true">
-          <div class="country-switcher-header">Elige el país</div>
+          <div class="country-switcher-header">Elige tu país</div>
           <a href="#" data-country="ro" data-domain="https://polistibrick.ro" data-folder="ro" class="country-switcher-item">
-            <span class="flag">🇷🇴</span><span class="name">Rumanía</span><span class="domain">polistibrick.ro</span>
+            <span class="flag">🇷🇴</span><span class="name">Romania</span><span class="domain">polistibrick.ro</span>
           </a>
           <a href="#" data-country="fr" data-domain="https://polistibrick.fr" data-folder="fr" class="country-switcher-item">
-            <span class="flag">🇫🇷</span><span class="name">Francia</span><span class="domain">polistibrick.fr</span>
+            <span class="flag">🇫🇷</span><span class="name">France</span><span class="domain">polistibrick.fr</span>
           </a>
-          <a href="#" data-country="it" data-domain="https://polistibrick.it" data-folder="it" class="country-switcher-item">
-            <span class="flag">🇮🇹</span><span class="name">Italia</span><span class="domain">polistibrick.it</span>
+          <a href="#" data-country="it" data-domain="https://polistibrick.es" data-folder="it" class="country-switcher-item">
+            <span class="flag">🇮🇹</span><span class="name">Italia</span><span class="domain">polistibrick.es</span>
           </a>
           <a href="#" data-country="es" data-domain="https://polistibrick.es" data-folder="es" class="country-switcher-item">
-            <span class="flag">🇪🇸</span><span class="name">Spania</span><span class="domain">polistibrick.es</span>
+            <span class="flag">🇪🇸</span><span class="name">España</span><span class="domain">polistibrick.es</span>
           </a>
           <a href="#" data-country="be" data-domain="https://polistibrick.be" data-folder="nl" class="country-switcher-item">
-            <span class="flag">🇧🇪</span><span class="name">Belgia</span><span class="domain">polistibrick.be</span>
+            <span class="flag">🇧🇪</span><span class="name">België</span><span class="domain">polistibrick.be</span>
           </a>
           <a href="#" data-country="ie" data-domain="https://polistibrick.ie" data-folder="ie" class="country-switcher-item">
-            <span class="flag">🇮🇪</span><span class="name">Irlanda</span><span class="domain">polistibrick.ie</span>
+            <span class="flag">🇮🇪</span><span class="name">Ireland</span><span class="domain">polistibrick.ie</span>
           </a>
           <a href="#" data-country="uk" data-domain="https://polistibrick.uk" data-folder="en" class="country-switcher-item">
-            <span class="flag">🇬🇧</span><span class="name">Regatul Unit</span><span class="domain">polistibrick.uk</span>
+            <span class="flag">🇬🇧</span><span class="name">Reino Unido</span><span class="domain">polistibrick.uk</span>
           </a>
           <a href="#" data-country="ch" data-domain="https://polistibrick.com" data-folder="de" class="country-switcher-item">
-            <span class="flag">🇨🇭</span><span class="name">Elveția</span><span class="domain">polistibrick.com</span>
+            <span class="flag">🇨🇭</span><span class="name">Schweiz</span><span class="domain">polistibrick.com</span>
           </a>
+          <a href="#" data-country="me" data-domain="https://polistibrick.me" data-folder="me" class="country-switcher-item">
+            <span class="flag">🇲🇪</span><span class="name">Montenegro</span><span class="domain">polistibrick.me</span>
+          </a>
+
         </div>
       </div>
       <!-- /COUNTRY SELECTOR -->
-      <a href="contact/" class="btn btn-ghost">Contactooo</a>
+      <a href="contact/" class="btn btn-ghost">Contacto</a>
       <a href="presupuesto/" class="btn btn-primary nav-cta-devis">Presupuesto</a>
-      <button class="nav-burger" id="navBurger" aria-label="Deschide meniul" aria-expanded="false" aria-controls="navDrawer">
+      <button class="nav-burger" id="navBurger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navDrawer">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -135,9 +142,9 @@
 
 <!-- MOBILE DRAWER + OVERLAY -->
 <div class="nav-drawer-overlay" id="navDrawerOverlay" aria-hidden="true"></div>
-<aside class="nav-drawer" id="navDrawer" aria-label="Meniul mobil" aria-hidden="true">
+<aside class="nav-drawer" id="navDrawer" aria-label="Menu" aria-hidden="true">
 
-  <button class="nav-drawer-close" id="navDrawerClose" aria-label="Închide meniul">
+  <button class="nav-drawer-close" id="navDrawerClose" aria-label="Cerrar menú">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
   </button>
 
@@ -164,7 +171,7 @@
   <div class="nav-drawer-group">
     <button class="nav-drawer-title" aria-expanded="false">Proyectos<span class="nd-caret">▾</span></button>
     <div class="nav-acc">
-      <a href="proyectos/">La La Casas construidas</a>
+      <a href="proyectos/">Casas construidas</a>
       <a href="testimonios/">Testimonios video</a>
     </div>
   </div>
@@ -173,30 +180,30 @@
     <button class="nav-drawer-title" aria-expanded="false">Calculadora<span class="nd-caret">▾</span></button>
     <div class="nav-acc">
       <a href="calculadora/">Calculadora de costes</a>
-      <a href="ahorros/">Calculadora economii</a>
+      <a href="ahorros/">Calculadora de ahorros</a>
     </div>
   </div>
 
   <div class="nav-drawer-group">
     <button class="nav-drawer-title" aria-expanded="false">Recursos<span class="nd-caret">▾</span></button>
     <div class="nav-acc">
-      <a href="recursos/faq/">FAQ</a>
+      <a href="recursos/faq/">Preguntas frecuentes</a>
     </div>
   </div>
 
   <div class="nav-drawer-group">
-    <button class="nav-drawer-title" aria-expanded="false">Acerca de<span class="nd-caret">▾</span></button>
+    <button class="nav-drawer-title" aria-expanded="false">Sobre nosotros<span class="nd-caret">▾</span></button>
     <div class="nav-acc">
       <a href="sobre-nosotros/">La empresa</a>
-      <a href="sobre-nosotros/patente/">Patenteee</a>
+      <a href="sobre-nosotros/patente/">Patente</a>
       <a href="sobre-nosotros/certificaciones/">Certificaciones</a>
-      <a href="sobre-nosotros/fabricas/">Fábricasle noastre</a>
-      <a href="sobre-nosotros/fundador/">Fondatorul</a>
+      <a href="sobre-nosotros/fabricas/">Nuestras fábricas</a>
+      <a href="sobre-nosotros/fundador/">El fundador</a>
     </div>
   </div>
 
   <div class="nav-drawer-cta">
-    <a href="contact/" class="btn btn-ghost">Contactooo</a>
+    <a href="contact/" class="btn btn-ghost">Contacto</a>
     <a href="presupuesto/" class="btn btn-primary">Pide un presupuesto →</a>
   </div>
 
@@ -223,7 +230,8 @@
 
 <!-- HERO — full-bleed maisons Polistibrick (stil showreel), text alb stânga + robot dreapta -->
 
-<section class="hero hero--photo">
+<div class="hero-scroll-track" id="heroScrollTrack">
+<section class="hero hero--photo" id="heroSection">
   <div class="hero-bg" aria-hidden="true">
     <picture class="hero-bg-poster">
       <source type="image/webp" srcset="images/hero/hero-house-1.webp">
@@ -237,37 +245,43 @@
            data-src-mobile-webm="images/hero/hero-houses-reel-mobile.webm"></video>
     <div class="hero-bg-scrim"></div>
   </div>
-  <div class="container">
-    <div class="hero-text-col">
-      <picture>
-        <img class="hero-robot reveal" src="images/robot.webp" alt="Polistibrick — Construcción inteligentă" fetchpriority="low" loading="lazy" width="1500" height="1362">
-      </picture>
-      <h1 class="reveal">Construiești mai multe case.<br><span class="h1-l2">Cu mai puțină manoperă.</span></h1>
-      <p class="hero-sub reveal">Polistibrick enlocuiește 5 materiale diferite și 5 echipe de construcción. Un singur produs, o singură echipă — și casa este finalizată. <strong>Innovación patentada.</strong></p>
-      <div class="hero-actions reveal">
-        <a href="presupuesto/" class="btn btn-red btn-large">Primește oferta ta gratuită →</a>
-        <a href="montaje/" class="btn btn-ghost btn-large">Construiesc singur →</a>
+  <h1 class="hero-teaser text-stilizat"><span class="hero-teaser-line">Una tecnología</span><span class="hero-teaser-line">con 5 ventajas</span></h1>
+  <div class="hero-scroll-cue" aria-hidden="true"></div>
+  <div class="hero-full-content">
+    <div class="container">
+      <div class="hero-text-col">
+        <picture class="hero-robot-wrap">
+          <source srcset="images/robot.webp" type="image/webp">
+          <img class="hero-robot" src="images/robot.webp" alt="Polistibrick — Construcción inteligente" fetchpriority="low" loading="lazy" width="1500" height="1362">
+        </picture>
+        <h1>Construye más viviendas.<br><span class="h1-l2">Con un solo equipo.</span></h1>
+        <p class="hero-sub">Polistibrick sustituye 5 materiales distintos y 5 equipos de construcción. Un solo producto, un solo equipo — y la casa está terminada. <strong>Innovación patentada.</strong></p>
+        <div class="hero-actions">
+          <a href="presupuesto/" class="btn btn-red btn-large">Recibe tu presupuesto gratuito →</a>
+          <a href="montaje/" class="btn btn-ghost btn-large">Construyo solo →</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
+</div>
 
 <!-- MORPH — un seul système, toutes les architectures (vidéo full-bleed, texte superposé) -->
 
 <div class="morph-wrap" style="position:relative;">
   <div class="morph-watermark" aria-hidden="true">
     <div class="mw-line1">
-      <span class="wm-half wm-top">Un singur</span>
-      <span class="wm-half wm-bottom">Un singur</span>
+      <span class="wm-half wm-top">Un solo</span>
+      <span class="wm-half wm-bottom">Un solo</span>
     </div>
-    <div class="mw-line2">Sistem</div>
+    <div class="mw-line2">Sistema</div>
   </div>
 <section class="morph-section" id="morph">
   <div class="morph-overlay">
     <span class="morph-eyebrow reveal">Libertad arquitectónica</span>
-    <h2 class="reveal">«&nbsp;Cum construiesc asta&nbsp;?&nbsp;»<br><em>Cu Polistibrick, este posibil.</em></h2>
-    <p class="morph-sub reveal">Libertate totală la execuție, ca și la proiectare.</p>
-    <a href="presupuesto/" class="btn btn-red morph-cta reveal">Presupuesto gratuită →</a>
+    <h2 class="reveal">«&nbsp;¿Cómo construyo esto?&nbsp;»<br><em>Con Polistibrick, es posible.</em></h2>
+    <p class="morph-sub reveal">Libertad total en ejecución, como en diseño.</p>
+    <a href="presupuesto/" class="btn btn-red morph-cta reveal">Presupuesto gratuito →</a>
   </div>
   <div class="morph-media">
         <picture class="media-poster" aria-hidden="true">
@@ -275,7 +289,7 @@
     </picture>
     <video id="morphVideo" class="morph-video lazy-video" muted loop playsinline preload="none"
            poster="images/morph/morph-poster.jpg"
-           aria-label="Sistemul Polistibrick se reconfigurează: casa parter, vilă cu etaj, mic bloc colectiv">
+           aria-label="El sistema Polistibrick se reconfigura: casa de una planta, villa de dos plantas, pequeño condominio">
       <source data-src="images/morph/morphing-polistibrick.mp4" type="video/mp4">
     </video>
   </div>
@@ -286,15 +300,15 @@
 
 <div class="differences-wrap">
   <div class="differences-watermark" aria-hidden="true">
-    <span class="wm-half wm-top">Diferențe</span>
-    <span class="wm-half wm-bottom">Diferențe</span>
+    <span class="wm-half wm-top">Diferencias</span>
+    <span class="wm-half wm-bottom">Diferencias</span>
   </div>
 <section class="differences-section" id="difference" aria-label="La diferencia Polistibrick">
   <div class="differences-scrim"></div>
 
   <div class="differences-container">
     <div class="differences-header">
-      <span class="differences-eyebrow reveal">Polistibrick vs clasic</span>
+      <span class="differences-eyebrow reveal">Polistibrick vs clásico</span>
     </div>
 
     <div class="slider-widget reveal" id="comparisonSlider">
@@ -311,10 +325,10 @@
               <div class="info-card-inner">
                 <div class="card-header-pb">
                   <span class="card-icon">🏗️</span>
-                  <h4>Sistem Polistibrick</h4>
+                  <h4>Sistema Polistibrick</h4>
                 </div>
-                <p class="card-team">👤 O echipă — 3 persoane</p>
-                <p class="card-materials">📦 <strong>3 materiale</strong> : Encofrado Polistibrick • Hormigón • Oțel</p>
+                <p class="card-team">👤 Un equipo — 3 personas</p>
+                <p class="card-materials">📦 <strong>3 materiales</strong> : Encofrado Polistibrick • Hormigón • Acero</p>
               </div>
             </div>
           </div>
@@ -324,17 +338,17 @@
         <div class="slider-pane pane-classic">
           <div class="pane-img" style="background-image: url('images/house-classic.png');"></div>
           <div class="pane-overlay">
-            <span class="pane-tag">Clasic</span>
+            <span class="pane-tag">Clásico</span>
 
             <!-- Unified Premium Card (Bottom Right) -->
             <div class="info-card info-cl">
               <div class="info-card-inner">
                 <div class="card-header-cl">
                   <span class="card-icon">🏗️</span>
-                  <h4>Sistem tradițional</h4>
+                  <h4>Sistema tradicional</h4>
                 </div>
-                <p class="card-team">👤👤👤👤👤 5 echipe — 15 persoane</p>
-                <p class="card-materials">📦 <strong>9 materiale</strong> : Blocuri • Mortar • Encofrado • Fier • Hormigón • Aislamiento • Placare • Șuruburi • etc.</p>
+                <p class="card-team">👤👤👤👤👤 5 equipos — 15 personas</p>
+                <p class="card-materials">📦 <strong>9 materiales</strong> : Bloques • Mortero • Encofrado • Acero • Hormigón • Aislamiento • Revestimiento • Tornillos • etc.</p>
               </div>
             </div>
           </div>
@@ -492,41 +506,41 @@
 
 <div class="personas-wrap">
   <div class="personas-watermark" aria-hidden="true">
-    <span class="wm-half wm-top">Para tine</span>
-    <span class="wm-half wm-bottom">Para tine</span>
+    <span class="wm-half wm-top">Para ti</span>
+    <span class="wm-half wm-bottom">Para ti</span>
   </div>
-<section class="personas-section" id="pour" aria-label="Ești…? Soluciones pe rol">
+<section class="personas-section" id="pour" aria-label="¿Quién eres? Soluciones por rol">
 
   <div class="persona-slide active" data-href="para/constructores/">
-    <img src="images/personas/pour-constructeur.jpg" alt="Șantier Polistibrick: turnare hormigón într-un lot de case" fetchpriority="low" loading="lazy">
+    <img src="images/personas/pour-constructor.jpg" alt="Obra Polistibrick: vertido de hormigón en un lote de casas" fetchpriority="low" loading="lazy">
     <div class="persona-scrim"></div>
     <div class="persona-content">
-      <span class="persona-overline">Ești… Constructor?</span>
-      <h2>De 2× mai rapid. <em>Marje protejate.</em></h2>
-      <div class="persona-metric">O singură echipă = marja a 5 echipe — până la 50%</div>
-      <a class="persona-cta" href="para/constructores/">Vezi pentru constructori →</a>
+      <span class="persona-overline">¿Eres constructor?</span>
+      <h2>2× más rápido. <em>Márgenes protegidos.</em></h2>
+      <div class="persona-metric">Un solo equipo = el margen de 5 equipos — hasta el 50%</div>
+      <a class="persona-cta" href="para/constructores/">Descubre para constructores →</a>
     </div>
   </div>
 
   <div class="persona-slide" data-href="para/arquitectos/">
-    <img src="images/personas/pour-architecte.jpg" alt="La La La Casa de arhitect contemporană cu console, realizată cu Polistibrick" loading="lazy">
+    <img src="images/personas/pour-architecte.jpg" alt="Casa de arquitecto contemporánea con voladizos, realizada con Polistibrick" loading="lazy">
     <div class="persona-scrim"></div>
     <div class="persona-content">
-      <span class="persona-overline">Ești… Arhitect · Inginer?</span>
-      <h2>Tu proiectezi,<br><em>Polistibrick execută.</em></h2>
-      <div class="persona-metric">Para prima dată, imaginația ta nu mai are limite — console generoase și deschideri ample, în calcule Eurocode 2 clasice.</div>
-      <a class="persona-cta" href="para/arquitectos/">Ver para arquitectos →</a>
+      <span class="persona-overline">¿Es… Arquitecto · Ingeniero?</span>
+      <h2>Imaginas,<br><em>Polistibrick lo construye.</em></h2>
+      <div class="persona-metric">Por primera vez, tu imaginación no tiene límites — grandes voladizos y luces generosas, con cálculos Eurocode 2 clásicos.</div>
+      <a class="persona-cta" href="para/arquitectos/">Descubre para arquitectos →</a>
     </div>
   </div>
 
   <div class="persona-slide" data-href="para/propietarios/">
-    <img src="images/personas/pour-proprietaire.jpg" alt="Cuplu pe terasa unei case Polistibrick la apus" loading="lazy">
+    <img src="images/personas/pour-proprietaire.jpg" alt="Pareja en la terraza de una casa Polistibrick al atardecer" loading="lazy">
     <div class="persona-scrim"></div>
     <div class="persona-content">
-      <span class="persona-overline">Ești… Proprietar?</span>
-      <h2>La La La Casa premium, <em>sin facturas.</em></h2>
-      <div class="persona-metric">−90% la facturasle de energie, pe viață</div>
-      <a class="persona-cta" href="para/propietarios/">Ver para propietarios →</a>
+      <span class="persona-overline">¿Eres… propietario?</span>
+      <h2>Casa premium, <em>sin facturas.</em></h2>
+      <div class="persona-metric">−90% en facturas de energía, de por vida</div>
+      <a class="persona-cta" href="para/propietarios/">Descubre para propietarios →</a>
     </div>
   </div>
 
@@ -534,18 +548,18 @@
     <img src="images/personas/persona-promoteur.jpg" alt="" loading="lazy">
     <div class="persona-scrim"></div>
     <div class="persona-content">
-      <span class="persona-overline">Ești… Dezvoltator?</span>
-      <h2>ROI maxim. <em>Risc minim.</em></h2>
-      <div class="persona-metric">+15–25% la revânzare, structura de 2× mai rapid</div>
-      <a class="persona-cta" href="para/inversores/">Vezi pentru investitori →</a>
+      <span class="persona-overline">¿Eres… promotor?</span>
+      <h2>ROI máximo. <em>Riesgo mínimo.</em></h2>
+      <div class="persona-metric">+15–25% en reventa, estructura 2× más rápida</div>
+      <a class="persona-cta" href="para/inversores/">Descubre para inversores →</a>
     </div>
   </div>
 
-  <div class="persona-dots" role="tablist" aria-label="Alege rolul">
+  <div class="persona-dots" role="tablist" aria-label="Elige el rol">
     <button class="persona-dot active" aria-label="Constructor"><span class="pd-label">Constructor</span><span class="pd-bar"><span class="pd-fill"></span></span></button>
-    <button class="persona-dot" aria-label="Arhitect"><span class="pd-label">Arhitect</span><span class="pd-bar"><span class="pd-fill"></span></span></button>
-    <button class="persona-dot" aria-label="Proprietar"><span class="pd-label">Proprietar</span><span class="pd-bar"><span class="pd-fill"></span></span></button>
-    <button class="persona-dot" aria-label="Dezvoltator"><span class="pd-label">Dezvoltator</span><span class="pd-bar"><span class="pd-fill"></span></span></button>
+    <button class="persona-dot" aria-label="Arquitecto"><span class="pd-label">Arquitecto</span><span class="pd-bar"><span class="pd-fill"></span></span></button>
+    <button class="persona-dot" aria-label="Propietario"><span class="pd-label">Propietario</span><span class="pd-bar"><span class="pd-fill"></span></span></button>
+    <button class="persona-dot" aria-label="Promotor"><span class="pd-label">Promotor</span><span class="pd-bar"><span class="pd-fill"></span></span></button>
   </div>
 </section>
 </div>
@@ -554,19 +568,19 @@
 
 <div class="passif-wrap">
   <div class="passif-watermark" aria-hidden="true">
-    <span class="wm-half wm-top">Pasiv</span>
-    <span class="wm-half wm-bottom">Pasiv</span>
+    <span class="wm-half wm-top">Passivo</span>
+    <span class="wm-half wm-bottom">Passivo</span>
   </div>
-<section class="passif-section" id="passif" aria-label="Standardul casa pasiva">
+<section class="passif-section" id="passif" aria-label="El estándar Casa Pasiva">
   <div class="passif-content">
-    <span class="passif-overline reveal">Cel mai bun argument de vânzare</span>
-    <h2 class="reveal">Oferă pasiv clienților tăi,<br><em>la prețul celui clasic.</em></h2>
-    <div class="passif-metric reveal">Clasă A+++<span class="sep">·</span>−90% facturas<span class="sep">·</span>15 kWh/m²/año<span class="sep">·</span>21 °C constant</div>
-    <a href="presupuesto/" class="btn btn-red passif-cta reveal">Presupuesto gratuită →</a>
+    <span class="passif-overline reveal">El mejor argumento de venta</span>
+    <h2 class="reveal">Ofrezca lo pasivo a sus clientes,<br><em>al precio del clásico.</em></h2>
+    <div class="passif-metric reveal">Clase A+++<span class="sep">·</span>−90% facturas<span class="sep">·</span>15 kWh/m²/an<span class="sep">·</span>21 °C constant</div>
+    <a href="presupuesto/" class="btn btn-red passif-cta reveal">Presupuesto gratuito →</a>
   </div>
   <div class="passif-media">
-    <div class="passif-slides" aria-label="Polistibrick home in winter: constant indoor comfort">
-      <img class="passif-photo" src="images/passive/passive-winter.jpg?v=5" alt="Living room view in winter — constant comfort" loading="lazy">
+    <div class="passif-slides" aria-label="Casa Polistibrick en invierno: confort constante en el interior">
+      <img class="passif-photo" src="images/passive/passive-winter.jpg?v=5" alt="Vista desde el salón en invierno — confort constante" loading="lazy">
     </div>
     <div class="passif-scrim"></div>
   </div>
@@ -581,42 +595,42 @@
     <span class="wm-half wm-top">De serie</span>
     <span class="wm-half wm-bottom">De serie</span>
   </div>
-<section class="cinq-section" id="cinq" aria-label="La diferencia Polistibrick: cinci produse într-un singur panou">
+<section class="cinq-section" id="cinq" aria-label="La diferencia Polistibrick: cinco productos en un solo panel">
   <div class="cinq-media">
   <div class="cinq-overlay">
     <span class="cinq-eyebrow reveal">La diferencia Polistibrick</span>
-    <h2 class="reveal">Cinci linii în minus pe ofertă,<br><em>premium în plus para ti.</em></h2>
-    <div class="cinq-metric reveal"><strong>Foc, impermeable, etanșeitate la aer, aislamiento pasivă, fonoaislamiento, fixare</strong>: în altă parte, le calculezi, le transporti și le montezi conform unor norme stricte — la preț mare. Polistibrick le integrează din fabrică, avantajele cele mai dorite din 2026. Clientul tău le primește fără cost suplimentar — o casa pe care puțini o au.</div>
-    <a href="presupuesto/" class="btn btn-red cinq-cta reveal">Presupuesto gratuită →</a>
+    <h2 class="reveal">Cinco partidas menos en el presupuesto,<br><em>más premium para usted.</em></h2>
+    <div class="cinq-metric reveal"><strong>Fuego, hidrofugación, estanqueidad al aire, aislamiento pasivo, insonorización, fijación</strong>: en otros sistemas se cuantifican, transportan y colocan según normas estrictas — a precio elevado. Polistibrick los integra en fábrica, las ventajas más buscadas de 2026. Tu cliente las obtiene sin sobreprecio — una casa que pocos poseen.</div>
+    <a href="presupuesto/" class="btn btn-red cinq-cta reveal">Presupuesto gratuito →</a>
   </div>
     <video class="cinq-video lazy-video" muted loop playsinline preload="none"
            poster="images/bundle/bundle-test-poster.jpg?v=3"
            data-src-mobile="images/bundle/bundle-test-mobile.mp4?v=2"
            data-poster-mobile="images/bundle/bundle-test-mobile-poster.jpg?v=1"
-           aria-label="Panoul Polistibrick testat: asamblare, foc, apă, impact, îngheț, zgomot — intact la fiecare probă">
+           aria-label="Panel Polistibrick probado: montaje, fuego, agua, impacto, hielo, ruido — intacto en cada prueba">
       <source data-src="images/bundle/bundle-test.mp4?v=3" type="video/mp4">
     </video>
   </div>
   <div class="cinq-legend">
       <div class="cinq-item">
-        <div class="ci-name">Securitate la foc integrată</div>
-        <div class="ci-val">Fibrociment A1 + hormigón armat.</div>
+        <div class="ci-name">Seguridad contra incendios integrada</div>
+        <div class="ci-val">Fibrocemento A1 + hormigón armato.</div>
       </div>
       <div class="cinq-item">
-        <div class="ci-name">Etanș peste tot</div>
-        <div class="ci-val">Hidrofug 100%, fără plăci verzi.</div>
+        <div class="ci-name">Hermético en todo</div>
+        <div class="ci-val">Hidrofugante al 100%, sin placas verdes.</div>
       </div>
       <div class="cinq-item">
-        <div class="ci-name">Silence de serie</div>
-        <div class="ci-val">Fonoaislamiento ≥ 65 dB de serie.</div>
+        <div class="ci-name">Silenzio serie</div>
+        <div class="ci-val">Insonorización ≥ 65 dB de serie.</div>
       </div>
       <div class="cinq-item">
-        <div class="ci-name">Structură antisísmicoă</div>
-        <div class="ci-val">Hormigón armat monolitic durabil pe viață.</div>
+        <div class="ci-name">Estructura antisísmica</div>
+        <div class="ci-val">Hormigón armado monolítico duradero de por vida.</div>
       </div>
       <div class="cinq-item">
-        <div class="ci-name">Fixare directă</div>
-        <div class="ci-val">Șurubui direct, fără burghiu.</div>
+        <div class="ci-name">Fijación directa</div>
+        <div class="ci-val">Atornille directamente, sin taladro.</div>
       </div>
   </div>
 </section>
@@ -626,16 +640,16 @@
 
 <div class="presence-wrap">
   <div class="presence-watermark" aria-hidden="true">
-    <span class="wm-half wm-top">Prezență</span>
-    <span class="wm-half wm-bottom">Prezență</span>
+    <span class="wm-half wm-top">Presencia</span>
+    <span class="wm-half wm-bottom">Presencia</span>
   </div>
-<section class="reach-section presence-section" id="reach" aria-label="Prezență: două fabrici, nouă țări">
+<section class="reach-section presence-section" id="reach" aria-label="Presencia: dos fábricas, nueve países">
     <picture class="media-poster presence-poster" aria-hidden="true">
     <img src="images/presence/presence-factory.jpg" alt="" loading="lazy" decoding="async">
   </picture>
   <video class="presence-bg lazy-video" loop muted playsinline preload="none"
          poster="images/presence/presence-factory.jpg"
-         aria-label="Fabrică Polistibrick: încărcarea panourilor Polistibrick pe camion">
+         aria-label="Fábrica Polistibrick: carga de paneles Polistibrick en un camión">
     <source data-src="images/presence/presence-factory-film.mp4?v=5" type="video/mp4">
   </video>
 
@@ -643,15 +657,15 @@
 
   <div class="presence-content">
     <span class="presence-overline reveal">Producción · Polistibrick</span>
-    <h2 class="reveal">Capacitate industrială <em>& logistică.</em></h2>
-    <div class="presence-metric reveal">2 fabrici proprii<span class="sep">·</span>9 țări livrate<span class="sep">·</span>direct pe șantier</div>
-    <a href="presupuesto/" class="btn btn-red presence-cta reveal">Presupuesto gratuită →</a>
+    <h2 class="reveal">Capacidad industrial <em>y logística.</em></h2>
+    <div class="presence-metric reveal">2 fábricas propias<span class="sep">·</span>9 países atendidos<span class="sep">·</span>directamente en obra</div>
+    <a href="presupuesto/" class="btn btn-red presence-cta reveal">Presupuesto gratuito →</a>
   </div>
 
   <div class="presence-mapcard">
     <div class="mapcard-inner">
     <div class="reach-map">
-      <svg viewBox="250 230 550 420" preserveAspectRatio="xMidYMid meet" class="reach-svg" xmlns="http://www.w3.org/2000/svg" aria-label="Harta Europei: țările de prezență Polistibrick"><g class="pm-countries">
+      <svg viewBox="250 230 550 420" preserveAspectRatio="xMidYMid meet" class="reach-svg" xmlns="http://www.w3.org/2000/svg" aria-label="Mapa de Europa: países de presencia Polistibrick"><g class="pm-countries">
  <path class="pm-cc" d="M654.7 528.1l0.5 0.4 2 2.9 1.4 0.5 1.9 1.3 1.4 3.2 0.1 2.2-0.5 2.6 0.3 2.1-0.8 0.8 0.7 2 0.2 1.9 1.2 2.2 1.2 1.1 1.3 2.4 1.6-0.2 1.3 1.1 0 1.1 1.1 1.8-0.8 2.6-1.7 0.8-1.2 3.1-0.3 2-0.6 0.5-1.9 0.3-1.7 1.3 1 2.2-0.9 0.7-0.3 1.5-0.7 0.7-2.7-0.9-0.7-2.5-1.7-2.7-4.9-2.6-1.2-1.1 0.4-1.5-0.1-1.4-1.4-2.4 0.3-2.6 0.8-2.2-0.3-2.7 0.1-2.1-0.7-2.9 0.5-2.1 0.9-1.3-0.2-2.2-1.5-1.1-1.6-0.2 0-3.1-0.3-0.6 1.7 0-1.7-2.8 3.2-5.3 1.1 0.3 0.8 2.1 3.4-1.2z" id="AL" name="Albania">
  </path>
  <path class="pm-cc" d="M423.4 528.8l-2.8 1.1-0.7-0.4 0-2.1 0.9-0.7 2.6 0.6 0 1.5z" id="AD" name="Andorra">
@@ -680,7 +694,7 @@
  </path>
  <path class="pm-cc" d="M646.5 260l2 0.2-0.6 2.8-2.3-1.8 0.9-1.2z m-1.9 0.5l-2.1-0.6 0.9-0.8 1.2 1.4z m-6.5-2.7l-1.5 0.7-0.3-1.7 1.8 1z m25.5-62.9l-1.5 0.5-1.3-0.3-0.2-0.9 2-0.6 1 1.3z m30.1-54.6l-3.7 1.3 1.6 0.8 0.8 1.2-2 3.2 0.1 0.6 3.1 4 7.2 1.7 2.3 1.8 3.6 2.3 1.8 0.9 0.1 1.9-3 3-2.6 3.1-1.2 1.7 0.4 1.7 2.6 2.1 2.3 2.2 3 3.5 3 2.5 3 4.2 0.4 1.4-3.7 0.7 1.2 0.9-0.6 1.3 0.3 1.9-0.5 1.5 1.9 0.3 0.3 1.3-1.7 1 0 0.9 1.4 1.7 1 0.6 3.2 0.6 0.9 1.6-1 1.7 1.8 2.2 4.5 1.8 0.7 1.3 0.2 1.7-2.4 3-2 0.8 0.7 0.8 4.5 2.6 6.6 2.9 2.6 1.3 2.1 1.9 2.2 1.6 0.5 1-1.6 4.5-0.7 1.2-2.2 2.2-3.4 2.8-2.3 2.3-5.3 5.9-1.9 1.5-2.1 2.2-4.9 3.3-0.7 0.8-2.5 1.5-5.6 5.2-3.5 1-2.6-1.1-1.8 0.2-1.2 0.8-2.5 0.2-2 0.6-1-0.7-0.7 0.6-1.9 0.2-2-1 0.3 1.5-3.3 1.5-0.8-0.9-2 1-2.1 0.2-1.1 0.8-5.9 1.1-1.5 1.3-1.2-0.3-6.7 1.1-2.9-0.2-2.7 2-1.8 0.4 1.5-3-2.4-1.1-1.2-1.6-0.7 0.4-0.3 1.5-1.5 0.8-2-0.1-0.4-2.4 0.8-2.3-3.6-0.6-3.8-1.4-0.9-0.1-0.7-1.3-2 0.9-2.1-0.9-1.7-5.3 0-1.3 0.9-1.6-0.1-3.4-0.6-2 1.1-0.6-0.9-1.6-2.2-3-1.6-1.1 0.5-3.3-0.6-1.6-1.9-1.1-1.1-2.9 0.6-2.4 2.4-2.2 0-1.2 0.9-1.1-0.5-1.3 2.7-0.5 1 0.4 2.4-0.4 1.9-1-1.1-1.8 1.5-0.7 1.2-1.2-0.1-1 2.3-0.5 2.4-1.9 2.3-1.1 2.3-1.9 1.1-0.1 0.3-1.3 2.5-1.9 0.8-1.6 2.3-1.8 2.2-3.9 3.8-1.2 3.8 0.3-0.6-1.7 1-0.3-0.6-1.3-1-0.6 0-4.6-1.3-0.9-4.5-1.6-1.7-0.1-1.2-1.2-4.6-0.7-1.6-2.5-1.9-2.2-1.8-0.6-1.3-2.6 0-1.3 1.5-1.3-0.1-1.8 0.7-1.4-0.6-0.9-3.3-2.6-0.8-1.6 0.1-1.1 1-0.8-0.6-1.3-2.8-0.4 0.3-1.9-0.7-1.4-0.4-2.4 1.1-1-1.8-0.9-1.9-1.5-1.4-0.1-1.2-1.6-3.5-1.8-8.3-1.7-4.2-1.8-4.8-2.3-2.9-1.1-0.4-0.9-2.9-0.8 0.5-0.4 2.1 0 1.9 0.4 0.5-0.6-1-1.4 1.9-1.1 3.6 0 7.9 5.5 1.4 1.8 6.9 0.6 0.8 0.5 1.8-0.1 3.7-0.9 1.2-1.2 1.5 0.1 3.6 1.1 3.9 0.8 2.6 0.8 1.3-0.6 0.5-1.7 1.6-1.3 2.1-0.3 1.5-1.4-0.7-3.2 0.6-1.7 0.7-3.8 2.6-1.7 1.7-1.8 2.1-0.2 3.8 0.4 0.9-0.2 3.5-1.6 2.9-0.3 1.8 1.2 4.2 2 4.2 1.1 3.6 0.8 2.6 2.7-0.7 1-3.2 2.9 0 0.7 1.7 1.3z" id="FI" name="Finland">
  </path>
- <path class="pm-cc pm-on" d="M389.1 403.1l-1.6 1.3-1.3 0.2-2.5-1.2 0-0.5 2.5-1.1 2 0.6 0.9 0.7z m-36.5-39.7l1.3 0.9-3.4 1.9-1.2-0.6-0.9-1.2-0.1-1.9 1.2-0.5 1.8 0 1.3 1.4z m-23.3-11.4l-2.1 0.4-2.9 0 0.1-1.5-1.4-0.5-1.8-2.7-1.3-0.5-1.9 1.6 0.5 0.9-2.4 1.8-2.9-0.3-0.8-0.7-2.1-0.4-0.2-1-2.7-2 1-1.4 2.9-0.9-1-1.4 0.2-0.8 1.6 0.1 2.2-0.8 1.2-1.6 1-2.3 1.9-0.9 1.3 0.6 1.9-2 2.8-0.1 2.7-0.7 3.9 0.3 1.1 1.1 0.5 1.7 1.3 1.7 1.7 1.4 0 0.9-2 1.1 3.5 0.3 1.2 2.5-2.1 0.3-0.1 1.4 1.1 0.2-0.6 1.4-2.6 0.6-1.4 2.2-1 0.5-2.3-0.5z m13.7-20.2l-2.6-0.5-0.6-2 0.9-1.4 1.8 0.7 0.6 1.3-0.1 1.9z m-11.5-7.1l0.7 3.4-2.4 1.3-0.8-2.4-1.4 1 0.2-1.9 1.5-0.3 2.2-1.1z m1.7 1.7l-1.1-1.2 1.6-2.2 1.7-1-0.1 1.6-2.1 2.8z m2.5-7.8l-4.6 0.8 0.6-3-1.9-0.9 0.3-0.9 2.1-0.5 1.7 1.7 2.1 0.6-0.3 2.2z m-16.2-11.4l-1.5-0.2-0.4-1.4 0.2-2.3 1.6 0.2 0.1 3.7z m12.8-5.7l-0.1 2.8 2.9 0.8 2-0.1 0.4 0.6-3.3 2.7-0.7-0.1-0.2-2.2-1.4 0.3-1.9-0.3-1.2-1.9-2.7-0.5-0.9-1.1 1.4-0.6 0.3-1.2 2.8-0.6 1.5-0.7 0.9 1 0.2 1.1z m-11.9-2.6l1.2 0.9-1.1 1.3-1.5 0-2.2-1 0.2-0.5 3.4-0.7z m11.8-9.9l-1.6 2.6-1 0.7-0.2 1.7-3 1.6-3.2 2.4-1.4-1 2.6-1.7-2.1-1-0.2-2.6 0.8-0.7 1.4 0.7 1.9-0.3-0.7-1.2 6.3-3.2 0.4 2z m34.8-2.2l0 1.2-1.3 1.6-2.2 1.2-4.2 2.8-2.5 1.3-0.5 1.6 1.4 0.1 0.2 0.8-2.2 1.6-0.6 1.5 3-0.4 5.3-1.5 3.6 0.5 2.6-0.3 6.9 0.2 1.9-0.3 2.3 1.3 1 1.7-2.8 3.4-0.8 2.3-2 3.5-1.9 2-2 2.5-2.1 1.1-3.1 0.5 4.5 1.9-1.4 1.8-2.4 0.1-2.3 1.7-2.1 0.7 3.6 1.1 2.4-1 2.7-0.1 5.2 1.9 3.6 3.4 2 1.5 0.5 1.1 2.1 6.9 1.5 3.8 1.6 1.8 4.5 1.6 1.1 0.6 3.4 3.3 3.4 2.4-1.4 1.5 0.4 1.2 2.1 2.9 0.3 1.6-1.3-0.1-2.3-1.4-0.3 0.7 5 3.3 1.6 2 1 2.7-0.6 1.1-3 2.7 2.8 1.4 1.2-0.2 2-2.1 1.7-0.2 4.2 0.3 3.8 1 3.3 2.1 0.7 1.1 0.4 3.1-2.2 5.8-2.8 1.9-0.5 1.7-2.1 0.9-1.7-0.3-2.4 1.2 1.7 0.6 0 1.7-1.1 0.6-2.5 0.2 1.1 2 2.5 0.4 4.3-0.2 1.9 0.2-0.2 2.7-0.4 0.4-3.8 1.7-1 1.8-2.2-0.1-1.1 0.7-5.7 1.9-4.9-0.8-2.9 0.1-4 0.6-4.2-1.2-1.8-0.2-2.8 1.7-4.2 0.5-2-0.2 0.9 1.5-0.9 0.4-3.8-0.5-1 0.5-1.4-0.2-2.7-1.4-2.6-0.1-4.9 1.2-1 1.3-1.3 3.5-1.1 1.2-1.4 0.2-4.5-2.5-1.5 0.5-2.5 0.3-2.7 0.7-3.9 2.4-0.9 1.5-1.3 0.2-1.1-0.9-1.4-0.3-2.3 0.8-0.3-1.3 1-1 2.8-0.7 2.5-1.9 2.2-2.3 4.6-3.8 0.8-3.1 2.7-0.7 1.4-2.5 4.1-0.6 2.8 0 2.8 0.5 2.9-0.1 1.1-0.7 1.9-2.4 3.6-3-4.7 1-3.8 2.3-3.2-0.4-2.3-1.9-2.1-0.8-2.1 0.4-0.7-0.9-2.4-1.7-2.6 0-3.6 1.7-2.6-1.2-0.9-2.3 0.3-1.4 1.1-0.7 2.5-0.6 3.8-1.7 2.2-0.7 2.8-1.9 1.2-2.3-0.3-2 0.5-1.4-0.9-1.7 0.3-1.5-3 0.3-2.7 1.2-0.7-1.1 2.8-1.8 1-1.4 2.6-1.7 3.6-1.3 1.9 0.1 3.7-0.7 2.7 1.3-0.8-2.1 1.2-0.4 0.1-2.4 1.6-2.2-1.2-0.6 0.1-2 1.5-0.8 0.7-2.6-1.7-0.5-2.1 0.6-1.7-1.5-2.8-3.6-0.3-1.4 1.6-3.1 2.3-2-1.9-0.8-1.4 0.2-2.7 1.2-2 1.3-2.1 0-0.8-0.9-1.1 0.1-2.5 1.1-3.5-1.3-1.1 2.3-2.6-2.5-0.3-1.9 1.3 0 1.2-2.4 2.9-4 0.6-1.2-0.5-1.4-1.9-1.5 0.3-2.6 0.8-1 1.5-0.4-1.9-1.2-2.9 0.9-1.8 0.9 0.3-2-0.6-0.4-1.5 1.4 0.1 3.3-2.1 5.7-1.1 0.9-1.4-0.5 1.1-3.9 1.4-2.5-0.6-0.3 0.3-3.6 1-2.9 1.7-3.8 2.2-3.5-4.1 2.7-1 0.5-2.4-0.4-0.8-0.7-1-2.3 1.8-0.2 1.7-1.1-1.5-0.7 1.5-0.9 1.7-2.1 0.4-1.9-1-1.5-1.6-0.6-0.2-0.9 1.7-1.9-0.7-1.5 1.6-3.1 3 0.1 1.9-0.4-2.3-2 0.7-2.9 3.7-0.3-0.8-1.8 0.3-2 1.6-0.9 1.3 0.2 1 0.9 2.6-0.9 0.6 0.8 2.8-0.6 3.7-0.3 4.5-0.6 2.2-0.4 2.3 0.2-0.6 1.7z m-0.6-4l-1.3 0.1-1.3-1.4 1.5-0.3 1.1 1.6z m1.3-3.4l2.7 0.6-0.6 1.4-1.4-0.7-2 0.3-1.9-1 0.4-2.1 1.7-0.1 1.2 0.5-0.1 1.1z m3.7-2.3l-1 0.3-0.4-1.2-1.7-0.6 0.4-0.8 2.7 2.3z m16.1-19.5l1.6 1.8 1 0.5-1.3 3.8-0.2 1.6-1 1.7-0.8-0.4 0.9-2.9-0.5-1.1-1.7 0.3-0.4-0.9 1.6-1.4-0.8-2-1.1-0.2 1.5-1.6 1.2 0.8z m2.9 0.4l-1.4-1.3 1.3-0.6 0.1 1.9z" id="GB" name="United Kingdom">
+ <path class="pm-cc pm-on" d="M389.1 403.1l-1.6 1.3-1.3 0.2-2.5-1.2 0-0.5 2.5-1.1 2 0.6 0.9 0.7z m-36.5-39.7l1.3 0.9-3.4 1.9-1.2-0.6-0.9-1.2-0.1-1.9 1.2-0.5 1.8 0 1.3 1.4z m-23.3-11.4l-2.1 0.4-2.9 0 0.1-1.5-1.4-0.5-1.8-2.7-1.3-0.5-1.9 1.6 0.5 0.9-2.4 1.8-2.9-0.3-0.8-0.7-2.1-0.4-0.2-1-2.7-2 1-1.4 2.9-0.9-1-1.4 0.2-0.8 1.6 0.1 2.2-0.8 1.2-1.6 1-2.3 1.9-0.9 1.3 0.6 1.9-2 2.8-0.1 2.7-0.7 3.9 0.3 1.1 1.1 0.5 1.7 1.3 1.7 1.7 1.4 0 0.9-2 1.1 3.5 0.3 1.2 2.5-2.1 0.3-0.1 1.4 1.1 0.2-0.6 1.4-2.6 0.6-1.4 2.2-1 0.5-2.3-0.5z m13.7-20.2l-2.6-0.5-0.6-2 0.9-1.4 1.8 0.7 0.6 1.3-0.1 1.9z m-11.5-7.1l0.7 3.4-2.4 1.3-0.8-2.4-1.4 1 0.2-1.9 1.5-0.3 2.2-1.1z m1.7 1.7l-1.1-1.2 1.6-2.2 1.7-1-0.1 1.6-2.1 2.8z m2.5-7.8l-4.6 0.8 0.6-3-1.9-0.9 0.3-0.9 2.1-0.5 1.7 1.7 2.1 0.6-0.3 2.2z m-16.2-11.4l-1.5-0.2-0.4-1.4 0.2-2.3 1.6 0.2 0.1 3.7z m12.8-5.7l-0.1 2.8 2.9 0.8 2-0.1 0.4 0.6-3.3 2.7-0.7-0.1-0.2-2.2-1.4 0.3-1.9-0.3-1.2-1.9-2.7-0.5-0.9-1.1 1.4-0.6 0.3-1.2 2.8-0.6 1.5-0.7 0.9 1 0.2 1.1z m-11.9-2.6l1.2 0.9-1.1 1.3-1.5 0-2.2-1 0.2-0.5 3.4-0.7z m11.8-9.9l-1.6 2.6-1 0.7-0.2 1.7-3 1.6-3.2 2.4-1.4-1 2.6-1.7-2.1-1-0.2-2.6 0.8-0.7 1.4 0.7 1.9-0.3-0.7-1.2 6.3-3.2 0.4 2z m34.8-2.2l0 1.2-1.3 1.6-2.2 1.2-4.2 2.8-2.5 1.3-0.5 1.6 1.4 0.1 0.2 0.8-2.2 1.6-0.6 1.5 3-0.4 5.3-1.5 3.6 0.5 2.6-0.3 6.9 0.2 1.9-0.3 2.3 1.3 1 1.7-2.8 3.4-0.8 2.3-2 3.5-1.9 2-2 2.5-2.1 1.1-3.1 0.5 4.5 1.9-1.4 1.8-2.4 0.1-2.3 1.7-2.1 0.7 3.6 1.1 2.4-1 2.7-0.1 5.2 1.9 3.6 3.4 2 1.5 0.5 1.1 2.1 6.9 1.5 3.8 1.6 1.8 4.5 1.6 1.1 0.6 3.4 3.3 3.4 2.4-1.4 1.5 0.4 1.2 2.1 2.9 0.3 1.6-1.3-0.1-2.3-1.4-0.3 0.7 5 3.3 1.6 2 1 2.7-0.6 1.1-3 2.7 2.8 1.4 1.2-0.2 2-2.1 1.7-0.2 4.2 0.3 3.8 1 3.3 2.1 0.7 1.1 0.4 3.1-2.2 5.8-2.8 1.9-0.5 1.7-2.1 0.9-1.7-0.3-2.4 1.2 1.7 0.6 0 1.7-1.1 0.6-2.5 0.2 1.1 2 2.5 0.4 4.3-0.2 1.9 0.2-0.2 2.7-0.4 0.4-3.8 1.7-1 1.8-2.2-0.1-1.1 0.7-5.7 1.9-4.9-0.8-2.9 0.1-4 0.6-4.2-1.2-1.8-0.2-2.8 1.7-4.2 0.5-2-0.2 0.9 1.5-0.9 0.4-3.8-0.5-1 0.5-1.4-0.2-2.7-1.4-2.6-0.1-4.9 1.2-1 1.3-1.3 3.5-1.1 1.2-1.4 0.2-4.5-2.5-1.5 0.5-2.5 0.3-2.7 0.7-3.9 2.4-0.9 1.5-1.3 0.2-1.1-0.9-1.4-0.3-2.3 0.8-0.3-1.3 1-1 2.8-0.7 2.5-1.9 2.2-2.3 4.6-3.8 0.8-3.1 2.7-0.7 1.4-2.5 4.1-0.6 2.8 0 2.8 0.5 2.9-0.1 1.1-0.7 1.9-2.4 3.6-3-4.7 1-3.8 2.3-3.2-0.4-2.3-1.9-2.1-0.8-2.1 0.4-0.7-0.9-2.4-1.7-2.6 0-3.6 1.7-2.6-1.2-0.9-2.3 0.3-1.4 1.1-0.7 2.5-0.6 3.8-1.7 2.2-0.7 2.8-1.9 1.2-2.3-0.3-2 0.5-1.4-0.9-1.7 0.3-1.5-3 0.3-2.7 1.2-0.7-1.1 2.8-1.8 1-1.4 2.6-1.7 3.6-1.3 1.9 0.1 3.7-0.7 2.7 1.3-0.8-2.1 1.2-0.4 0.1-2.4 1.6-2.2-1.2-0.6 0.1-2 1.5-0.8 0.7-2.6-1.7-0.5-2.1 0.6-1.7-1.5-2.8-3.6-0.3-1.4 1.6-3.1 2.3-2-1.9-0.8-1.4 0.2-2.7 1.2-2 1.3-2.1 0-0.8-0.9-1.1 0.1-2.5 1.1-3.5-1.3-1.1 2.3-2.6-2.5-0.3-1.9 1.3 0 1.2-2.4 2.9-4 0.6-1.2-0.5-1.4-1.9-1.5 0.3-2.6 0.8-1 1.5-0.4-1.9-1.2-2.9 0.9-1.8 0.9 0.3-2-0.6-0.4-1.5 1.4 0.1 3.3-2.1 5.7-1.1 0.9-1.4-0.5 1.1-3.9 1.4-2.5-0.6-0.3 0.3-3.6 1-2.9 1.7-3.8 2.2-3.5-4.1 2.7-1 0.5-2.4-0.4-0.8-0.7-1-2.3 1.8-0.2 1.7-1.1-1.5-0.7 1.5-0.9 1.7-2.1 0.4-1.9-1-1.5-1.6-0.6-0.2-0.9 1.7-1.9-0.7-1.5 1.6-3.1 3 0.1 1.9-0.4-2.3-2 0.7-2.9 3.7-0.3-0.8-1.8 0.3-2 1.6-0.9 1.3 0.2 1 0.9 2.6-0.9 0.6 0.8 2.8-0.6 3.7-0.3 4.5-0.6 2.2-0.4 2.3 0.2-0.6 1.7z m-0.6-4l-1.3 0.1-1.3-1.4 1.5-0.3 1.1 1.6z m1.3-3.4l2.7 0.6-0.6 1.4-1.4-0.7-2 0.3-1.9-1 0.4-2.1 1.7-0.1 1.2 0.5-0.1 1.1z m3.7-2.3l-1 0.3-0.4-1.2-1.7-0.6 0.4-0.8 2.7 2.3z m16.1-19.5l1.6 1.8 1 0.5-1.3 3.8-0.2 1.6-1 1.7-0.8-0.4 0.9-2.9-0.5-1.1-1.7 0.3-0.4-0.9 1.6-1.4-0.8-2-1.1-0.2 1.5-1.6 1.2 0.8z m2.9 0.4l-1.4-1.3 1.3-0.6 0.1 1.9z" id="GB" name="Reino Unido">
  </path>
  <path class="pm-cc" d="M972.9 547.7l-2.3 0.5 0.5 0.7-3.5 0.1-1.1 0.2-3.2-0.3-5.3 1.3-4.4 0.3-1.3-1.2-1.9-0.2-1.1-1.7-3.5-2.5-1.2-0.4-0.6-1.1-1.4-0.3-1.4 0.4-0.9 1.9-3.4-0.8-3.6-0.1-1.1 1-4.3-1.3 1.9-3 0.4-1.7-0.4-2.4-1.7-2.7-3.7-8-1.1-1.2-4-1.4-1.1-1.6-3.2-2.1-4.1-0.9-4.8-2.9-2.9-1.7 0.9-2.1 0.8-0.2 4.8 0.9 1.5-0.4 5.9 2.5 3.6 0.7 3.1 1.7 6 0.5 2.8-0.6 1.8 0 2 1.1 2.4-0.2 3.2 1.2 1.5 1.6 3.5 1.4 2.8 0.8 3.2 1.5 0.2 2.4 2.5 0.4 4.3-2.1 2.1-0.7 1.8 0.2 1.9 1.9 0.8-2.2 4.6 1.7 2.1 1.8 2.8-0.1 2.2 1-0.2 4.2 2.9 1.4 1.6 1.2 3.4 0.7 3.1 1.5-1.2 2.1-1.2 0.3 0 1.3 1.1 0.8 0.9 1.5 4.5 2.6 0.9 0.8-0.2 2-1.8 1.4-4.1-2-1.7 0.5-3.2-0.9-1.4-1 0.1-0.7-4-1.4-1.9-0.4-3 2.5z" id="GE" name="Georgia">
  </path>
@@ -736,7 +750,7 @@
  </path>
  <path class="pm-cc pm-on" d="M420.4 584.7l-0.4 1-2-0.4 0-1.5 1.2-1.6 2.7-0.7 0.8 1.3-2.3 1.9z m21.7-13.6l1.2 0.5 1.3-0.5 1.4 0.4 0.2 1-2.2 3.5-0.6 1.4-2.1 1.3-4-1.7-0.3-1.6-1.4-0.7-1.7 1.3-1.4-1-0.3-1.2 5.3-3.7 1.5-0.9 3.2-0.9 0.5 1.2-0.6 1.6z m14.7-0.8l-0.3 0.2-3.9-1.9-1.6-0.4 0.1-1.4 2.6-0.2 2.1 0.7 1.2 1.8-0.2 1.2z m-77.4-55.5l0.5 1.3 4.3 1.3-0.3 3.2 1.8-0.4 4.4 1.7 2.2 0.2 2.2 2.1 3.6-0.4 3.2 2.1 3.1-0.4 0.7 0.4 4.7 0 0.8-2.4 4 1.1 2.5 1 1.7 0.3 1.1 1.5 0 2.1 0.7 0.4 2.8-1.1 2.8 1.2 1.3 1.2 2.1-1.1 4.7 1.2 1.2-0.8 3.8-1.1 3.1 0.6 1.2 2.2-1.8 0.5-0.2 1.4 1.2 1.3 0.1 2.1-3 2.8-8.7 4.7-2.9 2.7-6.6 1.5-4.5 1.5-2.2 0.5-4.1 3.8 1.1 0.3 1.2 1.2-0.4 0.6-2.5 1.1-0.9 0-2.9 4.6-2.6 3.3-1.5 1.5-1.5 2.1-3.2 5.6-0.1 1.6 1.6 5.5 2.2 2.7 2.4 1.1 0.6 1-0.8 1-2.4 1.7-4.3 2.3-1.8 1.9-0.3 1.8-1.3 0.8-0.5 2.5-1.8 4.4 1.3 1.2-1.3 0.8-6.5 0.3-4.1 2.8-2 2.4-1.9 4.5-2.2 2.6-1 0.5-1.5-1.2-1.9-0.1-1.9 0.3-1 1-1.5 0.5-1.5-0.5-4.6-0.2-2.3 0.8-1.9-0.5-3.2-0.3-7 0.6-4 3.4-3.4 0-3.1 1.2-2.1 3-0.5 1.6-1-0.3-0.3 1.2-2.1 0.8-2.4-1-2-1.5-1-0.1-1.6-2.2-1.2-3.1 0-1.1-1.5-0.6-0.3-1.4 0.2-1.6-1.2-2-5-3.7-3.7-0.3-3 0.5-1.1-6.4 0.8-2.2 3.5-4.3 2.1-0.6 0.7-2.4-1.7 0.2-3-4.3 0.9-4 3.2-3 0.6-2.4-0.5-0.8-1.7-0.4-1.6-3.2-0.3-1.9-1.4-1.2-1.1-1.9 1.1-0.3 4.3 0 1-0.5 1.7-3.5 0-1.9-1.4-1.3 0.2-1 2.7-2.1-0.4-1.1 0.4-3.8-0.4-3.5-0.8-2 2-1.6 1.1-1.6 1.6-1.4 2.1-1.1 2.5-2.5-0.3-1.1-1.9-0.9-1.9-0.2-0.1-3.1-0.7-1.1-5.2-0.1-1.5-0.5-0.8 1.4-2.5 0.9-1.4 0-2.2-0.8-2.9 0.1-3 1.1-0.9-1.3 1.3-1.9-1-1.8-4.1 1-1.9 0.9-1.2 1.1-1.3-0.1 0-2.5 2.6-2.6-1.6-0.2 1.2-1.9-1-1 0.1-2.6-2.3 0.9-0.5-1.2 1.4-2.2-1.4-0.2-2.3-2.5 0.8-3.1 2-1 1.9-1.5 2.6 0.3 1.7-0.3 3.6-1.6-0.4-1.5 0.4-0.7 3.2-1.7 2-0.2 1.9-0.9 1.3 0.5 1.1-0.1 1.3 0.6 1.7 1.6 2.5 0.6 2-0.5 3.6-0.1 1.7 0.2 3.2-0.3 1.8 0.1 2.9-0.8 2.3 1 4.4 0.4 2.6 0.8 7.2 1.4 2.7 0 3.7-0.8 1.6-0.5 1.5 0.3 2.1-0.6 2.3 1 4.7 1.3 2.1-1.3 3.4 0.6 3.3 1.3 1.8 0.1 2.6-0.3 2.5-1z" id="ES" name="Spain">
  </path>
- <path class="pm-cc pm-on" d="M521.2 524.1l-0.3 2.3 1 1.7 0.6 6.5-1.8 3.2 0.1 3-1.6 4.3-0.8 1.1-3.8-2-1.2-1.1 1-1.8-2.2-0.9 0.4-1.7-0.2-0.9-1.6-0.5 1-1.3 0-0.8-1.5-1-0.3-0.9 1.3-1.1-0.6-0.9 0.1-1.3 0.9-1.9 1.2-0.9 2.8-0.8 1.2-1.1 1.9 0.6 0.6-1.2-0.2-2.7 0.3-1.1 1.3 0.5 0.4 2.7z m-133.9-47.9l-0.4 1.4-1.9-2.4 1-0.5 1.3 1.5z m84.4-55.6l2.1 1.2 1.4 0 2-0.6 1.3 0.7 1.4 0.1 3.5 4.3 1.8-0.7 1.4 0.4 0.3 0.9 2.1 0.1 3-0.6 2 1.4 4.8 0.8 1.6 0.6 0.1 1.3-3.5 3.8-1.4 5.5-1 1.8-0.3 1.5 0.2 2.4-0.6 2 0 1.5 1.1 1.3-1.5 0.7-0.8 1.4-2.7 0.3-0.8-0.8-1.1 0-1.8 1.4 1.3 1.1-0.6 0.9-3.8 4-2.1 0.9-0.5 2.9-3 2.2-1.1 2.9 0.8 0.7-0.3 1.5-1.5 1 0 1 1.4 0.1 2.3-1.6-0.5-1.3 2.3-1.5 1.9-0.1 2.2 0.3 0.8 2.2-0.5 1.7 2.3 2.3 0.9 1.4-2.6 1.7 0.1 1.6 0.9 0.6 1.7 2.6 1.8 1.6-0.8 2.5-1.2 0.3-1.7 1.3-1.9-0.2-0.8 0.4 1.5 3.1 3.2 1.4 0.5 1.7-0.8 0.7-1.4 2.5 0.7 1.3 0.1 1.4 0.9 0.9 5.1 2.4 3.3-0.6 0.3 2-2.1 2.6 0.2 1.5-0.6 0.3-0.8 0.3-2.4 1.1-3.9 3.4-1.8 1-0.7 1.8-2 1.4-2.4 0.5-2.3 1-1.1-0.4-2.8 0-1.7-1.2-3.4-0.8-1.1-1.8-2.5-0.1-0.8-1.5-1.9 0.3-1.5 0.7-2-0.1-5.9-1.8-1.4-1.4-1.7 0.5-1.6 1.6-6.5 4.1-2.6 4.3-0.1 1.2 0.7 3.9 1.6 2.5-3.1-0.6-3.8 1.1-1.2 0.8-4.7-1.2-2.1 1.1-1.3-1.2-2.8-1.2 0-1.5-2.6-0.6-0.9 0.7-1.1-1.5-1.7-0.3-2.5-1-4-1.1-0.8 2.4-4.7 0-0.7-0.4-3.1 0.4-3.2-2.1-3.6 0.4-2.2-2.1-2.2-0.2-4.4-1.7-1.8 0.4 0.3-3.2-4.3-1.3-0.5-1.3 2-0.5 1.9-1.9 1.7-7.1 1.3-8.3 1-1.6 1.2-0.4-1-1.2-1.1 1.5 0.7-7.6 0.5-2.8 0.9-3 3.1 2.4 0.8 1 0.9 3.4 0.6 0.1-1.1-4.6-1.8-2.3-3.6-2.3-0.5-1.3 1.8-0.6-0.5-1.8-0.5-5.9-3-0.6-4.8-2.6-1.7-2.6-1.6-1.9-0.4-1.7 0.9-1.8-0.8-1.1-1.4-0.8 1.1-1.6-3-0.2-1.8-0.5-0.3-1.1 1.3-1.4-1.6-0.8-2.6 0.2-0.2-1.7-2.2 0.3-1.2-0.3-1.1-1.1-1.3 0.2-2.2-0.4-0.8-0.7-4.8-1.3-2-0.1-1.9 0.6-1.1-0.3-1.3-2.2-3.1-1.1 0.6-0.7 3.1-0.6 0.6-0.7-2.2-0.9-0.2-1.2 1.6 0.3 0.1-1.2-4 0.1-0.4-1.3 0.5-1.4 2.3-1.2 5.8-1.4 2.5 0.2 1.7-0.2 3-1.6 2.9-0.4 2.7 0.8 2.5 2.8 1.2 1 3.1-1.7 4.4 0.1 0.9 0.9 1.2-1.7 1 1 4.7-0.2-1.5-2.5-0.2-6-1.3-1.7-2.1-4.3 0.2-1.4 3.2 0.3 2.7-0.6 1.3 0.4 0.3 2.8 1.1 1.6 2.2 0 2.3 0.5 3 0.1 4.3 0.8 1.8-0.5 3.5-2-1.8-0.7-0.2-0.7 0.9-2.2 5.2-2.5 3.7-0.7 3.8-1.3 2-1.4 1.2-1.8 0.5-1.3 0.3-6.8 1-2.2 2.9-1.6 6.4-1.1 0.9-0.5 0.9 2.2 0 1.2 2.9 2.4 3.2-1 1.6 1.8 0.5 2 4.2 1.1 0.6 2 0.9-0.3 3.6 0.4 1.6 1.1-0.4 1.6 0.7 0.7-0.7 1.4 0.5 0.6 2.3 0.3 2.2-0.3 1.3-0.6 0.5-1.4 1.9-0.6-0.8 2.7 0.6 0.6 0.4 2 1.7 0.1 3.3 1.5 2.8 2.6 3.4-0.4z" id="FR" name="Francia">
+ <path class="pm-cc pm-on" d="M521.2 524.1l-0.3 2.3 1 1.7 0.6 6.5-1.8 3.2 0.1 3-1.6 4.3-0.8 1.1-3.8-2-1.2-1.1 1-1.8-2.2-0.9 0.4-1.7-0.2-0.9-1.6-0.5 1-1.3 0-0.8-1.5-1-0.3-0.9 1.3-1.1-0.6-0.9 0.1-1.3 0.9-1.9 1.2-0.9 2.8-0.8 1.2-1.1 1.9 0.6 0.6-1.2-0.2-2.7 0.3-1.1 1.3 0.5 0.4 2.7z m-133.9-47.9l-0.4 1.4-1.9-2.4 1-0.5 1.3 1.5z m84.4-55.6l2.1 1.2 1.4 0 2-0.6 1.3 0.7 1.4 0.1 3.5 4.3 1.8-0.7 1.4 0.4 0.3 0.9 2.1 0.1 3-0.6 2 1.4 4.8 0.8 1.6 0.6 0.1 1.3-3.5 3.8-1.4 5.5-1 1.8-0.3 1.5 0.2 2.4-0.6 2 0 1.5 1.1 1.3-1.5 0.7-0.8 1.4-2.7 0.3-0.8-0.8-1.1 0-1.8 1.4 1.3 1.1-0.6 0.9-3.8 4-2.1 0.9-0.5 2.9-3 2.2-1.1 2.9 0.8 0.7-0.3 1.5-1.5 1 0 1 1.4 0.1 2.3-1.6-0.5-1.3 2.3-1.5 1.9-0.1 2.2 0.3 0.8 2.2-0.5 1.7 2.3 2.3 0.9 1.4-2.6 1.7 0.1 1.6 0.9 0.6 1.7 2.6 1.8 1.6-0.8 2.5-1.2 0.3-1.7 1.3-1.9-0.2-0.8 0.4 1.5 3.1 3.2 1.4 0.5 1.7-0.8 0.7-1.4 2.5 0.7 1.3 0.1 1.4 0.9 0.9 5.1 2.4 3.3-0.6 0.3 2-2.1 2.6 0.2 1.5-0.6 0.3-0.8 0.3-2.4 1.1-3.9 3.4-1.8 1-0.7 1.8-2 1.4-2.4 0.5-2.3 1-1.1-0.4-2.8 0-1.7-1.2-3.4-0.8-1.1-1.8-2.5-0.1-0.8-1.5-1.9 0.3-1.5 0.7-2-0.1-5.9-1.8-1.4-1.4-1.7 0.5-1.6 1.6-6.5 4.1-2.6 4.3-0.1 1.2 0.7 3.9 1.6 2.5-3.1-0.6-3.8 1.1-1.2 0.8-4.7-1.2-2.1 1.1-1.3-1.2-2.8-1.2 0-1.5-2.6-0.6-0.9 0.7-1.1-1.5-1.7-0.3-2.5-1-4-1.1-0.8 2.4-4.7 0-0.7-0.4-3.1 0.4-3.2-2.1-3.6 0.4-2.2-2.1-2.2-0.2-4.4-1.7-1.8 0.4 0.3-3.2-4.3-1.3-0.5-1.3 2-0.5 1.9-1.9 1.7-7.1 1.3-8.3 1-1.6 1.2-0.4-1-1.2-1.1 1.5 0.7-7.6 0.5-2.8 0.9-3 3.1 2.4 0.8 1 0.9 3.4 0.6 0.1-1.1-4.6-1.8-2.3-3.6-2.3-0.5-1.3 1.8-0.6-0.5-1.8-0.5-5.9-3-0.6-4.8-2.6-1.7-2.6-1.6-1.9-0.4-1.7 0.9-1.8-0.8-1.1-1.4-0.8 1.1-1.6-3-0.2-1.8-0.5-0.3-1.1 1.3-1.4-1.6-0.8-2.6 0.2-0.2-1.7-2.2 0.3-1.2-0.3-1.1-1.1-1.3 0.2-2.2-0.4-0.8-0.7-4.8-1.3-2-0.1-1.9 0.6-1.1-0.3-1.3-2.2-3.1-1.1 0.6-0.7 3.1-0.6 0.6-0.7-2.2-0.9-0.2-1.2 1.6 0.3 0.1-1.2-4 0.1-0.4-1.3 0.5-1.4 2.3-1.2 5.8-1.4 2.5 0.2 1.7-0.2 3-1.6 2.9-0.4 2.7 0.8 2.5 2.8 1.2 1 3.1-1.7 4.4 0.1 0.9 0.9 1.2-1.7 1 1 4.7-0.2-1.5-2.5-0.2-6-1.3-1.7-2.1-4.3 0.2-1.4 3.2 0.3 2.7-0.6 1.3 0.4 0.3 2.8 1.1 1.6 2.2 0 2.3 0.5 3 0.1 4.3 0.8 1.8-0.5 3.5-2-1.8-0.7-0.2-0.7 0.9-2.2 5.2-2.5 3.7-0.7 3.8-1.3 2-1.4 1.2-1.8 0.5-1.3 0.3-6.8 1-2.2 2.9-1.6 6.4-1.1 0.9-0.5 0.9 2.2 0 1.2 2.9 2.4 3.2-1 1.6 1.8 0.5 2 4.2 1.1 0.6 2 0.9-0.3 3.6 0.4 1.6 1.1-0.4 1.6 0.7 0.7-0.7 1.4 0.5 0.6 2.3 0.3 2.2-0.3 1.3-0.6 0.5-1.4 1.9-0.6-0.8 2.7 0.6 0.6 0.4 2 1.7 0.1 3.3 1.5 2.8 2.6 3.4-0.4z" id="FR" name="France">
  </path>
  <path class="pm-cc" d="M843.2 646.3l-0.1 0-0.1 0 0.1-0.1 0.1 0.1z m0 0l0.1 0 0.1 0 0.1 0.1-0.1 0-0.1 0-0.1 0 0-0.1z m-0.4-0.3l-0.1 0 0-0.1 0.1 0 0-0.1 0.1 0.1 0 0.1-0.1 0z m3.5-0.8l0.2 0.1 0.3 0.3 0.2 0.4 0.1 0.3 0.2 0.2 0.2 0.1-0.2 0-0.3 0-0.3-0.1-0.2-0.2-0.2 0-0.7 0.1-0.6 0.1-0.1 0.1-0.1 0.1-0.3 0-0.3 0-0.1-0.1 0.2-0.1 0.1 0-0.1-0.3-0.2 0-0.2-0.1 0-0.4-0.1-0.1-0.3-0.1 0-0.2 0.1-0.1 0.2-0.1 0.1 0.1 0.1 0.1 0.2-0.1 0.1-0.1 0.1-0.1 0.1-0.1 0.2 0.2 0.2 0.1 0.1 0 0.2 0.1 0.1 0 0.3-0.1 0.2 0 0.1 0.1 0.2 0 0.1 0 0.1 0 0-0.1z m-4 1.1l0 0.2-0.3 0.1-0.3 0.3 0 0.2-0.1 0.3 0 0.3 0 0.3 0 0.3 0 0.1-0.1 0-0.1 0.1 0 0.3-0.1 0.1-0.2 0-0.4 0-0.2 0.1-0.1 0.1-0.1 0.2-0.1 0.1-0.2 0.1-0.4 0.1-0.4 0.2-0.3 0.1-0.2-0.3 0.1 0.5-0.4 0.2-0.9 0.2-0.2 0.1-0.1 0.1-0.2 0.1-0.2 0-0.9-0.1-1 0.1-0.1 0.1-0.2 0.1-0.6 0.5-0.1 0.3-0.3 0-0.3 0.1 0 0.1-0.1-0.1-0.1-0.2 0.1-0.2 0.1 0.1 0.3 0-0.1-0.4-0.4-0.1-0.2 0.2-0.1 0.1-0.2-0.1 0 0.1-0.4-0.1-0.3-0.2-0.1-0.1 0-0.2-0.1 0-0.1 0-0.1 0-0.1 0-0.1 0.1 0 0.1-0.2 0-0.1 0.2-0.2 0-0.2 0-0.1 0.1 0.1 0.2-0.2 0.1-0.5 0-0.6-0.1-0.5-0.2-0.7-0.4-0.3-0.1-0.3-0.1-0.5 0-0.3-0.1-0.2-0.2-0.6-0.4-0.1-0.1-0.1-0.4 0-0.1-0.1-0.1-0.4-0.9-0.1-0.1-0.3-0.2-0.2-0.1-0.1-0.1-0.1-0.2 0-0.2 0.1-0.2-0.3-0.4-0.1-0.2 0-0.4-0.1-0.2-0.3-0.5-0.2-0.3-0.1-0.4 0.1-0.3 0.1 0 0.3 0.1 0.4 0.5 0.3 0.1 0.2 0.1 0.6 0 0.4-0.2 0.3-0.4 0.3-0.4 0.1-0.5 0.1-0.3 0.2-0.1 0.1-0.1 0-0.1 0.1 0 0.1 0.1 0.1 0 0.2 0 0.1 0.1 0.2 0.2 0.2 0 0.1 0 0.2-0.2 0.1-0.2 0-0.2 0.4 0.1 0.2 0.4 0.1 0.2 0.1 0.2 0.2 0.1 0.4 0.1 0.3 0.1 0.2 0.2 0.2 0.1 0.1 0.2 0 0.2 0.1 0.1 0.1 0.1 0.1 0 0.4-0.1 0.1-0.2 0.1-0.2 0.1-0.1 0.1 0.1 0.1 0.1 0.2 0.1 0.2 0 0.2-0.1 0.2-0.2 0.2-0.2 0.2-0.1 0.3-0.2 0.1-0.2 0.2 0 0.3 0.1 0.3 0 0.4 0 0.1-0.1 0.1 0 0.1-0.2 0.3-0.2 0.2 0 0.2 0.1 0.1 0.1 0.2 0 0.1 0 0.2 0.2 0.2 0.2 0.2 0.1 0.3 0.1 0.1 0 0.1-0.1 0-0.1 0.1-0.2 0.3-0.3 0.1 0 0.2 0 0.3 0 0.2 0 0.1 0 0 0.2 0.1 0.2 0.1 0.1 0.2 0.2 0.2 0.2 0 0.1 0.1 0.3 0 0.2 0 0.3 0 0.4-0.1 0.3 0.1 0.2 0.1 0.1 0.2 0 0.2 0 0-0.3 0-0.4 0.1-0.1 0.1-0.1 0.1-0.1 0.1 0.1 0.1 0.4 0.1 0.2 0.1 0.1 0.3-0.1 0-0.2 0.1-0.1 0.2 0 0.1 0.1 0.2 0 0.1-0.1 0.1 0.1 0.1 0 0.3 0.2 0.2 0 0.1 0 0.3 0.2z" id="CY" name="Cyprus">
  </path>
@@ -746,7 +760,7 @@
  </circle>
  <circle cx="521" cy="266.6" id="2">
  </circle>
-</g><g class="pm-markers"><text class="pm-lbl" x="372" y="330">UK</text><text class="pm-lbl" x="300" y="362">Irlanda</text><text class="pm-lbl" x="492" y="396">Belgia</text><text class="pm-lbl" x="425" y="480">Francia</text><text class="pm-lbl" x="566" y="447">Austria</text><text class="pm-lbl" x="548" y="522">Italia</text><text class="pm-lbl" x="715" y="470">Rumanía</text><text class="pm-lbl" x="350" y="565">Spania</text><text class="pm-lbl" x="648" y="552">Muntenegru</text><circle class="pm-fdot" cx="414" cy="556" r="4.5"/><text class="pm-flbl" x="414" y="582">VALENCIA</text><text class="pm-fsub" x="414" y="592">Fábrica · España</text><circle class="pm-fdot" cx="695" cy="482" r="4.5"/><text class="pm-flbl" x="695" y="502">CRAIOVA</text><text class="pm-fsub" x="695" y="512">Fabrică · Rumanía</text></g></svg>
+</g><g class="pm-markers"><text class="pm-lbl" x="372" y="330">UK</text><text class="pm-lbl" x="300" y="362">Irlanda</text><text class="pm-lbl" x="492" y="396">Belgio</text><text class="pm-lbl" x="425" y="480">France</text><text class="pm-lbl" x="566" y="447">Austria</text><text class="pm-lbl" x="548" y="522">Italia</text><text class="pm-lbl" x="715" y="470">Romania</text><text class="pm-lbl" x="350" y="565">Espagne</text><text class="pm-lbl" x="648" y="552">Montenegro</text><circle class="pm-fdot" cx="414" cy="556" r="4.5"/><text class="pm-flbl" x="414" y="582">VALENCIA</text><text class="pm-fsub" x="414" y="592">Fábrica · España</text><circle class="pm-fdot" cx="695" cy="482" r="4.5"/><text class="pm-flbl" x="695" y="502">CRAIOVA</text><text class="pm-fsub" x="695" y="512">Fábrica · Rumanía</text></g></svg>
           </div>
           <div class="presence-legend">
             <span class="legend-item"><span class="legend-dot legend-dot--factory"></span> Fábricas</span>
@@ -762,15 +776,15 @@
 
 <div class="sistem-wrap">
   <div class="sistem-watermark" aria-hidden="true">
-    <span class="wm-half wm-top">Sistem</span>
-    <span class="wm-half wm-bottom">Sistem</span>
+    <span class="wm-half wm-top">Sistema</span>
+    <span class="wm-half wm-bottom">Sistema</span>
   </div>
 <section class="sistem-section" id="sistem">
   <div class="container">
     <div class="sistem-stage-wrap reveal">
       <div class="sistem-stage">
         <div class="sistem-intro">
-          <h2>O casa. <em>Trei produse.</em></h2>
+          <h2>Una casa. <em>Tres productos.</em></h2>
         </div>
 
         <div class="sistem-layout">
@@ -778,40 +792,40 @@
 
           <a href="productos/muros-mbk/" class="sistem-card" data-part="murs">
             <div class="sistem-card-img">
-              <img src="images/systeme/systeme-mbk.png" alt="Polistibrick MBK — perete premium" loading="lazy">
+              <img src="images/systeme/systeme-mbk.png" alt="Polistibrick MBK — parete premium" loading="lazy">
             </div>
             <div class="sistem-card-text">
             <span class="bubble-tag">Muros · MBK</span>
-            <h3>Gata <em>5-în-1.</em></h3>
-            <p>3 modelos premium (210/270/300) más producción bajo pedido sin coste adicional. El único ICF con esta garantía.</p>
+            <h3>Acabado <em>5 en 1.</em></h3>
+            <p>3 modelos premium (210/270/300) más producción bajo pedido sin costes adicionales. El único ICF con esta garantía.</p>
             <div class="sistem-card-spec">
-              <strong>U=0,10–0,14</strong> W/m²K · Foc A1 · Antiseismic
+              <strong>U=0,10–0,14</strong> W/m²K · Fuego A1 · Antisísmico
             </div>
             </div>
           </a>
 
           <a href="productos/forjados-pbk/" class="sistem-card" data-part="plancher">
             <div class="sistem-card-img">
-              <img src="images/systeme/systeme-pbk.png" alt="Polistibrick PBK — planșeu premium" loading="lazy">
+              <img src="images/systeme/systeme-pbk.png" alt="Polistibrick PBK — solaio premium" loading="lazy">
             </div>
             <div class="sistem-card-text">
             <span class="bubble-tag">Forjados · PBK</span>
-            <h3>Deschideri <em>hasta 9 m.</em></h3>
-            <p>Sistem prefabricat ușor și ultra-rezistent: poliestireno + fibrociment + hormigón armat. Defazaj termic 10,8 h.</p>
+            <h3>Luci <em>hasta 9 m.</em></h3>
+            <p>Sistema prefabricado ligero y ultra resistente: poliestireno + fibrocemento + hormigón armado. Desfase térmico 10,8 h.</p>
             <div class="sistem-card-spec">
-              <strong>9 m</strong> deschidere · 65 kg/m² · Acustic ≥ 52 dB
+              <strong>9 m</strong> de luz · 65 kg/m² · Acústica ≥ 52 dB
             </div>
             </div>
           </a>
 
           <a href="productos/techo-tbk/" class="sistem-card" data-part="toit">
             <div class="sistem-card-img">
-              <img src="images/systeme/systeme-tbk.png" alt="Polistibrick TBK — tejado Passivhaus" loading="lazy">
+              <img src="images/systeme/systeme-tbk.png" alt="Polistibrick TBK — tetto Passivhaus" loading="lazy">
             </div>
             <div class="sistem-card-text">
             <span class="bubble-tag">Tejado · TBK</span>
             <h3>Passivhaus <em>de fábrica.</em></h3>
-            <p>U=0,13 W/m²K, grosime 25 cm, doar 22 kg/m². Cel mai performant tejado din categoria sa. Fără aislamiento suplimentară.</p>
+            <p>U=0,13 W/m²K, espesor 25 cm, solo 22 kg/m². La cubierta con mejor rendimiento de su categoría. Sin aislamiento adicional.</p>
             <div class="sistem-card-spec">
               <strong>U=0,13</strong> W/m²K · 22 kg/m² · Passivhaus
             </div>
@@ -821,7 +835,7 @@
         </div>
         <div class="sistem-hero reveal" id="sistemHero">
           <div class="sistem-hero-inner">
-            <img class="sh-layer sh-sizer" data-layer="murs" src="images/systeme/systeme-part-murs.png" alt="La La La Casa Polistibrick en vedere explodată: tejado TBK, planșeu PBK, muros MBK" loading="lazy">
+            <img class="sh-layer sh-sizer" data-layer="murs" src="images/systeme/systeme-part-murs.png" alt="Casa Polistibrick en vista esplosa: tetto TBK, solaio PBK, pareti MBK" loading="lazy">
             <img class="sh-layer" data-layer="plancher" src="images/systeme/systeme-part-plancher.png" alt="" aria-hidden="true" loading="lazy">
             <img class="sh-layer" data-layer="toit" src="images/systeme/systeme-part-toit.png" alt="" aria-hidden="true" loading="lazy">
           </div>
@@ -866,16 +880,16 @@
   </video>
   <div class="montaj-scrim" aria-hidden="true"></div>
   <div class="montaj-watermark" aria-hidden="true">
-    <span class="wm-half wm-top">Montaj</span>
-    <span class="wm-half wm-bottom">Montaj</span>
+    <span class="wm-half wm-top">Montaje</span>
+    <span class="wm-half wm-bottom">Montaje</span>
   </div>
   <div class="container">
     <div class="montaj-stage-wrap reveal">
       <div class="montaj-stage">
         <div class="montaj-intro">
-          <span class="bubble-tag">Etapas de montaje</span>
-          <h2>O casa completoooa <em>în 4 etape.</em></h2>
-          <p>De los cimientos hasta encofradoul închis — gata pentru turnarea hormigónului. Întregul proces în câteva semanas, cu doar 2–3 persoane pe șantier.</p>
+          <span class="bubble-tag">Fases de montaje</span>
+          <h2>Una casa completa <em>en 4 pasos.</em></h2>
+          <p>Desde cimentación hasta encofrado cerrado — listo para verter el hormigón. Todo el proceso en pocas semanas, con solo 2–3 personas en obra.</p>
         </div>
 
         <div class="montaj-grid">
@@ -883,53 +897,53 @@
           <article class="montaj-card">
             <div class="montaj-num">01</div>
             <div class="montaj-img">
-              <img src="images/construction/stage1-encofrado.jpg" alt="Encofrado asamblat cu sprijin lateral" loading="lazy">
+              <img src="images/construction/stage1-cofraj.jpg" alt="Encofrado ensamblado con apuntalamiento lateral" loading="lazy">
             </div>
             <div class="montaj-card-body">
               <h3>Encofrado</h3>
-              <p>Muros EPS ridicați și fixați cu sprijin lateral de lemn pe fundație. Fără mortar, fără pierderi de aislamiento.</p>
+              <p>Muros EPS erigidos y fijados con apuntalamiento lateral de madera sobre la cimentación. Sin mortero, sin pérdidas de aislamiento.</p>
             </div>
           </article>
 
           <article class="montaj-card">
             <div class="montaj-num">02</div>
             <div class="montaj-img">
-              <picture><source type="image/webp" srcset="images/construction/stage3-planseu.webp"><img src="images/construction/stage3-planseu.jpg" alt="Forjado PBK montat" loading="lazy" decoding="async" width="800" height="600"></picture>
+              <picture><source type="image/webp" srcset="images/construction/stage3-planseu.webp"><img src="images/construction/stage3-planseu.jpg" alt="Forjadoso PBK montato" loading="lazy" decoding="async" width="800" height="600"></picture>
             </div>
             <div class="montaj-card-body">
-              <h3>Forjado</h3>
-              <p>Panouri PBK 250 montate orizontal — straturi EPS-Grafit + fibrociment gata pentru armătură.</p>
+              <h3>Forjadoso</h3>
+              <p>Paneles PBK 250 montados horizontalmente — capas EPS-Grafito + fibrocemento listos para la armadura.</p>
             </div>
           </article>
 
           <article class="montaj-card">
             <div class="montaj-num">03</div>
             <div class="montaj-img">
-              <img src="images/construction/stage2-fierhormigón.jpg" alt="Armadura oțel-hormigón pe planșeu" loading="lazy">
+              <img src="images/construction/stage2-fierbeton.jpg" alt="Armadura acero-hormigón en el forjado" loading="lazy">
             </div>
             <div class="montaj-card-body">
               <h3>Armadura</h3>
-              <p>Plasele de oțel-hormigón se așază între nervurile EPS-Grafit. Legătură monolitică între muros și planșeu.</p>
+              <p>Las mallas de armadura de acero se colocan entre las nervaduras EPS-Grafito. Conexión monolítica entre muros y forjado.</p>
             </div>
           </article>
 
           <article class="montaj-card">
             <div class="montaj-num">04</div>
             <div class="montaj-img">
-              <picture><source type="image/webp" srcset="images/construction/stage4-final.webp"><img src="images/construction/stage4-final.jpg" alt="Encofrado închis, gata pentru turnarea hormigónului" loading="lazy" decoding="async" width="800" height="600"></picture>
+              <picture><source type="image/webp" srcset="images/construction/stage4-final.webp"><img src="images/construction/stage4-final.jpg" alt="Encofrado cerrado, listo para el vertido de hormigón" loading="lazy" decoding="async" width="800" height="600"></picture>
             </div>
             <div class="montaj-card-body">
               <h3>Cierre del encofrado</h3>
-              <p>Todos los elementos ensamblados y verificados. <strong>Suntem gata pentru turnarea hormigónului.</strong></p>
+              <p>Todos los elementos ensamblados y verificados. <strong>Estamos listos para el vertido de hormigón.</strong></p>
             </div>
           </article>
 
         </div>
 
         <div class="montaj-cta">
-          <p>Tras el vertido del hormigón, la estructura se vuelve <strong>monolitică în 24 de horas</strong> — muros, forjados, tejado, izolate continuu, fără punți termice.</p>
+          <p>Tras el vertido de hormigón, la estructura se vuelve <strong>monolítica en 24 horas</strong> — muros, forjados, cubierta, aislados de forma continua, sin puentes térmicos.</p>
           <div class="montaj-cta-actions">
-            <a href="montaje/" class="btn btn-on-dark-ghost btn-arrow">Vezi tot montajul</a>
+            <a href="montaje/" class="btn btn-on-dark-ghost btn-arrow">Ver todo el montaje</a>
             <a href="presupuesto/" class="btn btn-primary btn-arrow">Pide un presupuesto personalizado</a>
           </div>
         </div>
@@ -946,15 +960,15 @@
 
 <div class="conf-wrap">
   <div class="conf-watermark" aria-hidden="true">
-    <span class="wm-half wm-top">Încredere</span>
-    <span class="wm-half wm-bottom">Încredere</span>
+    <span class="wm-half wm-top">Fiducia</span>
+    <span class="wm-half wm-bottom">Fiducia</span>
   </div>
-<section class="conf-section" aria-label="Recenzii și testimoniale de la constructori">
+<section class="conf-section" aria-label="Reseñas y testimonios de constructores">
   <div class="container conf-inner">
 
     <div class="conf-head reveal">
-      <span class="conf-overline">Recenzii verificate · Constructori</span>
-      <p class="conf-sub">Au construido cu Polistibrick — <em>vorbesc despre asta.</em></p>
+      <span class="conf-overline">Reseñas verificadas · Constructores</span>
+      <p class="conf-sub">Han construido con Polistibrick — <em>hablan de ello.</em></p>
     </div>
 
     <!-- Carrousel d'avis : vidéo OU texte, même grand format -->
@@ -965,19 +979,19 @@
         <div class="conf-feature" data-conf-video="images/hero/hero-houses-reel-desktop.mp4">
           <video poster="images/hero/hero-house-2.jpg" loop muted playsinline preload="none"></video>
           <div class="conf-feature-scrim" aria-hidden="true"></div>
-          <span class="conf-vbadge">Testimonial video</span>
-          <button type="button" class="conf-play" aria-label="Redă videoclipul">
+          <span class="conf-vbadge">Testimonio en vídeo</span>
+          <button type="button" class="conf-play" aria-label="Reproducir el vídeo">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
           </button>
           <div class="conf-fcaption">
-            <div class="conf-stars" aria-label="5 din 5">★★★★★</div>
-            <p class="conf-fquote">L-am testat pe primul șantier și, sincer, <em>e o minune</em>. Peretele se ridică aproape singur — nu ne întoarcem înapoi.</p>
+            <div class="conf-stars" aria-label="5 de 5">★★★★★</div>
+            <p class="conf-fquote">Lo probamos en la primera obra y, sinceramente, <em>es una maravilla</em>. El muro se levanta casi solo — no volvemos atrás.</p>
             <div class="conf-author">
-              <img src="images/personas/persona-constructeur.jpg" alt="">
+              <img src="images/personas/persona-constructor.jpg" alt="">
               <div>
                 <span class="ca-name">Marc Dubois</span>
-                <span class="ca-loc">Firmă generală · Aix-en-Provence</span>
-                <span class="ca-verif">✓ Constructor verificat</span>
+                <span class="ca-loc">Empresa general · Aix-en-Provence</span>
+                <span class="ca-verif">✓ Constructor verificado</span>
               </div>
             </div>
           </div>
@@ -989,19 +1003,19 @@
         <div class="conf-feature" data-conf-video="images/montaje/montage-houses.mp4">
           <video poster="images/montaje/montage-houses-poster.jpg" loop muted playsinline preload="none"></video>
           <div class="conf-feature-scrim" aria-hidden="true"></div>
-          <span class="conf-vbadge">Testimonial video</span>
-          <button type="button" class="conf-play" aria-label="Redă videoclipul">
+          <span class="conf-vbadge">Testimonio en vídeo</span>
+          <button type="button" class="conf-play" aria-label="Reproducir el vídeo">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
           </button>
           <div class="conf-fcaption">
-            <div class="conf-stars" aria-label="5 din 5">★★★★★</div>
-            <p class="conf-fquote">Cu aceeași echipă, construiesc <em>mult mai multe case</em> pe año. Planificarea ține în sfârșit.</p>
+            <div class="conf-stars" aria-label="5 de 5">★★★★★</div>
+            <p class="conf-fquote">Con el mismo equipo, construyo <em>muchas más casas</em> al año. La planificación por fin se cumple.</p>
             <div class="conf-author">
               <img src="images/personas/persona-architecte.jpg" alt="">
               <div>
                 <span class="ca-name">Julien Mercier</span>
-                <span class="ca-loc">Constructor de case · Nantes</span>
-                <span class="ca-verif">✓ Constructor verificat</span>
+                <span class="ca-loc">Constructor di case · Nantes</span>
+                <span class="ca-verif">✓ Constructor verificado</span>
               </div>
             </div>
           </div>
@@ -1013,16 +1027,16 @@
         <div class="conf-feature conf-feature--text">
           <img src="images/hero/hero-house-1.jpg" alt="">
           <div class="conf-feature-scrim" aria-hidden="true"></div>
-          <span class="conf-vbadge">Recenzie verificată</span>
+          <span class="conf-vbadge">Reseña verificada</span>
           <div class="conf-fcaption">
-            <div class="conf-stars" aria-label="5 din 5">★★★★★</div>
-            <p class="conf-fquote">Cea mai mare satisfacție&nbsp;? Finalizez <em>o ofertă în 5 minute</em>. Am doar fierul, hormigónul și encofradoul Polistibrick — sigur și fără erori.</p>
+            <div class="conf-stars" aria-label="5 de 5">★★★★★</div>
+            <p class="conf-fquote">¿Mi mayor satisfacción? Cerrar <em>un presupuesto en 5 minutos</em>. Solo tengo el acero, el hormigón y el encofrado Polistibrick — seguro y sin errores.</p>
             <div class="conf-author">
               <img src="images/personas/persona-promoteur.jpg" alt="">
               <div>
                 <span class="ca-name">Sophie Laurent</span>
-                <span class="ca-loc">Firmă de construcții · Annecy</span>
-                <span class="ca-verif">✓ Constructor verificat</span>
+                <span class="ca-loc">Empresa de construcción · Annecy</span>
+                <span class="ca-verif">✓ Constructor verificado</span>
               </div>
             </div>
           </div>
@@ -1034,16 +1048,16 @@
         <div class="conf-feature conf-feature--text">
           <img src="images/hero/hero-house-3.jpg" alt="">
           <div class="conf-feature-scrim" aria-hidden="true"></div>
-          <span class="conf-vbadge">Recenzie verificată</span>
+          <span class="conf-vbadge">Reseña verificada</span>
           <div class="conf-fcaption">
-            <div class="conf-stars" aria-label="5 din 5">★★★★★</div>
-            <p class="conf-fquote">Confortul caselor impresionează la predare — <em>consum aproape zero</em>. Clienții mei sunt cuceriți.</p>
+            <div class="conf-stars" aria-label="5 de 5">★★★★★</div>
+            <p class="conf-fquote">El confort de las viviendas impresiona en la entrega — <em>consumos casi nulos</em>. Mis clientes quedan convencidos.</p>
             <div class="conf-author">
               <img src="images/personas/persona-proprietaire.jpg" alt="">
               <div>
                 <span class="ca-name">Camille Roy</span>
-                <span class="ca-loc">La La La Casa individuală · Bordeaux</span>
-                <span class="ca-verif">✓ Client verificat</span>
+                <span class="ca-loc">Vivienda unifamiliar · Burdeos</span>
+                <span class="ca-verif">✓ Cliente verificado</span>
               </div>
             </div>
           </div>
@@ -1054,16 +1068,16 @@
 
 
     <div class="conf-actions reveal">
-      <button type="button" class="histoire-review-btn" data-review-trigger>Lasă o recenzie →</button>
-      <a href="testimonios/" class="histoire-link">Vezi toate recenziile →</a>
-      <span class="conf-note">Video sau mesaj + poze · publicat după validare</span>
+      <button type="button" class="histoire-review-btn" data-review-trigger>Deja una reseña →</button>
+      <a href="testimonios/" class="histoire-link">Ver todas las reseñas →</a>
+      <span class="conf-note">Vídeo o mensaje + fotos · publicado tras validación</span>
     </div>
 
   </div>
 
   <!-- Lightbox vidéo -->
   <div class="conf-lightbox" id="confLightbox" aria-hidden="true">
-    <button type="button" class="conf-lightbox-close" aria-label="Închide">✕</button>
+    <button type="button" class="conf-lightbox-close" aria-label="Cerrar">✕</button>
     <video controls playsinline></video>
   </div>
 
@@ -1113,15 +1127,15 @@
     }
     // barre superposée sur chaque vidéo/photo : flèche · points · flèche
     var dotsHTML = '';
-    slides.forEach(function(s, idx){ dotsHTML += '<button type="button" class="conf-dot'+(idx===0?' is-active':'')+'" data-conf-go="'+idx+'" aria-label="Recenzie '+(idx+1)+'"></button>'; });
+    slides.forEach(function(s, idx){ dotsHTML += '<button type="button" class="conf-dot'+(idx===0?' is-active':'')+'" data-conf-go="'+idx+'" aria-label="Reseña '+(idx+1)+'"></button>'; });
     slides.forEach(function(s){
       var feat = s.querySelector('.conf-feature');
       if(!feat) return;
       var nav = document.createElement('div');
       nav.className = 'conf-feature-nav';
-      nav.innerHTML = '<button type="button" class="conf-arrow" data-conf-prev aria-label="Recenzie anterioară">‹</button>'
+      nav.innerHTML = '<button type="button" class="conf-arrow" data-conf-prev aria-label="Reseña anterior">‹</button>'
                     + '<div class="conf-dots">' + dotsHTML + '</div>'
-                    + '<button type="button" class="conf-arrow" data-conf-next aria-label="Recenzie următoare">›</button>';
+                    + '<button type="button" class="conf-arrow" data-conf-next aria-label="Reseña siguiente">›</button>';
       nav.querySelector('[data-conf-prev]').addEventListener('click', function(e){ e.stopPropagation(); show(i-1); });
       nav.querySelector('[data-conf-next]').addEventListener('click', function(e){ e.stopPropagation(); show(i+1); });
       [].slice.call(nav.querySelectorAll('.conf-dot')).forEach(function(d){
@@ -1159,19 +1173,19 @@
 
       <!-- Témoignage 1 -->
       <div class="histoire-slide is-active">
-        <img class="histoire-bg" src="images/hero/hero-house-2.jpg" loading="lazy" alt="La La La Casa construidoă de o firmă cu sistemul Polistibrick">
+        <img class="histoire-bg" src="images/hero/hero-house-2.jpg" loading="lazy" alt="Casa construida por una empresa con el sistema Polistibrick">
         <div class="histoire-scrim" aria-hidden="true"></div>
         <div class="histoire-card">
           <div class="histoire-card-inner">
-            <span class="testimonial-tag">Recenzie verificată</span>
-            <div class="histoire-stars" aria-label="5 din 5">★★★★★ <span class="histoire-date">acum 3 meses</span></div>
-            <p class="histoire-quote">L-am testat pe primul șantier și, sincer, <em>e o minune</em>. Băieții au prins metoda în două días, peretele se ridică aproape singur. Nu ne întoarcem înapoi.</p>
+            <span class="testimonial-tag">Reseña verificada</span>
+            <div class="histoire-stars" aria-label="5 de 5">★★★★★ <span class="histoire-date">hace 3 meses</span></div>
+            <p class="histoire-quote">Lo probamos en la primera obra y, sinceramente, <em>es una maravilla</em>. El equipo cogió el ritmo en dos días, el muro se levanta casi solo. No volvemos atrás.</p>
             <div class="histoire-author">
-              <img src="images/personas/persona-constructeur.jpg" alt="">
+              <img src="images/personas/persona-constructor.jpg" alt="">
               <div>
                 <strong>Marc Dubois</strong>
-                <span class="hp-loc">Firmă generală · Aix-en-Provence</span>
-                <span class="histoire-verified">✓ Constructor verificat</span>
+                <span class="hp-loc">Empresa general · Aix-en-Provence</span>
+                <span class="histoire-verified">✓ Constructor verificado</span>
               </div>
             </div>
           </div>
@@ -1180,19 +1194,19 @@
 
       <!-- Témoignage 2 -->
       <div class="histoire-slide">
-        <img class="histoire-bg" src="images/hero/hero-house-1.jpg" loading="lazy" alt="La La La Casa realizată de un constructor cu sistemul Polistibrick">
+        <img class="histoire-bg" src="images/hero/hero-house-1.jpg" loading="lazy" alt="Casa realizada por un constructor con el sistema Polistibrick">
         <div class="histoire-scrim" aria-hidden="true"></div>
         <div class="histoire-card">
           <div class="histoire-card-inner">
-            <span class="testimonial-tag">Recenzie verificată</span>
-            <div class="histoire-stars" aria-label="5 din 5">★★★★★ <span class="histoire-date">acum 5 meses</span></div>
-            <p class="histoire-quote">Sunt cu adevărat mulțumit că am descoperit acest sistem. Cu aceeași echipă, construiesc astăzi <em>mult mai multe case</em> pe año.</p>
+            <span class="testimonial-tag">Reseña verificada</span>
+            <div class="histoire-stars" aria-label="5 de 5">★★★★★ <span class="histoire-date">hace 5 meses</span></div>
+            <p class="histoire-quote">Estoy muy contento de haber descubierto este sistema. Con el mismo equipo, hoy construyo <em>muchas más casas</em> al año.</p>
             <div class="histoire-author">
               <img src="images/personas/persona-architecte.jpg" alt="">
               <div>
                 <strong>Julien Mercier</strong>
-                <span class="hp-loc">Constructor de case · Nantes</span>
-                <span class="histoire-verified">✓ Constructor verificat</span>
+                <span class="hp-loc">Constructor di case · Nantes</span>
+                <span class="histoire-verified">✓ Constructor verificado</span>
               </div>
             </div>
           </div>
@@ -1201,19 +1215,19 @@
 
       <!-- Témoignage 3 -->
       <div class="histoire-slide">
-        <img class="histoire-bg" src="images/hero/hero-house-3.jpg" loading="lazy" alt="Program de case realizat de o firmă cu sistemul Polistibrick">
+        <img class="histoire-bg" src="images/hero/hero-house-3.jpg" loading="lazy" alt="Programa de casas realizado por una empresa con el sistema Polistibrick">
         <div class="histoire-scrim" aria-hidden="true"></div>
         <div class="histoire-card">
           <div class="histoire-card-inner">
-            <span class="testimonial-tag">Recenzie verificată</span>
-            <div class="histoire-stars" aria-label="5 din 5">★★★★★ <span class="histoire-date">acum 2 meses</span></div>
-            <p class="histoire-quote">Cea mai mare satisfacție&nbsp;? Finalizez <em>o ofertă în 5 minute</em>. Am doar fierul, hormigónul și encofradoul Polistibrick — e sigur și fără erori.</p>
+            <span class="testimonial-tag">Reseña verificada</span>
+            <div class="histoire-stars" aria-label="5 de 5">★★★★★ <span class="histoire-date">hace 2 meses</span></div>
+            <p class="histoire-quote">¿Mi mayor satisfacción? Cerrar <em>un presupuesto en 5 minutos</em>. Solo tengo el acero, el hormigón y el encofrado Polistibrick — es seguro y sin errores.</p>
             <div class="histoire-author">
               <img src="images/personas/persona-promoteur.jpg" alt="">
               <div>
                 <strong>Sophie Laurent</strong>
-                <span class="hp-loc">Firmă de construcții · Annecy</span>
-                <span class="histoire-verified">✓ Constructor verificat</span>
+                <span class="hp-loc">Empresa de construcción · Annecy</span>
+                <span class="histoire-verified">✓ Constructor verificado</span>
               </div>
             </div>
           </div>
@@ -1223,19 +1237,19 @@
     </div>
 
     <div class="histoire-nav">
-      <button type="button" class="histoire-arrow" data-hist-prev aria-label="Testimonial anterior">‹</button>
+      <button type="button" class="histoire-arrow" data-hist-prev aria-label="Testimonio anterior">‹</button>
       <div class="histoire-dots" role="tablist">
-        <button type="button" class="histoire-dot is-active" data-hist-go="0" aria-label="Testimonial 1"></button>
-        <button type="button" class="histoire-dot" data-hist-go="1" aria-label="Testimonial 2"></button>
-        <button type="button" class="histoire-dot" data-hist-go="2" aria-label="Testimonial 3"></button>
+        <button type="button" class="histoire-dot is-active" data-hist-go="0" aria-label="Testimonio 1"></button>
+        <button type="button" class="histoire-dot" data-hist-go="1" aria-label="Testimonio 2"></button>
+        <button type="button" class="histoire-dot" data-hist-go="2" aria-label="Testimonio 3"></button>
       </div>
-      <button type="button" class="histoire-arrow" data-hist-next aria-label="Testimonial următor">›</button>
+      <button type="button" class="histoire-arrow" data-hist-next aria-label="Testimonio siguiente">›</button>
     </div>
 
     <div class="histoire-actions">
-      <button type="button" class="histoire-review-btn" data-review-trigger>Lasă o recenzie →</button>
-      <a href="testimonios/" class="histoire-link">Vezi toate recenziile →</a>
-      <span class="histoire-cta-note">Video sau mesaj + poze · publicat după validare</span>
+      <button type="button" class="histoire-review-btn" data-review-trigger>Deja una reseña →</button>
+      <a href="testimonios/" class="histoire-link">Ver todas las reseñas →</a>
+      <span class="histoire-cta-note">Vídeo o mensaje + fotos · publicado tras validación</span>
     </div>
   </div>
 
@@ -1268,20 +1282,20 @@
 <!-- CTA -->
 <section class="cta-section" id="contact">
   <div class="cta-watermark" aria-hidden="true">
-    <span class="wm-half wm-top">Contactooo</span>
-    <span class="wm-half wm-bottom">Contactooo</span>
+    <span class="wm-half wm-top">Contacto</span>
+    <span class="wm-half wm-bottom">Contacto</span>
   </div>
   <div class="container">
     <div class="cta-box reveal">
       <div class="cta-box-eyebrow">CONSTRUYE CON NOSOTROS</div>
-      <h2>Construim împreună<br><em>tu casa del futuro.</em></h2>
-      <p>Spune-ne despre tu proyecto. Îți pregătim o ofertă personalizată în 48 de horas — fără obligație.</p>
+      <h2>Construimos juntos<br><em>tu casa del futuro.</em></h2>
+      <p>Cuéntanos tu proyecto. Te preparamos un presupuesto personalizado en 48 horas — sin compromiso.</p>
       <ul class="cta-info">
         <li><span class="cti-ic">📍</span> {{company.address_street}}, {{company.address_zip}} {{company.address_city}} · {{company.address_country}}</li>
         <li><span class="cti-ic">🕘</span> {{contact.hours}}</li>
       </ul>
       <div class="cta-actions">
-        <a href="contact/" class="btn btn-on-dark btn-large">✉ E-mail →</a>
+        <a href="contact/" class="btn btn-on-dark btn-large">✉ Email →</a>
         <a href="tel:{{contact.phone_raw}}" class="btn btn-on-dark-ghost btn-large">📞 {{contact.phone_display}}</a>
       </div>
       <div class="cta-social">
@@ -1300,7 +1314,7 @@
       </div>
     </div>
     <div class="cta-image-col">
-      <img class="mobile-product" src="images/robot.webp" alt="Polistibrick — Construcción inteligentă" loading="lazy">
+      <img class="mobile-product" src="images/robot.webp" alt="Polistibrick — Construcción inteligente" loading="lazy">
     </div>
   </div>
 </section>
@@ -1310,15 +1324,15 @@
   <div class="container">
     <!-- Certifications strip — compact row at the top of the footer -->
     <div class="footer-certs">
-      <span class="footer-certs-label">Certificado y reconocido internacionalmente</span>
+      <span class="footer-certs-label">Certificado y reconocido a nivel internacional</span>
       <div class="footer-certs-items">
         <span class="trust-item"><span class="trust-icon">ISO</span>9001</span>
         <span class="trust-item"><span class="trust-icon">ISO</span>14001</span>
         <span class="trust-item"><span class="trust-icon">ISO</span>45001</span>
-        <span class="trust-item"><span class="trust-icon">EP</span>Patenteee european</span>
-        <span class="trust-item"><span class="trust-icon">AT</span>Agrement tehnic</span>
-        <span class="trust-item"><span class="trust-icon">CE</span>Standard european</span>
-        <span class="trust-item"><span class="trust-icon">A+</span>La La La Casa pasiva</span>
+        <span class="trust-item"><span class="trust-icon">EP</span>Patente europeo</span>
+        <span class="trust-item"><span class="trust-icon">AT</span>Approvazione tecnica</span>
+        <span class="trust-item"><span class="trust-icon">CE</span>Standard europeo</span>
+        <span class="trust-item"><span class="trust-icon">A+</span>Casa Passiva</span>
       </div>
     </div>
     <div class="footer-grid">
@@ -1326,10 +1340,10 @@
         <a href="#" class="logo" aria-label="Polistibrick">
           <img src="images/logo.png" alt="Polistibrick" class="logo-img">
         </a>
-        <p class="footer-tagline">Sistemul ICF care construiește case mai performante, mai rapide și mai durabile. Fabricat în UE.</p>
+        <p class="footer-tagline">El sistema ICF patentado para casas pasivas premium, sin facturas energéticas. Fabricado en la UE.</p>
       </div>
       <div class="footer-col">
-        <h4>Sistem</h4>
+        <h4>Sistema</h4>
         <ul>
           <li><a href="productos/muros-mbk/">Muros MBK</a></li>
           <li><a href="productos/forjados-pbk/">Forjados PBK</a></li>
@@ -1338,29 +1352,29 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Companie</h4>
+        <h4>Azienda</h4>
         <ul>
-          <li><a href="sobre-nosotros/">Acerca de</a></li>
+          <li><a href="sobre-nosotros/">Sobre nosotros</a></li>
           <li><a href="proyectos/">Proyectos</a></li>
           <li><a href="sobre-nosotros/certificaciones/">Certificaciones</a></li>
-          <li><a href="sobre-nosotros/fabricas/">Fábricasle noastre</a></li>
-          <li><a href="contact/">Contactooo</a></li>
+          <li><a href="sobre-nosotros/fabricas/">Nuestras fábricas</a></li>
+          <li><a href="contact/">Contacto</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Informații legale</h4>
+        <h4>Aviso legal</h4>
         <ul>
-          <li><a href="legal/aviso-legal/">Mențiuni legale</a></li>
-          <li><a href="legal/privacidad/">Política de privacidad</a></li>
+          <li><a href="legal/aviso-legal/">Aviso legal</a></li>
+          <li><a href="legal/privacidad/">Privacy</a></li>
           <li><a href="legal/condiciones/">Términos y condiciones</a></li>
-          <li><a href="legal/cookies/">Politica de cookies</a></li>
+          <li><a href="legal/cookies/">Cookie</a></li>
           <li><a href="legal/sostenibilidad/">Sostenibilidad</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <div>© 2026 Polistibrick. Todos los derechos reservados.</div>
-      <div>Fabricat cu ⚒ în Europa • ISO 9001 / 14001 / 45001</div>
+      <div>© 2026 Polistibrick. Todos los derechos reservados. Sistema brevettato.</div>
+      <div>Hecho con ⚒ en Europa • ISO 9001 / 14001 / 45001</div>
     </div>
   </div>
 </footer>
@@ -1422,11 +1436,11 @@
       ? { threshold: 0, rootMargin: '0px 0px 120px 0px' }
       : { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    document.querySelectorAll('.reveal:not(.hero-full-content .reveal)').forEach(el => observer.observe(el));
 
     // Plasă de siguranță: dacă ceva rămâne ascuns după 2.5s (edge case), arată-l.
     setTimeout(() => {
-      document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
+      document.querySelectorAll('.reveal:not(.visible):not(.hero-full-content .reveal)').forEach(el => {
         const r = el.getBoundingClientRect();
         if (r.top < window.innerHeight && r.bottom > 0) el.classList.add('visible');
       });
@@ -1457,11 +1471,65 @@
 
   const heroSection = document.querySelector('.hero');
   function onScroll() {
-    // Nav mereu transparent cu fum negru sub text (ca pe hero) — nu se mai albeste
     nav.classList.remove('scrolled');
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
+
+  // === HERO ZURU-style: video gol → scroll → overlay + robot + mesaje ===
+  (function heroScrollReveal() {
+    const track = document.getElementById('heroScrollTrack');
+    const hero = document.getElementById('heroSection');
+    const full = hero ? hero.querySelector('.hero-full-content') : null;
+    if (!track || !hero || !full) return;
+
+    function viewH() {
+      return (window.visualViewport && window.visualViewport.height) || window.innerHeight;
+    }
+
+    function clamp(v, min, max) { return Math.max(min, Math.min(max, v)); }
+
+    function applyProgress(p) {
+      hero.style.setProperty('--hero-progress', p.toFixed(4));
+      hero.classList.toggle('hero-expanded', p >= 0.92);
+      const contentIn = clamp((p - 0.12) / 0.58, 0, 1);
+      full.style.opacity = '1';
+      full.style.transform = 'translateY(' + ((1 - contentIn) * 36) + 'px)';
+      full.style.visibility = contentIn > 0.02 ? 'visible' : 'hidden';
+      full.style.pointerEvents = contentIn > 0.45 ? 'auto' : 'none';
+    }
+
+    function revealAll() {
+      hero.style.setProperty('--hero-progress', '1');
+      hero.classList.add('hero-expanded');
+      full.style.opacity = '1';
+      full.style.transform = 'translateY(0)';
+      full.style.visibility = 'visible';
+      full.style.pointerEvents = 'auto';
+    }
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      revealAll();
+      return;
+    }
+
+    function update() {
+      const trackRect = track.getBoundingClientRect();
+      const trackTop = window.scrollY + trackRect.top;
+      const vh = viewH();
+      const range = Math.max(track.offsetHeight - vh, vh * 0.75);
+      const scrolled = window.scrollY - trackTop;
+      applyProgress(clamp(scrolled / range, 0, 1));
+    }
+
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener('resize', update);
+      window.visualViewport.addEventListener('scroll', update);
+    }
+    update();
+  })();
 
   // === MORPH video: redă doar când e vizibil; static pentru reduced-motion ===
   // === PERSONAS carusel: rotire automata, pauza la hover/offscreen, sageti, puncte, swipe ===
@@ -1622,13 +1690,13 @@
   // Country metadata
   const COUNTRIES = {
     ro: { flag: '🇷🇴', name: 'România', nameNative: 'România', domain: 'polistibrick.ro', folder: 'ro', langs: ['ro'] },
-    fr: { flag: '🇫🇷', name: 'Franța', nameNative: 'Franța', domain: 'polistibrick.fr', folder: 'fr', langs: ['fr'] },
-    it: { flag: '🇮🇹', name: 'Italia', nameNative: 'Italia', domain: 'polistibrick.it', folder: 'it', langs: ['it'] },
-    es: { flag: '🇪🇸', name: 'Spania', nameNative: 'Spania', domain: 'polistibrick.es', folder: 'es', langs: ['es'] },
-    be: { flag: '🇧🇪', name: 'Belgia', nameNative: 'Belgia', domain: 'polistibrick.be', folder: 'nl', langs: ['nl', 'fr'] },
-    ie: { flag: '🇮🇪', name: 'Irlanda', nameNative: 'Irlanda', domain: 'polistibrick.ie', folder: 'ie', langs: ['en'] },
-    gb: { flag: '🇬🇧', name: 'Regatul Unit', nameNative: 'Regatul Unit', domain: 'polistibrick.uk', folder: 'en', langs: ['en'] },
-    ch: { flag: '🇨🇭', name: 'Elveția', nameNative: 'Elveția', domain: 'polistibrick.com', folder: 'de', langs: ['de', 'fr', 'it'] }
+    fr: { flag: '🇫🇷', name: 'France',  nameNative: 'France',  domain: 'polistibrick.fr', folder: 'fr', langs: ['fr'] },
+    it: { flag: '🇮🇹', name: 'Italia',  nameNative: 'Italia',  domain: 'polistibrick.es', folder: 'it', langs: ['it'] },
+    es: { flag: '🇪🇸', name: 'España',  nameNative: 'España',  domain: 'polistibrick.es', folder: 'es', langs: ['es'] },
+    be: { flag: '🇧🇪', name: 'Belgium', nameNative: 'België',  domain: 'polistibrick.be', folder: 'nl', langs: ['nl', 'fr'] },
+    ie: { flag: '🇮🇪', name: 'Ireland', nameNative: 'Ireland', domain: 'polistibrick.ie', folder: 'ie', langs: ['en'] },
+    gb: { flag: '🇬🇧', name: 'UK',      nameNative: 'UK',      domain: 'polistibrick.uk', folder: 'en', langs: ['en'] },
+    ch: { flag: '🇨🇭', name: 'Schweiz', nameNative: 'Schweiz', domain: 'polistibrick.com', folder: 'de', langs: ['de', 'fr', 'it'] }
   };
 
   // Map current country code (RO/GB/IT/etc.) to switcher's data-country attribute
@@ -1740,8 +1808,7 @@
   document.getElementById('bannerCountry').textContent = data.nameNative;
   document.getElementById('bannerDomain').textContent = data.domain;
 
-  // Localize banner text in the site language (not the suggested country)
-  const SITE_LANG = '{{lang}}';
+  // Localize banner text by suggested language
   const TEXTS = {
     ro: { msg: 'Detectăm că ești în', visit: 'Vizitezi', yes: 'Da, mergi', no: 'Rămân aici' },
     fr: { msg: 'Nous avons détecté que vous êtes en', visit: 'Visitez', yes: 'Oui, aller', no: 'Rester ici' },
@@ -1751,7 +1818,7 @@
     de: { msg: 'Wir haben festgestellt, dass Sie in', visit: 'Besuchen', yes: 'Ja, gehen', no: 'Hier bleiben' },
     en: { msg: 'We detected you\'re in', visit: 'Visit', yes: 'Yes, go', no: 'Stay here' }
   };
-  const langKey = (SITE_LANG && SITE_LANG.indexOf('{{') === -1) ? SITE_LANG : 'ro';
+  const langKey = (data.langs && data.langs[0]) || 'en';
   const t = TEXTS[langKey] || TEXTS.en;
   document.getElementById('bannerText').innerHTML =
     `${t.msg} <strong>${data.nameNative}</strong>. ${t.visit} <strong>${data.domain}</strong>?`;
@@ -1783,100 +1850,100 @@
 
 <div class="avis-overlay" id="avisOverlay" role="dialog" aria-modal="true" aria-labelledby="avisTitle">
   <div class="avis-modal" id="avisModal">
-    <button type="button" class="avis-close" id="avisClose" aria-label="Închide">×</button>
+    <button type="button" class="avis-close" id="avisClose" aria-label="Cerrar">×</button>
 
     <form class="avis-form pb-form" id="avisForm" data-pb-form="review" novalidate>
-      <h3 id="avisTitle">Lasă o recenzie</h3>
-      <p class="avis-sub">Împărtășește experiența ta con Polistibrick. Publicat după validare.</p>
+      <h3 id="avisTitle">Deja una reseña</h3>
+      <p class="avis-sub">Comparte tu experiencia con Polistibrick. Publicado tras la validación.</p>
 
       <div class="avis-field">
-        <label>Nota ta</label>
-        <div class="avis-stars" id="avisStars" role="radiogroup" aria-label="Notă">
-          <button type="button" data-v="1" aria-label="1 stea">★</button>
-          <button type="button" data-v="2" aria-label="2 stele">★</button>
-          <button type="button" data-v="3" aria-label="3 stele">★</button>
-          <button type="button" data-v="4" aria-label="4 stele">★</button>
-          <button type="button" data-v="5" aria-label="5 stele">★</button>
+        <label>Su valoración</label>
+        <div class="avis-stars" id="avisStars" role="radiogroup" aria-label="Valoración">
+          <button type="button" data-v="1" aria-label="1 estrella">★</button>
+          <button type="button" data-v="2" aria-label="2 estrellas">★</button>
+          <button type="button" data-v="3" aria-label="3 estrellas">★</button>
+          <button type="button" data-v="4" aria-label="4 estrellas">★</button>
+          <button type="button" data-v="5" aria-label="5 estrellas">★</button>
         </div>
       </div>
 
       <div class="avis-row">
         <div class="avis-field">
-          <label for="avisNom">Nume / Firmă</label>
-          <input type="text" id="avisNom" name="nom" autocompletoooe="name">
+          <label for="avisNom">Nombre / Empresa</label>
+          <input type="text" id="avisNom" name="nom" autocomplete="name">
         </div>
         <div class="avis-field">
-          <label for="avisRole">Ești</label>
+          <label for="avisRole">Usted es</label>
           <select id="avisRole" name="role">
-            <option value="">Alege…</option>
+            <option value="">Elija…</option>
             <option>Constructor</option>
-            <option>Auto-constructor</option>
-            <option>Proprietar</option>
-            <option>Arhitect · Inginer</option>
-            <option>Dezvoltator</option>
+            <option>Autoconstructor</option>
+            <option>Propietario</option>
+            <option>¿Es… Arquitecto · Ingeniero?</option>
+            <option>Promotor</option>
           </select>
         </div>
       </div>
 
       <div class="avis-field">
-        <label for="avisLieu">Localitate (oraș / regiune)</label>
-        <input type="text" id="avisLieu" name="lieu" placeholder="ex. Cluj-Napoca">
+        <label for="avisLieu">Localidad (ciudad / región)</label>
+        <input type="text" id="avisLieu" name="lieu" placeholder="ex. Aix-en-Provence">
       </div>
 
       <div class="avis-field">
-        <label>Tip recenzie</label>
+        <label>Tipo de reseña</label>
         <div class="avis-toggle" id="avisToggle" role="tablist">
-          <button type="button" class="at-opt is-on" data-mode="texte">✍️ Text + poze</button>
+          <button type="button" class="at-opt is-on" data-mode="texte">✍️ Texto + foto</button>
           <button type="button" class="at-opt" data-mode="video">🎥 Video</button>
         </div>
       </div>
 
       <div class="avis-field">
-        <label for="avisMsg"><span id="avisMsgLabel">Recenzia ta</span></label>
-        <textarea id="avisMsg" name="message" placeholder="Descrie proiectul tău și experiența cu Polistibrick…"></textarea>
+        <label for="avisMsg"><span id="avisMsgLabel">Su reseña</span></label>
+        <textarea id="avisMsg" name="message" placeholder="Describa su proyecto y su experiencia…"></textarea>
       </div>
 
       <div class="avis-field" id="avisVideoField" style="display:none">
-        <label>Videoclipul tău testimonial — cel mai convingător ⭐</label>
-        <label class="avis-drop avis-drop--video" for="avisVideo">🎥 Adaugă sau filmează videoclipul testimonial
+        <label>Tu vídeo testimonial — el más convincente ⭐</label>
+        <label class="avis-drop avis-drop--video" for="avisVideo">🎥 Añade o graba tu vídeo testimonial
           <input type="file" id="avisVideo" accept="video/*">
         </label>
         <div class="avis-video-preview" id="avisVideoPreview"></div>
       </div>
 
       <div class="avis-field" id="avisPhotosField">
-        <label>Poze de pe proiect (opțional)</label>
-        <label class="avis-drop" for="avisPhotos">📷 Adaugă poze de pe șantier / casa
+        <label>Fotos del proyecto (opcional)</label>
+        <label class="avis-drop" for="avisPhotos">📷 Añade fotos de la obra / casa
           <input type="file" id="avisPhotos" accept="image/*" multiple>
         </label>
         <div class="avis-thumbs" id="avisThumbs"></div>
       </div>
 
       <div class="avis-field">
-        <label>Logo-ul firmei tale (opțional)</label>
+        <label>Logo de su empresa (opcional)</label>
         <div class="avis-profile-row">
           <img class="avis-profile-pic" id="avisProfilePreview" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23bbb'%3E%3Cpath d='M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0 2c-5 0-9 2.5-9 6v2h18v-2c0-3.5-4-6-9-6Z'/%3E%3C/svg%3E" alt="">
-          <label class="avis-drop" for="avisProfile" style="flex:1">Adaugă logo-ul tău
+          <label class="avis-drop" for="avisProfile" style="flex:1">Añade tu logo
             <input type="file" id="avisProfile" accept="image/*">
           </label>
         </div>
       </div>
 
-      <div class="avis-err" id="avisErr">Completoooează cel puțin: notă, nume și recenzie.</div>
+      <div class="avis-err" id="avisErr">Complete al menos: nota, nombre y reseña.</div>
       <div class="pb-form-consent" style="margin-bottom:10px;">
         <label class="pb-consent-label">
           <input type="checkbox" name="privacy_consent" value="1" required>
-          <span>Accept că datele mele sunt prelucrate conform <a href="legal/privacidad/" target="_blank" rel="noopener">politicii de confidențialitate (GDPR)</a>. *</span>
+          <span>Acepto que mis datos sean tratados conforme a <a href="legal/privacidad/" target="_blank" rel="noopener">política de privacidad (RGPD)</a>. *</span>
         </label>
       </div>
-      <button type="submit" class="avis-submit">Trimite recenzia →</button>
-      <p class="avis-note">🔒 Verificat și publicat de Polistibrick după validare.</p>
+      <button type="submit" class="avis-submit">Enviar mi reseña →</button>
+      <p class="avis-note">🔒 Verificado y publicado por Polistibrick tras la validación.</p>
     </form>
 
     <div class="avis-thanks">
       <div class="at-check">✓</div>
-      <h3>Mulțumim!</h3>
-      <p>Recenzia ta a fost trimisă. Va fi publicată pe site după validare de echipa noastră.</p>
+      <h3>Grazie!</h3>
+      <p>Tu reseña ha sido enviada. Se publicará en el sitio tras la validación de nuestro equipo.</p>
     </div>
   </div>
 </div>
@@ -1918,7 +1985,7 @@
     thumbs.innerHTML = '';
     photos.forEach(function(p, i){
       var d = document.createElement('div'); d.className = 'avis-thumb';
-      d.innerHTML = '<img src="'+p.url+'" alt=""><button type="button" aria-label="Elimină">×</button>';
+      d.innerHTML = '<img src="'+p.url+'" alt=""><button type="button" aria-label="Rimuovi">×</button>';
       d.querySelector('button').addEventListener('click', function(){ photos.splice(i,1); renderThumbs(); });
       thumbs.appendChild(d);
     });
@@ -1944,7 +2011,7 @@
     if(!f || f.type.indexOf('video')!==0){ e.target.value=''; return; }
     videoFile = f;
     vPrev.innerHTML = '<video src="'+URL.createObjectURL(f)+'" controls playsinline></video>'
-      + '<button type="button" class="avis-video-remove">Elimină videoclipul</button>';
+      + '<button type="button" class="avis-video-remove">Rimuovi il video</button>';
     vPrev.classList.add('has');
     vPrev.querySelector('.avis-video-remove').addEventListener('click', function(){
       videoFile = null; vInput.value=''; vPrev.innerHTML=''; vPrev.classList.remove('has');
@@ -1964,32 +2031,30 @@
         videoField.style.display = '';
         photosField.style.display = 'none';
         photos = []; renderThumbs();
-        msgLabel.textContent = 'Recenzia ta (opțional)';
+        msgLabel.textContent = 'Su reseña (opcional)';
       } else {
         videoField.style.display = 'none';
         photosField.style.display = '';
         videoFile = null; vInput.value=''; vPrev.innerHTML=''; vPrev.classList.remove('has');
-        msgLabel.textContent = 'Recenzia ta';
+        msgLabel.textContent = 'Su reseña';
       }
     });
-  });
-
   });
 })();
 </script>
 <script src="assets/js/forms.js" defer></script>
 <script src="assets/js/cookies.js" defer></script>
 
-<!-- Bară contact mobil (Sună + Email) — doar pe mobil -->
+<!-- Barre de contact mobile flottante (Appeler + Email) — mobile uniquement -->
 
-<div class="mobile-contact-bar" aria-label="{{ui.mobile_contact_aria}}">
-  <a href="tel:{{contact.phone_raw}}" class="mcb-btn mcb-call" aria-label="{{ui.mobile_call_aria}}">
+<div class="mobile-contact-bar" aria-label="Contacto rápido">
+  <a href="tel:{{contact.phone_raw}}" class="mcb-btn mcb-call" aria-label="Chiama Polistibrick">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-    <span>{{ui.mobile_call_label}}</span>
+    <span>Chiama</span>
   </a>
-  <a href="mailto:{{contact.email_general}}" class="mcb-btn mcb-email" aria-label="{{ui.mobile_email_aria}}">
+  <a href="mailto:{{contact.email_general}}" class="mcb-btn mcb-email" aria-label="Enviar email">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
-    <span>{{ui.mobile_email_label}}</span>
+    <span>Email</span>
   </a>
 </div>
 
