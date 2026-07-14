@@ -81,11 +81,22 @@ def rewrite_paths(text: str, lang: str) -> str:
     rewrites = PATH_REWRITES.get(lang)
     if not rewrites:
         return text
+    asset_prefixes = ("images/", "assets/", "downloads/")
     for old, new in sorted(rewrites.items(), key=lambda x: -len(x[0])):
         if old == new:
             continue
         # Match in href="..." / src="..." / template literals ${BASE}old/
-        text = re.sub(r'(["\'/$\}])' + re.escape(old) + r'(/)', r'\1' + new + r'\2', text)
+        pattern = re.compile(
+            r'(["\'/$\}])' + re.escape(old) + r'(/)'
+        )
+
+        def _repl(m: re.Match[str]) -> str:
+            window = text[max(0, m.start() - 48) : m.end()]
+            if any(p + old + "/" in window for p in asset_prefixes):
+                return m.group(0)
+            return m.group(1) + new + m.group(2)
+
+        text = pattern.sub(_repl, text)
     return text
 
 
@@ -154,12 +165,12 @@ def optimize_html(text: str) -> str:
     )
     text = re.sub(
         r'(<script\s+src=")([^"]*mercury-perf\.js)(?:\?[^"]*)?(")(\s*defer)?>',
-        r'\1\2?v=10\3 defer>',
+        r'\1\2?v=11\3 defer>',
         text,
     )
     text = re.sub(
         r'(<link rel="stylesheet" href="assets/css/mercury-home\.css)\?v=[^"]*(">)',
-        r'\1?v=3\2',
+        r'\1?v=4\2',
         text,
     )
     text = re.sub(

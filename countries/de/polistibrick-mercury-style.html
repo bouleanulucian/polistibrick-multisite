@@ -874,10 +874,6 @@
     <picture class="media-poster montaj-poster" aria-hidden="true">
     <img src="images/montage/montage-houses-poster.jpg" alt="" loading="lazy" decoding="async">
   </picture>
-  <video class="montaj-bg lazy-video" muted loop playsinline preload="none" data-boot-delay="400"
-         poster="images/montage/montage-houses-poster.jpg">
-    <source data-src="images/montage/montage-houses.mp4" type="video/mp4">
-  </video>
   <div class="montaj-scrim" aria-hidden="true"></div>
   <div class="montaj-watermark" aria-hidden="true">
     <span class="wm-half wm-top">Montage</span>
@@ -1696,11 +1692,12 @@
     be: { flag: '🇧🇪', name: 'Belgium', nameNative: 'België',  domain: 'polistibrick.be', folder: 'nl', langs: ['nl', 'fr'] },
     ie: { flag: '🇮🇪', name: 'Ireland', nameNative: 'Ireland', domain: 'polistibrick.ie', folder: 'ie', langs: ['en'] },
     gb: { flag: '🇬🇧', name: 'UK',      nameNative: 'UK',      domain: 'polistibrick.uk', folder: 'en', langs: ['en'] },
+    me: { flag: '🇲🇪', name: 'Montenegro', nameNative: 'Montenegro', domain: 'polistibrick.me', folder: 'me', langs: ['cnr', 'sr'] },
     ch: { flag: '🇨🇭', name: 'Schweiz', nameNative: 'Schweiz', domain: 'polistibrick.com', folder: 'de', langs: ['de', 'fr', 'it'] }
   };
 
   // Map current country code (RO/GB/IT/etc.) to switcher's data-country attribute
-  const COUNTRY_KEY_MAP = { ro: 'ro', fr: 'fr', it: 'it', es: 'es', be: 'be', ie: 'ie', gb: 'uk', ch: 'ch' };
+  const COUNTRY_KEY_MAP = { ro: 'ro', fr: 'fr', it: 'it', es: 'es', be: 'be', ie: 'ie', gb: 'uk', ch: 'ch', me: 'me' };
 
   // ===== Detect preview mode (github.io subfolder) vs production (real domain) =====
   const isPreview = location.hostname.includes('github.io') || location.hostname === 'localhost' || location.hostname.startsWith('127.');
@@ -1710,7 +1707,7 @@
       // Preview: navigate to sibling subfolder
       const pathParts = location.pathname.split('/').filter(p => p);
       // /polistibrick-multisite/ro/... → keep the repo base, swap country folder
-      const repoBaseIdx = pathParts.findIndex(p => ['ro','fr','it','es','nl','ie','en','de'].includes(p));
+      const repoBaseIdx = pathParts.findIndex(p => ['ro','fr','it','es','nl','ie','en','de','me'].includes(p));
       if (repoBaseIdx >= 0) {
         pathParts[repoBaseIdx] = folder;
         return '/' + pathParts.join('/');
@@ -1779,6 +1776,7 @@
       if (r === 'be') { suggestedKey = 'be'; break; }
       if (r === 'ie') { suggestedKey = 'ie'; break; }
       if (r === 'gb' || r === 'uk') { suggestedKey = 'uk'; break; }
+      if (r === 'me') { suggestedKey = 'me'; break; }
       if (r === 'ch') { suggestedKey = 'ch'; break; }
     }
     // Fall back to language match

@@ -23,7 +23,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        country: ${{ github.event_name == 'workflow_dispatch' && fromJSON(format('["{0}"]', github.event.inputs.country)) || fromJSON('["ro","fr","me"]') }}
+        country: ${{ github.event_name == 'workflow_dispatch' && fromJSON(format('["{0}"]', github.event.inputs.country)) || fromJSON('["ro","fr","me","en","it","es","nl","de","ie"]') }}
     env:
       COUNTRY: ${{ matrix.country }}
     steps:
