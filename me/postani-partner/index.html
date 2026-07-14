@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="cnr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Postanite Polistibrick partner · Certificirani graditelj u 9 evropskim zemljama</title>
+  <meta name="description" content="Postanite Polistibrick partnerski izvođač. Potencijalni klijenti koje vam prosljeđujemo, besplatna obuka, veće marže i regionalna ekskluzivnost. Prijavite se za 5 minuta.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap"></noscript>
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <style>
+    /* === Card cu watermark — pattern de la home Fabrici === */
+    .partner-section {
+      padding: clamp(60px, 8vw, 100px) 0;
+      background: var(--cream);
+    }
+    .partner-stage-wrap {
+      position: relative;
+      margin: 70px auto 0;
+      max-width: 1480px;
+    }
+    .partner-watermark {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 100vw;
+      margin-left: -50vw;
+      pointer-events: none;
+      user-select: none;
+      transform: translateY(-50%);
+      height: 1em;
+      line-height: 1;
+      text-align: center;
+      text-transform: uppercase;
+      font-family: var(--serif);
+      font-size: clamp(64px, 12vw, 200px);
+      font-weight: 500;
+      letter-spacing: -0.06em;
+      z-index: 2;
+    }
+    .partner-watermark .wm-half {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      display: block;
+    }
+    .partner-watermark .wm-top {
+      color: transparent;
+      -webkit-text-stroke: 1.4px rgba(15, 15, 15, 0.30);
+      text-stroke: 1.4px rgba(15, 15, 15, 0.30);
+      clip-path: inset(0 0 50% 0);
+    }
+    .partner-watermark .wm-bottom {
+      color: var(--cream-dark);
+      opacity: 0.65;
+      clip-path: inset(50% 0 0 0);
+    }
+    .partner-stage {
+      position: relative;
+      background: var(--cream-light);
+      border: 1px solid var(--border);
+      border-radius: 32px;
+      padding: 56px;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+    }
+    .partner-content {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 56px;
+      width: 100%;
+      align-items: start;
+    }
+    .partner-text { padding-right: 8px; }
+    .partner-text .bubble-tag {
+      display: inline-block;
+      background: var(--red-soft);
+      color: var(--red);
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .partner-text h2 {
+      font-family: var(--serif);
+      font-size: clamp(28px, 3.2vw, 44px);
+      font-weight: 500;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      margin-bottom: 18px;
+    }
+    .partner-text h2 em {
+      font-style: italic;
+      color: var(--red);
+      font-weight: 400;
+    }
+    .partner-text p {
+      font-size: 15px;
+      color: var(--gray);
+      line-height: 1.65;
+      margin-bottom: 14px;
+    }
+    .partner-text p strong { color: var(--ink); font-weight: 600; }
+    .partner-benefits {
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .partner-benefit {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      font-size: 14.5px;
+      line-height: 1.5;
+      color: var(--ink-soft);
+    }
+    .partner-benefit::before {
+      content: '✓';
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      background: var(--red);
+      color: white;
+      border-radius: 50%;
+      font-size: 12px;
+      font-weight: 700;
+      margin-top: 1px;
+    }
+    .partner-tiers-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 24px;
+      font-size: 13.5px;
+      color: var(--red);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .partner-tiers-link:hover { gap: 10px; transition: gap 0.2s ease; }
+
+    /* Form column */
+    .partner-form {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 36px;
+      box-shadow: var(--shadow-md);
+    }
+    .partner-form h3 {
+      font-family: var(--serif);
+      font-size: 24px;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+    .partner-form > p {
+      font-size: 13px;
+      color: var(--gray);
+      margin-bottom: 24px;
+    }
+
+    @media (max-width: 1100px) {
+      .partner-content { grid-template-columns: 1fr; gap: 32px; }
+      .partner-stage { padding: 36px; min-height: auto; }
+    }
+    @media (max-width: 768px) {
+      .partner-stage { padding: 28px 20px; }
+      .partner-form { padding: 24px; }
+    }
+  </style>
+<link rel="canonical" href="https://polistibrick.me/postani-partner/">
+<meta property="og:url" content="https://polistibrick.me/postani-partner/">
+<link rel="alternate" hreflang="sr-ME" href="https://polistibrick.me/postani-partner/">
+<link rel="alternate" hreflang="x-default" href="https://polistibrick.me/postani-partner/">
+</head>
+<body data-base="../">
+
+<header class="nav" data-include="nav"></header>
+
+<!-- ============ CARDUL PRINCIPAL CU WATERMARK ============ -->
+<section class="partner-section">
+  <div class="container">
+    <div class="partner-stage-wrap reveal">
+      <div class="partner-watermark" aria-hidden="true">
+        <span class="wm-half wm-top">Partner</span>
+        <span class="wm-half wm-bottom">Partner</span>
+      </div>
+
+      <div class="partner-stage">
+        <div class="partner-content">
+
+          <!-- LEFT: text -->
+          <div class="partner-text">
+            <span class="bubble-tag">Za sertifikovane graditelje</span>
+            <h2>Gradite <em>de 10× višee kuće.</em></h2>
+            <p>Direktni klijent gradi kuću. <strong>Partner kompanije Polistibrick gradi 10–50 kuća godišnje.</strong> I to radi brže, sa manjim timom i većom maržom od klasičnog sistema.</p>
+            <p>Prijavite se da postanete sertifikovani partner. Radnim danima 3 kontaktiramo Vas da odredimo datum kursa za sertifikaciju (3 dana, besplatno) i prve posjete fabrike.</p>
+
+            <div class="partner-benefits">
+              <div class="partner-benefit"><span><strong>Lead-uri transmise de mi</strong> — kupci koji stignu na polistibrick.eu se preusmjeravaju na certificirane partnere u regiji</span></div>
+              <div class="partner-benefit"><span><strong>Marje +15–25 %</strong> u odnosu na ciglu zbog brzine izvođenja i smanjenog rada</span></div>
+              <div class="partner-benefit"><span><strong>Besplatna obuka</strong> — kurs od 3 dana + zvanična sertifikacija</span></div>
+              <div class="partner-benefit"><span><strong>Materiale marketing co-brandate</strong> — brošure, prezentacije, digitalni sadržaj</span></div>
+              <div class="partner-benefit"><span><strong>Tehnička podrška na gradilištu</strong> — inženjer kompanije Polistibrick prati vas na prvom projektu</span></div>
+              <div class="partner-benefit"><span><strong>Povlašćene cijene</strong> za sertifikovane partnere + prioritetna isporuka na gradilište</span></div>
+            </div>
+
+            <a href="../za/gradjevinci/" class="partner-tiers-link">Otkrijte sve detalje partnerstva →</a>
+          </div>
+
+          <!-- RIGHT: formular -->
+          <div class="partner-form">
+            <h3>Prijavite se za partnerstvo.</h3>
+            <p>Odgovor u roku od 3 radna dana. Svi podaci ostaju povjerljivi.</p>
+
+            <form id="partnerForm" class="pb-form" data-pb-form="partner">
+
+              <div class="form-row form-row--split">
+                <div>
+                  <label class="form-label" for="pname">Ime contact *</label>
+                  <input class="form-input" type="text" id="pname" name="contact_name" required placeholder="Vaše ime">
+                </div>
+                <div>
+                  <label class="form-label" for="prole">Funkcija u kompaniji *</label>
+                  <select class="form-select" id="prole" name="role" required>
+                    <option value="">Izaberite</option>
+                    <option>Administrator / Director general</option>
+                    <option>Tehnički direktor / Šef gradilišta</option>
+                    <option>Responsabil dezvoltare</option>
+                    <option>Ostalo</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-row form-row--split">
+                <div>
+                  <label class="form-label" for="pcompany">Kompanija *</label>
+                  <input class="form-input" type="text" id="pcompany" name="company" required placeholder="Numele companiei">
+                </div>
+                <div>
+                  <label class="form-label" for="pcui">CUI / Nr. registracija</label>
+                  <input class="form-input" type="text" id="pcui" name="registration" placeholder="nije obavezno, ali ubrzava provjeru">
+                </div>
+              </div>
+
+              <div class="form-row form-row--split">
+                <div>
+                  <label class="form-label" for="pregion">Regija / Zemlja *</label>
+                  <input class="form-input" type="text" id="pregion" name="region" required placeholder="npr. Kluž, RO / Île-de-France, FR">
+                </div>
+                <div>
+                  <label class="form-label" for="pteam">Tim (osobe)</label>
+                  <select class="form-select" id="pteam" name="team_size">
+                    <option value="">Izaberite</option>
+                    <option>1-3</option>
+                    <option>4-10</option>
+                    <option>11-25</option>
+                    <option>26+</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-row form-row--split">
+                <div>
+                  <label class="form-label" for="pyears">Godine iskustva</label>
+                  <select class="form-select" id="pyears" name="experience_years">
+                    <option value="">Izaberite</option>
+                    <option>Manje od 2 godine</option>
+                    <option>2-5 godine</option>
+                    <option>6-10 godine</option>
+                    <option>10+ godine</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="form-label" for="pprojects">Izgrađene kuće/godina</label>
+                  <select class="form-select" id="pprojects" name="houses_per_year">
+                    <option value="">Izaberite</option>
+                    <option>Manje od 5</option>
+                    <option>5-15</option>
+                    <option>16-30</option>
+                    <option>30+</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <label class="form-label">Sistem principal folosit acum</label>
+                <div class="form-radio-group">
+                  <div class="form-radio">
+                    <input type="checkbox" id="sys-brick" name="current_system" value="caramida"><label for="sys-brick">Cigla</label>
+                  </div>
+                  <div class="form-radio">
+                    <input type="checkbox" id="sys-bca" name="current_system" value="beton-celular"><label for="sys-bca">Beton celular</label>
+                  </div>
+                  <div class="form-radio">
+                    <input type="checkbox" id="sys-wood" name="current_system" value="lemn-clt"><label for="sys-wood">Lemn / CLT</label>
+                  </div>
+                  <div class="form-radio">
+                    <input type="checkbox" id="sys-icf" name="current_system" value="alt-icf"><label for="sys-icf">Alt ICF</label>
+                  </div>
+                  <div class="form-radio">
+                    <input type="checkbox" id="sys-other" name="current_system" value="altul"><label for="sys-other">Ostalo</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <label class="form-label" for="pmotivation">Zašto želite da postanete partner?</label>
+                <textarea class="form-textarea" id="pmotivation" name="motivation" placeholder="Ukratko: šta vas je dovelo do Polistibrick-a, koje projekte želite da realizujete..."></textarea>
+              </div>
+
+              <div class="form-row form-row--split">
+                <div>
+                  <label class="form-label" for="pemail">E-mail *</label>
+                  <input class="form-input" type="e-mail" id="pemail" name="e-mail" required placeholder="contact@kompanija.ro">
+                </div>
+                <div>
+                  <label class="form-label" for="pphone">Telefon *</label>
+                  <input class="form-input" type="tel" id="pphone" name="phone" required placeholder="+40 7XX XXX XXX">
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-large btn-arrow" style="width:100%;justify-content:center;margin-top:8px;">Trimite candidatura</button>
+
+              <div class="pb-form-consent">
+                <label class="pb-consent-label">
+                  <input type="checkbox" name="privacy_consent" value="1" required>
+                  <span>Saglasan sam da se moji podaci obrađuju u skladu sa <a href="../legal/privatnost/" target="_blank" rel="noopener">politike privatnosti (GDPR)</a>. *</span>
+                </label>
+              </div>
+
+              <div class="pb-form-thanks" hidden>
+                <h3>Prijava poslata ✓</h3>
+                <p>Hvala! Naš B2B tim kontaktira vas u roku od 48 radnih sati.</p>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT HAPPENS NEXT -->
+<section class="section section--cream">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 50px;">
+      <span class="eyebrow">Koraci nakon prijave</span>
+      <h2>Procesul, <em>pas sa pas.</em></h2>
+    </div>
+    <div class="grid grid-4 reveal" style="gap:32px;">
+      <div>
+        <div style="font-family:var(--serif);font-size:48px;color:var(--red);line-height:1;margin-bottom:14px;">01</div>
+        <h4 style="margin-bottom:8px;">Prijava</h4>
+        <p style="font-size:14px;">Completezi formularul. Svi podaci ostaju povjerljivi i provjereni od strane našeg tima B2B.</p>
+      </div>
+      <div>
+        <div style="font-family:var(--serif);font-size:48px;color:var(--red);line-height:1;margin-bottom:14px;">02</div>
+        <h4 style="margin-bottom:8px;">Kontakt + verificare</h4>
+        <p style="font-size:14px;">Kontaktiraćemo Vas u 3 radnim danima za telefonski poziv od 30 min. Provjeravamo kompaniju i njenu pouzdanost.</p>
+      </div>
+      <div>
+        <div style="font-family:var(--serif);font-size:48px;color:var(--red);line-height:1;margin-bottom:14px;">03</div>
+        <h4 style="margin-bottom:8px;">Formare zaštortifikacija</h4>
+        <p style="font-size:14px;">3 dana u Valencia ili Craiova — teorija + praksa + ispit. Smještaj i obroci uključeni su za međunarodne partnere.</p>
+      </div>
+      <div>
+        <div style="font-family:var(--serif);font-size:48px;color:var(--red);line-height:1;margin-bottom:14px;">04</div>
+        <h4 style="margin-bottom:8px;">Primul projekat</h4>
+        <p style="font-size:14px;">Inženjer kompanije Polistibrick dolazi na gradilište prvog projekta. Dobijate potencijalne klijente i počinjete da ostvarujete provizije.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNER TESTIMONIAL -->
+<section class="section">
+  <div class="container container--narrow">
+    <div class="reveal card" style="padding:48px;text-align:center;background:white;">
+      <p style="font-family:var(--serif);font-size:clamp(22px,2.4vw,30px);line-height:1.35;color:var(--ink);margin-bottom:24px;">
+        <em style="color:var(--red);font-style:normal;">"</em>
+        Nakon isporuke 12 Polistibrick domova, nismo izgubili poziv za ponudu pasivnih kuća. Klijenti plaćaju više, moje marže su veće, a posao se obavlja u 6 sedmicama, a ne 6 mjesecima.
+        <em style="color:var(--red);font-style:normal;">"</em>
+      </p>
+      <div style="font-size:13px;color:var(--gray);">
+        <strong style="color:var(--ink);font-size:14px;display:block;margin-bottom:4px;">Jean-François Roux</strong>
+        Sertifikovani partner · Bâti-Innov SAS · Auvergne-Rhône-Alpes · 12 isporučenih projekata
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="section section--tight">
+  <div class="cta-band reveal">
+    <h2>Širimo se u <em>svih 9 zemalja.</em></h2>
+    <p>Želite da razvijete poslovanje? Želite li biti prvi u svom kraju koji nudi pasivne kuće? Prijavite se odmah.</p>
+    <div class="cta-band-actions">
+      <a href="#" onclick="document.querySelector('.partner-form').scrollIntoView({behavior:'smooth'});return false;" class="btn btn-on-dark btn-large btn-arrow">Prijavite se odmah</a>
+      <a href="../contact/" class="btn btn-on-dark-ghost btn-large">Prvo nam postavite pitanje</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" data-include="footer"></footer>
+<script src="../assets/js/site.js?v=2" defer></script>
+<script src="../assets/js/forms.js" defer></script>
+</body>
+</html>
