@@ -4,7 +4,7 @@
    =========================================================================== */
 (function () {
   const CFG = {
-    accessKey: '{{forms.access_key}}',
+    accessKey: '',
     liveDomain: 'polistibrick.be',
     liveDomainUrl: 'https://polistibrick.be',
     ccEmail: 'info@polistibrick.eu',
@@ -12,10 +12,10 @@
     countryName: 'Belgium',
     fallbackEmail: 'contact@polistibrick.com',
     subjects: {
-      contact: '{{forms.subjects.contact}}',
-      devis: '{{forms.subjects.devis}}',
-      partner: '{{forms.subjects.partner}}',
-      review: '{{forms.subjects.review}}',
+      contact: 'Contact — Polistibrick Belgique',
+      devis: 'Demande de devis — Polistibrick Belgique',
+      partner: 'Candidature partenaire — Polistibrick Belgique',
+      review: 'Nouvel avis client — Polistibrick Belgique',
     },
   };
 

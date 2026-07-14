@@ -4,7 +4,7 @@
    =========================================================================== */
 (function () {
   const CFG = {
-    accessKey: '{{forms.access_key}}',
+    accessKey: '',
     liveDomain: 'polistibrick.es',
     liveDomainUrl: 'https://polistibrick.es',
     ccEmail: 'info@polistibrick.eu',
@@ -12,10 +12,10 @@
     countryName: 'Spain',
     fallbackEmail: 'info@polistibrick.es',
     subjects: {
-      contact: '{{forms.subjects.contact}}',
-      devis: '{{forms.subjects.devis}}',
-      partner: '{{forms.subjects.partner}}',
-      review: '{{forms.subjects.review}}',
+      contact: 'Contacto — Polistibrick España',
+      devis: 'Solicitud de presupuesto — Polistibrick España',
+      partner: 'Candidatura de socio — Polistibrick España',
+      review: 'Nueva reseña de cliente — Polistibrick España',
     },
   };
 

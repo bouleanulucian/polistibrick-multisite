@@ -6,14 +6,14 @@
   var STORAGE_KEY = 'pb_cookie_consent';
 
   var TEXT = {
-    body: '{{ui.cookie_banner_text}}',
-    link: '{{ui.cookie_banner_link}}',
-    and: '{{ui.cookie_banner_and}}',
-    privacy: '{{ui.cookie_banner_privacy_link}}',
-    aria: '{{ui.cookie_banner_aria}}',
-    accept: '{{ui.cookie_accept}}',
-    refuse: '{{ui.cookie_refuse}}',
-    privacySlug: '{{legal.privacy_slug}}',
+    body: 'Nous utilisons des cookies et services tiers (géolocalisation, polices web) pour améliorer le site. Consultez notre',
+    link: 'politique de cookies',
+    and: 'et',
+    privacy: 'politique de confidentialité',
+    aria: 'Consentement cookies',
+    accept: 'Accepter',
+    refuse: 'Refuser',
+    privacySlug: 'confidentialite',
   };
 
   function basePath() {

@@ -47,6 +47,7 @@
             <a href="#" data-country="ie" data-domain="https://polistibrick.ie" data-folder="ie" class="country-switcher-item"><span class="flag">🇮🇪</span><span class="name">Irlanda</span><span class="domain">polistibrick.ie</span></a>
             <a href="#" data-country="uk" data-domain="https://polistibrick.uk" data-folder="en" class="country-switcher-item"><span class="flag">🇬🇧</span><span class="name">Regno Unito</span><span class="domain">polistibrick.uk</span></a>
             <a href="#" data-country="ch" data-domain="https://polistibrick.com" data-folder="de" class="country-switcher-item"><span class="flag">🇨🇭</span><span class="name">Svizzera</span><span class="domain">polistibrick.com</span></a>
+            <a href="#" data-country="me" data-domain="https://polistibrick.me" data-folder="me" class="country-switcher-item"><span class="flag">🇲🇪</span><span class="name">Crna Gora</span><span class="domain">polistibrick.me</span></a>
           </div>
         </div>
         <a href="${BASE}preventivo/" class="btn btn-primary nav-cta-devis">Preventivo gratis</a>
@@ -224,11 +225,11 @@
     const isPreview = location.hostname.includes('github.io') || location.hostname === 'localhost' || location.hostname.startsWith('127.');
     // Find current folder in path (e.g. /polistibrick-multisite/fr/... or /fr/...)
     const pathParts = location.pathname.split('/').filter(p => p);
-    const folders = ['ro','fr','it','es','nl','ie','en','de'];
+    const folders = ['ro','fr','it','es','nl','ie','en','de','me'];
     const currentFolderIdx = pathParts.findIndex(p => folders.includes(p));
     const currentFolder = currentFolderIdx >= 0 ? pathParts[currentFolderIdx] : null;
     // Folder → switcher key map (which item gets .active)
-    const folderToKey = { ro: 'ro', fr: 'fr', it: 'it', es: 'es', nl: 'be', de: 'ch', en: 'uk', ie: 'ie' };
+    const folderToKey = { ro: 'ro', fr: 'fr', it: 'it', es: 'es', nl: 'be', de: 'ch', en: 'uk', ie: 'ie', me: 'me' };
     const currentKey = folderToKey[currentFolder];
 
     function rewriteUrl(folder, fullDomain) {

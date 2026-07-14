@@ -13,7 +13,7 @@
     aria: '{{ui.cookie_banner_aria}}',
     accept: '{{ui.cookie_accept}}',
     refuse: '{{ui.cookie_refuse}}',
-    privacySlug: '{{legal.privacy_slug}}',
+    privacySlug: 'privacidad',
   };
 
   function basePath() {

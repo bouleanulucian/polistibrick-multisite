@@ -14,7 +14,7 @@
     const countryFolders = ['ro', 'fr', 'it', 'es', 'nl', 'ie', 'en', 'de'];
     const countryIdx = parts.findIndex(function (p) { return countryFolders.includes(p); });
 
-    // GitHub Pages preview: /user/repo/ro/devis/ → depth from country folder
+    // GitHub Pages preview: /user/repo/ro/presupuesto/ → depth from country folder
     if (location.hostname.includes('github.io') && countryIdx >= 0) {
       var depth = parts.length - countryIdx - 1;
       return depth <= 0 ? '' : '../'.repeat(depth);
@@ -47,9 +47,10 @@
             <a href="#" data-country="ie" data-domain="https://polistibrick.ie" data-folder="ie" class="country-switcher-item"><span class="flag">🇮🇪</span><span class="name">{{ui.country_ie}}</span><span class="domain">polistibrick.ie</span></a>
             <a href="#" data-country="uk" data-domain="https://polistibrick.uk" data-folder="en" class="country-switcher-item"><span class="flag">🇬🇧</span><span class="name">{{ui.country_uk}}</span><span class="domain">polistibrick.uk</span></a>
             <a href="#" data-country="ch" data-domain="https://polistibrick.com" data-folder="de" class="country-switcher-item"><span class="flag">🇨🇭</span><span class="name">{{ui.country_ch}}</span><span class="domain">polistibrick.com</span></a>
+            <a href="#" data-country="me" data-domain="https://polistibrick.me" data-folder="me" class="country-switcher-item"><span class="flag">🇲🇪</span><span class="name">Crna Gora</span><span class="domain">polistibrick.me</span></a>
           </div>
         </div>
-        <a href="${BASE}devis/" class="btn btn-primary nav-cta-devis">Presupuesto gratis</a>
+        <a href="${BASE}presupuesto/" class="btn btn-primary nav-cta-devis">Presupuesto gratis</a>
         <button class="nav-burger nav-toggle" type="button" aria-label="{{ui.nav_menu_aria}}" aria-expanded="false" aria-controls="navDrawerShared">
           <span></span><span></span><span></span>
         </button>
@@ -61,55 +62,55 @@
       <div class="nav-drawer-group">
         <button class="nav-drawer-title" aria-expanded="false">Productos<span class="nd-caret">▾</span></button>
         <div class="nav-acc">
-          <a href="${BASE}produits/murs-mbk/">Muros MBK</a>
-          <a href="${BASE}produits/planchers-pbk/">Forjados PBK</a>
-          <a href="${BASE}produits/toit-tbk/">Tejado TBK</a>
+          <a href="${BASE}productos/muros-mbk/">Muros MBK</a>
+          <a href="${BASE}productos/forjados-pbk/">Forjados PBK</a>
+          <a href="${BASE}productos/techo-tbk/">Tejado TBK</a>
         </div>
       </div>
       <div class="nav-drawer-group">
         <button class="nav-drawer-title" aria-expanded="false">Soluciones<span class="nd-caret">▾</span></button>
         <div class="nav-acc">
-          <a href="${BASE}pour/proprietaires/">Para propietarios</a>
-          <a href="${BASE}pour/architectes/">Para arquitectos</a>
-          <a href="${BASE}pour/constructeurs/">Para constructores</a>
-          <a href="${BASE}pour/investisseurs/">Para inversores</a>
-          <a href="${BASE}devenir-partenaire/" class="partner-link">→ Hazte socio</a>
+          <a href="${BASE}para/propietarios/">Para propietarios</a>
+          <a href="${BASE}para/arquitectos/">Para arquitectos</a>
+          <a href="${BASE}para/constructores/">Para constructores</a>
+          <a href="${BASE}para/inversores/">Para inversores</a>
+          <a href="${BASE}ser-socio/" class="partner-link">→ Hazte socio</a>
         </div>
       </div>
       <div class="nav-drawer-group">
         <button class="nav-drawer-title" aria-expanded="false">Proyectos<span class="nd-caret">▾</span></button>
         <div class="nav-acc">
-          <a href="${BASE}projets/">Casas construidas</a>
-          <a href="${BASE}temoignages/">Testimonios (vídeo)</a>
+          <a href="${BASE}proyectos/">Casas construidas</a>
+          <a href="${BASE}testimonios/">Testimonios (vídeo)</a>
         </div>
       </div>
       <div class="nav-drawer-group">
         <button class="nav-drawer-title" aria-expanded="false">Calculadora<span class="nd-caret">▾</span></button>
         <div class="nav-acc">
-          <a href="${BASE}calculateur/">Calculadora de costes</a>
-          <a href="${BASE}economies/">Calculadora de ahorros</a>
+          <a href="${BASE}calculadora/">Calculadora de costes</a>
+          <a href="${BASE}ahorros/">Calculadora de ahorros</a>
         </div>
       </div>
       <div class="nav-drawer-group">
         <button class="nav-drawer-title" aria-expanded="false">Recursos<span class="nd-caret">▾</span></button>
         <div class="nav-acc">
-          <a href="${BASE}ressources/blog/">Blog</a>
-          <a href="${BASE}ressources/faq/">Preguntas frecuentes</a>
+          <a href="${BASE}recursos/blog/">Blog</a>
+          <a href="${BASE}recursos/faq/">Preguntas frecuentes</a>
         </div>
       </div>
       <div class="nav-drawer-group">
         <button class="nav-drawer-title" aria-expanded="false">Sobre nosotros<span class="nd-caret">▾</span></button>
         <div class="nav-acc">
-          <a href="${BASE}a-propos/">La empresa</a>
-          <a href="${BASE}a-propos/brevet/">La patente Polistibrick</a>
-          <a href="${BASE}a-propos/certifications/">Certificaciones</a>
-          <a href="${BASE}a-propos/usines/">Nuestras fábricas</a>
-          <a href="${BASE}a-propos/fondateur/">El equipo</a>
+          <a href="${BASE}sobre-nosotros/">La empresa</a>
+          <a href="${BASE}sobre-nosotros/patente/">La patente Polistibrick</a>
+          <a href="${BASE}sobre-nosotros/certificaciones/">Certificaciones</a>
+          <a href="${BASE}sobre-nosotros/fabricas/">Nuestras fábricas</a>
+          <a href="${BASE}sobre-nosotros/fundador/">El equipo</a>
         </div>
       </div>
       <div class="nav-drawer-cta">
         <a href="${BASE}contact/" class="btn btn-ghost">Contacto</a>
-        <a href="${BASE}devis/" class="btn btn-primary">Pedir presupuesto</a>
+        <a href="${BASE}presupuesto/" class="btn btn-primary">Pedir presupuesto</a>
       </div>
     </aside>
   `;
@@ -126,36 +127,36 @@
         <div class="footer-col">
           <h5>Productos</h5>
           <ul>
-            <li><a href="${BASE}produits/murs-mbk/">Muros MBK</a></li>
-            <li><a href="${BASE}produits/planchers-pbk/">Forjados PBK</a></li>
-            <li><a href="${BASE}produits/toit-tbk/">Tejado TBK</a></li>
+            <li><a href="${BASE}productos/muros-mbk/">Muros MBK</a></li>
+            <li><a href="${BASE}productos/forjados-pbk/">Forjados PBK</a></li>
+            <li><a href="${BASE}productos/techo-tbk/">Tejado TBK</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h5>Soluciones</h5>
           <ul>
-            <li><a href="${BASE}pour/proprietaires/">Propietarios</a></li>
-            <li><a href="${BASE}pour/architectes/">Arquitectos</a></li>
-            <li><a href="${BASE}pour/constructeurs/">Constructores</a></li>
-            <li><a href="${BASE}pour/investisseurs/">Inversores</a></li>
+            <li><a href="${BASE}para/propietarios/">Propietarios</a></li>
+            <li><a href="${BASE}para/arquitectos/">Arquitectos</a></li>
+            <li><a href="${BASE}para/constructores/">Constructores</a></li>
+            <li><a href="${BASE}para/inversores/">Inversores</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h5>Recursos</h5>
           <ul>
-            <li><a href="${BASE}projets/">Proyectos realizados</a></li>
-            <li><a href="${BASE}ressources/blog/">Blog</a></li>
-            <li><a href="${BASE}ressources/faq/">Preguntas frecuentes</a></li>
-            <li><a href="${BASE}calculateur/">Calculadora de costes</a></li>
+            <li><a href="${BASE}proyectos/">Proyectos realizados</a></li>
+            <li><a href="${BASE}recursos/blog/">Blog</a></li>
+            <li><a href="${BASE}recursos/faq/">Preguntas frecuentes</a></li>
+            <li><a href="${BASE}calculadora/">Calculadora de costes</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h5>Empresa</h5>
           <ul>
-            <li><a href="${BASE}a-propos/">Sobre nosotros</a></li>
-            <li><a href="${BASE}a-propos/brevet/">La patente Polistibrick</a></li>
-            <li><a href="${BASE}a-propos/certifications/">Certificaciones</a></li>
-            <li><a href="${BASE}a-propos/usines/">Nuestras fábricas</a></li>
+            <li><a href="${BASE}sobre-nosotros/">Sobre nosotros</a></li>
+            <li><a href="${BASE}sobre-nosotros/patente/">La patente Polistibrick</a></li>
+            <li><a href="${BASE}sobre-nosotros/certificaciones/">Certificaciones</a></li>
+            <li><a href="${BASE}sobre-nosotros/fabricas/">Nuestras fábricas</a></li>
             <li><a href="${BASE}contact/">Contacto</a></li>
           </ul>
         </div>
@@ -163,11 +164,11 @@
       <div class="footer-bottom">
         <span>© 2026 Polistibrick. Todos los derechos reservados. Sistema patentado.</span>
         <div class="footer-bottom-links">
-          <a href="${BASE}legal/mentions-legales/">Aviso legal</a>
-          <a href="${BASE}legal/conditions/">Términos</a>
-          <a href="${BASE}legal/confidentialite/">Privacidad</a>
+          <a href="${BASE}legal/aviso-legal/">Aviso legal</a>
+          <a href="${BASE}legal/condiciones/">Términos</a>
+          <a href="${BASE}legal/privacidad/">Privacidad</a>
           <a href="${BASE}legal/cookies/">Cookies</a>
-          <a href="${BASE}legal/durabilite/">Sostenibilidad</a>
+          <a href="${BASE}legal/sostenibilidad/">Sostenibilidad</a>
         </div>
       </div>
     </div>
@@ -224,11 +225,11 @@
     const isPreview = location.hostname.includes('github.io') || location.hostname === 'localhost' || location.hostname.startsWith('127.');
     // Find current folder in path (e.g. /polistibrick-multisite/fr/... or /fr/...)
     const pathParts = location.pathname.split('/').filter(p => p);
-    const folders = ['ro','fr','it','es','nl','ie','en','de'];
+    const folders = ['ro','fr','it','es','nl','ie','en','de','me'];
     const currentFolderIdx = pathParts.findIndex(p => folders.includes(p));
     const currentFolder = currentFolderIdx >= 0 ? pathParts[currentFolderIdx] : null;
     // Folder → switcher key map (which item gets .active)
-    const folderToKey = { ro: 'ro', fr: 'fr', it: 'it', es: 'es', nl: 'be', de: 'ch', en: 'uk', ie: 'ie' };
+    const folderToKey = { ro: 'ro', fr: 'fr', it: 'it', es: 'es', nl: 'be', de: 'ch', en: 'uk', ie: 'ie', me: 'me' };
     const currentKey = folderToKey[currentFolder];
 
     function rewriteUrl(folder, fullDomain) {

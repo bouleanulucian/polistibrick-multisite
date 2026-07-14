@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Villa familiar · Valencia, España · Estudio de caso Polistibrick</title>
+  <meta name="description" content="Caso studio Polistibrick: villa di 280 m² a Valencia costruita con MBK 210 + TBK in 7 semanas. Zero ore di climatizzazione in estate, casa naturalmente fresca.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap"></noscript>
+  <link rel="stylesheet" href="../../assets/css/site.css">
+  <style>
+    /* === Card con watermark === */
+    .wm-section { padding: clamp(60px, 8vw, 100px) 0; background: var(--cream); }
+    .wm-stage-wrap { position: relative; margin: 70px auto 0; max-width: 1480px; }
+    .wm-watermark { position: absolute; top: 0; left: 50%; width: 100vw; margin-left: -50vw; pointer-events: none; user-select: none; transform: translateY(-50%); height: 1em; line-height: 1; text-align: center; text-transform: uppercase; font-family: var(--serif); font-size: clamp(64px, 12vw, 200px); font-weight: 500; letter-spacing: -0.06em; z-index: 2; }
+    .wm-watermark .wm-half { position: absolute; inset: 0; width: 100%; display: block; }
+    .wm-watermark .wm-top { color: transparent; -webkit-text-stroke: 1.4px rgba(15,15,15,0.30); clip-path: inset(0 0 50% 0); }
+    .wm-watermark .wm-bottom { color: var(--cream-dark); opacity: 0.65; clip-path: inset(50% 0 0 0); }
+    .wm-stage { position: relative; background: var(--cream-light); border: 1px solid var(--border); border-radius: 32px; padding: 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    .wm-text { padding-right: 8px; }
+    .wm-text .bubble-tag { display: inline-block; background: var(--red-soft); color: var(--red); padding: 4px 12px; border-radius: 4px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 16px; }
+    .wm-text h1 { font-family: var(--serif); font-size: clamp(30px, 3.6vw, 48px); font-weight: 500; color: var(--ink); letter-spacing: -0.02em; line-height: 1.08; margin-bottom: 18px; }
+    .wm-text h1 em { font-style: italic; color: var(--red); font-weight: 400; }
+    .wm-text p.lead { font-size: 15.5px; color: var(--gray); line-height: 1.65; }
+    .wm-visual { background: white; border: 1px solid var(--border); border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-md); margin-top: 10mm; aspect-ratio: 4/3; }
+    .wm-visual .img-placeholder { width: 100%; height: 100%; aspect-ratio: auto; border-radius: 0; border: none; margin: 0; }
+    @media (max-width: 1100px) {
+      .wm-stage { grid-template-columns: 1fr; gap: 32px; padding: 36px; }
+      .wm-visual { margin-top: 0; aspect-ratio: 16/10; }
+    }
+    @media (max-width: 768px) { .wm-stage { padding: 28px 20px; } }
+    .cs-quote {
+      font-family: var(--serif);
+      font-size: clamp(22px, 2.6vw, 32px);
+      line-height: 1.35;
+      color: var(--ink);
+      padding: 36px 40px;
+      border-left: 4px solid var(--red);
+      background: var(--cream-light);
+      border-radius: 0 20px 20px 0;
+      margin: 0;
+    }
+    .cs-quote::before { content: '"'; color: var(--red); font-size: 1.2em; }
+    .cs-quote::after { content: '"'; color: var(--red); font-size: 1.2em; }
+    .cs-quote-author {
+      display: block;
+      margin-top: 20px;
+      font-family: var(--sans);
+      font-size: 14px;
+      font-style: normal;
+      color: var(--gray);
+    }
+    .cs-quote-author strong { color: var(--ink); display: block; font-size: 15px; }
+    .cs-timeline { list-style: none; padding: 0; position: relative; }
+    .cs-timeline::before {
+      content: '';
+      position: absolute;
+      left: 14px; top: 0; bottom: 0;
+      width: 2px;
+      background: var(--border);
+    }
+    .cs-timeline-item {
+      position: relative;
+      padding-left: 50px;
+      margin-bottom: 28px;
+    }
+    .cs-timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 6px; top: 8px;
+      width: 18px; height: 18px;
+      background: var(--red);
+      border: 4px solid var(--cream);
+      border-radius: 50%;
+      box-shadow: 0 0 0 2px var(--red);
+    }
+    .cs-timeline-week {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 4px;
+    }
+    .cs-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    @media (max-width: 768px) { .cs-gallery { grid-template-columns: 1fr; } }
+    .cs-bill {
+      background: linear-gradient(135deg, #2A2520 0%, #393229 100%);
+      color: var(--cream);
+      padding: 36px;
+      border-radius: 20px;
+      text-align: center;
+    }
+    .cs-bill-num {
+      font-family: var(--serif);
+      font-size: clamp(48px, 7vw, 80px);
+      color: var(--red);
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      margin: 12px 0 6px;
+    }
+    .cs-bill-num small { font-size: 0.35em; color: rgba(255,255,255,0.55); margin-left: 4px; }
+  </style>
+<link rel="canonical" href="https://polistibrick.es/proyectos/villa-valencia/">
+<meta property="og:url" content="https://polistibrick.es/proyectos/villa-valencia/">
+<link rel="alternate" hreflang="es-ES" href="https://polistibrick.es/proyectos/villa-valencia/">
+<link rel="alternate" hreflang="x-default" href="https://polistibrick.es/proyectos/villa-valencia/">
+</head>
+<body data-base="../../">
+
+<header class="nav" data-include="nav"></header>
+
+<!-- HERO con watermark -->
+<section class="wm-section">
+  <div class="container">
+    <div class="wm-stage-wrap reveal">
+      <div class="wm-watermark" aria-hidden="true">
+        <span class="wm-half wm-top">Valencia</span>
+        <span class="wm-half wm-bottom">Valencia</span>
+      </div>
+
+      <div class="wm-stage">
+        <div class="wm-text">
+          <span class="bubble-tag">Villa · España</span>
+          <h1>Villa familiar <em>en Valencia.</em></h1>
+          <p class="lead">A Valencia, l'estate dura 5 mesi con temperature superiori a 35 °C. La climatizzazione funziona ininterrottamente nelle case tradizionali — facturas di oltre 400 €/mese in estate. La famiglia [Nom] ha costruito con Polistibrick MBK 210 (versione per clima temperato-caldo) e TBK 250. Dopo 18 mesi di occupazione, la climatizzazione non è mai stata accesa.</p>
+        </div>
+        <div class="wm-visual" style="padding:0;overflow:hidden;">
+          <img src="../../images/proyectos/projet-valencia.png" alt="Villa Valencia" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KEY FACTS -->
+<section class="section section--tight">
+  <div class="container">
+    <div class="grid grid-4 reveal">
+      <div class="fact"><span class="fact-num">280<small> m²</small></span><span class="fact-label">Superficie construida</span></div>
+      <div class="fact"><span class="fact-num">7<small> sem.</small></span><span class="fact-label">Ejecución Polistibrick</span></div>
+      <div class="fact"><span class="fact-num">0<small> h clim</small></span><span class="fact-label">Climatizzazione in estate</span></div>
+      <div class="fact"><span class="fact-num">−72<small> %</small></span><span class="fact-label">Energia vs vicini</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="section section--cream section--tight">
+  <div class="container container--narrow">
+    <blockquote class="cs-quote reveal">
+      El verano aquí es brutal — a 38 °C fuera, los vecinos pagan 500 € al mes solo por el aire acondicionado. Construimos con Polistibrick y la casa se mantiene naturalmente a 24-25 °C, sin encender nada. Al principio no podíamos creerlo; ahora nos reímos cuando se lo contamos a los vecinos.
+      <span class="cs-quote-author"><strong>[Nombre del propietario]</strong>Propietario · Vive desde mayo de 2023</span>
+    </blockquote>
+  </div>
+</section>
+
+<!-- PROJECT DETAILS -->
+<section class="section">
+  <div class="container">
+    <div class="grid grid-2" style="gap:48px;align-items:start;">
+      <div class="reveal">
+        <span class="eyebrow">Informazioni sul progetto</span>
+        <h2 style="margin-bottom:18px;">De la idea a la mudanza en 4 meses.</h2>
+        <p style="margin-bottom:14px;">La familia compró el terreno en 2022 con la intención de construir una casa para la jubilación. Hanno viaggiato in Europa per visitare case passive in diversi climi. Hanno testato tecnologie ICF in diversi paesi.</p>
+        <p style="margin-bottom:14px;">Hanno scelto Polistibrick per 3 motivi: <strong>(1)</strong> la fabbrica di Valencia permetteva una consegna in 3 giorni; <strong>(2)</strong> il MBK 210 era ottimizzato per un clima temperato-caldo; <strong>(3)</strong> il brevetto europeo offriva la garanzia di un sistema unico, non di un prodotto commodity.</p>
+        <p style="margin-bottom:14px;">La construcción comenzó en marzo de 2023. La carpintería llegó con una semana de retraso, pero el resto siguió el plan. Mudanza: 1 de mayo de 2023.</p>
+        <p>Tras el primer verano (15 mayo - 30 septiembre de 2023), la familia abrió la app del contador eléctrico. Consumo total de electricidad: 290 kWh/mes. Su vecino: 1.840 kWh/mes.</p>
+      </div>
+      <div class="reveal">
+        <div class="card" style="padding:32px;">
+          <h4 style="margin-bottom:18px;">Especificaciones</h4>
+          <div class="spec-table" style="border-radius:10px;">
+            
+            <div class="spec-table-row" style="grid-template-columns:1fr 1fr;"><div class="spec-table-cell spec-table-cell--label">Ubicación</div><div class="spec-table-cell spec-table-cell--value">Valencia, Spagna</div></div>
+            <div class="spec-table-row" style="grid-template-columns:1fr 1fr;"><div class="spec-table-cell spec-table-cell--label">Superficie útil</div><div class="spec-table-cell spec-table-cell--value">280 m²</div></div>
+            <div class="spec-table-row" style="grid-template-columns:1fr 1fr;"><div class="spec-table-cell spec-table-cell--label">Piani</div><div class="spec-table-cell spec-table-cell--value">PT + piscina</div></div>
+            <div class="spec-table-row" style="grid-template-columns:1fr 1fr;"><div class="spec-table-cell spec-table-cell--label">Pareti</div><div class="spec-table-cell spec-table-cell--value">MBK 210</div></div>
+            <div class="spec-table-row" style="grid-template-columns:1fr 1fr;"><div class="spec-table-cell spec-table-cell--label">Tetto</div><div class="spec-table-cell spec-table-cell--value">TBK 250</div></div>
+            <div class="spec-table-row" style="grid-template-columns:1fr 1fr;"><div class="spec-table-cell spec-table-cell--label">Coste total (llave en mano)</div><div class="spec-table-cell spec-table-cell--value">~340 000 €</div></div>
+            <div class="spec-table-row" style="grid-template-columns:1fr 1fr;"><div class="spec-table-cell spec-table-cell--label">Inizio</div><div class="spec-table-cell spec-table-cell--value">Marzo 2023</div></div>
+            <div class="spec-table-row" style="grid-template-columns:1fr 1fr;"><div class="spec-table-cell spec-table-cell--label">Trasloco</div><div class="spec-table-cell spec-table-cell--value">Mayo de 2023</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BILL HIGHLIGHT -->
+<section class="section section--tight">
+  <div class="container container--narrow">
+    <div class="cs-bill reveal">
+      <span class="eyebrow" style="color:rgba(247,244,237,0.6);">Factura real de electricidad + gas</span>
+      <div class="cs-bill-num">52<small> €/mesi</small></div>
+      <p style="color:rgba(247,244,237,0.75);font-size:14px;">Media de electricidad en 18 meses (verano incluido). Casa de 280 m² con 3 personas. Aire acondicionado nunca encendido. Agua caliente de paneles solares.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="section section--cream">
+  <div class="container container--narrow">
+    <div class="reveal">
+      <span class="eyebrow">Cronologia di esecuzione</span>
+      <h2 style="margin-bottom:30px;">Dalla fondazione alla <em>llave en mano.</em></h2>
+      <ol class="cs-timeline">
+        
+        <li class="cs-timeline-item"><span class="cs-timeline-week">Semana 1</span><h4>Cimentación + losa</h4><p style="font-size:14px;color:var(--gray);">Excavación, cimentación. Terreno stabile — nessuna stabilizzazione aggiuntiva necessaria.</p></li>
+        <li class="cs-timeline-item"><span class="cs-timeline-week">Semana 2-3</span><h4>Montaggio cassaforma MBK 210</h4><p style="font-size:14px;color:var(--gray);">Un equipo de 4 personas monta los muros de la planta baja. La casa es más grande — tarda un poco más.</p></li>
+        <li class="cs-timeline-item"><span class="cs-timeline-week">Semana 4</span><h4>Tetto TBK + serramenti</h4><p style="font-size:14px;color:var(--gray);">Cubierta montada en 2 días. Carpintería con vidrio low-e, triple acristalamiento.</p></li>
+        <li class="cs-timeline-item"><span class="cs-timeline-week">Semana 5-7</span><h4>Instalaciones + acabados + piscina</h4><p style="font-size:14px;color:var(--gray);">Sistema de paneles solares. Piscina exterior integrada. Revoco mediterráneo con revestimiento reflectante.</p></li>
+        <li class="cs-timeline-item"><span class="cs-timeline-week">Semana 8</span><h4>Trasloco</h4><p style="font-size:14px;color:var(--gray);">Recepción técnica validada. Prueba de consumo verificada in situ — por debajo de los umbrales Passivhaus.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY (with tabs + lightbox) -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="text-align:center;margin-bottom:30px;">
+      <span class="eyebrow">Galleria fotografica</span>
+      <h2>Come si è svolto <em>paso a paso.</em></h2>
+      <p class="lead" style="margin-top:14px;max-width:620px;margin-left:auto;margin-right:auto;">Las fotos de obra se publicarán pronto.</p>
+    </div>
+
+    <div class="reveal pb-section-hidden" data-gallery>
+      <div class="gallery-tabs">
+        <button class="gallery-tab is-active" data-filter="all">Tutte <span class="gallery-tab-count"></span></button>
+        <button class="gallery-tab" data-filter="construction">En construcción <span class="gallery-tab-count"></span></button>
+        <button class="gallery-tab" data-filter="final">Finalizado por <span class="gallery-tab-count"></span></button>
+      </div>
+
+      <div class="gallery-grid">
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Terreno mediterráneo antes de la construcción.">
+          <div class="gallery-item-placeholder">[Foto: Antes — terreno]</div>
+          <span class="gallery-item-tag">Construcción</span>
+          <div class="gallery-item-caption">Terreno mediterráneo antes de la construcción.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Excavación y cimentación tipo losa.">
+          <div class="gallery-item-placeholder">[Foto: Semana 1 — Cimentación]</div>
+          <span class="gallery-item-tag">Construcción</span>
+          <div class="gallery-item-caption">Excavación y cimentación tipo losa.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Pareti MBK 210 (ottimizzate per clima caldo).">
+          <div class="gallery-item-placeholder">[Foto: Sem. 2 — Pareti PT]</div>
+          <span class="gallery-item-tag">Construcción</span>
+          <div class="gallery-item-caption">Pareti MBK 210 (ottimizzate per clima caldo).</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Detalle del sistema de ensamblaje patentado — puentes térmicos eliminados.">
+          <div class="gallery-item-placeholder">[Foto: Semana 2 — Detalles]</div>
+          <span class="gallery-item-tag">Construcción</span>
+          <div class="gallery-item-caption">Detalle del sistema de ensamblaje patentado — puentes térmicos eliminados.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Tetto TBK 250 montato — un solo strato, prestazioni Passivhaus.">
+          <div class="gallery-item-placeholder">[Foto: Semana 3 — Tejado]</div>
+          <span class="gallery-item-tag">Construcción</span>
+          <div class="gallery-item-caption">Tetto TBK 250 montato — un solo strato, prestazioni Passivhaus.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Preparación hormigonado (cantidad óptima precalculada).">
+          <div class="gallery-item-placeholder">[Foto: Semana 3 — Preparación]</div>
+          <span class="gallery-item-tag">Construcción</span>
+          <div class="gallery-item-caption">Preparación hormigonado (cantidad óptima precalculada).</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Vertido de hormigón en una sola etapa para todos los muros.">
+          <div class="gallery-item-placeholder">[Foto: Semana 4 — Hormigonado]</div>
+          <span class="gallery-item-tag">Construcción</span>
+          <div class="gallery-item-caption">Vertido de hormigón en una sola etapa para todos los muros.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Carpintería con vidrio low-e para filtrado solar.">
+          <div class="gallery-item-placeholder">[Foto: Sem. 4-5 — Serramenti]</div>
+          <span class="gallery-item-tag">Construcción</span>
+          <div class="gallery-item-caption">Carpintería con vidrio low-e para filtrado solar.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Paneles solares instalados en el TBK.">
+          <div class="gallery-item-placeholder">[Foto: Semana 5 — Solar]</div>
+          <span class="gallery-item-tag">Construcción</span>
+          <div class="gallery-item-caption">Paneles solares instalados en el TBK.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Construcción de piscina exterior integrada.">
+          <div class="gallery-item-placeholder">[Foto: Semana 6 — Piscina]</div>
+          <span class="gallery-item-tag">Construcción</span>
+          <div class="gallery-item-caption">Construcción de piscina exterior integrada.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Intonaci esterni riflettenti.">
+          <div class="gallery-item-placeholder">[Foto: Semanas 6-7 — Fachada]</div>
+          <span class="gallery-item-tag">Construcción</span>
+          <div class="gallery-item-caption">Intonaci esterni riflettenti.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="construction" data-caption="Acabados interiores — piedra natural.">
+          <div class="gallery-item-placeholder">[Foto: Sem. 7 — Interno]</div>
+          <span class="gallery-item-tag">Construcción</span>
+          <div class="gallery-item-caption">Acabados interiores — piedra natural.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="final" data-caption="Vista exterior con piscina.">
+          <div class="gallery-item-placeholder">[Foto: Exterior + piscina]</div>
+          <span class="gallery-item-tag">Finalizado por</span>
+          <div class="gallery-item-caption">Vista exterior con piscina.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="final" data-caption="Fachada mediterránea con balcón.">
+          <div class="gallery-item-placeholder">[Foto: Fachada]</div>
+          <span class="gallery-item-tag">Finalizado por</span>
+          <div class="gallery-item-caption">Fachada mediterránea con balcón.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="final" data-caption="Soggiorno open-space con grande vista.">
+          <div class="gallery-item-placeholder">[Foto: Soggiorno]</div>
+          <span class="gallery-item-tag">Finalizado por</span>
+          <div class="gallery-item-caption">Soggiorno open-space con grande vista.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="final" data-caption="Cocina integrada mediterránea.">
+          <div class="gallery-item-placeholder">[Foto: Cocina]</div>
+          <span class="gallery-item-tag">Finalizado por</span>
+          <div class="gallery-item-caption">Cocina integrada mediterránea.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="final" data-caption="Dormitorio matrimonial con balcón.">
+          <div class="gallery-item-placeholder">[Foto: Camera]</div>
+          <span class="gallery-item-tag">Finalizado por</span>
+          <div class="gallery-item-caption">Dormitorio matrimonial con balcón.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="final" data-caption="Baño con acabados naturales.">
+          <div class="gallery-item-placeholder">[Foto: Bagno]</div>
+          <span class="gallery-item-tag">Finalizado por</span>
+          <div class="gallery-item-caption">Baño con acabados naturales.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="final" data-caption="Terrazza superiore per cene all'aperto.">
+          <div class="gallery-item-placeholder">[Foto: Terraza]</div>
+          <span class="gallery-item-tag">Finalizado por</span>
+          <div class="gallery-item-caption">Terrazza superiore per cene all'aperto.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="final" data-caption="La casa in estate — climatizzazione mai accesa.">
+          <div class="gallery-item-placeholder">[Foto: Estate senza clim]</div>
+          <span class="gallery-item-tag">Finalizado por</span>
+          <div class="gallery-item-caption">La casa in estate — climatizzazione mai accesa.</div>
+        </a>
+        <a href="#" class="gallery-item" data-category="final" data-caption="Factura de electricidad verano 2024: 58 €/mes.">
+          <div class="gallery-item-placeholder">[Foto: Factura verano]</div>
+          <span class="gallery-item-tag">Finalizado por</span>
+          <div class="gallery-item-caption">Factura de electricidad verano 2024: 58 €/mes.</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX (at body level, click any gallery item to open) -->
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Galleria fotografica">
+  <span class="lightbox-counter">1 / 1</span>
+  <button class="lightbox-close" aria-label="Chiudi">×</button>
+  <button class="lightbox-prev" aria-label="Immagine precedente">‹</button>
+  <button class="lightbox-next" aria-label="Immagine successiva">›</button>
+  <img class="lightbox-img" src="" alt="">
+  <div class="lightbox-caption"></div>
+</div>
+
+<!-- CTA -->
+<section class="section section--tight">
+  <div class="cta-band reveal">
+    <h2>¿Tú también quieres <em>una casa como esta?</em></h2>
+    <p>Pide un presupuesto personalizado — calculamos exactamente para tu proyecto, según tus planos.</p>
+    <div class="cta-band-actions">
+      <a href="../../presupuesto/" class="btn btn-on-dark btn-large btn-arrow">Pide un presupuesto personalizado</a>
+      <a href="../../calculadora/" class="btn btn-on-dark-ghost btn-large">Calculadora di costo</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" data-include="footer"></footer>
+<script src="../../assets/js/site.js?v=2" defer></script>
+</body>
+</html>

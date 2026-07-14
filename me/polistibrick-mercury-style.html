@@ -128,6 +128,10 @@
           <a href="#" data-country="ch" data-domain="https://polistibrick.com" data-folder="de" class="country-switcher-item">
             <span class="flag">🇨🇭</span><span class="name">Švicarska</span><span class="domain">polistibrick.com</span>
           </a>
+          <a href="#" data-country="me" data-domain="https://polistibrick.me" data-folder="me" class="country-switcher-item">
+            <span class="flag">🇲🇪</span><span class="name">Crna Gora</span><span class="domain">polistibrick.me</span>
+          </a>
+
         </div>
       </div>
       <!-- /COUNTRY SELECTOR -->
@@ -1695,11 +1699,12 @@
     be: { flag: '🇧🇪', name: 'Belgija', nameNative: 'Belgija', domain: 'polistibrick.be', folder: 'nl', langs: ['nl', 'fr'] },
     ie: { flag: '🇮🇪', name: 'Irska', nameNative: 'Irska', domain: 'polistibrick.ie', folder: 'ie', langs: ['en'] },
     gb: { flag: '🇬🇧', name: 'Ujedinjeno Kraljevstvo', nameNative: 'Ujedinjeno Kraljevstvo', domain: 'polistibrick.uk', folder: 'en', langs: ['en'] },
+    me: { flag: '🇲🇪', name: 'Crna Gora', nameNative: 'Crna Gora', domain: 'polistibrick.me', folder: 'me', langs: ['cnr', 'sr'] },
     ch: { flag: '🇨🇭', name: 'Švicarska', nameNative: 'Švicarska', domain: 'polistibrick.com', folder: 'de', langs: ['de', 'fr', 'it'] }
   };
 
   // Map current country code (RO/GB/IT/etc.) to switcher's data-country attribute
-  const COUNTRY_KEY_MAP = { ro: 'ro', fr: 'fr', it: 'it', es: 'es', be: 'be', ie: 'ie', gb: 'uk', ch: 'ch' };
+  const COUNTRY_KEY_MAP = { ro: 'ro', fr: 'fr', it: 'it', es: 'es', be: 'be', ie: 'ie', gb: 'uk', ch: 'ch', me: 'me' };
 
   // ===== Detect preview mode (github.io subfolder) vs production (real domain) =====
   const isPreview = location.hostname.includes('github.io') || location.hostname === 'localhost' || location.hostname.startsWith('127.');
@@ -1709,7 +1714,7 @@
       // Preview: navigate to sibling subfolder
       const pathParts = location.pathname.split('/').filter(p => p);
       // /polistibrick-multisite/ro/... → keep the repo base, swap country folder
-      const repoBaseIdx = pathParts.findIndex(p => ['ro','fr','it','es','nl','ie','en','de'].includes(p));
+      const repoBaseIdx = pathParts.findIndex(p => ['ro','fr','it','es','nl','ie','en','de','me'].includes(p));
       if (repoBaseIdx >= 0) {
         pathParts[repoBaseIdx] = folder;
         return '/' + pathParts.join('/');
@@ -1778,6 +1783,7 @@
       if (r === 'be') { suggestedKey = 'be'; break; }
       if (r === 'ie') { suggestedKey = 'ie'; break; }
       if (r === 'gb' || r === 'uk') { suggestedKey = 'uk'; break; }
+      if (r === 'me') { suggestedKey = 'me'; break; }
       if (r === 'ch') { suggestedKey = 'ch'; break; }
     }
     // Fall back to language match

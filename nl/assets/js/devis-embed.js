@@ -1,5 +1,18 @@
-/* Polistibrick — încarcă aplicația de devis/ofertă în iframe (RO + FR) */
+/* Polistibrick — încarcă aplicația de devis/ofertă în iframe (multi-țară) */
 (function () {
+  var UNAVAILABLE = {
+    FR: "Le configurateur n'est pas encore disponible. Contactez-nous via la page Contact.",
+    RO: "Configuratorul nu este încă disponibil. Contactați-ne prin pagina Contact.",
+    IT: "Il configuratore non è ancora disponibile. Contattaci tramite la pagina Contatti.",
+    EN: "The configurator is not yet available. Please contact us via the Contact page.",
+    ES: "El configurador aún no está disponible. Contáctenos a través de la página de Contacto.",
+    NL: "De configurator is nog niet beschikbaar. Neem contact met ons op via de Contactpagina.",
+    DE: "Der Konfigurator ist noch nicht verfügbar. Kontaktieren Sie uns über die Kontaktseite.",
+    IE: "The configurator is not yet available. Please contact us via the Contact page.",
+    GB: "The configurator is not yet available. Please contact us via the Contact page.",
+    ME: "Konfigurator još nije dostupan. Kontaktirajte nas preko stranice Kontakt.",
+  };
+
   function attachResize(frame) {
     window.addEventListener("message", function (e) {
       if (!e.data || e.data.type !== "pb-devis-resize") return;
@@ -11,7 +24,7 @@
   function loadFrame(frame) {
     if (!frame || frame.src) return;
 
-    var pays = frame.dataset.pays || "RO";
+    var pays = (frame.dataset.pays || "RO").toUpperCase();
     var prodUrl = frame.dataset.appUrl || "";
     var previewUrl = frame.dataset.previewUrl || "";
     var host = window.location.hostname;
@@ -29,10 +42,7 @@
           var p = document.createElement("p");
           p.className = "wm-devis-unavailable";
           p.style.cssText = "padding:32px 24px;text-align:center;color:var(--gray,#666);font-size:14px;";
-          p.textContent =
-            pays === "FR"
-              ? "Le configurateur n'est pas encore disponible. Contactez-nous via la page Contact."
-              : "Configuratorul nu este încă disponibil. Contactați-ne prin pagina Contact.";
+          p.textContent = UNAVAILABLE[pays] || UNAVAILABLE.FR;
           return p;
         })()
       );

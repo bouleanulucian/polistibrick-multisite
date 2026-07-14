@@ -13,7 +13,7 @@
     aria: 'Cookie consent',
     accept: 'Accept',
     refuse: 'Decline',
-    privacySlug: '{{legal.privacy_slug}}',
+    privacySlug: 'privacy',
   };
 
   function basePath() {

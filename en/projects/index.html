@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exceptional projects · Polistibrick</title>
+  <meta name="description" content="Discover our passive reinforced concrete project case studies. Architect villas, mountain homes and collective developments built with Polistibrick.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap"></noscript>
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <style>
+    /* Full Viewport Slider Setup */
+    html, body {
+      margin: 0; padding: 0;
+      width: 100%; height: 100dvh;
+      overflow: hidden;
+      background: #0b0c0d;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Style Override for transparent navbar over the slider */
+    header.nav {
+      position: absolute !important;
+      top: 0 !important; left: 0 !important;
+      width: 100% !important;
+      z-index: 100 !important;
+      background: transparent !important;
+      border-bottom: none !important;
+      box-shadow: none !important;
+    }
+    header.nav .nav-logo img {
+      filter: brightness(0) invert(1) !important; /* Forces logo to be white */
+    }
+    header.nav .nav-toggle span {
+      background: white !important;
+    }
+    header.nav .nav-cta-devis {
+      background: transparent !important;
+      color: #fff !important;
+      border: none !important;
+      border-radius: 0 !important;
+    }
+    header.nav .nav-cta-devis:hover {
+      background: transparent !important;
+      color: #fff !important;
+      opacity: 0.72;
+    }
+
+    /* Slider styling */
+    .slider {
+      position: relative;
+      width: 100%; height: 100dvh;
+    }
+    .slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      z-index: 1;
+      background-size: cover;
+      background-position: center;
+      transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: clamp(60px, 8vw, 120px);
+    }
+    .slide.is-active {
+      opacity: 1;
+      z-index: 2;
+    }
+    .slide-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(11,12,13,0.45) 0%, rgba(11,12,13,0.15) 32%, rgba(11,12,13,0.62) 68%, rgba(11,12,13,0.92) 100%);
+      z-index: 2;
+      pointer-events: none;
+    }
+    .slide-inner {
+      position: relative;
+      z-index: 3;
+      width: 100%;
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 0 clamp(20px, 4vw, 60px);
+      box-sizing: border-box;
+      color: white;
+      text-shadow: 0 2px 24px rgba(0,0,0,0.55), 0 1px 6px rgba(0,0,0,0.45);
+    }
+    .slide-category {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: #fff;
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+    .slide-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(40px, 6vw, 76px);
+      font-weight: 500;
+      line-height: 1.05;
+      margin: 0 0 28px 0;
+      letter-spacing: -0.02em;
+      color: #fff !important;
+    }
+    
+    /* Metrics Row */
+    .slide-metrics {
+      display: flex;
+      gap: clamp(24px, 5vw, 64px);
+      margin-bottom: 36px;
+      flex-wrap: wrap;
+    }
+    .metric-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .metric-label {
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 6px;
+    }
+    .metric-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(22px, 3.2vw, 36px);
+      font-weight: 500;
+      color: #fff;
+    }
+
+    /* Slider Controls */
+    .slider-controls {
+      position: absolute;
+      right: clamp(20px, 4vw, 60px);
+      bottom: clamp(60px, 8vw, 120px);
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .slider-arrow {
+      background: var(--red);
+      border: 1px solid var(--red);
+      color: #fff;
+      width: 50px; height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      font-size: 18px;
+      backdrop-filter: blur(8px);
+    }
+    .slider-arrow:hover {
+      background: #a60d26;
+      color: #fff;
+      border-color: #a60d26;
+      transform: scale(1.05);
+    }
+
+    /* Detail Modal Panel (Glassmorphism Slide-out) */
+    .detail-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(11,12,13,0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+      overflow-y: auto;
+      color: white;
+    }
+    .detail-overlay.is-active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .detail-container {
+      max-width: 1240px;
+      margin: 80px auto;
+      padding: 0 40px;
+      box-sizing: border-box;
+      position: relative;
+    }
+    .detail-close {
+      position: fixed;
+      top: 24px; right: 40px;
+      width: 48px; height: 48px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 50%;
+      color: white;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 1002;
+    }
+    .detail-close:hover {
+      background: white; color: black;
+      transform: rotate(90deg);
+    }
+    .detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: start;
+      margin-top: 40px;
+    }
+    @media (max-width: 900px) {
+      .detail-grid { grid-template-columns: 1fr; gap: 40px; }
+      .detail-container { margin: 60px auto; padding: 0 20px; }
+      .detail-close { right: 20px; top: 12px; width: 40px; height: 40px; font-size: 20px; }
+    }
+
+    /* Modal Left Column: Constructor Quote */
+    .detail-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 4.5vw, 52px);
+      font-weight: 500;
+      margin: 0 0 10px 0;
+      letter-spacing: -0.01em;
+    }
+    .detail-subtitle {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--red);
+      margin-bottom: 32px;
+      display: block;
+    }
+    .detail-quote-box {
+      border-left: 3px solid var(--red);
+      padding-left: 28px;
+      margin: 36px 0;
+    }
+    .detail-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(20px, 2.5vw, 26px);
+      font-style: italic;
+      line-height: 1.45;
+      color: #f3f3f3;
+      margin-bottom: 14px;
+    }
+    .detail-author {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      display: block;
+    }
+    .detail-author strong {
+      color: white;
+      font-weight: 600;
+    }
+    .detail-desc {
+      font-size: 14px;
+      line-height: 1.65;
+      color: rgba(255,255,255,0.7);
+    }
+    .detail-desc p {
+      margin-bottom: 16px;
+    }
+
+    /* Modal Right Column: Photos and Stages */
+    .gallery-section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding-bottom: 10px;
+    }
+    .gallery-grid-compact {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    .gallery-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .gallery-card:hover {
+      border-color: var(--red);
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.06);
+    }
+    .gallery-img-wrap {
+      width: 100%;
+      aspect-ratio: 16/10;
+      background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .gallery-img-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .gallery-img-wrap svg {
+      opacity: 0.25;
+    }
+    .gallery-label {
+      padding: 10px 12px;
+      font-size: 11px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.7);
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    /* Lightbox for viewing photos */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(5,5,5,0.95);
+      z-index: 2000;
+      opacity: 0;
+      visibility: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+    .lightbox.is-active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .lightbox-img {
+      max-width: 90%;
+      max-height: 80%;
+      object-fit: contain;
+      border-radius: 4px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    .lightbox-caption {
+      margin-top: 18px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.8);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 24px; right: 24px;
+      color: white;
+      font-size: 32px;
+      cursor: pointer;
+    }
+
+    /* CTA buttons */
+    .btn-circle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 28px;
+      background: var(--red);
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 13px;
+      border-radius: 100px;
+      transition: all 0.3s ease;
+      margin-top: 16px;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-circle:hover {
+      background: white;
+      color: black;
+      transform: scale(1.02);
+    }
+  </style>
+<link rel="canonical" href="https://polistibrick.uk/projects/">
+<meta property="og:url" content="https://polistibrick.uk/projects/">
+<link rel="alternate" hreflang="en-GB" href="https://polistibrick.uk/projects/">
+<link rel="alternate" hreflang="x-default" href="https://polistibrick.uk/projects/">
+</head>
+<body class="has-slider" data-base="../">
+
+<header class="nav" data-include="nav"></header>
+
+<!-- FULL VIEWPORT CAROUSEL -->
+<main class="slider">
+
+  <!-- Slide 1: Valencia -->
+  <section class="slide is-active" style="background-image: url('../../images/projects/projet-valencia.png');" data-project="valencia">
+    <div class="slide-overlay"></div>
+    <div class="slide-inner">
+      <span class="slide-category">Architect-designed villa · Spain</span>
+      <h1 class="slide-title">Villa Valencia</h1>
+      
+      <div class="slide-metrics">
+        <div class="metric-item">
+          <span class="metric-label">Floor area</span>
+          <span class="metric-value">280 m²</span>
+        </div>
+        <div class="metric-item">
+          <span class="metric-label">Structural shell</span>
+          <span class="metric-value">weeks</span>
+        </div>
+        <div class="metric-item">
+          <span class="metric-label">Insulation</span>
+          <span class="metric-value">0 h clim</span>
+        </div>
+        <div class="metric-item">
+          <span class="metric-label">System</span>
+          <span class="metric-value">MBK 210 + TBK</span>
+        </div>
+      </div>
+
+      <button class="btn btn-circle" onclick="openProject('valencia')">Discover the project →</button>
+    </div>
+  </section>
+
+  <!-- Slide 2: Cluj-Napoca -->
+  <section class="slide" style="background-image: url('../../images/projects/projet-cluj.png');" data-project="cluj">
+    <div class="slide-overlay"></div>
+    <div class="slide-inner">
+      <span class="slide-category">Individual house · Romania</span>
+      <h1 class="slide-title">Cluj-Napoca House</h1>
+
+      <div class="slide-metrics">
+        <div class="metric-item">
+          <span class="metric-label">Floor area</span>
+          <span class="metric-value">180 m²</span>
+        </div>
+        <div class="metric-item">
+          <span class="metric-label">Structural shell</span>
+          <span class="metric-value">weeks</span>
+        </div>
+        <div class="metric-item">
+          <span class="metric-label">Electricity bill</span>
+          <span class="metric-value">38 € / month</span>
+        </div>
+        <div class="metric-item">
+          <span class="metric-label">System</span>
+          <span class="metric-value">MBK 270 + PBK</span>
+        </div>
+      </div>
+
+      <button class="btn btn-circle" onclick="openProject('cluj')">Discover the project →</button>
+    </div>
+  </section>
+
+  <!-- Slide 3: Lyon -->
+  <section class="slide" style="background-image: url('../../images/projects/ensemble-lyon.png');" data-project="lyon">
+    <div class="slide-overlay"></div>
+    <div class="slide-inner">
+      <span class="slide-category">Ensemble Collectif · France</span>
+      <h1 class="slide-title">Ensemble Lyon</h1>
+
+      <div class="slide-metrics">
+        <div class="metric-item">
+          <span class="metric-label">Homes</span>
+          <span class="metric-value">24 units</span>
+        </div>
+        <div class="metric-item">
+          <span class="metric-label">Structural shell</span>
+          <span class="metric-value">6 months (total)</span>
+        </div>
+        <div class="metric-item">
+          <span class="metric-label">Standard</span>
+          <span class="metric-value">Passivhaus 100%</span>
+        </div>
+        <div class="metric-item">
+          <span class="metric-label">System</span>
+          <span class="metric-value">MBK 270</span>
+        </div>
+      </div>
+
+      <button class="btn btn-circle" onclick="openProject('lyon')">Discover the project →</button>
+    </div>
+  </section>
+
+  <!-- Slider arrows -->
+  <div class="slider-controls">
+    <button class="slider-arrow" onclick="prevSlide()" aria-label="Previous">←</button>
+    <button class="slider-arrow" onclick="nextSlide()" aria-label="Suivant">→</button>
+  </div>
+
+</main>
+
+<!-- DETAILS DRAWER OVERLAY -->
+<div class="detail-overlay" id="detailOverlay">
+  <button class="detail-close" onclick="closeProject()">×</button>
+  <div class="detail-container" id="detailContainer">
+    <!-- Dynamic Content Injected here by Javascript -->
+  </div>
+</div>
+
+<!-- COMPACT LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close">×</span>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="Vue agrandie">
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
+<script src="../assets/js/site.js?v=2" defer></script>
+<script>
+  // SLIDER LOGIC
+  const slides = document.querySelectorAll('.slide');
+  let currentIdx = 0;
+
+  function showSlide(index) {
+    slides[currentIdx].classList.remove('is-active');
+    currentIdx = (index + slides.length) % slides.length;
+    slides[currentIdx].classList.add('is-active');
+  }
+
+  function nextSlide() { showSlide(currentIdx + 1); }
+  function prevSlide() { showSlide(currentIdx - 1); }
+
+  // Auto transition slides every 8 seconds unless open
+  let sliderInterval = setInterval(nextSlide, 8000);
+  function pauseSlider() { clearInterval(sliderInterval); }
+  function resumeSlider() { sliderInterval = setInterval(nextSlide, 8000); }
+
+  // PROJECT DATA FOR OVERLAY
+  const PROJECT_DETAILS = {
+    valencia: {
+      title: "Villa Valencia",
+      subtitle: "Spain · Hot Climate · Ultra-fast structural shell",
+      quote: "« With the modular Polistibrick MBK 210 system, our team of 4 people erected all the walls in just 2 weeks, without any heavy lifting equipment. The integrated pre-positioned reinforcement eliminated days of tedious tying. In Valencia's 38 °C heat, the inertia of the monolithic concrete combined with double-sided insulation keeps the villa at 24 °C permanently without any air conditioning. »",
+      author: "Diego Alvarez",
+      authorRole: "Site manager & Owner",
+      desc: "<p>This project illustrates the relevance of Polistibrick in a warm-temperate climate. Built with the MBK 210 block, the structure has optimal insulation that rejects external thermal radiation.</p><p>The structural shell was completed in 4 weeks total, allowing exterior and interior finishes to begin and delivering the turnkey villa in just 4 months.</p>",
+      gallery: [
+        { label: "Wk 1 — Excavation & Slab", caption: "Site preparation and pouring of the supporting slab.", img: "" },
+        { label: "Wk 2 — Ground Floor Assembly", caption: "Assembly of the MBK 210 modular system by 4 people.", img: "" },
+        { label: "Wk 3 — TBK Roof Installation", caption: "Installation of the prefabricated insulating TBK roof.", img: "" },
+        { label: "Wk 4 — Concrete Pour", caption: "Monolithic pour of the villa structure.", img: "" },
+        { label: "Wk 5-7 — Finishes & Pool", caption: "Mediterranean render application and exterior integration.", img: "" },
+        { label: "Final Render — Pool View", caption: "The completed villa, occupied without active air conditioning.", img: "../../images/projects/projet-valencia.png" }
+      ]
+    },
+    cluj: {
+      title: "House Cluj-Napoca",
+      subtitle: "Romania · Continental Climate · Thermal Airtightness",
+      quote: "« Erecting 180 m² in 5 weeks with only 3 people amazed the neighbourhood. The blocks handle and assemble like LEGO with millimetre precision. The Blower Door test gave an exceptional n50 of 0.48, guaranteeing average real heating costs of €38/month for the family. »",
+      author: "Andrei Mureșan",
+      authorRole: "Owner & Structural engineer",
+      desc: "<p>In a continental climate where winters can drop below -15 °C, the continuous thermal bridge-free insulation performance of Polistibrick MBK 270 eliminates excessive heating bills.</p><p>The reinforced concrete structure ensures 50+ years of longevity while the fibre-cement lining guarantees an A1 non-combustible fire reaction.</p>",
+      gallery: [
+        { label: "Wk 1 — Foundation", caption: "Earthworks and strip foundation on stable ground.", img: "" },
+        { label: "Wk 2 — Ground Floor Walls", caption: "Rapid assembly of MBK 270 blocks without a crane.", img: "" },
+        { label: "Wk 3 — PBK Floor", caption: "Installation of insulating PBK 250 floor slabs.", img: "" },
+        { label: "Wk 3 — TBK Roof", caption: "Installation of the patented thermal roof covering.", img: "" },
+        { label: "Wk 4 — Structure Pour", caption: "Monolithic concrete pour into integrated formwork.", img: "" },
+        { label: "Completed Home", caption: "The passive home delivered with controlled bills.", img: "../../images/projects/projet-cluj.png" }
+      ]
+    },
+    lyon: {
+      title: "Lyon Development",
+      subtitle: "France · Developer Programme · 24 Collective Homes",
+      quote: "« For this large-scale housing programme, we had to deliver certified passive homes within strict deadlines. Polistibrick allowed us to complete the structural shell of all 24 units in 6 months, saving us 6 months on the overall schedule compared to traditional brick. The predictability of the system is an undeniable financial asset. »",
+      author: "Marc Laurent",
+      authorRole: "Project Director, Bâti-Durable",
+      desc: "<p>This collective residential development demonstrates the industrial applicability of the Polistibrick system on multi-unit programmes. The 24 units were poured in successive phases.</p><p>The development achieved Passivhaus certification on the first attempt, ensuring optimal return on investment and a +18% sales premium.</p>",
+      gallery: [
+        { label: "Month 1 — Earthworks", caption: "General platform preparation and slabs.", img: "" },
+        { label: "Month 2 — Modules 1-6 Erection", caption: "Parallel assembly of formwork structures.", img: "" },
+        { label: "Month 3 — Collective Module Roofs", caption: "Simultaneous installation of thermal roofs by crane.", img: "" },
+        { label: "Month 4 — Mass Pour", caption: "Logistical management of phased concrete pours.", img: "" },
+        { label: "Month 5 — Building Services", caption: "Direct routing of services ducts.", img: "" },
+        { label: "Completed Development", caption: "All 24 certified passive homes sold.", img: "../../images/projects/ensemble-lyon.png" }
+      ]
+    }
+  };
+
+  // OPEN DETAILS OVERLAY
+  function openProject(id) {
+    pauseSlider();
+    const data = PROJECT_DETAILS[id];
+    if (!data) return;
+
+    const overlay = document.getElementById('detailOverlay');
+    const container = document.getElementById('detailContainer');
+
+    // Build gallery html
+    let galleryHtml = "";
+    data.gallery.forEach(item => {
+      // Use fallback SVG icon if no image source
+      const imgTag = item.img 
+        ? `<img src="${item.img}" alt="${item.label}">` 
+        : `<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>`;
+      
+      const clickAction = item.img ? `onclick="openLightbox('${item.img}', '${item.caption}')"` : `onclick="alert('This site photo is from the confidential technical file. Contact our team to access it.');"`;
+
+      galleryHtml += `
+        <div class="gallery-card" ${clickAction}>
+          <div class="gallery-img-wrap">
+            ${imgTag}
+          </div>
+          <div class="gallery-label">${item.label}</div>
+        </div>
+      `;
+    });
+
+    container.innerHTML = `
+      <div class="detail-grid">
+        <!-- Left details and quote -->
+        <div>
+          <span class="detail-subtitle">${data.subtitle}</span>
+          <h2 class="detail-title">${data.title}</h2>
+          
+          <div class="detail-quote-box">
+            <p class="detail-quote">${data.quote}</p>
+            <span class="detail-author"><strong>${data.author}</strong>, ${data.authorRole}</span>
+          </div>
+
+          <div class="detail-desc">
+            ${data.desc}
+          </div>
+
+          <a href="../contact/?subject=Request+technical+file+:+${encodeURIComponent(data.title)}&type=document&doc=${encodeURIComponent('Technical File - ' + data.title)}" class="btn-circle">Request technical file →</a>
+        </div>
+
+        <!-- Right stage photo gallery -->
+        <div>
+          <h3 class="gallery-section-title">Site phases & final render</h3>
+          <div class="gallery-grid-compact">
+            ${galleryHtml}
+          </div>
+        </div>
+      </div>
+    `;
+
+    overlay.classList.add('is-active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  // CLOSE DETAILS OVERLAY
+  function closeProject() {
+    document.getElementById('detailOverlay').classList.remove('is-active');
+    document.body.style.overflow = '';
+    resumeSlider();
+  }
+
+  // LIGHTBOX LOGIC
+  function openLightbox(src, caption) {
+    const lightbox = document.getElementById('lightbox');
+    document.getElementById('lightboxImg').src = src;
+    document.getElementById('lightboxCaption').textContent = caption;
+    lightbox.classList.add('is-active');
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('is-active');
+  }
+
+  // Deep Link from hash URL (e.g. projets/#valencia)
+  window.addEventListener('load', () => {
+    const hash = window.location.hash.substring(1);
+    if (hash && PROJECT_DETAILS[hash]) {
+      // Find index of slide
+      const keys = Object.keys(PROJECT_DETAILS);
+      const idx = keys.indexOf(hash);
+      if (idx !== -1) showSlide(idx);
+      openProject(hash);
+    }
+  });
+</script>
+</body>
+</html>

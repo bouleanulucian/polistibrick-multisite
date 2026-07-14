@@ -4,7 +4,7 @@
    =========================================================================== */
 (function () {
   const CFG = {
-    accessKey: '{{forms.access_key}}',
+    accessKey: '',
     liveDomain: 'polistibrick.com',
     liveDomainUrl: 'https://polistibrick.com',
     ccEmail: 'info@polistibrick.eu',
@@ -12,10 +12,10 @@
     countryName: 'Switzerland',
     fallbackEmail: 'contact@polistibrick.com',
     subjects: {
-      contact: '{{forms.subjects.contact}}',
-      devis: '{{forms.subjects.devis}}',
-      partner: '{{forms.subjects.partner}}',
-      review: '{{forms.subjects.review}}',
+      contact: 'Contact — Polistibrick Suisse',
+      devis: 'Demande de devis — Polistibrick Suisse',
+      partner: 'Candidature partenaire — Polistibrick Suisse',
+      review: 'Nouvel avis client — Polistibrick Suisse',
     },
   };
 

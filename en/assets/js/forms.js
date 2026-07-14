@@ -4,7 +4,7 @@
    =========================================================================== */
 (function () {
   const CFG = {
-    accessKey: '{{forms.access_key}}',
+    accessKey: '',
     liveDomain: 'polistibrick.uk',
     liveDomainUrl: 'https://polistibrick.uk',
     ccEmail: 'info@polistibrick.eu',
@@ -12,10 +12,10 @@
     countryName: 'United Kingdom',
     fallbackEmail: 'contact@polistibrick.com',
     subjects: {
-      contact: '{{forms.subjects.contact}}',
-      devis: '{{forms.subjects.devis}}',
-      partner: '{{forms.subjects.partner}}',
-      review: '{{forms.subjects.review}}',
+      contact: 'Contact — Polistibrick UK',
+      devis: 'Quote request — Polistibrick UK',
+      partner: 'Partner application — Polistibrick UK',
+      review: 'New customer review — Polistibrick UK',
     },
   };
 

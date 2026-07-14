@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para arquitectos y estudios técnicos · Polistibrick — Sistema ICF de hormigón armado</title>
+  <meta name="description" content="Polistibrick para arquitectos y estudios técnicos: encofrado clásico para hormigón armado, cálculos Eurocode 2 estándar, biblioteca CAD/Revit, soporte técnico dedicado, de RE2020 a Passiv+.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap"></noscript>
+  <link rel="stylesheet" href="../../assets/css/site.css">
+  <style>
+    /* HERO watermark */
+    .wm-section { padding: clamp(60px, 8vw, 100px) 0; background: var(--cream); }
+    .wm-stage-wrap { position: relative; margin: 70px auto 0; max-width: 1480px; }
+    .wm-watermark { position: absolute; top: 0; left: 50%; width: 100vw; margin-left: -50vw; pointer-events: none; user-select: none; transform: translateY(-50%); height: 1em; line-height: 1; text-align: center; text-transform: uppercase; font-family: var(--serif); font-size: clamp(64px, 12vw, 200px); font-weight: 500; letter-spacing: -0.06em; z-index: 2; }
+    .wm-watermark .wm-half { position: absolute; inset: 0; width: 100%; display: block; }
+    .wm-watermark .wm-top { color: transparent; -webkit-text-stroke: 1.4px rgba(15,15,15,0.30); clip-path: inset(0 0 50% 0); }
+    .wm-watermark .wm-bottom { color: var(--cream-dark); opacity: 0.65; clip-path: inset(50% 0 0 0); }
+    .wm-stage { position: relative; background: var(--cream-light); border: 1px solid var(--border); border-radius: 32px; padding: 56px; }
+    .wm-content { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 48px; align-items: center; }
+    .wm-text { padding-right: 8px; }
+    .wm-text .bubble-tag { display: inline-block; background: var(--red-soft); color: var(--red); padding: 4px 12px; border-radius: 4px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 16px; }
+    .wm-text h1 { font-family: var(--serif); font-size: clamp(34px, 4vw, 56px); font-weight: 500; color: var(--ink); letter-spacing: -0.02em; line-height: 1.05; margin-bottom: 18px; }
+    .wm-text h1 em { font-style: italic; color: var(--red); font-weight: 400; }
+    .wm-text p.lead { font-size: 16px; color: var(--gray); line-height: 1.65; margin-bottom: 26px; }
+    .wm-visual { background: linear-gradient(180deg, var(--cream-light) 0%, var(--cream-dark) 100%); border: 1px solid var(--border); border-radius: 20px; padding: 0; box-shadow: var(--shadow-md); margin-top: 10mm; aspect-ratio: 4/5; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+    .wm-visual img { width: 100%; height: 100%; object-fit: contain; padding: 24px; display: block; }
+    @media (max-width: 1100px) { .wm-content { grid-template-columns: 1fr; gap: 32px; } .wm-stage { padding: 36px; } .wm-visual { margin-top: 0; aspect-ratio: 16/10; } }
+    @media (max-width: 768px) { .wm-stage { padding: 28px 20px; } }
+
+    /* 2. Frici */
+    .pains-section { background: white; padding: 80px 0; }
+    .pains-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; max-width: 980px; margin: 50px auto 0; }
+    .pain-card { background: var(--cream); border-left: 4px solid var(--red); border-radius: 8px; padding: 22px 26px; }
+    .pain-q { font-family: var(--serif); font-size: 16px; font-style: italic; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
+    .pain-q::before { content: '❌ '; font-style: normal; color: #c8102e; font-weight: 700; }
+    .pain-a { font-size: 14px; color: var(--gray); line-height: 1.55; }
+    .pain-a::before { content: '✅ '; color: #1a7d3a; font-weight: 700; }
+    .pain-a strong { color: var(--ink); font-weight: 600; }
+    @media (max-width: 768px) { .pains-grid { grid-template-columns: 1fr; } }
+
+    /* 3. Atouts unice */
+    .atouts-section { background: var(--cream); padding: 80px 0; }
+    .atouts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; max-width: 1100px; margin: 50px auto 0; }
+    .atout-card { background: white; border: 1px solid var(--border); border-radius: 18px; padding: 36px 30px; text-align: center; transition: transform .25s, border-color .25s, box-shadow .25s; }
+    .atout-card:hover { transform: translateY(-4px); border-color: var(--red); box-shadow: 0 18px 36px rgba(0,0,0,0.06); }
+    .atout-icon { width: 64px; height: 64px; background: var(--red-soft); border-radius: 14px; display: inline-flex; align-items: center; justify-content: center; font-size: 32px; margin-bottom: 18px; }
+    .atout-card h3 { font-family: var(--serif); font-size: 20px; font-weight: 500; color: var(--ink); line-height: 1.25; margin-bottom: 12px; }
+    .atout-card h3 em { font-style: italic; color: var(--red); font-weight: 400; }
+    .atout-card p { font-size: 14px; color: var(--gray); line-height: 1.6; margin: 0; }
+    @media (max-width: 968px) { .atouts-grid { grid-template-columns: 1fr; } }
+
+    /* 4. Produits vs RE2020 / Passif */
+    .product-tier-section { background: white; padding: 80px 0; }
+    .tier-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1100px; margin: 50px auto 0; }
+    .tier-card { background: white; border: 2px solid var(--border); border-radius: 18px; padding: 32px 28px; transition: border-color .25s, transform .25s; display: flex; flex-direction: column; }
+    .tier-card:hover { transform: translateY(-4px); border-color: var(--red); }
+    .tier-card--prime { border-color: rgba(200, 145, 16, 0.45); }
+    .tier-card--passif { border-color: rgba(26, 125, 58, 0.45); }
+    .tier-card--passif-plus { border-color: rgba(26, 125, 58, 0.75); background: linear-gradient(180deg, white 50%, rgba(26,125,58,0.04) 100%); }
+    .tier-badge { display: inline-block; padding: 4px 12px; border-radius: 999px; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 16px; }
+    .tier-badge--prime { background: rgba(200, 145, 16, 0.12); color: #a8740e; }
+    .tier-badge--passif { background: rgba(26, 125, 58, 0.10); color: #1a7d3a; }
+    .tier-badge--passif-plus { background: linear-gradient(135deg, rgba(26,125,58,0.18), rgba(26,125,58,0.08)); color: #156a30; }
+    .tier-card h3 { font-family: var(--serif); font-size: 26px; font-weight: 500; color: var(--ink); margin-bottom: 6px; }
+    .tier-card .tier-u { font-family: ui-monospace, monospace; font-size: 13px; color: var(--gray); margin-bottom: 18px; font-weight: 600; }
+    .tier-card .tier-position { font-size: 14.5px; color: var(--ink); font-weight: 600; margin-bottom: 14px; line-height: 1.4; }
+    .tier-card .tier-desc { font-size: 13.5px; color: var(--gray); line-height: 1.6; margin-bottom: 18px; flex: 1; }
+    .tier-card .tier-link { font-size: 13px; font-weight: 600; color: var(--red); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: gap .2s; }
+    .tier-card .tier-link:hover { gap: 10px; }
+    @media (max-width: 968px) { .tier-grid { grid-template-columns: 1fr; } }
+
+    /* 5. ESPACE PRO */
+    .espace-pro-section { background: var(--cream); padding: 80px 0; }
+    .espace-pro-intro { max-width: 760px; margin: 0 auto 40px; text-align: center; }
+    .download-groups { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px; }
+    .download-group { background: white; border: 1px solid var(--border); border-radius: 18px; padding: 28px 32px; }
+    .download-group-head { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+    .download-group-icon { width: 40px; height: 40px; background: var(--red-soft); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; }
+    .download-group h3 { font-family: var(--serif); font-size: 19px; font-weight: 500; color: var(--ink); margin: 0; }
+    .download-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .download-item { display: flex; align-items: center; gap: 14px; padding: 12px 16px; background: var(--cream); border-radius: 10px; text-decoration: none; color: var(--ink); transition: background .2s, transform .2s; cursor: pointer; border: none; font-family: inherit; text-align: left; width: 100%; }
+    .download-item:hover { background: var(--cream-dark); transform: translateX(3px); }
+    .download-icon { font-size: 20px; flex-shrink: 0; }
+    .download-info { flex: 1; min-width: 0; }
+    .download-label { font-size: 13.5px; font-weight: 600; color: var(--ink); line-height: 1.3; display: block; }
+    .download-meta { font-size: 11px; color: #a8740e; margin-top: 2px; font-weight: 600; display: block; }
+    .download-arrow { color: var(--red); font-size: 16px; flex-shrink: 0; }
+    @media (max-width: 768px) { .download-list { grid-template-columns: 1fr; } .download-group { padding: 22px; } }
+
+    /* Colonne prodotto nel gruppo schede tecniche (MBK / PBK / TBK) */
+    .product-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .product-col { background: var(--cream-light); border-radius: 14px; padding: 18px 16px; display: flex; flex-direction: column; gap: 8px; }
+    .product-col-head { display: flex; align-items: baseline; gap: 8px; padding: 4px 8px 12px; border-bottom: 1px solid var(--border); margin-bottom: 6px; }
+    .product-col-name { font-family: var(--serif); font-size: 17px; font-weight: 600; color: var(--ink); letter-spacing: 0.02em; }
+    .product-col-desc { font-size: 11px; color: var(--gray); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; }
+    .product-col .download-item { background: white; padding: 11px 14px; }
+    .product-col .download-item:hover { background: var(--cream-dark); }
+    .product-col-extra { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border); }
+    @media (max-width: 768px) { .product-cols { grid-template-columns: 1fr; } }
+
+    /* 6. Design teaser */
+    .design-section { background: white; padding: 80px 0; }
+    .design-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; max-width: 1100px; margin: 40px auto 0; }
+    .design-card { aspect-ratio: 4/3; border-radius: 14px; overflow: hidden; background: var(--cream); border: 1px solid var(--border); }
+    .design-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .design-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: var(--gray); font-family: var(--serif); font-style: italic; font-size: 14px; padding: 20px; text-align: center; }
+    @media (max-width: 768px) { .design-grid { grid-template-columns: 1fr; } }
+
+    /* 7. Ingegnere */
+    .engineer-section { background: var(--cream); padding: 80px 0; }
+    .engineer-card { max-width: 920px; margin: 50px auto 0; background: white; border: 1px solid var(--border); border-radius: 20px; padding: 36px 40px; display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center; }
+    .engineer-info h3 { font-family: var(--serif); font-size: 22px; font-weight: 500; color: var(--ink); margin-bottom: 10px; }
+    .engineer-info p { font-size: 14.5px; color: var(--gray); line-height: 1.6; margin-bottom: 16px; }
+    .engineer-info p strong { color: var(--ink); }
+    .engineer-contact { display: flex; flex-wrap: wrap; gap: 16px; }
+    .engineer-contact-item { font-size: 13.5px; color: var(--ink); }
+    .engineer-contact-item a { color: var(--red); text-decoration: none; font-weight: 600; }
+    .engineer-cta { display: flex; flex-direction: column; gap: 10px; }
+    @media (max-width: 768px) { .engineer-card { grid-template-columns: 1fr; padding: 28px 24px; } }
+
+    /* 8. CTA escalat */
+    .cta-esc-section { background: white; padding: 80px 0; }
+    .cta-esc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; max-width: 1100px; margin: 50px auto 0; }
+    .cta-esc-card { background: var(--cream); border: 1px solid var(--border); border-radius: 18px; padding: 32px 28px; text-align: center; transition: transform .25s, box-shadow .25s, border-color .25s; text-decoration: none; color: inherit; display: flex; flex-direction: column; }
+    .cta-esc-card:hover { transform: translateY(-4px); box-shadow: 0 18px 36px rgba(0,0,0,0.06); border-color: var(--red); }
+    .cta-esc-card--primary { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+    .cta-esc-card--primary:hover { background: #1a1a1a; border-color: var(--red); }
+    .cta-esc-icon { font-size: 30px; margin-bottom: 14px; }
+    .cta-esc-title { font-family: var(--serif); font-size: 19px; font-weight: 500; margin-bottom: 10px; line-height: 1.25; }
+    .cta-esc-desc { font-size: 13px; line-height: 1.55; color: var(--gray); margin-bottom: 18px; flex: 1; }
+    .cta-esc-card--primary .cta-esc-desc { color: rgba(247,244,237,0.75); }
+    .cta-esc-btn { display: inline-block; padding: 10px 18px; border-radius: 999px; background: var(--red); color: white; font-size: 13px; font-weight: 600; }
+    .cta-esc-card--primary .cta-esc-btn { background: white; color: var(--ink); }
+    @media (max-width: 968px) { .cta-esc-grid { grid-template-columns: 1fr; } }
+  </style>
+<link rel="canonical" href="https://polistibrick.es/para/arquitectos/">
+<meta property="og:url" content="https://polistibrick.es/para/arquitectos/">
+<link rel="alternate" hreflang="es-ES" href="https://polistibrick.es/para/arquitectos/">
+<link rel="alternate" hreflang="x-default" href="https://polistibrick.es/para/arquitectos/">
+</head>
+<body data-base="../../">
+
+<header class="nav" data-include="nav"></header>
+
+<!-- 1. HERO -->
+<section class="wm-section">
+  <div class="container">
+    <div class="wm-stage-wrap reveal">
+      <div class="wm-watermark" aria-hidden="true">
+        <span class="wm-half wm-top">Arquitectos</span>
+        <span class="wm-half wm-bottom">Arquitectos</span>
+      </div>
+      <div class="wm-stage">
+        <div class="wm-content">
+          <div class="wm-text">
+            <span class="bubble-tag">Para arquitectos y estudios técnicos</span>
+            <h1>Proyecte sin compromisos. <em>Calcule como siempre.</em></h1>
+            <p class="lead">Polistibrick es un <strong>encofrado clásico para hormigón armado</strong>. Mantenga sus métodos Eurocode 2 habituales. Además: aislamiento continuo vertido en el panel, de RE2020 a Passiv+, biblioteca CAD/Revit centralizada, ingeniero Polistibrick dedicado al proyecto.</p>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;">
+              <a href="#espace-pro" class="btn btn-primary btn-arrow">Acceda al Espacio Pro</a>
+              <a href="#ingenieur" class="btn btn-ghost">Hable con nuestro ingeniero</a>
+            </div>
+          </div>
+          <div class="wm-visual">
+            <img src="../../images/personas/pour-architecte.jpg" alt="Casa de arquitecto contemporánea con voladizo, realizada con Polistibrick" loading="eager">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. PROBLÈMES / Frici -->
+<section class="pains-section">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:760px;margin:0 auto;">
+      <span class="eyebrow">Las 4 preocupaciones reales</span>
+      <h2 style="font-family:var(--serif);font-size:clamp(28px,3.2vw,42px);font-weight:500;color:var(--ink);letter-spacing:-0.02em;margin-bottom:14px;">Lo que a menudo le bloquea <em style="font-style:italic;color:var(--red);font-weight:400;">con los ICF clásicos.</em></h2>
+      <p style="font-size:15.5px;color:var(--gray);line-height:1.65;">Creamos Polistibrick para resolver las 4 fricciones que impiden a arquitectos y estudios técnicos adoptar un sistema ICF.</p>
+    </div>
+    <div class="pains-grid reveal">
+      <div class="pain-card">
+        <div class="pain-q">« Tendré que aprender un método de cálculo especial. »</div>
+        <div class="pain-a">Polistibrick es un <strong>encofrado perdido para hormigón armado clásico</strong>. Mantenga sus cálculos Eurocode 2 habituales. Transmisión de cargas, dimensionamiento de armaduras, verificaciones ELU/ELS — exactamente como en cualquier proyecto de hormigón.</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-q">« La documentación técnica está dispersa o falta. »</div>
+        <div class="pain-a"><strong>Espacio Pro centralizado</strong>: fichas técnicas, CAD/DWG, biblioteca BIM (Revit, ArchiCAD, IFC), informes de ensayo (CSTB, A1, acústica), especificaciones CCTP listas para insertar — todo en un solo lugar.</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-q">« No hay biblioteca BIM ni archivos CAD limpios. »</div>
+        <div class="pain-a">Polistibrick proporciona <strong>biblioteca completa Revit + ArchiCAD + IFC + DWG</strong> para cada producto (MBK 210/270/300, PBK, TBK). Integración directa en su proyecto, sin modelado manual.</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-q">« No tengo interlocutor técnico cuando tengo una pregunta. »</div>
+        <div class="pain-a">Nuestro <strong>equipo técnico Polistibrick</strong> responde en 24h: puentes térmicos, uniones complejas, transferencia de cargas, cálculos U-value específicos. Gratis, sin compromiso.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. ATOUTS UNIQUES -->
+<section class="atouts-section">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:760px;margin:0 auto;">
+      <span class="eyebrow">Sus 3 ventajas Polistibrick</span>
+      <h2 style="font-family:var(--serif);font-size:clamp(28px,3.2vw,42px);font-weight:500;color:var(--ink);letter-spacing:-0.02em;margin-bottom:14px;">Lo que cambia <em style="font-style:italic;color:var(--red);font-weight:400;">de verdad</em> para usted.</em></h2>
+    </div>
+    <div class="atouts-grid reveal">
+      <div class="atout-card">
+        <div class="atout-icon">🏗️</div>
+        <h3>Hormigón armado <em>clásico.</em></h3>
+        <p>Los cálculos Eurocode 2 permanecen idénticos. Ningún método especial que aprender. Ninguna sorpresa en obra. Trabaja exactamente como en un proyecto tradicional de hormigón.</p>
+      </div>
+      <div class="atout-card">
+        <div class="atout-icon">📐</div>
+        <h3>Libertad <em>total de diseño.</em></h3>
+        <p>Luces hasta 9 m sin vigas. Geometrías libres (curvas, voladizos, amplias aberturas). Sin restricciones de muro portante intermedio — el hormigón armado Polistibrick lo gestiona todo.</p>
+      </div>
+      <div class="atout-card">
+        <div class="atout-icon">🚀</div>
+        <h3>De RE2020 <em>a Passiv+.</em></h3>
+        <p>3 niveles de rendimiento según su objetivo: MBK 210 para RE2020 estándar, MBK 270 para pasivo, MBK 300 para pasivo premium. Elija según el proyecto.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. PRODUITS vs RE2020 / Passif -->
+<section class="product-tier-section">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:780px;margin:0 auto;">
+      <span class="eyebrow">3 niveles de rendimiento</span>
+      <h2 style="font-family:var(--serif);font-size:clamp(28px,3.2vw,42px);font-weight:500;color:var(--ink);letter-spacing:-0.02em;margin-bottom:14px;">Elija <em style="font-style:italic;color:var(--red);font-weight:400;">según su objetivo.</em></h2>
+      <p style="font-size:15.5px;color:var(--gray);line-height:1.65;">Mismo método de cálculo, misma puesta en obra — solo adapta el espesor del EPS según el nivel de aislamiento previsto para su proyecto.</p>
+    </div>
+    <div class="tier-grid reveal">
+      <div class="tier-card tier-card--prime">
+        <span class="tier-badge tier-badge--prime">RE2020 — Prime</span>
+        <h3>MBK 210</h3>
+        <div class="tier-u">U = 0,14 W/m²K · 15 cm EPS + 15 cm cemento · muro 38 cm</div>
+        <div class="tier-position">Conforme estándar RE2020. Ideal para residencial clásico premium.</div>
+        <div class="tier-desc">Para proyectos que buscan la conformidad normativa RE2020. Todas las ventajas Polistibrick (A1 fuego, acústica 52 dB, hidrófugo, antisísmico).</div>
+        <a href="../../productos/muros-mbk/" class="tier-link">Ver la ficha MBK 210 →</a>
+      </div>
+      <div class="tier-card tier-card--passif">
+        <span class="tier-badge tier-badge--passif">Passif</span>
+        <h3>MBK 270</h3>
+        <div class="tier-u">U = 0,12 W/m²K · 20 cm EPS + 15 cm cemento · muro 42 cm</div>
+        <div class="tier-position">Supera RE2020. Alcanza el estándar casa pasiva.</div>
+        <div class="tier-desc">Para proyectos que buscan rendimiento energético premium. Compatible con certificación Passivhaus Institut. Muy poca calefacción necesaria (~25 kWh/m²/año).</div>
+        <a href="../../productos/muros-mbk/" class="tier-link">Ver la ficha MBK 270 →</a>
+      </div>
+      <div class="tier-card tier-card--passif-plus">
+        <span class="tier-badge tier-badge--passif-plus">Passif+</span>
+        <h3>MBK 300</h3>
+        <div class="tier-u">U = 0,10 W/m²K · 25 cm EPS + 15 cm cemento · muro 47 cm</div>
+        <div class="tier-position">Supera con creces RE2020. Estándar Passivhaus certificado.</div>
+        <div class="tier-desc">Para casas premium / luxury. Rendimiento térmico extremo (~15 kWh/m²/año calefacción). Ideal para clima frío o proyectos cero carbono.</div>
+        <a href="../../productos/muros-mbk/" class="tier-link">Ver la ficha MBK 300 →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. ESPACE PRO — Downloads -->
+<section class="espace-pro-section" id="espace-pro">
+  <div class="container">
+    <div class="espace-pro-intro reveal">
+      <span class="eyebrow">Espacio Pro</span>
+      <h2 style="font-family:var(--serif);font-size:clamp(28px,3.2vw,42px);font-weight:500;color:var(--ink);letter-spacing:-0.02em;margin-bottom:14px;">Toda la documentación <em style="font-style:italic;color:var(--red);font-weight:400;">a su disposición.</em></h2>
+      <p style="font-size:15.5px;color:var(--gray);line-height:1.65;">Fichas de producto, CAD, BIM, cálculos, detalles constructivos, informes de ensayo, CCTP. Centralizados. Actualizados permanentemente.</p>
+    </div>
+
+    <div class="download-groups reveal">
+
+      <div class="download-group">
+        <div class="download-group-head">
+          <div class="download-group-icon">📄</div>
+          <h3>Fichas técnicas de productos</h3>
+        </div>
+        <div class="product-cols">
+          <!-- COL 1 — MBK (Muros) -->
+          <div class="product-col">
+            <div class="product-col-head">
+              <span class="product-col-name">MBK</span>
+              <span class="product-col-desc">Muros</span>
+            </div>
+            <button class="download-item" onclick="requestFiche('Ficha técnica MBK')"><span class="download-icon">📄</span><span class="download-info"><span class="download-label">Ficha técnica</span><span class="download-meta">MBK 210 · 270 · 300</span></span><span class="download-arrow">→</span></button>
+          </div>
+          <!-- COL 2 — PBK (Sole) -->
+          <div class="product-col">
+            <div class="product-col-head">
+              <span class="product-col-name">PBK</span>
+              <span class="product-col-desc">Forjados</span>
+            </div>
+            <button class="download-item" onclick="requestFiche('Ficha técnica PBK')"><span class="download-icon">📄</span><span class="download-info"><span class="download-label">Ficha técnica</span><span class="download-meta">Forjados aislantes</span></span><span class="download-arrow">→</span></button>
+          </div>
+          <!-- COL 3 — TBK (Tejado) -->
+          <div class="product-col">
+            <div class="product-col-head">
+              <span class="product-col-name">TBK</span>
+              <span class="product-col-desc">Tejado</span>
+            </div>
+            <button class="download-item" onclick="requestFiche('Ficha técnica TBK')"><span class="download-icon">📄</span><span class="download-info"><span class="download-label">Ficha técnica</span><span class="download-meta">Tejados aislantes</span></span><span class="download-arrow">→</span></button>
+          </div>
+        </div>
+        <div class="product-col-extra">
+          <button class="download-item" onclick="requestDoc('Catálogo de accesorios')" style="background:var(--cream);"><span class="download-icon">🔩</span><span class="download-info"><span class="download-label">Catálogo de accesorios</span><span class="download-meta">Conectores, acabados, fijaciones</span></span><span class="download-arrow">→</span></button>
+        </div>
+      </div>
+
+      <div class="download-group">
+        <div class="download-group-head">
+          <div class="download-group-icon">📐</div>
+          <h3>Archivos de diseño (CAD + BIM)</h3>
+        </div>
+        <div class="download-list">
+          <button class="download-item" onclick="requestDoc('Bibliothèque CAD DWG')"><span class="download-icon">📐</span><span class="download-info"><span class="download-label">Biblioteca CAD (DWG)</span><span class="download-meta">MBK / PBK / TBK</span></span><span class="download-arrow">→</span></button>
+          <button class="download-item" onclick="requestDoc('Bibliothèque Revit')"><span class="download-icon">🏛️</span><span class="download-info"><span class="download-label">Biblioteca Revit (.rfa)</span><span class="download-meta">Familias paramétricas</span></span><span class="download-arrow">→</span></button>
+          <button class="download-item" onclick="requestDoc('Bibliothèque ArchiCAD')"><span class="download-icon">🏛️</span><span class="download-info"><span class="download-label">Biblioteca ArchiCAD (.gsm)</span><span class="download-meta">Objetos paramétricos</span></span><span class="download-arrow">→</span></button>
+          <button class="download-item" onclick="requestDoc('Format IFC')"><span class="download-icon">🔄</span><span class="download-info"><span class="download-label">Formato IFC (BIM universale)</span><span class="download-meta">Todos los programas</span></span><span class="download-arrow">→</span></button>
+        </div>
+      </div>
+
+      <div class="download-group">
+        <div class="download-group-head">
+          <div class="download-group-icon">🔧</div>
+          <h3>Detalles constructivos (PDF + DWG)</h3>
+        </div>
+        <div class="download-list">
+          <button class="download-item" onclick="requestDoc('Détails jonctions')"><span class="download-icon">🔗</span><span class="download-info"><span class="download-label">Uniones muro-muro, muro-forjado, muro-cubierta</span><span class="download-meta">PDF + DWG</span></span><span class="download-arrow">→</span></button>
+          <button class="download-item" onclick="requestDoc('Détails ouvertures')"><span class="download-icon">🚪</span><span class="download-info"><span class="download-label">Huecos de puertas y ventanas</span><span class="download-meta">PDF + DWG</span></span><span class="download-arrow">→</span></button>
+          <button class="download-item" onclick="requestDoc('Détails angles')"><span class="download-icon">📐</span><span class="download-info"><span class="download-label">Esquinas interiores y exteriores</span><span class="download-meta">PDF + DWG</span></span><span class="download-arrow">→</span></button>
+          <button class="download-item" onclick="requestDoc('Détails fondations')"><span class="download-icon">🏗️</span><span class="download-info"><span class="download-label">Conexión a cimentaciones</span><span class="download-meta">PDF + DWG</span></span><span class="download-arrow">→</span></button>
+        </div>
+      </div>
+
+      <div class="download-group">
+        <div class="download-group-head">
+          <div class="download-group-icon">🧮</div>
+          <h3>Cálculos y especificaciones</h3>
+        </div>
+        <div class="download-list">
+          <button class="download-item" onclick="requestDoc('Note méthode Eurocode 2')"><span class="download-icon">📚</span><span class="download-info"><span class="download-label">Nota metodológica — Polistibrick como encofrado Eurocode 2</span><span class="download-meta">Para estudios técnicos</span></span><span class="download-arrow">→</span></button>
+          <button class="download-item" onclick="requestDoc('Tableau U-values Psi')"><span class="download-icon">📊</span><span class="download-info"><span class="download-label">Tabla U-values, R, Psi (puentes térmicos)</span><span class="download-meta">PDF</span></span><span class="download-arrow">→</span></button>
+          <button class="download-item" onclick="requestDoc('Calcul RE2020 type')"><span class="download-icon">🌍</span><span class="download-info"><span class="download-label">Nota de cálculo RE2020 (ejemplo tipo)</span><span class="download-meta">PDF</span></span><span class="download-arrow">→</span></button>
+          <button class="download-item" onclick="requestDoc('CCTP spécifications')"><span class="download-icon">📝</span><span class="download-info"><span class="download-label">CCTP — especificaciones listas para insertar</span><span class="download-meta">Word (.docx)</span></span><span class="download-arrow">→</span></button>
+        </div>
+      </div>
+
+      <div class="download-group">
+        <div class="download-group-head">
+          <div class="download-group-icon">🛡️</div>
+          <h3>Informes de ensayo y certificaciones</h3>
+        </div>
+        <div class="download-list">
+          <button class="download-item" onclick="requestDoc('Rapport essai feu A1')"><span class="download-icon">🔥</span><span class="download-info"><span class="download-label">Informe de ensayo de fuego Euroclase A1</span><span class="download-meta">PDF certificado</span></span><span class="download-arrow">→</span></button>
+          <button class="download-item" onclick="requestDoc('Rapport essai acoustique')"><span class="download-icon">🔇</span><span class="download-info"><span class="download-label">Informe de ensayo acústico Rw 52 dB</span><span class="download-meta">PDF certificado</span></span><span class="download-arrow">→</span></button>
+          <button class="download-item" onclick="requestDoc('Certificat CSTB')"><span class="download-icon">🏛️</span><span class="download-info"><span class="download-label">Certificado CSTB (rendimiento térmico)</span><span class="download-meta">PDF oficial</span></span><span class="download-arrow">→</span></button>
+          <button class="download-item" onclick="requestDoc('Brevet européen')"><span class="download-icon">📜</span><span class="download-info"><span class="download-label">Patente europeo Polistibrick</span><span class="download-meta">PDF oficial</span></span><span class="download-arrow">→</span></button>
+        </div>
+      </div>
+
+    </div>
+
+    <p style="max-width:760px;margin:32px auto 0;text-align:center;font-size:13px;color:var(--gray);line-height:1.6;">
+      <strong style="color:var(--ink);">Nota:</strong> los documentos estarán disponibles para descarga gratuita pronto. Mientras tanto, solicítelos directamente — se los enviamos en 24h.
+    </p>
+  </div>
+</section>
+
+<!-- 6. LIBERTÉ DE CONCEPTION — teaser projets -->
+<section class="design-section">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:760px;margin:0 auto;">
+      <span class="eyebrow">Proyectos</span>
+      <h2 style="font-family:var(--serif);font-size:clamp(28px,3.2vw,42px);font-weight:500;color:var(--ink);letter-spacing:-0.02em;margin-bottom:14px;">Lo que otros arquitectos <em style="font-style:italic;color:var(--red);font-weight:400;">han proyectado.</em></h2>
+      <p style="font-size:15.5px;color:var(--gray);line-height:1.65;">De contemporáneo a tradicional, de P a P+3, en zonas frías o mediterráneas — Polistibrick se adapta a cualquier arquitectura.</p>
+    </div>
+    <div class="design-grid reveal">
+      <div class="design-card"><img src="../../images/maison-ile-de-france-thumb.jpg" alt="Villa contemporánea Île-de-France"></div>
+      <div class="design-card"><img src="../../images/proyectos/projet-arch2.png" alt="Villa contemporanea Provenza" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="design-card"><img src="../../images/proyectos/projet-arch3.png" alt="Casa contemporanea bioclimatica" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+    </div>
+    <div style="text-align:center;margin-top:36px;" class="reveal">
+      <a href="../../proyectos/" class="btn btn-primary btn-arrow">Ver todos los proyectos realizados</a>
+    </div>
+  </div>
+</section>
+
+<!-- 7. INGÉNIEUR DÉDIÉ -->
+<section class="engineer-section" id="ingenieur">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:760px;margin:0 auto;">
+      <span class="eyebrow">Supporto tecnico</span>
+      <h2 style="font-family:var(--serif);font-size:clamp(28px,3.2vw,42px);font-weight:500;color:var(--ink);letter-spacing:-0.02em;">Un ingeniero Polistibrick <em style="font-style:italic;color:var(--red);font-weight:400;">dedicado a su proyecto.</em></h2>
+    </div>
+    <div class="engineer-card reveal">
+      <div class="engineer-info">
+        <h3>Equipo técnico Polistibrick Rumanía</h3>
+        <p>¿Una pregunta sobre puentes térmicos, uniones complejas, transferencia de cargas, cálculo de un U-value específico? Nuestro equipo responde <strong>en 24 h, por email o teléfono</strong>. Gratis, sin compromiso.</p>
+        <div class="engineer-contact">
+          <div class="engineer-contact-item">📞 <a href="tel:+34642777216">+34 642 777 216</a></div>
+          <div class="engineer-contact-item">✉ <a href="mailto:info@polistibrick.es">info@polistibrick.es</a></div>
+          <div class="engineer-contact-item">🕐 Lun–Vie 09:00–18:00 CET</div>
+        </div>
+      </div>
+      <div class="engineer-cta">
+        <a href="../../contact/" class="btn btn-primary btn-arrow">Contáctenos</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. CTA ESCALAT -->
+<section class="cta-esc-section">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto;">
+      <span class="eyebrow">Siguiente paso</span>
+      <h2 style="font-family:var(--serif);font-size:clamp(28px,3.2vw,42px);font-weight:500;color:var(--ink);letter-spacing:-0.02em;">Elija su siguiente paso <em style="font-style:italic;color:var(--red);font-weight:400;">con Polistibrick.</em></h2>
+    </div>
+    <div class="cta-esc-grid reveal">
+      <a href="../../contact/?subject=Richiesta+documentazione+tecnica" class="cta-esc-card">
+        <div class="cta-esc-icon">📦</div>
+        <div class="cta-esc-title">Solicite la documentación</div>
+        <div class="cta-esc-desc">Fichas técnicas, CAD, BIM, detalles constructivos, informes de ensayo. Le enviamos todo en 24h.</div>
+        <span class="cta-esc-btn">Solicite la documentación</span>
+      </a>
+      <a href="../../contact/" class="cta-esc-card">
+        <div class="cta-esc-icon">💬</div>
+        <div class="cta-esc-title">Hable con nuestro ingeniero</div>
+        <div class="cta-esc-desc">Respuesta técnica en 24h. Puentes térmicos, cálculos U-value, uniones complejas. Gratuito.</div>
+        <span class="cta-esc-btn">Contáctenos</span>
+      </a>
+      <a href="../../ser-socio/" class="cta-esc-card cta-esc-card--primary">
+        <div class="cta-esc-icon">🤝</div>
+        <div class="cta-esc-title">Hazte socio</div>
+        <div class="cta-esc-desc">Programa arquitecto: formación 1 día gratuita, leads transmitidos, co-branding en proyectos.</div>
+        <span class="cta-esc-btn">Descubra el programa</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" data-include="footer"></footer>
+<script src="../../assets/js/site.js?v=2" defer></script>
+
+<script>
+// Schede tecniche (pubbliche): il pulsante apre il modulo contatto (requestFiche).
+// TODO: quando i PDF saranno disponibili, collegare direttamente al file.
+function requestFiche(ficheName) {
+  var params = new URLSearchParams({
+    subject: 'Solicitud de documentación',
+    type: 'document',
+    doc: ficheName
+  });
+  window.location.href = '../../contact/?' + params.toString();
+}
+
+// Per tutti gli altri documenti (CAD, BIM, calcoli, rapporti) — richiede ruolo pro
+function requestDoc(docName) {
+  var params = new URLSearchParams({
+    subject: 'Solicitud de documentación',
+    role: 'architecte-bet',
+    type: 'document',
+    doc: docName
+  });
+  window.location.href = '../../contact/?' + params.toString();
+}
+</script>
+
+</body>
+</html>
