@@ -47,6 +47,7 @@
             <a href="#" data-country="ie" data-domain="https://polistibrick.ie" data-folder="ie" class="country-switcher-item"><span class="flag">🇮🇪</span><span class="name">{{ui.country_ie}}</span><span class="domain">polistibrick.ie</span></a>
             <a href="#" data-country="uk" data-domain="https://polistibrick.uk" data-folder="en" class="country-switcher-item"><span class="flag">🇬🇧</span><span class="name">{{ui.country_uk}}</span><span class="domain">polistibrick.uk</span></a>
             <a href="#" data-country="ch" data-domain="https://polistibrick.com" data-folder="de" class="country-switcher-item"><span class="flag">🇨🇭</span><span class="name">{{ui.country_ch}}</span><span class="domain">polistibrick.com</span></a>
+            <a href="#" data-country="me" data-domain="https://polistibrick.me" data-folder="me" class="country-switcher-item"><span class="flag">🇲🇪</span><span class="name">{{ui.country_me}}</span><span class="domain">polistibrick.me</span></a>
           </div>
         </div>
         <a href="${BASE}oferta/" class="btn btn-primary nav-cta-devis">{{ui.cere_oferta_court}}</a>

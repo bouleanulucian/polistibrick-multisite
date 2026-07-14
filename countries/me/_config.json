@@ -1,0 +1,86 @@
+{
+  "lang": "cnr",
+  "country": "ME",
+  "country_name": "Montenegro",
+  "country_name_native": "Crna Gora",
+  "country_flag": "🇲🇪",
+  "domain": "polistibrick.me",
+  "domain_url": "https://polistibrick.me",
+  "company": {
+    "name_legal": "Polistibrick Crna Gora DOO",
+    "name_short": "Polistibrick Crna Gora",
+    "vat": "ME[za unos]",
+    "registration": "[za unos]",
+    "address_street": "[za unos]",
+    "address_city": "Podgorica",
+    "address_zip": "[za unos]",
+    "address_country": "Crna Gora"
+  },
+  "contact": {
+    "phone": "+382 [za unos]",
+    "phone_raw": "+382[za unos]",
+    "phone_display": "+382 [za unos]",
+    "email_general": "contact@polistibrick.com",
+    "email_offer": "ponuda@polistibrick.com",
+    "email_press": "press@polistibrick.com",
+    "hours": "Pon–Pet 09:00–18:00 CET",
+    "social": {
+      "facebook": "",
+      "instagram": "",
+      "linkedin": "",
+      "youtube": ""
+    }
+  },
+  "team": [
+    {
+      "name": "[Ime predstavnika]",
+      "role": "Komercijalni direktor Crna Gora",
+      "email": "[email]@polistibrick.com",
+      "phone": "[telefon]",
+      "languages": [
+        "CNR",
+        "EN",
+        "SR"
+      ],
+      "photo": "team/manager-me.jpg",
+      "linkedin": ""
+    }
+  ],
+  "currency": "EUR",
+  "currency_symbol": "€",
+  "currency_display_format": "{value} €",
+  "vat_rate": 21,
+  "form_submit_email": "contact@polistibrick.com",
+  "form_cc_email": "info@polistibrick.eu",
+  "forms": {
+    "access_key": "",
+    "provider": "web3forms",
+    "subjects": {
+      "contact": "Kontakt — Polistibrick Crna Gora",
+      "devis": "Zahtjev za ponudu — Polistibrick Crna Gora",
+      "partner": "Prijava partnera — Polistibrick Crna Gora",
+      "review": "Nova recenzija klijenta — Polistibrick Crna Gora"
+    }
+  },
+  "legal": {
+    "publication_director": "Lucian Bouleanu",
+    "hosting_provider": "Cloudflare, Inc.",
+    "hosting_address": "101 Townsend St, San Francisco, CA 94107, USA",
+    "privacy_contact_email": "contact@polistibrick.com",
+    "privacy_slug": "privatnost"
+  },
+  "factory": {
+    "name": "Valencia",
+    "address": "Valencia, Španija",
+    "year_built": 2014
+  },
+  "metadata": {
+    "og_locale": "sr_ME",
+    "hreflang": "sr-ME"
+  },
+  "devis_app": {
+    "url": "https://devis.polistibrick.me",
+    "preview_url": "https://polistibrick-configurator.vercel.app",
+    "pays": "ME"
+  }
+}

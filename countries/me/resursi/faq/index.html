@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="cnr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Česta pitanja · Polistibrick</title>
+  <meta name="description" content="Odgovori na najčešća pitanja o sistemu Polistibrick — tehnička i komercijalna pitanja, garancije i izvođenje radova.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/site.css">
+  <style>
+    .wm-section { padding: clamp(60px, 8vw, 100px) 0; background: var(--cream); }
+    .wm-stage-wrap { position: relative; margin: 70px auto 0; max-width: 1480px; }
+    .wm-watermark { position: absolute; top: 0; left: 50%; width: 100vw; margin-left: -50vw; pointer-events: none; user-select: none; transform: translateY(-50%); height: 1em; line-height: 1; text-align: center; text-transform: uppercase; font-family: var(--serif); font-size: clamp(64px, 12vw, 200px); font-weight: 500; letter-spacing: -0.06em; z-index: 2; }
+    .wm-watermark .wm-half { position: absolute; inset: 0; width: 100%; display: block; }
+    .wm-watermark .wm-top { color: transparent; -webkit-text-stroke: 1.4px rgba(15,15,15,0.30); clip-path: inset(0 0 50% 0); }
+    .wm-watermark .wm-bottom { color: var(--cream-dark); opacity: 0.65; clip-path: inset(50% 0 0 0); }
+    .wm-stage { position: relative; background: var(--cream-light); border: 1px solid var(--border); border-radius: 32px; padding: 56px; }
+    .wm-content { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 48px; align-items: center; }
+    .wm-text { padding-right: 8px; }
+    .wm-text .bubble-tag { display: inline-block; background: var(--red-soft); color: var(--red); padding: 4px 12px; border-radius: 4px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 16px; }
+    .wm-text h1 { font-family: var(--serif); font-size: clamp(34px, 4vw, 56px); font-weight: 500; color: var(--ink); letter-spacing: -0.02em; line-height: 1.05; margin-bottom: 18px; }
+    .wm-text h1 em { font-style: italic; color: var(--red); font-weight: 400; }
+    .wm-text p { font-size: 16px; color: var(--gray); line-height: 1.65; }
+    .wm-visual { background: white; border: 1px solid var(--border); border-radius: 20px; padding: 24px; box-shadow: var(--shadow-md); margin-top: 10mm; aspect-ratio: 4/5; display: flex; align-items: center; justify-content: center; color: var(--gray); text-align: center; font-size: 13px; }
+    @media (max-width: 1100px) {
+      .wm-content { grid-template-columns: 1fr; gap: 32px; }
+      .wm-stage { padding: 36px; }
+      .wm-visual { margin-top: 0; aspect-ratio: 16/10; }
+    }
+    @media (max-width: 768px) { .wm-stage { padding: 28px 20px; } }
+  </style>
+</head>
+<body data-base="../../">
+
+<header class="nav" data-include="nav"></header>
+
+<section class="wm-section">
+  <div class="container">
+    <div class="wm-stage-wrap reveal">
+      <div class="wm-watermark" aria-hidden="true">
+        <span class="wm-half wm-top">Često postavljana pitanja</span>
+        <span class="wm-half wm-bottom">Često postavljana pitanja</span>
+      </div>
+      <div class="wm-stage">
+        <div class="wm-content">
+          <div class="wm-text">
+            <span class="bubble-tag">Često postavljana pitanja</span>
+            <h1>Odgovori <em>na vaša pitanja.</em></h1>
+            <p>Najčešća pitanja o sistemu Polistibrick — tehnička, komercijalna, garancija i puštanje u rad. Ako ne pronađete odgovor, pišite nam direktno.</p>
+          </div>
+          <div class="wm-visual" style="background: linear-gradient(135deg, #1f2022 0%, #111213 100%); display: flex; flex-direction: column; gap: 20px; align-items: center; justify-content: center; border: none; color: #fff; box-shadow: var(--shadow-lg); padding: 24px; box-sizing: border-box;">
+            <svg width="84" height="84" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Dialogue bubble 1: Question (left top) -->
+              <path d="M12 28C12 18.1 19.8 10 30 10C40.2 10 48 18.1 48 28C48 37.9 40.2 46 30 46C26.5 46 23.2 45 20.5 43.2L12 47.5V41C12 41 12 30 12 28Z" fill="url(#bubbleGrad)" stroke="#E23E44" stroke-width="2" />
+              <text x="30" y="34" font-family="'Inter', sans-serif" font-weight="800" font-size="20" fill="#fff" text-anchor="middle">?</text>
+              
+              <!-- Dialogue bubble 2: Answer (right bottom) -->
+              <path d="M72 52C72 43.2 65.3 36 57 36C48.7 36 42 43.2 42 52C42 60.8 48.7 68 57 68C60.2 68 63.2 67 65.5 65.2L72 69V63C72 63 72 53.5 72 52Z" fill="#3a3c3f" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" />
+              <path d="M52 53.5L55.5 57L62.5 50" stroke="#81C784" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+
+              <defs>
+                <linearGradient id="bubbleGrad" x1="12" y1="10" x2="48" y2="46" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#E23E44" />
+                  <stop offset="1" stop-color="#9E1E22" />
+                </linearGradient>
+              </defs>
+            </svg>
+            <div style="text-align: center;">
+              <div style="font-family: var(--serif); font-size: 20px; font-weight: 500; margin-bottom: 6px; letter-spacing: -0.01em;">Često postavljana pitanja</div>
+              <div style="font-size: 11px; color: rgba(255,255,255,0.60); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600;">Odgovori i podrška</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container--narrow">
+
+    <div class="reveal" style="margin-bottom:50px;">
+      <h2 style="margin-bottom:24px;">Za graditelje i profesionalce</h2>
+      <details class="card" style="margin-bottom:12px;padding:24px 28px;">
+        <summary style="font-weight:500;font-size:17px;cursor:pointer;color:var(--ink);">Koliko je radnika potrebno za montažu kuće?</summary>
+        <p style="margin-top:14px;font-size:14.5px;">Samo jedan tim od <strong>3 persoane</strong> montira prizemnu kuću od 100 m² za <strong>manje od 3 sedmice</strong>, skoro završena. Tamo gdje klasična konstrukcija mobilizira do 5 različite timove (zidari, vanjska izolacija, unutrašnja izolacija, malteri, zaptivači), Polistibrick zahtijeva samo jednu.</p>
+      </details>
+      <details class="card" style="margin-bottom:12px;padding:24px 28px;">
+        <summary style="font-weight:500;font-size:17px;cursor:pointer;color:var(--ink);">Koliko zanata zamjenjuje Polistibrick?</summary>
+        <p style="margin-top:14px;font-size:14.5px;"><strong>Pet, u samo jednoj montaži</strong>: zidanje, vanjska izolacija (ETICS), unutrašnja izolacija, oblaganje/završna obrada i nepropusnost. Jedan proizvod i jedan tim — umjesto pet materijala i pet različitih timova.</p>
+      </details>
+      <details class="card" style="margin-bottom:12px;padding:24px 28px;">
+        <summary style="font-weight:500;font-size:17px;cursor:pointer;color:var(--ink);">Placa de finisare je gips-carton?</summary>
+        <p style="margin-top:14px;font-size:14.5px;">Ne: je din <strong>vlaknocement</strong>. U jednom proizvodu, otporno je na <strong>požar, voda i buka</strong> — gdje bi klasična kuća zahtijevala različite pločice za svaku od ovih nekretnina.</p>
+      </details>
+      <details class="card" style="margin-bottom:12px;padding:24px 28px;">
+        <summary style="font-weight:500;font-size:17px;cursor:pointer;color:var(--ink);">Kako se sprovode električne i vodovodne instalacije?</summary>
+        <p style="margin-top:14px;font-size:14.5px;">Instalacione mreže se razvode <strong>prin oplata</strong> prije zatvaranja, baš kao kod zida od gips-kartona. Cijevi se integrišu tokom montaže, a ne obrađuju zasebno.</p>
+      </details>
+      <details class="card" style="margin-bottom:12px;padding:24px 28px;">
+        <summary style="font-weight:500;font-size:17px;cursor:pointer;color:var(--ink);">Da li sistem pomaže u usklađivanju sa RE2020?</summary>
+        <p style="margin-top:14px;font-size:14.5px;">Da. <strong>Vazdušna zaptivenost</strong> obezbijeđena je samim sistemom, dok je izolacija neprekidna, <strong>bez toplotnih mostova</strong> — dvije ključne tačke standarda RE2020. Testovi vazdušne nepropusnosti prolaze iz prvog pokušaja.</p>
+      </details>
+      <details class="card" style="margin-bottom:12px;padding:24px 28px;">
+        <summary style="font-weight:500;font-size:17px;cursor:pointer;color:var(--ink);">Da li je antiseizmički? Dozvoljava velike konzole?</summary>
+        <p style="margin-top:14px;font-size:14.5px;">Da. Structura je din <strong>beton armat monolitic</strong>, protivseizmička. Omogućava i <strong>console mari</strong> — idealno za savremenu arhitekturu (ravni krovovi, konzolni volumeni).</p>
+      </details>
+      <details class="card" style="margin-bottom:12px;padding:24px 28px;">
+        <summary style="font-weight:500;font-size:17px;cursor:pointer;color:var(--ink);">Kako devii građevinac partner Polistibrick?</summary>
+        <p style="margin-top:14px;font-size:14.5px;">Kratka obuka dovoljna je za usvajanje sistema. <a href="../../postani-partner/" style="color:var(--red);">Postanite partner</a> da se pridružite mreži, obučite se i zaposlite u svom području.</p>
+      </details>
+    </div>
+
+    <div class="reveal" style="margin-bottom:50px;">
+      <h2 style="margin-bottom:24px;">O nama sistem</h2>
+      <details class="card" style="margin-bottom:12px;padding:24px 28px;">
+        <summary style="font-weight:500;font-size:17px;cursor:pointer;color:var(--ink);">Šta je Polistibrick exact?</summary>
+        <p style="margin-top:14px;font-size:14.5px;">Polistibrick je un sistem ICF (Insulated Concrete Forms) patentiran european. Konkretno, to su montažne forme od ekspandiranog polistirena (EPS) koje se sklapaju kao LEGO i pune armiranim betonom. Rezultat je monolitan, toplotno izoliran i zvučno izoliran zid, spreman za završnu obradu.</p>
+      </details>
+      <details class="card" style="margin-bottom:12px;padding:24px 28px;">
+        <summary style="font-weight:500;font-size:17px;cursor:pointer;color:var(--ink);">Koja je razlika u odnosu na klasični sistem ICF?</summary>
+        <p style="margin-top:14px;font-size:14.5px;">3 elemente: <strong>(1)</strong> nudimo 3 unaprijed definirane dizajne plus besplatnu proizvodnju po narudžbi; <strong>(2)</strong> integrišemo unapred postavljeno ojačanje — nema potrebe da ga vezujete na licu mesta; <strong>(3)</strong> posjedujemo evropski patent, pa je sistem jedinstven.</p>
+      </details>
+      <details class="card" style="margin-bottom:12px;padding:24px 28px;">
+        <summary style="font-weight:500;font-size:17px;cursor:pointer;color:var(--ink);">EPS-ul ne je periculos? Ne arde?</summary>
+        <p style="margin-top:14px;font-size:14.5px;">Sirovi EPS je gorivo — ali izolator koji koristimo jeste <strong>ignifug</strong> (samogasiv). A prije svega, u sistemu Polistibrick je <strong>zaštićen vlaknocementnim pločama</strong>, clasificate <strong>A1 (incombustibil)</strong>, najbolja klasa reakcije na požar. Rezultat: sistem <strong>ne arde</strong> — izolator ostaje zatvoren između armiranog betona u srcu zida i vlaknastog cementa na površini, nikada nije izložen plamenu.</p>
+      </details>
+      <details class="card" style="margin-bottom:12px;padding:24px 28px;">
+        <summary style="font-weight:500;font-size:17px;cursor:pointer;color:var(--ink);">Da li zidovi dišu? Ne va fi umiditate?</summary>
+        <p style="margin-top:14px;font-size:14.5px;">„Diše" je prije svega <strong>popularan izraz</strong>: zid ne propušta vazduh. Konkretno, zidovi Polistibrick upravljaju kontrolisanom vodenom parom (μ = 30-70), što je dovoljno da izbjegne kondenzaciju bez gubitka topline. EPS ne apsorbuje vodu (zatvorene ćelije) — tako da nema problema sa vlagom ili plijesni, a procijenjeni životni vijek je preko 50 godina. Važno: ugradnja jedne <strong>VMC (kontrolisane mehaničke ventilacije) je obavezna</strong>, bez obzira na izabrani konstruktivni sistem.</p>
+      </details>
+    </div>
+
+    <div class="reveal" style="margin-bottom:50px;">
+      <h2 style="margin-bottom:24px;">O nama trošak</h2>
+      <details class="card" style="margin-bottom:12px;padding:24px 28px;">
+        <summary style="font-weight:500;font-size:17px;cursor:pointer;color:var(--ink);">Koliko Polistibrick košta u poređenju sa opekom?</summary>
+        <p style="margin-top:14px;font-size:14.5px;">Polistibrick košta samo <strong>+5%</strong> u odnosu na cijenu klasične kuće — za pasivnu kuću A+++. U poređenju sa pasivno preuređenom kućom od cigle, Polistibrick je sa <strong>−30%</strong> mai accesibil.</p>
+      </details>
+      <details class="card" style="margin-bottom:12px;padding:24px 28px;">
+        <summary style="font-weight:500;font-size:17px;cursor:pointer;color:var(--ink);">Koliko ću uštedjeti na računima za 25 godina?</summary>
+        <p style="margin-top:14px;font-size:14.5px;">Za kuću od 150 m², procjenjujemo ukupnu uštedu od oko 43.500 € u 25 godina (plin + struja + održavanje). U praksi, mnogi vlasnici kuća ne plaćaju gotovo ništa za grijanje i klimatizaciju.</p>
+      </details>
+      <details class="card" style="margin-bottom:12px;padding:24px 28px;">
+        <summary style="font-weight:500;font-size:17px;cursor:pointer;color:var(--ink);">Postoje li poreske olakšice ili subvencije?</summary>
+        <p style="margin-top:14px;font-size:14.5px;">Da, u mnogim zemljama u UE postoje subvencije za pasivne kuće (Kuća Verde, KfW u Njemačkoj, MaPrimeRénov' u Francuskoj, itd.). Pomažemo vam u pripremi dokumentacije.</p>
+      </details>
+    </div>
+
+    <div class="reveal" style="margin-bottom:50px;">
+      <h2 style="margin-bottom:24px;">O izvođenju radova</h2>
+      <details class="card" style="margin-bottom:12px;padding:24px 28px;">
+        <summary style="font-weight:500;font-size:17px;cursor:pointer;color:var(--ink);">Koliko traje izgradnja sistemom Polistibrick?</summary>
+        <p style="margin-top:14px;font-size:14.5px;">Napravite okvirni proračun <strong>4 sedmice po spratu</strong> za kuću površine 150-200 m² u osnovi (konstrukcija). Paneli pune spratne visine montiraju se <strong>ca un oplata metalic clasic</strong>. Mnogo je brža od tradicionalne gradnje: sve se radi u jednoj montaži, bez uobičajenih vremena čekanja (sušenje žbuke, izolacija fasade, oblaganje).</p>
+      </details>
+      <details class="card" style="margin-bottom:12px;padding:24px 28px;">
+        <summary style="font-weight:500;font-size:17px;cursor:pointer;color:var(--ink);">Am nevoie de un građevinac specializat?</summary>
+        <p style="margin-top:14px;font-size:14.5px;">Ne morate već biti stručnjak. <strong>Polistibrick vas obučava direktno na vašem gradilištu</strong>, tokom izgradnje, a zatim dolazi <strong>da provjeri radove na kraju</strong>. De la <strong>druga kuća</strong> izvedenom ovim sistemom, postajete <strong>montator autorizat</strong> i pridružujete se mreži stalnih partnera Polistibrick. <a href="../../postani-partner/" style="color:var(--red);">Saznajte više</a>.</p>
+      </details>
+      <details class="card" style="margin-bottom:12px;padding:24px 28px;">
+        <summary style="font-weight:500;font-size:17px;cursor:pointer;color:var(--ink);">Da li je Polistibrick kompatibil sa tradicionalnom arhitekturom?</summary>
+        <p style="margin-top:14px;font-size:14.5px;">Da, naš sistem podržava bilo koju vrstu vanjske završne obrade — gips, kamen, drvo, izloženu ciglu, keramičke pločice. Isto važi i za unutrašnjost. Polistibrick je nevidljiva konstrukcija, a dizajn je vaš.</p>
+      </details>
+    </div>
+
+    <div class="reveal">
+      <h2 style="margin-bottom:24px;">Garancija i usluge</h2>
+      <details class="card" style="margin-bottom:12px;padding:24px 28px;">
+        <summary style="font-weight:500;font-size:17px;cursor:pointer;color:var(--ink);">Koju garanciju nudite?</summary>
+        <p style="margin-top:14px;font-size:14.5px;">Treba razlikovati dva nivoa. <strong>Garancije na gradilištu</strong> — garancija savršenog završetka (1 godina), bijenale (2 godine) i posebno <strong>desetogodišnja (10 godina)</strong> na strukturi — obezbjeđuje kompanija ili graditelj koji sistem stavlja u funkciju. <strong>Garancija za proizvod Polistibrick</strong>, kao proizvođač, obezbjeđuje usklađenost sa oznakom <strong>CE</strong> i deklarisane karakteristike (otpornost, izolacija, reakcija na vatru). Materijali — vlaknasti cement, EPS grafit i armirani beton — su <strong>projektovani da traju više od 50 godina</strong>.</p>
+      </details>
+      <details class="card" style="margin-bottom:12px;padding:24px 28px;">
+        <summary style="font-weight:500;font-size:17px;cursor:pointer;color:var(--ink);">Da li se kuća Polistibrick lako osigurava?</summary>
+        <p style="margin-top:14px;font-size:14.5px;">Da, bez ikakvih poteškoća. Structural, Polistibrick je <strong>identično klasičnoj tehnologiji zida od armiranog betona</strong>: Nosivi zid je lijevani armirani beton, aktualna i savršeno poznata tehnika. Kuća se stoga osigurava <strong>kao svaka armiranobetonska konstrukcija</strong> — osiguranje od građevinskih šteta i desetogodišnja garancija uključeni — po <strong>svaki osiguravač</strong>.</p>
+      </details>
+    </div>
+
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="cta-band reveal">
+    <h2>Nijeste pronašli <em>odgovor koji tražite?</em></h2>
+    <p>Naši stručnjaci odgovaraju vam direktno u roku od najviše 24 sata.</p>
+    <div class="cta-band-actions">
+      <a href="../../contact/" class="btn btn-on-dark btn-large btn-arrow">Postavite nam pitanje</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" data-include="footer"></footer>
+<script src="../../assets/js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="cnr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zidovi MBK · Termoizolaciona oplata za pasivne kuće — Polistibrick</title>
+  <meta name="description" content="Polistibrick MBK sistem: termoizolaciona oplata od EPS-a visoke gustine sa armiranim betonom. 3 unaprijed definisana modela (MBK 210/270/300), U=0,10-0,14 W/m²K, neprekidna izolacija bez toplotnih mostova. Proizvedeno u EU.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/site.css">
+  <style>
+    /* === Card cu watermark — pattern shared cu /ponuda/, /contact/, etc. === */
+    .wm-section { padding: clamp(60px, 8vw, 100px) 0; background: var(--cream); }
+    .wm-stage-wrap { position: relative; margin: 70px auto 0; max-width: 1480px; }
+    .wm-watermark {
+      position: absolute; top: 0; left: 50%; width: 100vw; margin-left: -50vw;
+      pointer-events: none; user-select: none; transform: translateY(-50%);
+      height: 1em; line-height: 1; text-align: center; text-transform: uppercase;
+      font-family: var(--serif); font-size: clamp(64px, 12vw, 200px);
+      font-weight: 500; letter-spacing: -0.06em; z-index: 2;
+    }
+    .wm-watermark .wm-half { position: absolute; inset: 0; width: 100%; display: block; }
+    .wm-watermark .wm-top { color: transparent; -webkit-text-stroke: 1.4px rgba(15,15,15,0.30); clip-path: inset(0 0 50% 0); }
+    .wm-watermark .wm-bottom { color: var(--cream-dark); opacity: 0.65; clip-path: inset(50% 0 0 0); }
+    .wm-stage {
+      position: relative; background: var(--cream-light); border: 1px solid var(--border);
+      border-radius: 32px; padding: 56px; display: grid; grid-template-columns: 0.95fr 1.05fr;
+      gap: 48px; align-items: center;
+    }
+    .wm-text { padding-right: 8px; }
+    .wm-text .bubble-tag {
+      display: inline-block; background: var(--red-soft); color: var(--red);
+      padding: 4px 12px; border-radius: 4px; font-size: 11px; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 16px;
+    }
+    .wm-text h1 {
+      font-family: var(--serif); font-size: clamp(34px, 4vw, 56px); font-weight: 500;
+      color: var(--ink); letter-spacing: -0.02em; line-height: 1.05; margin-bottom: 18px;
+    }
+    .wm-text h1 em { font-style: italic; color: var(--red); font-weight: 400; }
+    .wm-text p.lead { font-size: 16px; color: var(--gray); line-height: 1.65; margin-bottom: 26px; }
+    .wm-text p.lead strong { color: var(--ink); font-weight: 600; }
+    .wm-visual {
+      background: white; border: 1px solid var(--border); border-radius: 20px;
+      padding: 24px; box-shadow: var(--shadow-md); margin-top: 10mm;
+      aspect-ratio: 4/5; display: flex; align-items: center; justify-content: center;
+      color: var(--gray); text-align: center; font-size: 13px;
+    }
+    @media (max-width: 1100px) {
+      .wm-stage { grid-template-columns: 1fr; gap: 32px; padding: 36px; }
+      .wm-visual { margin-top: 0; aspect-ratio: 16/10; }
+    }
+    @media (max-width: 768px) { .wm-stage { padding: 28px 20px; } }
+
+    /* === Section-level mini watermark (left-aligned) === */
+    .wm-mini-wrap {
+      position: relative;
+      padding-top: 60px;
+      margin-bottom: 50px;
+    }
+    .wm-mini {
+      position: absolute;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      user-select: none;
+      transform: translateY(-30%);
+      height: 1em;
+      line-height: 1;
+      text-transform: uppercase;
+      font-family: var(--serif);
+      font-size: clamp(44px, 6vw, 88px);
+      font-weight: 500;
+      letter-spacing: -0.04em;
+      white-space: nowrap;
+    }
+    .wm-mini .wm-half { position: absolute; inset: 0; display: block; }
+    .wm-mini .wm-top {
+      color: transparent;
+      -webkit-text-stroke: 1.2px rgba(15,15,15,0.28);
+      clip-path: inset(0 0 50% 0);
+    }
+    .wm-mini .wm-bottom {
+      color: var(--cream-dark);
+      opacity: 0.75;
+      clip-path: inset(50% 0 0 0);
+    }
+    .wm-mini-content {
+      text-align: left;
+      max-width: 720px;
+    }
+    .wm-mini-content .eyebrow { color: var(--red); }
+    @media (max-width: 768px) {
+      .wm-mini-wrap { padding-top: 40px; margin-bottom: 32px; }
+    }
+  </style>
+</head>
+<body data-base="../../">
+
+<header class="nav" data-include="nav"></header>
+
+<!-- ============ HERO ============ -->
+<section class="wm-section">
+  <div class="container">
+    <div class="wm-stage-wrap reveal">
+      <div class="wm-watermark" aria-hidden="true">
+        <span class="wm-half wm-top">Zidovi</span>
+        <span class="wm-half wm-bottom">Zidovi</span>
+      </div>
+
+      <div class="wm-stage">
+        <div class="wm-text">
+          <span class="bubble-tag">Zidovi · MBK</span>
+          <h1>Zid finit <em>5 u 1.</em></h1>
+          <p class="lead">MBK je singurul sistem ICF din Europa sa <strong>3 modele predefinite</strong> i mogućnost prilagođavanja po narudžbi bez dodatnih troškova. Jedna oplata zamjenjuje ciglu, izolaciju, malter, mreže i ljepila — A+++ pasivni zidovi u jednom nalivanju.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;">
+            <a href="../../ponuda/" class="btn btn-primary btn-arrow">Zatražite personalizovanu ponudu</a>
+            <a href="../../contact/" class="btn btn-ghost">Zatražite dokumentaciju</a>
+          </div>
+        </div>
+        <div class="wm-visual" style="padding:18px;overflow:hidden;">
+          <img src="../../images/mbk-wall.png" alt="Presjek zida MBK — spoljašnji EPS, armirani beton, unutrašnji EPS" style="width:90%;height:90%;object-fit:contain;display:block;margin:auto;">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ KEY FACTS ============ -->
+<section class="section section--tight">
+  <div class="container">
+    <div class="grid grid-4 reveal">
+      <div class="fact">
+        <span class="fact-num">0,10<small> W/m²K</small></span>
+        <span class="fact-label">Valoare U MBK 300</span>
+      </div>
+      <div class="fact">
+        <span class="fact-num">3</span>
+        <span class="fact-label">Materiale per zid</span>
+      </div>
+      <div class="fact">
+        <span class="fact-num">100<small> m²/zi</small></span>
+        <span class="fact-label">Sa 2 persoane</span>
+      </div>
+      <div class="fact">
+        <span class="fact-num">A+++</span>
+        <span class="fact-label">Energetska klasa</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5 ÎN 1 EXPLAINED ============ -->
+<section class="section section--cream">
+  <div class="container">
+    <div class="grid grid-2" style="align-items:center;gap:56px;">
+      <div class="reveal">
+        <span class="eyebrow">5 funkcija u jednom proizvodu</span>
+        <h2>Un oplata. <em>Cijela kuća.</em></h2>
+        <p class="lead" style="margin-top:14px;">Klasična cigla zahtijeva više 10 materijala i 4-5 različitih timova za gotov zid. MBK ih sve zamjenjuje:</p>
+        <ul class="bullets" style="margin-top:28px;">
+          <li class="bullet"><span><strong>Oplata:</strong> modularna konstrukcija u koju se izliva beton</span></li>
+          <li class="bullet"><span><strong>Toplotna izolacija:</strong> EPS kontinuirano, bez toplotnih mostova, do 30 cm debljine (MBK 300)</span></li>
+          <li class="bullet"><span><strong>Zvučna izolacija:</strong> vrhunska zvučna izolacija kombinacijom EPS + armirani beton</span></li>
+          <li class="bullet"><span><strong>Noseća konstrukcija:</strong> armirani beton od 15 cm — otpornost na zemljotrese i požar A1</span></li>
+          <li class="bullet"><span><strong>Suport za finisaje:</strong> zid plan, gata de tencuit sau de vopsit direct</span></li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <img src="../../images/mbk-wall.png" alt="Presjek zida MBK — slojevi EPS + armatura + beton" style="width:100%;aspect-ratio:3/4;object-fit:contain;display:block;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MODELS / VARIANTS ============ -->
+<section class="section section--cream" style="margin-top:-20mm;padding-top:30px;">
+  <div class="container">
+    <div class="wm-mini-wrap reveal">
+      <div class="wm-mini" aria-hidden="true">
+        <span class="wm-half wm-top">Modele</span>
+        <span class="wm-half wm-bottom">Modele</span>
+      </div>
+      <div class="wm-mini-content">
+        <span class="eyebrow">3 modele predefinite</span>
+        <h2 style="margin-top:8px;">De la premium la <em>pasiv A+++.</em></h2>
+        <p class="lead" style="margin-top:14px;">Birate prema klimi i budžetu. Ako nijedan standardni model ne odgovara savršeno vašem projektu, proizvodimo po narudžbi bez dodatnih troškova — jedini sistem ICF s ovom garancijom.</p>
+      </div>
+    </div>
+
+    <div class="grid grid-3 reveal">
+
+      <article class="card card-hover">
+        <span class="card-tag">MBK 210</span>
+        <h3 style="margin-bottom:10px;">Premium</h3>
+        <p style="margin-bottom:20px;font-size:14.5px;">Za umjerenu klimu. Usklađenost sa standardom pasivne kuće u južnim djelovima Evrope.</p>
+        <div class="spec-table" style="border-radius:12px;">
+          <div class="spec-table-row" style="grid-template-columns:1fr 1fr;">
+            <div class="spec-table-cell">Ukupna debljina</div>
+            <div class="spec-table-cell spec-table-cell--value">38 cm</div>
+          </div>
+          <div class="spec-table-row" style="grid-template-columns:1fr 1fr;">
+            <div class="spec-table-cell">Valoare U</div>
+            <div class="spec-table-cell spec-table-cell--value">0,14</div>
+          </div>
+          <div class="spec-table-row" style="grid-template-columns:1fr 1fr;">
+            <div class="spec-table-cell">EPS exterior</div>
+            <div class="spec-table-cell spec-table-cell--value">15 cm</div>
+          </div>
+          <div class="spec-table-row" style="grid-template-columns:1fr 1fr;">
+            <div class="spec-table-cell">Beton armat</div>
+            <div class="spec-table-cell spec-table-cell--value">15 cm</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card card-hover" style="border-color:var(--red);box-shadow:0 18px 40px rgba(200,16,46,0.10);transform:translateY(-8px);">
+        <span class="card-tag" style="background:var(--red);color:white;">★ Recomandat — MBK 270</span>
+        <h3 style="margin-bottom:10px;">Pasiv Standard</h3>
+        <p style="margin-bottom:20px;font-size:14.5px;">Savršena ravnoteža performansi i cijene. Usklađeno sa standardom pasivne kuće širom Centralne Evrope.</p>
+        <div class="spec-table" style="border-radius:12px;">
+          <div class="spec-table-row" style="grid-template-columns:1fr 1fr;">
+            <div class="spec-table-cell">Ukupna debljina</div>
+            <div class="spec-table-cell spec-table-cell--value">42 cm</div>
+          </div>
+          <div class="spec-table-row" style="grid-template-columns:1fr 1fr;">
+            <div class="spec-table-cell">Valoare U</div>
+            <div class="spec-table-cell spec-table-cell--value">0,12</div>
+          </div>
+          <div class="spec-table-row" style="grid-template-columns:1fr 1fr;">
+            <div class="spec-table-cell">EPS exterior</div>
+            <div class="spec-table-cell spec-table-cell--value">20 cm</div>
+          </div>
+          <div class="spec-table-row" style="grid-template-columns:1fr 1fr;">
+            <div class="spec-table-cell">Beton armat</div>
+            <div class="spec-table-cell spec-table-cell--value">15 cm</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card card-hover" style="border-color:#1a7d3a;box-shadow:0 18px 40px rgba(26,125,58,0.10);transform:translateY(-8px);">
+        <span class="card-tag" style="background:#1a7d3a;color:white;">★ Maximum — MBK 300</span>
+        <h3 style="margin-bottom:10px;color:#1a7d3a;">Pasiv A+++</h3>
+        <p style="margin-bottom:20px;font-size:14.5px;">Maksimalne performanse. Za hladne klime, planinske krajeve ili one koji žele najniže moguće račune.</p>
+        <div class="spec-table" style="border-radius:12px;">
+          <div class="spec-table-row" style="grid-template-columns:1fr 1fr;">
+            <div class="spec-table-cell">Ukupna debljina</div>
+            <div class="spec-table-cell spec-table-cell--value">50 cm</div>
+          </div>
+          <div class="spec-table-row" style="grid-template-columns:1fr 1fr;">
+            <div class="spec-table-cell">Valoare U</div>
+            <div class="spec-table-cell spec-table-cell--value">0,10</div>
+          </div>
+          <div class="spec-table-row" style="grid-template-columns:1fr 1fr;">
+            <div class="spec-table-cell">EPS exterior</div>
+            <div class="spec-table-cell spec-table-cell--value">30 cm</div>
+          </div>
+          <div class="spec-table-row" style="grid-template-columns:1fr 1fr;">
+            <div class="spec-table-cell">Beton armat</div>
+            <div class="spec-table-cell spec-table-cell--value">15 cm</div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="reveal" style="text-align:center;margin-top:40px;">
+      <span class="badge">★ Po narudžbi · bez dodatnih troškova</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY MBK — FEATURES ============ -->
+<section class="section section--dark">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 60px;">
+      <span class="eyebrow" style="color:var(--red);">Zašto MBK</span>
+      <h2 style="color:var(--cream);">Prednosti bez premca u ICF kategoriji.</h2>
+    </div>
+
+    <div class="grid grid-3 reveal" style="gap:32px;">
+      <div class="feature">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
+        <div class="feature-body">
+          <h4 style="color:var(--cream);">Premijum zvučna izolacija</h4>
+          <p>Kombinacija EPS visoke gustine + armirani beton nudi smanjenje zvuka u odnosu na 50 dB — zagarantovanu tišinu u svakom okruženju.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12s3-9 9-9 9 9 9 9-3 9-9 9-9-9-9-9z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="feature-body">
+          <h4 style="color:var(--cream);">Prirodna vazdušna nepropusnost</h4>
+          <p>Monolitni beton izliven u jednom koraku - bez spojeva, bez slabih tačaka. Prolazi test Blower Door (n50 &lt; 0,6) bez dodatnih membrana.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg></div>
+        <div class="feature-body">
+          <h4 style="color:var(--cream);">Otpornost na požar A1</h4>
+          <p>Najviša klasa reakcije na požar — negorivo. Vlaknaste cementne ploče A1 ne doprinose požaru i usporavaju širenje plamena.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7S2 12 2 12z"/><line x1="2" y1="12" x2="22" y2="12"/></svg></div>
+        <div class="feature-body">
+          <h4 style="color:var(--cream);">Vodoodbojno od same izgradnje</h4>
+          <p>EPS sa zatvorenim, zaptivenim ćelijama ne upija vodu. Otporan na vlagu, buđ i propadanje tokom vremena. Garancija 50+ godina.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+        <div class="feature-body">
+          <h4 style="color:var(--cream);">3× brža izgradnja</h4>
+          <p>Tim 2-3 ljudi podiže zid 100 m² u jednom danu. Oplata se sklapa kao LEGO, a beton se izliva samo jednom.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <div class="feature-body">
+          <h4 style="color:var(--cream);">Prilagođavanje bez dodatnih troškova</h4>
+          <p>Jedini ICF sistem koji proizvodi posebne veličine po narudžbi, bez dodatnih troškova - zid prilagođen tačno vašem projektu.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FULL TECHNICAL SPEC ============ -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="max-width:720px;margin:0 auto 40px;text-align:center;">
+      <span class="eyebrow">Kompletne tehničke specifikacije</span>
+      <h2>Tačni podaci za svaki model.</h2>
+    </div>
+    <div class="reveal spec-table">
+      <div class="spec-table-row is-header">
+        <div class="spec-table-cell">Karakteristika</div>
+        <div class="spec-table-cell">MBK 210</div>
+        <div class="spec-table-cell">MBK 270</div>
+        <div class="spec-table-cell">MBK 300</div>
+      </div>
+      <div class="spec-table-row">
+        <div class="spec-table-cell spec-table-cell--label">Ukupna debljina zida</div>
+        <div class="spec-table-cell spec-table-cell--value">38 cm</div>
+        <div class="spec-table-cell spec-table-cell--value">42 cm</div>
+        <div class="spec-table-cell spec-table-cell--value">50 cm</div>
+      </div>
+      <div class="spec-table-row">
+        <div class="spec-table-cell spec-table-cell--label">Valoare U (W/m²K)</div>
+        <div class="spec-table-cell spec-table-cell--value">0,14</div>
+        <div class="spec-table-cell spec-table-cell--value">0,12</div>
+        <div class="spec-table-cell spec-table-cell--value">0,10</div>
+      </div>
+      <div class="spec-table-row">
+        <div class="spec-table-cell spec-table-cell--label">Toplotni otpor R (m²K/W)</div>
+        <div class="spec-table-cell spec-table-cell--value">7,14</div>
+        <div class="spec-table-cell spec-table-cell--value">8,33</div>
+        <div class="spec-table-cell spec-table-cell--value">10,00</div>
+      </div>
+      <div class="spec-table-row">
+        <div class="spec-table-cell spec-table-cell--label">EPS exterior</div>
+        <div class="spec-table-cell spec-table-cell--value">15 cm</div>
+        <div class="spec-table-cell spec-table-cell--value">20 cm</div>
+        <div class="spec-table-cell spec-table-cell--value">30 cm</div>
+      </div>
+      <div class="spec-table-row">
+        <div class="spec-table-cell spec-table-cell--label">EPS interior</div>
+        <div class="spec-table-cell spec-table-cell--value">5 cm</div>
+        <div class="spec-table-cell spec-table-cell--value">5 cm</div>
+        <div class="spec-table-cell spec-table-cell--value">5 cm</div>
+      </div>
+      <div class="spec-table-row">
+        <div class="spec-table-cell spec-table-cell--label">Beton armat</div>
+        <div class="spec-table-cell spec-table-cell--value">15 cm</div>
+        <div class="spec-table-cell spec-table-cell--value">15 cm</div>
+        <div class="spec-table-cell spec-table-cell--value">15 cm</div>
+      </div>
+      <div class="spec-table-row">
+        <div class="spec-table-cell spec-table-cell--label">Densitate EPS</div>
+        <div class="spec-table-cell spec-table-cell--value">25 kg/m³</div>
+        <div class="spec-table-cell spec-table-cell--value">25 kg/m³</div>
+        <div class="spec-table-cell spec-table-cell--value">25 kg/m³</div>
+      </div>
+      <div class="spec-table-row">
+        <div class="spec-table-cell spec-table-cell--label">Greutate oplata gol</div>
+        <div class="spec-table-cell spec-table-cell--value">14 kg/m²</div>
+        <div class="spec-table-cell spec-table-cell--value">15 kg/m²</div>
+        <div class="spec-table-cell spec-table-cell--value">16 kg/m²</div>
+      </div>
+      <div class="spec-table-row">
+        <div class="spec-table-cell spec-table-cell--label">Reakcija na požar</div>
+        <div class="spec-table-cell spec-table-cell--value">A1</div>
+        <div class="spec-table-cell spec-table-cell--value">A1</div>
+        <div class="spec-table-cell spec-table-cell--value">A1</div>
+      </div>
+      <div class="spec-table-row">
+        <div class="spec-table-cell spec-table-cell--label">Zvučna izolacija Rw</div>
+        <div class="spec-table-cell spec-table-cell--value">≥ 48 dB</div>
+        <div class="spec-table-cell spec-table-cell--value">≥ 50 dB</div>
+        <div class="spec-table-cell spec-table-cell--value">≥ 52 dB</div>
+      </div>
+      <div class="spec-table-row">
+        <div class="spec-table-cell spec-table-cell--label">Permeabilitate la vapori</div>
+        <div class="spec-table-cell spec-table-cell--value">μ = 30-70</div>
+        <div class="spec-table-cell spec-table-cell--value">μ = 30-70</div>
+        <div class="spec-table-cell spec-table-cell--value">μ = 30-70</div>
+      </div>
+      <div class="spec-table-row">
+        <div class="spec-table-cell spec-table-cell--label">Energetska klasa kuće</div>
+        <div class="spec-table-cell spec-table-cell--value">A++</div>
+        <div class="spec-table-cell spec-table-cell--value">A+++</div>
+        <div class="spec-table-cell spec-table-cell--value">A+++</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DOWNLOADS ============ -->
+<section class="section section--cream pb-section-hidden" id="downloads">
+  <div class="container">
+    <div class="reveal" style="max-width:720px;margin:0 auto 40px;text-align:center;">
+      <span class="eyebrow">Preuzimanja</span>
+      <h2>Kompletna dokumentacija <em>za projekat.</em></h2>
+      <p class="lead" style="margin-top:14px;">Tot šta ai nevoie ca arhitekt, građevinac sau klijent. Dostupno na RO, EN, FR, ES.</p>
+    </div>
+
+    <div class="grid grid-2 reveal" style="gap:14px;">
+      <a href="#" class="download">
+        <div class="download-icon">📄</div>
+        <div class="download-body">
+          <div class="download-title">Tehnički list MBK 210</div>
+          <div class="download-meta">PDF · 1.4 MB · Actualizat 2026</div>
+        </div>
+        <span class="download-arrow">↓</span>
+      </a>
+      <a href="#" class="download">
+        <div class="download-icon">📄</div>
+        <div class="download-body">
+          <div class="download-title">Tehnički list MBK 270</div>
+          <div class="download-meta">PDF · 1.5 MB · Actualizat 2026</div>
+        </div>
+        <span class="download-arrow">↓</span>
+      </a>
+      <a href="#" class="download">
+        <div class="download-icon">📄</div>
+        <div class="download-body">
+          <div class="download-title">Tehnički list MBK 300</div>
+          <div class="download-meta">PDF · 1.6 MB · Actualizat 2026</div>
+        </div>
+        <span class="download-arrow">↓</span>
+      </a>
+      <a href="#" class="download">
+        <div class="download-icon">📐</div>
+        <div class="download-body">
+          <div class="download-title">Detalji konstruktivni (DWG)</div>
+          <div class="download-meta">ZIP · 8 MB · Za AutoCAD</div>
+        </div>
+        <span class="download-arrow">↓</span>
+      </a>
+      <a href="#" class="download">
+        <div class="download-icon">🏛️</div>
+        <div class="download-body">
+          <div class="download-title">Familie BIM (Revit)</div>
+          <div class="download-meta">RFA · 12 MB · Revit 2024+</div>
+        </div>
+        <span class="download-arrow">↓</span>
+      </a>
+      <a href="#" class="download">
+        <div class="download-icon">📋</div>
+        <div class="download-body">
+          <div class="download-title">Certificate CE + ETA</div>
+          <div class="download-meta">PDF · 3 MB · Document oficial</div>
+        </div>
+        <span class="download-arrow">↓</span>
+      </a>
+      <a href="#" class="download">
+        <div class="download-icon">📘</div>
+        <div class="download-body">
+          <div class="download-title">Manual de montaža</div>
+          <div class="download-meta">PDF · 5 MB · 64 pagini</div>
+        </div>
+        <span class="download-arrow">↓</span>
+      </a>
+      <a href="#" class="download">
+        <div class="download-icon">🌡️</div>
+        <div class="download-body">
+          <div class="download-title">Raport higrotermic (Passivhaus)</div>
+          <div class="download-meta">PDF · 2 MB · Calcul PHPP</div>
+        </div>
+        <span class="download-arrow">↓</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RELATED PRODUCTS ============ -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="text-align:center;margin-bottom:40px;">
+      <span class="eyebrow">Sistemul complet</span>
+      <h2>Dodajte i ostatak kuće.</h2>
+    </div>
+    <div class="grid grid-3 reveal">
+      <a href="../podovi-pbk/" class="card card-hover" style="text-decoration:none;color:inherit;">
+        <span class="card-tag">Međuspratne ploče · PBK</span>
+        <h3 style="margin-bottom:10px;">Podovi PBK</h3>
+        <p style="font-size:14.5px;margin-bottom:18px;">Montažni sistem za otvore do 9 m, sa termičkim faznim pomakom od 10,8 h. Lagan i izuzetno otporan.</p>
+        <span style="color:var(--red);font-weight:600;font-size:13px;">Pogledajte detaliile →</span>
+      </a>
+      <a href="../krov-tbk/" class="card card-hover" style="text-decoration:none;color:inherit;">
+        <span class="card-tag">Krov · TBK</span>
+        <h3 style="margin-bottom:10px;">Krov TBK</h3>
+        <p style="font-size:14.5px;margin-bottom:18px;">Fabrički Passivhaus sistem. Rasponi do 9 m, U=0,13, samo 22 kg/m². Bez dodatne izolacije.</p>
+        <span style="color:var(--red);font-weight:600;font-size:13px;">Pogledajte detaliile →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="section section--tight">
+  <div class="cta-band reveal">
+    <span class="eyebrow" style="color:rgba(247,244,237,0.6);">Počnite danas</span>
+    <h2>Ai un projekat? <em>Hajde da to uradimo zajedno.</em></h2>
+    <p>Pošaljite nam plan i primite personaliziranu ponudu za 48 sati, s transparentnom ponudom materijala, dostave i montaže.</p>
+    <div class="cta-band-actions">
+      <a href="../../ponuda/" class="btn btn-on-dark btn-large btn-arrow">Zatražite personalizovanu ponudu</a>
+      <a href="../../contact/" class="btn btn-on-dark-ghost btn-large">Razgovarajte sa stručnjakom</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" data-include="footer"></footer>
+
+<script src="../../assets/js/site.js"></script>
+</body>
+</html>

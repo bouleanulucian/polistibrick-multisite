@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="cnr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Montaža Polistibrick · Ručno sastavljena kuća za nekoliko sedmica</title>
+  <meta name="description" content="Kako se montira Polistibrick kuća: suva montaža, bez dizalice, uz 2–3 osobe. Od temelja do zatvorene oplate za nekoliko sedmica, monolitna za 24 h nakon betoniranja.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <style>
+    /* --- Hero watermark (même pattern que les autres sous-pages) --- */
+    .wm-section { padding: clamp(60px, 8vw, 100px) 0; background: var(--cream); }
+    .wm-stage-wrap { position: relative; margin: 70px auto 0; max-width: 1480px; }
+    .wm-watermark {
+      position: absolute; top: 0; left: 50%; width: 100vw; margin-left: -50vw;
+      pointer-events: none; user-select: none; transform: translateY(-50%);
+      height: 1em; line-height: 1; text-align: center; text-transform: uppercase;
+      font-family: var(--serif); font-size: clamp(64px, 12vw, 200px);
+      font-weight: 500; letter-spacing: -0.06em; z-index: 2;
+    }
+    .wm-watermark .wm-half { position: absolute; inset: 0; width: 100%; display: block; }
+    .wm-watermark .wm-top { color: transparent; -webkit-text-stroke: 1.4px rgba(15,15,15,0.30); clip-path: inset(0 0 50% 0); }
+    .wm-watermark .wm-bottom { color: var(--cream-dark); opacity: 0.65; clip-path: inset(50% 0 0 0); }
+    .wm-stage { position: relative; background: var(--cream-light); border: 1px solid var(--border); border-radius: 32px; padding: 56px; }
+    .wm-content { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 48px; align-items: center; }
+    .wm-text { padding-right: 8px; }
+    .wm-text .bubble-tag { display: inline-block; background: var(--red-soft); color: var(--red); padding: 4px 12px; border-radius: 4px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 16px; }
+    .wm-text h1 { font-family: var(--serif); font-size: clamp(34px, 4vw, 56px); font-weight: 500; color: var(--ink); letter-spacing: -0.02em; line-height: 1.05; margin-bottom: 18px; }
+    .wm-text h1 em { font-style: italic; color: var(--red); font-weight: 400; }
+    .wm-text p { font-size: 16px; color: var(--gray); line-height: 1.65; }
+    .wm-text p strong { color: var(--ink); font-weight: 600; }
+    .wm-visual { background: linear-gradient(180deg, var(--cream-light) 0%, var(--cream-dark) 100%); border: 1px solid var(--border); border-radius: 20px; box-shadow: var(--shadow-md); aspect-ratio: 4/5; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+    .wm-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    @media (max-width: 1100px) {
+      .wm-content { grid-template-columns: 1fr; gap: 32px; }
+      .wm-stage { padding: 36px; }
+      .wm-visual { aspect-ratio: 16/10; }
+    }
+    @media (max-width: 768px) { .wm-stage { padding: 28px 20px; } }
+
+    /* --- Vidéo du montage --- */
+    .montage-video {
+      position: relative; width: 100%; aspect-ratio: 16/9;
+      border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-md);
+      background: #1A1A1A; display: block;
+    }
+    .montage-video--placeholder {
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px;
+      background:
+        linear-gradient(180deg, rgba(15,14,12,0.55), rgba(15,14,12,0.78)),
+        url('../images/construction/stage4-final.jpg') center/cover no-repeat;
+      color: #fff; text-align: center;
+    }
+    .montage-video--placeholder .mv-play {
+      width: 76px; height: 76px; border-radius: 50%;
+      background: var(--red); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 26px; padding-left: 5px;
+      box-shadow: 0 12px 40px rgba(200,16,46,0.45);
+    }
+    .montage-video--placeholder .mv-label { font-family: var(--serif); font-size: clamp(20px,2.4vw,28px); font-weight: 500; line-height: 1.2; }
+    .montage-video--placeholder .mv-label span { display: block; font-family: var(--sans); font-size: 13px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.8; margin-top: 8px; }
+    .montage-video-caption { text-align: center; font-size: 14px; color: var(--gray); margin-top: 16px; }
+
+    /* --- Étapes de montage --- */
+    .montage-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .montage-step { background: var(--cream-light); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; }
+    .montage-step .ms-img { position: relative; aspect-ratio: 4/3; overflow: hidden; background: var(--cream-dark); }
+    .montage-step .ms-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .montage-step .ms-num { position: absolute; top: 12px; left: 12px; width: 38px; height: 38px; border-radius: 50%; background: var(--red); color: #fff; font-family: var(--serif); font-weight: 600; font-size: 16px; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(0,0,0,0.25); }
+    .montage-step .ms-body { padding: 20px 20px 24px; }
+    .montage-step .ms-body h3 { font-family: var(--serif); font-size: 19px; font-weight: 500; color: var(--ink); margin-bottom: 8px; }
+    .montage-step .ms-body p { font-size: 14px; color: var(--gray); line-height: 1.55; }
+    @media (max-width: 1100px) { .montage-steps { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .montage-steps { grid-template-columns: 1fr; } }
+
+    /* bande de mise en avant après les étapes */
+    .montage-note { margin-top: 36px; background: var(--red-soft); border: 1px solid rgba(200,16,46,0.18); border-radius: 16px; padding: 24px 28px; text-align: center; font-size: 16px; color: var(--ink); }
+    .montage-note strong { color: var(--red); }
+
+    /* bande pro */
+    .montage-pro { display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; background: var(--cream-light); border:1px solid var(--border); border-radius:20px; padding:28px 32px; }
+    .montage-pro p { font-size:15px; color:var(--gray); max-width:640px; margin:0; }
+    .montage-pro p strong { color: var(--ink); }
+  </style>
+</head>
+<body data-base="../">
+
+<header class="nav" data-include="nav"></header>
+
+<!-- HERO -->
+<section class="wm-section">
+  <div class="container">
+    <div class="wm-stage-wrap reveal">
+      <div class="wm-watermark" aria-hidden="true">
+        <span class="wm-half wm-top">Montaža</span>
+        <span class="wm-half wm-bottom">Montaža</span>
+      </div>
+      <div class="wm-stage">
+        <div class="wm-content">
+          <div class="wm-text">
+            <span class="bubble-tag">Gradilište</span>
+            <h1>Ručno montirana, <em>za nekoliko sedmica.</em></h1>
+            <p>Bez dizalice. Bez beskrajnih konstrukcijskih radova. Sistem Polistibrick se montira <strong>la uscat</strong>, element po element, od strane ekipe od <strong>2–3 persoane</strong> — do zatvorene oplate, spremne za izlivanje betona.</p>
+          </div>
+          <div class="wm-visual">
+            <img src="../images/construction/stage1-oplata.jpg" alt="Montaža Polistibrick zidova na gradilištu" loading="eager">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDÉO -->
+<section class="section section--tight">
+  <div class="container container--narrow reveal">
+    <!-- ▼▼▼ VIDEO MONTAJ — DE ÎNLOCUIT CÂND ESTE GATA ▼▼▼
+         Puneți fișierul video în images/montaza/ apoi înlocuiți ÎNTREG blocul
+         <div class="montage-video montage-video--placeholder"> ... </div> cu:
+
+         <video class="montage-video" controls playsinline preload="none" poster="../images/montaza/montage-houses-poster.jpg"
+                poster="../images/construction/stage4-final.jpg">
+           <source src="../images/montaza/montage-complet.mp4" type="video/mp4">
+         </video>
+         ▲▲▲ -->
+    <div class="montage-video montage-video--placeholder" role="img" aria-label="Video montaže — uskoro">
+      <div class="mv-play" aria-hidden="true">▶</div>
+      <div class="mv-label">Montaža na videu<span>Uskoro</span></div>
+    </div>
+    <p class="montage-video-caption">Kompletna montaža, od tla do zatvorene oplate.</p>
+  </div>
+</section>
+
+<!-- ÉTAPES -->
+<section class="section section--cream">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 50px;">
+      <span class="eyebrow">Etape de montaža</span>
+      <h2>Kompletna kuća <em>u 4 faze.</em></h2>
+      <p class="lead" style="margin-top:16px;">Od temelja do zatvorene oplate. Ceo proces za nekoliko nedelja, sa samo 2–3 ljudima na licu mesta — bez maltera i bez gubitka izolacije.</p>
+    </div>
+
+    <div class="montage-steps reveal">
+      <article class="montage-step">
+        <div class="ms-img"><span class="ms-num">1</span><img src="../images/construction/stage1-oplata.jpg" alt="Oplata: podignuti zidovi od EPS-a sa bočnim podupiračima" loading="lazy"></div>
+        <div class="ms-body"><h3>Oplata</h3><p>Zidovi EPS su podignuti i pričvršćeni za temelj drvenim bočnim nosačima. Suva montaža: bez maltera, bez gubitaka izolacije.</p></div>
+      </article>
+      <article class="montage-step">
+        <div class="ms-img"><span class="ms-num">2</span><img src="../images/construction/stage3-planseu.jpg" alt="Montirana međuspratna ploča PBK" loading="lazy"></div>
+        <div class="ms-body"><h3>Međuspratna ploča</h3><p>PBK 250 paneli se montiraju horizontalno — EPS-Grafitni slojevi + vlaknasti cement, spremni za armiranje.</p></div>
+      </article>
+      <article class="montage-step">
+        <div class="ms-img"><span class="ms-num">3</span><img src="../images/construction/stage2-fierbeton.jpg" alt="Čelična armatura između rebara" loading="lazy"></div>
+        <div class="ms-body"><h3>Armatura</h3><p>Čelične mreže postavljaju se između rebara EPS-Graphite. Time se stvara monolitna veza između zidova i međuspratne konstrukcije.</p></div>
+      </article>
+      <article class="montage-step">
+        <div class="ms-img"><span class="ms-num">4</span><img src="../images/construction/stage4-final.jpg" alt="Zatvorena oplata, spremna za betoniranje" loading="lazy"></div>
+        <div class="ms-body"><h3>Zatvaranje oplate</h3><p>Svi elementi su sastavljeni i provjereni. Kuća je acum gata za turnarea betonului.</p></div>
+      </article>
+    </div>
+
+    <div class="montage-note reveal">Nakon izlivanja, konstrukcija postaje <strong>monolitna za 24 sata</strong> — kontinuirano izolovani zidovi, podovi i krov, bez toplotnih mostova.</div>
+  </div>
+</section>
+
+<!-- POURQUOI DIFFÉRENT -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 50px;">
+      <span class="eyebrow">Razlika</span>
+      <h2>Jedno gradilište <em>mai simplu, mai rapid, mai curat.</em></h2>
+    </div>
+    <div class="grid grid-3 reveal">
+      <div class="card card--cream"><h3 style="margin-bottom:12px;">Bez dizalice</h3><p style="font-size:15px;">Elementi su lagani i njima se rukuje ručno. Bez teške mehanizacije za podizanje i bez posebnog pristupa terenu.</p></div>
+      <div class="card card--cream"><h3 style="margin-bottom:12px;">2–3 persoane</h3><p style="font-size:15px;">Dovoljna je mala ekipa. Manje rada, manje koordinacije, niži troškovi gradilišta.</p></div>
+      <div class="card card--cream"><h3 style="margin-bottom:12px;">Suva gradnja, bez maltera</h3><p style="font-size:15px;">Montaža je mehanička i suva. Nema vremena sušenja između faza, nema vremenskih uslova koji blokiraju lokaciju.</p></div>
+      <div class="card card--cream"><h3 style="margin-bottom:12px;">Nekoliko sedmica</h3><p style="font-size:15px;">Zatvorena konstrukcija za nekoliko sedmica, ne mjeseci. Useljavate se ranije i plaćate manje kamata tokom gradnje.</p></div>
+      <div class="card card--cream"><h3 style="margin-bottom:12px;">Monolitno za 24 h</h3><p style="font-size:15px;">Nakon izlivanja, beton i izolacija postaju jedna cjelina. Neprekidan omotač, bez spojeva i toplotnih mostova.</p></div>
+      <div class="card card--cream"><h3 style="margin-bottom:12px;">Čisto i precizno</h3><p style="font-size:15px;">Malo otpada, malo prašine, fabričke tolerancije. Uredno gradilište od početka do kraja.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- EN CHIFFRES -->
+<section class="section section--cream">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 50px;">
+      <span class="eyebrow">Montaža u brojkama</span>
+      <h2>Gradilište, <em>svedeno na suštinu.</em></h2>
+    </div>
+    <div class="grid grid-4 reveal">
+      <div class="fact"><span class="fact-num">~1<small> mjesec</small></span><span class="fact-label">Zatvorena konstrukcija (u odnosu na 4–5 mjeseci)</span></div>
+      <div class="fact"><span class="fact-num">2–3</span><span class="fact-label">Osobe na gradilištu</span></div>
+      <div class="fact"><span class="fact-num">0</span><span class="fact-label">Macara sau utilaj greu</span></div>
+      <div class="fact"><span class="fact-num">24<small> h</small></span><span class="fact-label">Za a deveni monolitic</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PAR ÉLÉMENT -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 50px;">
+      <span class="eyebrow">Element sa element</span>
+      <h2>Trei elemente, <em>jedan jedinstveni omotač.</em></h2>
+    </div>
+    <div class="grid grid-3 reveal">
+      <a href="../proizvodi/zidovi-mbk/" class="card card-hover" style="text-decoration:none;color:inherit;">
+        <span class="card-tag">Zidovi</span>
+        <h3 style="margin-bottom:10px;">Zidovi MBK</h3>
+        <p style="font-size:15px;margin-bottom:18px;">Termoizolaciona oplata koja se podiže ručno. Integrisana izolacija, spremna za beton.</p>
+        <span style="color:var(--red);font-weight:600;font-size:13px;">Pogledajte zidove MBK →</span>
+      </a>
+      <a href="../proizvodi/podovi-pbk/" class="card card-hover" style="text-decoration:none;color:inherit;">
+        <span class="card-tag">Podovi</span>
+        <h3 style="margin-bottom:10px;">Podovi PBK</h3>
+        <p style="font-size:15px;margin-bottom:18px;">EPS-Grafit + vlaknasto-cementne noseće ploče, horizontalno postavljene i ojačane na mjestu.</p>
+        <span style="color:var(--red);font-weight:600;font-size:13px;">Pogledajte međuspratne ploče PBK →</span>
+      </a>
+      <a href="../proizvodi/krov-tbk/" class="card card-hover" style="text-decoration:none;color:inherit;">
+        <span class="card-tag">Krov</span>
+        <h3 style="margin-bottom:10px;">Krov TBK</h3>
+        <p style="font-size:15px;margin-bottom:18px;">Krov Passivhaus koji iz fabrike stiže spreman za montažu. Vazdušno nepropusno, bez toplotnih mostova.</p>
+        <span style="color:var(--red);font-weight:600;font-size:13px;">Pogledajte krov TBK →</span>
+      </a>
+    </div>
+
+    <div class="montage-pro reveal" style="margin-top:36px;">
+      <p><strong>Jeste li izvođač?</strong> Detaljni priručnici za montažu, video po elementima (zidovi, podovi, krov) i tehnički listovi dostupni su u profesionalnom prostoru.</p>
+      <a href="../za/gradjevinci/" class="btn btn-primary btn-arrow">Prostor za izvođače</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section--tight">
+  <div class="cta-band reveal">
+    <span class="eyebrow" style="color:rgba(247,244,237,0.6);">Vaš projekat</span>
+    <h2>Spremni da vidite svoju kuću <em>kako se podiže?</em></h2>
+    <p>Pošaljite nam svoj plan i dobijte personaliziranu ponudu za 48 sati. Bez obaveze, bez skrivenih troškova.</p>
+    <div class="cta-band-actions">
+      <a href="../ponuda/" class="btn btn-on-dark btn-large btn-arrow">Zatražite ponudu</a>
+      <a href="../contact/" class="btn btn-on-dark-ghost btn-large">Razgovarajte s nama</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" data-include="footer"></footer>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

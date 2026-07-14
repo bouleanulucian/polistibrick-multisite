@@ -17,7 +17,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from path_maps import FR_TO_LANG
 
 SKIP_COUNTRIES = {"ro", "fr"}
-ALL_CODES = ["it", "en", "es", "nl", "de", "ie"]
+ALL_CODES = ["it", "en", "es", "nl", "de", "ie", "me"]
 
 PRIVACY_SLUG = {
     "it": "privacy",
@@ -25,6 +25,7 @@ PRIVACY_SLUG = {
     "es": "privacidad",
     "nl": "privacy",
     "de": "datenschutz",
+    "cnr": "privatnost",
 }
 
 

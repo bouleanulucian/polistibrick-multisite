@@ -10,6 +10,7 @@
     DE: "Der Konfigurator ist noch nicht verfügbar. Kontaktieren Sie uns über die Kontaktseite.",
     IE: "The configurator is not yet available. Please contact us via the Contact page.",
     GB: "The configurator is not yet available. Please contact us via the Contact page.",
+    ME: "Konfigurator još nije dostupan. Kontaktirajte nas preko stranice Kontakt.",
   };
 
   function attachResize(frame) {

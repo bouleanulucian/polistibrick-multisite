@@ -30,5 +30,9 @@
   "ie": {
     "project": "polistibrick-ie",
     "domain": "polistibrick.ie"
+  },
+  "me": {
+    "project": "polistibrick-me",
+    "domain": "polistibrick.me"
   }
 }
