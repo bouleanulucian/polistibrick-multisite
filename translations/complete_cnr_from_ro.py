@@ -71,7 +71,7 @@ def apply_dict(text: str, mapping: dict[str, str], passes: int = 4) -> str:
     for key in keys:
         if " " not in key and len(key) < 12:
             word_re[key] = re.compile(
-                r"(?<![\wÀ-ſ])" + re.escape(key) + r"(?![\wÀ-ſ])"
+                r"(?<![\wÀ-ſ\-])" + re.escape(key) + r"(?![\wÀ-ſ\-])"
             )
 
     segments: list[tuple[str, str]] = []

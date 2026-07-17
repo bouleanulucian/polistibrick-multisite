@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calculadora de costes · Estimează prețul casei tale Polistibrick</title>
-  <meta name="description" content="Calculadora interactiv Polistibrick: indică m², numărul de etaje și locația, și primești instant o estimare de cost pentru panourile MBK, PBK și TBK + livrare.">
+  <title>Calculadora de costes · Estima el precio de tu casa Polistibrick</title>
+  <meta name="description" content="Calculadora interattivo Polistibrick: indica i m², il numero piani e la località, e ricevi subito una stima del costo per i pannelli MBK, PBK e TBK + consegna.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -215,9 +215,9 @@
 
         <!-- INTRO -->
         <div class="wm-intro">
-          <span class="bubble-tag">Estimare instantanee</span>
-          <h2>Cât costă <em>casa ta Polistibrick?</em></h2>
-          <p>Indică dimensiunile aproximative ale proiectului și primești instant o estimare. Para o ofertă exactă, inginerul nostru calculează pe planul real în 48 de horas.</p>
+          <span class="bubble-tag">Stima istantanea</span>
+          <h2>Cuánto cuesta <em>¿su casa Polistibrick?</em></h2>
+          <p>Indique las dimensiones aproximadas del proyecto y reciba una estimación al instante. Para un presupuesto exacto, nuestro ingeniero calcula sobre el plano real en 48 horas.</p>
         </div>
 
         <!-- CALCULATOR -->
@@ -225,18 +225,18 @@
 
           <!-- FORM (left) -->
           <form id="calcForm" class="calc-form-card">
-            <h3>Spune-ne despre tu proyecto.</h3>
-            <p>Rezultatul se actualizează în timp real pe măsură ce completoooezi formularul.</p>
+            <h3>Parlaci del tuo progetto.</h3>
+            <p>El resultado se actualiza en tiempo real a medida que completa el formulario.</p>
 
             <div class="form-row">
-              <label class="form-label" for="surface">Superficie construida total (m²)</label>
+              <label class="form-label" for="surface">Superficie construida sviluppata (m²)</label>
               <input class="form-input" type="number" id="surface" value="150" min="40" max="2000" step="10">
             </div>
 
             <div class="form-row">
-              <label class="form-label" for="floors">Număr de etaje (parter inclus)</label>
+              <label class="form-label" for="floors">Número de plantas (planta baja incluida)</label>
               <select class="form-select" id="floors">
-                <option value="1">1 (Parter)</option>
+                <option value="1">1 (Piano terra)</option>
                 <option value="2" selected>2 (P+1)</option>
                 <option value="3">3 (P+2)</option>
                 <option value="4">4 (P+3)</option>
@@ -244,40 +244,40 @@
             </div>
 
             <div class="form-row">
-              <label class="form-label" for="wallModel">Model perete MBK</label>
+              <label class="form-label" for="wallModel">Modello muro MBK</label>
               <select class="form-select" id="wallModel">
-                <option value="210" data-price="80">MBK 210 — Premium (climat temperat)</option>
-                <option value="270" data-price="90" selected>MBK 270 — Pasiv Standard ★ Recomandat</option>
-                <option value="300" data-price="100">MBK 300 — Pasiv A+++ (climat rece)</option>
+                <option value="210" data-price="80">MBK 210 — Premium (clima temperato)</option>
+                <option value="270" data-price="90" selected>MBK 270 — Passivo Standard ★ Consigliato</option>
+                <option value="300" data-price="100">MBK 300 — Passivo A+++ (clima freddo)</option>
               </select>
             </div>
 
             <div class="form-row">
-              <label class="form-label">Componente incluse</label>
+              <label class="form-label">Componenti inclusi</label>
               <div style="display:flex;flex-direction:column;gap:10px;">
                 <label style="display:flex;align-items:center;gap:10px;font-size:13px;cursor:pointer;">
-                  <input type="checkbox" id="incMBK" checked> <span>Muros MBK (<span id="wallPrice">90</span> €/m²)</span>
+                  <input type="checkbox" id="incMBK" checked> <span>Muri MBK (<span id="wallPrice">90</span> €/m²)</span>
                 </label>
                 <label style="display:flex;align-items:center;gap:10px;font-size:13px;cursor:pointer;">
                   <input type="checkbox" id="incPBK" checked> <span>Forjados PBK 250 (80 €/m²)</span>
                 </label>
                 <label style="display:flex;align-items:center;gap:10px;font-size:13px;cursor:pointer;">
-                  <input type="checkbox" id="incTBK" checked> <span>Tejado TBK 250 (95 €/m²)</span>
+                  <input type="checkbox" id="incTBK" checked> <span>Tetto TBK 250 (95 €/m²)</span>
                 </label>
                 <label style="display:flex;align-items:center;gap:10px;font-size:13px;cursor:pointer;">
-                  <input type="checkbox" id="incAccessories" checked> <span>Accesorios (colțuri, capete, profile ferestre)</span>
+                  <input type="checkbox" id="incAccesorioses" checked> <span>Accesorios (esquinas, extremos, perfiles de ventana)</span>
                 </label>
               </div>
             </div>
 
             <div class="form-row">
-              <label class="form-label" for="location">Loc de livrare</label>
+              <label class="form-label" for="location">Luogo consegna</label>
               <select class="form-select" id="location">
-                <option value="ro" data-delivery="0.04">Rumanía</option>
-                <option value="bg-hu-rs" data-delivery="0.05">Bulgaria / Ungaria / Serbia</option>
-                <option value="at-de-ck" data-delivery="0.06">Austria / Germania / Republica Cehă</option>
+                <option value="ro" data-delivery="0.04">Romania</option>
+                <option value="bg-hu-rs" data-delivery="0.05">Bulgaria / Ungheria / Serbia</option>
+                <option value="at-de-ck" data-delivery="0.06">Austria / Alemania / República Checa</option>
                 <option value="fr-es" data-delivery="0.04">Francia / España</option>
-                <option value="be-lu-nl" data-delivery="0.07">Belgia / Luxemburg / Olanda</option>
+                <option value="be-lu-nl" data-delivery="0.07">Belgio / Lussemburgo / Paesi Bassi</option>
                 <option value="other" data-delivery="0.08">Otro país (estimación)</option>
               </select>
             </div>
@@ -285,14 +285,14 @@
 
           <!-- RESULT (right, sticky) -->
           <div class="calc-result">
-            <span class="eyebrow" style="color:rgba(247,244,237,0.6);">Estimare cost panouri</span>
-            <h3>La La La Casa ta Polistibrick</h3>
+            <span class="eyebrow" style="color:rgba(247,244,237,0.6);">Stima costo pannelli</span>
+            <h3>Su casa Polistibrick</h3>
             <div class="calc-result-total" id="totalCost">— <small>€</small></div>
-            <p style="font-size:12.5px;color:rgba(247,244,237,0.65);">Materiales + entrega estimada. Sin IVA, sin montaje, sin acabados.</p>
+            <p style="font-size:12.5px;color:rgba(247,244,237,0.65);">Materiales + entrega estimada. IVA no incluido, montaje no incluido, acabados no incluidos.</p>
 
             <div class="calc-result-breakdown">
               <div class="calc-result-row">
-                <span>Muros MBK <span id="wallArea">—</span> m²</span>
+                <span>Muri MBK <span id="wallArea">—</span> m²</span>
                 <strong id="wallCost">— €</strong>
               </div>
               <div class="calc-result-row">
@@ -300,7 +300,7 @@
                 <strong id="floorCost">— €</strong>
               </div>
               <div class="calc-result-row">
-                <span>Tejado TBK <span id="roofArea">—</span> m²</span>
+                <span>Tetto TBK <span id="roofArea">—</span> m²</span>
                 <strong id="roofCost">— €</strong>
               </div>
               <div class="calc-result-row">
@@ -308,17 +308,17 @@
                 <strong id="accCost">— €</strong>
               </div>
               <div class="calc-result-row">
-                <span>Livrare</span>
+                <span>Recepción</span>
                 <strong id="deliveryCost">— €</strong>
               </div>
             </div>
 
             <div class="calc-disclaimer">
-              <strong style="color:var(--cream);display:block;margin-bottom:4px;">⚠️ Doar estimare</strong>
-              Calculul folosește rapoarte medii (muros ≈ 1,8× amprentă la sol, forjados = m² casa, tejado ≈ 1,2× amprentă la sol). Para o ofertă exactă, cere o ofertă personalizată — un inginer calculează pe planul real al casei tale.
+              <strong style="color:var(--cream);display:block;margin-bottom:4px;">⚠️ Solo stima</strong>
+              El cálculo utiliza ratios medios (muros ≈ 1,8× huella en suelo, forjados = m² casa, cubierta ≈ 1,2× huella en suelo). Para un presupuesto exacto, pide un presupuesto personalizado — un ingeniero calcula sobre el plano real de tu casa.
             </div>
 
-            <a href="../presupuesto/" class="btn btn-on-dark btn-large btn-arrow" style="width:100%;justify-content:center;margin-top:20px;">Pide un presupuesto exactă</a>
+            <a href="../presupuesto/" class="btn btn-on-dark btn-large btn-arrow" style="width:100%;justify-content:center;margin-top:20px;">Pida un presupuesto exacto</a>
           </div>
 
         </div>
@@ -331,32 +331,32 @@
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 40px;">
       <span class="eyebrow">Qué no incluye la estimación</span>
-      <h2>Ce trebuie bugetat în plus <em>pentru o casa completoooa.</em></h2>
+      <h2>Qué presupuestar además <em>para una casa completa.</em></h2>
     </div>
     <div class="grid grid-3 reveal">
       <div class="card">
-        <h4 style="margin-bottom:10px;">Fundații și terasamente</h4>
-        <p style="font-size:14px;">~80–150 €/m² în funcție de teren și nivelul apelor freatice. Polistibrick nu fabrică fundații — apelezi la un constructor local.</p>
+        <h4 style="margin-bottom:10px;">Fondazioni e scavi</h4>
+        <p style="font-size:14px;">~80-150 €/m² según el terreno y el nivel freático. Polistibrick no fabrica cimentaciones — acudes a un constructor local.</p>
       </div>
       <div class="card">
         <h4 style="margin-bottom:10px;">Carpintería (ventanas + puertas)</h4>
-        <p style="font-size:14px;">Para casa pasiva: geam triplu, low-e, cadru cu ruptură de punți termice. Buget mediu 350–600 €/m² de fereastră (montaj inclus).</p>
+        <p style="font-size:14px;">Para casa pasiva: acristalamiento triple, low-e, marco con rotura de puente térmico. Presupuesto medio 350–600 €/m² de ventana (montaje incluido).</p>
       </div>
       <div class="card">
-        <h4 style="margin-bottom:10px;">Instalaciones tehnice</h4>
-        <p style="font-size:14px;">Electricitate, instalații sanitare, calefacción, VMC cu recuperare de căldură. Buget mediu 80–150 €/m² casa, în funcție de nivelul tehnologic ales.</p>
+        <h4 style="margin-bottom:10px;">Instalaciones técnicas</h4>
+        <p style="font-size:14px;">Electricidad, fontanería, calefacción, VMC de doble flujo. Presupuesto medio 80-150 €/m² de casa, según el nivel tecnológico elegido.</p>
       </div>
       <div class="card">
-        <h4 style="margin-bottom:10px;">Finisaje interioare</h4>
-        <p style="font-size:14px;">Tencuieli, vopsea, gresie, parchet, mobilier bucătărie. Buget mediu 200–500 €/m² casa, în funcție de standardul ales.</p>
+        <h4 style="margin-bottom:10px;">Finiture interne</h4>
+        <p style="font-size:14px;">Enlucidos, pintura, azulejos, parquet, mobiliario de cocina. Presupuesto medio 200-500 €/m² de casa, según tu estándar.</p>
       </div>
       <div class="card">
-        <h4 style="margin-bottom:10px;">Fațadă (finisaj)</h4>
-        <p style="font-size:14px;">Tencuială silicatică, piatră, lemn, plăci ceramice. Polistibrick es la estructura, tú eliges el aspecto. Buget 30–150 €/m² fațadă.</p>
+        <h4 style="margin-bottom:10px;">Fachada (revestimiento)</h4>
+        <p style="font-size:14px;">Revoco silicato, piedra, madera, placas cerámicas. Polistibrick es la estructura, tú eliges el aspecto. Presupuesto 30–150 €/m² fachada.</p>
       </div>
       <div class="card">
-        <h4 style="margin-bottom:10px;">Mano de obra de montaje</h4>
-        <p style="font-size:14px;">Constructor partener certificat: ~20–30 €/m² perete + planșeu (montaj panouri și turnare hormigón). Mult mai puțin decât pentru ladrillo.</p>
+        <h4 style="margin-bottom:10px;">Manodopera di montaggio</h4>
+        <p style="font-size:14px;">Constructor asociado certificado: ~20–30 €/m² muro + forjado (montaje paneles y vertido hormigón). Mucho menos que el ladrillo.</p>
       </div>
     </div>
   </div>
@@ -364,8 +364,8 @@
 
 <section class="section section--tight">
   <div class="cta-band reveal">
-    <h2>Vrei <em>cifrele exacte</em> para tu proyecto?</h2>
-    <p>Trimite-ne planul (chiar și o schiță simplă) și un inginer Polistibrick calculează tot precis — panouri, livrare, montaj, accesorii speciale. Răspuns în 48 de horas.</p>
+    <h2>Vuoi <em>i numeri esatti</em> ¿tu proyecto?</h2>
+    <p>Envíenos el plano (incluso un boceto simple) y un ingeniero Polistibrick calcula todo con precisión — paneles, entrega, montaje, accesorios especiales. Respuesta en 48 horas.</p>
     <div class="cta-band-actions">
       <a href="../presupuesto/" class="btn btn-on-dark btn-large btn-arrow">Pide un presupuesto personalizado</a>
       <a href="../contact/" class="btn btn-on-dark-ghost btn-large">Habla con un especialista</a>

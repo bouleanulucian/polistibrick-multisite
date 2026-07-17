@@ -1,29 +1,29 @@
 {
-  "lang": "de",
+  "lang": "fr",
   "country": "CH",
   "country_name": "Switzerland",
-  "country_name_native": "Schweiz",
+  "country_name_native": "Suisse",
   "country_flag": "🇨🇭",
   "domain": "polistibrick.com",
   "domain_url": "https://polistibrick.com",
   "company": {
-    "name_legal": "Polistibrick Schweiz GmbH",
-    "name_short": "Polistibrick Schweiz",
-    "vat": "CHE-[ausfüllen]",
-    "registration": "[ausfüllen]",
-    "address_street": "[ausfüllen]",
-    "address_city": "Zürich",
-    "address_zip": "[ausfüllen]",
-    "address_country": "Schweiz"
+    "name_legal": "Polistibrick Suisse GmbH",
+    "name_short": "Polistibrick Suisse",
+    "vat": "CHE-[à compléter]",
+    "registration": "[à compléter]",
+    "address_street": "[à compléter]",
+    "address_city": "Genève",
+    "address_zip": "[à compléter]",
+    "address_country": "Suisse"
   },
   "contact": {
-    "phone": "+41 [ausfüllen]",
-    "phone_raw": "+41[ausfüllen]",
-    "phone_display": "+41 [ausfüllen]",
+    "phone": "+41 [à compléter]",
+    "phone_raw": "+41[à compléter]",
+    "phone_display": "+41 [à compléter]",
     "email_general": "contact@polistibrick.com",
-    "email_offer": "angebot@polistibrick.com",
+    "email_offer": "devis@polistibrick.com",
     "email_press": "presse@polistibrick.com",
-    "hours": "Mo–Fr 09:00–18:00 CET",
+    "hours": "Lun–Ven 09h00–18h00 CET",
     "social": {
       "facebook": "",
       "instagram": "",
@@ -33,16 +33,11 @@
   },
   "team": [
     {
-      "name": "[Name Manager]",
-      "role": "Verkaufsleiter Schweiz",
+      "name": "[Nom Manager]",
+      "role": "Directeur commercial Suisse",
       "email": "[email]@polistibrick.com",
-      "phone": "[Telefon]",
-      "languages": [
-        "DE",
-        "FR",
-        "IT",
-        "EN"
-      ],
+      "phone": "[téléphone]",
+      "languages": ["FR", "DE", "IT", "EN"],
       "photo": "team/manager-ch.jpg",
       "linkedin": ""
     }
@@ -53,21 +48,35 @@
   "vat_rate": 8.1,
   "form_submit_email": "contact@polistibrick.com",
   "form_cc_email": "info@polistibrick.eu",
+  "forms": {
+    "access_key": "",
+    "provider": "web3forms",
+    "subjects": {
+      "contact": "Contact — Polistibrick Suisse",
+      "devis": "Demande de devis — Polistibrick Suisse",
+      "partner": "Candidature partenaire — Polistibrick Suisse",
+      "review": "Nouvel avis client — Polistibrick Suisse"
+    }
+  },
+  "legal": {
+    "publication_director": "Lucian Bouleanu",
+    "hosting_provider": "Cloudflare, Inc.",
+    "hosting_address": "101 Townsend St, San Francisco, CA 94107, États-Unis",
+    "privacy_contact_email": "contact@polistibrick.com",
+    "privacy_slug": "confidentialite"
+  },
   "factory": {
     "name": "Valencia",
-    "address": "[Spanien]",
+    "address": "Valence, Espagne",
     "year_built": 2014
   },
   "metadata": {
-    "og_locale": "de_CH",
-    "hreflang": "de-CH"
-  },
-  "legal": {
-    "privacy_slug": "datenschutz"
+    "og_locale": "fr_CH",
+    "hreflang": "fr-CH"
   },
   "devis_app": {
-    "url": "https://devis.polistibrick.de",
+    "url": "https://devis.polistibrick.fr",
     "preview_url": "https://polistibrick-configurator.vercel.app",
-    "pays": "DE"
+    "pays": "FR"
   }
 }

@@ -23,10 +23,26 @@ SHARED_DIR = ROOT / "shared"
 BUILD_DIR = ROOT / "build"
 FALLBACK_COUNTRY = "ro"   # used when a country has only _config.json
 
-PLACEHOLDER_RE = re.compile(r"\{\{\s*([a-zA-Z0-9_.]+)\s*\}\}")
+PLACEHOLDER_RE = re.compile(r"\{\{\s*([a-zA-Z0-9_.]+)\s*(\|b64)?\s*\}\}")
 
 
 UI_STRINGS_PATH = ROOT / "translations" / "ui_strings.json"
+
+
+def _asset_hash(p: Path) -> str:
+    """Hash scurt din conținutul asset-ului — folosit ca ?v= (cache-busting automat)."""
+    try:
+        import hashlib
+        return hashlib.md5(p.read_bytes()).hexdigest()[:8]
+    except OSError:
+        return "0"
+
+
+ASSET_VERSIONS = {
+    "site.js": _asset_hash(ROOT / "shared" / "js" / "site.js"),
+    "mercury-perf.js": _asset_hash(ROOT / "shared" / "js" / "mercury-perf.js"),
+    "mercury-home.css": _asset_hash(ROOT / "shared" / "css" / "mercury-home.css"),
+}
 
 
 def load_config(country_code: str) -> dict:
@@ -46,21 +62,31 @@ def load_config(country_code: str) -> dict:
     return cfg
 
 
-def resolve_placeholder(key: str, config: dict) -> str:
-    """Walk dotted path like 'contact.email_general' through config."""
+def resolve_placeholder(key: str, config: dict, b64: bool = False) -> str:
+    """Walk dotted path like 'contact.email_general' through config.
+    With b64=True ({{key|b64}}), the resolved value is base64-encoded — used to
+    keep email addresses out of the published source (anti-scraping); the page
+    decodes them with atob() only on click."""
     value = config
     for part in key.split("."):
         if isinstance(value, dict) and part in value:
             value = value[part]
         else:
-            return "{{" + key + "}}"  # leave un-resolved
+            unresolved = "{{" + key + ("|b64" if b64 else "") + "}}"
+            return unresolved  # leave un-resolved
     if isinstance(value, (dict, list)):
-        return json.dumps(value, ensure_ascii=False)
-    return str(value)
+        value = json.dumps(value, ensure_ascii=False)
+    value = str(value)
+    if b64:
+        import base64
+        return base64.b64encode(value.encode("utf-8")).decode("ascii")
+    return value
 
 
 def apply_placeholders(text: str, config: dict) -> str:
-    return PLACEHOLDER_RE.sub(lambda m: resolve_placeholder(m.group(1), config), text)
+    return PLACEHOLDER_RE.sub(
+        lambda m: resolve_placeholder(m.group(1), config, b64=bool(m.group(2))), text
+    )
 
 
 # Per-language URL path rewriting (RO → target lang folder names)
@@ -158,19 +184,24 @@ def optimize_html(text: str) -> str:
         ),
         text,
     )
+    # Cache-busting pe conținut: ?v=<hash din fișier> — orice modificare a
+    # asset-ului invalidează automat cache-ul browserelor (fără numere manuale).
+    v_site = ASSET_VERSIONS.get("site.js", "2")
+    v_perf = ASSET_VERSIONS.get("mercury-perf.js", "11")
+    v_css = ASSET_VERSIONS.get("mercury-home.css", "4")
     text = re.sub(
         r'(<script\s+src=")([^"]*site\.js)(?:\?[^"]*)?(")(\s*defer)?>',
-        r'\1\2?v=2\3 defer>',
+        r'\1\2?v=' + v_site + r'\3 defer>',
         text,
     )
     text = re.sub(
         r'(<script\s+src=")([^"]*mercury-perf\.js)(?:\?[^"]*)?(")(\s*defer)?>',
-        r'\1\2?v=11\3 defer>',
+        r'\1\2?v=' + v_perf + r'\3 defer>',
         text,
     )
     text = re.sub(
         r'(<link rel="stylesheet" href="assets/css/mercury-home\.css)\?v=[^"]*(">)',
-        r'\1?v=4\2',
+        r'\1?v=' + v_css + r'\2',
         text,
     )
     text = re.sub(

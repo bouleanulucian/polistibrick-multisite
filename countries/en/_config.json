@@ -50,6 +50,23 @@
   "vat_rate": 20,
   "form_submit_email": "contact@polistibrick.com",
   "form_cc_email": "info@polistibrick.eu",
+  "forms": {
+    "access_key": "",
+    "provider": "web3forms",
+    "subjects": {
+      "contact": "Contact — Polistibrick UK",
+      "devis": "Quote request — Polistibrick UK",
+      "partner": "Partner application — Polistibrick UK",
+      "review": "New customer review — Polistibrick UK"
+    }
+  },
+  "legal": {
+    "publication_director": "Lucian Bouleanu",
+    "hosting_provider": "Cloudflare, Inc.",
+    "hosting_address": "101 Townsend St, San Francisco, CA 94107, United States",
+    "privacy_contact_email": "contact@polistibrick.com",
+    "privacy_slug": "privacy"
+  },
   "factory": {
     "name": "Valencia",
     "address": "[fill]",
@@ -58,9 +75,6 @@
   "metadata": {
     "og_locale": "en_GB",
     "hreflang": "en-GB"
-  },
-  "legal": {
-    "privacy_slug": "privacy"
   },
   "devis_app": {
     "url": "https://devis.polistibrick.uk",

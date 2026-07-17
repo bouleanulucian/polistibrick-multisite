@@ -60,7 +60,8 @@
     "hreflang": "en-IE"
   },
   "legal": {
-    "privacy_slug": "privacy"
+    "privacy_slug": "privacy",
+    "privacy_contact_email": "contact@polistibrick.ie"
   },
   "devis_app": {
     "url": "https://devis.polistibrick.ie",

@@ -75,7 +75,7 @@
       <p style="font-size:15px;margin-bottom:14px;">Site-ul <strong>{{domain}}</strong> je editat de societatea <strong>{{company.name_legal}}</strong>, društvo sa ograničenom odgovornošću, upisano u Trgovinski registar pod br <strong>{{company.registration}}</strong>, poreski identifikacioni broj (CUI): <strong>{{company.vat}}</strong>.</p>
       <p style="font-size:15px;margin-bottom:14px;"><strong>Sediul social:</strong> {{company.address_street}}, {{company.address_zip}} {{company.address_city}}, {{company.address_country}}.<br>
       <strong>Telefon:</strong> <a href="tel:{{contact.phone_raw}}" style="color:var(--red);">{{contact.phone_display}}</a><br>
-      <strong>E-mail:</strong> <a href="mailto:{{contact.email_general}}" style="color:var(--red);">{{contact.email_general}}</a></p>
+      <strong>E-mail:</strong> <a href="#" data-m64="{{contact.email_general|b64}}" style="color:var(--red);">Email</a></p>
 
       <h2 style="margin:32px 0 12px;">2. Odgovorni urednik</h2>
       <p style="font-size:15px;margin-bottom:14px;"><strong>{{legal.publication_director}}</strong>, u svojstvu zakonskog zastupnika kompanije {{company.name_short}}.</p>
@@ -88,13 +88,13 @@
       <p style="font-size:15px;margin-bottom:14px;">Cjelokupni sadržaj stranice (tekstovi, slike, video zapisi, logotipi, žigovi, patenti) isključivo je vlasništvo {{company.name_legal}} ili njegovih partnera. Zabranjeno je svako umnožavanje, predstavljanje ili širenje, u cijelosti ili djelomično, bez prethodnog pismenog odobrenja.</p>
 
       <h2 style="margin:32px 0 12px;">5. Date personale</h2>
-      <p style="font-size:15px;margin-bottom:14px;">Za sve informacije u pogledajte sa obradom vaših ličnih podataka, pogledajte <a href="../privatnost/" style="color:var(--red);">politika privatnosti (GDPR)</a>. Za exercitarea drepturilor: <a href="mailto:{{legal.privacy_contact_email}}" style="color:var(--red);">{{legal.privacy_contact_email}}</a>.</p>
+      <p style="font-size:15px;margin-bottom:14px;">Za sve informacije u pogledajte sa obradom vaših ličnih podataka, pogledajte <a href="../privatnost/" style="color:var(--red);">politika privatnosti (GDPR)</a>. Za exercitarea drepturilor: <a href="#" data-m64="{{legal.privacy_contact_email|b64}}" style="color:var(--red);">Email</a>.</p>
 
       <h2 style="margin:32px 0 12px;">6. Cookie-uri</h2>
       <p style="font-size:15px;margin-bottom:14px;">Pogledajte <a href="../kolacici/" style="color:var(--red);">politica de cookie-uri</a> da saznate koji se tragači koriste i da upravljate svojim preferencijama.</p>
 
       <h2 style="margin:32px 0 12px;">7. Kontakt</h2>
-      <p style="font-size:15px;margin-bottom:14px;">Za sva pitanja vezana za stranicu ili njen sadržaj: <a href="mailto:{{contact.email_general}}" style="color:var(--red);">{{contact.email_general}}</a> sau prin <a href="../../contact/" style="color:var(--red);">formularul de contact</a>.</p>
+      <p style="font-size:15px;margin-bottom:14px;">Za sva pitanja vezana za stranicu ili njen sadržaj: <a href="#" data-m64="{{contact.email_general|b64}}" style="color:var(--red);">Email</a> sau prin <a href="../../contact/" style="color:var(--red);">formularul de contact</a>.</p>
     </div>
   </div>
 </section>

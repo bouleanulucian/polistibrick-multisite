@@ -75,7 +75,7 @@
       <p style="font-size:15px;margin-bottom:14px;">Il sito <strong>{{domain}}</strong> è edito dalla società <strong>{{company.name_legal}}</strong>, società a responsabilità limitata con capitale sociale di [da completare se necessario] euro, iscritta al RCS di Versailles con il numero <strong>{{company.registration}}</strong> (SIRET della sede: 984 804 872 00021), partita IVA intracomunitaria: <strong>{{company.vat}}</strong>.</p>
       <p style="font-size:15px;margin-bottom:14px;"><strong>Sede legale:</strong> {{company.address_street}}, {{company.address_zip}} {{company.address_city}}, {{company.address_country}}.<br>
       <strong>Telefono:</strong> <a href="tel:{{contact.phone_raw}}" style="color:var(--red);">{{contact.phone_display}}</a><br>
-      <strong>Email:</strong> <a href="mailto:{{contact.email_general}}" style="color:var(--red);">{{contact.email_general}}</a></p>
+      <strong>Email:</strong> <a href="#" data-m64="{{contact.email_general|b64}}" style="color:var(--red);">Email</a></p>
 
       <h2 style="margin:32px 0 12px;">2. Direttore della pubblicazione</h2>
       <p style="font-size:15px;margin-bottom:14px;"><strong>{{legal.publication_director}}</strong>, in qualità di rappresentante legale di {{company.name_short}}.</p>
@@ -88,13 +88,13 @@
       <p style="font-size:15px;margin-bottom:14px;">L'intero contenuto del sito (testi, immagini, video, loghi, marchi, brevetti) è di proprietà esclusiva di {{company.name_legal}} o dei suoi partner. Qualsiasi riproduzione, rappresentazione o diffusione, totale o parziale, senza autorizzazione scritta preventiva è vietata.</p>
 
       <h2 style="margin:32px 0 12px;">5. Dati personali</h2>
-      <p style="font-size:15px;margin-bottom:14px;">Per qualsiasi informazione relativa al trattamento dei vostri dati personali, consultate la nostra <a href="../privacy/" style="color:var(--red);">informativa sulla privacy (GDPR)</a>. Per esercitare i vostri diritti: <a href="mailto:{{legal.privacy_contact_email}}" style="color:var(--red);">{{legal.privacy_contact_email}}</a>.</p>
+      <p style="font-size:15px;margin-bottom:14px;">Per qualsiasi informazione relativa al trattamento dei vostri dati personali, consultate la nostra <a href="../privacy/" style="color:var(--red);">informativa sulla privacy (GDPR)</a>. Per esercitare i vostri diritti: <a href="#" data-m64="{{legal.privacy_contact_email|b64}}" style="color:var(--red);">Email</a>.</p>
 
       <h2 style="margin:32px 0 12px;">6. Cookie</h2>
       <p style="font-size:15px;margin-bottom:14px;">Consultate la nostra <a href="../cookie/" style="color:var(--red);">informativa sui cookie</a> per conoscere i tracker utilizzati e gestire le vostre preferenze.</p>
 
       <h2 style="margin:32px 0 12px;">7. Contatti</h2>
-      <p style="font-size:15px;margin-bottom:14px;">Per qualsiasi domanda relativa al sito o ai suoi contenuti: <a href="mailto:{{contact.email_general}}" style="color:var(--red);">{{contact.email_general}}</a> oppure tramite il <a href="../../contact/" style="color:var(--red);">modulo di contatto</a>.</p>
+      <p style="font-size:15px;margin-bottom:14px;">Per qualsiasi domanda relativa al sito o ai suoi contenuti: <a href="#" data-m64="{{contact.email_general|b64}}" style="color:var(--red);">Email</a> oppure tramite il <a href="../../contact/" style="color:var(--red);">modulo di contatto</a>.</p>
     </div>
   </div>
 </section>

@@ -3,14 +3,18 @@
    Config injected at build from _config.json placeholders.
    =========================================================================== */
 (function () {
+  // Emailurile NU apar în clar în sursă (anti-spam) — sunt base64, decodate la runtime.
+  function dec64(s) {
+    try { return s && s.indexOf('{{') === -1 ? atob(s) : ''; } catch (e) { return ''; }
+  }
   const CFG = {
     accessKey: '{{forms.access_key}}',
     liveDomain: '{{domain}}',
     liveDomainUrl: '{{domain_url}}',
-    ccEmail: '{{form_cc_email}}',
+    ccEmail: dec64('{{form_cc_email|b64}}'),
     country: '{{country}}',
     countryName: '{{country_name}}',
-    fallbackEmail: '{{contact.email_general}}',
+    fallbackEmail: dec64('{{contact.email_general|b64}}'),
     subjects: {
       contact: '{{forms.subjects.contact}}',
       devis: '{{forms.subjects.devis}}',
@@ -235,7 +239,7 @@
       const fd = new FormData();
       baseFields(fd, 'review');
       fd.append('name', nom);
-      fd.append('email', 'avis@polistibrick.fr');
+      fd.append('email', dec64('YXZpc0Bwb2xpc3RpYnJpY2suZnI=')); // avis@… (base64, anti-scraping)
       fd.append('rating', String(rating));
       fd.append('role', document.getElementById('avisRole')?.value || '');
       fd.append('location', document.getElementById('avisLieu')?.value || '');
