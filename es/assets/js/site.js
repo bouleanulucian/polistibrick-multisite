@@ -191,7 +191,7 @@
           '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>' +
           '<span>Llamar</span>' +
         '</a>' +
-        '<a href="mailto:info@polistibrick.es" class="mcb-btn mcb-email" aria-label="Enviar email">' +
+        '<a href="#" data-m64="aW5mb0Bwb2xpc3RpYnJpY2suZXM=" class="mcb-btn mcb-email" aria-label="Enviar email">' +
           '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>' +
           '<span>{{ui.mobile_email_label}}</span>' +
         '</a>';
@@ -462,7 +462,7 @@
             </a>
           `).join('')}
         </div>
-        <p class="country-picker-foot">¿Tu país no está en la lista? Escríbenos a <a href="mailto:info@polistibrick.eu">info@polistibrick.eu</a></p>
+        <p class="country-picker-foot">¿Tu país no está en la lista? Escríbenos a <a href="#" data-m64="aW5mb0Bwb2xpc3RpYnJpY2suZXU=">Email</a></p>
       </div>
     `;
     document.body.appendChild(modal);
@@ -553,5 +553,16 @@
     window.addEventListener('pb-cookie-consent', (e) => {
       if (e.detail && e.detail.level === 'accepted') runGeoIfAllowed();
     });
+  });
+
+  /* -------------------------------------------------------------------------
+     Email obfuscation — the address is NEVER in the page source (anti-spam).
+     Buttons carry data-m64 (base64); the mailto: is assembled only on click.
+     ------------------------------------------------------------------------- */
+  document.addEventListener('click', function (e) {
+    const el = e.target && e.target.closest ? e.target.closest('[data-m64]') : null;
+    if (!el) return;
+    e.preventDefault();
+    try { window.location.href = 'mailto:' + atob(el.getAttribute('data-m64')); } catch (err) { /* ignore */ }
   });
 })();

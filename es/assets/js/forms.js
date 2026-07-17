@@ -3,14 +3,18 @@
    Config injected at build from _config.json placeholders.
    =========================================================================== */
 (function () {
+  // Emailurile NU apar în clar în sursă (anti-spam) — sunt base64, decodate la runtime.
+  function dec64(s) {
+    try { return s && s.indexOf('{{') === -1 ? atob(s) : ''; } catch (e) { return ''; }
+  }
   const CFG = {
     accessKey: '',
     liveDomain: 'polistibrick.es',
     liveDomainUrl: 'https://polistibrick.es',
-    ccEmail: 'info@polistibrick.eu',
+    ccEmail: dec64('aW5mb0Bwb2xpc3RpYnJpY2suZXU='),
     country: 'ES',
     countryName: 'Spain',
-    fallbackEmail: 'info@polistibrick.es',
+    fallbackEmail: dec64('aW5mb0Bwb2xpc3RpYnJpY2suZXM='),
     subjects: {
       contact: 'Contacto — Polistibrick España',
       devis: 'Solicitud de presupuesto — Polistibrick España',
@@ -235,7 +239,7 @@
       const fd = new FormData();
       baseFields(fd, 'review');
       fd.append('name', nom);
-      fd.append('email', 'avis@polistibrick.fr');
+      fd.append('email', dec64('YXZpc0Bwb2xpc3RpYnJpY2suZnI=')); // avis@… (base64, anti-scraping)
       fd.append('rating', String(rating));
       fd.append('role', document.getElementById('avisRole')?.value || '');
       fd.append('location', document.getElementById('avisLieu')?.value || '');
