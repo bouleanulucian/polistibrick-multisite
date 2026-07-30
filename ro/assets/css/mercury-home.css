@@ -10,7 +10,7 @@
     --red: #C8102E;
     --red-dark: #A60E13;
     --red-soft: #FBE9EC;
-    --serif: 'Fraunces', Georgia, serif;
+    --serif: 'Inter', -apple-system, sans-serif; /* un seul font sur tout le site — décision client */
     --sans: 'Inter', -apple-system, sans-serif;
   }
 
@@ -3372,10 +3372,11 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   /* === ZURU-style scroll hero: video gol → scroll → mesaje + robot === */
   .hero-scroll-track {
     position: relative;
-    height: 200vh;
-    min-height: 200vh;
-    height: 200dvh;
-    min-height: 200dvh;
+    /* Piste raccourcie : la bascule est instantanée, pas besoin d'un écran entier de scroll */
+    height: 135vh;
+    min-height: 135vh;
+    height: 135dvh;
+    min-height: 135dvh;
   }
   @media (max-width: 768px) {
     .hero-scroll-track {
@@ -3400,7 +3401,10 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     font-style: normal;
     line-height: 1.1;
     letter-spacing: -0.04em;
-    color: var(--red); /* roșu de brand, ca titlurile secțiunilor următoare (cerință Lucian) */
+    /* Texte creux : intérieur transparent, seul le contour rouge (demande client) */
+    color: transparent;
+    -webkit-text-stroke: 2.5px var(--red);
+    text-stroke: 2.5px var(--red);
     text-align: left;
     text-shadow: none;
     opacity: calc(1 - min(var(--hero-progress, 0) * 2.2, 1));
@@ -5855,3 +5859,49 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     .mobile-contact-bar .mcb-email:active { background: #000; }
     body { padding-bottom: calc(54px + env(safe-area-inset-bottom, 0px)); }
   }
+
+/* ===========================================================================
+   TYPOGRAPHIE UNIFIÉE — un seul font (Inter), titres sans-serif bold uppercase,
+   tailles réduites (décision client, 30 juil). Les watermarks géants (classes
+   dédiées, pas des h1-h4) gardent leurs tailles.
+   =========================================================================== */
+h1, h2, h3, h4 {
+  font-family: var(--sans) !important;
+  font-weight: 800 !important;
+  font-style: normal !important;
+  text-transform: uppercase;
+  letter-spacing: -0.015em;
+  line-height: 1.12;
+}
+h1 { font-size: clamp(28px, 4.2vw, 56px) !important; }
+h2 { font-size: clamp(22px, 3vw, 40px) !important; }
+h3 { font-size: clamp(15px, 1.6vw, 21px) !important; }
+h1 em, h2 em, h3 em, h4 em {
+  font-family: var(--sans) !important;
+  font-style: normal !important;
+  font-weight: 800 !important;
+  color: inherit !important;
+}
+
+/* Teaser héros : 1re ligne en contour creux, 2e ligne pleine en rouge (demande client) */
+.hero-teaser .hero-teaser-line:last-child {
+  -webkit-text-stroke: 0;
+  text-stroke: 0;
+  color: var(--red);
+}
+
+/* Titre héros (état 2) plus petit — tient sur deux lignes exactement (demande client) */
+.hero-full-content h1 {
+  font-size: clamp(22px, 2.9vw, 38px) !important;
+  line-height: 1.15;
+}
+
+/* Section UN SEUL SYSTÈME : seul le titre gras reste — ligne 1 noire, ligne 2 rouge (demande client) */
+.morph-overlay h2 { color: var(--ink) !important; }
+.morph-overlay h2 em { color: var(--red) !important; }
+
+/* Cartes du slider POLISTIBRICK vs CLASSIQUE : titre sur UNE ligne — texte plus petit,
+   cartes un peu plus larges (demande client) */
+.info-card { width: clamp(320px, 34vw, 500px); max-width: 94%; }
+.info-card h4 { font-size: 14px !important; white-space: nowrap; letter-spacing: 0; }
+.card-team, .card-materials { font-size: 12.5px; }
