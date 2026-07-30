@@ -167,13 +167,10 @@ def optimize_html(text: str) -> str:
             '  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n</head>',
             1,
         )
-    text = text.replace(
-        "Inter:wght@400;500;600;700;800",
-        "Inter:wght@400;500;600;700",
-    )
+    # Inter 800 est requis par la typographie unifiée (titres bold) — on le conserve.
     text = text.replace(
         "Inter:wght@300;400;500;600;700;800",
-        "Inter:wght@400;500;600;700",
+        "Inter:wght@400;500;600;700;800",
     )
     text = re.sub(
         r'<link\s+href="(https://fonts\.googleapis\.com/css[^"]+)"\s+rel="stylesheet">',
