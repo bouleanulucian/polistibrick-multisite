@@ -669,7 +669,7 @@
     <div class="grid grid-3 reveal" style="gap:32px;">
       <div class="feature">
         <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
-        <div class="feature-body"><h4>Factura energética < 50 €/mese</h4><p>Polistibrick consume 15 kWh/m²/año para calefacción (frente a 55 para una casa RE2020 estándar). Ahorre un 80% en facturas, de por vida.</p></div>
+        <div class="feature-body"><h4>Factura energética < 50 €/mese</h4><p>Polistibrick consume 18 kWh/m²/año entre calefacción y refrigeración, frente a unos 69 de una vivienda existente media. Ahorra en torno al 75 % en sus facturas, de por vida.</p></div>
       </div>
       <div class="feature">
         <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
@@ -703,7 +703,7 @@
     <div class="calc-intro reveal">
       <span class="eyebrow">Calculadora de ahorros</span>
       <h2 style="font-family:var(--serif);font-size:clamp(28px,3.2vw,42px);font-weight:500;color:var(--ink);letter-spacing:-0.02em;margin-bottom:14px;">Cuánto le hará ahorrar su casa <em style="font-style:italic;color:var(--red);font-weight:400;">¿ahorrar?</em></h2>
-      <p class="lead" style="font-size:15.5px;color:var(--gray);line-height:1.65;">Indique la superficie de su futura casa. Calculamos su factura anual de calefacción con Polistibrick MBK 300 frente a una casa clásica RE2020.</p>
+      <p class="lead" style="font-size:15.5px;color:var(--gray);line-height:1.65;">Indique la superficie de su futura casa. Calculamos su factura anual de calefacción con Polistibrick MBK 300 frente a una vivienda existente media, calefacción y refrigeración incluidas.</p>
     </div>
 
     <div class="calc-stage reveal">
@@ -719,15 +719,15 @@
           <div class="calc-card-label">Con Polistibrick MBK 300</div>
           <div class="calc-card-system">Casa pasiva certificada</div>
           <div class="calc-card-value" id="polistibrick-yearly">338 €</div>
-          <div class="calc-card-unit">de calefacción al año</div>
-          <div class="calc-card-sub">15 kWh/m²/an · U = 0,10 W/m²K · Standard Passivhaus</div>
+          <div class="calc-card-unit">de calefacción + refrigeración al año</div>
+          <div class="calc-card-sub">18 kWh/m²/año (calefacción 15 + refrig. 3) · U = 0,10 W/m²K · Passivhaus</div>
         </div>
         <div class="calc-card calc-card--bad">
-          <div class="calc-card-label">Con ladrillo clásico RE2020</div>
+          <div class="calc-card-label">Con una vivienda existente</div>
           <div class="calc-card-system">Construcción estándar</div>
           <div class="calc-card-value" id="classique-yearly">1 238 €</div>
-          <div class="calc-card-unit">de calefacción al año</div>
-          <div class="calc-card-sub">55 kWh/m²/an · U = 0,30 W/m²K · Mínimo legal RE2020</div>
+          <div class="calc-card-unit">de calefacción + refrigeración al año</div>
+          <div class="calc-card-sub">69 kWh/m²/año (calefacción 60 + refrig. 9) · vivienda existente media</div>
         </div>
       </div>
 
@@ -737,7 +737,7 @@
       </div>
     </div>
 
-    <p class="calc-note">Cálculo basado en el precio medio de la energía en España 2025 (0,15 €/kWh, mix gas + electricidad). Consumo Polistibrick MBK 300 = 15 kWh/m²/año para calefacción (estándar Passivhaus). Consumo ladrillo clásico = 55 kWh/m²/año (mínimo legal RE2020). Polistibrick ofrece 3 espesores (MBK 210 / 270 / 300) — el arquitecto elige según su proyecto. Los valores exactos se calculan en su presupuesto personalizado.</p>
+    <p class="calc-note">Comparación con la misma fuente de energía (eléctrica) en ambas viviendas: se compara el aislamiento, no el sistema de climatización. Vivienda existente media: 60 kWh/m²/año de calefacción (demanda calculada a 20 °C — el consumo medido en España es menor, 41, porque las viviendas se calientan parcialmente) y 9 de refrigeración. Vivienda pasiva certificada: 15 de calefacción y 3 de refrigeración (límites del Passive House Institute). España es el mercado donde el verano más pesa: la refrigeración aporta el 13&nbsp;% del ahorro. Electricidad 0,26 €/kWh con impuestos incluidos (Eurostat, España, segundo semestre de 2025). Cálculo para 110 m², precio constante durante 25 años. Con bomba de calor en ambas viviendas los kWh ahorrados son los mismos; los euros se dividen por 3 aproximadamente.</p>
   </div>
 </section>
 
@@ -1331,9 +1331,9 @@
   var yearlyEl = document.getElementById('yearly-savings');
   var totalEl = document.getElementById('total-savings');
 
-  var ENERGY_PRICE = 0.15;           // €/kWh medio FR 2025 (mix gas+elettricità)
-  var POLISTIBRICK_CONS = 15;        // kWh/m²/an riscaldamento MBK 300 (passivo certificato)
-  var CLASSIQUE_CONS = 55;           // kWh/m²/an riscaldamento mattone classico RE2020 min
+  var ENERGY_PRICE = 0.26;             // €/kWh ES, Eurostat/régulateur, toutes taxes comprises
+  var POLISTIBRICK_CONS = 18;          // kWh/m²/an MBK 300 : 15 chauffage + 3 clim.
+  var CLASSIQUE_CONS = 69;             // kWh/m²/an maison existante : 60 chauffage + 9 clim.
 
   function formatEuro(amount) {
     return Math.round(amount).toLocaleString('es-ES') + ' €';

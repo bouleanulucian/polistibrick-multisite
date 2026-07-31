@@ -669,7 +669,7 @@
     <div class="grid grid-3 reveal" style="gap:32px;">
       <div class="feature">
         <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
-        <div class="feature-body"><h4>Račun za energiju &lt; 50 €/mjesečno</h4><p>Polistibrick troši 15 kWh/m²/godina za grijanje (u poređenju sa 55 za standardnu ​​kuću RE2020). Uštedite 80% na računima, doživotno.</p></div>
+        <div class="feature-body"><h4>Račun za energiju &lt; 50 €/mjesečno</h4><p>Polistibrick troši 18 kWh/m²/god. za grijanje i hlađenje, naspram oko 76 kod prosječne postojeće kuće. Ušteda je oko 76 % na računima, doživotno.</p></div>
       </div>
       <div class="feature">
         <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
@@ -703,7 +703,7 @@
     <div class="calc-intro reveal">
       <span class="eyebrow">Kalkulator ušteda</span>
       <h2 style="font-family:var(--serif);font-size:clamp(28px,3.2vw,42px);font-weight:500;color:var(--ink);letter-spacing:-0.02em;margin-bottom:14px;">Koliko će vaša kuća <em style="font-style:italic;color:var(--red);font-weight:400;">uštedite?</em></h2>
-      <p class="lead" style="font-size:15.5px;color:var(--gray);line-height:1.65;">Navedite površinu buduće kuće. Računamo godišnji račun za grijanje sa Polistibrick MBK 300 u poređenju sa klasičnom kućom RE2020.</p>
+      <p class="lead" style="font-size:15.5px;color:var(--gray);line-height:1.65;">Navedite površinu buduće kuće. Računamo godišnji račun za grijanje sa Polistibrick MBK 300 u poređenju sa prosječnom postojećom kućom, uz grijanje i hlađenje.</p>
     </div>
 
     <div class="calc-stage reveal">
@@ -719,15 +719,15 @@
           <div class="calc-card-label">Sa Polistibrick MBK 300</div>
           <div class="calc-card-system">Sertifikovana pasivna kuća</div>
           <div class="calc-card-value" id="polistibrick-yearly">338 €</div>
-          <div class="calc-card-unit">grijanje godišnje</div>
-          <div class="calc-card-sub">15 kWh/m²/godina · U = 0,10 W/m²K · Standard Passivhaus</div>
+          <div class="calc-card-unit">grijanje + hlađenje godišnje</div>
+          <div class="calc-card-sub">18 kWh/m²/god. (grijanje 15 + hlađenje 3) · U = 0,10 W/m²K · Passivhaus</div>
         </div>
         <div class="calc-card calc-card--bad">
-          <div class="calc-card-label">Sa klasičnom opekom RE2020</div>
+          <div class="calc-card-label">Sa postojećom kućom</div>
           <div class="calc-card-system">Standardna gradnja</div>
           <div class="calc-card-value" id="classique-yearly">1 238 €</div>
-          <div class="calc-card-unit">grijanje godišnje</div>
-          <div class="calc-card-sub">55 kWh/m²/godina · U = 0,30 W/m²K · Minim legal RE2020</div>
+          <div class="calc-card-unit">grijanje + hlađenje godišnje</div>
+          <div class="calc-card-sub">76 kWh/m²/god. (grijanje 70 + hlađenje 6) · prosječna postojeća kuća</div>
         </div>
       </div>
 
@@ -737,7 +737,7 @@
       </div>
     </div>
 
-    <p class="calc-note">Obračun na osnovu prosječne cijene energije u Rumuniji 2025 (0,15 €/kWh, mješavina plina i struje). Potrošnja Polistibrick MBK 300 = 15 kWh/m²/godina za grijanje (standard Passivhaus). Potrošnja klasične opeke = 55 kWh/m²/godišnje (zakonski minimum RE2020). Polistibrick predlaže 3 debljine (MBK 210 / 270 / 300) — arhitekta bira prema projektu. Tačni iznosi obračunavaju se u personalizovanoj ponudi.</p>
+    <p class="calc-note">Poređenje uz isti izvor energije (električni) u obje kuće: upoređuje se izolacija, a ne sistem grijanja. Prosječna postojeća kuća: 70 kWh/m²/god. za grijanje i 6 za hlađenje. Certifikovana pasivna kuća: 15 za grijanje i 3 za hlađenje (granice Passive House Institute). Električna energija 0,10 €/kWh sa porezima — najniža cijena među devet tržišta, zato je ušteda u eurima ovdje manja nego drugdje, iako je ušteda u kWh slična. Obračun za 110 m², cijena konstantna tokom 25 godina. Sa toplotnom pumpom u obje kuće ušteda u kWh je ista, a u eurima se dijeli sa otprilike 3.</p>
   </div>
 </section>
 
@@ -1331,9 +1331,9 @@
   var yearlyEl = document.getElementById('yearly-savings');
   var totalEl = document.getElementById('total-savings');
 
-  var ENERGY_PRICE = 0.15;           // €/kWh moyen FR 2025 (mix gaz+élec)
-  var POLISTIBRICK_CONS = 15;        // kWh/m²/godina chauffage MBK 300 (passif certifié)
-  var CLASSIQUE_CONS = 55;           // kWh/m²/godina chauffage brique classique RE2020 mini
+  var ENERGY_PRICE = 0.1;              // €/kWh ME, Eurostat/régulateur, toutes taxes comprises
+  var POLISTIBRICK_CONS = 18;          // kWh/m²/an MBK 300 : 15 chauffage + 3 clim.
+  var CLASSIQUE_CONS = 76;             // kWh/m²/an maison existante : 70 chauffage + 6 clim.
 
   function formatEuro(amount) {
     return Math.round(amount).toLocaleString('ro-RO') + ' €';

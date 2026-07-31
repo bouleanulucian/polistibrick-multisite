@@ -669,7 +669,7 @@
     <div class="grid grid-3 reveal" style="gap:32px;">
       <div class="feature">
         <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
-        <div class="feature-body"><h4>Bolletta energetica < 50 €/mese</h4><p>Polistibrick consuma 15 kWh/m²/an per il riscaldamento (vs 55 per una casa RE2020 standard). Risparmi l'80% sulle bollette, per tutta la vita.</p></div>
+        <div class="feature-body"><h4>Bolletta energetica < 50 €/mese</h4><p>Polistibrick consuma 19 kWh/m²/anno tra riscaldamento e raffrescamento, contro circa 91 di una casa esistente media. Risparmi circa il 79 % sulle bollette, per tutta la vita.</p></div>
       </div>
       <div class="feature">
         <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
@@ -703,7 +703,7 @@
     <div class="calc-intro reveal">
       <span class="eyebrow">Calcolatore dei risparmi</span>
       <h2 style="font-family:var(--serif);font-size:clamp(28px,3.2vw,42px);font-weight:500;color:var(--ink);letter-spacing:-0.02em;margin-bottom:14px;">Quanto la tua casa ti farà <em style="font-style:italic;color:var(--red);font-weight:400;">risparmiare?</em></h2>
-      <p class="lead" style="font-size:15.5px;color:var(--gray);line-height:1.65;">Indica la superficie della tua futura casa. Calcoliamo la tua bolletta annuale di riscaldamento con Polistibrick MBK 300 vs una casa classica RE2020.</p>
+      <p class="lead" style="font-size:15.5px;color:var(--gray);line-height:1.65;">Indica la superficie della tua futura casa. Calcoliamo la tua bolletta annuale di riscaldamento con Polistibrick MBK 300 rispetto a una casa esistente media, riscaldamento e raffrescamento inclusi.</p>
     </div>
 
     <div class="calc-stage reveal">
@@ -719,15 +719,15 @@
           <div class="calc-card-label">Con Polistibrick MBK 300</div>
           <div class="calc-card-system">Casa passiva certificata</div>
           <div class="calc-card-value" id="polistibrick-yearly">338 €</div>
-          <div class="calc-card-unit">di riscaldamento all'anno</div>
-          <div class="calc-card-sub">15 kWh/m²/an · U = 0,10 W/m²K · Standard Passivhaus</div>
+          <div class="calc-card-unit">di riscaldamento + raffrescamento all'anno</div>
+          <div class="calc-card-sub">19 kWh/m²/anno (riscald. 15 + raffresc. 4) · U = 0,10 W/m²K · Passivhaus</div>
         </div>
         <div class="calc-card calc-card--bad">
-          <div class="calc-card-label">Con mattone classico RE2020</div>
+          <div class="calc-card-label">Con una casa esistente</div>
           <div class="calc-card-system">Costruzione standard</div>
           <div class="calc-card-value" id="classique-yearly">1 238 €</div>
-          <div class="calc-card-unit">di riscaldamento all'anno</div>
-          <div class="calc-card-sub">55 kWh/m²/an · U = 0,30 W/m²K · Minimo legale RE2020</div>
+          <div class="calc-card-unit">di riscaldamento + raffrescamento all'anno</div>
+          <div class="calc-card-sub">91 kWh/m²/anno (riscald. 80 + raffresc. 11) · casa esistente media</div>
         </div>
       </div>
 
@@ -737,7 +737,7 @@
       </div>
     </div>
 
-    <p class="calc-note">Calcolo basato sul prezzo medio dell'energia in Francia 2025 (0,15 €/kWh, mix gas + elettricità). Consumo Polistibrick MBK 300 = 15 kWh/m²/an per il riscaldamento (standard Passivhaus certificato). Consumo mattone classico = 55 kWh/m²/an (minimo legale RE2020). Polistibrick propone 3 spessori (MBK 210 / 270 / 300) — l'architetto sceglie in base al tuo progetto. I valori esatti sono calcolati nel tuo preventivo personalizzato.</p>
+    <p class="calc-note">Confronto a parità di fonte energetica (elettrica) nelle due case: si confronta l'isolamento, non l'impianto. Casa esistente media: 80 kWh/m²/anno di riscaldamento e 11 di raffrescamento. Casa passiva certificata: 15 di riscaldamento e 4 di raffrescamento (limiti del Passive House Institute). In Italia l'estate conta davvero: il raffrescamento vale circa un quinto del risparmio. Energia elettrica 0,29 €/kWh imposte incluse (Eurostat, Italia, secondo semestre 2025; il riferimento ARERA 2026 è più alto, quindi la cifra è prudenziale). Calcolo su 110 m², prezzo costante per 25 anni. Con una pompa di calore in entrambe le case i kWh risparmiati sono gli stessi, gli euro si dividono per circa 3.</p>
   </div>
 </section>
 
@@ -1331,9 +1331,9 @@
   var yearlyEl = document.getElementById('yearly-savings');
   var totalEl = document.getElementById('total-savings');
 
-  var ENERGY_PRICE = 0.15;           // €/kWh medio FR 2025 (mix gas+elettricità)
-  var POLISTIBRICK_CONS = 15;        // kWh/m²/an riscaldamento MBK 300 (passivo certificato)
-  var CLASSIQUE_CONS = 55;           // kWh/m²/an riscaldamento mattone classico RE2020 min
+  var ENERGY_PRICE = 0.29;             // €/kWh IT, Eurostat/régulateur, toutes taxes comprises
+  var POLISTIBRICK_CONS = 19;          // kWh/m²/an MBK 300 : 15 chauffage + 4 clim.
+  var CLASSIQUE_CONS = 91;             // kWh/m²/an maison existante : 80 chauffage + 11 clim.
 
   function formatEuro(amount) {
     return Math.round(amount).toLocaleString('it-IT') + ' €';

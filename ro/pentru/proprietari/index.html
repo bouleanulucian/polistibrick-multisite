@@ -669,7 +669,7 @@
     <div class="grid grid-3 reveal" style="gap:32px;">
       <div class="feature">
         <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
-        <div class="feature-body"><h4>Factură la energie &lt; 50 €/lună</h4><p>Polistibrick consumă 15 kWh/m²/an pentru încălzire (față de 55 pentru o casă RE2020 standard). Economisiți 80% din facturi, pe viață.</p></div>
+        <div class="feature-body"><h4>Factură la energie &lt; 50 €/lună</h4><p>Polistibrick consumă 15 kWh/m²/an pentru încălzire, față de aproximativ 100 la o casă existentă medie. Economisiți în jur de 85% din facturi, pe viață.</p></div>
       </div>
       <div class="feature">
         <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
@@ -703,7 +703,7 @@
     <div class="calc-intro reveal">
       <span class="eyebrow">Calculator economii</span>
       <h2 style="font-family:var(--serif);font-size:clamp(28px,3.2vw,42px);font-weight:500;color:var(--ink);letter-spacing:-0.02em;margin-bottom:14px;">Cât vă va face casa să <em style="font-style:italic;color:var(--red);font-weight:400;">economisiți?</em></h2>
-      <p class="lead" style="font-size:15.5px;color:var(--gray);line-height:1.65;">Indicați suprafața viitoarei case. Calculăm factura anuală de încălzire cu Polistibrick MBK 300 față de o casă clasică RE2020.</p>
+      <p class="lead" style="font-size:15.5px;color:var(--gray);line-height:1.65;">Indicați suprafața viitoarei case. Calculăm factura anuală de încălzire cu Polistibrick MBK 300 față de o casă existentă medie.</p>
     </div>
 
     <div class="calc-stage reveal">
@@ -720,14 +720,14 @@
           <div class="calc-card-system">Casă pasivă certificată</div>
           <div class="calc-card-value" id="polistibrick-yearly">338 €</div>
           <div class="calc-card-unit">încălzire pe an</div>
-          <div class="calc-card-sub">15 kWh/m²/an · U = 0,10 W/m²K · Standard Passivhaus</div>
+          <div class="calc-card-sub">15 kWh/m²/an · U = 0,10 W/m²K · Passivhaus</div>
         </div>
         <div class="calc-card calc-card--bad">
-          <div class="calc-card-label">Cu cărămidă clasică RE2020</div>
+          <div class="calc-card-label">Cu o casă existentă</div>
           <div class="calc-card-system">Construcție standard</div>
           <div class="calc-card-value" id="classique-yearly">1 238 €</div>
           <div class="calc-card-unit">încălzire pe an</div>
-          <div class="calc-card-sub">55 kWh/m²/an · U = 0,30 W/m²K · Minim legal RE2020</div>
+          <div class="calc-card-sub">100 kWh/m²/an încălzire · casă existentă medie</div>
         </div>
       </div>
 
@@ -737,7 +737,7 @@
       </div>
     </div>
 
-    <p class="calc-note">Calcul bazat pe prețul mediu al energiei în România 2025 (0,15 €/kWh, mix gaz + electricitate). Consum Polistibrick MBK 300 = 15 kWh/m²/an pentru încălzire (standard Passivhaus). Consum cărămidă clasică = 55 kWh/m²/an (minim legal RE2020). Polistibrick propune 3 grosimi (MBK 210 / 270 / 300) — arhitectul alege în funcție de proiect. Cifrele exacte sunt calculate în oferta personalizată.</p>
+    <p class="calc-note">Comparație la sursă de încălzire identică (electrică): se compară izolarea, nu sistemul de încălzire. Casă existentă medie: 100 kWh/m²/an încălzire (ODYSSEE-MURE, media UE-27 pentru fondul construit existent). Casă pasivă certificată: 15 kWh/m²/an (limita Passive House Institute). Răcirea nu e luată în calcul: puține locuințe din România au aer condiționat fix, iar avantajul de vară al casei pasive e că rămâne sub 25 °C fără climatizare. Electricitate 0,28 €/kWh cu toate taxele incluse (Eurostat, România, semestrul II 2025). Calcul pentru 110 m², preț constant pe 25 de ani. Cu pompă de căldură la ambele case, kWh economisiți rămân aceiași, iar economia în euro se împarte la aproximativ 3.</p>
   </div>
 </section>
 
@@ -1331,9 +1331,9 @@
   var yearlyEl = document.getElementById('yearly-savings');
   var totalEl = document.getElementById('total-savings');
 
-  var ENERGY_PRICE = 0.15;           // €/kWh moyen FR 2025 (mix gaz+élec)
-  var POLISTIBRICK_CONS = 15;        // kWh/m²/an chauffage MBK 300 (passif certifié)
-  var CLASSIQUE_CONS = 55;           // kWh/m²/an chauffage brique classique RE2020 mini
+  var ENERGY_PRICE = 0.28;             // €/kWh RO, Eurostat/régulateur, toutes taxes comprises
+  var POLISTIBRICK_CONS = 15;          // kWh/m²/an MBK 300 : 15 chauffage + 0 clim.
+  var CLASSIQUE_CONS = 100;            // kWh/m²/an maison existante : 100 chauffage + 0 clim.
 
   function formatEuro(amount) {
     return Math.round(amount).toLocaleString('ro-RO') + ' €';
