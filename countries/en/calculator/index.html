@@ -253,7 +253,7 @@
             </div>
 
             <div class="form-row">
-              <label class="form-label">Composants inclus</label>
+              <label class="form-label">Components included</label>
               <div style="display:flex;flex-direction:column;gap:10px;">
                 <label style="display:flex;align-items:center;gap:10px;font-size:13px;cursor:pointer;">
                   <input type="checkbox" id="incMBK" checked> <span>MBK walls (<span id="wallPrice">90</span> €/m²)</span>
@@ -274,10 +274,10 @@
               <label class="form-label" for="location">Delivery location</label>
               <select class="form-select" id="location">
                 <option value="ro" data-delivery="0.04">Romania</option>
-                <option value="bg-hu-rs" data-delivery="0.05">Bulgarie / Hongrie / Serbie</option>
+                <option value="bg-hu-rs" data-delivery="0.05">Bulgaria / Hungary / Serbia</option>
                 <option value="at-de-ck" data-delivery="0.06">Austria / Germany / Czech Republic</option>
                 <option value="fr-es" data-delivery="0.04">France / Spain</option>
-                <option value="be-lu-nl" data-delivery="0.07">Belgium / Luxembourg / Pays-Bas</option>
+                <option value="be-lu-nl" data-delivery="0.07">Belgium / Luxembourg / Netherlands</option>
                 <option value="other" data-delivery="0.08">Other country (estimate)</option>
               </select>
             </div>
@@ -285,7 +285,7 @@
 
           <!-- RESULT (right, sticky) -->
           <div class="calc-result">
-            <span class="eyebrow" style="color:rgba(247,244,237,0.6);">Estimation cost panneaux</span>
+            <span class="eyebrow" style="color:rgba(247,244,237,0.6);">Estimated panel cost</span>
             <h3>Your Polistibrick home</h3>
             <div class="calc-result-total" id="totalCost">— <small>€</small></div>
             <p style="font-size:12.5px;color:rgba(247,244,237,0.65);">Materials + estimated delivery. Excl. VAT, excl. installation, excl. finishes.</p>
@@ -304,7 +304,7 @@
                 <strong id="roofCost">— €</strong>
               </div>
               <div class="calc-result-row">
-                <span>Accessories (~3 %)</span>
+                <span>Accessories (~3%)</span>
                 <strong id="accCost">— €</strong>
               </div>
               <div class="calc-result-row">
@@ -336,7 +336,7 @@
     <div class="grid grid-3 reveal">
       <div class="card">
         <h4 style="margin-bottom:10px;">Foundations and earthworks</h4>
-        <p style="font-size:14px;">~€80–150/m² depending on terrain and groundwater level. Polistibrick does not manubill foundations — use a local builder.</p>
+        <p style="font-size:14px;">~€80–150/m² depending on terrain and groundwater level. Polistibrick does not manufacture foundations — use a local builder.</p>
       </div>
       <div class="card">
         <h4 style="margin-bottom:10px;">Joinery (windows + doors)</h4>
@@ -364,8 +364,8 @@
 
 <section class="section section--tight">
   <div class="cta-band reveal">
-    <h2>Want one too <em>with exact figures.</em> for your project?</h2>
-    <p>Send us your plans (even a simple sketch) and a Polistibrick ingineer calculates everything precisely — panels, delivery, installation, special accessories. Response within 48 hours.</p>
+    <h2>Want the same <em>with exact figures</em> for your project?</h2>
+    <p>Send us your plans (even a simple sketch) and a Polistibrick engineer calculates everything precisely — panels, delivery, installation, special accessories. Response within 48 hours.</p>
     <div class="cta-band-actions">
       <a href="../quote/" class="btn btn-on-dark btn-large btn-arrow">Request a personalised quote</a>
       <a href="../contact/" class="btn btn-on-dark-ghost btn-large">Talk to a specialist</a>
@@ -407,7 +407,7 @@
 
     const fmt = (n) => {
       if (!isFinite(n) || n <= 0) return '— €';
-      return new Intl.NumberFormat('ro-RO', { maximumFractionDigits: 0 }).format(Math.round(n)) + ' €';
+      return new Intl.NumberFormat('en-GB', { maximumFractionDigits: 0 }).format(Math.round(n)) + ' €';
     };
 
     function recalc() {
@@ -444,7 +444,7 @@
       out.deliveryCost.textContent = fmt(deliveryCost);
 
       if (total > 0) {
-        out.total.innerHTML = new Intl.NumberFormat('ro-RO', { maximumFractionDigits: 0 }).format(Math.round(total)) + ' <small>€</small>';
+        out.total.innerHTML = new Intl.NumberFormat('en-GB', { maximumFractionDigits: 0 }).format(Math.round(total)) + ' <small>€</small>';
       } else {
         out.total.innerHTML = '— <small>€</small>';
       }

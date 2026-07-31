@@ -304,7 +304,7 @@
                 <strong id="roofCost">— €</strong>
               </div>
               <div class="calc-result-row">
-                <span>Accessories (~3 %)</span>
+                <span>Accessories (~3%)</span>
                 <strong id="accCost">— €</strong>
               </div>
               <div class="calc-result-row">
@@ -365,7 +365,7 @@
 <section class="section section--tight">
   <div class="cta-band reveal">
     <h2>Want one too <em>with exact figures.</em> for your project?</h2>
-    <p>Send us your plans (even a simple sketch) and a Polistibrick ingineer calculates everything precisely — panels, delivery, installation, special accessories. Response within 48 hours.</p>
+    <p>Send us your plans (even a simple sketch) and a Polistibrick engineer calculates everything precisely — panels, delivery, installation, special accessories. Response within 48 hours.</p>
     <div class="cta-band-actions">
       <a href="../quote/" class="btn btn-on-dark btn-large btn-arrow">Request a personalised quote</a>
       <a href="../contact/" class="btn btn-on-dark-ghost btn-large">Talk to a specialist</a>
@@ -407,7 +407,7 @@
 
     const fmt = (n) => {
       if (!isFinite(n) || n <= 0) return '— €';
-      return new Intl.NumberFormat('ro-RO', { maximumFractionDigits: 0 }).format(Math.round(n)) + ' €';
+      return new Intl.NumberFormat('en-IE', { maximumFractionDigits: 0 }).format(Math.round(n)) + ' €';
     };
 
     function recalc() {
@@ -444,7 +444,7 @@
       out.deliveryCost.textContent = fmt(deliveryCost);
 
       if (total > 0) {
-        out.total.innerHTML = new Intl.NumberFormat('ro-RO', { maximumFractionDigits: 0 }).format(Math.round(total)) + ' <small>€</small>';
+        out.total.innerHTML = new Intl.NumberFormat('en-IE', { maximumFractionDigits: 0 }).format(Math.round(total)) + ' <small>€</small>';
       } else {
         out.total.innerHTML = '— <small>€</small>';
       }

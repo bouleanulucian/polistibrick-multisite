@@ -478,7 +478,7 @@
   function addFiles(newFiles) {
     Array.from(newFiles).forEach(file => {
       if (file.size > MAX_FILE_SIZE) {
-        alert(`Fișierul „${file.name}" este prea mare (${(file.size/1024/1024).toFixed(1)} MB). Maximum 10 MB per fișier.`);
+        alert(`Fișierul „${file.name}” este prea mare (${(file.size/1024/1024).toFixed(1)} MB). Maximum 10 MB per fișier.`);
         return;
       }
       // Avoid duplicates

@@ -117,7 +117,7 @@
 
         <div class="wm-intro">
           <span class="bubble-tag">Koliko štedite za 25 godina</span>
-          <h2>Polistibrick ili opeka: <em>cifrele tale.</em></h2>
+          <h2>Polistibrick ili opeka: <em>vaše brojke.</em></h2>
           <p>Dinamički kalkulator koji vam tačno pokazuje koliko uštedite na energiji, održavanju i ukupnim troškovima tokom 25 godina za kuću koju želite da izgradite. Unesite svoje podatke i odmah pogledajte rezultat.</p>
         </div>
 
@@ -125,7 +125,7 @@
 
           <!-- FORM -->
           <form id="compForm" class="comp-form-card">
-            <h3>Datele casei tale.</h3>
+            <h3>Podaci o vašoj kući.</h3>
 
             <div class="form-row">
               <label class="form-label" for="cSurface">Površina kuće (m²)</label>
@@ -138,7 +138,7 @@
                 <option value="10">10 godine</option>
                 <option value="15">15 godine</option>
                 <option value="20">20 godine</option>
-                <option value="25" selected>25 godine (recomandat)</option>
+                <option value="25" selected>25 godina (preporučeno)</option>
                 <option value="30">30 godine</option>
                 <option value="40">40 godine</option>
                 <option value="50">50 godine</option>
@@ -146,7 +146,7 @@
             </div>
 
             <div class="form-row">
-              <label class="form-label" for="cClimate">Climat</label>
+              <label class="form-label" for="cClimate">Klima</label>
               <select class="form-select" id="cClimate">
                 <option value="cold" data-brick-energy="180" data-poli-energy="45">Hladno (planinske zone, sjever — &lt; 8°C u prosjeku)</option>
                 <option value="temperate" data-brick-energy="130" data-poli-energy="35" selected>Umjereno (Centralna Evropa — 8–14°C u prosjeku)</option>
@@ -166,14 +166,14 @@
               <select class="form-select" id="cEnergyInflation">
                 <option value="0">0 % — stalna cijena (optimistično)</option>
                 <option value="2">2 % — stabilna inflacija</option>
-                <option value="4" selected>4 % — realist (media UE 2010–2024)</option>
+                <option value="4" selected>4 % — realno (prosjek EU 2010–2024)</option>
                 <option value="6">6 % — pesimistično (energetska kriza)</option>
               </select>
             </div>
 
             <hr style="border:0;border-top:1px solid var(--border);margin:20px 0;">
 
-            <p style="font-size:12.5px;color:var(--gray);margin-bottom:12px;">💡 Calculul include:</p>
+            <p style="font-size:12.5px;color:var(--gray);margin-bottom:12px;">💡 Proračun obuhvata:</p>
             <ul style="display:flex;flex-direction:column;gap:5px;font-size:12.5px;color:var(--ink-soft);padding-left:4px;list-style:none;">
               <li>✓ Trošak izgradnje (paneli + rad, bez završnih radova)</li>
               <li>✓ Trošak energije tokom odabranih godina</li>
@@ -186,9 +186,9 @@
           <div class="comp-result">
 
             <div class="comp-savings">
-              <span class="eyebrow" style="color:rgba(247,244,237,0.55);">Uštede totale sa Polistibrick</span>
+              <span class="eyebrow" style="color:rgba(247,244,237,0.55);">Ukupna ušteda sa Polistibrick</span>
               <div class="comp-savings-big" id="totalSavings">— <small>€</small></div>
-              <p style="font-size:13.5px;color:rgba(247,244,237,0.75);">pe <span id="yearsLabel">25</span> godina, za kuću od <span id="surfaceLabel">150</span> m²</p>
+              <p style="font-size:13.5px;color:rgba(247,244,237,0.75);">za <span id="yearsLabel">25</span> godina, za kuću od <span id="surfaceLabel">150</span> m²</p>
             </div>
 
             <div class="comp-bar-container">
@@ -217,7 +217,7 @@
                 <span class="num" id="poliBuild">— €</span>
               </div>
               <div class="comp-row">
-                <span>Energija (cumulat)</span>
+                <span>Energija (kumulativno)</span>
                 <span class="num" id="brickEnergy">— €</span>
                 <span class="num num-good" id="poliEnergy">— €</span>
               </div>
@@ -247,7 +247,7 @@
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 40px;">
       <span class="eyebrow">Kako funkcioniše proračun</span>
-      <h2>Metodologie <em>transparentna.</em></h2>
+      <h2>Metodologija <em>transparentna.</em></h2>
     </div>
     <div class="grid grid-2 reveal" style="max-width:980px;margin:0 auto;">
       <div class="card">
@@ -255,8 +255,8 @@
         <p style="font-size:14px;line-height:1.6;">Opeka: ~1.000 €/m² za standard koji nije usklađen. Polistibrick: ~1.050 €/m² (+5 %) za pasivnu kuću A+++. Uključuje materijale i izradu, isključujući unutrašnje ili vanjske završne obrade.</p>
       </div>
       <div class="card">
-        <h4 style="margin-bottom:12px;">Costul energije</h4>
-        <p style="font-size:14px;line-height:1.6;">Na osnovu tipične potrošnje po klimi: cigla u prosjeku troši 100–180 kWh/m²/godina za grijanje i klimatizaciju. Polistibrick (pasivni) troši 25–45 kWh/m²/godišnje. Reducere medie de 70 %.</p>
+        <h4 style="margin-bottom:12px;">Trošak energije</h4>
+        <p style="font-size:14px;line-height:1.6;">Na osnovu tipične potrošnje po klimi: cigla u prosjeku troši 100–180 kWh/m²/godina za grijanje i klimatizaciju. Polistibrick (pasivni) troši 25–45 kWh/m²/godišnje. Prosječno smanjenje od 70 %.</p>
       </div>
       <div class="card">
         <h4 style="margin-bottom:12px;">Održavanje tokom 25 godina</h4>
@@ -264,7 +264,7 @@
       </div>
       <div class="card">
         <h4 style="margin-bottom:12px;">Energetska inflacija</h4>
-        <p style="font-size:14px;line-height:1.6;">Tokom proteklih 14 godina, cijena električne energije u UE je porasla za otprilike 4 % godišnje. Naš proračun integriše godišnju kapitalizaciju — realna ekonomija 25 za godine od sada je veća od razlike × 25 danas.</p>
+        <p style="font-size:14px;line-height:1.6;">Tokom proteklih 14 godina, cijena električne energije u UE je porasla za otprilike 4 % godišnje. Naš proračun uključuje godišnju kapitalizaciju — stvarna ušteda kroz 25 godina veća je od današnje razlike pomnožene sa 25.</p>
       </div>
     </div>
   </div>
@@ -272,8 +272,8 @@
 
 <section class="section section--tight">
   <div class="cta-band reveal">
-    <h2>Convins de <em>cifrele tale?</em></h2>
-    <p>Zatražite personaliziranu ponudu Polistibrick — tačan proračun za vaš projekat, bez obaveza, bez skrivenih troškova.</p>
+    <h2>Ubijedile vas <em>vaše brojke?</em></h2>
+    <p>Zatražite personalizovanu ponudu Polistibrick — tačan proračun za vaš projekat, bez obaveza, bez skrivenih troškova.</p>
     <div class="cta-band-actions">
       <a href="../ponuda/" class="btn btn-on-dark btn-large btn-arrow">Zatražite personalizovanu ponudu</a>
       <a href="../contact/" class="btn btn-on-dark-ghost btn-large">Razgovarajte sa stručnjakom</a>
@@ -298,7 +298,7 @@
 
     const fmt = (n) => {
       if (!isFinite(n) || n <= 0) return '— €';
-      return new Intl.NumberFormat('ro-RO', { maximumFractionDigits: 0 }).format(Math.round(n)) + ' €';
+      return new Intl.NumberFormat('sr-Latn-ME', { maximumFractionDigits: 0 }).format(Math.round(n)) + ' €';
     };
 
     function recalc() {

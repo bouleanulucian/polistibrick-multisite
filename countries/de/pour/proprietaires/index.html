@@ -713,26 +713,26 @@
         <div class="calc-card calc-card--good">
           <div class="calc-card-label">Avec Polistibrick MBK 300</div>
           <div class="calc-card-system">Maison passive certifiée</div>
-          <div class="calc-card-value" id="polistibrick-yearly">338 €</div>
+          <div class="calc-card-value" id="polistibrick-yearly">720 €</div>
           <div class="calc-card-unit">de chauffage par an</div>
           <div class="calc-card-sub">15 kWh/m²/an · U = 0,10 W/m²K · Passivhaus</div>
         </div>
         <div class="calc-card calc-card--bad">
           <div class="calc-card-label">Avec une maison existante</div>
           <div class="calc-card-system">Construction standard</div>
-          <div class="calc-card-value" id="classique-yearly">1 238 €</div>
+          <div class="calc-card-value" id="classique-yearly">3 600 €</div>
           <div class="calc-card-unit">de chauffage par an</div>
           <div class="calc-card-sub">75 kWh/m²/an de chauffage · maison existante moyenne (Suisse)</div>
         </div>
       </div>
 
       <div class="calc-savings">
-        <div class="savings-yearly">Vous économisez <strong id="yearly-savings">900 €</strong> chaque année</div>
-        <div class="savings-total">Sur 25 ans : <strong id="total-savings">22 500 €</strong> d'économies</div>
+        <div class="savings-yearly">Vous économisez <strong id="yearly-savings">2 880 €</strong> chaque année</div>
+        <div class="savings-total">Sur 25 ans : <strong id="total-savings">72 000 €</strong> d'économies</div>
       </div>
     </div>
 
-    <p class="calc-note">Comparaison à source de chauffage identique (électrique)&nbsp;: on compare l'isolation, pas le système de chauffage. Maison existante moyenne en Suisse&nbsp;: 75 kWh/m²/an de chauffage (OFEN / Prognos, 2000-2024). Maison passive certifiée&nbsp;: 15 kWh/m²/an (limite Passive House Institute). La climatisation n'est pas comptée&nbsp;: moins d'un ménage suisse sur dix en possède — l'avantage d'été de la maison passive est de rester sous 25 °C sans climatiseur, pas de faire baisser une facture. Électricité 0,32 €/kWh TVA comprise (médiane ElCom 2026, profil H4&nbsp;; les tarifs varient fortement d'une commune à l'autre). Calcul sur 110 m², prix constant sur 25 ans. Avec une pompe à chaleur dans les deux maisons, les euros se divisent par environ 3.</p>
+    <p class="calc-note">Comparaison à source de chauffage identique (électrique)&nbsp;: on compare l'isolation, pas le système de chauffage. Maison existante moyenne en Suisse&nbsp;: 75 kWh/m²/an de chauffage (OFEN / Prognos, 2000-2024). Maison passive certifiée&nbsp;: 15 kWh/m²/an (limite Passive House Institute). La climatisation n'est pas comptée&nbsp;: moins d'un ménage suisse sur dix en possède — l'avantage d'été de la maison passive est de rester sous 25 °C sans climatiseur, pas de faire baisser une facture. Électricité 0,32 €/kWh TVA comprise (médiane ElCom 2026, profil H4&nbsp;; les tarifs varient fortement d'une commune à l'autre). Calcul à la surface que vous indiquez, prix constant sur 25 ans. Avec une pompe à chaleur dans les deux maisons, les euros se divisent par environ 3.</p>
   </div>
 </section>
 
@@ -1326,7 +1326,7 @@
   var yearlyEl = document.getElementById('yearly-savings');
   var totalEl = document.getElementById('total-savings');
 
-  var ENERGY_PRICE = 0.32;             // €/kWh DE, Eurostat/régulateur, toutes taxes comprises
+  var ENERGY_PRICE = 0.32;             // €/kWh Suisse, médiane ElCom (profil H4), TVA comprise
   var POLISTIBRICK_CONS = 15;          // kWh/m²/an MBK 300 : 15 chauffage + 0 clim.
   var CLASSIQUE_CONS = 75;             // kWh/m²/an maison existante : 75 chauffage + 0 clim.
 

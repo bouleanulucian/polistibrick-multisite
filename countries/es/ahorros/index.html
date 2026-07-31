@@ -109,23 +109,23 @@
   <div class="container">
     <div class="wm-stage-wrap reveal">
       <div class="wm-watermark" aria-hidden="true">
-        <span class="wm-half wm-top">Risparmi</span>
-        <span class="wm-half wm-bottom">Risparmi</span>
+        <span class="wm-half wm-top">Ahorros</span>
+        <span class="wm-half wm-bottom">Ahorros</span>
       </div>
 
       <div class="wm-stage">
 
         <div class="wm-intro">
           <span class="bubble-tag">Cuánto ahorras en 25 años</span>
-          <h2>Polistibrick vs ladrillo: <em>i tuoi numeri.</em></h2>
-          <p>Calculadora dinamico che ti mostra ESATTAMENTE quanto risparmi su energia, manutenzione e costi totali in 25 anni, per la casa che desideri costruire. Inserisci i tuoi dati, visualizza il risultato in tempo reale.</p>
+          <h2>Polistibrick vs ladrillo: <em>tus números.</em></h2>
+          <p>Calculadora dinámica que te muestra EXACTAMENTE cuánto ahorras en energía, mantenimiento y coste total a 25 años, para la casa que quieres construir. Introduce tus datos y visualiza el resultado en tiempo real.</p>
         </div>
 
         <div class="comp-grid">
 
           <!-- FORM -->
           <form id="compForm" class="comp-form-card">
-            <h3>I dati della tua casa.</h3>
+            <h3>Los datos de tu casa.</h3>
 
             <div class="form-row">
               <label class="form-label" for="cSurface">Superficie de la casa (m²)</label>
@@ -135,13 +135,13 @@
             <div class="form-row">
               <label class="form-label" for="cYears">Años de ocupación considerados</label>
               <select class="form-select" id="cYears">
-                <option value="10">10 anni</option>
-                <option value="15">15 anni</option>
-                <option value="20">20 anni</option>
-                <option value="25" selected>25 anni (consigliato)</option>
-                <option value="30">30 anni</option>
-                <option value="40">40 anni</option>
-                <option value="50">50 anni</option>
+                <option value="10">10 años</option>
+                <option value="15">15 años</option>
+                <option value="20">20 años</option>
+                <option value="25" selected>25 años (recomendado)</option>
+                <option value="30">30 años</option>
+                <option value="40">40 años</option>
+                <option value="50">50 años</option>
               </select>
             </div>
 
@@ -166,19 +166,19 @@
               <select class="form-select" id="cEnergyInflation">
                 <option value="0">0% — precio constante (optimista)</option>
                 <option value="2">2 % — inflación estable</option>
-                <option value="4" selected>4 % — realistico (media UE 2010-2024)</option>
+                <option value="4" selected>4 % — realista (media UE 2010-2024)</option>
                 <option value="6">6% — pesimista (crisis energética)</option>
               </select>
             </div>
 
             <hr style="border:0;border-top:1px solid var(--border);margin:20px 0;">
 
-            <p style="font-size:12.5px;color:var(--gray);margin-bottom:12px;">💡 Il calcolo include:</p>
+            <p style="font-size:12.5px;color:var(--gray);margin-bottom:12px;">💡 El cálculo incluye:</p>
             <ul style="display:flex;flex-direction:column;gap:5px;font-size:12.5px;color:var(--ink-soft);padding-left:4px;list-style:none;">
-              <li>✓ Coste de construcción (pannelli + manodopera, escluse finiture)</li>
+              <li>✓ Coste de construcción (paneles + mano de obra, sin acabados)</li>
               <li>✓ Coste energético en los años seleccionados</li>
-              <li>✓ Costo manutenzione stimato</li>
-              <li>✓ Il tutto proiettato con l'inflazione scelta</li>
+              <li>✓ Coste de mantenimiento estimado</li>
+              <li>✓ Todo proyectado con la inflación elegida</li>
             </ul>
           </form>
 
@@ -207,7 +207,7 @@
 
             <div style="background:white;border:1px solid var(--border);border-radius:14px;margin-top:18px;overflow:hidden;">
               <div class="comp-row is-header">
-                <span>Costo</span>
+                <span>Coste</span>
                 <span class="num">Ladrillo</span>
                 <span class="num">Polistibrick</span>
               </div>
@@ -217,7 +217,7 @@
                 <span class="num" id="poliBuild">— €</span>
               </div>
               <div class="comp-row">
-                <span>Energia (cumulato)</span>
+                <span>Energía (acumulada)</span>
                 <span class="num" id="brickEnergy">— €</span>
                 <span class="num num-good" id="poliEnergy">— €</span>
               </div>
@@ -227,7 +227,7 @@
                 <span class="num num-good" id="poliMaint">— €</span>
               </div>
               <div class="comp-row is-total">
-                <span>TOTALE</span>
+                <span>TOTAL</span>
                 <span class="num" id="brickTotal">— €</span>
                 <span class="num num-good" id="poliTotal">— €</span>
               </div>
@@ -247,7 +247,7 @@
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 40px;">
       <span class="eyebrow">Cómo funciona el cálculo</span>
-      <h2>Metodologia <em>transparente.</em></h2>
+      <h2>Metodología <em>transparente.</em></h2>
     </div>
     <div class="grid grid-2 reveal" style="max-width:980px;margin:0 auto;">
       <div class="card">
@@ -255,7 +255,7 @@
         <p style="font-size:14px;line-height:1.6;">Ladrillo: ~1.000 €/m² en estándar no conforme. Polistibrick: ~1.050 €/m² (+5%) para una casa pasiva A+++. Incluye materiales y mano de obra, sin acabados interiores ni exteriores.</p>
       </div>
       <div class="card">
-        <h4 style="margin-bottom:12px;">Costo dell'energia</h4>
+        <h4 style="margin-bottom:12px;">Coste de la energía</h4>
         <p style="font-size:14px;line-height:1.6;">Basado en el consumo típico por clima: el ladrillo consume de media 100–180 kWh/m²/año para calefacción y aire acondicionado. Polistibrick (pasivo) consume 25–45 kWh/m²/año. Reducción media del 70%.</p>
       </div>
       <div class="card">
@@ -298,7 +298,7 @@
 
     const fmt = (n) => {
       if (!isFinite(n) || n <= 0) return '— €';
-      return new Intl.NumberFormat('ro-RO', { maximumFractionDigits: 0 }).format(Math.round(n)) + ' €';
+      return new Intl.NumberFormat('es-ES', { maximumFractionDigits: 0 }).format(Math.round(n)) + ' €';
     };
 
     function recalc() {

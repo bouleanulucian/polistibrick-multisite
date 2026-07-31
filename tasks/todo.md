@@ -1,21 +1,38 @@
-# Plan: replicare redesign homepage pe toate țările + publicare live
+# Audit final de traduceri — toate modificările din 31.07.2026, pe 9 țări
 
-Pachetul FR validat local (30.07.2026): font unic Inter + titluri bold uppercase mici,
-teaser contur roșu + comutare instant, MORPH șters, PASSIF șters, „Pour Qui ?",
-texte mărunte șterse (eyebrows/note/paragrafe), titlu CINQ nou, metric arhitect scurt,
-video hero 18s (toate țările au deja fișierele).
+## Ce s-a schimbat azi (16 commit-uri, ~54 fișiere/țară)
+1. **Homepage** — font unic Inter, MORPH + PASSIF șterse, „Pour Qui ?", texte mărunte curățate,
+   carduri slider pe 1 rând, titlu Cinq nou, buton hero → `#pour`, opțiune „Auto-constructeur" ștearsă
+2. **Pagina proprietari** — eyebrow „cei care comandă" (nu „construiesc singuri"), calculatorul refăcut
+   (valori per țară, etichete, unități, notă cu surse), buton → `#calculator`, textul „economisiți X%"
+3. **FAQ** — răspunsul „am nevoie de constructor specializat" rescris (fără scara „devii montator agreat")
+4. **Produse MBK/PBK/TBK** — scara de verde, Premium/Pasiv/Pasiv Plus, greutăți cofraj 25/27/29,
+   beton 12-25 cm + nota „grosimi pentru beton de 15 cm", eticheta „Greutate cofraj"
+5. **Certificări** — CSTB scos peste tot, titlu în limba țării, descriere fără organism/țară
+6. **Arhitecți** — „Certificat technique" (fără CSTB), enumerarea rapoartelor
+7. **Deviz** — configuratorul doar la clic, `#generator` eliminat
 
-- [x] Diff FR salvat ca spec (scratchpad/fr-homepage.diff — 15 schimbări)
-- [x] Commit FR + css + build.py + hero assets pe main (checkpoint)
-- [x] 8 agenți în paralel: de, en, es, ie, it, me, nl, ro — toate au raportat verificări curate
-- [x] Verificare independentă pe toate țările — toate curate
-- [x] Build toate 9 țările (build.py are acum versionare pe hash de conținut — mai bună decât ?v= manual)
-- [x] Commit main: 576b850 (+ 776022a — ro uitat din lista explicită de git add, prins la re-verificare)
-- [x] Deploy gh-pages: 9ba94ab (fetch+rebase ok, 325 fișiere)
-- [x] Verificare live: toate 9 țările servesc versiunea nouă (morph=0, passif=0, Inter 800, titlu nou) — 31.07.2026
+## Riscul de acoperit
+Multe texte au fost scrise/rescrise de agenți în 6 limbi. Sesiunea a scos deja la iveală
+titluri rămase în FR pe EN/IE, texte IT pe ES, română pe ME. Trebuie o trecere finală,
+țară cu țară, care verifică LIMBA și SENSUL, nu doar prezența stringurilor.
 
-## Review
-Redesignul FR replicat pe toate limbile prin 8 agenți paraleli, fiecare cu verificare grep +
-re-verificare independentă centrală. de=Elveția, nl=Belgia (francofone → franceza verbatim, corect).
-Localizări: For Who? / ¿Para quién? / Per chi? / Za koga? / Pentru cine?
-Rămas pe viitor: font unic pe sub-pagini (site.css folosește încă Cormorant) — „după ce terminăm îl faci pe tot".
+## Plan
+- [ ] Echipa A (9 agenți, unul per țară): audit + reparare pe toate cele 7 zone de mai sus
+- [ ] Echipa B (9 verificatori): relectură adversarială, de pe disc, fără să creadă raportul A
+- [ ] Verificare centrală (eu): grep pe tipare de limbă greșită + build
+- [ ] Build 9 țări + publicare main + gh-pages
+- [ ] Verificare live per țară
+
+## Referință limbi
+| cod | piață | limba corectă |
+|---|---|---|
+| fr | Franța | franceză |
+| de | **Elveția** | franceză (netradus — franceza E corectă) |
+| nl | **Belgia** | franceză (netradus — franceza E corectă) |
+| en | **Marea Britanie** | engleză |
+| ie | Irlanda | engleză |
+| es | Spania | spaniolă |
+| it | Italia | italiană |
+| ro | România | română |
+| me | Muntenegru | muntenegreană (alfabet latin) |
