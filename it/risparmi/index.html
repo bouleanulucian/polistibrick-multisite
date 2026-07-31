@@ -163,16 +163,16 @@
             <div class="form-row">
               <label class="form-label" for="cEnergyPrice">Prezzo medio dell'energia (€/kWh)</label>
               <input class="form-input" type="number" id="cEnergyPrice" value="0.22" min="0.05" max="0.60" step="0.01">
-              <p style="font-size:11px;color:var(--gray);margin-top:6px;">Usa la media per il tuo paese (RO ~0.18, FR ~0.25, DE ~0.32, ES ~0.20).</p>
+              <p style="font-size:11px;color:var(--gray);margin-top:6px;">Usa la media per il tuo paese (RO ~0,18, FR ~0,25, DE ~0,32, ES ~0,20).</p>
             </div>
 
             <div class="form-row">
               <label class="form-label" for="cEnergyInflation">Aumento annuo del prezzo dell'energia (%)</label>
               <select class="form-select" id="cEnergyInflation">
-                <option value="0">0 % — prezzo costante (ottimista)</option>
-                <option value="2">2 % — inflazione stabile</option>
-                <option value="4" selected>4 % — realistico (media UE 2010-2024)</option>
-                <option value="6">6 % — pessimista (crisi energetica)</option>
+                <option value="0">0% — prezzo costante (ottimista)</option>
+                <option value="2">2% — inflazione stabile</option>
+                <option value="4" selected>4% — realistico (media UE 2010-2024)</option>
+                <option value="6">6% — pessimista (crisi energetica)</option>
               </select>
             </div>
 
@@ -257,11 +257,11 @@
     <div class="grid grid-2 reveal" style="max-width:980px;margin:0 auto;">
       <div class="card">
         <h4 style="margin-bottom:12px;">Costo di costruzione</h4>
-        <p style="font-size:14px;line-height:1.6;">Mattone: ~1.000 €/m² in standard non conforme. Polistibrick: ~1.050 €/m² (+5 %) per una casa passiva A+++. Include materiali e manodopera, escluse finiture interne o esterne.</p>
+        <p style="font-size:14px;line-height:1.6;">Mattone: ~1.000 €/m² in standard non conforme. Polistibrick: ~1.050 €/m² (+5%) per una casa passiva A+++. Include materiali e manodopera, escluse finiture interne o esterne.</p>
       </div>
       <div class="card">
         <h4 style="margin-bottom:12px;">Costo dell'energia</h4>
-        <p style="font-size:14px;line-height:1.6;">Basato sul consumo tipico per clima: il mattone consuma in media 100-180 kWh/m²/anno per riscaldamento e condizionamento. Polistibrick (passiva) consuma 25-45 kWh/m²/anno. Riduzione media del 70 %.</p>
+        <p style="font-size:14px;line-height:1.6;">Basato sul consumo tipico per clima: il mattone consuma in media 100-180 kWh/m²/anno per riscaldamento e condizionamento. Polistibrick (passiva) consuma 25-45 kWh/m²/anno. Riduzione media del 70%.</p>
       </div>
       <div class="card">
         <h4 style="margin-bottom:12px;">Manutenzione in 25 anni</h4>
@@ -269,7 +269,7 @@
       </div>
       <div class="card">
         <h4 style="margin-bottom:12px;">Inflazione energetica</h4>
-        <p style="font-size:14px;line-height:1.6;">Negli ultimi 14 anni, il prezzo dell'elettricità nell'UE è aumentato di circa il 4 % all'anno. Il nostro calcolo integra la capitalizzazione annuale — il risparmio reale in 25 anni è superiore alla differenza di oggi × 25.</p>
+        <p style="font-size:14px;line-height:1.6;">Negli ultimi 14 anni, il prezzo dell'elettricità nell'UE è aumentato di circa il 4% all'anno. Il nostro calcolo integra la capitalizzazione annuale — il risparmio reale in 25 anni è superiore alla differenza di oggi × 25.</p>
       </div>
     </div>
   </div>
@@ -303,7 +303,7 @@
 
     const fmt = (n) => {
       if (!isFinite(n) || n <= 0) return '— €';
-      return new Intl.NumberFormat('ro-RO', { maximumFractionDigits: 0 }).format(Math.round(n)) + ' €';
+      return new Intl.NumberFormat('it-IT', { maximumFractionDigits: 0 }).format(Math.round(n)) + ' €';
     };
 
     function recalc() {

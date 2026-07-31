@@ -145,13 +145,13 @@
                 <option value="20">20 years</option>
                 <option value="25" selected>25 years (recommended)</option>
                 <option value="30">30 years</option>
-                <option value="40">40 ans</option>
-                <option value="50">50 ans</option>
+                <option value="40">40 years</option>
+                <option value="50">50 years</option>
               </select>
             </div>
 
             <div class="form-row">
-              <label class="form-label" for="cClimate">Climat</label>
+              <label class="form-label" for="cClimate">Climate</label>
               <select class="form-select" id="cClimate">
                 <option value="cold" data-brick-energy="180" data-poli-energy="45">Cold (mountain, northern zones — &lt; 8°C on average)</option>
                 <option value="temperate" data-brick-energy="130" data-poli-energy="35" selected>Temperate (Central Europe — 8–14°C on average)</option>
@@ -193,7 +193,7 @@
             <div class="comp-savings">
               <span class="eyebrow" style="color:rgba(247,244,237,0.55);">Total savings with Polistibrick</span>
               <div class="comp-savings-big" id="totalSavings">— <small>€</small></div>
-              <p style="font-size:13.5px;color:rgba(247,244,237,0.75);">sur <span id="yearsLabel">25</span> years, for a house of <span id="surfaceLabel">150</span> m²</p>
+              <p style="font-size:13.5px;color:rgba(247,244,237,0.75);">over <span id="yearsLabel">25</span> years, for a house of <span id="surfaceLabel">150</span> m²</p>
             </div>
 
             <div class="comp-bar-container">
@@ -252,7 +252,7 @@
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 40px;">
       <span class="eyebrow">How the calculation works</span>
-      <h2>Methodology <em>transparent.</em></h2>
+      <h2>A transparent <em>methodology.</em></h2>
     </div>
     <div class="grid grid-2 reveal" style="max-width:980px;margin:0 auto;">
       <div class="card">
@@ -265,7 +265,7 @@
       </div>
       <div class="card">
         <h4 style="margin-bottom:12px;">Maintenance over 25 years</h4>
-        <p style="font-size:14px;line-height:1.6;">Brick: thermal insulation retrofit at 15 years (~€5,000), monthsture-related repairs, façade renovation. Polistibrick: none of this — EPS does not absorb water, does not degrade, the monolithic structure does not crack.</p>
+        <p style="font-size:14px;line-height:1.6;">Brick: thermal insulation retrofit at 15 years (~€5,000), moisture-related repairs, façade renovation. Polistibrick: none of this — EPS does not absorb water, does not degrade, the monolithic structure does not crack.</p>
       </div>
       <div class="card">
         <h4 style="margin-bottom:12px;">Energy inflation</h4>
@@ -277,7 +277,7 @@
 
 <section class="section section--tight">
   <div class="cta-band reveal">
-    <h2>Convinced by <em>vos chiffres ?</em></h2>
+    <h2>Convinced by <em>your own figures?</em></h2>
     <p>Request a personalised Polistibrick quote — exact calculation for your project, no obligation, no hidden costs.</p>
     <div class="cta-band-actions">
       <a href="../quote/" class="btn btn-on-dark btn-large btn-arrow">Request a personalised quote</a>
@@ -303,7 +303,7 @@
 
     const fmt = (n) => {
       if (!isFinite(n) || n <= 0) return '— €';
-      return new Intl.NumberFormat('ro-RO', { maximumFractionDigits: 0 }).format(Math.round(n)) + ' €';
+      return new Intl.NumberFormat('en-IE', { maximumFractionDigits: 0 }).format(Math.round(n)) + ' €';
     };
 
     function recalc() {

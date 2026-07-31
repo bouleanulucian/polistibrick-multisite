@@ -220,8 +220,8 @@
 
         <!-- INTRO -->
         <div class="wm-intro">
-          <span class="bubble-tag">Estimare instantanee</span>
-          <h2>Koliko košta <em>kuća ta Polistibrick?</em></h2>
+          <span class="bubble-tag">Trenutna procjena</span>
+          <h2>Koliko košta <em>vaša kuća Polistibrick?</em></h2>
           <p>Navedite približne dimenzije projekta i dobijte trenutnu procjenu. Za tačnu ponudu, naš inženjer izračunava stvarni plan u roku od 48 sati.</p>
         </div>
 
@@ -251,14 +251,14 @@
             <div class="form-row">
               <label class="form-label" for="wallModel">Model zid MBK</label>
               <select class="form-select" id="wallModel">
-                <option value="210" data-price="80">MBK 210 — Premium (climat temperat)</option>
+                <option value="210" data-price="80">MBK 210 — Premium (umjerena klima)</option>
                 <option value="270" data-price="90" selected>MBK 270 — Pasivna</option>
-                <option value="300" data-price="100">MBK 300 — Pasivna Plus (climat rece)</option>
+                <option value="300" data-price="100">MBK 300 — Pasivna Plus (hladna klima)</option>
               </select>
             </div>
 
             <div class="form-row">
-              <label class="form-label">Componente incluse</label>
+              <label class="form-label">Uključene komponente</label>
               <div style="display:flex;flex-direction:column;gap:10px;">
                 <label style="display:flex;align-items:center;gap:10px;font-size:13px;cursor:pointer;">
                   <input type="checkbox" id="incMBK" checked> <span>Zidovi MBK (<span id="wallPrice">90</span> €/m²)</span>
@@ -276,13 +276,13 @@
             </div>
 
             <div class="form-row">
-              <label class="form-label" for="location">Loc de livrare</label>
+              <label class="form-label" for="location">Mjesto isporuke</label>
               <select class="form-select" id="location">
                 <option value="ro" data-delivery="0.04">Rumunija</option>
-                <option value="bg-hu-rs" data-delivery="0.05">Bulgaria / Ungaria / Serbia</option>
+                <option value="bg-hu-rs" data-delivery="0.05">Bugarska / Mađarska / Srbija</option>
                 <option value="at-de-ck" data-delivery="0.06">Austrija / Njemačka / Češka Republika</option>
                 <option value="fr-es" data-delivery="0.04">Francuska / Španija</option>
-                <option value="be-lu-nl" data-delivery="0.07">Belgija / Luxemburg / Olanda</option>
+                <option value="be-lu-nl" data-delivery="0.07">Belgija / Luksemburg / Holandija</option>
                 <option value="other" data-delivery="0.08">Druga zemlja (procjena)</option>
               </select>
             </div>
@@ -290,8 +290,8 @@
 
           <!-- RESULT (right, sticky) -->
           <div class="calc-result">
-            <span class="eyebrow" style="color:rgba(247,244,237,0.6);">Estimare trošak paneli</span>
-            <h3>Kuća ta Polistibrick</h3>
+            <span class="eyebrow" style="color:rgba(247,244,237,0.6);">Procjena troška panela</span>
+            <h3>Vaša kuća Polistibrick</h3>
             <div class="calc-result-total" id="totalCost">— <small>€</small></div>
             <p style="font-size:12.5px;color:rgba(247,244,237,0.65);">Materijali + okvirna isporuka. Bez PDV-a, bez montaže, bez završnih radova.</p>
 
@@ -313,14 +313,14 @@
                 <strong id="accCost">— €</strong>
               </div>
               <div class="calc-result-row">
-                <span>Livrare</span>
+                <span>Isporuka</span>
                 <strong id="deliveryCost">— €</strong>
               </div>
             </div>
 
             <div class="calc-disclaimer">
-              <strong style="color:var(--cream);display:block;margin-bottom:4px;">⚠️ Doar estimare</strong>
-              U proračunu se koriste prosječni omjeri (otisak zidova ≈ 1,8×, podovi = m² kuće, krov ≈ 1,2×). Za tačnu ponudu, zatražite personaliziranu ponudu - inženjer izračunava stvarni tlocrt vašeg doma.
+              <strong style="color:var(--cream);display:block;margin-bottom:4px;">⚠️ Samo procjena</strong>
+              U proračunu se koriste prosječni omjeri (otisak zidova ≈ 1,8×, podovi = m² kuće, krov ≈ 1,2×). Za tačnu ponudu, zatražite personalizovanu ponudu — inženjer izračunava stvarni tlocrt vašeg doma.
             </div>
 
             <a href="../ponuda/" class="btn btn-on-dark btn-large btn-arrow" style="width:100%;justify-content:center;margin-top:20px;">Zatražite preciznu ponudu</a>
@@ -335,7 +335,7 @@
 <section class="section section--cream">
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 40px;">
-      <span class="eyebrow">Šta ne include estimarea</span>
+      <span class="eyebrow">Šta procjena ne obuhvata</span>
       <h2>Šta dodatno treba planirati u budžetu <em>za kompletnu kuću.</em></h2>
     </div>
     <div class="grid grid-3 reveal">
@@ -352,12 +352,12 @@
         <p style="font-size:14px;">Struja, vodovod, grijanje, VMC sa povratom topline. Prosječan budžet 80–150 €/m² kuća, ovisno o odabranom nivou tehnologije.</p>
       </div>
       <div class="card">
-        <h4 style="margin-bottom:10px;">Finisaje interioare</h4>
+        <h4 style="margin-bottom:10px;">Unutrašnje završne obrade</h4>
         <p style="font-size:14px;">Malterisanje, bojenje, pločice, parket, kuhinjski namještaj. Prosječni budžet 200–500 €/m² kuće, zavisno od izabranog standarda.</p>
       </div>
       <div class="card">
         <h4 style="margin-bottom:10px;">Fasada (završna obrada)</h4>
-        <p style="font-size:14px;">Silikatni malter, kamen, drvo, keramičke pločice. Polistibrick e structura, tu alegi aspectul. Budžet 30–150 €/m² fasade.</p>
+        <p style="font-size:14px;">Silikatni malter, kamen, drvo, keramičke pločice. Polistibrick je konstrukcija, izgled birate vi. Budžet 30–150 €/m² fasade.</p>
       </div>
       <div class="card">
         <h4 style="margin-bottom:10px;">Radovi na montaži</h4>
@@ -369,7 +369,7 @@
 
 <section class="section section--tight">
   <div class="cta-band reveal">
-    <h2>Vrei <em>cifrele exacte</em> za vaš projekat?</h2>
+    <h2>Želite <em>tačne brojke</em> za vaš projekat?</h2>
     <p>Pošaljite nam plan (čak i jednostavnu skicu) i Polistibrick inženjer će sve precizno izračunati — panele, isporuku, montažu, specijalni pribor. Odgovor za 48 sati.</p>
     <div class="cta-band-actions">
       <a href="../ponuda/" class="btn btn-on-dark btn-large btn-arrow">Zatražite personalizovanu ponudu</a>
@@ -412,7 +412,7 @@
 
     const fmt = (n) => {
       if (!isFinite(n) || n <= 0) return '— €';
-      return new Intl.NumberFormat('ro-RO', { maximumFractionDigits: 0 }).format(Math.round(n)) + ' €';
+      return new Intl.NumberFormat('sr-Latn-ME', { maximumFractionDigits: 0 }).format(Math.round(n)) + ' €';
     };
 
     function recalc() {
@@ -449,7 +449,7 @@
       out.deliveryCost.textContent = fmt(deliveryCost);
 
       if (total > 0) {
-        out.total.innerHTML = new Intl.NumberFormat('ro-RO', { maximumFractionDigits: 0 }).format(Math.round(total)) + ' <small>€</small>';
+        out.total.innerHTML = new Intl.NumberFormat('sr-Latn-ME', { maximumFractionDigits: 0 }).format(Math.round(total)) + ' <small>€</small>';
       } else {
         out.total.innerHTML = '— <small>€</small>';
       }

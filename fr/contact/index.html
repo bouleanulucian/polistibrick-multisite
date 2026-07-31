@@ -525,8 +525,8 @@
     }
   });
 
-  /* === AUTO-FILL formular pe baza query params din URL ===
-     Exemple URL apelat din /pour/architectes/:
+  /* === PRÉ-REMPLISSAGE du formulaire à partir des paramètres d'URL ===
+     Exemple d'URL appelée depuis /pour/architectes/ :
        ?subject=Demande+document+:+CAD+DWG&role=architecte-bet&doc=CAD+DWG&type=document */
   (function prefillFromURL() {
     var params = new URLSearchParams(window.location.search);
@@ -535,7 +535,7 @@
     var doc = params.get('doc');
     var type = params.get('type');
 
-    // Pre-select rol (Architecte / BET / etc)
+    // Pré-sélection du rôle (Architecte / BET / etc.)
     var roleSelect = document.getElementById('crole');
     if (role && roleSelect) {
       var roleMap = {

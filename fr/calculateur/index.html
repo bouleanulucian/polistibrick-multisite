@@ -11,7 +11,7 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
   <link rel="stylesheet" href="../assets/css/site.css">
   <style>
-    /* === Card cu watermark — pattern reutilizabil === */
+    /* === Carte avec filigrane — motif réutilisable === */
     .wm-section {
       padding: clamp(60px, 8vw, 100px) 0;
       background: var(--cream);
@@ -67,7 +67,7 @@
       flex-direction: column;
       gap: 36px;
     }
-    /* Header intro din card */
+    /* En-tête d'introduction de la carte */
     .wm-intro {
       max-width: 720px;
     }
@@ -207,7 +207,7 @@
 
 <header class="nav" data-include="nav"></header>
 
-<!-- ============ CARDUL PRINCIPAL CU WATERMARK ============ -->
+<!-- ============ CARTE PRINCIPALE AVEC FILIGRANE ============ -->
 <section class="wm-section">
   <div class="container">
     <div class="wm-stage-wrap reveal">
@@ -320,7 +320,7 @@
 
             <div class="calc-disclaimer">
               <strong style="color:var(--cream);display:block;margin-bottom:4px;">⚠️ Estimation uniquement</strong>
-              Le calcul utilise des ratios moyens (murs ≈ 1.8× emprise au sol, planchers = m² maison, toit ≈ 1.2× emprise au sol). Pour un devis exact, demandez un devis personnalisé — un ingénieur calcule sur le plan réel de votre maison.
+              Le calcul utilise des ratios moyens (murs ≈ 1,8× emprise au sol, planchers = m² maison, toit ≈ 1,2× emprise au sol). Pour un devis exact, demandez un devis personnalisé — un ingénieur calcule sur le plan réel de votre maison.
             </div>
 
             <a href="../devis/" class="btn btn-on-dark btn-large btn-arrow" style="width:100%;justify-content:center;margin-top:20px;">Demander un devis exact</a>
@@ -412,7 +412,7 @@
 
     const fmt = (n) => {
       if (!isFinite(n) || n <= 0) return '— €';
-      return new Intl.NumberFormat('ro-RO', { maximumFractionDigits: 0 }).format(Math.round(n)) + ' €';
+      return new Intl.NumberFormat('fr-FR', { maximumFractionDigits: 0 }).format(Math.round(n)) + ' €';
     };
 
     function recalc() {
@@ -449,7 +449,7 @@
       out.deliveryCost.textContent = fmt(deliveryCost);
 
       if (total > 0) {
-        out.total.innerHTML = new Intl.NumberFormat('ro-RO', { maximumFractionDigits: 0 }).format(Math.round(total)) + ' <small>€</small>';
+        out.total.innerHTML = new Intl.NumberFormat('fr-FR', { maximumFractionDigits: 0 }).format(Math.round(total)) + ' <small>€</small>';
       } else {
         out.total.innerHTML = '— <small>€</small>';
       }

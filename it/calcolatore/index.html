@@ -309,7 +309,7 @@
                 <strong id="roofCost">— €</strong>
               </div>
               <div class="calc-result-row">
-                <span>Accessori (~3 %)</span>
+                <span>Accessori (~3%)</span>
                 <strong id="accCost">— €</strong>
               </div>
               <div class="calc-result-row">
@@ -320,7 +320,7 @@
 
             <div class="calc-disclaimer">
               <strong style="color:var(--cream);display:block;margin-bottom:4px;">⚠️ Solo stima</strong>
-              Il calcolo usa rapporti medi (muri ≈ 1.8× impronta, solai = m² casa, tetto ≈ 1.2× impronta). Per un preventivo esatto, richiedi un preventivo personalizzato — un ingegnere calcola sul progetto reale della tua casa.
+              Il calcolo usa rapporti medi (muri ≈ 1,8× impronta, solai = m² casa, tetto ≈ 1,2× impronta). Per un preventivo esatto, richiedi un preventivo personalizzato — un ingegnere calcola sul progetto reale della tua casa.
             </div>
 
             <a href="../preventivo/" class="btn btn-on-dark btn-large btn-arrow" style="width:100%;justify-content:center;margin-top:20px;">Richiedi un preventivo esatto</a>
@@ -412,7 +412,7 @@
 
     const fmt = (n) => {
       if (!isFinite(n) || n <= 0) return '— €';
-      return new Intl.NumberFormat('ro-RO', { maximumFractionDigits: 0 }).format(Math.round(n)) + ' €';
+      return new Intl.NumberFormat('it-IT', { maximumFractionDigits: 0 }).format(Math.round(n)) + ' €';
     };
 
     function recalc() {
@@ -449,7 +449,7 @@
       out.deliveryCost.textContent = fmt(deliveryCost);
 
       if (total > 0) {
-        out.total.innerHTML = new Intl.NumberFormat('ro-RO', { maximumFractionDigits: 0 }).format(Math.round(total)) + ' <small>€</small>';
+        out.total.innerHTML = new Intl.NumberFormat('it-IT', { maximumFractionDigits: 0 }).format(Math.round(total)) + ' <small>€</small>';
       } else {
         out.total.innerHTML = '— <small>€</small>';
       }
