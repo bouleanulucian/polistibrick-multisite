@@ -3887,8 +3887,6 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     color: #FFFFFF;
     padding: clamp(100px, 12vh, 150px) clamp(24px, 5vw, 64px) clamp(100px, 12vh, 150px);
     overflow: hidden;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
   }
   /* diagrame „explodate" — spații între straturi */
   .differences-section .wall-diagram-container { background: transparent; border: 0; box-shadow: none; }
