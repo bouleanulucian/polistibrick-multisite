@@ -290,9 +290,19 @@
     });
   }
 
-  if (window.location.hash === '#generator') {
+  function openFromHash() {
+    if (window.location.hash !== '#generator') return;
     panel.hidden = false;
     loadIframe();
+  }
+
+  // devis-embed.js est chargé en `defer` : il s'exécute après ce script mais avant
+  // DOMContentLoaded. Sans cette attente, une arrivée directe sur #generator ouvrait
+  // le panneau avec un iframe vide, faute de window.pbLoadDevisFrame.
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', openFromHash);
+  } else {
+    openFromHash();
   }
 })();
 </script>
