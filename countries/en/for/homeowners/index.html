@@ -664,7 +664,7 @@
     <div class="grid grid-3 reveal" style="gap:32px;">
       <div class="feature">
         <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
-        <div class="feature-body"><h4>Energy bill < 50 €/month</h4><p>Polistibrick consumes 15 kWh/m²/year for heating (vs 55 for a standard RE2020 home). Save 80% on bills, for life.</p></div>
+        <div class="feature-body"><h4>Energy bill < 50 €/month</h4><p>Polistibrick uses 15 kWh/m²/year for heating, against roughly 100 for an average existing home. That is about 85% off your bills, for life.</p></div>
       </div>
       <div class="feature">
         <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
@@ -698,7 +698,7 @@
     <div class="calc-intro reveal">
       <span class="eyebrow">Calculator in savings</span>
       <h2 style="font-family:var(--serif);font-size:clamp(28px,3.2vw,42px);font-weight:500;color:var(--ink);letter-spacing:-0.02em;margin-bottom:14px;">How much will your home <em style="font-style:italic;color:var(--red);font-weight:400;">save you?</em></h2>
-      <p class="lead" style="font-size:15.5px;color:var(--gray);line-height:1.65;">Enter the floor area of your future home. We calculate your annual heating bill with Polistibrick MBK 300 vs a standard RE2020 home.</p>
+      <p class="lead" style="font-size:15.5px;color:var(--gray);line-height:1.65;">Enter the floor area of your future home. We calculate your annual heating bill with Polistibrick MBK 300 against an average existing home.</p>
     </div>
 
     <div class="calc-stage reveal">
@@ -714,15 +714,15 @@
           <div class="calc-card-label">With Polistibrick MBK 300</div>
           <div class="calc-card-system">Certified passive house</div>
           <div class="calc-card-value" id="polistibrick-yearly">338 €</div>
-          <div class="calc-card-unit">de heating per year</div>
-          <div class="calc-card-sub">15 kWh/m²/an · U = 0,10 W/m²K · Standard Passivhaus</div>
+          <div class="calc-card-unit">heating per year</div>
+          <div class="calc-card-sub">15 kWh/m²/yr · U = 0.10 W/m²K · Passivhaus</div>
         </div>
         <div class="calc-card calc-card--bad">
-          <div class="calc-card-label">With conventional brick RE2020</div>
+          <div class="calc-card-label">With an existing house</div>
           <div class="calc-card-system">Standard construction</div>
           <div class="calc-card-value" id="classique-yearly">1 238 €</div>
-          <div class="calc-card-unit">de heating per year</div>
-          <div class="calc-card-sub">55 kWh/m²/year · U = 0.30 W/m²K · RE2020 legal minimum</div>
+          <div class="calc-card-unit">heating per year</div>
+          <div class="calc-card-sub">100 kWh/m²/yr heating · average existing house</div>
         </div>
       </div>
 
@@ -732,7 +732,7 @@
       </div>
     </div>
 
-    <p class="calc-note">Calculation based on average energy prices in France 2025 (€0.15/kWh, gas + electricity mix). Polistibrick MBK 300 consumption = 15 kWh/m²/year for heating (Passivhaus standard). Standard brick consumption = 55 kWh/m²/year (RE2020 legal minimum). Polistibrick offers 3 sizes (MBK 210 / 270 / 300) — the architect chooses according to your project. Exact figures are calculated in your personalised quote.</p>
+    <p class="calc-note">Both houses are assumed to use the same heating source (electric), so the comparison measures the insulation, not the heating system. Average existing house: 100 kWh/m²/yr for heating (Eurostat, United Kingdom, last reported year). Certified passive house: 15 kWh/m²/yr (Passive House Institute limit). Cooling is not counted: Eurostat records UK household cooling as zero and only 4.3&nbsp;% of English homes use air conditioning — the passive house's summer benefit is staying below 25 °C without an air conditioner, through shading and night ventilation. Electricity 0.35 €/kWh including VAT (Ofgem price cap, direct debit, converted at the ECB reference rate). Based on 110 m², price held constant over 25 years. With a heat pump in both houses the kWh saved are the same; the euros divide by roughly 3.</p>
   </div>
 </section>
 
@@ -1326,9 +1326,9 @@
   var yearlyEl = document.getElementById('yearly-savings');
   var totalEl = document.getElementById('total-savings');
 
-  var ENERGY_PRICE = 0.15;           // €/kWh moyen FR 2025 (mix gaz+élec)
-  var POLISTIBRICK_CONS = 15;        // kWh/m²/an chauffage MBK 300 (passif certifié)
-  var CLASSIQUE_CONS = 55;           // kWh/m²/an chauffage brique classique RE2020 mini
+  var ENERGY_PRICE = 0.35;             // €/kWh EN, Eurostat/régulateur, toutes taxes comprises
+  var POLISTIBRICK_CONS = 15;          // kWh/m²/an MBK 300 : 15 chauffage + 0 clim.
+  var CLASSIQUE_CONS = 100;            // kWh/m²/an maison existante : 100 chauffage + 0 clim.
 
   function formatEuro(amount) {
     return Math.round(amount).toLocaleString('fr-FR') + ' €';

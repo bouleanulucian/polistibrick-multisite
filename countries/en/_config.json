@@ -44,9 +44,9 @@
       "linkedin": ""
     }
   ],
-  "currency": "GBP",
-  "currency_symbol": "£",
-  "currency_display_format": "£{value}",
+  "currency": "EUR",
+  "currency_symbol": "€",
+  "currency_display_format": "{value} €",
   "vat_rate": 20,
   "form_submit_email": "contact@polistibrick.com",
   "form_cc_email": "info@polistibrick.eu",

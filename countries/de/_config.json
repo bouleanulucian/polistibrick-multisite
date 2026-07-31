@@ -37,14 +37,19 @@
       "role": "Directeur commercial Suisse",
       "email": "[email]@polistibrick.com",
       "phone": "[téléphone]",
-      "languages": ["FR", "DE", "IT", "EN"],
+      "languages": [
+        "FR",
+        "DE",
+        "IT",
+        "EN"
+      ],
       "photo": "team/manager-ch.jpg",
       "linkedin": ""
     }
   ],
-  "currency": "CHF",
-  "currency_symbol": "CHF",
-  "currency_display_format": "CHF {value}",
+  "currency": "EUR",
+  "currency_symbol": "€",
+  "currency_display_format": "{value} €",
   "vat_rate": 8.1,
   "form_submit_email": "contact@polistibrick.com",
   "form_cc_email": "info@polistibrick.eu",

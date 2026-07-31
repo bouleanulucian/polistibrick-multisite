@@ -664,7 +664,7 @@
     <div class="grid grid-3 reveal" style="gap:32px;">
       <div class="feature">
         <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
-        <div class="feature-body"><h4>Facture d'énergie < 50 €/mois</h4><p>Polistibrick consomme 15 kWh/m²/an pour le chauffage (vs 55 pour une maison RE2020 standard). Vous économisez 80 % sur vos factures, pour la vie.</p></div>
+        <div class="feature-body"><h4>Facture d'énergie < 50 €/mois</h4><p>Polistibrick consomme 15 kWh/m²/an pour le chauffage, contre environ 100 pour une maison existante moyenne. Vous économisez environ 85 % sur vos factures, pour la vie.</p></div>
       </div>
       <div class="feature">
         <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
@@ -698,7 +698,7 @@
     <div class="calc-intro reveal">
       <span class="eyebrow">Calculateur d'économies</span>
       <h2 style="font-family:var(--serif);font-size:clamp(28px,3.2vw,42px);font-weight:500;color:var(--ink);letter-spacing:-0.02em;margin-bottom:14px;">Combien votre maison <em style="font-style:italic;color:var(--red);font-weight:400;">vous fera économiser ?</em></h2>
-      <p class="lead" style="font-size:15.5px;color:var(--gray);line-height:1.65;">Indiquez la surface de votre future maison. Nous calculons votre facture de chauffage annuelle avec Polistibrick MBK 300 vs une maison classique RE2020.</p>
+      <p class="lead" style="font-size:15.5px;color:var(--gray);line-height:1.65;">Indiquez la surface de votre future maison. Nous calculons votre facture de chauffage annuelle avec Polistibrick MBK 300 face à une maison existante moyenne.</p>
     </div>
 
     <div class="calc-stage reveal">
@@ -714,15 +714,15 @@
           <div class="calc-card-label">Avec Polistibrick MBK 300</div>
           <div class="calc-card-system">Maison passive certifiée</div>
           <div class="calc-card-value" id="polistibrick-yearly">338 €</div>
-          <div class="calc-card-unit">de chauffage par an</div>
-          <div class="calc-card-sub">15 kWh/m²/an · U = 0,10 W/m²K · Standard Passivhaus</div>
+          <div class="calc-card-unit">de chauffage + clim. par an</div>
+          <div class="calc-card-sub">16 kWh/m²/an (chauffage 15 + clim. 1) · U = 0,10 W/m²K · Passivhaus</div>
         </div>
         <div class="calc-card calc-card--bad">
-          <div class="calc-card-label">Avec brique classique RE2020</div>
+          <div class="calc-card-label">Avec une maison existante</div>
           <div class="calc-card-system">Construction standard</div>
           <div class="calc-card-value" id="classique-yearly">1 238 €</div>
-          <div class="calc-card-unit">de chauffage par an</div>
-          <div class="calc-card-sub">55 kWh/m²/an · U = 0,30 W/m²K · Minimum légal RE2020</div>
+          <div class="calc-card-unit">de chauffage + clim. par an</div>
+          <div class="calc-card-sub">102 kWh/m²/an (chauffage 100 + clim. 2) · maison existante moyenne</div>
         </div>
       </div>
 
@@ -732,7 +732,7 @@
       </div>
     </div>
 
-    <p class="calc-note">Calcul basé sur le prix moyen de l'énergie en France 2025 (0,15 €/kWh, mix gaz + électricité). Consommation Polistibrick MBK 300 = 15 kWh/m²/an pour le chauffage (standard Passivhaus). Consommation brique classique = 55 kWh/m²/an (minimum légal RE2020). Polistibrick propose 3 grosseurs (MBK 210 / 270 / 300) — l'architecte choisit selon votre projet. Les chiffres exacts sont calculés dans votre devis personnalisé.</p>
+    <p class="calc-note">Comparaison à source de chauffage identique (électrique)&nbsp;: on compare l'isolation, pas le système de chauffage. Maison existante moyenne&nbsp;: 100 kWh/m²/an de chauffage (ODYSSEE-MURE, moyenne UE-27) + 2 de climatisation (ADEME 2020, moyenne sur toutes les maisons — 3 sur 4 n'ont pas de climatisation). Maison passive certifiée&nbsp;: 15 kWh/m²/an (limite Passive House Institute). Électricité 0,25 €/kWh toutes taxes comprises (Eurostat, France, 2ᵉ semestre 2025). Calcul sur 110 m², prix constant sur 25 ans. Avec une pompe à chaleur dans les deux maisons, les kWh économisés sont les mêmes&nbsp;; les euros se divisent par environ 3.</p>
   </div>
 </section>
 
@@ -1326,9 +1326,9 @@
   var yearlyEl = document.getElementById('yearly-savings');
   var totalEl = document.getElementById('total-savings');
 
-  var ENERGY_PRICE = 0.15;           // €/kWh moyen FR 2025 (mix gaz+élec)
-  var POLISTIBRICK_CONS = 15;        // kWh/m²/an chauffage MBK 300 (passif certifié)
-  var CLASSIQUE_CONS = 55;           // kWh/m²/an chauffage brique classique RE2020 mini
+  var ENERGY_PRICE = 0.25;             // €/kWh FR, Eurostat/régulateur, toutes taxes comprises
+  var POLISTIBRICK_CONS = 16;          // kWh/m²/an MBK 300 : 15 chauffage + 1 clim.
+  var CLASSIQUE_CONS = 102;            // kWh/m²/an maison existante : 100 chauffage + 2 clim.
 
   function formatEuro(amount) {
     return Math.round(amount).toLocaleString('fr-FR') + ' €';
