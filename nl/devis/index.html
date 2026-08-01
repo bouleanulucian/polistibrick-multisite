@@ -147,6 +147,16 @@
       flex: 1;
     }
     .oferta-choice .btn { width: 100%; justify-content: center; margin-top: 6px; }
+
+    .oferta-choice--soon { opacity: .72; }
+    .oferta-choice-soon {
+      display: inline-block; margin-bottom: 10px; padding: 4px 12px;
+      background: var(--red-soft, #fdeaee); color: var(--red, #c8102e);
+      border-radius: 999px; font-size: 11.5px; font-weight: 700;
+      letter-spacing: .08em; text-transform: uppercase;
+    }
+    .oferta-choice-soon { align-self: flex-start; width: fit-content; }
+    .oferta-choice--soon .btn[disabled] { opacity: .45; cursor: not-allowed; pointer-events: none; }
     .oferta-ai-panel { margin-top: 28px; text-align: left; }
     .oferta-ai-panel[hidden] { display: none !important; }
     .oferta-ai-panel-head {
@@ -209,18 +219,19 @@
       <div class="wm-stage">
         <h1>Votre devis, <em>sans attendre.</em></h1>
         <p class="oferta-lead">
-          Nous pouvons vous donner une estimation <strong>sur place</strong> avec l'IA Polistibrick.
+          Envoyez-nous vos plans et recevez un <strong>devis personnalisé</strong> établi par nos spécialistes.
         </p>
         <p class="oferta-thanks">
           Ou, si vous préférez, continuez via le formulaire de contact — un spécialiste vous répond sous 48 h.
         </p>
 
         <div class="oferta-choices">
-          <div class="oferta-choice oferta-choice--primary">
+          <div class="oferta-choice oferta-choice--primary oferta-choice--soon">
+            <span class="oferta-choice-soon">Bientôt disponible</span>
             <span class="oferta-choice-icon" aria-hidden="true">⚡</span>
             <h2>Générateur IA</h2>
-            <p>Téléversez vos plans (PDF, DWG, DXF) ou décrivez le projet — devis estimatif en quelques minutes.</p>
-            <button type="button" class="btn btn-primary btn-arrow" id="btn-start-ai">Lancer le générateur</button>
+            <p>Le configurateur arrive prochainement sur ce marché. En attendant, envoyez-nous vos plans par le formulaire de contact — un spécialiste vous répond sous 48 h.</p>
+            <button type="button" disabled aria-disabled="true" class="btn btn-primary btn-arrow" id="btn-start-ai">Lancer le générateur</button>
           </div>
           <div class="oferta-choice">
             <span class="oferta-choice-icon" aria-hidden="true">✉️</span>
@@ -254,7 +265,7 @@
 </section>
 
 <footer class="site-footer" data-include="footer"></footer>
-<script src="../assets/js/site.js?v=f5e4b6cd" defer></script>
+<script src="../assets/js/site.js?v=fd1acc30" defer></script>
 <script src="../assets/js/devis-embed.js" defer></script>
 <script>
 (function () {
