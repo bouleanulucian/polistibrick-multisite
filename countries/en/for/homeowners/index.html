@@ -713,22 +713,22 @@
         <div class="calc-card calc-card--good">
           <div class="calc-card-label">With Polistibrick MBK 300</div>
           <div class="calc-card-system">Certified passive house</div>
-          <div class="calc-card-value" id="polistibrick-yearly">788 €</div>
+          <div class="calc-card-value" id="polistibrick-yearly">€788</div>
           <div class="calc-card-unit">heating per year</div>
           <div class="calc-card-sub">15 kWh/m²/yr · U = 0.10 W/m²K · Passivhaus</div>
         </div>
         <div class="calc-card calc-card--bad">
           <div class="calc-card-label">With an existing house</div>
           <div class="calc-card-system">Standard construction</div>
-          <div class="calc-card-value" id="classique-yearly">5,250 €</div>
+          <div class="calc-card-value" id="classique-yearly">€5,250</div>
           <div class="calc-card-unit">heating per year</div>
           <div class="calc-card-sub">100 kWh/m²/yr heating · average existing house</div>
         </div>
       </div>
 
       <div class="calc-savings">
-        <div class="savings-yearly">You save <strong id="yearly-savings">4,462 €</strong> each year</div>
-        <div class="savings-total">Over 25 years: <strong id="total-savings">111,562 €</strong> in savings</div>
+        <div class="savings-yearly">You save <strong id="yearly-savings">€4,462</strong> each year</div>
+        <div class="savings-total">Over 25 years: <strong id="total-savings">€111,562</strong> in savings</div>
       </div>
     </div>
 
@@ -1331,7 +1331,7 @@
   var CLASSIQUE_CONS = 100;            // kWh/m²/an maison existante : 100 chauffage + 0 clim.
 
   function formatEuro(amount) {
-    return Math.round(amount).toLocaleString('en-GB') + ' €';
+    return '€' + Math.round(amount).toLocaleString('en-GB');
   }
 
   function calculate() {
