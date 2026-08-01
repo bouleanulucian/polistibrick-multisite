@@ -313,7 +313,7 @@
                   <span class="form-file-icon">📎</span>
                   <div class="form-file-text">
                     <strong>Joignez plans, croquis ou documents</strong>
-                    <span>PDF · DWG · DXF · JPG · PNG · ZIP — max 10 MB / fichier</span>
+                    <span>PDF · DWG · DXF · JPG · PNG · ZIP — max 10 Mo / fichier</span>
                   </div>
                   <input type="file" id="cfiles" name="files" accept=".pdf,.dwg,.dxf,.jpg,.jpeg,.png,.zip" multiple style="display:none;">
                 </label>
@@ -478,7 +478,7 @@
   function addFiles(newFiles) {
     Array.from(newFiles).forEach(file => {
       if (file.size > MAX_FILE_SIZE) {
-        alert(`Le fichier "${file.name}" est trop volumineux (${(file.size/1024/1024).toFixed(1)} MB). Maximum 10 MB par fichier.`);
+        alert(`Le fichier "${file.name}" est trop volumineux (${(file.size/1024/1024).toFixed(1)} Mo). Maximum 10 Mo par fichier.`);
         return;
       }
       // Avoid duplicates

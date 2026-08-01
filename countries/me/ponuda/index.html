@@ -153,6 +153,16 @@
       justify-content: center;
       margin-top: 6px;
     }
+
+    .oferta-choice--soon { opacity: .72; }
+    .oferta-choice-soon {
+      display: inline-block; margin-bottom: 10px; padding: 4px 12px;
+      background: var(--red-soft, #fdeaee); color: var(--red, #c8102e);
+      border-radius: 999px; font-size: 11.5px; font-weight: 700;
+      letter-spacing: .08em; text-transform: uppercase;
+    }
+    .oferta-choice-soon { align-self: flex-start; width: fit-content; }
+    .oferta-choice--soon .btn[disabled] { opacity: .45; cursor: not-allowed; pointer-events: none; }
     .oferta-ai-panel {
       margin-top: 28px;
       text-align: left;
@@ -215,22 +225,23 @@
 
       <div class="wm-stage">
         <h1>Vaša ponuda, <em>što je prije moguće.</em></h1>
-        <p class="ponuda-lead">
-          Procjenu vam možemo dati <strong>odmah</strong>, uz Polistibrick AI.
+        <p class="oferta-lead">
+          Pošaljite nam planove i dobijte <strong>personalizovanu ponudu</strong> koju pripremaju naši specijalisti.
         </p>
-        <p class="ponuda-thanks">
+        <p class="oferta-thanks">
           Ili, ako želite, nastavite putem kontakt obrasca — stručnjak će vam odgovoriti u roku od 48 sati.
         </p>
 
-        <div class="ponuda-choices">
-          <div class="ponuda-choice ponuda-choice--primary">
-            <span class="ponuda-choice-icon" aria-hidden="true">⚡</span>
+        <div class="oferta-choices">
+          <div class="oferta-choice oferta-choice--primary oferta-choice--soon">
+            <span class="oferta-choice-soon">Uskoro dostupno</span>
+            <span class="oferta-choice-icon" aria-hidden="true">⚡</span>
             <h2>Generator AI</h2>
-            <p>Otpremite planove (PDF, DWG, DXF) ili opišite projekat — procijenjenu ponudu dobićete za nekoliko minuta.</p>
-            <button type="button" class="btn btn-primary btn-arrow" id="btn-start-ai">Pokrenite generator</button>
+            <p>Konfigurator uskoro stiže na ovo tržište. U međuvremenu, pošaljite nam planove preko kontakt forme — specijalista vam odgovara u roku od 48 h.</p>
+            <button type="button" disabled aria-disabled="true" class="btn btn-primary btn-arrow" id="btn-start-ai">Pokrenite generator</button>
           </div>
-          <div class="ponuda-choice">
-            <span class="ponuda-choice-icon" aria-hidden="true">✉️</span>
+          <div class="oferta-choice">
+            <span class="oferta-choice-icon" aria-hidden="true">✉️</span>
             <h2>Kontakt obrazac</h2>
             <p>Radije biste nam pisali direktno? Pošaljite detalje vašeg projekta — javićemo vam se lično u roku od 48 sati.</p>
             <a href="../contact/?subject=Zahtjev+za+ponudu" class="btn btn-ghost btn-arrow">Idite na kontakt</a>
