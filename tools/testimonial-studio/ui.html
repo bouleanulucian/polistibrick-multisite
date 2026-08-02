@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Studio Testimoniale · Polistibrick</title>
+<style>
+  :root{--red:#c8102e;--ink:#1a1714;--gray:#6b6560;--line:#e5e0d7;--cream:#faf8f4;--ok:#12833f;--warn:#b45309}
+  *{box-sizing:border-box}
+  body{margin:0;font:15px/1.55 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--ink);background:var(--cream)}
+  header{background:#fff;border-bottom:1px solid var(--line);padding:18px 28px;position:sticky;top:0;z-index:10}
+  header h1{margin:0;font-size:19px;font-weight:800;letter-spacing:-.01em}
+  header p{margin:4px 0 0;font-size:13px;color:var(--gray)}
+  .wrap{max-width:1180px;margin:0 auto;padding:26px 28px 80px;display:grid;grid-template-columns:1fr 400px;gap:28px;align-items:start}
+  @media(max-width:1000px){.wrap{grid-template-columns:1fr}}
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin-bottom:20px}
+  .card h2{margin:0 0 4px;font-size:15px;font-weight:800;text-transform:uppercase;letter-spacing:.06em}
+  .card .hint{margin:0 0 16px;font-size:13px;color:var(--gray)}
+  .step{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--red);color:#fff;font-size:12px;font-weight:700;margin-right:8px}
+  label{display:block;font-size:12.5px;font-weight:700;margin:14px 0 5px;letter-spacing:.02em}
+  input[type=text],textarea,select{width:100%;padding:9px 11px;border:1px solid var(--line);border-radius:8px;font:inherit;font-size:14px;background:#fff}
+  textarea{resize:vertical;min-height:64px}
+  input:focus,textarea:focus,select:focus{outline:2px solid rgba(200,16,46,.25);border-color:var(--red)}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:999px;border:1px solid var(--line);background:#fff;font:inherit;font-weight:700;font-size:14px;cursor:pointer;transition:.15s}
+  .btn:hover{border-color:var(--ink)}
+  .btn--primary{background:var(--red);color:#fff;border-color:var(--red)}
+  .btn--primary:hover{background:#a50d26}
+  .btn:disabled{opacity:.4;cursor:not-allowed}
+  .drop{border:2px dashed var(--line);border-radius:12px;padding:34px 20px;text-align:center;cursor:pointer;transition:.15s;background:#fdfcfa}
+  .drop:hover,.drop.over{border-color:var(--red);background:#fff}
+  .drop strong{display:block;font-size:15px;margin-bottom:4px}
+  .drop span{font-size:13px;color:var(--gray)}
+  .tabs{display:flex;gap:8px;margin-bottom:18px}
+  .tab{flex:1;padding:13px;border:1px solid var(--line);border-radius:10px;background:#fff;cursor:pointer;text-align:center;font-weight:700;font-size:14px}
+  .tab.on{border-color:var(--red);background:#fff5f6;color:var(--red)}
+  .countries{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px}
+  .country{display:flex;align-items:center;gap:9px;padding:10px 12px;border:1px solid var(--line);border-radius:9px;cursor:pointer;background:#fff;font-size:14px}
+  .country:hover{border-color:var(--gray)}
+  .country.on{border-color:var(--red);background:#fff5f6}
+  .country input{margin:0;accent-color:var(--red)}
+  .country .lang{margin-left:auto;font-size:11px;color:var(--gray);text-transform:uppercase;letter-spacing:.05em}
+  .bar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:14px}
+  .note{padding:11px 14px;border-radius:9px;font-size:13px;line-height:1.5;margin-top:12px}
+  .note--warn{background:#fffbeb;border:1px solid #fde68a;color:#78350f}
+  .note--ok{background:#f0fdf4;border:1px solid #bbf7d0;color:#14532d}
+  .note--info{background:#f8fafc;border:1px solid #e2e8f0;color:#334155}
+  .side{position:sticky;top:96px}
+  .preview{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .preview-head{padding:12px 16px;border-bottom:1px solid var(--line);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--gray)}
+  .preview-body{padding:16px}
+  .cue{display:grid;grid-template-columns:96px 1fr;gap:10px;margin-bottom:8px;align-items:start}
+  .cue small{font-size:11px;color:var(--gray);padding-top:9px;font-variant-numeric:tabular-nums}
+  .cue textarea{min-height:46px;font-size:13px}
+  .spinner{display:inline-block;width:14px;height:14px;border:2px solid rgba(255,255,255,.35);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  video{width:100%;border-radius:10px;background:#000;max-height:340px}
+  .muted{color:var(--gray);font-size:13px}
+  .pill{display:inline-block;padding:3px 10px;border-radius:999px;background:#f1f5f9;font-size:11.5px;font-weight:700;color:#475569;margin-right:6px}
+  .langbox{border:1px solid var(--line);border-radius:10px;padding:14px;margin-top:10px;background:#fdfcfa}
+  .langbox h4{margin:0 0 2px;font-size:13px;font-weight:800}
+  .langbox .flag{margin-right:6px}
+  details summary{cursor:pointer;font-size:13px;font-weight:700;color:var(--gray);padding:6px 0}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Studio Testimoniale</h1>
+  <p>Încarci un testimonial — video sau text — alegi țările, verifici, apoi publici. Nimic nu ajunge pe site fără confirmarea ta.</p>
+</header>
+
+<div class="wrap">
+  <div>
+    <!-- 1. TIPUL -->
+    <div class="card">
+      <h2><span class="step">1</span>Ce fel de testimonial</h2>
+      <div class="tabs">
+        <div class="tab on" data-type="video">🎥 Video</div>
+        <div class="tab" data-type="text">✍️ Doar text</div>
+      </div>
+
+      <div id="videoZone">
+        <div class="drop" id="drop">
+          <strong>Trage videoclipul aici</strong>
+          <span>sau apasă ca să-l alegi · MP4, MOV · orice mărime</span>
+          <input type="file" id="file" accept="video/*" hidden>
+        </div>
+        <div id="upStatus"></div>
+        <div id="videoPreview" style="display:none;margin-top:14px">
+          <video id="vp" controls></video>
+          <div class="bar"><span class="pill" id="vinfo"></span><span class="pill" id="vlang"></span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. TRANSCRIERE -->
+    <div class="card" id="transcriptCard" style="display:none">
+      <h2><span class="step">2</span>Ce se aude în video</h2>
+      <p class="hint">Transcris automat. Corectează ce a înțeles greșit — numele de firme și „Polistibrick" sunt cel mai des greșite.</p>
+      <div id="cues"></div>
+    </div>
+
+    <!-- 3. DATELE -->
+    <div class="card">
+      <h2><span class="step" id="stepData">3</span>Cine dă testimonialul</h2>
+      <p class="hint">Apar sub video, pe card.</p>
+      <div class="row">
+        <div><label>Nume</label><input type="text" id="name" placeholder="Enzo"></div>
+        <div><label>Firmă / rol</label><input type="text" id="company" placeholder="CS BTP"></div>
+      </div>
+      <label>Context (apare mic, sub nume)</label>
+      <input type="text" id="meta" placeholder="CS BTP · Franța · Prima casă Polistibrick">
+      <label>Citatul care apare pe card</label>
+      <textarea id="quote" placeholder="Fraza cea mai puternică din testimonial."></textarea>
+
+      <label style="margin-top:18px">Trei cifre care conving (opțional)</label>
+      <div class="row3">
+        <div><input type="text" class="st-num" placeholder="CS BTP"><input type="text" class="st-lab" placeholder="Firmă" style="margin-top:6px;font-size:12px"></div>
+        <div><input type="text" class="st-num" placeholder="1ª"><input type="text" class="st-lab" placeholder="Prima casă" style="margin-top:6px;font-size:12px"></div>
+        <div><input type="text" class="st-num" placeholder="★★★★★"><input type="text" class="st-lab" placeholder="Recomandă" style="margin-top:6px;font-size:12px"></div>
+      </div>
+    </div>
+
+    <!-- 4. ȚĂRILE -->
+    <div class="card" style="border-color:rgba(200,16,46,.35)">
+      <h2><span class="step">4</span>Pe ce țări îl publici</h2>
+      <p class="hint">Obligatoriu. Fiecare țară primește subtitrarea în limba ei.</p>
+      <div class="bar" style="margin:0 0 10px">
+        <button class="btn" id="allC" type="button">Toate cele 9</button>
+        <button class="btn" id="noneC" type="button">Niciuna</button>
+      </div>
+      <div class="countries" id="countries"></div>
+      <div class="note note--warn" id="cWarn" style="display:none">Nu ai ales nicio țară — nu se publică nicăieri.</div>
+    </div>
+
+    <!-- 5. TRADUCERI -->
+    <div class="card" id="transCard" style="display:none">
+      <h2><span class="step">5</span>Textele pe fiecare limbă</h2>
+      <p class="hint">Citatul și subtitrarea, în limba fiecărei piețe alese. Completează sau lipește traducerea.</p>
+      <div id="langs"></div>
+      <details style="margin-top:14px">
+        <summary>Nu vrei să traduci manual?</summary>
+        <p class="muted" style="margin:8px 0">Apasă butonul, se copiază un text gata scris. Îl dai lui Claude în chat și îți dă traducerile.</p>
+        <button class="btn" id="copyPrompt" type="button">Copiază cererea de traducere</button>
+      </details>
+    </div>
+
+    <!-- 6. PUBLICARE -->
+    <div class="card">
+      <h2><span class="step">6</span>Publică</h2>
+      <p class="hint">Scrie în paginile alese, pe calculatorul tău. Pe internet ajunge abia după build și publicare — pas separat.</p>
+      <div id="confirmBox" class="note note--info">Alege cel puțin o țară ca să poți publica.</div>
+      <div class="bar">
+        <button class="btn btn--primary" id="publish" disabled>Publică pe țările alese</button>
+        <button class="btn" id="previewBtn">Vezi cum arată</button>
+      </div>
+      <div id="pubResult"></div>
+    </div>
+  </div>
+
+  <!-- PREVIZUALIZARE -->
+  <div class="side">
+    <div class="preview">
+      <div class="preview-head">Previzualizare card</div>
+      <div class="preview-body" id="preview"><p class="muted">Completează datele ca să vezi cardul.</p></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const S = { type:'video', slug:null, hasVideo:false, cues:[], lang:null, countries:new Set(), perCountry:{} };
+let MARKETS = {};
+const FLAGS = {fr:'🇫🇷',de:'🇨🇭',nl:'🇧🇪',en:'🇬🇧',ie:'🇮🇪',es:'🇪🇸',it:'🇮🇹',ro:'🇷🇴',me:'🇲🇪'};
+const LANGNAME = {fr:'franceză',en:'engleză',es:'spaniolă',it:'italiană',ro:'română',me:'muntenegreană'};
+
+fetch('/api/markets').then(r=>r.json()).then(d=>{ MARKETS = d.markets; renderCountries(); });
+
+function renderCountries(){
+  const el = document.getElementById('countries');
+  el.innerHTML = Object.entries(MARKETS).map(([c,m])=>`
+    <label class="country" data-c="${c}">
+      <input type="checkbox" value="${c}">
+      <span>${FLAGS[c]} ${m.name}</span>
+      <span class="lang">${m.lang}</span>
+    </label>`).join('');
+  el.querySelectorAll('input').forEach(i=>i.addEventListener('change',e=>{
+    const c = e.target.value;
+    e.target.checked ? S.countries.add(c) : S.countries.delete(c);
+    e.target.closest('.country').classList.toggle('on', e.target.checked);
+    syncCountries();
+  }));
+}
+function syncCountries(){
+  const n = S.countries.size;
+  document.getElementById('cWarn').style.display = n ? 'none' : 'block';
+  document.getElementById('publish').disabled = !n;
+  document.getElementById('transCard').style.display = n ? 'block' : 'none';
+  document.getElementById('confirmBox').className = 'note ' + (n ? 'note--ok' : 'note--info');
+  document.getElementById('confirmBox').textContent = n
+    ? `Se va publica pe ${n} ${n===1?'țară':'țări'}: ` + [...S.countries].map(c=>MARKETS[c].name).join(', ')
+    : 'Alege cel puțin o țară ca să poți publica.';
+  renderLangs(); refreshPreview();
+}
+document.getElementById('allC').onclick = ()=>{ document.querySelectorAll('#countries input').forEach(i=>{i.checked=true;S.countries.add(i.value);i.closest('.country').classList.add('on')}); syncCountries(); };
+document.getElementById('noneC').onclick = ()=>{ document.querySelectorAll('#countries input').forEach(i=>{i.checked=false;i.closest('.country').classList.remove('on')}); S.countries.clear(); syncCountries(); };
+
+// tipul
+document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{
+  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));
+  t.classList.add('on'); S.type = t.dataset.type;
+  document.getElementById('videoZone').style.display = S.type==='video' ? 'block':'none';
+  document.getElementById('stepData').textContent = S.type==='video' ? '3':'2';
+  refreshPreview();
+});
+
+// upload
+const drop = document.getElementById('drop'), file = document.getElementById('file');
+drop.onclick = ()=>file.click();
+drop.ondragover = e=>{e.preventDefault();drop.classList.add('over')};
+drop.ondragleave = ()=>drop.classList.remove('over');
+drop.ondrop = e=>{e.preventDefault();drop.classList.remove('over'); if(e.dataTransfer.files[0]) upload(e.dataTransfer.files[0])};
+file.onchange = e=>{ if(e.target.files[0]) upload(e.target.files[0]) };
+
+async function upload(f){
+  const st = document.getElementById('upStatus');
+  st.innerHTML = '<div class="note note--info"><span class="spinner" style="border-color:rgba(0,0,0,.15);border-top-color:#334155"></span> Se comprimă și se transcrie… durează 1–3 minute pentru un clip scurt.</div>';
+  const fd = new FormData(); fd.append('video', f);
+  try{
+    const r = await fetch('/api/upload',{method:'POST',body:fd});
+    const d = await r.json();
+    if(!d.ok) throw new Error(d.error||'eroare');
+    S.slug = d.slug; S.hasVideo = true;
+    document.getElementById('vp').src = d.previewUrl;
+    document.getElementById('vp').poster = d.posterUrl;
+    document.getElementById('videoPreview').style.display='block';
+    document.getElementById('vinfo').textContent = `${d.duration}s · ${d.sizeMb} MB · ${d.vertical?'vertical':'orizontal'}`;
+    if(d.transcript && d.transcript.ok){
+      S.cues = d.transcript.cues; S.lang = d.transcript.language;
+      document.getElementById('vlang').textContent = `vorbit în ${LANGNAME[S.lang]||S.lang} (${Math.round(d.transcript.confidence*100)}%)`;
+      renderCues();
+      document.getElementById('transcriptCard').style.display='block';
+      if(!document.getElementById('quote').value && S.cues.length)
+        document.getElementById('quote').value = S.cues.map(c=>c.text).join(' ').slice(0,150);
+    }
+    st.innerHTML = '<div class="note note--ok">Video pregătit pentru web.</div>';
+    refreshPreview();
+  }catch(e){ st.innerHTML = `<div class="note note--warn">Nu a mers: ${e.message}</div>`; }
+}
+
+function renderCues(){
+  document.getElementById('cues').innerHTML = S.cues.map((c,i)=>`
+    <div class="cue"><small>${c.start.toFixed(1)}s → ${c.end.toFixed(1)}s</small>
+    <textarea data-i="${i}">${c.text}</textarea></div>`).join('');
+  document.querySelectorAll('#cues textarea').forEach(t=>t.oninput=e=>{
+    S.cues[e.target.dataset.i].text = e.target.value; renderLangs();
+  });
+}
+
+function renderLangs(){
+  const langs = [...new Set([...S.countries].map(c=>MARKETS[c].lang))];
+  if(!langs.length){ document.getElementById('langs').innerHTML=''; return; }
+  document.getElementById('langs').innerHTML = langs.map(l=>{
+    const src = l===S.lang;
+    const countries = [...S.countries].filter(c=>MARKETS[c].lang===l).map(c=>MARKETS[c].name).join(', ');
+    const pc = S.perCountry[l] || {};
+    return `<div class="langbox">
+      <h4>${LANGNAME[l]||l} ${src?'<span class="pill" style="background:#dcfce7;color:#14532d">original</span>':''}</h4>
+      <p class="muted" style="margin:0 0 8px">${countries}</p>
+      <label style="margin-top:6px">Citat</label>
+      <textarea data-l="${l}" data-f="quote" placeholder="Citatul în ${LANGNAME[l]||l}">${pc.quote||(src?document.getElementById('quote').value:'')}</textarea>
+      <label>Context</label>
+      <input type="text" data-l="${l}" data-f="meta" placeholder="Firmă · Țară · Context" value="${pc.meta||(src?document.getElementById('meta').value:'')}">
+      ${S.hasVideo?`<label>Subtitrare (o linie per replică)</label>
+      <textarea data-l="${l}" data-f="subs" style="min-height:90px" placeholder="Se completează cu transcrierea la limba originalului">${pc.subs||(src?S.cues.map(c=>c.text).join('\n'):'')}</textarea>`:''}
+    </div>`;
+  }).join('');
+  document.querySelectorAll('#langs [data-l]').forEach(el=>el.oninput=e=>{
+    const l=e.target.dataset.l, f=e.target.dataset.f;
+    S.perCountry[l] = S.perCountry[l]||{}; S.perCountry[l][f] = e.target.value;
+    refreshPreview();
+  });
+}
+
+function collect(){
+  const stats = [...document.querySelectorAll('.row3 > div')].map(d=>({
+    num: d.querySelector('.st-num').value, label: d.querySelector('.st-lab').value
+  })).filter(s=>s.num||s.label);
+  // per ţară, plecând de la limbă
+  const per = {};
+  [...S.countries].forEach(c=>{
+    const l = MARKETS[c].lang, t = S.perCountry[l] || {};
+    let cues = S.cues;
+    if(t.subs){
+      const lines = t.subs.split('\n').filter(x=>x.trim());
+      cues = S.cues.map((c0,i)=>({...c0, text: lines[i] || c0.text}));
+    }
+    per[c] = { quote:t.quote, meta:t.meta, stats, cues };
+  });
+  return {
+    slug: S.slug || 'temoignage-' + Date.now(),
+    hasVideo: S.type==='video' && S.hasVideo,
+    name: document.getElementById('name').value,
+    meta: document.getElementById('meta').value,
+    quote: document.getElementById('quote').value,
+    stats, cues: S.cues,
+    countries: [...S.countries],
+    perCountry: per,
+  };
+}
+
+async function refreshPreview(){
+  const d = collect();
+  if(!d.name && !d.quote){ document.getElementById('preview').innerHTML='<p class="muted">Completează datele ca să vezi cardul.</p>'; return; }
+  if(!d.countries.length) d.countries=['fr'];
+  const r = await fetch('/api/preview',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});
+  const j = await r.json();
+  document.getElementById('preview').innerHTML = j.html.replace(/\.\.\/images\/[a-z]+\//g,'/uploads/').replace(/\.(fr|en|es|it|ro|me)\.vtt/,'.vtt');
+}
+['name','meta','quote'].forEach(id=>document.getElementById(id).addEventListener('input',refreshPreview));
+document.querySelectorAll('.st-num,.st-lab').forEach(i=>i.addEventListener('input',refreshPreview));
+document.getElementById('previewBtn').onclick = refreshPreview;
+
+document.getElementById('copyPrompt').onclick = ()=>{
+  const langs = [...new Set([...S.countries].map(c=>MARKETS[c].lang))].filter(l=>l!==S.lang);
+  const txt = `Tradu testimonialul ăsta în: ${langs.map(l=>LANGNAME[l]||l).join(', ')}.\n\n`
+    + `Original (${LANGNAME[S.lang]||S.lang}):\n`
+    + S.cues.map((c,i)=>`${i+1}. ${c.text}`).join('\n')
+    + `\n\nCitat pentru card: ${document.getElementById('quote').value}\n`
+    + `Context: ${document.getElementById('meta').value}\n\n`
+    + `Dă-mi pentru fiecare limbă: replicile numerotate la fel (una per rând), citatul și contextul. Ton natural, de om care vorbește pe șantier, nu traducere de manual.`;
+  navigator.clipboard.writeText(txt);
+  document.getElementById('copyPrompt').textContent = 'Copiat ✓';
+  setTimeout(()=>document.getElementById('copyPrompt').textContent='Copiază cererea de traducere',1800);
+};
+
+document.getElementById('publish').onclick = async ()=>{
+  const d = collect();
+  const names = d.countries.map(c=>MARKETS[c].name).join(', ');
+  if(!confirm(`Publici testimonialul pe:\n\n${names}\n\nSe scrie în paginile de pe calculatorul tău. Continui?`)) return;
+  const b = document.getElementById('publish');
+  b.disabled=true; b.innerHTML='<span class="spinner"></span> Se scrie…';
+  try{
+    const r = await fetch('/api/publish',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});
+    const j = await r.json();
+    const ok = (j.written||[]).filter(x=>x.ok), bad = (j.written||[]).filter(x=>!x.ok);
+    document.getElementById('pubResult').innerHTML =
+      `<div class="note note--ok"><strong>Scris în ${ok.length} ${ok.length===1?'țară':'țări'}.</strong><br>`
+      + ok.map(x=>`${FLAGS[x.country]} ${MARKETS[x.country].name} — ${x.page}`).join('<br>')
+      + `<br><br>Ca să ajungă pe internet: <code>python3 build/build.py ${ok.map(x=>x.country).join(' ')}</code> apoi publicarea obișnuită.</div>`
+      + (bad.length?`<div class="note note--warn">${bad.map(x=>`${x.country}: ${x.error}`).join('<br>')}</div>`:'');
+  }catch(e){ document.getElementById('pubResult').innerHTML=`<div class="note note--warn">${e.message}</div>`; }
+  b.disabled=false; b.textContent='Publică pe țările alese';
+};
+</script>
+</body>
+</html>
