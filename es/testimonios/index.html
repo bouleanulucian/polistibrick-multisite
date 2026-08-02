@@ -65,6 +65,10 @@
     }
     .video-card:hover .video-play-btn { transform: translate(-50%, -50%) scale(1.08); background: var(--red); }
     .video-play-btn svg { width: 28px; height: 28px; margin-left: 4px; }
+
+    .video-thumb--player { padding-top: 0; height: auto; background: #000; }
+    .video-thumb--player .testi-video { width: 100%; max-height: 520px; display: block; background: #000; object-fit: contain; }
+    .video-card--real { border-color: rgba(200,16,46,0.28); }
     .video-meta { padding: 22px 24px; }
     .video-quote {
       font-family: var(--serif); font-size: 17px; line-height: 1.4; color: var(--ink);
@@ -142,6 +146,31 @@
         </div>
 
         <div class="video-grid">
+<article class="video-card video-card--real">
+<div class="video-thumb video-thumb--player">
+<video class="testi-video" controls preload="none" playsinline
+       poster="../images/testimonios/cs-btp-poster.jpg"
+       aria-label="Testimonio en vídeo — Enzo, CS BTP">
+  <source src="../images/testimonios/cs-btp.mp4" type="video/mp4">
+  <track kind="subtitles" src="../images/testimonios/cs-btp.vtt" srclang="es" label="Subtítulos en español" default>
+</video>
+</div>
+<div class="video-meta">
+<p class="video-quote">Me convenció su sencillez. Construí mi primera casa y estoy muy satisfecho.</p>
+<div class="video-author">
+<div class="video-author-info">
+<strong>Enzo</strong>
+<span>CS BTP · Francia · Primera casa Polistibrick</span>
+</div>
+</div>
+<div class="video-stats">
+<div class="video-stat"><span class="video-stat-num">CS BTP</span><span class="video-stat-label">Empresa constructora</span></div>
+<div class="video-stat"><span class="video-stat-num">1<sup>re</sup></span><span class="video-stat-label">Primera casa</span></div>
+<div class="video-stat"><span class="video-stat-num">★★★★★</span><span class="video-stat-label">La recomienda</span></div>
+</div>
+</div>
+</article>
+
 
           <article class="video-card">
             <div class="video-thumb">
