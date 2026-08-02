@@ -48,3 +48,15 @@ apoi publicarea pe git.
 
 Fiecare testimonial are un identificator. Dacă publici din nou același, îl înlocuiește
 pe cel vechi în loc să-l dubleze.
+
+## Poze de șantier
+
+Merg în trei feluri:
+
+- **doar poze** (testimonial text, fără video) — prima poză devine imaginea mare a cardului,
+  restul apar ca miniaturi sub citat
+- **video + poze** — videoclipul sus, pozele ca miniaturi dedesubt
+- **doar video** — cum era
+
+Le tragi în caseta a doua, poți alege mai multe deodată, și le scoți cu × dacă te răzgândești.
+Sunt redimensionate automat pentru web (max 1400 px lățime).

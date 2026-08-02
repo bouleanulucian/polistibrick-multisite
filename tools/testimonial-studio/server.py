@@ -121,6 +121,15 @@ def transcribe(video: Path):
                 cues=cues, text=" ".join(c["text"] for c in cues))
 
 
+def process_photo(src: Path, slug: str, idx: int):
+    """Redimensionează poza de şantier pentru web şi scoate o miniatură."""
+    out = UPLOADS / f"{slug}-photo{idx}.jpg"
+    run(["ffmpeg", "-y", "-i", str(src),
+         "-vf", "scale='min(1400,iw)':-2",
+         "-q:v", "4", str(out)])
+    return out
+
+
 def write_vtt(cues, path: Path):
     def ts(x):
         h, r = divmod(x, 3600)
@@ -143,6 +152,7 @@ def build_card(data, market_code, has_video, slug):
     meta = (t.get("meta") or data.get("meta") or "").strip()
     stats = t.get("stats") or data.get("stats") or []
 
+    photos = data.get("photos") or []
     stats_html = ""
     for s in stats[:3]:
         if not (s.get("num") or s.get("label")):
@@ -160,6 +170,13 @@ def build_card(data, market_code, has_video, slug):
                  f'srclang="{m["lang"]}" label="{lab["subs"]}" default>\n'
                  f'</video>\n</div>')
         klass = "video-card video-card--real"
+    elif photos:
+        media = (f'<div class="video-thumb video-thumb--shot">\n'
+                 f'<img src="../images/{m["img"]}/{photos[0]}" alt="" loading="lazy">\n</div>')
+        klass = "video-card video-card--real video-card--photos"
+        gallery = ('\n<div class="testi-shots">' + "".join(
+            f'\n<img src="../images/{m["img"]}/{p}" alt="" loading="lazy">' for p in photos[1:]
+        ) + '\n</div>') if len(photos) > 1 else ""
     else:
         media = ""
         klass = "video-card video-card--real video-card--text"
@@ -168,7 +185,7 @@ def build_card(data, market_code, has_video, slug):
 <article class="{klass}" data-testimonial="{slug}">
 {media}
 <div class="video-meta">
-<p class="video-quote">{quote}</p>
+<p class="video-quote">{quote}</p>{gallery}
 <div class="video-author">
 <div class="video-author-info">
 <strong>{name}</strong>
@@ -187,6 +204,10 @@ CARD_CSS = """
     .video-thumb--player .testi-video { width: 100%; max-height: 460px; display: block; background: #000; object-fit: contain; }
     .video-card--real { border-color: rgba(200,16,46,0.28); }
     .video-card--text .video-meta { padding-top: 28px; }
+    .video-thumb--shot { padding-top: 0; height: auto; }
+    .video-thumb--shot img { width: 100%; display: block; max-height: 340px; object-fit: cover; }
+    .testi-shots { display: grid; grid-template-columns: repeat(auto-fill, minmax(78px, 1fr)); gap: 6px; margin: 14px 0 4px; }
+    .testi-shots img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 7px; display: block; }
 """
 
 
@@ -212,6 +233,13 @@ def publish(data):
             cues = data["perCountry"].get(code, {}).get("cues") or data.get("cues") or []
             if cues:
                 write_vtt(cues, imgdir / f"{slug}.{m['lang']}.vtt")
+
+        for ph in (data.get("photos") or []):
+            imgdir = ROOT / "countries" / code / "images" / m["img"]
+            imgdir.mkdir(parents=True, exist_ok=True)
+            src = UPLOADS / ph
+            if src.exists():
+                shutil.copy(src, imgdir / ph)
 
         # 2) cardul în grilă
         s = page.read_text(encoding="utf-8")
@@ -285,6 +313,29 @@ class Handler(BaseHTTPRequestHandler):
                                         previewUrl=f"/uploads/{slug}.mp4",
                                         posterUrl=f"/uploads/{slug}-poster.jpg",
                                         transcript=tr))
+
+        if self.path == "/api/photos":
+            ctype = self.headers.get("Content-Type", "")
+            boundary = ctype.split("boundary=")[-1].encode()
+            slug = "shot"
+            saved = []
+            for i, p in enumerate(raw.split(b"--" + boundary)):
+                if b"filename=" not in p:
+                    if b'name="slug"' in p:
+                        slug = p.split(b"\r\n\r\n", 1)[1].rsplit(b"\r\n", 1)[0].decode() or "shot"
+                    continue
+                m = re.search(rb'filename="([^"]*)"', p)
+                if not (m and m.group(1)):
+                    continue
+                blob = p.split(b"\r\n\r\n", 1)[1].rsplit(b"\r\n", 1)[0]
+                tmp = UPLOADS / f"_ph_{i}{Path(m.group(1).decode()).suffix}"
+                tmp.write_bytes(blob)
+                out = process_photo(tmp, slug, len(saved) + 1)
+                tmp.unlink(missing_ok=True)
+                if out.exists():
+                    saved.append(out.name)
+            return self._send(200, dict(ok=True, photos=saved,
+                                        urls=[f"/uploads/{n}" for n in saved]))
 
         if self.path == "/api/preview":
             d = json.loads(raw)

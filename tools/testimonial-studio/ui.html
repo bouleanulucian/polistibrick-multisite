@@ -55,6 +55,11 @@
   .cue textarea{min-height:46px;font-size:13px}
   .spinner{display:inline-block;width:14px;height:14px;border:2px solid rgba(255,255,255,.35);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite}
   @keyframes spin{to{transform:rotate(360deg)}}
+  .photos{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:8px;margin-top:12px}
+  .photo{position:relative;border-radius:8px;overflow:hidden;border:1px solid var(--line);aspect-ratio:4/3;background:#f1f5f9}
+  .photo img{width:100%;height:100%;object-fit:cover;display:block}
+  .photo button{position:absolute;top:4px;right:4px;width:22px;height:22px;border-radius:50%;border:0;background:rgba(0,0,0,.6);color:#fff;font-size:13px;line-height:1;cursor:pointer;padding:0}
+  .photo button:hover{background:var(--red)}
   video{width:100%;border-radius:10px;background:#000;max-height:340px}
   .muted{color:var(--gray);font-size:13px}
   .pill{display:inline-block;padding:3px 10px;border-radius:999px;background:#f1f5f9;font-size:11.5px;font-weight:700;color:#475569;margin-right:6px}
@@ -93,6 +98,18 @@
           <div class="bar"><span class="pill" id="vinfo"></span><span class="pill" id="vlang"></span></div>
         </div>
       </div>
+
+      <!-- POZE DE ȘANTIER — merg și cu video, și fără -->
+      <div style="margin-top:18px;padding-top:18px;border-top:1px solid var(--line)">
+        <label style="margin-top:0">Poze de pe șantier <span class="muted" style="font-weight:400">— opțional, merg și lângă video, și singure</span></label>
+        <div class="drop" id="dropPhotos" style="padding:22px 18px">
+          <strong>Trage pozele aici</strong>
+          <span>JPG, PNG, HEIC · poți alege mai multe deodată</span>
+          <input type="file" id="filePhotos" accept="image/*" multiple hidden>
+        </div>
+        <div id="photoStatus"></div>
+        <div id="photoList" class="photos"></div>
+      </div>
     </div>
 
     <!-- 2. TRANSCRIERE -->
@@ -107,19 +124,19 @@
       <h2><span class="step" id="stepData">3</span>Cine dă testimonialul</h2>
       <p class="hint">Apar sub video, pe card.</p>
       <div class="row">
-        <div><label>Nume</label><input type="text" id="name" placeholder="Enzo"></div>
-        <div><label>Firmă / rol</label><input type="text" id="company" placeholder="CS BTP"></div>
+        <div><label>Nume</label><input type="text" id="name" placeholder="Nume"></div>
+        <div><label>Firmă / rol</label><input type="text" id="company" placeholder="Nume firmă"></div>
       </div>
       <label>Context (apare mic, sub nume)</label>
-      <input type="text" id="meta" placeholder="CS BTP · Franța · Prima casă Polistibrick">
+      <input type="text" id="meta" placeholder="Firmă · Oraș, țară · Ce a construit">
       <label>Citatul care apare pe card</label>
-      <textarea id="quote" placeholder="Fraza cea mai puternică din testimonial."></textarea>
+      <textarea id="quote" placeholder="Fraza cea mai puternică din ce a spus."></textarea>
 
       <label style="margin-top:18px">Trei cifre care conving (opțional)</label>
       <div class="row3">
-        <div><input type="text" class="st-num" placeholder="CS BTP"><input type="text" class="st-lab" placeholder="Firmă" style="margin-top:6px;font-size:12px"></div>
-        <div><input type="text" class="st-num" placeholder="1ª"><input type="text" class="st-lab" placeholder="Prima casă" style="margin-top:6px;font-size:12px"></div>
-        <div><input type="text" class="st-num" placeholder="★★★★★"><input type="text" class="st-lab" placeholder="Recomandă" style="margin-top:6px;font-size:12px"></div>
+        <div><input type="text" class="st-num" placeholder="cifră"><input type="text" class="st-lab" placeholder="ce înseamnă" style="margin-top:6px;font-size:12px"></div>
+        <div><input type="text" class="st-num" placeholder="cifră"><input type="text" class="st-lab" placeholder="ce înseamnă" style="margin-top:6px;font-size:12px"></div>
+        <div><input type="text" class="st-num" placeholder="cifră"><input type="text" class="st-lab" placeholder="ce înseamnă" style="margin-top:6px;font-size:12px"></div>
       </div>
     </div>
 
@@ -170,7 +187,7 @@
 </div>
 
 <script>
-const S = { type:'video', slug:null, hasVideo:false, cues:[], lang:null, countries:new Set(), perCountry:{} };
+const S = { type:'video', slug:null, hasVideo:false, cues:[], lang:null, countries:new Set(), perCountry:{}, photos:[] };
 let MARKETS = {};
 const FLAGS = {fr:'🇫🇷',de:'🇨🇭',nl:'🇧🇪',en:'🇬🇧',ie:'🇮🇪',es:'🇪🇸',it:'🇮🇹',ro:'🇷🇴',me:'🇲🇪'};
 const LANGNAME = {fr:'franceză',en:'engleză',es:'spaniolă',it:'italiană',ro:'română',me:'muntenegreană'};
@@ -249,6 +266,40 @@ async function upload(f){
   }catch(e){ st.innerHTML = `<div class="note note--warn">Nu a mers: ${e.message}</div>`; }
 }
 
+const dropP = document.getElementById('dropPhotos'), fileP = document.getElementById('filePhotos');
+dropP.onclick = ()=>fileP.click();
+dropP.ondragover = e=>{e.preventDefault();dropP.classList.add('over')};
+dropP.ondragleave = ()=>dropP.classList.remove('over');
+dropP.ondrop = e=>{e.preventDefault();dropP.classList.remove('over'); uploadPhotos(e.dataTransfer.files)};
+fileP.onchange = e=>uploadPhotos(e.target.files);
+
+async function uploadPhotos(files){
+  if(!files || !files.length) return;
+  const st = document.getElementById('photoStatus');
+  st.innerHTML = `<div class="note note--info"><span class="spinner" style="border-color:rgba(0,0,0,.15);border-top-color:#334155"></span> Se pregătesc ${files.length} ${files.length===1?'poză':'poze'}…</div>`;
+  const fd = new FormData();
+  fd.append('slug', S.slug || 'shot-' + Date.now());
+  [...files].forEach(f=>fd.append('photo', f));
+  try{
+    const r = await fetch('/api/photos',{method:'POST',body:fd});
+    const d = await r.json();
+    if(!d.ok) throw new Error(d.error||'eroare');
+    S.photos = [...S.photos, ...d.photos];
+    if(!S.slug) S.slug = d.photos[0]?.replace(/-photo\d+\.jpg$/,'') || S.slug;
+    renderPhotos();
+    st.innerHTML = `<div class="note note--ok">${S.photos.length} ${S.photos.length===1?'poză pregătită':'poze pregătite'}.</div>`;
+    refreshPreview();
+  }catch(e){ st.innerHTML = `<div class="note note--warn">Nu a mers: ${e.message}</div>`; }
+}
+
+function renderPhotos(){
+  document.getElementById('photoList').innerHTML = S.photos.map((p,i)=>
+    `<div class="photo"><img src="/uploads/${p}" alt=""><button data-i="${i}" title="Scoate poza">×</button></div>`).join('');
+  document.querySelectorAll('#photoList button').forEach(b=>b.onclick=()=>{
+    S.photos.splice(+b.dataset.i,1); renderPhotos(); refreshPreview();
+  });
+}
+
 function renderCues(){
   document.getElementById('cues').innerHTML = S.cues.map((c,i)=>`
     <div class="cue"><small>${c.start.toFixed(1)}s → ${c.end.toFixed(1)}s</small>
@@ -271,7 +322,7 @@ function renderLangs(){
       <label style="margin-top:6px">Citat</label>
       <textarea data-l="${l}" data-f="quote" placeholder="Citatul în ${LANGNAME[l]||l}">${pc.quote||(src?document.getElementById('quote').value:'')}</textarea>
       <label>Context</label>
-      <input type="text" data-l="${l}" data-f="meta" placeholder="Firmă · Țară · Context" value="${pc.meta||(src?document.getElementById('meta').value:'')}">
+      <input type="text" data-l="${l}" data-f="meta" placeholder="Firmă · Oraș, țară · Ce a construit" value="${pc.meta||(src?document.getElementById('meta').value:'')}">
       ${S.hasVideo?`<label>Subtitrare (o linie per replică)</label>
       <textarea data-l="${l}" data-f="subs" style="min-height:90px" placeholder="Se completează cu transcrierea la limba originalului">${pc.subs||(src?S.cues.map(c=>c.text).join('\n'):'')}</textarea>`:''}
     </div>`;
@@ -305,6 +356,7 @@ function collect(){
     meta: document.getElementById('meta').value,
     quote: document.getElementById('quote').value,
     stats, cues: S.cues,
+    photos: S.photos,
     countries: [...S.countries],
     perCountry: per,
   };
