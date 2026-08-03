@@ -49,8 +49,7 @@
   "currency_symbol": "€",
   "currency_display_format": "{value} €",
   "vat_rate": 21,
-  "form_submit_email": "info@polistibrick.es",
-  "form_cc_email": "info@polistibrick.eu",
+  "form_submit_email": "contact@polistibrick.com",
   "forms": {
     "access_key": "",
     "provider": "web3forms",

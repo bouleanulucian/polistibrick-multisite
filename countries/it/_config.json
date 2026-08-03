@@ -50,7 +50,6 @@
   "currency_display_format": "{value} €",
   "vat_rate": 22,
   "form_submit_email": "contact@polistibrick.com",
-  "form_cc_email": "info@polistibrick.eu",
   "forms": {
     "access_key": "",
     "provider": "web3forms",

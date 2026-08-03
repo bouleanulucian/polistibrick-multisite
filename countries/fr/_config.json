@@ -6,7 +6,6 @@
   "country_flag": "🇫🇷",
   "domain": "polistibrick.fr",
   "domain_url": "https://polistibrick.fr",
-
   "company": {
     "name_legal": "POLISTIBRICK SARL",
     "name_short": "Polistibrick",
@@ -17,7 +16,6 @@
     "address_zip": "78290",
     "address_country": "France"
   },
-
   "contact": {
     "phone": "+33 1 61 30 40 09",
     "phone_raw": "+33161304009",
@@ -34,27 +32,25 @@
       "tiktok": ""
     }
   },
-
   "team": [
     {
       "name": "Pierre Dumont",
       "role": "Directeur commercial France",
       "email": "p.dumont@polistibrick.fr",
       "phone": "+33 1 61 30 40 09",
-      "languages": ["FR", "EN"],
+      "languages": [
+        "FR",
+        "EN"
+      ],
       "photo": "team/manager-fr.jpg",
       "linkedin": ""
     }
   ],
-
   "currency": "EUR",
   "currency_symbol": "€",
   "currency_display_format": "{value} €",
   "vat_rate": 20,
-
   "form_submit_email": "contact@polistibrick.fr",
-  "form_cc_email": "info@polistibrick.eu",
-
   "forms": {
     "access_key": "",
     "provider": "web3forms",
@@ -65,7 +61,6 @@
       "review": "Nouvel avis client — Polistibrick France"
     }
   },
-
   "legal": {
     "publication_director": "Lucian Bouleanu",
     "hosting_provider": "Cloudflare, Inc.",
@@ -73,18 +68,15 @@
     "privacy_contact_email": "contact@polistibrick.fr",
     "privacy_slug": "confidentialite"
   },
-
   "factory": {
     "name": "Valencia",
     "address": "Valencia, Espagne",
     "year_built": 2014
   },
-
   "metadata": {
     "og_locale": "fr_FR",
     "hreflang": "fr-FR"
   },
-
   "devis_app": {
     "url": "https://devis.polistibrick.fr",
     "preview_url": "https://polistibrick-configurator.vercel.app",

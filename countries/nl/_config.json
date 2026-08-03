@@ -37,7 +37,11 @@
       "role": "Directeur commercial Belgique",
       "email": "[email]@polistibrick.com",
       "phone": "[téléphone]",
-      "languages": ["FR", "NL", "EN"],
+      "languages": [
+        "FR",
+        "NL",
+        "EN"
+      ],
       "photo": "team/manager-be.jpg",
       "linkedin": ""
     }
@@ -47,7 +51,6 @@
   "currency_display_format": "{value} €",
   "vat_rate": 21,
   "form_submit_email": "contact@polistibrick.com",
-  "form_cc_email": "info@polistibrick.eu",
   "forms": {
     "access_key": "",
     "provider": "web3forms",
