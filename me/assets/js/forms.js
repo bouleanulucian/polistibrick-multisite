@@ -11,7 +11,7 @@
     accessKey: '',
     liveDomain: 'polistibrick.me',
     liveDomainUrl: 'https://polistibrick.me',
-    ccEmail: dec64('aW5mb0Bwb2xpc3RpYnJpY2suZXU='),
+    ccEmail: dec64('{{form_cc_email|b64}}'),
     country: 'ME',
     countryName: 'Montenegro',
     fallbackEmail: dec64('Y29udGFjdEBwb2xpc3RpYnJpY2suY29t'),

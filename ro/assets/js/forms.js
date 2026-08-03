@@ -11,7 +11,7 @@
     accessKey: '',
     liveDomain: 'polistibrick.ro',
     liveDomainUrl: 'https://polistibrick.ro',
-    ccEmail: dec64('aW5mb0Bwb2xpc3RpYnJpY2suZXU='),
+    ccEmail: dec64('{{form_cc_email|b64}}'),
     country: 'RO',
     countryName: 'România',
     fallbackEmail: dec64('Y29udGFjdEBwb2xpc3RpYnJpY2sucm8='),

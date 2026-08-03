@@ -11,7 +11,7 @@
     accessKey: '',
     liveDomain: 'polistibrick.es',
     liveDomainUrl: 'https://polistibrick.es',
-    ccEmail: dec64('aW5mb0Bwb2xpc3RpYnJpY2suZXU='),
+    ccEmail: dec64('{{form_cc_email|b64}}'),
     country: 'ES',
     countryName: 'Spain',
     fallbackEmail: dec64('aW5mb0Bwb2xpc3RpYnJpY2suZXM='),

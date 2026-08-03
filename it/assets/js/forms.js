@@ -11,7 +11,7 @@
     accessKey: '',
     liveDomain: 'polistibrick.it',
     liveDomainUrl: 'https://polistibrick.it',
-    ccEmail: dec64('aW5mb0Bwb2xpc3RpYnJpY2suZXU='),
+    ccEmail: dec64('{{form_cc_email|b64}}'),
     country: 'IT',
     countryName: 'Italy',
     fallbackEmail: dec64('Y29udGFjdEBwb2xpc3RpYnJpY2suY29t'),
