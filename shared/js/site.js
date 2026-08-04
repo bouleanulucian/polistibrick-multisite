@@ -94,7 +94,6 @@
       <div class="nav-drawer-group">
         <button class="nav-drawer-title" aria-expanded="false">{{ui.resurse}}<span class="nd-caret">▾</span></button>
         <div class="nav-acc">
-          <a href="${BASE}resurse/blog/">{{ui.blog}}</a>
           <a href="${BASE}resurse/faq/">{{ui.faq}}</a>
         </div>
       </div>
@@ -145,7 +144,6 @@
           <h5>{{ui.footer_h_resurse}}</h5>
           <ul>
             <li><a href="${BASE}proiecte/">{{ui.footer_proiecte_realizate}}</a></li>
-            <li><a href="${BASE}resurse/blog/">{{ui.blog}}</a></li>
             <li><a href="${BASE}resurse/faq/">{{ui.faq}}</a></li>
             <li><a href="${BASE}calculator/">{{ui.calc_cost}}</a></li>
           </ul>
