@@ -284,7 +284,60 @@
     });
   }
 
+  // Vine dintr-un model de casă: /contact/?model=PBK+7&sistem=Polistibrick
+  // Completează subiectul, mesajul, şi trimite alegerea ca două câmpuri separate.
+  function prefillFromUrl(form) {
+    const q = new URLSearchParams(location.search);
+    const model = q.get('model');
+    const sistem = q.get('sistem');
+    const subiect = q.get('subiect') || q.get('subject');
+    if (!model && !sistem && !subiect) return;
+
+    const sel = form.querySelector('select[name="subject"]');
+    if (sel) {
+      // subjects.devis e linia de email ("Cerere ofertă — Polistibrick România"),
+      // nu o opţiune din listă. Potrivim după cuvinte comune, ca să meargă în orice limbă.
+      const norm = function (t) {
+        return (t || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+      };
+      const radacini = function (t) {
+        return norm(t).split(/[^a-z0-9]+/).filter(function (w) { return w.length > 3; })
+                      .map(function (w) { return w.slice(0, 5); });
+      };
+      const tinta = subiect || (model ? resolved(CFG.subjects.devis, '').split('—')[0] : '');
+      const cautate = radacini(tinta);
+      if (cautate.length) {
+        let castigator = null, maxim = 0;
+        Array.from(sel.options).forEach(function (o) {
+          const ale = radacini(o.textContent);
+          const scor = cautate.filter(function (r) { return ale.indexOf(r) !== -1; }).length;
+          if (scor > maxim) { maxim = scor; castigator = o; }
+        });
+        if (castigator) sel.value = castigator.value || castigator.textContent.trim();
+      }
+    }
+
+    const msg = form.querySelector('textarea[name="message"]');
+    if (msg && !msg.value.trim() && (model || sistem)) {
+      let t = model ? 'Mă interesează modelul ' + model : 'Mă interesează un model din catalog';
+      if (sistem) t += ', construit în sistemul ' + sistem;
+      msg.value = t + '.\n\n';
+      msg.setSelectionRange(msg.value.length, msg.value.length);
+    }
+
+    // ajung în email ca linii proprii, nu doar topite în mesaj
+    [['house_model', model], ['building_system', sistem]].forEach(function (p) {
+      if (!p[1] || form.querySelector('[name="' + p[0] + '"]')) return;
+      const h = document.createElement('input');
+      h.type = 'hidden'; h.name = p[0]; h.value = p[1];
+      form.appendChild(h);
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('[data-pb-form]').forEach(initForm);
+    document.querySelectorAll('[data-pb-form]').forEach(function (form) {
+      initForm(form);
+      prefillFromUrl(form);
+    });
   });
 })();

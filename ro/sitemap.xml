@@ -2,6 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://polistibrick.ro/</loc></url>
   <url><loc>https://polistibrick.ro/calculator/</loc></url>
+  <url><loc>https://polistibrick.ro/case/</loc></url>
   <url><loc>https://polistibrick.ro/contact/</loc></url>
   <url><loc>https://polistibrick.ro/despre/</loc></url>
   <url><loc>https://polistibrick.ro/despre/certificari/</loc></url>
@@ -29,8 +30,6 @@
   <url><loc>https://polistibrick.ro/proiecte/casa-cluj-napoca/</loc></url>
   <url><loc>https://polistibrick.ro/proiecte/villa-valencia/</loc></url>
   <url><loc>https://polistibrick.ro/resurse/</loc></url>
-  <url><loc>https://polistibrick.ro/resurse/blog/</loc></url>
-  <url><loc>https://polistibrick.ro/resurse/blog/ce-este-casa-passiva/</loc></url>
   <url><loc>https://polistibrick.ro/resurse/faq/</loc></url>
   <url><loc>https://polistibrick.ro/testimoniale/</loc></url>
 </urlset>

@@ -94,7 +94,6 @@
       <div class="nav-drawer-group">
         <button class="nav-drawer-title" aria-expanded="false">Risorse<span class="nd-caret">▾</span></button>
         <div class="nav-acc">
-          <a href="${BASE}risorse/blog/">Blog</a>
           <a href="${BASE}risorse/faq/">Domande frequenti</a>
         </div>
       </div>
@@ -145,7 +144,6 @@
           <h5>Risorse</h5>
           <ul>
             <li><a href="${BASE}progetti/">Progetti realizzati</a></li>
-            <li><a href="${BASE}risorse/blog/">Blog</a></li>
             <li><a href="${BASE}risorse/faq/">Domande frequenti</a></li>
             <li><a href="${BASE}calcolatore/">Calcolatore costi</a></li>
           </ul>
