@@ -48,3 +48,6 @@ countries/*/images/presence/factory-*.png
 countries/*/images/presence/frame*.png
 .gh-pages-worktree/
 .tmp/
+
+# Graphify — harta codului (generata local)
+graphify-out/
