@@ -80,7 +80,7 @@
       <div class="nav-drawer-group">
         <button class="nav-drawer-title" aria-expanded="false">Proiecte<span class="nd-caret">▾</span></button>
         <div class="nav-acc">
-          <a href="${BASE}proiecte/">Case construite</a>
+          <a href="${BASE}proiecte/">Toate proiectele</a>
           <a href="${BASE}testimoniale/">Testimoniale (video)</a>
         </div>
       </div>
@@ -143,7 +143,7 @@
         <div class="footer-col">
           <h5>Resurse</h5>
           <ul>
-            <li><a href="${BASE}proiecte/">Proiecte realizate</a></li>
+            <li><a href="${BASE}proiecte/">Proiecte</a></li>
             <li><a href="${BASE}resurse/faq/">Întrebări frecvente</a></li>
             <li><a href="${BASE}calculator/">Calculator cost</a></li>
           </ul>
