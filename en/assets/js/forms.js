@@ -24,18 +24,18 @@
   };
 
   const MSG = {
-    errPrivacy: '{{ui.form_err_privacy}}',
-    errRatingName: '{{ui.form_err_rating_name}}',
-    errVideo: '{{ui.form_err_video}}',
-    errReviewText: '{{ui.form_err_review_text}}',
-    errNetwork: '{{ui.form_err_network}}',
-    errSend: '{{ui.form_err_send}}',
-    loading: '{{ui.form_loading}}',
-    blockedNoKeyPrefix: '{{ui.form_blocked_no_key_prefix}}',
-    blockedNoKeySuffix: '{{ui.form_blocked_no_key_suffix}}',
-    blockedPreviewPrefix: '{{ui.form_blocked_preview_prefix}}',
-    blockedPreviewMid: '{{ui.form_blocked_preview_mid}}',
-    blockedUnavailable: '{{ui.form_blocked_unavailable}}',
+    errPrivacy: 'Accept the privacy policy to continue.',
+    errRatingName: 'Please provide at least a rating and your name / company.',
+    errVideo: 'Add the video — or choose “Text + photos”.',
+    errReviewText: 'Please write your review.',
+    errNetwork: 'Network error. Please try again in a moment.',
+    errSend: 'Could not send. Try again or contact us by email.',
+    loading: 'Sending…',
+    blockedNoKeyPrefix: 'Add the Web3Forms key in _config.json (domain:',
+    blockedNoKeySuffix: '). In the meantime:',
+    blockedPreviewPrefix: 'Preview — sending works on',
+    blockedPreviewMid: 'or locally (localhost). Contact:',
+    blockedUnavailable: 'Form unavailable. Contact:',
   };
 
   function resolved(str, fallback) {
@@ -61,8 +61,13 @@
     return host === live;
   }
 
+  function isGitHubPages() {
+    // găzduirea curentă, până mutăm site-ul pe domeniile proprii
+    return window.location.hostname === 'bouleanulucian.github.io';
+  }
+
   function isAllowedHost() {
-    return isOnLiveDomain() || isLocalDev();
+    return isOnLiveDomain() || isGitHubPages() || isLocalDev();
   }
 
   function isConfigured() {

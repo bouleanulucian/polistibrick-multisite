@@ -24,8 +24,8 @@
   };
 
   const MSG = {
-    errPrivacy: 'Accetta l'informativa sulla privacy per continuare.',
-    errRatingName: 'Indica almeno: una valutazione e il nome / l'azienda.',
+    errPrivacy: 'Accetta l’informativa sulla privacy per continuare.',
+    errRatingName: 'Indica almeno: una valutazione e il nome / l’azienda.',
     errVideo: 'Aggiungi il video — oppure scegli « Testo + foto ».',
     errReviewText: 'Scrivi la tua recensione.',
     errNetwork: 'Errore di rete. Riprova tra qualche istante.',
@@ -33,7 +33,7 @@
     loading: 'Invio in corso…',
     blockedNoKeyPrefix: 'Aggiungi la chiave Web3Forms in _config.json (dominio:',
     blockedNoKeySuffix: '). Nel frattempo:',
-    blockedPreviewPrefix: 'Anteprima — l'invio funziona su',
+    blockedPreviewPrefix: 'Anteprima — l’invio funziona su',
     blockedPreviewMid: 'o in locale (localhost). Contatto:',
     blockedUnavailable: 'Modulo non disponibile. Contatto:',
   };
@@ -61,8 +61,13 @@
     return host === live;
   }
 
+  function isGitHubPages() {
+    // găzduirea curentă, până mutăm site-ul pe domeniile proprii
+    return window.location.hostname === 'bouleanulucian.github.io';
+  }
+
   function isAllowedHost() {
-    return isOnLiveDomain() || isLocalDev();
+    return isOnLiveDomain() || isGitHubPages() || isLocalDev();
   }
 
   function isConfigured() {

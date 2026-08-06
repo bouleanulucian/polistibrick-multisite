@@ -472,7 +472,7 @@ window.PB_SLUGS = {"ro":{},"fr":{"produse":"produits","pentru":"pour","despre":"
         <div class="country-picker-header">
           <span class="country-picker-eyebrow">🌍 Choose your country</span>
           <h2 class="country-picker-title">Which country are you <em>building in?</em></h2>
-          <p class="country-picker-sub">We'll redirect you to your country's site with the local team, direct contact and a quote in your language.</p>
+          <p class="country-picker-sub">We’ll redirect you to your country’s site with the local team, direct contact and a quote in your language.</p>
         </div>
         <div class="country-picker-grid">
           ${Object.entries(POLISTIBRICK_COUNTRIES).map(([code, c]) => `
@@ -483,7 +483,7 @@ window.PB_SLUGS = {"ro":{},"fr":{"produse":"produits","pentru":"pour","despre":"
             </a>
           `).join('')}
         </div>
-        <p class="country-picker-foot">Your country isn't listed? Write to us at <a href="#" data-m64="aW5mb0Bwb2xpc3RpYnJpY2suZXU=">Email</a></p>
+        <p class="country-picker-foot">Your country isn’t listed? Write to us at <a href="#" data-m64="aW5mb0Bwb2xpc3RpYnJpY2suZXU=">Email</a></p>
       </div>
     `;
     document.body.appendChild(modal);

@@ -87,7 +87,7 @@
       <div class="nav-drawer-group">
         <button class="nav-drawer-title" aria-expanded="false">Calculateur<span class="nd-caret">▾</span></button>
         <div class="nav-acc">
-          <a href="${BASE}economies/">Calculateur d'économies</a>
+          <a href="${BASE}economies/">Calculateur d’économies</a>
         </div>
       </div>
       <div class="nav-drawer-group">
@@ -99,11 +99,11 @@
       <div class="nav-drawer-group">
         <button class="nav-drawer-title" aria-expanded="false">À propos<span class="nd-caret">▾</span></button>
         <div class="nav-acc">
-          <a href="${BASE}a-propos/">L'entreprise</a>
+          <a href="${BASE}a-propos/">L’entreprise</a>
           <a href="${BASE}a-propos/brevet/">Le brevet Polistibrick</a>
           <a href="${BASE}a-propos/certifications/">Certifications</a>
           <a href="${BASE}a-propos/usines/">Nos usines</a>
-          <a href="${BASE}a-propos/fondateur/">L'équipe</a>
+          <a href="${BASE}a-propos/fondateur/">L’équipe</a>
         </div>
       </div>
       <div class="nav-drawer-cta">
@@ -120,7 +120,7 @@
           <a href="${BASE}" class="footer-logo">
             <img src="${BASE}images/logo.png" alt="Polistibrick" style="height:32px;">
           </a>
-          <p class="footer-brand-tagline">Le système ICF breveté pour maisons passives haut de gamme, sans factures d'énergie. Fabriqué dans l'UE.</p>
+          <p class="footer-brand-tagline">Le système ICF breveté pour maisons passives haut de gamme, sans factures d’énergie. Fabriqué dans l’UE.</p>
         </div>
         <div class="footer-col">
           <h5>Produits</h5>
@@ -143,7 +143,7 @@
           <h5>Ressources</h5>
           <ul>
             <li><a href="${BASE}projets/">Projets</a></li>
-            <li><a href="${BASE}economies/">Calculateur d'économies</a></li>
+            <li><a href="${BASE}economies/">Calculateur d’économies</a></li>
             <li><a href="${BASE}ressources/faq/">Questions fréquentes</a></li>
           </ul>
         </div>
@@ -472,7 +472,7 @@ window.PB_SLUGS = {"ro":{},"fr":{"produse":"produits","pentru":"pour","despre":"
         <div class="country-picker-header">
           <span class="country-picker-eyebrow">🌍 Choisissez votre pays</span>
           <h2 class="country-picker-title">Dans quel pays <em>construisez-vous ?</em></h2>
-          <p class="country-picker-sub">Nous vous redirigeons vers le site de votre pays avec l'équipe locale, un contact direct et un devis dans votre langue.</p>
+          <p class="country-picker-sub">Nous vous redirigeons vers le site de votre pays avec l’équipe locale, un contact direct et un devis dans votre langue.</p>
         </div>
         <div class="country-picker-grid">
           ${Object.entries(POLISTIBRICK_COUNTRIES).map(([code, c]) => `
@@ -483,7 +483,7 @@ window.PB_SLUGS = {"ro":{},"fr":{"produse":"produits","pentru":"pour","despre":"
             </a>
           `).join('')}
         </div>
-        <p class="country-picker-foot">Votre pays n'est pas listé ? Écrivez-nous à <a href="#" data-m64="aW5mb0Bwb2xpc3RpYnJpY2suZXU=">Email</a></p>
+        <p class="country-picker-foot">Votre pays n’est pas listé ? Écrivez-nous à <a href="#" data-m64="aW5mb0Bwb2xpc3RpYnJpY2suZXU=">Email</a></p>
       </div>
     `;
     document.body.appendChild(modal);

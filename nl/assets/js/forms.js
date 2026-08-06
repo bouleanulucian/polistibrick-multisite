@@ -24,18 +24,18 @@
   };
 
   const MSG = {
-    errPrivacy: '{{ui.form_err_privacy}}',
-    errRatingName: '{{ui.form_err_rating_name}}',
-    errVideo: '{{ui.form_err_video}}',
-    errReviewText: '{{ui.form_err_review_text}}',
-    errNetwork: '{{ui.form_err_network}}',
-    errSend: '{{ui.form_err_send}}',
-    loading: '{{ui.form_loading}}',
-    blockedNoKeyPrefix: '{{ui.form_blocked_no_key_prefix}}',
-    blockedNoKeySuffix: '{{ui.form_blocked_no_key_suffix}}',
-    blockedPreviewPrefix: '{{ui.form_blocked_preview_prefix}}',
-    blockedPreviewMid: '{{ui.form_blocked_preview_mid}}',
-    blockedUnavailable: '{{ui.form_blocked_unavailable}}',
+    errPrivacy: 'Acceptez la politique de confidentialité pour continuer.',
+    errRatingName: 'Indiquez au minimum : une note et le nom / la société.',
+    errVideo: 'Ajoutez la vidéo — ou choisissez « Texte + photos ».',
+    errReviewText: 'Écrivez votre avis.',
+    errNetwork: 'Erreur réseau. Réessayez dans quelques instants.',
+    errSend: 'Envoi impossible. Réessayez ou contactez-nous par e-mail.',
+    loading: 'Envoi en cours…',
+    blockedNoKeyPrefix: 'Ajoutez la clé Web3Forms dans _config.json (domaine :',
+    blockedNoKeySuffix: '). En attendant :',
+    blockedPreviewPrefix: 'Prévisualisation — l’envoi fonctionne sur',
+    blockedPreviewMid: 'ou en local (localhost). Contact :',
+    blockedUnavailable: 'Formulaire indisponible. Contact :',
   };
 
   function resolved(str, fallback) {
@@ -61,8 +61,13 @@
     return host === live;
   }
 
+  function isGitHubPages() {
+    // găzduirea curentă, până mutăm site-ul pe domeniile proprii
+    return window.location.hostname === 'bouleanulucian.github.io';
+  }
+
   function isAllowedHost() {
-    return isOnLiveDomain() || isLocalDev();
+    return isOnLiveDomain() || isGitHubPages() || isLocalDev();
   }
 
   function isConfigured() {

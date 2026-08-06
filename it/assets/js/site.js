@@ -99,7 +99,7 @@
       <div class="nav-drawer-group">
         <button class="nav-drawer-title" aria-expanded="false">Chi siamo<span class="nd-caret">▾</span></button>
         <div class="nav-acc">
-          <a href="${BASE}chi-siamo/">L'azienda</a>
+          <a href="${BASE}chi-siamo/">L’azienda</a>
           <a href="${BASE}chi-siamo/brevetto/">Il brevetto Polistibrick</a>
           <a href="${BASE}chi-siamo/certificazioni/">Certificazioni</a>
           <a href="${BASE}chi-siamo/fabbriche/">Le nostre fabbriche</a>
@@ -120,7 +120,7 @@
           <a href="${BASE}" class="footer-logo">
             <img src="${BASE}images/logo.png" alt="Polistibrick" style="height:32px;">
           </a>
-          <p class="footer-brand-tagline">Il sistema ICF brevettato per case passive premium, senza bollette energetiche. Fabbricato nell'UE.</p>
+          <p class="footer-brand-tagline">Il sistema ICF brevettato per case passive premium, senza bollette energetiche. Fabbricato nell’UE.</p>
         </div>
         <div class="footer-col">
           <h5>Prodotti</h5>

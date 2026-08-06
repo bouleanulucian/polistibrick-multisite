@@ -8,7 +8,7 @@
     try { return s && s.indexOf('{{') === -1 ? atob(s) : ''; } catch (e) { return ''; }
   }
   const CFG = {
-    accessKey: '',
+    accessKey: '2c1ec74f-a90b-436d-8ba4-764272610129',
     liveDomain: 'polistibrick.ro',
     liveDomainUrl: 'https://polistibrick.ro',
     ccEmail: dec64('{{form_cc_email|b64}}'),
@@ -61,8 +61,13 @@
     return host === live;
   }
 
+  function isGitHubPages() {
+    // găzduirea curentă, până mutăm site-ul pe domeniile proprii
+    return window.location.hostname === 'bouleanulucian.github.io';
+  }
+
   function isAllowedHost() {
-    return isOnLiveDomain() || isLocalDev();
+    return isOnLiveDomain() || isGitHubPages() || isLocalDev();
   }
 
   function isConfigured() {
