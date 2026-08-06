@@ -842,6 +842,33 @@
       transform: translateY(-2px);
       box-shadow: 0 15px 35px rgba(255,255,255,0.25);
     }
+
+    /* — le calculateur d'équipe (adapté des investisseurs) — */
+    /* CALCULATOR ROI ensemble — star section */
+    .roi-section { background: white; padding: 80px 0; }
+    .roi-intro { max-width: 760px; margin: 0 auto 40px; text-align: center; }
+    .roi-stage { max-width: 1100px; margin: 0 auto; background: linear-gradient(135deg, var(--cream) 0%, var(--cream-light) 100%); border: 1px solid var(--border); border-radius: 24px; padding: 48px; }
+    .roi-input-row { display: flex; align-items: center; gap: 24px; max-width: 600px; margin: 0 auto 40px; flex-wrap: wrap; }
+    .roi-input-row label { font-size: 14px; font-weight: 600; color: var(--ink); min-width: 240px; }
+    .roi-input-row input[type="number"] { flex: 1; min-width: 120px; padding: 12px 18px; font-size: 18px; font-weight: 600; border: 1px solid var(--border); border-radius: 10px; background: white; font-family: inherit; color: var(--ink); text-align: center; }
+    .roi-input-row input[type="number"]:focus { outline: 2px solid var(--red); outline-offset: 2px; }
+    .roi-slider { width: 100%; max-width: 600px; margin: 0 auto 40px; display: block; }
+    .roi-results { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 32px; }
+    .roi-card { background: white; border-radius: 14px; padding: 24px 20px; text-align: center; border: 1px solid var(--border); }
+    .roi-card--highlight { border: 2px solid #1a7d3a; background: linear-gradient(180deg, white 60%, rgba(26,125,58,0.04) 100%); }
+    .roi-card-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gray); margin-bottom: 10px; }
+    .roi-card-value { font-family: var(--serif); font-size: 32px; font-weight: 500; line-height: 1.1; color: var(--ink); margin-bottom: 4px; }
+    .roi-card--highlight .roi-card-value { color: #1a7d3a; }
+    .roi-card-unit { font-size: 12px; color: var(--gray); }
+    .roi-summary { background: linear-gradient(135deg, rgba(26,125,58,0.10), rgba(26,125,58,0.04)); border: 1px solid rgba(26,125,58,0.25); border-radius: 14px; padding: 24px 28px; text-align: center; }
+    .roi-summary-text { font-size: 15px; color: var(--ink); line-height: 1.6; }
+    .roi-summary-text strong { color: #1a7d3a; font-weight: 700; }
+    .roi-note { max-width: 760px; margin: 20px auto 0; text-align: center; font-size: 12px; color: var(--gray); line-height: 1.5; }
+    @media (max-width: 768px) {
+      .roi-stage { padding: 28px 18px; }
+      .roi-results { grid-template-columns: 1fr; }
+      .roi-card-value { font-size: 26px; }
+    }
   </style>
 <link rel="canonical" href="https://polistibrick.be/pour/constructeurs/">
 <meta property="og:url" content="https://polistibrick.be/pour/constructeurs/">
@@ -866,8 +893,7 @@
       <p class="hero-builders-desc">Grâce au système structurel 5-en-1, <strong>une seule équipe effectue le travail de 5 corps de métier</strong> (gros œuvre, isolation, étanchéité, acoustique et finitions). Vos marges opérationnelles peuvent atteindre <strong>50 %</strong> par projet en récupérant la valeur auparavant sous-traitée.</p>
       
       <div class="hero-builders-cta">
-        <a href="#programme" class="btn btn-primary btn-arrow">Découvrir le programme partenaire</a>
-        <a href="../../devenir-partenaire/" class="btn btn-ghost">Postuler maintenant</a>
+        <a href="../../devenir-partenaire/" class="btn btn-primary btn-arrow">Postuler maintenant</a>
       </div>
     </div>
     
@@ -880,7 +906,6 @@
 <!-- 2. PROBLÈMES / INQUIÉTUDES -->
 <section class="pains-section">
   <div class="section-intro">
-    <span class="section-eyebrow">Vos préoccupations chantiers</span>
     <h2 class="section-title">Ce qui vous retient d'adopter <em>un nouveau procédé.</em></h2>
     <p class="section-desc">Nous avons conçu notre programme pour éliminer les risques inhérents à l'adoption d'un système constructif innovant.</p>
   </div>
@@ -911,7 +936,6 @@
 <!-- 3. ATOUTS UNIQUES -->
 <section class="atouts-section">
   <div class="section-intro">
-    <span class="section-eyebrow">Performances & Marges</span>
     <h2 class="section-title">Ce que cela change <em>pour vos performances financières.</em></h2>
   </div>
 
@@ -938,7 +962,7 @@
           <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1" opacity="0.3"/>
         </svg>
       </div>
-      <h3>Gros œuvre en <em>4-6 semaines</em></h3>
+      <h3>La maison à 80 % en <em>4–6 semaines</em></h3>
       <p>Une exécution de 2 à 3 fois plus rapide que la maçonnerie traditionnelle. Vous enchaînez plus de projets sur l'année sans augmenter la taille de vos équipes.</p>
     </article>
 
@@ -957,57 +981,13 @@
 </section>
 
 <!-- 4. PROGRAMME PARTENAIRE -->
-<section class="partner-section" id="programme">
-  <div class="section-intro">
-    <span class="section-eyebrow">Accompagnement & Croissance</span>
-    <h2 class="section-title">Devenez un <em>Constructeur Certifié Polistibrick.</em></h2>
-    <p class="section-desc">Un partenariat axé sur la montée en compétences de vos équipes et l'apport de nouveaux marchés.</p>
-  </div>
 
-  <div class="partner-grid">
-    <div class="partner-card">
-      <div class="partner-card-icon">🎓</div>
-      <h4>Formation certifiante <em>offerte</em></h4>
-      <p>2 à 3 jours intensifs dans nos usines de production. Pratique réelle de montage et découpe des panneaux. Remise d'une <strong>certification officielle constructeur</strong>.</p>
-    </div>
-    
-    <div class="partner-card">
-      <div class="partner-card-icon">🛠️</div>
-      <h4>Support <em>sur vos chantiers</em></h4>
-      <p>Un technicien d'application vous accompagne lors de la première mise en œuvre sur votre chantier pour valider le calepinage et le coulage du béton.</p>
-    </div>
-    
-    <div class="partner-card">
-      <div class="partner-card-icon">📞</div>
-      <h4>Leads clients <em>directs</em></h4>
-      <p>Nous redirigeons les demandes de devis géolocalisées des particuliers et promoteurs de votre région directement vers votre entreprise.</p>
-    </div>
-    
-    <div class="partner-card">
-      <div class="partner-card-icon">🏆</div>
-      <h4>Co-branding <em>régional</em></h4>
-      <p>Mise en valeur de vos chantiers sur nos supports de communication nationaux pour asseoir votre réputation de constructeur passif haut de gamme.</p>
-    </div>
-    
-    <div class="partner-card">
-      <div class="partner-card-icon">📋</div>
-      <h4>Tarifs & <em>conditions préférentielles</em></h4>
-      <p>Bénéficiez de remises commerciales dédiées et de délais d'approvisionnement réservés pour sécuriser la rentabilité de vos devis.</p>
-    </div>
-    
-    <div class="partner-card">
-      <div class="partner-card-icon">🚚</div>
-      <h4>Logistique <em>prioritaire</em></h4>
-      <p>Vos commandes usine sont traitées en flux prioritaire pour vous assurer une livraison de vos colis selon votre planning précis de chantier.</p>
-    </div>
-  </div>
-</section>
 
-<!-- 5. PROCESS TIMELINE -->
-<section class="process-section">
+<!-- 6. TESTIMONIAL -->
+<section class="process-section" id="montaj">
   <div class="section-intro">
-    <span class="section-eyebrow">Le parcours de partenariat</span>
-    <h2 class="section-title">En 4 étapes claires vers la <em>certification Polistibrick.</em></h2>
+    <h2 class="section-title">Le montage, en <em>4 étapes.</em></h2>
+    <p class="section-desc">De la fondation à la structure coulée, avec 2 à 3 personnes sur le chantier. Sans grue, sans mortier, sans temps de séchage entre les étapes.</p>
   </div>
 
   <div class="process-timeline">
@@ -1015,63 +995,227 @@
       <div class="process-num-wrap">
         <span class="process-num">1</span>
       </div>
-      <h4>Candidature</h4>
-      <p>Remplissez notre formulaire partenaire rapide. Notre service technique valide vos compétences.</p>
-      <span class="step-duration">Sous 48 heures</span>
+      <h4>Coffrage</h4>
+      <p>Les murs EPS sont dressés et fixés sur la fondation avec des étaiements latéraux en bois. Assemblage à sec : sans mortier, sans perte d'isolation.</p>
+      <span class="step-duration">À la main, sans grue</span>
     </div>
-    
+
     <div class="process-step">
       <div class="process-num-wrap">
         <span class="process-num">2</span>
       </div>
-      <h4>Immersion Usine</h4>
-      <p>Visitez l'un de nos centres de production pour découvrir la fabrication automatisée de nos systèmes.</p>
-      <span class="step-duration">1 Journée</span>
+      <h4>Plancher</h4>
+      <p>Les panneaux PBK se posent horizontalement — couches EPS-Graphite + fibrociment, prêtes à recevoir l'armature.</p>
+      <span class="step-duration">Pose horizontale</span>
     </div>
-    
+
     <div class="process-step">
       <div class="process-num-wrap">
         <span class="process-num">3</span>
       </div>
-      <h4>Certification</h4>
-      <p>Formation pratique aux méthodes de calepinage, étaiement et coulage avec nos formateurs chantiers.</p>
-      <span class="step-duration">2-3 Jours</span>
+      <h4>Armature</h4>
+      <p>Les treillis d'acier se posent entre les nervures EPS-Graphite. C'est ce qui crée la liaison monolithique entre les murs et le plancher.</p>
+      <span class="step-duration">Sans soudure</span>
     </div>
-    
+
     <div class="process-step">
       <div class="process-num-wrap">
         <span class="process-num">4</span>
       </div>
-      <h4>Premier Chantier</h4>
-      <p>Démarrez vos travaux l'esprit tranquille avec la présence de notre ingénieur d'application.</p>
-      <span class="step-duration">Suivi Pro</span>
+      <h4>Coulage du béton</h4>
+      <p>Tous les éléments sont assemblés et vérifiés, le coffrage est fermé. Après le coulage, la structure devient monolithique en 24 heures.</p>
+      <span class="step-duration">Monolithique en 24 h</span>
+    </div>
+  </div>
+
+
+  <div style="text-align:center;margin-top:40px;">
+    <a href="../../montage/" class="btn btn-primary btn-arrow">Voir le montage en détail</a>
+  </div>
+</section>
+
+<section class="process-section" style="padding-top:0;">
+  <div style="max-width:1000px;margin:0 auto;padding:0 40px;box-sizing:border-box;">
+    <div style="background:white;border:1px solid var(--border);border-radius:20px;padding:44px 36px;">
+      <h3 style="font-family:var(--serif);font-size:24px;font-weight:500;color:var(--ink);text-align:center;margin:0 0 32px;">Le chantier, réduit à <em style="font-style:italic;color:var(--red);font-weight:400;">l'essentiel.</em></h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:28px;">
+        <div style="text-align:center;">
+          <div style="font-family:var(--serif);font-size:clamp(30px,3.4vw,44px);color:var(--red);line-height:1;margin-bottom:8px;">~1 mois</div>
+          <div style="font-size:13.5px;color:var(--gray);">structure, isolation, finitions</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-family:var(--serif);font-size:clamp(30px,3.4vw,44px);color:var(--red);line-height:1;margin-bottom:8px;">2–3</div>
+          <div style="font-size:13.5px;color:var(--gray);">personnes sur le chantier</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-family:var(--serif);font-size:clamp(30px,3.4vw,44px);color:var(--red);line-height:1;margin-bottom:8px;">0</div>
+          <div style="font-size:13.5px;color:var(--gray);">grue ou engin de levage lourd</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-family:var(--serif);font-size:clamp(30px,3.4vw,44px);color:var(--red);line-height:1;margin-bottom:8px;">24 h</div>
+          <div style="font-size:13.5px;color:var(--gray);">pour devenir monolithique</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- 6. TESTIMONIAL -->
-<section class="testim-section">
+<section class="roi-section" id="calculator-echipa">
   <div class="container">
-    <div class="testim-card">
-      <p class="testim-quote">Au départ, l'équipe avait quelques doutes sur l'apprentissage d'un nouveau système de blocs. Cependant, l'accompagnement de leur technicien sur notre premier chantier a tout débloqué. Le gain de temps est énorme, les finitions impeccables et les clients ravis.</p>
-      <div class="testim-author">
-        <div class="testim-author-avatar">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="16" cy="12" r="6" stroke="var(--red)" stroke-width="1.5"/>
-            <path d="M6 26C6 21 10 18 16 18C22 18 26 21 26 26" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
+    <div class="roi-intro reveal">
+      <h2 style="font-family:var(--serif);font-size:clamp(28px,3.2vw,42px);font-weight:500;color:var(--ink);letter-spacing:-0.02em;margin-bottom:14px;">Ce que vous gagnez en plus, <em style="font-style:italic;color:var(--red);font-weight:400;">par an.</em></h2>
+      <p style="font-size:15.5px;color:var(--gray);line-height:1.65;">Une équipe Polistibrick fait le travail de 5 équipes. Dites-nous combien de maisons vous construisez par an — nous calculons ce qui reste dans l'entreprise au lieu de partir chez les sous-traitants.</p>
+    </div>
+
+    <div class="roi-stage reveal">
+      <div class="roi-input-row">
+        <label for="cc-units">Maisons construites par an :</label>
+        <input type="number" id="cc-units" min="1" max="50" step="1" value="5">
+        <span style="font-weight:600;font-size:18px;color:var(--gray);">maisons</span>
+      </div>
+      <input type="range" id="cc-slider" class="roi-slider" min="1" max="50" step="1" value="5">
+
+      <div class="roi-results">
+        <div class="roi-card roi-card--highlight">
+          <div class="roi-card-label">Gain supplémentaire par an</div>
+          <div class="roi-card-value" id="cc-profit">+120 000 €</div>
+          <div class="roi-card-unit">40 % de la main-d'œuvre des 5 corps de métier</div>
         </div>
-        <div class="testim-author-info">
-          <strong>Jean-François Roux</strong>
-          Directeur Travaux · Bâti-Innov SAS (Auvergne-Rhône-Alpes)
+        <div class="roi-card">
+          <div class="roi-card-label">Main-d'œuvre restée dans l'entreprise</div>
+          <div class="roi-card-value" id="cc-labor">300 000 €</div>
+          <div class="roi-card-unit">au lieu de partir chez les sous-traitants</div>
+        </div>
+        <div class="roi-card">
+          <div class="roi-card-label">Avec la même équipe</div>
+          <div class="roi-card-value">2–3×</div>
+          <div class="roi-card-unit">plus de projets par an</div>
         </div>
       </div>
+
+      <div class="roi-summary">
+        <div class="roi-summary-text">À <strong id="cc-units-display">5 maisons</strong> par an, le <strong>gain supplémentaire estimé</strong> avec Polistibrick : <strong id="cc-total">~120 000 €</strong> par rapport au travail avec 5 équipes.</div>
+      </div>
     </div>
+
+    <p class="roi-note">Estimation sur des hypothèses standard : 150 m²/maison, main-d'œuvre totale des 5 corps de métier 400 €/m², dont 40 % reste en gain dans l'entreprise. Pour des chiffres sur votre entreprise, contactez-nous.</p>
+  </div>
+</section>
+
+<script>
+// CALCULATEUR ÉQUIPE CONSTRUCTEUR
+(function(){
+  var unitsInput = document.getElementById('cc-units');
+  var unitsSlider = document.getElementById('cc-slider');
+  var profitEl = document.getElementById('cc-profit');
+  var laborEl = document.getElementById('cc-labor');
+  var unitsDisplayEl = document.getElementById('cc-units-display');
+  var totalEl = document.getElementById('cc-total');
+  if (!unitsInput) return;
+
+  var SURFACE = 150;        // m² par maison (moyenne)
+  var LABOR_PER_M2 = 400;   // €/m², main-d'œuvre des 5 corps de métier
+  var KEPT = 0.40;          // la part qui reste en gain dans l'entreprise
+
+  function fmt(n) { return Math.round(n).toLocaleString('fr-FR') + ' €'; }
+
+  function calc() {
+    var u = parseInt(unitsInput.value, 10);
+    if (isNaN(u) || u < 1) u = 1;
+    if (u > 50) u = 50;
+    unitsInput.value = u;
+    unitsSlider.value = u;
+
+    var labor = u * SURFACE * LABOR_PER_M2;
+    var profit = labor * KEPT;
+
+    profitEl.textContent = '+' + fmt(profit);
+    laborEl.textContent = fmt(labor);
+    unitsDisplayEl.textContent = u + (u === 1 ? ' maison' : ' maisons');
+    totalEl.textContent = '~' + fmt(profit);
+  }
+
+  unitsInput.addEventListener('input', calc);
+  unitsSlider.addEventListener('input', function(){ unitsInput.value = this.value; calc(); });
+  calc();
+})();
+</script>
+
+<!-- 6. TESTIMONIAL -->
+<section class="testim-section" id="testimoniale-reale" style="display:none;">
+  <div class="container">
+    <div id="testim-lista" style="display:grid;gap:28px;"></div>
     <div style="text-align:center;margin-top:40px;">
-      <a href="../../temoignages/" class="btn btn-ghost btn-arrow">Consulter les retours d'expérience</a>
+      <a href="../../temoignages/" class="btn btn-ghost btn-arrow">Consulter les témoignages</a>
     </div>
   </div>
 </section>
+
+<script>
+// TÉMOIGNAGES RÉELS — lus depuis la page de témoignages (publiés via le studio).
+// Tant qu'il n'y en a aucun, la section reste cachée.
+(function(){
+  var sec = document.getElementById('testimoniale-reale');
+  var lista = document.getElementById('testim-lista');
+  if (!sec || !lista || !window.fetch) return;
+
+  function cale(p) { return (p || '').replace('../images/', '../../images/'); }
+
+  fetch('../../temoignages/').then(function(r){ return r.text(); }).then(function(html){
+    var doc = new DOMParser().parseFromString(html, 'text/html');
+    var reale = doc.querySelectorAll('article[data-testimonial]');
+    if (!reale.length) return;
+
+    Array.prototype.slice.call(reale, 0, 2).forEach(function(c){
+      var nume = c.querySelector('.video-author-info strong');
+      var meta = c.querySelector('.video-author-info span');
+      var citat = c.querySelector('.video-quote');
+      var video = c.querySelector('video');
+
+      var card = document.createElement('div');
+      card.className = 'testim-card';
+
+      if (video) {
+        var v = document.createElement('video');
+        v.controls = true; v.preload = 'none'; v.setAttribute('playsinline', '');
+        v.poster = cale(video.getAttribute('poster'));
+        v.style.cssText = 'width:100%;max-height:420px;border-radius:14px;margin-bottom:24px;background:#000;display:block;';
+        var s0 = video.querySelector('source');
+        if (s0) { var s = document.createElement('source'); s.src = cale(s0.getAttribute('src')); s.type = 'video/mp4'; v.appendChild(s); }
+        var t0 = video.querySelector('track');
+        if (t0) { var tr = document.createElement('track'); tr.kind = 'subtitles';
+                  tr.src = cale(t0.getAttribute('src')); tr.srclang = t0.getAttribute('srclang') || 'fr';
+                  tr.setAttribute('default', ''); v.appendChild(tr); }
+        card.appendChild(v);
+      }
+
+      if (citat && citat.textContent.trim()) {
+        var q = document.createElement('p');
+        q.className = 'testim-quote';
+        q.textContent = citat.textContent.trim();
+        card.appendChild(q);
+      }
+
+      var a = document.createElement('div');
+      a.className = 'testim-author';
+      var info = document.createElement('div');
+      info.className = 'testim-author-info';
+      var st = document.createElement('strong');
+      st.textContent = nume ? nume.textContent.trim() : '';
+      var sp = document.createElement('span');
+      sp.textContent = meta ? meta.textContent.trim() : '';
+      sp.style.display = 'block';
+      info.appendChild(st); info.appendChild(sp);
+      a.appendChild(info);
+      card.appendChild(a);
+
+      lista.appendChild(card);
+    });
+
+    sec.style.display = '';
+  }).catch(function(){ /* reste cachée */ });
+})();
+</script>
 
 <!-- 7. CTA PARTENARIAT -->
 <section class="cta-cert-section" style="margin-top: 60px;">
@@ -1093,6 +1237,6 @@
 
 <footer class="site-footer" data-include="footer"></footer>
 
-<script src="../../assets/js/site.js?v=56f8746e" defer></script>
+<script src="../../assets/js/site.js?v=160ec36c" defer></script>
 </body>
 </html>

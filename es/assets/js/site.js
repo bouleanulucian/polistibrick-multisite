@@ -40,25 +40,25 @@
           <div class="country-switcher-panel" role="menu" aria-hidden="true">
             <div class="country-switcher-header">🌍 Elige tu país</div>
             <a href="#" data-country="ro" data-domain="https://polistibrick.ro" data-folder="ro" class="country-switcher-item"><span class="flag">🇷🇴</span><span class="name">România</span><span class="domain">polistibrick.ro</span></a>
-            <a href="#" data-country="fr" data-domain="https://polistibrick.fr" data-folder="fr" class="country-switcher-item"><span class="flag">🇫🇷</span><span class="name">{{ui.country_fr}}</span><span class="domain">polistibrick.fr</span></a>
-            <a href="#" data-country="it" data-domain="https://polistibrick.it" data-folder="it" class="country-switcher-item"><span class="flag">🇮🇹</span><span class="name">{{ui.country_it}}</span><span class="domain">polistibrick.it</span></a>
-            <a href="#" data-country="es" data-domain="https://polistibrick.es" data-folder="es" class="country-switcher-item"><span class="flag">🇪🇸</span><span class="name">{{ui.country_es}}</span><span class="domain">polistibrick.es</span></a>
-            <a href="#" data-country="be" data-domain="https://polistibrick.be" data-folder="nl" class="country-switcher-item"><span class="flag">🇧🇪</span><span class="name">{{ui.country_be}}</span><span class="domain">polistibrick.be</span></a>
-            <a href="#" data-country="ie" data-domain="https://polistibrick.ie" data-folder="ie" class="country-switcher-item"><span class="flag">🇮🇪</span><span class="name">{{ui.country_ie}}</span><span class="domain">polistibrick.ie</span></a>
-            <a href="#" data-country="uk" data-domain="https://polistibrick.uk" data-folder="en" class="country-switcher-item"><span class="flag">🇬🇧</span><span class="name">{{ui.country_uk}}</span><span class="domain">polistibrick.uk</span></a>
-            <a href="#" data-country="ch" data-domain="https://polistibrick.com" data-folder="de" class="country-switcher-item"><span class="flag">🇨🇭</span><span class="name">{{ui.country_ch}}</span><span class="domain">polistibrick.com</span></a>
+            <a href="#" data-country="fr" data-domain="https://polistibrick.fr" data-folder="fr" class="country-switcher-item"><span class="flag">🇫🇷</span><span class="name">Francia</span><span class="domain">polistibrick.fr</span></a>
+            <a href="#" data-country="it" data-domain="https://polistibrick.it" data-folder="it" class="country-switcher-item"><span class="flag">🇮🇹</span><span class="name">Italia</span><span class="domain">polistibrick.it</span></a>
+            <a href="#" data-country="es" data-domain="https://polistibrick.es" data-folder="es" class="country-switcher-item"><span class="flag">🇪🇸</span><span class="name">España</span><span class="domain">polistibrick.es</span></a>
+            <a href="#" data-country="be" data-domain="https://polistibrick.be" data-folder="nl" class="country-switcher-item"><span class="flag">🇧🇪</span><span class="name">Bélgica</span><span class="domain">polistibrick.be</span></a>
+            <a href="#" data-country="ie" data-domain="https://polistibrick.ie" data-folder="ie" class="country-switcher-item"><span class="flag">🇮🇪</span><span class="name">Irlanda</span><span class="domain">polistibrick.ie</span></a>
+            <a href="#" data-country="uk" data-domain="https://polistibrick.uk" data-folder="en" class="country-switcher-item"><span class="flag">🇬🇧</span><span class="name">Reino Unido</span><span class="domain">polistibrick.uk</span></a>
+            <a href="#" data-country="ch" data-domain="https://polistibrick.com" data-folder="de" class="country-switcher-item"><span class="flag">🇨🇭</span><span class="name">Suiza</span><span class="domain">polistibrick.com</span></a>
             <a href="#" data-country="me" data-domain="https://polistibrick.me" data-folder="me" class="country-switcher-item"><span class="flag">🇲🇪</span><span class="name">Crna Gora</span><span class="domain">polistibrick.me</span></a>
           </div>
         </div>
         <a href="${BASE}presupuesto/" class="btn btn-primary nav-cta-devis">Presupuesto gratis</a>
-        <button class="nav-burger nav-toggle" type="button" aria-label="{{ui.nav_menu_aria}}" aria-expanded="false" aria-controls="navDrawerShared">
+        <button class="nav-burger nav-toggle" type="button" aria-label="Abrir el menú" aria-expanded="false" aria-controls="navDrawerShared">
           <span></span><span></span><span></span>
         </button>
       </div>
     </div>
 
     <div class="nav-drawer-overlay" data-nav-overlay aria-hidden="true"></div>
-    <aside class="nav-drawer" id="navDrawerShared" aria-label="{{ui.nav_drawer_aria}}" aria-hidden="true">
+    <aside class="nav-drawer" id="navDrawerShared" aria-label="Menú de navegación" aria-hidden="true">
       <div class="nav-drawer-group">
         <button class="nav-drawer-title" aria-expanded="false">Productos<span class="nd-caret">▾</span></button>
         <div class="nav-acc">
@@ -80,14 +80,13 @@
       <div class="nav-drawer-group">
         <button class="nav-drawer-title" aria-expanded="false">Proyectos<span class="nd-caret">▾</span></button>
         <div class="nav-acc">
-          <a href="${BASE}proyectos/">Casas construidas</a>
+          <a href="${BASE}proyectos/">Todos los proyectos</a>
           <a href="${BASE}testimonios/">Testimonios (vídeo)</a>
         </div>
       </div>
       <div class="nav-drawer-group">
         <button class="nav-drawer-title" aria-expanded="false">Calculadora<span class="nd-caret">▾</span></button>
         <div class="nav-acc">
-          <a href="${BASE}calculadora/">Calculadora de costes</a>
           <a href="${BASE}ahorros/">Calculadora de ahorros</a>
         </div>
       </div>
@@ -143,9 +142,9 @@
         <div class="footer-col">
           <h5>Recursos</h5>
           <ul>
-            <li><a href="${BASE}proyectos/">Proyectos realizados</a></li>
+            <li><a href="${BASE}proyectos/">Proyectos</a></li>
+            <li><a href="${BASE}ahorros/">Calculadora de ahorros</a></li>
             <li><a href="${BASE}recursos/faq/">Preguntas frecuentes</a></li>
-            <li><a href="${BASE}calculadora/">Calculadora de costes</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -184,14 +183,19 @@
       const bar = document.createElement('div');
       bar.className = 'mobile-contact-bar';
       bar.setAttribute('aria-label', 'Contacto rápido');
+      // Hide the Call button when the country has no usable phone number yet
+      // (unfilled config leaves "[to fill in]" or an unsubstituted placeholder).
+      const phoneRaw = '+34642777216';
+      const hasPhone = phoneRaw && phoneRaw.indexOf('[') === -1 && phoneRaw.indexOf('{') === -1;
       bar.innerHTML =
-        '<a href="tel:+34642777216" class="mcb-btn mcb-call" aria-label="Llamar a Polistibrick">' +
+        (hasPhone ?
+        '<a href="tel:' + phoneRaw + '" class="mcb-btn mcb-call" aria-label="Llamar a Polistibrick">' +
           '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>' +
           '<span>Llamar</span>' +
-        '</a>' +
+        '</a>' : '') +
         '<a href="#" data-m64="aW5mb0Bwb2xpc3RpYnJpY2suZXM=" class="mcb-btn mcb-email" aria-label="Enviar email">' +
           '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>' +
-          '<span>{{ui.mobile_email_label}}</span>' +
+          '<span>E-mail</span>' +
         '</a>';
       document.body.appendChild(bar);
     }

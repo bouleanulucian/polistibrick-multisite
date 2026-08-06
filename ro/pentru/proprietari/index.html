@@ -293,6 +293,7 @@
       .spec-table-quali .spec-table-cell { padding: 8px 6px; }
     }
     /* Pastile calitative — verde / galben / roșu */
+    .pill--none { background:#f1efe9; color:#9a958c; }
     .pill {
       display: inline-flex;
       align-items: center;
@@ -514,9 +515,9 @@
     .cta-escalated-section { background: var(--cream); padding: 80px 0; }
     .cta-esc-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 18px;
-      max-width: 1100px;
+      max-width: 740px;
       margin: 0 auto;
     }
     .cta-esc-card {
@@ -603,12 +604,10 @@
       <div class="wm-stage">
         <div class="wm-content">
           <div class="wm-text">
-            <span class="bubble-tag">Pentru cei care își comandă casa unei firme de construcții</span>
             <h1>Casa pe viață, <em>fără facturi mari.</em></h1>
             <p class="lead">Construirea unei case — mai ales a unei case premium — este cea mai importantă decizie din viața dumneavoastră. Polistibrick vă oferă liniștea unei case pasive certificate: silențioasă, rezistentă la foc, antiseismică și care durează generații, fără întreținere specială.</p>
             <div style="display:flex;gap:12px;flex-wrap:wrap;">
-              <a href="#calculator" class="btn btn-primary btn-arrow">Calculează economiile mele</a>
-              <a href="../../oferta/" class="btn btn-ghost">Cere o ofertă</a>
+              <a href="../../oferta/" class="btn btn-primary btn-arrow">Cere o ofertă</a>
             </div>
           </div>
           <div class="wm-visual">
@@ -630,7 +629,6 @@
 <section class="fears-section">
   <div class="container">
     <div class="fears-intro reveal">
-      <span class="eyebrow">Adevăratele dumneavoastră îngrijorări</span>
       <h2 style="font-family:var(--serif);font-size:clamp(28px,3.2vw,42px);font-weight:500;color:var(--ink);letter-spacing:-0.02em;margin-bottom:14px;">Știm ce vă <em style="font-style:italic;color:var(--red);font-weight:400;">preocupă cu adevărat.</em></h2>
       <p class="lead" style="font-size:15.5px;color:var(--gray);line-height:1.65;">Construirea unei case premium este un angajament pe viață. Iată cele 4 întrebări reale pe care și le pun cumpărătorii ca dumneavoastră — și răspunsurile noastre oneste.</p>
     </div>
@@ -663,17 +661,16 @@
 <section class="section" id="beneficii">
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 60px;">
-      <span class="eyebrow">Ce schimbă pentru dumneavoastră</span>
       <h2>Concret, <em>zi de zi.</em></h2>
     </div>
     <div class="grid grid-3 reveal" style="gap:32px;">
       <div class="feature">
         <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
-        <div class="feature-body"><h4>Factură la energie &lt; 50 €/lună</h4><p>Polistibrick consumă 15 kWh/m²/an pentru încălzire, față de aproximativ 100 la o casă existentă medie. Economisiți în jur de 85% din facturi, pe viață.</p></div>
+        <div class="feature-body"><h4>Factură la energie &lt; 50 €/lună</h4><p>Polistibrick consumă 15 kWh/m²/an, față de 104 la o casă existentă care are și aer condiționat. Economisiți în jur de 86% din facturi, pe viață.</p></div>
       </div>
       <div class="feature">
         <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-        <div class="feature-body"><h4>Construită în 4–6 săptămâni</h4><p>Structura se montează de 3 ori mai repede decât zidăria clasică. Vă mutați în câteva luni, nu în câțiva ani. Mai puțin stres, mai puține întârzieri.</p></div>
+        <div class="feature-body"><h4>Casa la 80% în 4–6 săptămâni</h4><p>Structura se montează de 3 ori mai repede decât zidăria clasică. Vă mutați în câteva luni, nu în câțiva ani. Mai puțin stres, mai puține întârzieri.</p></div>
       </div>
       <div class="feature">
         <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg></div>
@@ -701,7 +698,6 @@
 <section class="calc-section" id="calculator">
   <div class="container">
     <div class="calc-intro reveal">
-      <span class="eyebrow">Calculator economii</span>
       <h2 style="font-family:var(--serif);font-size:clamp(28px,3.2vw,42px);font-weight:500;color:var(--ink);letter-spacing:-0.02em;margin-bottom:14px;">Cât vă va face casa să <em style="font-style:italic;color:var(--red);font-weight:400;">economisiți?</em></h2>
       <p class="lead" style="font-size:15.5px;color:var(--gray);line-height:1.65;">Indicați suprafața viitoarei case. Calculăm factura anuală de încălzire cu Polistibrick MBK 300 față de o casă existentă medie.</p>
     </div>
@@ -719,15 +715,15 @@
           <div class="calc-card-label">Cu Polistibrick MBK 300</div>
           <div class="calc-card-system">Casă pasivă certificată</div>
           <div class="calc-card-value" id="polistibrick-yearly">630 €</div>
-          <div class="calc-card-unit">încălzire pe an</div>
-          <div class="calc-card-sub">15 kWh/m²/an · U = 0,10 W/m²K · Passivhaus</div>
+          <div class="calc-card-unit">încălzire și răcire pe an</div>
+          <div class="calc-card-sub">15 kWh/m²/an încălzire · fără răcire · U = 0,10 W/m²K</div>
         </div>
         <div class="calc-card calc-card--bad">
           <div class="calc-card-label">Cu o casă existentă</div>
           <div class="calc-card-system">Construcție standard</div>
           <div class="calc-card-value" id="classique-yearly">4.200 €</div>
-          <div class="calc-card-unit">încălzire pe an</div>
-          <div class="calc-card-sub">100 kWh/m²/an încălzire · casă existentă medie</div>
+          <div class="calc-card-unit">încălzire și răcire pe an</div>
+          <div class="calc-card-sub">100 kWh/m²/an încălzire + 4 răcire · casă existentă</div>
         </div>
       </div>
 
@@ -737,7 +733,7 @@
       </div>
     </div>
 
-    <p class="calc-note">Comparație la sursă de încălzire identică (electrică): se compară izolarea, nu sistemul de încălzire. Casă existentă medie: 100 kWh/m²/an încălzire (ODYSSEE-MURE, media UE-27 pentru fondul construit existent). Casă pasivă certificată: 15 kWh/m²/an (limita Passive House Institute). Răcirea nu e luată în calcul: puține locuințe din România au aer condiționat fix, iar avantajul de vară al casei pasive e că rămâne sub 25 °C fără climatizare. Electricitate 0,28 €/kWh cu toate taxele incluse (Eurostat, România, semestrul II 2025). Calcul pentru suprafața pe care o indicați, preț constant pe 25 de ani. Cu pompă de căldură la ambele case, kWh economisiți rămân aceiași, iar economia în euro se împarte la aproximativ 3.</p>
+    <p class="calc-note">Încălzire și răcire, ambele pe electricitate la 0,29 €/kWh (Eurostat, România, semestrul II 2025).</p>
   </div>
 </section>
 
@@ -747,148 +743,104 @@
 <section class="section section--cream">
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:780px;margin:0 auto 40px;">
-      <span class="eyebrow">Polistibrick vs altele</span>
-      <h2>Când este Polistibrick <em>alegerea potrivită pentru dumneavoastră?</em></h2>
-      <p class="lead" style="margin-top:14px;">Față de cărămida clasică, pasivul clasic și structura din lemn — iată cele 3 criterii unde Polistibrick face diferența.</p>
+      <h2>Ce vine gata făcut <em>din fabrică</em></h2>
+      <p class="lead" style="margin-top:14px;">Cinci lucruri pe care pe șantier le faci pe rând, cu oameni diferiți. În panou vin deja făcute. Iar peretele nu arde.</p>
     </div>
 
-    <div class="reveal" style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:1000px;margin:0 auto 32px;">
-      <div style="background:white;border:1px solid var(--border);border-radius:16px;padding:28px 24px;text-align:center;">
-        <div style="font-size:32px;margin-bottom:14px;">🔥</div>
-        <h4 style="font-family:var(--serif);font-size:18px;font-weight:500;color:var(--ink);margin-bottom:8px;">Siguranță totală</h4>
-        <p style="font-size:13.5px;color:var(--gray);line-height:1.55;">Foc A1 + antiseismic Excelent. Structura din lemn nu rezistă nici la foc, nici în zone seismice.</p>
+    <div class="reveal" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;max-width:1000px;margin:0 auto 32px;">
+      <div style="background:white;border:1px solid var(--border);border-radius:16px;padding:26px 22px;text-align:center;">
+        <h4 style="font-family:var(--serif);font-size:18px;font-weight:500;color:var(--ink);margin-bottom:8px;">Izolație de casă pasivă, integrată</h4>
+        <p style="font-size:13.5px;color:var(--gray);line-height:1.55;">Turnată în panou, nu adăugată după. Continuă pe tot conturul casei, fără punți termice.</p>
       </div>
-      <div style="background:white;border:1px solid var(--border);border-radius:16px;padding:28px 24px;text-align:center;">
-        <div style="font-size:32px;margin-bottom:14px;">💰</div>
-        <h4 style="font-family:var(--serif);font-size:18px;font-weight:500;color:var(--ink);margin-bottom:8px;">Cost total optim</h4>
-        <p style="font-size:13.5px;color:var(--gray);line-height:1.55;">Puțin mai scump decât cărămida la construcție, mult mai ieftin de locuit. Pe 25 de ani: cel mai avantajos.</p>
+      <div style="background:white;border:1px solid var(--border);border-radius:16px;padding:26px 22px;text-align:center;">
+        <h4 style="font-family:var(--serif);font-size:18px;font-weight:500;color:var(--ink);margin-bottom:8px;">Rapiditate</h4>
+        <p style="font-size:13.5px;color:var(--gray);line-height:1.55;">Construcția casei la 80% în 4–6 săptămâni. Panourile vin gata din fabrică, se ridică și se toarnă.</p>
       </div>
-      <div style="background:white;border:1px solid var(--border);border-radius:16px;padding:28px 24px;text-align:center;">
-        <div style="font-size:32px;margin-bottom:14px;">⚡</div>
-        <h4 style="font-family:var(--serif);font-size:18px;font-weight:500;color:var(--ink);margin-bottom:8px;">Construcție rapidă</h4>
-        <p style="font-size:13.5px;color:var(--gray);line-height:1.55;">Structură în 4–6 săptămâni vs 4–5 luni cu cărămida. Vă mutați de 3× mai repede.</p>
+      <div style="background:white;border:1px solid var(--border);border-radius:16px;padding:26px 22px;text-align:center;">
+        <h4 style="font-family:var(--serif);font-size:18px;font-weight:500;color:var(--ink);margin-bottom:8px;">O singură echipă</h4>
+        <p style="font-size:13.5px;color:var(--gray);line-height:1.55;">Aceiași oameni, de la ridicare la finisaj. Șantierul nu se predă de la o meserie la alta.</p>
+      </div>
+      <div style="background:white;border:1px solid var(--border);border-radius:16px;padding:26px 22px;text-align:center;">
+        <h4 style="font-family:var(--serif);font-size:18px;font-weight:500;color:var(--ink);margin-bottom:8px;">Finisaje incluse din fabrică</h4>
+        <p style="font-size:13.5px;color:var(--gray);line-height:1.55;">Peretele iese finisat. Nu mai urmează tencuiala, gletul și zugrăvitul.</p>
+      </div>
+      <div style="background:white;border:1px solid var(--border);border-radius:16px;padding:26px 22px;text-align:center;">
+        <h4 style="font-family:var(--serif);font-size:18px;font-weight:500;color:var(--ink);margin-bottom:8px;">Instalații prevăzute</h4>
+        <p style="font-size:13.5px;color:var(--gray);line-height:1.55;">Traseele vin deja în panou. Nu spargi peretele ca să tragi o țeavă sau un cablu.</p>
+      </div>
+      <div style="background:white;border:1px solid var(--border);border-radius:16px;padding:26px 22px;text-align:center;">
+        <h4 style="font-family:var(--serif);font-size:18px;font-weight:500;color:var(--ink);margin-bottom:8px;">Fără erori de execuție</h4>
+        <p style="font-size:13.5px;color:var(--gray);line-height:1.55;">Panoul are o singură poziție corectă. Nu depinde de mâna care îl montează.</p>
       </div>
     </div>
 
     <div style="text-align:center;" class="reveal">
       <button type="button" id="toggleComparison" class="btn btn-primary btn-arrow" aria-expanded="false" aria-controls="comparisonExpanded">
-        <span class="toggle-text-show">Vezi comparația completă pe 12 criterii</span>
+        <span class="toggle-text-show">Vezi cele trei sisteme, criteriu cu criteriu</span>
         <span class="toggle-text-hide" style="display:none;">Ascunde comparația</span>
       </button>
     </div>
 
-    <!-- TABELUL COMPLET 12 CRITERII × 4 SISTEME — ascuns by default, expandă on click -->
+    <!-- 5 CRITERII × 3 SISTEME POLISTIBRICK + CLASIC -->
     <div id="comparisonExpanded" class="comparison-expanded" aria-hidden="true">
       <div class="comparison-expanded-inner">
         <div class="reveal spec-table" style="margin:0 auto;max-width:1200px;">
           <div class="spec-table-row spec-12-row is-header">
             <div class="spec-table-cell">Criteriu</div>
             <div class="spec-table-cell">Polistibrick</div>
+            <div class="spec-table-cell">Polistiwall</div>
+            <div class="spec-table-cell">Polistisip</div>
             <div class="spec-table-cell">Clasic</div>
-            <div class="spec-table-cell">Clasic pasiv</div>
-            <div class="spec-table-cell">Structură lemn</div>
           </div>
 
           <div class="spec-table-row spec-12-row">
-            <div class="spec-table-cell spec-table-cell--label">5 materiale integrate în 1</div>
+            <div class="spec-table-cell spec-table-cell--label">Izolație de casă pasivă, integrată</div>
             <div class="spec-table-cell"><span class="pill pill--good">Da</span></div>
-            <div class="spec-table-cell"><span class="pill pill--bad">Nu</span></div>
-            <div class="spec-table-cell"><span class="pill pill--bad">Nu</span></div>
-            <div class="spec-table-cell"><span class="pill pill--bad">Nu</span></div>
+            <div class="spec-table-cell"><span class="pill pill--good">Da</span></div>
+            <div class="spec-table-cell"><span class="pill pill--good">Da</span></div>
+            <div class="spec-table-cell"><span class="pill pill--none">—</span></div>
           </div>
 
           <div class="spec-table-row spec-12-row">
-            <div class="spec-table-cell spec-table-cell--label">Plan armătură antiseismic integrat</div>
-            <div class="spec-table-cell"><span class="pill pill--good">Integrat</span></div>
-            <div class="spec-table-cell"><span class="pill pill--bad">Niciunul</span></div>
-            <div class="spec-table-cell"><span class="pill pill--medium">De adăugat</span></div>
-            <div class="spec-table-cell"><span class="pill pill--medium">De adăugat</span></div>
+            <div class="spec-table-cell spec-table-cell--label">Rapiditate: construcția la 80% în 4–6 săptămâni</div>
+            <div class="spec-table-cell"><span class="pill pill--good">Da</span></div>
+            <div class="spec-table-cell"><span class="pill pill--good">Da</span></div>
+            <div class="spec-table-cell"><span class="pill pill--good">Da</span></div>
+            <div class="spec-table-cell"><span class="pill pill--none">—</span></div>
           </div>
 
           <div class="spec-table-row spec-12-row">
-            <div class="spec-table-cell spec-table-cell--label">Rezistență la cutremure</div>
-            <div class="spec-table-cell"><span class="pill pill--good">Excelent</span></div>
-            <div class="spec-table-cell"><span class="pill pill--bad">Scăzut</span></div>
-            <div class="spec-table-cell"><span class="pill pill--medium">Mediu</span></div>
-            <div class="spec-table-cell"><span class="pill pill--good">Bun</span></div>
-          </div>
-
-          <div class="spec-table-row spec-12-row">
-            <div class="spec-table-cell spec-table-cell--label">Echipe necesare</div>
+            <div class="spec-table-cell spec-table-cell--label">Echipe necesare pe șantier</div>
             <div class="spec-table-cell"><span class="pill pill--good">1 echipă</span></div>
-            <div class="spec-table-cell"><span class="pill pill--bad">5–6 meserii</span></div>
-            <div class="spec-table-cell"><span class="pill pill--bad">5–6 meserii</span></div>
-            <div class="spec-table-cell"><span class="pill pill--medium">3–4 meserii</span></div>
+            <div class="spec-table-cell"><span class="pill pill--good">1 echipă</span></div>
+            <div class="spec-table-cell"><span class="pill pill--good">1 echipă</span></div>
+            <div class="spec-table-cell"><span class="pill pill--none">5 echipe</span></div>
           </div>
 
           <div class="spec-table-row spec-12-row">
-            <div class="spec-table-cell spec-table-cell--label">Timp construcție (structură)</div>
-            <div class="spec-table-cell"><span class="pill pill--good">4–6 săptămâni</span></div>
-            <div class="spec-table-cell"><span class="pill pill--bad">4–5 luni</span></div>
-            <div class="spec-table-cell"><span class="pill pill--bad">5–6 luni</span></div>
-            <div class="spec-table-cell"><span class="pill pill--medium">6–8 săptămâni</span></div>
+            <div class="spec-table-cell spec-table-cell--label">Finisaje incluse din fabrică</div>
+            <div class="spec-table-cell"><span class="pill pill--good">Da</span></div>
+            <div class="spec-table-cell"><span class="pill pill--none">—</span></div>
+            <div class="spec-table-cell"><span class="pill pill--none">—</span></div>
+            <div class="spec-table-cell"><span class="pill pill--none">—</span></div>
           </div>
 
           <div class="spec-table-row spec-12-row">
-            <div class="spec-table-cell spec-table-cell--label">Izolație continuă (fără punți termice)</div>
-            <div class="spec-table-cell"><span class="pill pill--good">Turnată în panou</span></div>
-            <div class="spec-table-cell"><span class="pill pill--medium">Adăugată separat</span></div>
-            <div class="spec-table-cell"><span class="pill pill--medium">Adăugată separat</span></div>
-            <div class="spec-table-cell"><span class="pill pill--medium">Adăugată separat</span></div>
+            <div class="spec-table-cell spec-table-cell--label">Instalații prevăzute în panou</div>
+            <div class="spec-table-cell"><span class="pill pill--good">Da</span></div>
+            <div class="spec-table-cell"><span class="pill pill--good">Da</span></div>
+            <div class="spec-table-cell"><span class="pill pill--good">Da</span></div>
+            <div class="spec-table-cell"><span class="pill pill--none">—</span></div>
           </div>
 
           <div class="spec-table-row spec-12-row">
-            <div class="spec-table-cell spec-table-cell--label">Siguranță la foc</div>
-            <div class="spec-table-cell"><span class="pill pill--good">A1 (necombustibil)</span></div>
-            <div class="spec-table-cell"><span class="pill pill--good">A1</span></div>
-            <div class="spec-table-cell"><span class="pill pill--good">A1</span></div>
-            <div class="spec-table-cell"><span class="pill pill--bad">B-s2 (combustibil)</span></div>
-          </div>
-
-          <div class="spec-table-row spec-12-row">
-            <div class="spec-table-cell spec-table-cell--label">Hidrofug / fără mucegai</div>
-            <div class="spec-table-cell"><span class="pill pill--good">Zero absorbție</span></div>
-            <div class="spec-table-cell"><span class="pill pill--medium">Umiditate posibilă</span></div>
-            <div class="spec-table-cell"><span class="pill pill--medium">Umiditate posibilă</span></div>
-            <div class="spec-table-cell"><span class="pill pill--bad">Risc de putrezire</span></div>
-          </div>
-
-          <div class="spec-table-row spec-12-row">
-            <div class="spec-table-cell spec-table-cell--label">Izolație acustică</div>
-            <div class="spec-table-cell"><span class="pill pill--good">52 dB</span></div>
-            <div class="spec-table-cell"><span class="pill pill--medium">42 dB</span></div>
-            <div class="spec-table-cell"><span class="pill pill--medium">42 dB</span></div>
-            <div class="spec-table-cell"><span class="pill pill--bad">32 dB</span></div>
-          </div>
-
-          <div class="spec-table-row spec-12-row">
-            <div class="spec-table-cell spec-table-cell--label">Clasă energetică casă</div>
-            <div class="spec-table-cell"><span class="pill pill--good">A+++</span></div>
-            <div class="spec-table-cell"><span class="pill pill--bad">B–C</span></div>
-            <div class="spec-table-cell"><span class="pill pill--good">A+</span></div>
-            <div class="spec-table-cell"><span class="pill pill--good">A+</span></div>
-          </div>
-
-          <div class="spec-table-row spec-12-row">
-            <div class="spec-table-cell spec-table-cell--label">Cost construcție inițial</div>
-            <div class="spec-table-cell"><span class="pill pill--medium">Standard</span></div>
-            <div class="spec-table-cell"><span class="pill pill--good">Scăzut</span></div>
-            <div class="spec-table-cell"><span class="pill pill--bad">Foarte ridicat</span></div>
-            <div class="spec-table-cell"><span class="pill pill--medium">Standard</span></div>
-          </div>
-
-          <div class="spec-table-row spec-12-row" style="background:rgba(15,15,15,0.03);">
-            <div class="spec-table-cell spec-table-cell--label" style="font-weight:700;">Economii pe 25 de ani</div>
-            <div class="spec-table-cell"><span class="pill pill--star">Maxim</span></div>
-            <div class="spec-table-cell"><span class="pill pill--bad">Minim</span></div>
-            <div class="spec-table-cell"><span class="pill pill--good">Bun</span></div>
-            <div class="spec-table-cell"><span class="pill pill--good">Bun</span></div>
+            <div class="spec-table-cell spec-table-cell--label">Fără erori de execuție</div>
+            <div class="spec-table-cell"><span class="pill pill--good">Da</span></div>
+            <div class="spec-table-cell"><span class="pill pill--good">Da</span></div>
+            <div class="spec-table-cell"><span class="pill pill--good">Da</span></div>
+            <div class="spec-table-cell"><span class="pill pill--none">—</span></div>
           </div>
         </div>
-
-        <p style="max-width:780px;margin:24px auto 0;text-align:center;font-size:13px;color:var(--gray);line-height:1.6;">
-          Pentru <strong>detaliul complet</strong> al fiecărui criteriu (explicații tehnice, norme, exemple) → <a href="../../produse/pereti-mbk/" style="color:var(--red);font-weight:600;">vezi specificațiile tehnice</a>
-        </p>
       </div>
     </div>
   </div>
@@ -1032,29 +984,28 @@
 <section class="cases-section">
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:760px;margin:0 auto 50px;">
-      <span class="eyebrow">Case Polistibrick</span>
-      <h2>Familii au făcut deja această alegere. <em>Iată cele mai recente.</em></h2>
+      <h2>O casă din catalog. <em>Sunt și altele.</em></h2>
     </div>
 
     <div class="case-carousel reveal" id="caseCarousel">
       <div class="case-track">
         <div class="case-slides" id="caseSlides">
 
-          <!-- SLIDE 1 (REAL) — Île-de-France -->
+          <!-- SLIDE 1 — model din catalog -->
           <article class="case-slide">
             <div class="case-slide-img">
-              <img src="../../images/maison-ile-de-france-thumb.jpg" alt="Vilă Polistibrick — București, livrare 2025" loading="lazy">
+              <img src="../../images/case/terra-fatada-terasa.jpg" alt="Terra — model Polistibrick de 144 m², parter plus etaj" loading="lazy">
             </div>
             <div class="case-slide-content">
-              <div class="case-slide-meta">București · livrare 2025</div>
-              <h3 class="case-slide-title">Vilă contemporană · 220 m²</h3>
-              <p class="case-slide-desc">Arhitectură modernă P+1, zonă rezidențială premium. Pereți Polistibrick MBK 300, performanță Passivhaus certificată, livrare vara 2025.</p>
+              <div class="case-slide-meta">Model din catalog · parter + etaj</div>
+              <h3 class="case-slide-title">Terra · 144 m²</h3>
+              <p class="case-slide-desc">Patru dormitoare, trei băi, zona de zi deschisă la parter. Se construiește în oricare dintre cele trei sisteme, iar prețul se schimbă odată cu sistemul, nu cu planul.</p>
               <div class="case-slide-stats">
-                <div class="case-slide-stat"><strong>220 m²</strong>utili</div>
-                <div class="case-slide-stat"><strong>MBK 300</strong>U = 0,10</div>
-                <div class="case-slide-stat"><strong>P+1</strong>2 niveluri</div>
+                <div class="case-slide-stat"><strong>144 m²</strong>utili</div>
+                <div class="case-slide-stat"><strong>4</strong>dormitoare</div>
+                <div class="case-slide-stat"><strong>P+E</strong>2 niveluri</div>
               </div>
-              <a href="../../proiecte/" class="btn btn-ghost btn-arrow">Vezi proiectele</a>
+              <a href="../../proiecte/" class="btn btn-primary btn-arrow">Vezi proiectele</a>
             </div>
           </article>
 
@@ -1074,7 +1025,7 @@
                 <div class="case-slide-stat"><strong>VALEUR</strong>label</div>
                 <div class="case-slide-stat"><strong>VALEUR</strong>label</div>
               </div>
-              <a href="../../proiecte/" class="btn btn-ghost btn-arrow">Vezi proiectele</a>
+              <a href="../../proiecte/" class="btn btn-primary btn-arrow">Vezi proiectele</a>
             </div>
           </article>
           ========================================================== -->
@@ -1088,9 +1039,7 @@
       <div class="case-dots" id="caseDots"></div>
     </div>
 
-    <div style="text-align:center;margin-top:36px;" class="reveal">
-      <a href="../../proiecte/" class="btn btn-primary btn-arrow">Vezi toate proiectele</a>
-    </div>
+
   </div>
 </section>
 
@@ -1184,7 +1133,6 @@
 <section class="archi-section">
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:780px;margin:0 auto 50px;">
-      <span class="eyebrow">Colaborare cu arhitectul dumneavoastră</span>
       <h2>Lucrăm cu arhitectul dumneavoastră — <em>în interesul dumneavoastră.</em></h2>
       <p class="lead" style="margin-top:14px;">Nu trebuie să schimbați arhitectul. Oferim toată documentația tehnică și sprijinul necesar echipei — pentru ca ei să realizeze casa visurilor dumneavoastră în deplină liniște.</p>
     </div>
@@ -1235,7 +1183,6 @@
 <section class="faq-section">
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:760px;margin:0 auto 50px;">
-      <span class="eyebrow">Întrebări frecvente</span>
       <h2>Întrebările reale <em>pe care vi le puneți.</em></h2>
     </div>
 
@@ -1250,7 +1197,7 @@
       </div>
       <div class="faq-item">
         <button class="faq-q">Cât durează construcția casei mele?<span class="faq-icon">+</span></button>
-        <div class="faq-a"><p>Structura durează <strong>4–6 săptămâni</strong> pentru o casă de 150–200 m² (față de 4–5 luni cu cărămida clasică). În total, vă mutați în <strong>5–7 luni</strong> (în funcție de finisaje și autorizație). De 2–3 ori mai rapid decât o construcție clasică.</p></div>
+        <div class="faq-a"><p>Casa ajunge la 80% în <strong>4–6 săptămâni</strong> pentru o casă de 150–200 m². În total, vă mutați în <strong>5–7 luni</strong> (în funcție de finisaje și autorizație). De 2–3 ori mai rapid decât o construcție clasică.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q">Ce se întâmplă dacă vreau să modific casa peste 10 ani?<span class="faq-icon">+</span></button>
@@ -1282,18 +1229,10 @@
 <section class="cta-escalated-section">
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 50px;">
-      <span class="eyebrow">Pasul următor</span>
       <h2>Alegeți următorul pas <em>către casa pe viață.</em></h2>
     </div>
 
     <div class="cta-esc-grid reveal">
-      <a href="../../resurse/" class="cta-esc-card">
-        <div class="cta-esc-stage">Descoperiți</div>
-        <div class="cta-esc-icon">📥</div>
-        <div class="cta-esc-title">Descărcați ghidul</div>
-        <div class="cta-esc-desc">PDF de 24 de pagini: ce este o casă pasivă, cum funcționează Polistibrick, sfaturi pentru autorizația de construire.</div>
-        <span class="cta-esc-btn">Descarcă ghidul</span>
-      </a>
 
       <a href="../../oferta/" class="cta-esc-card">
         <div class="cta-esc-stage">Comparați</div>
@@ -1316,7 +1255,7 @@
 
 <footer class="site-footer" data-include="footer"></footer>
 
-<script src="../../assets/js/site.js?v=56f8746e" defer></script>
+<script src="../../assets/js/site.js?v=160ec36c" defer></script>
 
 <!-- ====================================================
      CALCULATOR JS + FAQ ACCORDION
@@ -1331,9 +1270,10 @@
   var yearlyEl = document.getElementById('yearly-savings');
   var totalEl = document.getElementById('total-savings');
 
-  var ENERGY_PRICE = 0.28;             // €/kWh RO, Eurostat/régulateur, toutes taxes comprises
-  var POLISTIBRICK_CONS = 15;          // kWh/m²/an MBK 300 : 15 chauffage + 0 clim.
-  var CLASSIQUE_CONS = 100;            // kWh/m²/an maison existante : 100 chauffage + 0 clim.
+  var ENERGY_PRICE = 0.29;             // €/kWh RO, Eurostat nrg_pc_204, banda DC, S2 2025, toate taxele
+  var POLISTIBRICK_CONS = 15;          // kWh/m²/an MBK 300: 15 încălzire + 0 răcire (sub 25 °C fără climă)
+  var CLASSIQUE_CONS = 104;            // kWh/m²/an casă existentă: 100 încălzire + 4 răcire
+                                     // răcirea: Eurostat nrg_d_hhq 2024, 315,9 GWh pe locuinţele cu A/C (16,41%, RPL 2021)
 
   function formatEuro(amount) {
     return Math.round(amount).toLocaleString('ro-RO') + ' €';

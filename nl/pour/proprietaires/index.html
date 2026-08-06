@@ -293,6 +293,7 @@
       .spec-table-quali .spec-table-cell { padding: 8px 6px; }
     }
     /* Pastile calitative — verde / galben / roșu */
+    .pill--none { background:#f1efe9; color:#9a958c; }
     .pill {
       display: inline-flex;
       align-items: center;
@@ -514,9 +515,9 @@
     .cta-escalated-section { background: var(--cream); padding: 80px 0; }
     .cta-esc-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 18px;
-      max-width: 1100px;
+      max-width: 740px;
       margin: 0 auto;
     }
     .cta-esc-card {
@@ -603,12 +604,10 @@
       <div class="wm-stage">
         <div class="wm-content">
           <div class="wm-text">
-            <span class="bubble-tag">Pour ceux qui font construire</span>
             <h1>La maison à vie, <em>sans factures élevées.</em></h1>
             <p class="lead">Construire une maison — et en particulier une maison premium — est la décision la plus importante de votre vie. Polistibrick vous donne la sérénité d'une maison passive certifiée : silencieuse, résistante au feu, antisismique, et qui dure des générations sans entretien.</p>
             <div style="display:flex;gap:12px;flex-wrap:wrap;">
-              <a href="#calculator" class="btn btn-primary btn-arrow">Calculer mes économies</a>
-              <a href="../../devis/" class="btn btn-ghost">Demander un devis</a>
+              <a href="../../devis/" class="btn btn-primary btn-arrow">Demander un devis</a>
             </div>
           </div>
           <div class="wm-visual">
@@ -630,7 +629,6 @@
 <section class="fears-section">
   <div class="container">
     <div class="fears-intro reveal">
-      <span class="eyebrow">Vos vraies inquiétudes</span>
       <h2 style="font-family:var(--serif);font-size:clamp(28px,3.2vw,42px);font-weight:500;color:var(--ink);letter-spacing:-0.02em;margin-bottom:14px;">Nous savons ce qui <em style="font-style:italic;color:var(--red);font-weight:400;">vous inquiète vraiment.</em></h2>
       <p class="lead" style="font-size:15.5px;color:var(--gray);line-height:1.65;">Construire une maison premium est un engagement de toute une vie. Voici les 4 vraies questions que se posent les acheteurs comme vous — et nos réponses honnêtes.</p>
     </div>
@@ -663,17 +661,16 @@
 <section class="section" id="beneficii">
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 60px;">
-      <span class="eyebrow">Ce que ça change pour vous</span>
       <h2>Concrètement, <em>au quotidien.</em></h2>
     </div>
     <div class="grid grid-3 reveal" style="gap:32px;">
       <div class="feature">
         <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
-        <div class="feature-body"><h4>Facture d'énergie < 50 €/mois</h4><p>Polistibrick consomme 15 kWh/m²/an pour le chauffage, contre environ 100 pour une maison existante moyenne. Vous économisez environ 85 % sur vos factures, pour la vie.</p></div>
+        <div class="feature-body"><h4>Facture d'énergie < 50 €/mois</h4><p>Polistibrick consomme 15 kWh/m²/an, contre 104 pour une maison existante qui a aussi la climatisation. Vous économisez environ 86 % sur vos factures, pour la vie.</p></div>
       </div>
       <div class="feature">
         <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-        <div class="feature-body"><h4>Construite en 4 à 6 semaines</h4><p>Le gros œuvre se monte 3 fois plus vite qu'avec de la brique. Vous emménagez en quelques mois, pas en quelques années. Moins de stress, moins de retards.</p></div>
+        <div class="feature-body"><h4>La maison à 80 % en 4–6 semaines</h4><p>La structure se monte 3 fois plus vite que la maçonnerie classique. Vous emménagez en quelques mois, pas en quelques années. Moins de stress, moins de retards.</p></div>
       </div>
       <div class="feature">
         <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg></div>
@@ -701,7 +698,6 @@
 <section class="calc-section" id="calculator">
   <div class="container">
     <div class="calc-intro reveal">
-      <span class="eyebrow">Calculateur d'économies</span>
       <h2 style="font-family:var(--serif);font-size:clamp(28px,3.2vw,42px);font-weight:500;color:var(--ink);letter-spacing:-0.02em;margin-bottom:14px;">Combien votre maison <em style="font-style:italic;color:var(--red);font-weight:400;">vous fera économiser ?</em></h2>
       <p class="lead" style="font-size:15.5px;color:var(--gray);line-height:1.65;">Indiquez la surface de votre future maison. Nous calculons votre facture de chauffage annuelle avec Polistibrick MBK 300 face à une maison existante moyenne.</p>
     </div>
@@ -719,25 +715,25 @@
           <div class="calc-card-label">Avec Polistibrick MBK 300</div>
           <div class="calc-card-system">Maison passive certifiée</div>
           <div class="calc-card-value" id="polistibrick-yearly">765 €</div>
-          <div class="calc-card-unit">de chauffage par an</div>
-          <div class="calc-card-sub">15 kWh/m²/an · U = 0,10 W/m²K · Passivhaus</div>
+          <div class="calc-card-unit">de chauffage et de climatisation par an</div>
+          <div class="calc-card-sub">15 kWh/m²/an de chauffage · pas de climatisation · U = 0,10 W/m²K</div>
         </div>
         <div class="calc-card calc-card--bad">
           <div class="calc-card-label">Avec une maison existante</div>
           <div class="calc-card-system">Construction standard</div>
-          <div class="calc-card-value" id="classique-yearly">5 100 €</div>
-          <div class="calc-card-unit">de chauffage par an</div>
-          <div class="calc-card-sub">100 kWh/m²/an de chauffage · maison existante moyenne (Belgique)</div>
+          <div class="calc-card-value" id="classique-yearly">5 304 €</div>
+          <div class="calc-card-unit">de chauffage et de climatisation par an</div>
+          <div class="calc-card-sub">100 kWh/m²/an de chauffage + 4 de climatisation · maison existante</div>
         </div>
       </div>
 
       <div class="calc-savings">
-        <div class="savings-yearly">Vous économisez <strong id="yearly-savings">4 335 €</strong> chaque année</div>
-        <div class="savings-total">Sur 25 ans : <strong id="total-savings">108 375 €</strong> d'économies</div>
+        <div class="savings-yearly">Vous économisez <strong id="yearly-savings">4 539 €</strong> chaque année</div>
+        <div class="savings-total">Sur 25 ans : <strong id="total-savings">113 475 €</strong> d'économies</div>
       </div>
     </div>
 
-    <p class="calc-note">Comparaison à source de chauffage identique (électrique)&nbsp;: on compare l'isolation, pas le système de chauffage. Maison existante moyenne en Belgique&nbsp;: 100 kWh/m²/an de chauffage (Eurostat, 2024). Maison passive certifiée&nbsp;: 15 kWh/m²/an (limite Passive House Institute). La climatisation n'est pas comptée&nbsp;: elle représente 0,13&nbsp;% de l'énergie des ménages belges et un ménage sur dix seulement en est équipé. Électricité 0,34 €/kWh toutes taxes comprises (Eurostat, Belgique, 2ᵉ semestre 2025). Calcul à la surface que vous indiquez, prix constant sur 25 ans. Avec une pompe à chaleur dans les deux maisons, les euros se divisent par environ 3.</p>
+    <p class="calc-note">Chauffage et climatisation, tous deux à l'électricité à 0,34 €/kWh (Eurostat, Belgique, 2ᵉ semestre 2025).</p>
   </div>
 </section>
 
@@ -747,148 +743,104 @@
 <section class="section section--cream">
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:780px;margin:0 auto 40px;">
-      <span class="eyebrow">Polistibrick vs les autres</span>
-      <h2>Quand Polistibrick est-il <em>le bon choix pour vous ?</em></h2>
-      <p class="lead" style="margin-top:14px;">Comparé à la brique classique, au passif classique et à l'ossature bois — voici les 3 critères où Polistibrick fait toute la différence.</p>
+      <h2>Ce qui arrive déjà fait <em>de l'usine</em></h2>
+      <p class="lead" style="margin-top:14px;">Cinq choses qu'on fait une par une sur le chantier, avec des gens différents. Dans le panneau, elles arrivent déjà faites. Et le mur ne brûle pas.</p>
     </div>
 
-    <div class="reveal" style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:1000px;margin:0 auto 32px;">
-      <div style="background:white;border:1px solid var(--border);border-radius:16px;padding:28px 24px;text-align:center;">
-        <div style="font-size:32px;margin-bottom:14px;">🔥</div>
-        <h4 style="font-family:var(--serif);font-size:18px;font-weight:500;color:var(--ink);margin-bottom:8px;">Sécurité totale</h4>
-        <p style="font-size:13.5px;color:var(--gray);line-height:1.55;">Feu A1 + antisismique Excellent. L'ossature bois ne tient ni au feu, ni en zone sismique.</p>
+    <div class="reveal" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;max-width:1000px;margin:0 auto 32px;">
+      <div style="background:white;border:1px solid var(--border);border-radius:16px;padding:26px 22px;text-align:center;">
+        <h4 style="font-family:var(--serif);font-size:18px;font-weight:500;color:var(--ink);margin-bottom:8px;">Isolation de maison passive, intégrée</h4>
+        <p style="font-size:13.5px;color:var(--gray);line-height:1.55;">Moulée dans le panneau, pas ajoutée après. Continue sur tout le contour de la maison, sans ponts thermiques.</p>
       </div>
-      <div style="background:white;border:1px solid var(--border);border-radius:16px;padding:28px 24px;text-align:center;">
-        <div style="font-size:32px;margin-bottom:14px;">💰</div>
-        <h4 style="font-family:var(--serif);font-size:18px;font-weight:500;color:var(--ink);margin-bottom:8px;">Coût total optimal</h4>
-        <p style="font-size:13.5px;color:var(--gray);line-height:1.55;">Légèrement plus cher que la brique à construire, beaucoup moins cher à vivre. Sur 25 ans : le moins cher.</p>
+      <div style="background:white;border:1px solid var(--border);border-radius:16px;padding:26px 22px;text-align:center;">
+        <h4 style="font-family:var(--serif);font-size:18px;font-weight:500;color:var(--ink);margin-bottom:8px;">Rapidité</h4>
+        <p style="font-size:13.5px;color:var(--gray);line-height:1.55;">La maison à 80 % en 4–6 semaines. Les panneaux arrivent prêts de l'usine, on les monte et on coule.</p>
       </div>
-      <div style="background:white;border:1px solid var(--border);border-radius:16px;padding:28px 24px;text-align:center;">
-        <div style="font-size:32px;margin-bottom:14px;">⚡</div>
-        <h4 style="font-family:var(--serif);font-size:18px;font-weight:500;color:var(--ink);margin-bottom:8px;">Construction rapide</h4>
-        <p style="font-size:13.5px;color:var(--gray);line-height:1.55;">Gros œuvre en 4-6 semaines vs 4-5 mois en brique. Vous emménagez 3× plus vite.</p>
+      <div style="background:white;border:1px solid var(--border);border-radius:16px;padding:26px 22px;text-align:center;">
+        <h4 style="font-family:var(--serif);font-size:18px;font-weight:500;color:var(--ink);margin-bottom:8px;">Une seule équipe</h4>
+        <p style="font-size:13.5px;color:var(--gray);line-height:1.55;">Les mêmes personnes, du montage à la finition. Le chantier ne passe pas d'un corps de métier à l'autre.</p>
+      </div>
+      <div style="background:white;border:1px solid var(--border);border-radius:16px;padding:26px 22px;text-align:center;">
+        <h4 style="font-family:var(--serif);font-size:18px;font-weight:500;color:var(--ink);margin-bottom:8px;">Finitions incluses d'usine</h4>
+        <p style="font-size:13.5px;color:var(--gray);line-height:1.55;">Le mur sort fini. Plus d'enduit, de ratissage ni de peinture à faire ensuite.</p>
+      </div>
+      <div style="background:white;border:1px solid var(--border);border-radius:16px;padding:26px 22px;text-align:center;">
+        <h4 style="font-family:var(--serif);font-size:18px;font-weight:500;color:var(--ink);margin-bottom:8px;">Réseaux prévus</h4>
+        <p style="font-size:13.5px;color:var(--gray);line-height:1.55;">Les passages arrivent déjà dans le panneau. On ne casse pas le mur pour tirer un tuyau ou un câble.</p>
+      </div>
+      <div style="background:white;border:1px solid var(--border);border-radius:16px;padding:26px 22px;text-align:center;">
+        <h4 style="font-family:var(--serif);font-size:18px;font-weight:500;color:var(--ink);margin-bottom:8px;">Sans erreurs d'exécution</h4>
+        <p style="font-size:13.5px;color:var(--gray);line-height:1.55;">Le panneau n'a qu'une seule position correcte. Il ne dépend pas de la main qui le monte.</p>
       </div>
     </div>
 
     <div style="text-align:center;" class="reveal">
       <button type="button" id="toggleComparison" class="btn btn-primary btn-arrow" aria-expanded="false" aria-controls="comparisonExpanded">
-        <span class="toggle-text-show">Voir la comparaison complète sur 12 critères</span>
+        <span class="toggle-text-show">Voir les trois systèmes, critère par critère</span>
         <span class="toggle-text-hide" style="display:none;">Masquer la comparaison</span>
       </button>
     </div>
 
-    <!-- TABELUL COMPLET 12 CRITERII × 4 SISTEME — ascuns by default, expandă on click -->
+    <!-- 5 CRITERII × 3 SISTEME POLISTIBRICK + CLASIC -->
     <div id="comparisonExpanded" class="comparison-expanded" aria-hidden="true">
       <div class="comparison-expanded-inner">
         <div class="reveal spec-table" style="margin:0 auto;max-width:1200px;">
           <div class="spec-table-row spec-12-row is-header">
             <div class="spec-table-cell">Critère</div>
             <div class="spec-table-cell">Polistibrick</div>
+            <div class="spec-table-cell">Polistiwall</div>
+            <div class="spec-table-cell">Polistisip</div>
             <div class="spec-table-cell">Classique</div>
-            <div class="spec-table-cell">Classique passif</div>
-            <div class="spec-table-cell">Ossature bois</div>
           </div>
 
           <div class="spec-table-row spec-12-row">
-            <div class="spec-table-cell spec-table-cell--label">5 matériaux intégrés en 1</div>
+            <div class="spec-table-cell spec-table-cell--label">Isolation de maison passive, intégrée</div>
             <div class="spec-table-cell"><span class="pill pill--good">Oui</span></div>
-            <div class="spec-table-cell"><span class="pill pill--bad">Non</span></div>
-            <div class="spec-table-cell"><span class="pill pill--bad">Non</span></div>
-            <div class="spec-table-cell"><span class="pill pill--bad">Non</span></div>
+            <div class="spec-table-cell"><span class="pill pill--good">Oui</span></div>
+            <div class="spec-table-cell"><span class="pill pill--good">Oui</span></div>
+            <div class="spec-table-cell"><span class="pill pill--none">—</span></div>
           </div>
 
           <div class="spec-table-row spec-12-row">
-            <div class="spec-table-cell spec-table-cell--label">Plan d'armature antisismique intégré</div>
-            <div class="spec-table-cell"><span class="pill pill--good">Intégré</span></div>
-            <div class="spec-table-cell"><span class="pill pill--bad">Aucun</span></div>
-            <div class="spec-table-cell"><span class="pill pill--medium">À ajouter</span></div>
-            <div class="spec-table-cell"><span class="pill pill--medium">À ajouter</span></div>
+            <div class="spec-table-cell spec-table-cell--label">Rapidité : la maison à 80 % en 4–6 semaines</div>
+            <div class="spec-table-cell"><span class="pill pill--good">Oui</span></div>
+            <div class="spec-table-cell"><span class="pill pill--good">Oui</span></div>
+            <div class="spec-table-cell"><span class="pill pill--good">Oui</span></div>
+            <div class="spec-table-cell"><span class="pill pill--none">—</span></div>
           </div>
 
           <div class="spec-table-row spec-12-row">
-            <div class="spec-table-cell spec-table-cell--label">Résistance aux séismes</div>
-            <div class="spec-table-cell"><span class="pill pill--good">Excellent</span></div>
-            <div class="spec-table-cell"><span class="pill pill--bad">Faible</span></div>
-            <div class="spec-table-cell"><span class="pill pill--medium">Moyen</span></div>
-            <div class="spec-table-cell"><span class="pill pill--good">Bon</span></div>
-          </div>
-
-          <div class="spec-table-row spec-12-row">
-            <div class="spec-table-cell spec-table-cell--label">Équipes nécessaires</div>
+            <div class="spec-table-cell spec-table-cell--label">Équipes nécessaires sur le chantier</div>
             <div class="spec-table-cell"><span class="pill pill--good">1 équipe</span></div>
-            <div class="spec-table-cell"><span class="pill pill--bad">5-6 corps de métier</span></div>
-            <div class="spec-table-cell"><span class="pill pill--bad">5-6 corps</span></div>
-            <div class="spec-table-cell"><span class="pill pill--medium">3-4 corps</span></div>
+            <div class="spec-table-cell"><span class="pill pill--good">1 équipe</span></div>
+            <div class="spec-table-cell"><span class="pill pill--good">1 équipe</span></div>
+            <div class="spec-table-cell"><span class="pill pill--none">5 équipes</span></div>
           </div>
 
           <div class="spec-table-row spec-12-row">
-            <div class="spec-table-cell spec-table-cell--label">Temps construction (gros œuvre)</div>
-            <div class="spec-table-cell"><span class="pill pill--good">4-6 semaines</span></div>
-            <div class="spec-table-cell"><span class="pill pill--bad">4-5 mois</span></div>
-            <div class="spec-table-cell"><span class="pill pill--bad">5-6 mois</span></div>
-            <div class="spec-table-cell"><span class="pill pill--medium">6-8 semaines</span></div>
+            <div class="spec-table-cell spec-table-cell--label">Finitions incluses d'usine</div>
+            <div class="spec-table-cell"><span class="pill pill--good">Oui</span></div>
+            <div class="spec-table-cell"><span class="pill pill--none">—</span></div>
+            <div class="spec-table-cell"><span class="pill pill--none">—</span></div>
+            <div class="spec-table-cell"><span class="pill pill--none">—</span></div>
           </div>
 
           <div class="spec-table-row spec-12-row">
-            <div class="spec-table-cell spec-table-cell--label">Isolation continue (pas de ponts thermiques)</div>
-            <div class="spec-table-cell"><span class="pill pill--good">Moulée dans panneau</span></div>
-            <div class="spec-table-cell"><span class="pill pill--medium">Ajoutée séparément</span></div>
-            <div class="spec-table-cell"><span class="pill pill--medium">Ajoutée séparément</span></div>
-            <div class="spec-table-cell"><span class="pill pill--medium">Ajoutée séparément</span></div>
+            <div class="spec-table-cell spec-table-cell--label">Réseaux prévus dans le panneau</div>
+            <div class="spec-table-cell"><span class="pill pill--good">Oui</span></div>
+            <div class="spec-table-cell"><span class="pill pill--good">Oui</span></div>
+            <div class="spec-table-cell"><span class="pill pill--good">Oui</span></div>
+            <div class="spec-table-cell"><span class="pill pill--none">—</span></div>
           </div>
 
           <div class="spec-table-row spec-12-row">
-            <div class="spec-table-cell spec-table-cell--label">Sécurité feu</div>
-            <div class="spec-table-cell"><span class="pill pill--good">A1 (incombustible)</span></div>
-            <div class="spec-table-cell"><span class="pill pill--good">A1</span></div>
-            <div class="spec-table-cell"><span class="pill pill--good">A1</span></div>
-            <div class="spec-table-cell"><span class="pill pill--bad">B-s2 (combustible)</span></div>
-          </div>
-
-          <div class="spec-table-row spec-12-row">
-            <div class="spec-table-cell spec-table-cell--label">Hydrofuge / pas de moisissures</div>
-            <div class="spec-table-cell"><span class="pill pill--good">Aucune absorption</span></div>
-            <div class="spec-table-cell"><span class="pill pill--medium">Humidité possible</span></div>
-            <div class="spec-table-cell"><span class="pill pill--medium">Humidité possible</span></div>
-            <div class="spec-table-cell"><span class="pill pill--bad">Risque pourrissement</span></div>
-          </div>
-
-          <div class="spec-table-row spec-12-row">
-            <div class="spec-table-cell spec-table-cell--label">Isolation acoustique</div>
-            <div class="spec-table-cell"><span class="pill pill--good">52 dB</span></div>
-            <div class="spec-table-cell"><span class="pill pill--medium">42 dB</span></div>
-            <div class="spec-table-cell"><span class="pill pill--medium">42 dB</span></div>
-            <div class="spec-table-cell"><span class="pill pill--bad">32 dB</span></div>
-          </div>
-
-          <div class="spec-table-row spec-12-row">
-            <div class="spec-table-cell spec-table-cell--label">Classe énergétique maison</div>
-            <div class="spec-table-cell"><span class="pill pill--good">A+++</span></div>
-            <div class="spec-table-cell"><span class="pill pill--bad">B-C</span></div>
-            <div class="spec-table-cell"><span class="pill pill--good">A+</span></div>
-            <div class="spec-table-cell"><span class="pill pill--good">A+</span></div>
-          </div>
-
-          <div class="spec-table-row spec-12-row">
-            <div class="spec-table-cell spec-table-cell--label">Coût construction initial</div>
-            <div class="spec-table-cell"><span class="pill pill--medium">Standard</span></div>
-            <div class="spec-table-cell"><span class="pill pill--good">Bas</span></div>
-            <div class="spec-table-cell"><span class="pill pill--bad">Très élevé</span></div>
-            <div class="spec-table-cell"><span class="pill pill--medium">Standard</span></div>
-          </div>
-
-          <div class="spec-table-row spec-12-row" style="background:rgba(15,15,15,0.03);">
-            <div class="spec-table-cell spec-table-cell--label" style="font-weight:700;">Économies sur 25 ans</div>
-            <div class="spec-table-cell"><span class="pill pill--star">Maximum</span></div>
-            <div class="spec-table-cell"><span class="pill pill--bad">Minimum</span></div>
-            <div class="spec-table-cell"><span class="pill pill--good">Bon</span></div>
-            <div class="spec-table-cell"><span class="pill pill--good">Bon</span></div>
+            <div class="spec-table-cell spec-table-cell--label">Sans erreurs d'exécution</div>
+            <div class="spec-table-cell"><span class="pill pill--good">Oui</span></div>
+            <div class="spec-table-cell"><span class="pill pill--good">Oui</span></div>
+            <div class="spec-table-cell"><span class="pill pill--good">Oui</span></div>
+            <div class="spec-table-cell"><span class="pill pill--none">—</span></div>
           </div>
         </div>
-
-        <p style="max-width:780px;margin:24px auto 0;text-align:center;font-size:13px;color:var(--gray);line-height:1.6;">
-          Pour le <strong>détail complet</strong> de chaque critère (explications techniques, normes, exemples) → <a href="../../produits/murs-mbk/" style="color:var(--red);font-weight:600;">voir les spécifications techniques</a>
-        </p>
       </div>
     </div>
   </div>
@@ -1032,29 +984,28 @@
 <section class="cases-section">
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:760px;margin:0 auto 50px;">
-      <span class="eyebrow">Maisons Polistibrick</span>
-      <h2>Des familles ont déjà fait ce choix. <em>Voici les dernières en date.</em></h2>
+      <h2>Une maison du catalogue. <em>Il y en a d'autres.</em></h2>
     </div>
 
     <div class="case-carousel reveal" id="caseCarousel">
       <div class="case-track">
         <div class="case-slides" id="caseSlides">
 
-          <!-- SLIDE 1 (REAL) — Île-de-France -->
+          <!-- SLIDE 1 — model din catalog -->
           <article class="case-slide">
             <div class="case-slide-img">
-              <img src="../../images/maison-ile-de-france-thumb.jpg" alt="Villa Polistibrick — Île-de-France, livraison 2025" loading="lazy">
+              <img src="../../images/case/terra-fatada-terasa.jpg" alt="Terra — modèle Polistibrick de 144 m², rez-de-chaussée plus étage" loading="lazy">
             </div>
             <div class="case-slide-content">
-              <div class="case-slide-meta">Île-de-France · livraison 2025</div>
-              <h3 class="case-slide-title">Villa contemporaine · 220 m²</h3>
-              <p class="case-slide-desc">Architecture moderne en R+1, zone résidentielle premium près de Paris. Murs Polistibrick MBK 300, performance Passivhaus certifiée, livraison été 2025.</p>
+              <div class="case-slide-meta">Modèle du catalogue · rez-de-chaussée + étage</div>
+              <h3 class="case-slide-title">Terra · 144 m²</h3>
+              <p class="case-slide-desc">Quatre chambres, trois salles de bains, pièce de vie ouverte au rez-de-chaussée. Elle se construit dans n'importe lequel des trois systèmes, et le prix change avec le système, pas avec le plan.</p>
               <div class="case-slide-stats">
-                <div class="case-slide-stat"><strong>220 m²</strong>habitables</div>
-                <div class="case-slide-stat"><strong>MBK 300</strong>U = 0,10</div>
+                <div class="case-slide-stat"><strong>144 m²</strong>habitables</div>
+                <div class="case-slide-stat"><strong>4</strong>chambres</div>
                 <div class="case-slide-stat"><strong>R+1</strong>2 niveaux</div>
               </div>
-              <a href="../../projets/" class="btn btn-ghost btn-arrow">Voir le projet</a>
+              <a href="../../projets/" class="btn btn-primary btn-arrow">Voir les projets</a>
             </div>
           </article>
 
@@ -1074,7 +1025,7 @@
                 <div class="case-slide-stat"><strong>VALEUR</strong>label</div>
                 <div class="case-slide-stat"><strong>VALEUR</strong>label</div>
               </div>
-              <a href="../../projets/" class="btn btn-ghost btn-arrow">Voir le projet</a>
+              <a href="../../projets/" class="btn btn-primary btn-arrow">Voir les projets</a>
             </div>
           </article>
           ========================================================== -->
@@ -1088,9 +1039,7 @@
       <div class="case-dots" id="caseDots"></div>
     </div>
 
-    <div style="text-align:center;margin-top:36px;" class="reveal">
-      <a href="../../projets/" class="btn btn-primary btn-arrow">Voir toutes les maisons construites</a>
-    </div>
+
   </div>
 </section>
 
@@ -1184,7 +1133,6 @@
 <section class="archi-section">
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:780px;margin:0 auto 50px;">
-      <span class="eyebrow">Collaboration avec votre architecte</span>
       <h2>Nous travaillons avec votre architecte — <em>dans votre intérêt.</em></h2>
       <p class="lead" style="margin-top:14px;">Vous n'avez pas besoin de changer d'architecte. Nous fournissons toute la documentation technique et l'accompagnement nécessaire à votre équipe — pour qu'ils réalisent la maison de vos rêves avec sérénité.</p>
     </div>
@@ -1235,7 +1183,6 @@
 <section class="faq-section">
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:760px;margin:0 auto 50px;">
-      <span class="eyebrow">Questions fréquentes</span>
       <h2>Les vraies questions <em>que vous vous posez.</em></h2>
     </div>
 
@@ -1250,7 +1197,7 @@
       </div>
       <div class="faq-item">
         <button class="faq-q">Combien de temps pour construire ma maison ?<span class="faq-icon">+</span></button>
-        <div class="faq-a"><p>Le gros œuvre prend <strong>4 à 6 semaines</strong> pour une maison de 150-200 m² (vs 4-5 mois en brique classique). En tout, vous emménagez en <strong>5-7 mois</strong> (selon les finitions et le permis). C'est 2 à 3 fois plus rapide qu'une construction classique.</p></div>
+        <div class="faq-a"><p>La maison arrive à 80 % en <strong>4–6 semaines</strong> pour une maison de 150–200 m². Au total, vous emménagez en <strong>5–7 mois</strong> (selon les finitions et le permis). 2 à 3 fois plus rapide qu'une construction classique.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q">Et si je veux modifier ma maison dans 10 ans ?<span class="faq-icon">+</span></button>
@@ -1282,18 +1229,10 @@
 <section class="cta-escalated-section">
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 50px;">
-      <span class="eyebrow">Prochaine étape</span>
       <h2>Choisissez votre prochain pas <em>vers votre maison à vie.</em></h2>
     </div>
 
     <div class="cta-esc-grid reveal">
-      <a href="../../ressources/" class="cta-esc-card">
-        <div class="cta-esc-stage">Vous découvrez</div>
-        <div class="cta-esc-icon">📥</div>
-        <div class="cta-esc-title">Téléchargez le guide</div>
-        <div class="cta-esc-desc">PDF de 24 pages : qu'est-ce qu'une maison passive, comment Polistibrick fonctionne, conseils pour le permis de construire.</div>
-        <span class="cta-esc-btn">Télécharger le guide</span>
-      </a>
 
       <a href="../../devis/" class="cta-esc-card">
         <div class="cta-esc-stage">Vous comparez</div>
@@ -1307,7 +1246,7 @@
         <div class="cta-esc-stage">Vous êtes prêt</div>
         <div class="cta-esc-icon">📞</div>
         <div class="cta-esc-title">Parlez-nous directement</div>
-        <div class="cta-esc-desc">Notre équipe Polistibrick vous répond personnellement. Conseil sur mesure, réponse garantie en 48h.<br><br><strong style="color:rgba(247,244,237,0.95);">📞 +32 [à compléter]</strong></div>
+        <div class="cta-esc-desc">Notre équipe Polistibrick vous répond personnellement. Conseil sur mesure, réponse garantie en 48h.<br><br><strong style="color:rgba(247,244,237,0.95);">✉ Contact</strong></div>
         <span class="cta-esc-btn">Nous contacter</span>
       </a>
     </div>
@@ -1316,7 +1255,7 @@
 
 <footer class="site-footer" data-include="footer"></footer>
 
-<script src="../../assets/js/site.js?v=56f8746e" defer></script>
+<script src="../../assets/js/site.js?v=160ec36c" defer></script>
 
 <!-- ====================================================
      CALCULATOR JS + FAQ ACCORDION
@@ -1332,8 +1271,8 @@
   var totalEl = document.getElementById('total-savings');
 
   var ENERGY_PRICE = 0.34;             // €/kWh NL, Eurostat/régulateur, toutes taxes comprises
-  var POLISTIBRICK_CONS = 15;          // kWh/m²/an MBK 300 : 15 chauffage + 0 clim.
-  var CLASSIQUE_CONS = 100;            // kWh/m²/an maison existante : 100 chauffage + 0 clim.
+  var POLISTIBRICK_CONS = 15;          // kWh/m²/an MBK 300 : 15 chauffage + 0 clim. (sous 25 °C sans clim.)
+  var CLASSIQUE_CONS = 104;            // kWh/m²/an maison existante : 100 chauffage + 4 clim.
 
   function formatEuro(amount) {
     return Math.round(amount).toLocaleString('fr-FR') + ' €';

@@ -87,7 +87,6 @@
       <div class="nav-drawer-group">
         <button class="nav-drawer-title" aria-expanded="false">Calculator<span class="nd-caret">▾</span></button>
         <div class="nav-acc">
-          <a href="${BASE}calculator/">Calculator cost</a>
           <a href="${BASE}economii/">Calculator economii</a>
         </div>
       </div>
@@ -144,8 +143,8 @@
           <h5>Resurse</h5>
           <ul>
             <li><a href="${BASE}proiecte/">Proiecte</a></li>
+            <li><a href="${BASE}economii/">Calculator economii</a></li>
             <li><a href="${BASE}resurse/faq/">Întrebări frecvente</a></li>
-            <li><a href="${BASE}calculator/">Calculator cost</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -184,11 +183,16 @@
       const bar = document.createElement('div');
       bar.className = 'mobile-contact-bar';
       bar.setAttribute('aria-label', 'Contact rapid');
+      // Hide the Call button when the country has no usable phone number yet
+      // (unfilled config leaves "[to fill in]" or an unsubstituted placeholder).
+      const phoneRaw = '+40371550550';
+      const hasPhone = phoneRaw && phoneRaw.indexOf('[') === -1 && phoneRaw.indexOf('{') === -1;
       bar.innerHTML =
-        '<a href="tel:+40371550550" class="mcb-btn mcb-call" aria-label="Sună Polistibrick">' +
+        (hasPhone ?
+        '<a href="tel:' + phoneRaw + '" class="mcb-btn mcb-call" aria-label="Sună Polistibrick">' +
           '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>' +
           '<span>Sună</span>' +
-        '</a>' +
+        '</a>' : '') +
         '<a href="#" data-m64="Y29udGFjdEBwb2xpc3RpYnJpY2sucm8=" class="mcb-btn mcb-email" aria-label="Trimite e-mail">' +
           '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>' +
           '<span>E-mail</span>' +

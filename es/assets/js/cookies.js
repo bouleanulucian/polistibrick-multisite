@@ -6,13 +6,13 @@
   var STORAGE_KEY = 'pb_cookie_consent';
 
   var TEXT = {
-    body: '{{ui.cookie_banner_text}}',
-    link: '{{ui.cookie_banner_link}}',
-    and: '{{ui.cookie_banner_and}}',
-    privacy: '{{ui.cookie_banner_privacy_link}}',
-    aria: '{{ui.cookie_banner_aria}}',
-    accept: '{{ui.cookie_accept}}',
-    refuse: '{{ui.cookie_refuse}}',
+    body: 'Usamos cookies y servicios de terceros para mejorar el sitio. Consulta nuestra',
+    link: 'política de cookies',
+    and: 'y',
+    privacy: 'política de privacidad',
+    aria: 'Consentimiento de cookies',
+    accept: 'Aceptar',
+    refuse: 'Rechazar',
     privacySlug: 'privacidad',
   };
 

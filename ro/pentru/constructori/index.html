@@ -842,6 +842,33 @@
       transform: translateY(-2px);
       box-shadow: 0 15px 35px rgba(255,255,255,0.25);
     }
+  
+    /* — calculatorul echipei (adaptat de pe investitori) — */
+    /* CALCULATOR ROI ensemble — star section */
+    .roi-section { background: white; padding: 80px 0; }
+    .roi-intro { max-width: 760px; margin: 0 auto 40px; text-align: center; }
+    .roi-stage { max-width: 1100px; margin: 0 auto; background: linear-gradient(135deg, var(--cream) 0%, var(--cream-light) 100%); border: 1px solid var(--border); border-radius: 24px; padding: 48px; }
+    .roi-input-row { display: flex; align-items: center; gap: 24px; max-width: 600px; margin: 0 auto 40px; flex-wrap: wrap; }
+    .roi-input-row label { font-size: 14px; font-weight: 600; color: var(--ink); min-width: 240px; }
+    .roi-input-row input[type="number"] { flex: 1; min-width: 120px; padding: 12px 18px; font-size: 18px; font-weight: 600; border: 1px solid var(--border); border-radius: 10px; background: white; font-family: inherit; color: var(--ink); text-align: center; }
+    .roi-input-row input[type="number"]:focus { outline: 2px solid var(--red); outline-offset: 2px; }
+    .roi-slider { width: 100%; max-width: 600px; margin: 0 auto 40px; display: block; }
+    .roi-results { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 32px; }
+    .roi-card { background: white; border-radius: 14px; padding: 24px 20px; text-align: center; border: 1px solid var(--border); }
+    .roi-card--highlight { border: 2px solid #1a7d3a; background: linear-gradient(180deg, white 60%, rgba(26,125,58,0.04) 100%); }
+    .roi-card-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gray); margin-bottom: 10px; }
+    .roi-card-value { font-family: var(--serif); font-size: 32px; font-weight: 500; line-height: 1.1; color: var(--ink); margin-bottom: 4px; }
+    .roi-card--highlight .roi-card-value { color: #1a7d3a; }
+    .roi-card-unit { font-size: 12px; color: var(--gray); }
+    .roi-summary { background: linear-gradient(135deg, rgba(26,125,58,0.10), rgba(26,125,58,0.04)); border: 1px solid rgba(26,125,58,0.25); border-radius: 14px; padding: 24px 28px; text-align: center; }
+    .roi-summary-text { font-size: 15px; color: var(--ink); line-height: 1.6; }
+    .roi-summary-text strong { color: #1a7d3a; font-weight: 700; }
+    .roi-note { max-width: 760px; margin: 20px auto 0; text-align: center; font-size: 12px; color: var(--gray); line-height: 1.5; }
+    @media (max-width: 768px) {
+      .roi-stage { padding: 28px 18px; }
+      .roi-results { grid-template-columns: 1fr; }
+      .roi-card-value { font-size: 26px; }
+    }
   </style>
 <link rel="canonical" href="https://polistibrick.ro/pentru/constructori/">
 <meta property="og:url" content="https://polistibrick.ro/pentru/constructori/">
@@ -866,8 +893,7 @@
       <p class="hero-builders-desc">Datorită sistemului structural 5-în-1, <strong>o singură echipă face munca a 5 meserii</strong> (structură, izolație, etanșare, acustică și finisaje). Marjele operaționale pot ajunge la <strong>50%</strong> pe proiect, recuperând valoarea anterior subcontractată.</p>
       
       <div class="hero-builders-cta">
-        <a href="#programme" class="btn btn-primary btn-arrow">Descoperiți programul partener</a>
-        <a href="../../devino-partener/" class="btn btn-ghost">Aplicați acum</a>
+        <a href="../../devino-partener/" class="btn btn-primary btn-arrow">Aplicați acum</a>
       </div>
     </div>
     
@@ -880,7 +906,6 @@
 <!-- 2. PROBLÈMES / INQUIÉTUDES -->
 <section class="pains-section">
   <div class="section-intro">
-    <span class="section-eyebrow">Preocupările de pe șantier</span>
     <h2 class="section-title">Ce vă reține să adoptați <em>un procedeu nou.</em></h2>
     <p class="section-desc">Am conceput programul nostru pentru a elimina riscurile inerente adoptării unui sistem constructiv inovator.</p>
   </div>
@@ -911,7 +936,6 @@
 <!-- 3. ATOUTS UNIQUES -->
 <section class="atouts-section">
   <div class="section-intro">
-    <span class="section-eyebrow">Performanță și marje</span>
     <h2 class="section-title">Ce schimbă <em>performanța financiară.</em></h2>
   </div>
 
@@ -938,8 +962,8 @@
           <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1" opacity="0.3"/>
         </svg>
       </div>
-      <h3>Structură în <em>4–6 săptămâni</em></h3>
-      <p>Execuție de 2–3 ori mai rapidă decât zidăria tradițională. Enchideți mai multe proiecte pe an fără a mări echipele.</p>
+      <h3>Casa la 80% în <em>4–6 săptămâni</em></h3>
+      <p>Execuție de 2–3 ori mai rapidă decât zidăria tradițională. Închideți mai multe proiecte pe an fără a mări echipele.</p>
     </article>
 
     <!-- Atout 3: Fiabilité -->
@@ -957,57 +981,13 @@
 </section>
 
 <!-- 4. PROGRAMME PARTENAIRE -->
-<section class="partner-section" id="programme">
-  <div class="section-intro">
-    <span class="section-eyebrow">Sprijin și creștere</span>
-    <h2 class="section-title">Deveniți <em>Constructor Certificat Polistibrick.</em></h2>
-    <p class="section-desc">Un parteneriat axat pe formarea echipelor și accesul la piețe noi.</p>
-  </div>
 
-  <div class="partner-grid">
-    <div class="partner-card">
-      <div class="partner-card-icon">🎓</div>
-      <h4>Formare certificată <em>gratuită</em></h4>
-      <p>2–3 zile intensive în fabricile noastre. Practică reală de montaj și tăiere panouri. Certificare oficială constructor.</p>
-    </div>
-    
-    <div class="partner-card">
-      <div class="partner-card-icon">🛠️</div>
-      <h4>Suport <em>pe șantiere</em></h4>
-      <p>Un tehnician de aplicare vă însoțește la prima punere în operă pentru validarea calepinajului și turnării betonului.</p>
-    </div>
-    
-    <div class="partner-card">
-      <div class="partner-card-icon">📞</div>
-      <h4>Lead-uri clienți <em>directe</em></h4>
-      <p>Redirecționăm cererile de ofertă geolocalizate de la proprietari și dezvoltatori din regiunea dumneavoastră direct către firma dumneavoastră.</p>
-    </div>
-    
-    <div class="partner-card">
-      <div class="partner-card-icon">🏆</div>
-      <h4>Co-branding <em>regional</em></h4>
-      <p>Promovarea șantierelor pe materialele noastre naționale pentru a consolida reputația de constructor pasiv premium.</p>
-    </div>
-    
-    <div class="partner-card">
-      <div class="partner-card-icon">📋</div>
-      <h4>Tarife și <em>condiții preferențiale</em></h4>
-      <p>Reduceri comerciale dedicate și termene de aprovizionare rezervate pentru securizarea rentabilității ofertelor.</p>
-    </div>
-    
-    <div class="partner-card">
-      <div class="partner-card-icon">🚚</div>
-      <h4>Logistică <em>prioritară</em></h4>
-      <p>Comenzile din fabrică sunt procesate prioritar pentru livrare conform planificării exacte a șantierului.</p>
-    </div>
-  </div>
-</section>
 
-<!-- 5. PROCESS TIMELINE -->
-<section class="process-section">
+<!-- 6. TESTIMONIAL -->
+<section class="process-section" id="montaj">
   <div class="section-intro">
-    <span class="section-eyebrow">Parcursul parteneriatului</span>
-    <h2 class="section-title">În 4 pași clari spre <em>certificarea Polistibrick.</em></h2>
+    <h2 class="section-title">Montajul, în <em>4 etape.</em></h2>
+    <p class="section-desc">De la fundație la structura turnată, cu 2–3 oameni pe șantier. Fără macara, fără mortar, fără timpi de uscare între etape.</p>
   </div>
 
   <div class="process-timeline">
@@ -1015,63 +995,226 @@
       <div class="process-num-wrap">
         <span class="process-num">1</span>
       </div>
-      <h4>Candidatură</h4>
-      <p>Completați formularul rapid de partener. Serviciul tehnic validează competențele.</p>
-      <span class="step-duration">În 48 de ore</span>
+      <h4>Cofraj</h4>
+      <p>Pereții EPS sunt ridicați și fixați pe fundație cu sprijiniri laterale din lemn. Asamblare la uscat: fără mortar, fără pierderi de izolație.</p>
+      <span class="step-duration">Manual, fără macara</span>
     </div>
-    
+
     <div class="process-step">
       <div class="process-num-wrap">
         <span class="process-num">2</span>
       </div>
-      <h4>Imersiune fabrică</h4>
-      <p>Vizitați unul dintre centrele de producție pentru a descoperi fabricarea automatizată a sistemelor.</p>
-      <span class="step-duration">1 zi</span>
+      <h4>Planșeu</h4>
+      <p>Panourile PBK se montează orizontal — straturi EPS-Graphite + fibrociment, gata să primească armătura.</p>
+      <span class="step-duration">Montaj orizontal</span>
     </div>
-    
+
     <div class="process-step">
       <div class="process-num-wrap">
         <span class="process-num">3</span>
       </div>
-      <h4>Certificare</h4>
-      <p>Formare practică la calepinaj, etajare și turnare cu formatorii noștri de șantier.</p>
-      <span class="step-duration">2–3 zile</span>
+      <h4>Armătură</h4>
+      <p>Plasele de oțel se montează între nervurile EPS-Graphite. Asta creează legătura monolitică între pereți și planșeu.</p>
+      <span class="step-duration">Fără sudură</span>
     </div>
-    
+
     <div class="process-step">
       <div class="process-num-wrap">
         <span class="process-num">4</span>
       </div>
-      <h4>Primul șantier</h4>
-      <p>Începeți lucrările liniștit, cu prezența inginerului nostru de aplicare.</p>
-      <span class="step-duration">Suport Pro</span>
+      <h4>Turnarea betonului</h4>
+      <p>Toate elementele sunt asamblate și verificate, cofrajul e închis. După turnare, structura devine monolitică în 24 de ore.</p>
+      <span class="step-duration">Monolitic în 24 h</span>
+    </div>
+  </div>
+
+
+  <div style="text-align:center;margin-top:40px;">
+    <a href="../../montaj/" class="btn btn-primary btn-arrow">Vezi montajul în detaliu</a>
+  </div>
+</section>
+
+<section class="process-section" style="padding-top:0;">
+  <div style="max-width:1000px;margin:0 auto;padding:0 40px;box-sizing:border-box;">
+    <div style="background:white;border:1px solid var(--border);border-radius:20px;padding:44px 36px;">
+      <h3 style="font-family:var(--serif);font-size:24px;font-weight:500;color:var(--ink);text-align:center;margin:0 0 32px;">Șantierul, redus la <em style="font-style:italic;color:var(--red);font-weight:400;">esențial.</em></h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:28px;">
+        <div style="text-align:center;">
+          <div style="font-family:var(--serif);font-size:clamp(30px,3.4vw,44px);color:var(--red);line-height:1;margin-bottom:8px;">~1 lună</div>
+          <div style="font-size:13.5px;color:var(--gray);">structură, izolație, finisaje</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-family:var(--serif);font-size:clamp(30px,3.4vw,44px);color:var(--red);line-height:1;margin-bottom:8px;">2–3</div>
+          <div style="font-size:13.5px;color:var(--gray);">oameni pe șantier</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-family:var(--serif);font-size:clamp(30px,3.4vw,44px);color:var(--red);line-height:1;margin-bottom:8px;">0</div>
+          <div style="font-size:13.5px;color:var(--gray);">macara sau utilaj greu</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-family:var(--serif);font-size:clamp(30px,3.4vw,44px);color:var(--red);line-height:1;margin-bottom:8px;">24 h</div>
+          <div style="font-size:13.5px;color:var(--gray);">până devine monolitică</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- 6. TESTIMONIAL -->
-<section class="testim-section">
+<section class="roi-section" id="calculator-echipa">
   <div class="container">
-    <div class="testim-card">
-      <p class="testim-quote">La început, echipa avea rezerve despre învățarea unui sistem nou de panouri. Totuși, sprijinul tehnicianului lor pe primul nostru șantier a deblocat totul. Câștigul de timp este uriaș, finisajele impecabile, clienții încântați.</p>
-      <div class="testim-author">
-        <div class="testim-author-avatar">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="16" cy="12" r="6" stroke="var(--red)" stroke-width="1.5"/>
-            <path d="M6 26C6 21 10 18 16 18C22 18 26 21 26 26" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
+    <div class="roi-intro reveal">
+      <h2 style="font-family:var(--serif);font-size:clamp(28px,3.2vw,42px);font-weight:500;color:var(--ink);letter-spacing:-0.02em;margin-bottom:14px;">Cât câștigați în plus, <em style="font-style:italic;color:var(--red);font-weight:400;">pe an.</em></h2>
+      <p style="font-size:15.5px;color:var(--gray);line-height:1.65;">O echipă Polistibrick face munca a 5 echipe. Spuneți câte case construiți pe an — calculăm ce rămâne în firmă în loc să plece la subcontractori.</p>
+    </div>
+
+    <div class="roi-stage reveal">
+      <div class="roi-input-row">
+        <label for="cc-units">Case construite pe an:</label>
+        <input type="number" id="cc-units" min="1" max="50" step="1" value="5">
+        <span style="font-weight:600;font-size:18px;color:var(--gray);">case</span>
+      </div>
+      <input type="range" id="cc-slider" class="roi-slider" min="1" max="50" step="1" value="5">
+
+      <div class="roi-results">
+        <div class="roi-card roi-card--highlight">
+          <div class="roi-card-label">Câștig suplimentar pe an</div>
+          <div class="roi-card-value" id="cc-profit">+120 000 €</div>
+          <div class="roi-card-unit">40% din manopera celor 5 meserii</div>
         </div>
-        <div class="testim-author-info">
-          <strong>Ion Popescu</strong>
-          Director execuție · Construct Pro SRL (Cluj)
+        <div class="roi-card">
+          <div class="roi-card-label">Manoperă rămasă în firmă</div>
+          <div class="roi-card-value" id="cc-labor">300 000 €</div>
+          <div class="roi-card-unit">în loc să plece la subcontractori</div>
+        </div>
+        <div class="roi-card">
+          <div class="roi-card-label">Cu aceeași echipă</div>
+          <div class="roi-card-value">de 2–3×</div>
+          <div class="roi-card-unit">mai multe proiecte pe an</div>
         </div>
       </div>
+
+      <div class="roi-summary">
+        <div class="roi-summary-text">La <strong id="cc-units-display">5 case</strong> pe an, <strong>câștigul suplimentar estimat</strong> cu Polistibrick: <strong id="cc-total">~120 000 €</strong> față de lucrul cu 5 echipe.</div>
+      </div>
     </div>
+
+    <p class="roi-note">Estimare pe ipoteze standard: 150 m²/casă, manoperă totală a celor 5 meserii 400 €/m², din care 40% rămâne câștig în firmă. Pentru cifre pe firma dumneavoastră, contactați-ne.</p>
+  </div>
+</section>
+
+<script>
+// CALCULATOR ECHIPĂ CONSTRUCTOR
+(function(){
+  var unitsInput = document.getElementById('cc-units');
+  var unitsSlider = document.getElementById('cc-slider');
+  var profitEl = document.getElementById('cc-profit');
+  var laborEl = document.getElementById('cc-labor');
+  var unitsDisplayEl = document.getElementById('cc-units-display');
+  var totalEl = document.getElementById('cc-total');
+  if (!unitsInput) return;
+
+  var SURFACE = 150;        // m² pe casă (medie)
+  var LABOR_PER_M2 = 400;   // €/m², manopera celor 5 meserii
+  var KEPT = 0.40;          // partea care rămâne câştig în firmă
+
+  function fmt(n) { return Math.round(n).toLocaleString('ro-RO') + ' €'; }
+
+  function calc() {
+    var u = parseInt(unitsInput.value, 10);
+    if (isNaN(u) || u < 1) u = 1;
+    if (u > 50) u = 50;
+    unitsInput.value = u;
+    unitsSlider.value = u;
+
+    var labor = u * SURFACE * LABOR_PER_M2;
+    var profit = labor * KEPT;
+
+    profitEl.textContent = '+' + fmt(profit);
+    laborEl.textContent = fmt(labor);
+    unitsDisplayEl.textContent = u + (u === 1 ? ' casă' : ' case');
+    totalEl.textContent = '~' + fmt(profit);
+  }
+
+  unitsInput.addEventListener('input', calc);
+  unitsSlider.addEventListener('input', function(){ unitsInput.value = this.value; calc(); });
+  calc();
+})();
+</script>
+
+<section class="testim-section" id="testimoniale-reale" style="display:none;">
+  <div class="container">
+    <div id="testim-lista" style="display:grid;gap:28px;"></div>
     <div style="text-align:center;margin-top:40px;">
       <a href="../../testimoniale/" class="btn btn-ghost btn-arrow">Consultați testimonialele</a>
     </div>
   </div>
 </section>
+
+<script>
+// TESTIMONIALE REALE — citite din pagina de testimoniale (publicate prin studio).
+// Cât timp nu există niciunul, secţiunea rămâne ascunsă.
+(function(){
+  var sec = document.getElementById('testimoniale-reale');
+  var lista = document.getElementById('testim-lista');
+  if (!sec || !lista || !window.fetch) return;
+
+  function cale(p) { return (p || '').replace('../images/', '../../images/'); }
+
+  fetch('../../testimoniale/').then(function(r){ return r.text(); }).then(function(html){
+    var doc = new DOMParser().parseFromString(html, 'text/html');
+    var reale = doc.querySelectorAll('article[data-testimonial]');
+    if (!reale.length) return;
+
+    Array.prototype.slice.call(reale, 0, 2).forEach(function(c){
+      var nume = c.querySelector('.video-author-info strong');
+      var meta = c.querySelector('.video-author-info span');
+      var citat = c.querySelector('.video-quote');
+      var video = c.querySelector('video');
+
+      var card = document.createElement('div');
+      card.className = 'testim-card';
+
+      if (video) {
+        var v = document.createElement('video');
+        v.controls = true; v.preload = 'none'; v.setAttribute('playsinline', '');
+        v.poster = cale(video.getAttribute('poster'));
+        v.style.cssText = 'width:100%;max-height:420px;border-radius:14px;margin-bottom:24px;background:#000;display:block;';
+        var s0 = video.querySelector('source');
+        if (s0) { var s = document.createElement('source'); s.src = cale(s0.getAttribute('src')); s.type = 'video/mp4'; v.appendChild(s); }
+        var t0 = video.querySelector('track');
+        if (t0) { var tr = document.createElement('track'); tr.kind = 'subtitles';
+                  tr.src = cale(t0.getAttribute('src')); tr.srclang = t0.getAttribute('srclang') || 'ro';
+                  tr.setAttribute('default', ''); v.appendChild(tr); }
+        card.appendChild(v);
+      }
+
+      if (citat && citat.textContent.trim()) {
+        var q = document.createElement('p');
+        q.className = 'testim-quote';
+        q.textContent = citat.textContent.trim();
+        card.appendChild(q);
+      }
+
+      var a = document.createElement('div');
+      a.className = 'testim-author';
+      var info = document.createElement('div');
+      info.className = 'testim-author-info';
+      var st = document.createElement('strong');
+      st.textContent = nume ? nume.textContent.trim() : '';
+      var sp = document.createElement('span');
+      sp.textContent = meta ? meta.textContent.trim() : '';
+      sp.style.display = 'block';
+      info.appendChild(st); info.appendChild(sp);
+      a.appendChild(info);
+      card.appendChild(a);
+
+      lista.appendChild(card);
+    });
+
+    sec.style.display = '';
+  }).catch(function(){ /* rămâne ascunsă */ });
+})();
+</script>
 
 <!-- 7. CTA PARTENARIAT -->
 <section class="cta-cert-section" style="margin-top: 60px;">
@@ -1093,6 +1236,6 @@
 
 <footer class="site-footer" data-include="footer"></footer>
 
-<script src="../../assets/js/site.js?v=56f8746e" defer></script>
+<script src="../../assets/js/site.js?v=160ec36c" defer></script>
 </body>
 </html>

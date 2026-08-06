@@ -842,6 +842,33 @@
       transform: translateY(-2px);
       box-shadow: 0 15px 35px rgba(255,255,255,0.25);
     }
+
+    /* — calculatorul echipei (adaptat de pe investitori) — */
+    /* CALCULATOR ROI ensemble — star section */
+    .roi-section { background: white; padding: 80px 0; }
+    .roi-intro { max-width: 760px; margin: 0 auto 40px; text-align: center; }
+    .roi-stage { max-width: 1100px; margin: 0 auto; background: linear-gradient(135deg, var(--cream) 0%, var(--cream-light) 100%); border: 1px solid var(--border); border-radius: 24px; padding: 48px; }
+    .roi-input-row { display: flex; align-items: center; gap: 24px; max-width: 600px; margin: 0 auto 40px; flex-wrap: wrap; }
+    .roi-input-row label { font-size: 14px; font-weight: 600; color: var(--ink); min-width: 240px; }
+    .roi-input-row input[type="number"] { flex: 1; min-width: 120px; padding: 12px 18px; font-size: 18px; font-weight: 600; border: 1px solid var(--border); border-radius: 10px; background: white; font-family: inherit; color: var(--ink); text-align: center; }
+    .roi-input-row input[type="number"]:focus { outline: 2px solid var(--red); outline-offset: 2px; }
+    .roi-slider { width: 100%; max-width: 600px; margin: 0 auto 40px; display: block; }
+    .roi-results { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 32px; }
+    .roi-card { background: white; border-radius: 14px; padding: 24px 20px; text-align: center; border: 1px solid var(--border); }
+    .roi-card--highlight { border: 2px solid #1a7d3a; background: linear-gradient(180deg, white 60%, rgba(26,125,58,0.04) 100%); }
+    .roi-card-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gray); margin-bottom: 10px; }
+    .roi-card-value { font-family: var(--serif); font-size: 32px; font-weight: 500; line-height: 1.1; color: var(--ink); margin-bottom: 4px; }
+    .roi-card--highlight .roi-card-value { color: #1a7d3a; }
+    .roi-card-unit { font-size: 12px; color: var(--gray); }
+    .roi-summary { background: linear-gradient(135deg, rgba(26,125,58,0.10), rgba(26,125,58,0.04)); border: 1px solid rgba(26,125,58,0.25); border-radius: 14px; padding: 24px 28px; text-align: center; }
+    .roi-summary-text { font-size: 15px; color: var(--ink); line-height: 1.6; }
+    .roi-summary-text strong { color: #1a7d3a; font-weight: 700; }
+    .roi-note { max-width: 760px; margin: 20px auto 0; text-align: center; font-size: 12px; color: var(--gray); line-height: 1.5; }
+    @media (max-width: 768px) {
+      .roi-stage { padding: 28px 18px; }
+      .roi-results { grid-template-columns: 1fr; }
+      .roi-card-value { font-size: 26px; }
+    }
   </style>
 <link rel="canonical" href="https://polistibrick.ie/for/builders/">
 <meta property="og:url" content="https://polistibrick.ie/for/builders/">
@@ -866,8 +893,7 @@
       <p class="hero-builders-desc">Thanks to the 5-in-1 structural system, <strong>one team does the work of 5 trades</strong> (structure, insulation, airtightness, acoustics and finishes). Operating margins can reach <strong>50%</strong> per project by capturing value previously subcontracted.</p>
       
       <div class="hero-builders-cta">
-        <a href="#programme" class="btn btn-primary btn-arrow">Discover the partner programme</a>
-        <a href="../../become-a-partner/" class="btn btn-ghost">Apply now</a>
+        <a href="../../become-a-partner/" class="btn btn-primary btn-arrow">Apply now</a>
       </div>
     </div>
     
@@ -880,7 +906,6 @@
 <!-- 2. PROBLÈMES / INQUIÉTUDES -->
 <section class="pains-section">
   <div class="section-intro">
-    <span class="section-eyebrow">Your site concerns</span>
     <h2 class="section-title">What holds you back from adopting <em>a new process.</em></h2>
     <p class="section-desc">We designed our programme to eliminate the inherent risks of adopting an innovative construction system.</p>
   </div>
@@ -911,7 +936,6 @@
 <!-- 3. ATOUTS UNIQUES -->
 <section class="atouts-section">
   <div class="section-intro">
-    <span class="section-eyebrow">Performances & Marges</span>
     <h2 class="section-title">What this changes <em>for your financial performance.</em></h2>
   </div>
 
@@ -926,7 +950,7 @@
           <path d="M10 11H22" stroke="currentColor" stroke-width="1.2" opacity="0.5"/>
         </svg>
       </div>
-      <h3>Marges <em>up to 50%</em></h3>
+      <h3>Margins <em>up to 50%</em></h3>
       <p>Integrate into your own structure the added value of external insulation, finishes and acoustics. Maximise gain per square metre built.</p>
     </article>
 
@@ -938,7 +962,7 @@
           <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1" opacity="0.3"/>
         </svg>
       </div>
-      <h3>Structural shell in <em>4–6 weeks</em></h3>
+      <h3>The home at 80% in <em>4–6 weeks</em></h3>
       <p>Execution 2 to 3 times faster than traditional masonry. You complete more projects per year without increasing your team size.</p>
     </article>
 
@@ -957,57 +981,13 @@
 </section>
 
 <!-- 4. PROGRAMME PARTENAIRE -->
-<section class="partner-section" id="programme">
-  <div class="section-intro">
-    <span class="section-eyebrow">Accompagnement & Croissance</span>
-    <h2 class="section-title">Become a <em>Polistibrick Certified Builder.</em></h2>
-    <p class="section-desc">A partnership focused on upskilling your teams and bringing new markets.</p>
-  </div>
 
-  <div class="partner-grid">
-    <div class="partner-card">
-      <div class="partner-card-icon">🎓</div>
-      <h4>Formation certifiante <em>offerte</em></h4>
-      <p>2 to 3 intensive days at our production plants. Hands-on panel assembly and cutting practice. Award of an <strong>official builder certification</strong>.</p>
-    </div>
-    
-    <div class="partner-card">
-      <div class="partner-card-icon">🛠️</div>
-      <h4>Support <em>on your sites</em></h4>
-      <p>An application technician accompanies you on the first installation to validate the layout and concrete pour.</p>
-    </div>
-    
-    <div class="partner-card">
-      <div class="partner-card-icon">📞</div>
-      <h4>Client leads <em>directs</em></h4>
-      <p>We redirect geolocated quote requests from owners and developers in your region directly to your company.</p>
-    </div>
-    
-    <div class="partner-card">
-      <div class="partner-card-icon">🏆</div>
-      <h4>Co-branding <em>regional</em></h4>
-      <p>Showcasing your sites on our national communication channels to establish your reputation as a premium passive builder.</p>
-    </div>
-    
-    <div class="partner-card">
-      <div class="partner-card-icon">📋</div>
-      <h4>Tarifs & <em>preferential terms</em></h4>
-      <p>Benefit from dedicated commercial discounts and reserved supply lead times to secure the profitability of your quotes.</p>
-    </div>
-    
-    <div class="partner-card">
-      <div class="partner-card-icon">🚚</div>
-      <h4>Logistics <em>priority</em></h4>
-      <p>Your factory orders are processed on a priority flow to ensure delivery of your packages according to your precise site schedule.</p>
-    </div>
-  </div>
-</section>
 
-<!-- 5. PROCESS TIMELINE -->
-<section class="process-section">
+<!-- 6. TESTIMONIAL -->
+<section class="process-section" id="montaj">
   <div class="section-intro">
-    <span class="section-eyebrow">Le parcours de partenariat</span>
-    <h2 class="section-title">In 4 clear steps towards your <em>certification Polistibrick.</em></h2>
+    <h2 class="section-title">The installation, in <em>4 steps.</em></h2>
+    <p class="section-desc">From the foundation to the poured structure, with 2–3 people on site. No crane, no mortar, no drying times between steps.</p>
   </div>
 
   <div class="process-timeline">
@@ -1015,63 +995,226 @@
       <div class="process-num-wrap">
         <span class="process-num">1</span>
       </div>
-      <h4>Application</h4>
-      <p>Complete the quick partner form. Our technical team validates your qualifications.</p>
-      <span class="step-duration">Sous 48 heures</span>
+      <h4>Formwork</h4>
+      <p>The EPS walls are raised and fixed to the foundation with lateral wooden props. Dry assembly: no mortar, no insulation losses.</p>
+      <span class="step-duration">By hand, no crane</span>
     </div>
-    
+
     <div class="process-step">
       <div class="process-num-wrap">
         <span class="process-num">2</span>
       </div>
-      <h4>Immersion Usine</h4>
-      <p>Visit one of our production centres to discover the automated manufacturing of our systems.</p>
-      <span class="step-duration">1 day</span>
+      <h4>Floor</h4>
+      <p>The PBK panels are installed horizontally — EPS-Graphite + fibre-cement layers, ready to receive the reinforcement.</p>
+      <span class="step-duration">Horizontal installation</span>
     </div>
-    
+
     <div class="process-step">
       <div class="process-num-wrap">
         <span class="process-num">3</span>
       </div>
-      <h4>Certification</h4>
-      <p>Practical training in layout, propping and pouring methods with our site trainers.</p>
-      <span class="step-duration">2-3 Jours</span>
+      <h4>Reinforcement</h4>
+      <p>The steel meshes are fitted between the EPS-Graphite ribs. This creates the monolithic bond between walls and floor.</p>
+      <span class="step-duration">No welding</span>
     </div>
-    
+
     <div class="process-step">
       <div class="process-num-wrap">
         <span class="process-num">4</span>
       </div>
-      <h4>Premier Chantier</h4>
-      <p>Start your works with peace of mind, with our application engineer on site.</p>
-      <span class="step-duration">Suivi Pro</span>
+      <h4>The concrete pour</h4>
+      <p>All elements are assembled and checked, the formwork is closed. After the pour, the structure becomes monolithic within 24 hours.</p>
+      <span class="step-duration">Monolithic in 24 h</span>
+    </div>
+  </div>
+
+
+  <div style="text-align:center;margin-top:40px;">
+    <a href="../../installation/" class="btn btn-primary btn-arrow">See the installation in detail</a>
+  </div>
+</section>
+
+<section class="process-section" style="padding-top:0;">
+  <div style="max-width:1000px;margin:0 auto;padding:0 40px;box-sizing:border-box;">
+    <div style="background:white;border:1px solid var(--border);border-radius:20px;padding:44px 36px;">
+      <h3 style="font-family:var(--serif);font-size:24px;font-weight:500;color:var(--ink);text-align:center;margin:0 0 32px;">The site, reduced to <em style="font-style:italic;color:var(--red);font-weight:400;">the essentials.</em></h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:28px;">
+        <div style="text-align:center;">
+          <div style="font-family:var(--serif);font-size:clamp(30px,3.4vw,44px);color:var(--red);line-height:1;margin-bottom:8px;">~1 month</div>
+          <div style="font-size:13.5px;color:var(--gray);">structure, insulation, finishes</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-family:var(--serif);font-size:clamp(30px,3.4vw,44px);color:var(--red);line-height:1;margin-bottom:8px;">2–3</div>
+          <div style="font-size:13.5px;color:var(--gray);">people on site</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-family:var(--serif);font-size:clamp(30px,3.4vw,44px);color:var(--red);line-height:1;margin-bottom:8px;">0</div>
+          <div style="font-size:13.5px;color:var(--gray);">crane or heavy machinery</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-family:var(--serif);font-size:clamp(30px,3.4vw,44px);color:var(--red);line-height:1;margin-bottom:8px;">24 h</div>
+          <div style="font-size:13.5px;color:var(--gray);">until it becomes monolithic</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- 6. TESTIMONIAL -->
-<section class="testim-section">
+<section class="roi-section" id="calculator-echipa">
   <div class="container">
-    <div class="testim-card">
-      <p class="testim-quote">At first, the team had some doubts about learning a new block system. However, their technician's support on our first site unlocked everything. The time savings are huge, the finishes impeccable, and clients delighted.</p>
-      <div class="testim-author">
-        <div class="testim-author-avatar">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="16" cy="12" r="6" stroke="var(--red)" stroke-width="1.5"/>
-            <path d="M6 26C6 21 10 18 16 18C22 18 26 21 26 26" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
+    <div class="roi-intro reveal">
+      <h2 style="font-family:var(--serif);font-size:clamp(28px,3.2vw,42px);font-weight:500;color:var(--ink);letter-spacing:-0.02em;margin-bottom:14px;">How much extra you earn, <em style="font-style:italic;color:var(--red);font-weight:400;">per year.</em></h2>
+      <p style="font-size:15.5px;color:var(--gray);line-height:1.65;">One Polistibrick team does the work of 5 teams. Tell us how many houses you build per year — we calculate what stays in the company instead of going to subcontractors.</p>
+    </div>
+
+    <div class="roi-stage reveal">
+      <div class="roi-input-row">
+        <label for="cc-units">Houses built per year:</label>
+        <input type="number" id="cc-units" min="1" max="50" step="1" value="5">
+        <span style="font-weight:600;font-size:18px;color:var(--gray);">houses</span>
+      </div>
+      <input type="range" id="cc-slider" class="roi-slider" min="1" max="50" step="1" value="5">
+
+      <div class="roi-results">
+        <div class="roi-card roi-card--highlight">
+          <div class="roi-card-label">Extra earnings per year</div>
+          <div class="roi-card-value" id="cc-profit">+€120,000</div>
+          <div class="roi-card-unit">40% of the labour of the 5 trades</div>
         </div>
-        <div class="testim-author-info">
-          <strong>Jean-François Roux</strong>
-          Works Director · Bâti-Innov SAS (Auvergne-Rhône-Alpes)
+        <div class="roi-card">
+          <div class="roi-card-label">Labour kept in the company</div>
+          <div class="roi-card-value" id="cc-labor">€300,000</div>
+          <div class="roi-card-unit">instead of going to subcontractors</div>
+        </div>
+        <div class="roi-card">
+          <div class="roi-card-label">With the same team</div>
+          <div class="roi-card-value">2–3×</div>
+          <div class="roi-card-unit">more projects per year</div>
         </div>
       </div>
+
+      <div class="roi-summary">
+        <div class="roi-summary-text">At <strong id="cc-units-display">5 houses</strong> per year, the <strong>estimated extra earnings</strong> with Polistibrick: <strong id="cc-total">~€120,000</strong> compared with working with 5 teams.</div>
+      </div>
     </div>
+
+    <p class="roi-note">Estimate on standard assumptions: 150 m² per house, total labour of the 5 trades €400/m², of which 40% stays as earnings in the company. For figures on your own company, contact us.</p>
+  </div>
+</section>
+
+<script>
+// TEAM CALCULATOR — BUILDER
+(function(){
+  var unitsInput = document.getElementById('cc-units');
+  var unitsSlider = document.getElementById('cc-slider');
+  var profitEl = document.getElementById('cc-profit');
+  var laborEl = document.getElementById('cc-labor');
+  var unitsDisplayEl = document.getElementById('cc-units-display');
+  var totalEl = document.getElementById('cc-total');
+  if (!unitsInput) return;
+
+  var SURFACE = 150;        // m² per house (average)
+  var LABOR_PER_M2 = 400;   // €/m², labour of the 5 trades
+  var KEPT = 0.40;          // the share kept as earnings in the company
+
+  function fmt(n) { return '€' + Math.round(n).toLocaleString('en-GB'); }
+
+  function calc() {
+    var u = parseInt(unitsInput.value, 10);
+    if (isNaN(u) || u < 1) u = 1;
+    if (u > 50) u = 50;
+    unitsInput.value = u;
+    unitsSlider.value = u;
+
+    var labor = u * SURFACE * LABOR_PER_M2;
+    var profit = labor * KEPT;
+
+    profitEl.textContent = '+' + fmt(profit);
+    laborEl.textContent = fmt(labor);
+    unitsDisplayEl.textContent = u + (u === 1 ? ' house' : ' houses');
+    totalEl.textContent = '~' + fmt(profit);
+  }
+
+  unitsInput.addEventListener('input', calc);
+  unitsSlider.addEventListener('input', function(){ unitsInput.value = this.value; calc(); });
+  calc();
+})();
+</script>
+
+<section class="testim-section" id="testimoniale-reale" style="display:none;">
+  <div class="container">
+    <div id="testim-lista" style="display:grid;gap:28px;"></div>
     <div style="text-align:center;margin-top:40px;">
-      <a href="../../testimonials/" class="btn btn-ghost btn-arrow">Read customer feedback</a>
+      <a href="../../testimonials/" class="btn btn-ghost btn-arrow">See the testimonials</a>
     </div>
   </div>
 </section>
+
+<script>
+// REAL TESTIMONIALS — read from the testimonials page (published through the studio).
+// As long as none exist, the section stays hidden.
+(function(){
+  var sec = document.getElementById('testimoniale-reale');
+  var lista = document.getElementById('testim-lista');
+  if (!sec || !lista || !window.fetch) return;
+
+  function cale(p) { return (p || '').replace('../images/', '../../images/'); }
+
+  fetch('../../testimonials/').then(function(r){ return r.text(); }).then(function(html){
+    var doc = new DOMParser().parseFromString(html, 'text/html');
+    var reale = doc.querySelectorAll('article[data-testimonial]');
+    if (!reale.length) return;
+
+    Array.prototype.slice.call(reale, 0, 2).forEach(function(c){
+      var nume = c.querySelector('.video-author-info strong');
+      var meta = c.querySelector('.video-author-info span');
+      var citat = c.querySelector('.video-quote');
+      var video = c.querySelector('video');
+
+      var card = document.createElement('div');
+      card.className = 'testim-card';
+
+      if (video) {
+        var v = document.createElement('video');
+        v.controls = true; v.preload = 'none'; v.setAttribute('playsinline', '');
+        v.poster = cale(video.getAttribute('poster'));
+        v.style.cssText = 'width:100%;max-height:420px;border-radius:14px;margin-bottom:24px;background:#000;display:block;';
+        var s0 = video.querySelector('source');
+        if (s0) { var s = document.createElement('source'); s.src = cale(s0.getAttribute('src')); s.type = 'video/mp4'; v.appendChild(s); }
+        var t0 = video.querySelector('track');
+        if (t0) { var tr = document.createElement('track'); tr.kind = 'subtitles';
+                  tr.src = cale(t0.getAttribute('src')); tr.srclang = t0.getAttribute('srclang') || 'en';
+                  tr.setAttribute('default', ''); v.appendChild(tr); }
+        card.appendChild(v);
+      }
+
+      if (citat && citat.textContent.trim()) {
+        var q = document.createElement('p');
+        q.className = 'testim-quote';
+        q.textContent = citat.textContent.trim();
+        card.appendChild(q);
+      }
+
+      var a = document.createElement('div');
+      a.className = 'testim-author';
+      var info = document.createElement('div');
+      info.className = 'testim-author-info';
+      var st = document.createElement('strong');
+      st.textContent = nume ? nume.textContent.trim() : '';
+      var sp = document.createElement('span');
+      sp.textContent = meta ? meta.textContent.trim() : '';
+      sp.style.display = 'block';
+      info.appendChild(st); info.appendChild(sp);
+      a.appendChild(info);
+      card.appendChild(a);
+
+      lista.appendChild(card);
+    });
+
+    sec.style.display = '';
+  }).catch(function(){ /* stays hidden */ });
+})();
+</script>
 
 <!-- 7. CTA PARTENARIAT -->
 <section class="cta-cert-section" style="margin-top: 60px;">
@@ -1093,6 +1236,6 @@
 
 <footer class="site-footer" data-include="footer"></footer>
 
-<script src="../../assets/js/site.js?v=56f8746e" defer></script>
+<script src="../../assets/js/site.js?v=160ec36c" defer></script>
 </body>
 </html>

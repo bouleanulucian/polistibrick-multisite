@@ -842,6 +842,33 @@
       transform: translateY(-2px);
       box-shadow: 0 15px 35px rgba(255,255,255,0.25);
     }
+
+    /* — kalkulator tima (prilagođen sa stranice investitora) — */
+    /* CALCULATOR ROI ensemble — star section */
+    .roi-section { background: white; padding: 80px 0; }
+    .roi-intro { max-width: 760px; margin: 0 auto 40px; text-align: center; }
+    .roi-stage { max-width: 1100px; margin: 0 auto; background: linear-gradient(135deg, var(--cream) 0%, var(--cream-light) 100%); border: 1px solid var(--border); border-radius: 24px; padding: 48px; }
+    .roi-input-row { display: flex; align-items: center; gap: 24px; max-width: 600px; margin: 0 auto 40px; flex-wrap: wrap; }
+    .roi-input-row label { font-size: 14px; font-weight: 600; color: var(--ink); min-width: 240px; }
+    .roi-input-row input[type="number"] { flex: 1; min-width: 120px; padding: 12px 18px; font-size: 18px; font-weight: 600; border: 1px solid var(--border); border-radius: 10px; background: white; font-family: inherit; color: var(--ink); text-align: center; }
+    .roi-input-row input[type="number"]:focus { outline: 2px solid var(--red); outline-offset: 2px; }
+    .roi-slider { width: 100%; max-width: 600px; margin: 0 auto 40px; display: block; }
+    .roi-results { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 32px; }
+    .roi-card { background: white; border-radius: 14px; padding: 24px 20px; text-align: center; border: 1px solid var(--border); }
+    .roi-card--highlight { border: 2px solid #1a7d3a; background: linear-gradient(180deg, white 60%, rgba(26,125,58,0.04) 100%); }
+    .roi-card-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gray); margin-bottom: 10px; }
+    .roi-card-value { font-family: var(--serif); font-size: 32px; font-weight: 500; line-height: 1.1; color: var(--ink); margin-bottom: 4px; }
+    .roi-card--highlight .roi-card-value { color: #1a7d3a; }
+    .roi-card-unit { font-size: 12px; color: var(--gray); }
+    .roi-summary { background: linear-gradient(135deg, rgba(26,125,58,0.10), rgba(26,125,58,0.04)); border: 1px solid rgba(26,125,58,0.25); border-radius: 14px; padding: 24px 28px; text-align: center; }
+    .roi-summary-text { font-size: 15px; color: var(--ink); line-height: 1.6; }
+    .roi-summary-text strong { color: #1a7d3a; font-weight: 700; }
+    .roi-note { max-width: 760px; margin: 20px auto 0; text-align: center; font-size: 12px; color: var(--gray); line-height: 1.5; }
+    @media (max-width: 768px) {
+      .roi-stage { padding: 28px 18px; }
+      .roi-results { grid-template-columns: 1fr; }
+      .roi-card-value { font-size: 26px; }
+    }
   </style>
 <link rel="canonical" href="https://polistibrick.me/za/gradjevinci/">
 <meta property="og:url" content="https://polistibrick.me/za/gradjevinci/">
@@ -866,8 +893,7 @@
       <p class="hero-builders-desc">Zahvaljujući konstrukcijskom sistemu 5-u-1, <strong>jedna ekipa obavlja posao 5 zanata</strong> (konstrukcija, izolacija, zaptivanje, akustika i završna obrada). Operativne marže mogu dostići <strong>50%</strong> po projektu, vraćajući vrijednost ranije ustupljenu podizvođačima.</p>
       
       <div class="hero-builders-cta">
-        <a href="#programme" class="btn btn-primary btn-arrow">Otkrijte partnerski program</a>
-        <a href="../../postani-partner/" class="btn btn-ghost">Prijavite se sada</a>
+        <a href="../../postani-partner/" class="btn btn-primary btn-arrow">Prijavite se sada</a>
       </div>
     </div>
     
@@ -880,7 +906,6 @@
 <!-- 2. PROBLÈMES / INQUIÉTUDES -->
 <section class="pains-section">
   <div class="section-intro">
-    <span class="section-eyebrow">Brige na gradilištu</span>
     <h2 class="section-title">Šta vas sprečava da usvojite <em>novi postupak.</em></h2>
     <p class="section-desc">Dizajnirali smo naš program da eliminišemo rizike koji su inherentni usvajanju inovativnog sistema izgradnje.</p>
   </div>
@@ -911,7 +936,6 @@
 <!-- 3. ATOUTS UNIQUES -->
 <section class="atouts-section">
   <div class="section-intro">
-    <span class="section-eyebrow">Učinak i marže</span>
     <h2 class="section-title">Šta mijenja <em>finansijski učinak.</em></h2>
   </div>
 
@@ -938,7 +962,7 @@
           <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1" opacity="0.3"/>
         </svg>
       </div>
-      <h3>Konstrukcija od <em>4–6 sedmica</em></h3>
+      <h3>Kuća na 80% za <em>4–6 sedmica</em></h3>
       <p>Izgradnja je 2–3 puta brža od tradicionalnog zidanja. Završite više projekata godišnje bez povećanja timova.</p>
     </article>
 
@@ -957,57 +981,13 @@
 </section>
 
 <!-- 4. PROGRAMME PARTENAIRE -->
-<section class="partner-section" id="programme">
-  <div class="section-intro">
-    <span class="section-eyebrow">Podrška i rast</span>
-    <h2 class="section-title">Postanite <em>sertifikovani Polistibrick građevinac.</em></h2>
-    <p class="section-desc">Partnerstvo fokusirano na izgradnju tima i pristup novim tržištima.</p>
-  </div>
 
-  <div class="partner-grid">
-    <div class="partner-card">
-      <div class="partner-card-icon">🎓</div>
-      <h4>Sertifikovana obuka <em>besplatna</em></h4>
-      <p>2–3 intenzivna dana u našim fabrikama. Praktična obuka za montažu i rezanje panela. Zvanična sertifikacija graditelja.</p>
-    </div>
-    
-    <div class="partner-card">
-      <div class="partner-card-icon">🛠️</div>
-      <h4>Podrška <em>na gradilištima</em></h4>
-      <p>Tehničar za primjenu vas prati do prvog puštanja u rad radi validacije oplate i izlivanja betona.</p>
-    </div>
-    
-    <div class="partner-card">
-      <div class="partner-card-icon">📞</div>
-      <h4>Potencijalni klijenti <em>direktno</em></h4>
-      <p>Geolocirane zahtjeve za ponude vlasnika i investitora u vašoj regiji usmjeravamo direktno u vaše poslovanje.</p>
-    </div>
-    
-    <div class="partner-card">
-      <div class="partner-card-icon">🏆</div>
-      <h4>Co-branding <em>regionalni</em></h4>
-      <p>Promocija gradilišta na našim nacionalnim materijalima kako bismo ojačali našu reputaciju kao vrhunskog pasivnog graditelja.</p>
-    </div>
-    
-    <div class="partner-card">
-      <div class="partner-card-icon">📋</div>
-      <h4>Cijene i <em>povlašćeni uslovi</em></h4>
-      <p>Namjenski trgovački popusti i rezervisani rokovi isporuke kako bi se osigurao povrat na ponude.</p>
-    </div>
-    
-    <div class="partner-card">
-      <div class="partner-card-icon">🚚</div>
-      <h4>Logistika <em>prioritetna</em></h4>
-      <p>Fabričke narudžbe se obrađuju prioritetno za isporuku prema tačnom planiranju lokacije.</p>
-    </div>
-  </div>
-</section>
 
-<!-- 5. PROCESS TIMELINE -->
-<section class="process-section">
+<!-- 6. TESTIMONIAL -->
+<section class="process-section" id="montaj">
   <div class="section-intro">
-    <span class="section-eyebrow">Put do partnerstva</span>
-    <h2 class="section-title">U 4 jasna koraka do <em>Polistibrick sertifikacije.</em></h2>
+    <h2 class="section-title">Montaža, u <em>4 etape.</em></h2>
+    <p class="section-desc">Od temelja do izlivene konstrukcije, sa 2–3 radnika na gradilištu. Bez krana, bez maltera, bez vremena sušenja između etapa.</p>
   </div>
 
   <div class="process-timeline">
@@ -1015,63 +995,226 @@
       <div class="process-num-wrap">
         <span class="process-num">1</span>
       </div>
-      <h4>Prijava</h4>
-      <p>Popunite kratki formular za partnere. Tehnička služba potvrđuje stručne kompetencije.</p>
-      <span class="step-duration">U roku od 48 sati</span>
+      <h4>Oplata</h4>
+      <p>EPS zidovi se podižu i fiksiraju na temelj drvenim bočnim podupiračima. Suva montaža: bez maltera, bez gubitaka izolacije.</p>
+      <span class="step-duration">Ručno, bez krana</span>
     </div>
-    
+
     <div class="process-step">
       <div class="process-num-wrap">
         <span class="process-num">2</span>
       </div>
-      <h4>Obilazak fabrike</h4>
-      <p>Posjetite jedan od proizvodnih centara kako biste otkrili automatizovanu proizvodnju sistema.</p>
-      <span class="step-duration">1 dan</span>
+      <h4>Međuspratna ploča</h4>
+      <p>PBK paneli se montiraju horizontalno — slojevi EPS-Graphite + fibrocement, spremni da prime armaturu.</p>
+      <span class="step-duration">Horizontalna montaža</span>
     </div>
-    
+
     <div class="process-step">
       <div class="process-num-wrap">
         <span class="process-num">3</span>
       </div>
-      <h4>Sertifikacija</h4>
-      <p>Praktična obuka za oplatu, podove i livenje sa našim trenerima na gradilištu.</p>
-      <span class="step-duration">2–3 dana</span>
+      <h4>Armatura</h4>
+      <p>Čelične mreže se postavljaju između rebara EPS-Graphite. To stvara monolitnu vezu između zidova i ploče.</p>
+      <span class="step-duration">Bez zavarivanja</span>
     </div>
-    
+
     <div class="process-step">
       <div class="process-num-wrap">
         <span class="process-num">4</span>
       </div>
-      <h4>Prvo gradilište</h4>
-      <p>Započnite rad tiho uz prisustvo našeg inženjera aplikacije.</p>
-      <span class="step-duration">Pro podrška</span>
+      <h4>Livenje betona</h4>
+      <p>Svi elementi su sastavljeni i provjereni, oplata je zatvorena. Nakon livenja, konstrukcija postaje monolitna za 24 sata.</p>
+      <span class="step-duration">Monolitna za 24 h</span>
+    </div>
+  </div>
+
+
+  <div style="text-align:center;margin-top:40px;">
+    <a href="../../montaza/" class="btn btn-primary btn-arrow">Pogledajte montažu detaljno</a>
+  </div>
+</section>
+
+<section class="process-section" style="padding-top:0;">
+  <div style="max-width:1000px;margin:0 auto;padding:0 40px;box-sizing:border-box;">
+    <div style="background:white;border:1px solid var(--border);border-radius:20px;padding:44px 36px;">
+      <h3 style="font-family:var(--serif);font-size:24px;font-weight:500;color:var(--ink);text-align:center;margin:0 0 32px;">Gradilište, svedeno na <em style="font-style:italic;color:var(--red);font-weight:400;">suštinu.</em></h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:28px;">
+        <div style="text-align:center;">
+          <div style="font-family:var(--serif);font-size:clamp(30px,3.4vw,44px);color:var(--red);line-height:1;margin-bottom:8px;">~1 mjesec</div>
+          <div style="font-size:13.5px;color:var(--gray);">konstrukcija, izolacija, završne obrade</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-family:var(--serif);font-size:clamp(30px,3.4vw,44px);color:var(--red);line-height:1;margin-bottom:8px;">2–3</div>
+          <div style="font-size:13.5px;color:var(--gray);">radnika na gradilištu</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-family:var(--serif);font-size:clamp(30px,3.4vw,44px);color:var(--red);line-height:1;margin-bottom:8px;">0</div>
+          <div style="font-size:13.5px;color:var(--gray);">kranova ili teške mehanizacije</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-family:var(--serif);font-size:clamp(30px,3.4vw,44px);color:var(--red);line-height:1;margin-bottom:8px;">24 h</div>
+          <div style="font-size:13.5px;color:var(--gray);">dok ne postane monolitna</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- 6. TESTIMONIAL -->
-<section class="testim-section">
+<section class="roi-section" id="calculator-echipa">
   <div class="container">
-    <div class="testim-card">
-      <p class="testim-quote">U početku, tim je imao rezerve u pogledu učenja novog sistema panela. Međutim, njihova tehnička podrška na našem prvom gradilištu sve je promijenila. Ušteda vremena je ogromna, završna obrada besprijekorna, kupci oduševljeni.</p>
-      <div class="testim-author">
-        <div class="testim-author-avatar">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="16" cy="12" r="6" stroke="var(--red)" stroke-width="1.5"/>
-            <path d="M6 26C6 21 10 18 16 18C22 18 26 21 26 26" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
+    <div class="roi-intro reveal">
+      <h2 style="font-family:var(--serif);font-size:clamp(28px,3.2vw,42px);font-weight:500;color:var(--ink);letter-spacing:-0.02em;margin-bottom:14px;">Koliko zarađujete više, <em style="font-style:italic;color:var(--red);font-weight:400;">godišnje.</em></h2>
+      <p style="font-size:15.5px;color:var(--gray);line-height:1.65;">Jedan Polistibrick tim obavlja posao 5 timova. Recite koliko kuća gradite godišnje — računamo šta ostaje u firmi umjesto da ode podizvođačima.</p>
+    </div>
+
+    <div class="roi-stage reveal">
+      <div class="roi-input-row">
+        <label for="cc-units">Izgrađenih kuća godišnje:</label>
+        <input type="number" id="cc-units" min="1" max="50" step="1" value="5">
+        <span style="font-weight:600;font-size:18px;color:var(--gray);">kuća</span>
+      </div>
+      <input type="range" id="cc-slider" class="roi-slider" min="1" max="50" step="1" value="5">
+
+      <div class="roi-results">
+        <div class="roi-card roi-card--highlight">
+          <div class="roi-card-label">Dodatna zarada godišnje</div>
+          <div class="roi-card-value" id="cc-profit">+120.000 €</div>
+          <div class="roi-card-unit">40% od rada 5 zanata</div>
         </div>
-        <div class="testim-author-info">
-          <strong>Ion Popescu</strong>
-          Direktor izvođenja · Construct Pro SRL (Cluj)
+        <div class="roi-card">
+          <div class="roi-card-label">Rad koji ostaje u firmi</div>
+          <div class="roi-card-value" id="cc-labor">300.000 €</div>
+          <div class="roi-card-unit">umjesto da ode podizvođačima</div>
+        </div>
+        <div class="roi-card">
+          <div class="roi-card-label">Sa istim timom</div>
+          <div class="roi-card-value">2–3×</div>
+          <div class="roi-card-unit">više projekata godišnje</div>
         </div>
       </div>
+
+      <div class="roi-summary">
+        <div class="roi-summary-text">Sa <strong id="cc-units-display">5 kuća</strong> godišnje, <strong>procijenjena dodatna zarada</strong> sa Polistibrick: <strong id="cc-total">~120.000 €</strong> u odnosu na rad sa 5 timova.</div>
+      </div>
     </div>
+
+    <p class="roi-note">Procjena na standardnim pretpostavkama: 150 m² po kući, ukupan rad 5 zanata 400 €/m², od čega 40% ostaje kao zarada u firmi. Za brojke za vašu firmu, kontaktirajte nas.</p>
+  </div>
+</section>
+
+<script>
+// KALKULATOR TIMA GRADITELJA
+(function(){
+  var unitsInput = document.getElementById('cc-units');
+  var unitsSlider = document.getElementById('cc-slider');
+  var profitEl = document.getElementById('cc-profit');
+  var laborEl = document.getElementById('cc-labor');
+  var unitsDisplayEl = document.getElementById('cc-units-display');
+  var totalEl = document.getElementById('cc-total');
+  if (!unitsInput) return;
+
+  var SURFACE = 150;        // m² po kući (prosjek)
+  var LABOR_PER_M2 = 400;   // €/m², rad 5 zanata
+  var KEPT = 0.40;          // dio koji ostaje kao zarada u firmi
+
+  function fmt(n) { return Math.round(n).toLocaleString('sr-Latn-ME') + ' €'; }
+
+  function calc() {
+    var u = parseInt(unitsInput.value, 10);
+    if (isNaN(u) || u < 1) u = 1;
+    if (u > 50) u = 50;
+    unitsInput.value = u;
+    unitsSlider.value = u;
+
+    var labor = u * SURFACE * LABOR_PER_M2;
+    var profit = labor * KEPT;
+
+    profitEl.textContent = '+' + fmt(profit);
+    laborEl.textContent = fmt(labor);
+    unitsDisplayEl.textContent = u + (u % 10 >= 2 && u % 10 <= 4 && (u % 100 < 12 || u % 100 > 14) ? ' kuće' : ' kuća');
+    totalEl.textContent = '~' + fmt(profit);
+  }
+
+  unitsInput.addEventListener('input', calc);
+  unitsSlider.addEventListener('input', function(){ unitsInput.value = this.value; calc(); });
+  calc();
+})();
+</script>
+
+<section class="testim-section" id="testimoniale-reale" style="display:none;">
+  <div class="container">
+    <div id="testim-lista" style="display:grid;gap:28px;"></div>
     <div style="text-align:center;margin-top:40px;">
-      <a href="../../svjedocanstva/" class="btn btn-ghost btn-arrow">Pogledajte svjedočanstva klijenata</a>
+      <a href="../../svjedocanstva/" class="btn btn-ghost btn-arrow">Pogledajte svjedočanstva</a>
     </div>
   </div>
 </section>
+
+<script>
+// PRAVA SVJEDOČANSTVA — čitaju se sa stranice svjedočanstava (objavljena kroz studio).
+// Dok ne postoji nijedno, sekcija ostaje skrivena.
+(function(){
+  var sec = document.getElementById('testimoniale-reale');
+  var lista = document.getElementById('testim-lista');
+  if (!sec || !lista || !window.fetch) return;
+
+  function cale(p) { return (p || '').replace('../images/', '../../images/'); }
+
+  fetch('../../svjedocanstva/').then(function(r){ return r.text(); }).then(function(html){
+    var doc = new DOMParser().parseFromString(html, 'text/html');
+    var reale = doc.querySelectorAll('article[data-testimonial]');
+    if (!reale.length) return;
+
+    Array.prototype.slice.call(reale, 0, 2).forEach(function(c){
+      var nume = c.querySelector('.video-author-info strong');
+      var meta = c.querySelector('.video-author-info span');
+      var citat = c.querySelector('.video-quote');
+      var video = c.querySelector('video');
+
+      var card = document.createElement('div');
+      card.className = 'testim-card';
+
+      if (video) {
+        var v = document.createElement('video');
+        v.controls = true; v.preload = 'none'; v.setAttribute('playsinline', '');
+        v.poster = cale(video.getAttribute('poster'));
+        v.style.cssText = 'width:100%;max-height:420px;border-radius:14px;margin-bottom:24px;background:#000;display:block;';
+        var s0 = video.querySelector('source');
+        if (s0) { var s = document.createElement('source'); s.src = cale(s0.getAttribute('src')); s.type = 'video/mp4'; v.appendChild(s); }
+        var t0 = video.querySelector('track');
+        if (t0) { var tr = document.createElement('track'); tr.kind = 'subtitles';
+                  tr.src = cale(t0.getAttribute('src')); tr.srclang = t0.getAttribute('srclang') || 'sr';
+                  tr.setAttribute('default', ''); v.appendChild(tr); }
+        card.appendChild(v);
+      }
+
+      if (citat && citat.textContent.trim()) {
+        var q = document.createElement('p');
+        q.className = 'testim-quote';
+        q.textContent = citat.textContent.trim();
+        card.appendChild(q);
+      }
+
+      var a = document.createElement('div');
+      a.className = 'testim-author';
+      var info = document.createElement('div');
+      info.className = 'testim-author-info';
+      var st = document.createElement('strong');
+      st.textContent = nume ? nume.textContent.trim() : '';
+      var sp = document.createElement('span');
+      sp.textContent = meta ? meta.textContent.trim() : '';
+      sp.style.display = 'block';
+      info.appendChild(st); info.appendChild(sp);
+      a.appendChild(info);
+      card.appendChild(a);
+
+      lista.appendChild(card);
+    });
+
+    sec.style.display = '';
+  }).catch(function(){ /* ostaje skrivena */ });
+})();
+</script>
 
 <!-- 7. CTA PARTENARIAT -->
 <section class="cta-cert-section" style="margin-top: 60px;">
@@ -1093,6 +1236,6 @@
 
 <footer class="site-footer" data-include="footer"></footer>
 
-<script src="../../assets/js/site.js?v=56f8746e" defer></script>
+<script src="../../assets/js/site.js?v=160ec36c" defer></script>
 </body>
 </html>

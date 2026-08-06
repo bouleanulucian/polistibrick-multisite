@@ -24,18 +24,18 @@
   };
 
   const MSG = {
-    errPrivacy: '{{ui.form_err_privacy}}',
-    errRatingName: '{{ui.form_err_rating_name}}',
-    errVideo: '{{ui.form_err_video}}',
-    errReviewText: '{{ui.form_err_review_text}}',
-    errNetwork: '{{ui.form_err_network}}',
-    errSend: '{{ui.form_err_send}}',
-    loading: '{{ui.form_loading}}',
-    blockedNoKeyPrefix: '{{ui.form_blocked_no_key_prefix}}',
-    blockedNoKeySuffix: '{{ui.form_blocked_no_key_suffix}}',
-    blockedPreviewPrefix: '{{ui.form_blocked_preview_prefix}}',
-    blockedPreviewMid: '{{ui.form_blocked_preview_mid}}',
-    blockedUnavailable: '{{ui.form_blocked_unavailable}}',
+    errPrivacy: 'Acepta la política de privacidad para continuar.',
+    errRatingName: 'Indica al menos: una valoración y el nombre / la empresa.',
+    errVideo: 'Añade el vídeo — o elige « Texto + fotos ».',
+    errReviewText: 'Escribe tu reseña.',
+    errNetwork: 'Error de red. Inténtalo de nuevo en unos instantes.',
+    errSend: 'No se pudo enviar. Inténtalo de nuevo o escríbenos por email.',
+    loading: 'Enviando…',
+    blockedNoKeyPrefix: 'Añade la clave Web3Forms en _config.json (dominio:',
+    blockedNoKeySuffix: '). Mientras tanto:',
+    blockedPreviewPrefix: 'Vista previa — el envío funciona en',
+    blockedPreviewMid: 'o en local (localhost). Contacto:',
+    blockedUnavailable: 'Formulario no disponible. Contacto:',
   };
 
   function resolved(str, fallback) {
@@ -319,8 +319,20 @@
 
     const msg = form.querySelector('textarea[name="message"]');
     if (msg && !msg.value.trim() && (model || sistem)) {
-      let t = model ? 'Mă interesează modelul ' + model : 'Mă interesează un model din catalog';
-      if (sistem) t += ', construit în sistemul ' + sistem;
+        // mesajul precompletat, în limba paginii
+        const L = (document.documentElement.lang || 'ro').slice(0, 2);
+        const SABLOANE = {
+          ro: ['Mă interesează modelul ', 'Mă interesează un model din catalog', ', construit în sistemul ', ''],
+          fr: ['Je suis intéressé par le modèle ', 'Je suis intéressé par un modèle du catalogue', ', construit avec le système ', ''],
+          en: ['I am interested in the ', 'I am interested in a model from the catalogue', ', built with the ', ' system'],
+          es: ['Me interesa el modelo ', 'Me interesa un modelo del catálogo', ', construido con el sistema ', ''],
+          it: ['Mi interessa il modello ', 'Mi interessa un modello del catalogo', ', costruito con il sistema ', ''],
+          sr: ['Zanima me model ', 'Zanima me model iz kataloga', ', građen sistemom ', ''],
+          me: ['Zanima me model ', 'Zanima me model iz kataloga', ', građen sistemom ', '']
+        };
+        const S = SABLOANE[L] || SABLOANE.ro;
+        let t = model ? S[0] + model + (L === 'en' ? ' model' : '') : S[1];
+        if (sistem) t += S[2] + sistem + S[3];
       msg.value = t + '.\n\n';
       msg.setSelectionRange(msg.value.length, msg.value.length);
     }

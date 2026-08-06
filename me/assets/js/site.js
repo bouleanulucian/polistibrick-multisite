@@ -80,14 +80,13 @@
       <div class="nav-drawer-group">
         <button class="nav-drawer-title" aria-expanded="false">Projekti<span class="nd-caret">▾</span></button>
         <div class="nav-acc">
-          <a href="${BASE}projekti/">Izgrađene kuće</a>
+          <a href="${BASE}projekti/">Svi projekti</a>
           <a href="${BASE}svjedocanstva/">Svjedočanstva (video)</a>
         </div>
       </div>
       <div class="nav-drawer-group">
         <button class="nav-drawer-title" aria-expanded="false">Kalkulator<span class="nd-caret">▾</span></button>
         <div class="nav-acc">
-          <a href="${BASE}kalkulator/">Kalkulator troškova</a>
           <a href="${BASE}ustede/">Kalkulator ušteda</a>
         </div>
       </div>
@@ -143,9 +142,9 @@
         <div class="footer-col">
           <h5>Resursi</h5>
           <ul>
-            <li><a href="${BASE}projekti/">Realizovani projekti</a></li>
+            <li><a href="${BASE}projekti/">Projekti</a></li>
+            <li><a href="${BASE}ustede/">Kalkulator ušteda</a></li>
             <li><a href="${BASE}resursi/faq/">Često postavljana pitanja</a></li>
-            <li><a href="${BASE}kalkulator/">Kalkulator troškova</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -184,11 +183,16 @@
       const bar = document.createElement('div');
       bar.className = 'mobile-contact-bar';
       bar.setAttribute('aria-label', 'Brzi kontakt');
+      // Hide the Call button when the country has no usable phone number yet
+      // (unfilled config leaves "[to fill in]" or an unsubstituted placeholder).
+      const phoneRaw = '+382[za unos]';
+      const hasPhone = phoneRaw && phoneRaw.indexOf('[') === -1 && phoneRaw.indexOf('{') === -1;
       bar.innerHTML =
-        '<a href="tel:+382[za unos]" class="mcb-btn mcb-call" aria-label="Pozovite Polistibrick">' +
+        (hasPhone ?
+        '<a href="tel:' + phoneRaw + '" class="mcb-btn mcb-call" aria-label="Pozovite Polistibrick">' +
           '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>' +
           '<span>Pozovite</span>' +
-        '</a>' +
+        '</a>' : '') +
         '<a href="#" data-m64="Y29udGFjdEBwb2xpc3RpYnJpY2suY29t" class="mcb-btn mcb-email" aria-label="Pošaljite e-mail">' +
           '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>' +
           '<span>E-mail</span>' +
