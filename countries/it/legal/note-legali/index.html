@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Note legali · Polistibrick</title>
-  <meta name="description" content="Note legali del sito polistibrick.fr — editore, hosting, contatti e informazioni normative.">
+  <meta name="description" content="Note legali del sito polistibrick.it — editore, hosting, contatti e informazioni normative.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -45,9 +45,9 @@
       <div class="wm-stage">
         <div class="wm-content">
           <div class="wm-text">
-            <span class="bubble-tag">Obbligatorio LCEN</span>
+            <span class="bubble-tag">Obbligatorio · D.Lgs. 70/2003</span>
             <h1>Note legali</h1>
-            <p>Informazioni normative sull'editore e sull'hosting del sito polistibrick.fr, conformemente alla legge francese n. 2004-575 del 21 giugno 2004 per la fiducia nell'economia digitale (LCEN).</p>
+            <p>Informazioni normative sull'editore e sull'hosting del sito polistibrick.it, conformemente al Decreto Legislativo 9 aprile 2003, n. 70 sul commercio elettronico e i servizi della società dell'informazione.</p>
           </div>
           <div class="wm-visual" style="background: linear-gradient(135deg, #1f2022 0%, #111213 100%); display: flex; flex-direction: column; gap: 20px; align-items: center; justify-content: center; border: none; color: #fff; box-shadow: var(--shadow-lg); padding: 24px; box-sizing: border-box;">
             <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -58,7 +58,7 @@
               <rect x="18" y="51" width="32" height="3" rx="1.5" fill="rgba(255,255,255,0.25)"/>
             </svg>
             <div style="text-align: center;">
-              <div style="font-family: var(--serif); font-size: 20px; font-weight: 500; margin-bottom: 6px;">polistibrick.fr</div>
+              <div style="font-family: var(--serif); font-size: 20px; font-weight: 500; margin-bottom: 6px;">{{domain}}</div>
               <div style="font-size: 11px; color: rgba(255,255,255,0.60); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600;">Editore · Hosting</div>
             </div>
           </div>
@@ -72,7 +72,7 @@
   <div class="container container--narrow">
     <div class="reveal">
       <h2 style="margin:32px 0 12px;">1. Editore del sito</h2>
-      <p style="font-size:15px;margin-bottom:14px;">Il sito <strong>{{domain}}</strong> è edito dalla società <strong>{{company.name_legal}}</strong>, società a responsabilità limitata con capitale sociale di [da completare se necessario] euro, iscritta al RCS di Versailles con il numero <strong>{{company.registration}}</strong> (SIRET della sede: 984 804 872 00021), partita IVA intracomunitaria: <strong>{{company.vat}}</strong>.</p>
+      <p style="font-size:15px;margin-bottom:14px;">Il sito <strong>{{domain}}</strong> è edito dalla società <strong>{{company.name_legal}}</strong>, società a responsabilità limitata di diritto italiano. I riferimenti di iscrizione al Registro delle Imprese, il numero REA e la partita IVA saranno indicati in questa pagina.</p>
       <p style="font-size:15px;margin-bottom:14px;"><strong>Sede legale:</strong> {{company.address_street}}, {{company.address_zip}} {{company.address_city}}, {{company.address_country}}.<br>
       <strong>Telefono:</strong> <a href="tel:{{contact.phone_raw}}" style="color:var(--red);">{{contact.phone_display}}</a><br>
       <strong>Email:</strong> <a href="#" data-m64="{{contact.email_general|b64}}" style="color:var(--red);">Email</a></p>

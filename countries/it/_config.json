@@ -11,15 +11,15 @@
     "name_short": "Polistibrick Italia",
     "vat": "IT[da inserire]",
     "registration": "[da inserire]",
-    "address_street": "[da inserire]",
-    "address_city": "Milano",
-    "address_zip": "[da inserire]",
+    "address_street": "Via Magliano del Gioco 16",
+    "address_city": "Città Sant'Angelo (PE)",
+    "address_zip": "65013",
     "address_country": "Italia"
   },
   "contact": {
-    "phone": "+39 [da inserire]",
-    "phone_raw": "+39[da inserire]",
-    "phone_display": "+39 [da inserire]",
+    "phone": "+39 328 164 8085",
+    "phone_raw": "+393281648085",
+    "phone_display": "+39 328 164 8085",
     "email_general": "contact@polistibrick.com",
     "email_offer": "preventivo@polistibrick.com",
     "email_press": "stampa@polistibrick.com",
@@ -28,7 +28,8 @@
       "facebook": "",
       "instagram": "",
       "linkedin": "",
-      "youtube": ""
+      "youtube": "",
+      "tiktok": ""
     }
   },
   "team": [

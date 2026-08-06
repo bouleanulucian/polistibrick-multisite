@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mentions légales · Polistibrick</title>
-  <meta name="description" content="Mentions légales du site polistibrick.fr — éditeur, hébergeur, contact et informations réglementaires.">
+  <meta name="description" content="Mentions légales du site polistibrick.be — éditeur, hébergeur, contact et informations réglementaires.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -47,7 +47,7 @@
           <div class="wm-text">
             <span class="bubble-tag">Obligatoire LCEN</span>
             <h1>Mentions légales</h1>
-            <p>Informations réglementaires sur l'éditeur et l'hébergeur du site polistibrick.fr, conformément à la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique.</p>
+            <p>Informations réglementaires sur l'éditeur et l'hébergeur du site polistibrick.be, conformément à la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique.</p>
           </div>
           <div class="wm-visual" style="background: linear-gradient(135deg, #1f2022 0%, #111213 100%); display: flex; flex-direction: column; gap: 20px; align-items: center; justify-content: center; border: none; color: #fff; box-shadow: var(--shadow-lg); padding: 24px; box-sizing: border-box;">
             <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -58,7 +58,7 @@
               <rect x="18" y="51" width="32" height="3" rx="1.5" fill="rgba(255,255,255,0.25)"/>
             </svg>
             <div style="text-align: center;">
-              <div style="font-family: var(--serif); font-size: 20px; font-weight: 500; margin-bottom: 6px;">polistibrick.fr</div>
+              <div style="font-family: var(--serif); font-size: 20px; font-weight: 500; margin-bottom: 6px;">polistibrick.be</div>
               <div style="font-size: 11px; color: rgba(255,255,255,0.60); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600;">Éditeur · Hébergeur</div>
             </div>
           </div>
@@ -72,10 +72,9 @@
   <div class="container container--narrow">
     <div class="reveal">
       <h2 style="margin:32px 0 12px;">1. Éditeur du site</h2>
-      <p style="font-size:15px;margin-bottom:14px;">Le site <strong>{{domain}}</strong> est édité par la société <strong>{{company.name_legal}}</strong>, société à responsabilité limitée au capital de [à compléter si besoin] euros, immatriculée au RCS de Versailles sous le numéro <strong>{{company.registration}}</strong> (SIRET du siège : 984 804 872 00021), numéro de TVA intracommunautaire : <strong>{{company.vat}}</strong>.</p>
-      <p style="font-size:15px;margin-bottom:14px;"><strong>Siège social :</strong> {{company.address_street}}, {{company.address_zip}} {{company.address_city}}, {{company.address_country}}.<br>
-      <strong>Téléphone :</strong> <a href="tel:{{contact.phone_raw}}" style="color:var(--red);">{{contact.phone_display}}</a><br>
-      <strong>Email :</strong> <a href="#" data-m64="{{contact.email_general|b64}}" style="color:var(--red);">Email</a></p>
+      <p style="font-size:15px;margin-bottom:14px;">Le site <strong>{{domain}}</strong> est édité par la société <strong>{{company.name_legal}}</strong>, société à responsabilité limitée au capital de [à compléter si besoin] euros<strong>—</strong> , numéro de TVA intracommunautaire : <strong>—</strong>.</p>
+      <p style="font-size:15px;margin-bottom:14px;"><strong>Siège social :</strong> {{company.address_city}} · {{company.address_country}}<br><strong>Email :</strong> <a href="#" data-m64="{{contact.email_general|b64}}" style="color:var(--red);">Email</a></p>
+      <p style="font-size:13.5px;color:var(--gray);margin-bottom:14px;">Les coordonnées d'immatriculation (registre, TVA, adresse complète) seront publiées ici dès l'enregistrement local de la société.</p>
 
       <h2 style="margin:32px 0 12px;">2. Directeur de la publication</h2>
       <p style="font-size:15px;margin-bottom:14px;"><strong>{{legal.publication_director}}</strong>, en qualité de représentant légal de {{company.name_short}}.</p>

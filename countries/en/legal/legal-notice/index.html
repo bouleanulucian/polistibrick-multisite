@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Legal notice · Polistibrick</title>
-  <meta name="description" content="Legal notices for polistibrick.fr — publisher, host, contact and regulatory information.">
+  <meta name="description" content="Legal notices for {{domain}} — publisher, host, contact and regulatory information.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -47,7 +47,7 @@
           <div class="wm-text">
             <span class="bubble-tag">Required by the French LCEN</span>
             <h1>Legal notices</h1>
-            <p>Regulatory information about the publisher and host of polistibrick.fr, in accordance with French law no. 2004-575 of 21 June 2004 on confidence in the digital economy.</p>
+            <p>Regulatory information about the publisher and host of {{domain}}.</p>
           </div>
           <div class="wm-visual" style="background: linear-gradient(135deg, #1f2022 0%, #111213 100%); display: flex; flex-direction: column; gap: 20px; align-items: center; justify-content: center; border: none; color: #fff; box-shadow: var(--shadow-lg); padding: 24px; box-sizing: border-box;">
             <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -58,7 +58,7 @@
               <rect x="18" y="51" width="32" height="3" rx="1.5" fill="rgba(255,255,255,0.25)"/>
             </svg>
             <div style="text-align: center;">
-              <div style="font-family: var(--serif); font-size: 20px; font-weight: 500; margin-bottom: 6px;">polistibrick.fr</div>
+              <div style="font-family: var(--serif); font-size: 20px; font-weight: 500; margin-bottom: 6px;">{{domain}}</div>
               <div style="font-size: 11px; color: rgba(255,255,255,0.60); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600;">Publisher · Web host</div>
             </div>
           </div>
@@ -72,9 +72,8 @@
   <div class="container container--narrow">
     <div class="reveal">
       <h2 style="margin:32px 0 12px;">1. Site publisher</h2>
-      <p style="font-size:15px;margin-bottom:14px;">The site <strong>{{domain}}</strong> is published by <strong>{{company.name_legal}}</strong>, a limited liability company with share capital of [to be completed if needed] euros, registered with the Versailles Trade Register under number <strong>{{company.registration}}</strong> (Head office SIRET: 984 804 872 00021), intra-community VAT number: <strong>{{company.vat}}</strong>.</p>
-      <p style="font-size:15px;margin-bottom:14px;"><strong>Registered office:</strong> {{company.address_street}}, {{company.address_zip}} {{company.address_city}}, {{company.address_country}}.<br>
-      <strong>Phone:</strong> <a href="tel:{{contact.phone_raw}}" style="color:var(--red);">{{contact.phone_display}}</a><br>
+      <p style="font-size:15px;margin-bottom:14px;">The site <strong>{{domain}}</strong> is published by <strong>{{company.name_legal}}</strong>. Companies House registration and VAT details are available on request.</p>
+      <p style="font-size:15px;margin-bottom:14px;"><strong>Registered office:</strong> {{company.address_city}}, {{company.address_country}}.<br>
       <strong>Email:</strong> <a href="#" data-m64="{{contact.email_general|b64}}" style="color:var(--red);">Email</a></p>
 
       <h2 style="margin:32px 0 12px;">2. Publication director</h2>

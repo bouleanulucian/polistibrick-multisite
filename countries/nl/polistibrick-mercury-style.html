@@ -62,14 +62,13 @@
       <div class="nav-menu-item">
         <a href="#" class="nav-menu-link" role="button" aria-haspopup="true" aria-expanded="false" onclick="event.preventDefault(); return false;">Projets <span class="nav-menu-caret">▾</span></a>
         <div class="nav-menu-dropdown">
-          <a href="projets/">Maisons construites</a>
+          <a href="projets/">Tous les projets</a>
           <a href="temoignages/">Témoignages (vidéo)</a>
         </div>
       </div>
       <div class="nav-menu-item">
         <a href="#" class="nav-menu-link" role="button" aria-haspopup="true" aria-expanded="false" onclick="event.preventDefault(); return false;">Calculateur <span class="nav-menu-caret">▾</span></a>
         <div class="nav-menu-dropdown">
-          <a href="calculateur/">Calculateur de coût</a>
           <a href="economies/">Calculateur d'économies (vs brique)</a>
         </div>
       </div>
@@ -171,7 +170,7 @@
   <div class="nav-drawer-group">
     <button class="nav-drawer-title" aria-expanded="false">Projets<span class="nd-caret">▾</span></button>
     <div class="nav-acc">
-      <a href="projets/">Maisons construites</a>
+      <a href="projets/">Tous les projets</a>
       <a href="temoignages/">Témoignages vidéo</a>
     </div>
   </div>
@@ -179,7 +178,6 @@
   <div class="nav-drawer-group">
     <button class="nav-drawer-title" aria-expanded="false">Calculateur<span class="nd-caret">▾</span></button>
     <div class="nav-acc">
-      <a href="calculateur/">Calculateur de coût</a>
       <a href="economies/">Calculateur d'économies</a>
     </div>
   </div>
@@ -255,7 +253,7 @@
           <img class="hero-robot" src="images/robot.webp" alt="Polistibrick — Construction intelligente" fetchpriority="low" loading="lazy" width="1500" height="1362">
         </picture>
         <h1>Construisez plus de logements.<br><span class="h1-l2">Avec une seule équipe.</span></h1>
-        <p class="hero-sub">Polistibrick remplace 5 matériaux différents et 5 équipes de construction. Un seul produit, une seule équipe — et la maison est achevée. <strong>Innovation brevetée.</strong></p>
+        <p class="hero-sub">Des murs déjà finis, avec isolation de maison passive et réseaux prévus.<br>Ils arrivent finalisés <strong>à 80 % en usine</strong> — on les monte, on coule le béton, on passe à l'aménagement.</p>
         <div class="hero-actions">
           <a href="devis/" class="btn btn-red btn-large">Recevez votre devis gratuit →</a>
         </div>
@@ -809,7 +807,7 @@
 
 <section class="montaj-section">
     <picture class="media-poster montaj-poster" aria-hidden="true">
-    <img src="images/montage/montage-houses-poster.jpg" alt="" loading="lazy" decoding="async">
+    <img src="images/montaj/montage-houses-poster.webp" alt="" loading="lazy" decoding="async">
   </picture>
   <div class="montaj-scrim" aria-hidden="true"></div>
   <div class="montaj-watermark" aria-hidden="true">
@@ -828,7 +826,7 @@
           <article class="montaj-card">
             <div class="montaj-num">01</div>
             <div class="montaj-img">
-              <img src="images/construction/stage1-cofraj.jpg" alt="Coffrage assemblé avec étaiement latéral" loading="lazy">
+              <picture><source type="image/webp" srcset="images/construction/stage1-cofraj.webp"><img src="images/construction/stage1-cofraj.jpg" alt="Coffrage assemblé avec étaiement latéral" loading="lazy" decoding="async" width="800" height="600"></picture>
             </div>
             <div class="montaj-card-body">
               <h3>Coffrage</h3>
@@ -850,7 +848,7 @@
           <article class="montaj-card">
             <div class="montaj-num">03</div>
             <div class="montaj-img">
-              <img src="images/construction/stage2-fierbeton.jpg" alt="Armature acier-béton sur plancher" loading="lazy">
+              <picture><source type="image/webp" srcset="images/construction/stage2-fierbeton.webp"><img src="images/construction/stage2-fierbeton.jpg" alt="Armature acier-béton sur plancher" loading="lazy" decoding="async" width="800" height="600"></picture>
             </div>
             <div class="montaj-card-body">
               <h3>Armature</h3>
@@ -898,7 +896,6 @@
   <div class="container conf-inner">
 
     <div class="conf-head reveal">
-      <span class="conf-overline">Avis vérifiés · Constructeurs</span>
       <p class="conf-sub">Ils ont bâti avec Polistibrick — <em>ils en parlent.</em></p>
     </div>
 
@@ -1216,17 +1213,18 @@
   </div>
   <div class="container">
     <div class="cta-box reveal">
-      <div class="cta-box-eyebrow">CONSTRUISEZ AVEC NOUS</div>
       <h2>Construisons ensemble<br><em>votre maison du futur.</em></h2>
       <p>Parlez-nous de votre projet. Nous vous préparons un devis personnalisé sous 48 heures — sans engagement.</p>
       <ul class="cta-info">
-        <li><span class="cti-ic">📍</span> {{company.address_street}}, {{company.address_zip}} {{company.address_city}} · {{company.address_country}}</li>
+        <li><span class="cti-ic">📍</span> {{company.address_city}} · {{company.address_country}}</li>
         <li><span class="cti-ic">🕘</span> {{contact.hours}}</li>
       </ul>
       <div class="cta-actions">
         <a href="contact/" class="btn btn-on-dark btn-large">✉ Email →</a>
-        <a href="tel:{{contact.phone_raw}}" class="btn btn-on-dark-ghost btn-large">📞 {{contact.phone_display}}</a>
+        <!-- Bouton téléphone retiré tant que le numéro n'existe pas dans _config.json (contact.phone_raw / phone_display) :
+        <a href="tel:{{contact.phone_raw}}" class="btn btn-on-dark-ghost btn-large">📞 {{contact.phone_display}}</a> -->
       </div>
+      <!-- Bloc social masqué tant que les comptes BE n'existent pas — réactiver quand les 4 URLs sont renseignées dans _config.json
       <div class="cta-social">
         <a href="{{contact.social.facebook}}" target="_blank" rel="noopener" aria-label="Facebook">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12Z"/></svg>
@@ -1241,6 +1239,7 @@
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.82a4.28 4.28 0 0 1-1.05-2.82h-3.1v12.3a2.59 2.59 0 0 1-2.59 2.5 2.59 2.59 0 0 1-2.6-2.59 2.59 2.59 0 0 1 3.3-2.49V9.55a5.7 5.7 0 0 0-.7-.04A5.69 5.69 0 0 0 4.18 15.2 5.69 5.69 0 0 0 13.55 19.6a5.69 5.69 0 0 0 1.45-3.8V9.01a7.34 7.34 0 0 0 4.3 1.38V7.28a4.29 4.29 0 0 1-2.7-1.46Z"/></svg>
         </a>
       </div>
+      -->
     </div>
     <div class="cta-image-col">
       <img class="mobile-product" src="images/robot.webp" alt="Polistibrick — Construction intelligente" loading="lazy">
@@ -1978,10 +1977,11 @@
 <!-- Barre de contact mobile flottante (Appeler + Email) — mobile uniquement -->
 
 <div class="mobile-contact-bar" aria-label="Contact rapide">
+  <!-- Appel retiré tant que le numéro n'existe pas dans _config.json :
   <a href="tel:{{contact.phone_raw}}" class="mcb-btn mcb-call" aria-label="Appeler Polistibrick">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
     <span>Appeler</span>
-  </a>
+  </a> -->
   <a href="#" data-m64="{{contact.email_general|b64}}" onclick="location.href='mailto:'+atob(this.dataset.m64);return false" class="mcb-btn mcb-email" aria-label="Envoyer un email">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
     <span>Email</span>

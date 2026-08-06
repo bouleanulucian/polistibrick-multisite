@@ -28,7 +28,8 @@
       "facebook": "",
       "instagram": "",
       "linkedin": "",
-      "youtube": ""
+      "youtube": "",
+      "tiktok": ""
     }
   },
   "team": [
@@ -59,6 +60,9 @@
     "hreflang": "en-IE"
   },
   "legal": {
+    "publication_director": "Lucian Bouleanu",
+    "hosting_provider": "Cloudflare, Inc.",
+    "hosting_address": "101 Townsend St, San Francisco, CA 94107, United States",
     "privacy_slug": "privacy",
     "privacy_contact_email": "contact@polistibrick.ie"
   },

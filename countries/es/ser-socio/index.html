@@ -176,6 +176,187 @@
       .partner-stage { padding: 28px 20px; }
       .partner-form { padding: 24px; }
     }
+
+    /* — el programa de certificación (trasladado de la página de constructores) — */
+    .section-intro {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 60px;
+      padding: 0 40px;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 3.8vw, 48px);
+      font-weight: 300;
+      line-height: 1.2;
+      margin: 0 0 16px 0;
+      color: var(--ink);
+    }
+    .section-title em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--red);
+    }
+    .section-desc {
+      font-size: 15.5px;
+      line-height: 1.7;
+      color: var(--gray);
+      font-weight: 300;
+    }
+    /* Certified Partner Program Advantages */
+    .programme-section {
+      padding: 100px 0;
+      background: #fff;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      z-index: 1;
+    }
+    .partner-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      box-sizing: border-box;
+    }
+    .partner-card {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 36px 30px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+    }
+    .partner-card:hover {
+      border-color: var(--border-strong);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+    .partner-card-icon {
+      font-size: 24px;
+      width: 48px; height: 48px;
+      background: var(--red-soft);
+      border: 1px solid rgba(226,62,68,0.12);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .partner-card h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 19px;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+    .partner-card h4 em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--red);
+    }
+    .partner-card p {
+      font-size: 13px;
+      color: var(--gray);
+      line-height: 1.65;
+      margin: 0;
+      font-weight: 300;
+    }
+    .partner-card p strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+    /* 4-Step Process Section - Clean Connected Timeline */
+    .process-section {
+      padding: 100px 0;
+      position: relative;
+      z-index: 1;
+      background: var(--cream);
+    }
+    .process-timeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      box-sizing: border-box;
+      position: relative;
+    }
+    .process-timeline::before {
+      content: '';
+      position: absolute;
+      top: 58px; left: 60px; right: 60px;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(226,62,68,0) 0%, rgba(226,62,68,0.3) 15%, rgba(226,62,68,0.3) 85%, rgba(226,62,68,0) 100%);
+      z-index: 0;
+    }
+    .process-step {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+    .process-num-wrap {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: var(--red);
+      border: 1px solid var(--red);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      box-shadow: 0 6px 16px rgba(226,62,68,0.2);
+      transition: all 0.3s ease;
+    }
+    .process-step:hover .process-num-wrap {
+      box-shadow: 0 8px 22px rgba(226,62,68,0.35);
+      transform: scale(1.05);
+    }
+    .process-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 500;
+      color: white;
+    }
+    .process-step h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 12px;
+    }
+    .process-step p {
+      font-size: 13px;
+      color: var(--gray);
+      line-height: 1.6;
+      margin-bottom: 16px;
+      font-weight: 300;
+    }
+    .step-duration {
+      display: inline-block;
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--red);
+      background: rgba(226,62,68,0.06);
+      border: 1px solid rgba(226,62,68,0.12);
+      padding: 4px 10px;
+      border-radius: 100px;
+    }
+    @media (max-width: 1200px) {
+      .partner-grid { grid-template-columns: repeat(2, 1fr); }
+      .process-timeline { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+      .process-timeline::before { display: none; }
+    }
+    @media (max-width: 640px) {
+      .partner-grid { grid-template-columns: 1fr; }
+      .process-timeline { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body data-base="../">
@@ -348,50 +529,92 @@
 </section>
 
 <!-- WHAT HAPPENS NEXT -->
-<section class="section section--cream">
-  <div class="container">
-    <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 50px;">
-      <span class="eyebrow">Pasos tras la candidatura</span>
-      <h2>El proceso, <em>paso a paso.</em></h2>
+<section class="programme-section" id="programme">
+  <div class="section-intro">
+    <h2 class="section-title">Conviértase en <em>Constructor Certificado Polistibrick.</em></h2>
+    <p class="section-desc">Una colaboración centrada en la formación de los equipos y el acceso a nuevos mercados.</p>
+  </div>
+
+  <div class="partner-grid">
+    <div class="partner-card">
+      <div class="partner-card-icon">🎓</div>
+      <h4>Formación certificada <em>gratuita</em></h4>
+      <p>2–3 días intensivos en nuestras fábricas. Práctica real de montaje y corte de paneles. Certificación oficial de constructor.</p>
     </div>
-    <div class="grid grid-4 reveal" style="gap:32px;">
-      <div>
-        <div style="font-family:var(--serif);font-size:48px;color:var(--red);line-height:1;margin-bottom:14px;">01</div>
-        <h4 style="margin-bottom:8px;">Solicitud</h4>
-        <p style="font-size:14px;">Complete el formulario. Todos los datos permanecen confidenciales y son verificados por nuestro equipo B2B.</p>
-      </div>
-      <div>
-        <div style="font-family:var(--serif);font-size:48px;color:var(--red);line-height:1;margin-bottom:14px;">02</div>
-        <h4 style="margin-bottom:8px;">Contacto + verificación</h4>
-        <p style="font-size:14px;">Te contactamos en 3 días laborables para una llamada de 30 min. Verificamos la empresa y la seriedad.</p>
-      </div>
-      <div>
-        <div style="font-family:var(--serif);font-size:48px;color:var(--red);line-height:1;margin-bottom:14px;">03</div>
-        <h4 style="margin-bottom:8px;">Curso de certificación</h4>
-        <p style="font-size:14px;">3 días en Valencia o Craiova — teoría + práctica + examen. Alojamiento y comidas incluidos para socios internacionales.</p>
-      </div>
-      <div>
-        <div style="font-family:var(--serif);font-size:48px;color:var(--red);line-height:1;margin-bottom:14px;">04</div>
-        <h4 style="margin-bottom:8px;">Primer proyecto</h4>
-        <p style="font-size:14px;">Un ingeniero Polistibrick viene a la obra de su primer proyecto. Recibe los contactos comerciales y empieza a cobrar comisiones.</p>
-      </div>
+
+    <div class="partner-card">
+      <div class="partner-card-icon">🛠️</div>
+      <h4>Soporte <em>en las obras</em></h4>
+      <p>Un técnico de aplicación le acompaña en la primera puesta en obra para validar el despiece y el vertido del hormigón.</p>
+    </div>
+
+    <div class="partner-card">
+      <div class="partner-card-icon">📞</div>
+      <h4>Leads de clientes <em>directos</em></h4>
+      <p>Redirigimos las solicitudes de presupuesto geolocalizadas de propietarios y promotores de su región directamente a su empresa.</p>
+    </div>
+
+    <div class="partner-card">
+      <div class="partner-card-icon">🏆</div>
+      <h4>Co-branding <em>regional</em></h4>
+      <p>Promoción de sus obras en nuestros soportes nacionales para consolidar su reputación de constructor pasivo premium.</p>
+    </div>
+
+    <div class="partner-card">
+      <div class="partner-card-icon">📋</div>
+      <h4>Tarifas y <em>condiciones preferenciales</em></h4>
+      <p>Descuentos comerciales dedicados y plazos de suministro reservados para asegurar la rentabilidad de sus ofertas.</p>
+    </div>
+
+    <div class="partner-card">
+      <div class="partner-card-icon">🚚</div>
+      <h4>Logística <em>prioritaria</em></h4>
+      <p>Los pedidos en fábrica se procesan con prioridad para entregar según la planificación exacta de la obra.</p>
     </div>
   </div>
 </section>
 
-<!-- PARTNER TESTIMONIAL -->
-<section class="section">
-  <div class="container container--narrow">
-    <div class="reveal card" style="padding:48px;text-align:center;background:white;">
-      <p style="font-family:var(--serif);font-size:clamp(22px,2.4vw,30px);line-height:1.35;color:var(--ink);margin-bottom:24px;">
-        <em style="color:var(--red);font-style:normal;">"</em>
-        Desde que entregué 12 casas Polistibrick, no he vuelto a perder ni un solo concurso de casas pasivas. Mis clientes pagan más, mis márgenes son mayores y la obra se termina en 6 semanas, no en 6 meses.
-        <em style="color:var(--red);font-style:normal;">"</em>
-      </p>
-      <div style="font-size:13px;color:var(--gray);">
-        <strong style="color:var(--ink);font-size:14px;display:block;margin-bottom:4px;">Jean-François Roux</strong>
-        Socio certificado · Bâti-Innov SAS · Auvergne-Rhône-Alpes · 12 proyectos entregados
+<!-- 5. PROCESS TIMELINE -->
+<section class="process-section">
+  <div class="section-intro">
+    <h2 class="section-title">En 4 pasos claros hacia <em>la certificación Polistibrick.</em></h2>
+  </div>
+
+  <div class="process-timeline">
+    <div class="process-step">
+      <div class="process-num-wrap">
+        <span class="process-num">1</span>
       </div>
+      <h4>Candidatura</h4>
+      <p>Complete el formulario rápido de socio. El servicio técnico valida sus competencias.</p>
+      <span class="step-duration">En 48 horas</span>
+    </div>
+
+    <div class="process-step">
+      <div class="process-num-wrap">
+        <span class="process-num">2</span>
+      </div>
+      <h4>Inmersión en fábrica</h4>
+      <p>Visite uno de los centros de producción para descubrir la fabricación automatizada de los sistemas.</p>
+      <span class="step-duration">1 día</span>
+    </div>
+
+    <div class="process-step">
+      <div class="process-num-wrap">
+        <span class="process-num">3</span>
+      </div>
+      <h4>Certificación</h4>
+      <p>Formación práctica en despiece, apuntalamiento y vertido con nuestros formadores de obra.</p>
+      <span class="step-duration">2–3 días</span>
+    </div>
+
+    <div class="process-step">
+      <div class="process-num-wrap">
+        <span class="process-num">4</span>
+      </div>
+      <h4>La primera obra</h4>
+      <p>Empiece los trabajos con tranquilidad, con la presencia de nuestro ingeniero de aplicación.</p>
+      <span class="step-duration">Soporte Pro</span>
     </div>
   </div>
 </section>

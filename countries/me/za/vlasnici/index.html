@@ -292,6 +292,7 @@
       .spec-table-quali .spec-table-cell { padding: 8px 6px; }
     }
     /* Pastile calitative — verde / galben / roșu */
+    .pill--none { background:#f1efe9; color:#9a958c; }
     .pill {
       display: inline-flex;
       align-items: center;
@@ -513,9 +514,9 @@
     .cta-escalated-section { background: var(--cream); padding: 80px 0; }
     .cta-esc-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 18px;
-      max-width: 1100px;
+      max-width: 740px;
       margin: 0 auto;
     }
     .cta-esc-card {
@@ -598,12 +599,10 @@
       <div class="wm-stage">
         <div class="wm-content">
           <div class="wm-text">
-            <span class="bubble-tag">Za one koji povjeravaju gradnju svoje kuće</span>
             <h1>Kuća za cijeli život, <em>bez visokih računa.</em></h1>
             <p class="lead">Izgradnja kuće – posebno premium kuće – je najvažnija odluka u vašem životu. Polistibrick daje vam bezbrižnost sertifikovane pasivne kuće: tiha, otporna na vatru, antiseizmička i trajna generacijama bez posebnog održavanja.</p>
             <div style="display:flex;gap:12px;flex-wrap:wrap;">
-              <a href="#calculator" class="btn btn-primary btn-arrow">Izračunajte moje uštede</a>
-              <a href="../../ponuda/" class="btn btn-ghost">Zatražite ponudu</a>
+              <a href="../../ponuda/" class="btn btn-primary btn-arrow">Zatražite ponudu</a>
             </div>
           </div>
           <div class="wm-visual">
@@ -625,7 +624,6 @@
 <section class="fears-section">
   <div class="container">
     <div class="fears-intro reveal">
-      <span class="eyebrow">Vaše stvarne brige</span>
       <h2 style="font-family:var(--serif);font-size:clamp(28px,3.2vw,42px);font-weight:500;color:var(--ink);letter-spacing:-0.02em;margin-bottom:14px;">Znamo šta vam <em style="font-style:italic;color:var(--red);font-weight:400;">zaista zabrinjava.</em></h2>
       <p class="lead" style="font-size:15.5px;color:var(--gray);line-height:1.65;">Izgradnja vrhunske kuće predstavlja odluku za cio život. Evo pravih 4 pitanja koje kupci poput vas postavljaju — i naših iskrenih odgovora.</p>
     </div>
@@ -658,17 +656,16 @@
 <section class="section" id="beneficii">
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 60px;">
-      <span class="eyebrow">Šta se mijenja za vas</span>
       <h2>Konkretno, <em>iz dana u dan.</em></h2>
     </div>
     <div class="grid grid-3 reveal" style="gap:32px;">
       <div class="feature">
         <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
-        <div class="feature-body"><h4>Račun za energiju &lt; 50 €/mjesečno</h4><p>Polistibrick troši 18 kWh/m²/god. za grijanje i hlađenje, naspram oko 76 kod prosječne postojeće kuće. Ušteda je oko 75% na računima, doživotno.</p></div>
+        <div class="feature-body"><h4>Račun za energiju &lt; 50 €/mjesečno</h4><p>Polistibrick troši 15 kWh/m²/god., naspram 104 kod postojeće kuće koja ima i klima-uređaj. Uštedite oko 86% na računima, doživotno.</p></div>
       </div>
       <div class="feature">
         <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-        <div class="feature-body"><h4>Izgrađena za 4–6 sedmica</h4><p>Konstrukcija se montira 3 puta brže od klasičnog zidanja. Useljavate se za nekoliko mjeseci, a ne za nekoliko godina. Manje stresa, manje kašnjenja.</p></div>
+        <div class="feature-body"><h4>Kuća na 80% za 4–6 sedmica</h4><p>Konstrukcija se montira 3 puta brže od klasičnog zidanja. Useljavate se za nekoliko mjeseci, a ne za nekoliko godina. Manje stresa, manje kašnjenja.</p></div>
       </div>
       <div class="feature">
         <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg></div>
@@ -696,7 +693,6 @@
 <section class="calc-section" id="calculator">
   <div class="container">
     <div class="calc-intro reveal">
-      <span class="eyebrow">Kalkulator ušteda</span>
       <h2 style="font-family:var(--serif);font-size:clamp(28px,3.2vw,42px);font-weight:500;color:var(--ink);letter-spacing:-0.02em;margin-bottom:14px;">Koliko će vaša kuća <em style="font-style:italic;color:var(--red);font-weight:400;">uštedjeti?</em></h2>
       <p class="lead" style="font-size:15.5px;color:var(--gray);line-height:1.65;">Unesite površinu buduće kuće. Računamo godišnji račun za grijanje i hlađenje sa Polistibrick MBK 300 u poređenju sa prosječnom postojećom kućom.</p>
     </div>
@@ -713,26 +709,26 @@
         <div class="calc-card calc-card--good">
           <div class="calc-card-label">Sa Polistibrick MBK 300</div>
           <div class="calc-card-system">Sertifikovana pasivna kuća</div>
-          <div class="calc-card-value" id="polistibrick-yearly">270 €</div>
-          <div class="calc-card-unit">grijanje + hlađenje godišnje</div>
-          <div class="calc-card-sub">18 kWh/m²/god. (grijanje 15 + hlađenje 3) · U = 0,10 W/m²K · Passivhaus</div>
+          <div class="calc-card-value" id="polistibrick-yearly">225 €</div>
+          <div class="calc-card-unit">grijanje i hlađenje godišnje</div>
+          <div class="calc-card-sub">15 kWh/m²/god. grijanje · bez hlađenja · U = 0,10 W/m²K</div>
         </div>
         <div class="calc-card calc-card--bad">
           <div class="calc-card-label">Sa postojećom kućom</div>
           <div class="calc-card-system">Standardna gradnja</div>
-          <div class="calc-card-value" id="classique-yearly">1.140 €</div>
-          <div class="calc-card-unit">grijanje + hlađenje godišnje</div>
-          <div class="calc-card-sub">76 kWh/m²/god. (grijanje 70 + hlađenje 6) · prosječna postojeća kuća</div>
+          <div class="calc-card-value" id="classique-yearly">1.560 €</div>
+          <div class="calc-card-unit">grijanje i hlađenje godišnje</div>
+          <div class="calc-card-sub">100 kWh/m²/god. grijanje + 4 hlađenje · postojeća kuća</div>
         </div>
       </div>
 
       <div class="calc-savings">
-        <div class="savings-yearly">Uštedite <strong id="yearly-savings">870 €</strong> svake godine</div>
-        <div class="savings-total">Za 25 godina: <strong id="total-savings">21.750 €</strong> uštede</div>
+        <div class="savings-yearly">Uštedite <strong id="yearly-savings">1.335 €</strong> svake godine</div>
+        <div class="savings-total">Za 25 godina: <strong id="total-savings">33.375 €</strong> uštede</div>
       </div>
     </div>
 
-    <p class="calc-note">Poređenje uz isti izvor energije (električni) u obje kuće: upoređuje se izolacija, a ne sistem grijanja. Prosječna postojeća kuća: 70 kWh/m²/god. za grijanje i 6 za hlađenje. Sertifikovana pasivna kuća: 15 za grijanje i 3 za hlađenje (granice Passive House Institute). Električna energija 0,10 €/kWh sa porezima — najniža cijena među devet tržišta, zato je ušteda u eurima ovdje manja nego drugdje, iako je ušteda u kWh slična. Obračun za površinu koju unesete, cijena konstantna tokom 25 godina. Sa toplotnom pumpom u obje kuće ušteda u kWh je ista, a u eurima se dijeli sa otprilike 3.</p>
+    <p class="calc-note">Grijanje i hlađenje, oboje na struju po 0,10 €/kWh (Eurostat, Crna Gora, drugo polugodište 2025).</p>
   </div>
 </section>
 
@@ -742,148 +738,104 @@
 <section class="section section--cream">
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:780px;margin:0 auto 40px;">
-      <span class="eyebrow">Polistibrick vs ostali</span>
-      <h2>Kada je Polistibrick <em>pravi izbor za vas?</em></h2>
-      <p class="lead" style="margin-top:14px;">Protiv klasične cigle, klasične pasivne i drvene konstrukcije — evo 3 kriterija gdje Polistibrick čini razliku.</p>
+      <h2>Šta stiže gotovo <em>iz fabrike</em></h2>
+      <p class="lead" style="margin-top:14px;">Pet stvari koje na gradilištu radiš jednu po jednu, sa različitim ljudima. U panelu stižu već urađene. A zid ne gori.</p>
     </div>
 
-    <div class="reveal" style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:1000px;margin:0 auto 32px;">
-      <div style="background:white;border:1px solid var(--border);border-radius:16px;padding:28px 24px;text-align:center;">
-        <div style="font-size:32px;margin-bottom:14px;">🔥</div>
-        <h4 style="font-family:var(--serif);font-size:18px;font-weight:500;color:var(--ink);margin-bottom:8px;">Potpuna sigurnost</h4>
-        <p style="font-size:13.5px;color:var(--gray);line-height:1.55;">Otpornost na požar A1 + odlična antiseizmičnost. Drvena konstrukcija ne podnosi ni požar ni seizmičke zone.</p>
+    <div class="reveal" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;max-width:1000px;margin:0 auto 32px;">
+      <div style="background:white;border:1px solid var(--border);border-radius:16px;padding:26px 22px;text-align:center;">
+        <h4 style="font-family:var(--serif);font-size:18px;font-weight:500;color:var(--ink);margin-bottom:8px;">Izolacija pasivne kuće, integrisana</h4>
+        <p style="font-size:13.5px;color:var(--gray);line-height:1.55;">Izlivena u panelu, ne dodata poslije. Neprekidna po cijelom obodu kuće, bez toplotnih mostova.</p>
       </div>
-      <div style="background:white;border:1px solid var(--border);border-radius:16px;padding:28px 24px;text-align:center;">
-        <div style="font-size:32px;margin-bottom:14px;">💰</div>
-        <h4 style="font-family:var(--serif);font-size:18px;font-weight:500;color:var(--ink);margin-bottom:8px;">Optimalan ukupan trošak</h4>
-        <p style="font-size:13.5px;color:var(--gray);line-height:1.55;">Malo skuplje od cigle za gradnju, mnogo jeftinije za život. Za 25 godina: najisplativije.</p>
+      <div style="background:white;border:1px solid var(--border);border-radius:16px;padding:26px 22px;text-align:center;">
+        <h4 style="font-family:var(--serif);font-size:18px;font-weight:500;color:var(--ink);margin-bottom:8px;">Brzina</h4>
+        <p style="font-size:13.5px;color:var(--gray);line-height:1.55;">Konstrukcija kuće na 80% za 4–6 sedmica. Paneli stižu gotovi iz fabrike, podižu se i lije se beton.</p>
       </div>
-      <div style="background:white;border:1px solid var(--border);border-radius:16px;padding:28px 24px;text-align:center;">
-        <div style="font-size:32px;margin-bottom:14px;">⚡</div>
-        <h4 style="font-family:var(--serif);font-size:18px;font-weight:500;color:var(--ink);margin-bottom:8px;">Brza gradnja</h4>
-        <p style="font-size:13.5px;color:var(--gray);line-height:1.55;">Konstrukcija za 4–6 sedmica naspram 4–5 mjeseci sa opekom. Useljavate se 3× brže.</p>
+      <div style="background:white;border:1px solid var(--border);border-radius:16px;padding:26px 22px;text-align:center;">
+        <h4 style="font-family:var(--serif);font-size:18px;font-weight:500;color:var(--ink);margin-bottom:8px;">Jedan tim</h4>
+        <p style="font-size:13.5px;color:var(--gray);line-height:1.55;">Isti ljudi, od podizanja do završne obrade. Gradilište se ne predaje od zanata do zanata.</p>
+      </div>
+      <div style="background:white;border:1px solid var(--border);border-radius:16px;padding:26px 22px;text-align:center;">
+        <h4 style="font-family:var(--serif);font-size:18px;font-weight:500;color:var(--ink);margin-bottom:8px;">Završne obrade uključene iz fabrike</h4>
+        <p style="font-size:13.5px;color:var(--gray);line-height:1.55;">Zid izlazi završen. Ne slijede više malterisanje, gletovanje i krečenje.</p>
+      </div>
+      <div style="background:white;border:1px solid var(--border);border-radius:16px;padding:26px 22px;text-align:center;">
+        <h4 style="font-family:var(--serif);font-size:18px;font-weight:500;color:var(--ink);margin-bottom:8px;">Instalacije predviđene</h4>
+        <p style="font-size:13.5px;color:var(--gray);line-height:1.55;">Trase već dolaze u panelu. Ne razbijaš zid da bi provukao cijev ili kabl.</p>
+      </div>
+      <div style="background:white;border:1px solid var(--border);border-radius:16px;padding:26px 22px;text-align:center;">
+        <h4 style="font-family:var(--serif);font-size:18px;font-weight:500;color:var(--ink);margin-bottom:8px;">Bez grešaka u izvođenju</h4>
+        <p style="font-size:13.5px;color:var(--gray);line-height:1.55;">Panel ima samo jedan ispravan položaj. Ne zavisi od ruke koja ga montira.</p>
       </div>
     </div>
 
     <div style="text-align:center;" class="reveal">
       <button type="button" id="toggleComparison" class="btn btn-primary btn-arrow" aria-expanded="false" aria-controls="comparisonExpanded">
-        <span class="toggle-text-show">Pogledajte potpuno poređenje prema 12 kriterijuma</span>
+        <span class="toggle-text-show">Pogledajte tri sistema, kriterijum po kriterijumu</span>
         <span class="toggle-text-hide" style="display:none;">Sakrijte poređenje</span>
       </button>
     </div>
 
-    <!-- TABELUL COMPLET 12 CRITERII × 4 SISTEME — ascuns by default, expandă on click -->
+    <!-- 5 CRITERII × 3 SISTEME POLISTIBRICK + CLASIC -->
     <div id="comparisonExpanded" class="comparison-expanded" aria-hidden="true">
       <div class="comparison-expanded-inner">
         <div class="reveal spec-table" style="margin:0 auto;max-width:1200px;">
           <div class="spec-table-row spec-12-row is-header">
             <div class="spec-table-cell">Kriterijum</div>
             <div class="spec-table-cell">Polistibrick</div>
+            <div class="spec-table-cell">Polistiwall</div>
+            <div class="spec-table-cell">Polistisip</div>
             <div class="spec-table-cell">Klasično</div>
-            <div class="spec-table-cell">Klasična pasivna</div>
-            <div class="spec-table-cell">Drvena konstrukcija</div>
           </div>
 
           <div class="spec-table-row spec-12-row">
-            <div class="spec-table-cell spec-table-cell--label">5 materijala integrisanih u 1</div>
+            <div class="spec-table-cell spec-table-cell--label">Izolacija pasivne kuće, integrisana</div>
             <div class="spec-table-cell"><span class="pill pill--good">Da</span></div>
-            <div class="spec-table-cell"><span class="pill pill--bad">Ne</span></div>
-            <div class="spec-table-cell"><span class="pill pill--bad">Ne</span></div>
-            <div class="spec-table-cell"><span class="pill pill--bad">Ne</span></div>
+            <div class="spec-table-cell"><span class="pill pill--good">Da</span></div>
+            <div class="spec-table-cell"><span class="pill pill--good">Da</span></div>
+            <div class="spec-table-cell"><span class="pill pill--none">—</span></div>
           </div>
 
           <div class="spec-table-row spec-12-row">
-            <div class="spec-table-cell spec-table-cell--label">Integrisani plan antiseizmičke armature</div>
-            <div class="spec-table-cell"><span class="pill pill--good">Uključen</span></div>
-            <div class="spec-table-cell"><span class="pill pill--bad">Nema ga</span></div>
-            <div class="spec-table-cell"><span class="pill pill--medium">Za dodavanje</span></div>
-            <div class="spec-table-cell"><span class="pill pill--medium">Za dodavanje</span></div>
+            <div class="spec-table-cell spec-table-cell--label">Brzina: konstrukcija na 80% za 4–6 sedmica</div>
+            <div class="spec-table-cell"><span class="pill pill--good">Da</span></div>
+            <div class="spec-table-cell"><span class="pill pill--good">Da</span></div>
+            <div class="spec-table-cell"><span class="pill pill--good">Da</span></div>
+            <div class="spec-table-cell"><span class="pill pill--none">—</span></div>
           </div>
 
           <div class="spec-table-row spec-12-row">
-            <div class="spec-table-cell spec-table-cell--label">Otpornost na zemljotrese</div>
-            <div class="spec-table-cell"><span class="pill pill--good">Odlična</span></div>
-            <div class="spec-table-cell"><span class="pill pill--bad">Niska</span></div>
-            <div class="spec-table-cell"><span class="pill pill--medium">Srednja</span></div>
-            <div class="spec-table-cell"><span class="pill pill--good">Dobra</span></div>
-          </div>
-
-          <div class="spec-table-row spec-12-row">
-            <div class="spec-table-cell spec-table-cell--label">Potrebni timovi</div>
+            <div class="spec-table-cell spec-table-cell--label">Potrebni timovi na gradilištu</div>
             <div class="spec-table-cell"><span class="pill pill--good">1 tim</span></div>
-            <div class="spec-table-cell"><span class="pill pill--bad">5–6 zanata</span></div>
-            <div class="spec-table-cell"><span class="pill pill--bad">5–6 zanata</span></div>
-            <div class="spec-table-cell"><span class="pill pill--medium">3–4 zanata</span></div>
+            <div class="spec-table-cell"><span class="pill pill--good">1 tim</span></div>
+            <div class="spec-table-cell"><span class="pill pill--good">1 tim</span></div>
+            <div class="spec-table-cell"><span class="pill pill--none">5 timova</span></div>
           </div>
 
           <div class="spec-table-row spec-12-row">
-            <div class="spec-table-cell spec-table-cell--label">Vrijeme izgradnje (konstrukcija)</div>
-            <div class="spec-table-cell"><span class="pill pill--good">4–6 sedmica</span></div>
-            <div class="spec-table-cell"><span class="pill pill--bad">4–5 mjeseci</span></div>
-            <div class="spec-table-cell"><span class="pill pill--bad">5–6 mjeseci</span></div>
-            <div class="spec-table-cell"><span class="pill pill--medium">6–8 sedmica</span></div>
+            <div class="spec-table-cell spec-table-cell--label">Završne obrade uključene iz fabrike</div>
+            <div class="spec-table-cell"><span class="pill pill--good">Da</span></div>
+            <div class="spec-table-cell"><span class="pill pill--none">—</span></div>
+            <div class="spec-table-cell"><span class="pill pill--none">—</span></div>
+            <div class="spec-table-cell"><span class="pill pill--none">—</span></div>
           </div>
 
           <div class="spec-table-row spec-12-row">
-            <div class="spec-table-cell spec-table-cell--label">Kontinuirana izolacija (bez toplotnih mostova)</div>
-            <div class="spec-table-cell"><span class="pill pill--good">Izlivena u panelu</span></div>
-            <div class="spec-table-cell"><span class="pill pill--medium">Dodato zasebno</span></div>
-            <div class="spec-table-cell"><span class="pill pill--medium">Dodato zasebno</span></div>
-            <div class="spec-table-cell"><span class="pill pill--medium">Dodato zasebno</span></div>
+            <div class="spec-table-cell spec-table-cell--label">Instalacije predviđene u panelu</div>
+            <div class="spec-table-cell"><span class="pill pill--good">Da</span></div>
+            <div class="spec-table-cell"><span class="pill pill--good">Da</span></div>
+            <div class="spec-table-cell"><span class="pill pill--good">Da</span></div>
+            <div class="spec-table-cell"><span class="pill pill--none">—</span></div>
           </div>
 
           <div class="spec-table-row spec-12-row">
-            <div class="spec-table-cell spec-table-cell--label">Protivpožarna sigurnost</div>
-            <div class="spec-table-cell"><span class="pill pill--good">A1 (negoriv)</span></div>
-            <div class="spec-table-cell"><span class="pill pill--good">A1</span></div>
-            <div class="spec-table-cell"><span class="pill pill--good">A1</span></div>
-            <div class="spec-table-cell"><span class="pill pill--bad">B-s2 (goriv)</span></div>
-          </div>
-
-          <div class="spec-table-row spec-12-row">
-            <div class="spec-table-cell spec-table-cell--label">Vodoodbojno / bez buđi</div>
-            <div class="spec-table-cell"><span class="pill pill--good">Nulta apsorpcija</span></div>
-            <div class="spec-table-cell"><span class="pill pill--medium">Moguća vlaga</span></div>
-            <div class="spec-table-cell"><span class="pill pill--medium">Moguća vlaga</span></div>
-            <div class="spec-table-cell"><span class="pill pill--bad">Rizik od truljenja</span></div>
-          </div>
-
-          <div class="spec-table-row spec-12-row">
-            <div class="spec-table-cell spec-table-cell--label">Zvučna izolacija</div>
-            <div class="spec-table-cell"><span class="pill pill--good">52 dB</span></div>
-            <div class="spec-table-cell"><span class="pill pill--medium">42 dB</span></div>
-            <div class="spec-table-cell"><span class="pill pill--medium">42 dB</span></div>
-            <div class="spec-table-cell"><span class="pill pill--bad">32 dB</span></div>
-          </div>
-
-          <div class="spec-table-row spec-12-row">
-            <div class="spec-table-cell spec-table-cell--label">Energetska klasa kuće</div>
-            <div class="spec-table-cell"><span class="pill pill--good">A+++</span></div>
-            <div class="spec-table-cell"><span class="pill pill--bad">B–C</span></div>
-            <div class="spec-table-cell"><span class="pill pill--good">A+</span></div>
-            <div class="spec-table-cell"><span class="pill pill--good">A+</span></div>
-          </div>
-
-          <div class="spec-table-row spec-12-row">
-            <div class="spec-table-cell spec-table-cell--label">Početni trošak izgradnje</div>
-            <div class="spec-table-cell"><span class="pill pill--medium">Standard</span></div>
-            <div class="spec-table-cell"><span class="pill pill--good">Nizak</span></div>
-            <div class="spec-table-cell"><span class="pill pill--bad">Veoma visok</span></div>
-            <div class="spec-table-cell"><span class="pill pill--medium">Standard</span></div>
-          </div>
-
-          <div class="spec-table-row spec-12-row" style="background:rgba(15,15,15,0.03);">
-            <div class="spec-table-cell spec-table-cell--label" style="font-weight:700;">Uštede za 25 godina</div>
-            <div class="spec-table-cell"><span class="pill pill--star">Maksimalne</span></div>
-            <div class="spec-table-cell"><span class="pill pill--bad">Minimalne</span></div>
-            <div class="spec-table-cell"><span class="pill pill--good">Dobre</span></div>
-            <div class="spec-table-cell"><span class="pill pill--good">Dobre</span></div>
+            <div class="spec-table-cell spec-table-cell--label">Bez grešaka u izvođenju</div>
+            <div class="spec-table-cell"><span class="pill pill--good">Da</span></div>
+            <div class="spec-table-cell"><span class="pill pill--good">Da</span></div>
+            <div class="spec-table-cell"><span class="pill pill--good">Da</span></div>
+            <div class="spec-table-cell"><span class="pill pill--none">—</span></div>
           </div>
         </div>
-
-        <p style="max-width:780px;margin:24px auto 0;text-align:center;font-size:13px;color:var(--gray);line-height:1.6;">
-          Za <strong>potpuni detalj</strong> svakog kriterijuma (tehnička objašnjenja, norme, primjeri) → <a href="../../proizvodi/zidovi-mbk/" style="color:var(--red);font-weight:600;">pogledajte tehničke specifikacije</a>
-        </p>
       </div>
     </div>
   </div>
@@ -1027,29 +979,28 @@
 <section class="cases-section">
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:760px;margin:0 auto 50px;">
-      <span class="eyebrow">Kuće Polistibrick</span>
-      <h2>Porodice su već napravile ovaj izbor. <em>Evo najnovijih.</em></h2>
+      <h2>Kuća iz kataloga. <em>Ima ih još.</em></h2>
     </div>
 
     <div class="case-carousel reveal" id="caseCarousel">
       <div class="case-track">
         <div class="case-slides" id="caseSlides">
 
-          <!-- SLIDE 1 (REAL) — Île-de-France -->
+          <!-- SLIDE 1 — model iz kataloga -->
           <article class="case-slide">
             <div class="case-slide-img">
-              <img src="../../images/maison-ile-de-france-thumb.jpg" alt="Polistibrick vila — Bukurešt, isporuka 2025" loading="lazy">
+              <img src="../../images/case/terra-fatada-terasa.jpg" alt="Terra — Polistibrick model od 144 m², prizemlje plus sprat" loading="lazy">
             </div>
             <div class="case-slide-content">
-              <div class="case-slide-meta">Bukurešt · isporuka 2025</div>
-              <h3 class="case-slide-title">Savremena vila · 220 m²</h3>
-              <p class="case-slide-desc">Moderna arhitektura P+1, vrhunska stambena zona. Zidovi Polistibrick MBK 300, performanse Passivhaus certifikat, ljetna isporuka 2025.</p>
+              <div class="case-slide-meta">Model iz kataloga · prizemlje + sprat</div>
+              <h3 class="case-slide-title">Terra · 144 m²</h3>
+              <p class="case-slide-desc">Četiri spavaće sobe, tri kupatila, otvorena dnevna zona u prizemlju. Gradi se u bilo kojem od tri sistema, a cijena se mijenja sa sistemom, ne sa planom.</p>
               <div class="case-slide-stats">
-                <div class="case-slide-stat"><strong>220 m²</strong>korisno</div>
-                <div class="case-slide-stat"><strong>MBK 300</strong>U = 0,10</div>
+                <div class="case-slide-stat"><strong>144 m²</strong>korisno</div>
+                <div class="case-slide-stat"><strong>4</strong>spavaće sobe</div>
                 <div class="case-slide-stat"><strong>P+1</strong>2 nivoa</div>
               </div>
-              <a href="../../projekti/" class="btn btn-ghost btn-arrow">Pogledajte projekat</a>
+              <a href="../../projekti/" class="btn btn-primary btn-arrow">Pogledajte projekte</a>
             </div>
           </article>
 
@@ -1069,7 +1020,7 @@
                 <div class="case-slide-stat"><strong>VALEUR</strong>label</div>
                 <div class="case-slide-stat"><strong>VALEUR</strong>label</div>
               </div>
-              <a href="../../projekti/" class="btn btn-ghost btn-arrow">Vezi proiectul</a>
+              <a href="../../projekti/" class="btn btn-primary btn-arrow">Pogledajte projekte</a>
             </div>
           </article>
           ========================================================== -->
@@ -1083,9 +1034,7 @@
       <div class="case-dots" id="caseDots"></div>
     </div>
 
-    <div style="text-align:center;margin-top:36px;" class="reveal">
-      <a href="../../projekti/" class="btn btn-primary btn-arrow">Pogledajte sve izgrađene kuće</a>
-    </div>
+
   </div>
 </section>
 
@@ -1179,7 +1128,6 @@
 <section class="archi-section">
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:780px;margin:0 auto 50px;">
-      <span class="eyebrow">Saradnja sa vašim arhitektom</span>
       <h2>Radimo sa vašim arhitektom — <em>u vašem interesu.</em></h2>
       <p class="lead" style="margin-top:14px;">Ne morate mijenjati arhitektu. Pružamo svu potrebnu tehničku dokumentaciju i podršku timu — kako bi bezbrižno ostvarili Vaš dom iz snova.</p>
     </div>
@@ -1230,7 +1178,6 @@
 <section class="faq-section">
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:760px;margin:0 auto 50px;">
-      <span class="eyebrow">Često postavljana pitanja</span>
       <h2>Stvarna pitanja <em>koja sebi postavljate.</em></h2>
     </div>
 
@@ -1245,7 +1192,7 @@
       </div>
       <div class="faq-item">
         <button class="faq-q">Koliko traje izgradnja moje kuće?<span class="faq-icon">+</span></button>
-        <div class="faq-a"><p>Konstrukcija traje <strong>4–6 sedmica</strong> za kuću od 150–200 m² (u odnosu na 4–5 mjeseci sa klasičnom ciglom). Ukupno, useljavate se za <strong>5–7 mjeseci</strong> (zavisno od završnih radova i dozvole). 2–3 puta brže od klasične gradnje.</p></div>
+        <div class="faq-a"><p>Kuća dostiže 80% za <strong>4–6 sedmica</strong> za kuću od 150–200 m². Ukupno, useljavate se za <strong>5–7 mjeseci</strong> (zavisno od završnih radova i dozvole). 2–3 puta brže od klasične gradnje.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q">Šta ako poželim da preuredim kuću za 10 godina?<span class="faq-icon">+</span></button>
@@ -1257,7 +1204,7 @@
       </div>
       <div class="faq-item">
         <button class="faq-q">Koliko košta kuća Polistibrick?<span class="faq-icon">+</span></button>
-        <div class="faq-a"><p>Cijena varira u zavisnosti od regije, površine i nivoa završne obrade. U prosjeku u Crnoj Gori, računajte <strong>+5% u odnosu na klasičnu kuću RE2020</strong>. Na kući od 400 000 €, oni su +20 000 € za izgradnju — potpuno nadoknađeni za 8–12 godina kroz uštedu energije. Precizno izračunajte uz personalizovanu ponudu za 48h.</p></div>
+        <div class="faq-a"><p>Cijena varira u zavisnosti od regije, površine i nivoa završne obrade. U poređenju sa klasičnom kućom od blokova ili opeke, građenom po važećim propisima u Crnoj Gori, računajte oko <strong>+5% na cijenu izgradnje</strong>. Na kući od 200 000 €, to je oko +10 000 € — koji se potpuno nadoknade za 8–12 godina kroz uštedu energije. Precizno izračunajte uz personalizovanu ponudu za 48h.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q">Kako da obezbijedim finansiranje ovog dodatnog troška?<span class="faq-icon">+</span></button>
@@ -1277,18 +1224,10 @@
 <section class="cta-escalated-section">
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 50px;">
-      <span class="eyebrow">Sljedeći korak</span>
       <h2>Izaberite sljedeći korak <em>ka kući za cijeli život.</em></h2>
     </div>
 
     <div class="cta-esc-grid reveal">
-      <a href="../../resursi/" class="cta-esc-card">
-        <div class="cta-esc-stage">Otkrijte</div>
-        <div class="cta-esc-icon">📥</div>
-        <div class="cta-esc-title">Preuzmite vodič</div>
-        <div class="cta-esc-desc">PDF od 24 stranica: šta je pasivna kuća, kako Polistibrick radi, savjeti za građevinsku dozvolu.</div>
-        <span class="cta-esc-btn">Preuzmite vodič</span>
-      </a>
 
       <a href="../../ponuda/" class="cta-esc-card">
         <div class="cta-esc-stage">Uporedite</div>
@@ -1302,7 +1241,7 @@
         <div class="cta-esc-stage">Jeste li spremni</div>
         <div class="cta-esc-icon">📞</div>
         <div class="cta-esc-title">Razgovarajte direktno s nama</div>
-        <div class="cta-esc-desc">Tim Polistibrick odgovara vam lično. Savjetovanje po mjeri, garantovan odgovor za 48h.<br><br><strong style="color:rgba(247,244,237,0.95);">📞 {{contact.phone_display}}</strong></div>
+        <div class="cta-esc-desc">Tim Polistibrick odgovara vam lično. Savjetovanje po mjeri, garantovan odgovor za 48h.</div>
         <span class="cta-esc-btn">Kontaktirajte nas</span>
       </a>
     </div>
@@ -1326,9 +1265,9 @@
   var yearlyEl = document.getElementById('yearly-savings');
   var totalEl = document.getElementById('total-savings');
 
-  var ENERGY_PRICE = 0.1;              // €/kWh ME, Eurostat/régulateur, toutes taxes comprises
-  var POLISTIBRICK_CONS = 18;          // kWh/m²/an MBK 300 : 15 chauffage + 3 clim.
-  var CLASSIQUE_CONS = 76;             // kWh/m²/an maison existante : 70 chauffage + 6 clim.
+  var ENERGY_PRICE = 0.1;              // €/kWh ME, Eurostat, S2 2025, svi porezi
+  var POLISTIBRICK_CONS = 15;          // kWh/m²/god. MBK 300: 15 grijanje + 0 hlađenje (ispod 25 °C bez klime)
+  var CLASSIQUE_CONS = 104;            // kWh/m²/god. postojeća kuća: 100 grijanje + 4 hlađenje
 
   function formatEuro(amount) {
     return Math.round(amount).toLocaleString('sr-Latn-ME') + ' €';
