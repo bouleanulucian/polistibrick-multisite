@@ -70,5 +70,15 @@
     "url": "https://devis.polistibrick.ie",
     "preview_url": "https://polistibrick-configurator.vercel.app",
     "pays": "IE"
+  },
+  "forms": {
+    "access_key": "",
+    "provider": "web3forms",
+    "subjects": {
+      "contact": "Contact — Polistibrick Ireland",
+      "devis": "Quote request — Polistibrick Ireland",
+      "partner": "Partner application — Polistibrick Ireland",
+      "review": "New customer review — Polistibrick Ireland"
+    }
   }
 }

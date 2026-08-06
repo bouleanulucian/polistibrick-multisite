@@ -61,8 +61,13 @@
     return host === live;
   }
 
+  function isGitHubPages() {
+    // găzduirea curentă, până mutăm site-ul pe domeniile proprii
+    return window.location.hostname === 'bouleanulucian.github.io';
+  }
+
   function isAllowedHost() {
-    return isOnLiveDomain() || isLocalDev();
+    return isOnLiveDomain() || isGitHubPages() || isLocalDev();
   }
 
   function isConfigured() {
