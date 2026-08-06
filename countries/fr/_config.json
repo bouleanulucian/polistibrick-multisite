@@ -52,7 +52,7 @@
   "vat_rate": 20,
   "form_submit_email": "contact@polistibrick.fr",
   "forms": {
-    "access_key": "",
+    "access_key": "7c66f949-433c-49e6-9eb5-366ab3e09aeb",
     "provider": "web3forms",
     "subjects": {
       "contact": "Contact — Polistibrick France",
