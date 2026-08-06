@@ -8,7 +8,7 @@
     try { return s && s.indexOf('{{') === -1 ? atob(s) : ''; } catch (e) { return ''; }
   }
   const CFG = {
-    accessKey: '',
+    accessKey: '7c66f949-433c-49e6-9eb5-366ab3e09aeb',
     liveDomain: 'polistibrick.fr',
     liveDomainUrl: 'https://polistibrick.fr',
     ccEmail: dec64('{{form_cc_email|b64}}'),
