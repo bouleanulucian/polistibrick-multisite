@@ -3,674 +3,976 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projets d'exception · Polistibrick</title>
-  <meta name="description" content="Découvrez nos études de cas de chantiers en béton armé passif. Villas d'architectes, maisons de montagne et ensembles collectifs construits avec Polistibrick.">
+  <title>Projets Polistibrick · modèles de maisons, une maison en trois systèmes</title>
+  <meta name="description" content="Les projets de maisons Polistibrick : des modèles de plain-pied de 80 à 178 m², chacun en trois systèmes constructifs. Plan, photos et données thermiques pour chacun.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/site.css">
   <style>
-    /* Full Viewport Slider Setup */
-    html, body {
-      margin: 0; padding: 0;
-      width: 100%; height: 100dvh;
-      overflow: hidden;
-      background: #0b0c0d;
-      font-family: 'Inter', sans-serif;
-    }
+    .case-hero { padding: clamp(90px, 12vh, 150px) 0 clamp(34px, 5vh, 56px); background: #fdfbf7; text-align: center; }
+    .case-hero h1 { font-size: clamp(34px, 5vw, 58px); line-height: 1.06; margin: 14px 0 18px; letter-spacing: -.02em; }
+    .case-hero + .section--cream { padding-top: clamp(28px, 4vh, 48px); }
+    .case-hero .lead { max-width: 900px; margin: 0 auto; font-size: 16.5px; line-height: 1.6; color: var(--gray); }
 
-    /* Style Override for transparent navbar over the slider */
-    header.nav {
-      position: absolute !important;
-      top: 0 !important; left: 0 !important;
-      width: 100% !important;
-      z-index: 100 !important;
-      background: transparent !important;
-      border-bottom: none !important;
-      box-shadow: none !important;
-    }
-    header.nav .nav-logo img {
-      filter: brightness(0) invert(1) !important; /* Forces logo to be white */
-    }
-    header.nav .nav-toggle span {
-      background: white !important;
-    }
-    header.nav .nav-cta-devis {
-      background: transparent !important;
-      color: #fff !important;
-      border: none !important;
-      border-radius: 0 !important;
-    }
-    header.nav .nav-cta-devis:hover {
-      background: transparent !important;
-      color: #fff !important;
-      opacity: 0.72;
-    }
+    /* la bande qui explique les trois variantes — apparaît une seule fois, en haut */
+    .leaf { display: inline-block; margin-left: 5px; }
 
-    /* Slider styling */
-    .slider {
-      position: relative;
-      width: 100%; height: 100dvh;
-    }
-    .slide {
-      position: absolute;
-      inset: 0;
-      opacity: 0;
-      z-index: 1;
-      background-size: cover;
-      background-position: center;
-      transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
-      display: flex;
-      align-items: flex-end;
-      padding-bottom: clamp(60px, 8vw, 120px);
-    }
-    .slide.is-active {
-      opacity: 1;
-      z-index: 2;
-    }
-    .slide-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(11,12,13,0.45) 0%, rgba(11,12,13,0.15) 32%, rgba(11,12,13,0.62) 68%, rgba(11,12,13,0.92) 100%);
-      z-index: 2;
-      pointer-events: none;
-    }
-    .slide-inner {
-      position: relative;
-      z-index: 3;
-      width: 100%;
-      max-width: 1360px;
-      margin: 0 auto;
-      padding: 0 clamp(20px, 4vw, 60px);
-      box-sizing: border-box;
-      color: white;
-      text-shadow: 0 2px 24px rgba(0,0,0,0.55), 0 1px 6px rgba(0,0,0,0.45);
-    }
-    .slide-category {
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: #fff;
-      margin-bottom: 12px;
-      display: inline-block;
-    }
-    .slide-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(40px, 6vw, 76px);
-      font-weight: 500;
-      line-height: 1.05;
-      margin: 0 0 28px 0;
-      letter-spacing: -0.02em;
-      color: #fff !important;
-    }
-    
-    /* Metrics Row */
-    .slide-metrics {
-      display: flex;
-      gap: clamp(24px, 5vw, 64px);
-      margin-bottom: 36px;
-      flex-wrap: wrap;
-    }
-    .metric-item {
-      display: flex;
-      flex-direction: column;
-    }
-    .metric-label {
-      font-size: 10px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: rgba(255,255,255,0.85);
-      margin-bottom: 6px;
-    }
-    .metric-value {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(22px, 3.2vw, 36px);
-      font-weight: 500;
-      color: #fff;
-    }
+    /* la grille des modèles */
+    .case-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    @media (max-width: 1080px) { .case-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 700px)  { .case-grid { grid-template-columns: 1fr; } }
+    .case-card { background: #fff; border: 1px solid var(--border); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; transition: transform .25s, box-shadow .25s; }
+    .case-card:hover { transform: translateY(-4px); box-shadow: 0 26px 54px rgba(0,0,0,.09); }
+    .case-photo { position: relative; aspect-ratio: 3/2; overflow: hidden; background: var(--cream-dark); }
+    .case-photo img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s; }
+    .case-card:hover .case-photo img { transform: scale(1.04); }
+    .case-tag { position: absolute; top: 14px; left: 14px; padding: 5px 12px; border-radius: 999px; background: rgba(255,255,255,.94); font-size: 11.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    .case-body { padding: 16px 18px 18px; display: flex; flex-direction: column; flex: 1; }
+    .case-body h2 { font-size: 18px; margin: 0 0 8px; letter-spacing: -.01em; }
+    .case-spec { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 13px; color: var(--ink-soft); margin-bottom: 14px; }
+    .case-spec i { font-style: normal; display: inline-flex; align-items: center; gap: 4px; }
+    .case-spec i b { font-weight: 600; color: var(--ink); }
+    .case-spec svg { width: 15px; height: 15px; flex: 0 0 15px; color: var(--gray); }
+    .ic-leaf { width: 13px; height: 13px; vertical-align: -2px; margin-left: 3px; color: #12833f; }
 
-    /* Slider Controls */
-    .slider-controls {
-      position: absolute;
-      right: clamp(20px, 4vw, 60px);
-      bottom: clamp(60px, 8vw, 120px);
-      z-index: 10;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-    .slider-arrow {
-      background: var(--red);
-      border: 1px solid var(--red);
-      color: #fff;
-      width: 50px; height: 50px;
-      border-radius: 50%;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-      font-size: 18px;
-      backdrop-filter: blur(8px);
-    }
-    .slider-arrow:hover {
-      background: #a60d26;
-      color: #fff;
-      border-color: #a60d26;
-      transform: scale(1.05);
-    }
+    /* les trois variantes de système, dans la carte */
+    .var-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin: 0 0 14px; }
+    .var { padding: 8px 6px; border: 1px solid var(--border); border-radius: 9px; text-align: center; }
+    .var-name { display: block; font-weight: 700; font-size: 11px; letter-spacing: .01em; }
+    .var-desc { display: none; }
+    .var-price { display: block; font-weight: 700; font-size: 12.5px; margin-top: 3px; white-space: nowrap; }
+    .var--wood { border-color: rgba(18,131,63,.34); background: #f7fbf8; }
+    .var--wood .var-price { color: #12833f; }
+    .var--off { opacity: .42; }
+    .var--off .var-price { font-size: 10.5px; font-weight: 600; color: var(--gray); }
+    .case-cta { margin-top: auto; }
 
-    /* Detail Modal Panel (Glassmorphism Slide-out) */
-    .detail-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(11,12,13,0.85);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      z-index: 999;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.4s ease, visibility 0.4s ease;
-      overflow-y: auto;
-      color: white;
-    }
-    .detail-overlay.is-active {
-      opacity: 1;
-      visibility: visible;
-    }
-    .detail-container {
-      max-width: 1240px;
-      margin: 80px auto;
-      padding: 0 40px;
-      box-sizing: border-box;
-      position: relative;
-    }
-    .detail-close {
-      position: fixed;
-      top: 24px; right: 40px;
-      width: 48px; height: 48px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 50%;
-      color: white;
-      font-size: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      z-index: 1002;
-    }
-    .detail-close:hover {
-      background: white; color: black;
-      transform: rotate(90deg);
-    }
-    .detail-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 56px;
-      align-items: start;
-      margin-top: 40px;
-    }
-    @media (max-width: 900px) {
-      .detail-grid { grid-template-columns: 1fr; gap: 40px; }
-      .detail-container { margin: 60px auto; padding: 0 20px; }
-      .detail-close { right: 20px; top: 12px; width: 40px; height: 40px; font-size: 20px; }
-    }
 
-    /* Modal Left Column: Constructor Quote */
-    .detail-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(32px, 4.5vw, 52px);
-      font-weight: 500;
-      margin: 0 0 10px 0;
-      letter-spacing: -0.01em;
-    }
-    .detail-subtitle {
-      font-size: 12px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--red);
-      margin-bottom: 32px;
-      display: block;
-    }
-    .detail-quote-box {
-      border-left: 3px solid var(--red);
-      padding-left: 28px;
-      margin: 36px 0;
-    }
-    .detail-quote {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(20px, 2.5vw, 26px);
-      font-style: italic;
-      line-height: 1.45;
-      color: #f3f3f3;
-      margin-bottom: 14px;
-    }
-    .detail-author {
-      font-size: 13px;
-      color: rgba(255,255,255,0.6);
-      display: block;
-    }
-    .detail-author strong {
-      color: white;
-      font-weight: 600;
-    }
-    .detail-desc {
-      font-size: 14px;
-      line-height: 1.65;
-      color: rgba(255,255,255,0.7);
-    }
-    .detail-desc p {
-      margin-bottom: 16px;
-    }
+    /* le panneau qui s'ouvre sous la grille */
+    .case-card { cursor: pointer; }
+    .case-card.is-open { display: none; }
+    .detail { display: none; grid-column: 1 / -1; overflow: hidden; max-height: 0; opacity: 0; transition: max-height .45s ease, opacity .3s ease, margin .35s; margin: 0; }
+    .detail.shown { display: block; }
+    .detail.open { max-height: 1800px; opacity: 1; margin: 4px 0 12px; }
+    .detail-inner { background: #fff; border: 1px solid var(--border); border-radius: 18px; padding: 30px 32px 34px; display: grid; grid-template-columns: 1.25fr 1fr; gap: 34px; }
+    @media (max-width: 900px) { .detail-inner { grid-template-columns: 1fr; gap: 24px; padding: 22px 20px 26px; } }
+    .detail-close { position: absolute; top: 18px; right: 22px; width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--border); background: #fff; font-size: 17px; line-height: 1; cursor: pointer; color: var(--gray); }
+    .detail-close:hover { border-color: var(--ink); color: var(--ink); }
+    .detail-wrap { position: relative; }
 
-    /* Modal Right Column: Photos and Stages */
-    .gallery-section-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 24px;
-      margin-bottom: 20px;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-      padding-bottom: 10px;
-    }
-    .gallery-grid-compact {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-    .gallery-card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 10px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      cursor: pointer;
-      transition: all 0.25s ease;
-    }
-    .gallery-card:hover {
-      border-color: var(--red);
-      transform: translateY(-2px);
-      background: rgba(255,255,255,0.06);
-    }
-    .gallery-img-wrap {
-      width: 100%;
-      aspect-ratio: 16/10;
-      background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-    .gallery-img-wrap img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .gallery-img-wrap svg {
-      opacity: 0.25;
-    }
-    .gallery-label {
-      padding: 10px 12px;
-      font-size: 11px;
-      font-weight: 500;
-      color: rgba(255,255,255,0.7);
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      overflow: hidden;
-    }
+    /* la galerie */
+    .gal-main { aspect-ratio: 16/10; border-radius: 14px; overflow: hidden; background: var(--cream-dark); margin-bottom: 10px; }
+    .gal-main img[src$="plan.png"] { object-fit: contain; background: #fff; cursor: zoom-in; }
+    .gal-thumbs img[src$="plan.png"] { object-fit: contain; background: #fff; }
+    .gal-main img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .gal-thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+    .gal-thumbs img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 8px; cursor: pointer; border: 2px solid transparent; transition: border-color .2s, opacity .2s; opacity: .72; }
+    .gal-thumbs img:hover { opacity: 1; }
+    .gal-thumbs img.on { border-color: var(--primary); opacity: 1; }
 
-    /* Lightbox for viewing photos */
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      background: rgba(5,5,5,0.95);
-      z-index: 2000;
-      opacity: 0;
-      visibility: hidden;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-    }
-    .lightbox.is-active {
-      opacity: 1;
-      visibility: visible;
-    }
-    .lightbox-img {
-      max-width: 90%;
-      max-height: 80%;
-      object-fit: contain;
-      border-radius: 4px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    }
-    .lightbox-caption {
-      margin-top: 18px;
-      font-size: 14px;
-      color: rgba(255,255,255,0.8);
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 18px;
-    }
-    .lightbox-close {
-      position: absolute;
-      top: 24px; right: 24px;
-      color: white;
-      font-size: 32px;
-      cursor: pointer;
-    }
+    /* la colonne de texte */
+    .detail h3 { font-size: 26px; margin: 0 0 6px; letter-spacing: -.01em; }
+    .detail .d-spec { font-size: 14px; color: var(--gray); margin-bottom: 18px; }
+    .d-points { list-style: none; margin: 4px 0 20px; padding: 0; }
+    .d-points li { position: relative; padding-left: 20px; font-size: 14px; line-height: 1.55; color: var(--ink-soft); margin-bottom: 7px; }
+    .d-points li::before { content: ""; position: absolute; left: 4px; top: 8px; width: 5px; height: 5px; border-radius: 50%; background: #12833f; }
+    .detail p { font-size: 14.5px; line-height: 1.65; color: var(--ink-soft); margin: 0 0 14px; }
+    .d-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 18px 0 20px; }
+    .d-fact { padding: 11px 14px; border: 1px solid var(--border); border-radius: 10px; }
+    .d-fact b { display: block; font-size: 17px; }
+    .d-fact span { font-size: 12px; color: var(--gray); }
+    .case-note { max-width: 720px; margin: 40px auto 0; text-align: center; font-size: 13px; line-height: 1.55; color: var(--gray); }
 
-    /* CTA buttons */
-    .btn-circle {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 14px 28px;
-      background: var(--red);
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 13px;
-      border-radius: 100px;
-      transition: all 0.3s ease;
-      margin-top: 16px;
-      border: none;
-      cursor: pointer;
-    }
-    .btn-circle:hover {
-      background: white;
-      color: black;
-      transform: scale(1.02);
-    }
+    /* ── le choix du système ── */
+    .sysmodal { position: fixed; inset: 0; z-index: 200; display: flex; align-items: center; justify-content: center; padding: 24px; }
+    .sysmodal[hidden] { display: none; }
+    .sysmodal-back { position: absolute; inset: 0; background: rgba(12,12,12,.55); backdrop-filter: blur(3px); opacity: 0; transition: opacity .25s; }
+    .sysmodal.on .sysmodal-back { opacity: 1; }
+    .sysmodal-box { position: relative; background: #fdfbf7; border-radius: 20px; padding: 40px 40px 28px; width: min(1080px, 100%); max-height: 92vh; overflow-y: auto;
+                    box-shadow: 0 40px 90px rgba(0,0,0,.28); transform: translateY(14px) scale(.985); opacity: 0; transition: transform .28s, opacity .28s; }
+    .sysmodal.on .sysmodal-box { transform: none; opacity: 1; }
+    .sysmodal-x { position: absolute; top: 18px; right: 20px; width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--border);
+                  background: #fff; font-size: 17px; line-height: 1; cursor: pointer; color: var(--gray); }
+    .sysmodal-x:hover { border-color: var(--ink); color: var(--ink); }
+    .sysmodal-kicker { font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--gray); margin-bottom: 6px; }
+    .sysmodal h2 { font-size: clamp(22px, 3vw, 30px); margin: 0 0 8px; letter-spacing: -.01em; }
+    .sysmodal-lead { font-size: 14.5px; color: var(--gray); margin-bottom: 26px; }
+    .sysgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    @media (max-width: 900px) { .sysgrid { grid-template-columns: 1fr; } .sysmodal-box { padding: 30px 20px 22px; } }
+    .syscard { background: #fff; border: 1px solid var(--border); border-radius: 16px; padding: 22px 20px 20px; display: flex; flex-direction: column; }
+    .syscard--wood { border-color: rgba(18,131,63,.42); background: linear-gradient(180deg,#fff 0%, #f7fbf8 100%); }
+    .syscard h3 { font-size: 18px; margin: 0 0 3px; display: flex; align-items: center; }
+    .syscard--wood h3 { color: #12833f; }
+    .sys-what { font-size: 12.5px; color: var(--gray); margin-bottom: 16px; }
+    .sys-specs { margin: 0 0 14px; padding: 0; border-top: 1px solid var(--border); }
+    .sys-specs > div { display: flex; justify-content: space-between; gap: 10px; padding: 7px 0; border-bottom: 1px solid var(--border); }
+    .sys-specs dt { font-size: 12.5px; color: var(--gray); margin: 0; }
+    .sys-specs dd { font-size: 12.5px; font-weight: 600; color: var(--ink); margin: 0; text-align: right; }
+    .sys-inc { font-size: 12.5px; line-height: 1.5; color: var(--ink-soft); margin-bottom: 16px; flex: 1; }
+    .sys-preturi { margin: 0 0 14px; border-top: 1px solid var(--border); }
+    .sys-rand { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--border); }
+    .sys-rand span { font-size: 12.5px; color: var(--gray); }
+    .sys-rand b { font-size: 19px; font-weight: 600; letter-spacing: -.02em; color: var(--ink); white-space: nowrap; }
+    .sys-rand b small { font-size: 11px; font-weight: 400; color: var(--gray); }
+    .syscard .btn { width: 100%; justify-content: center; }
+    .sysmodal-note { font-size: 11.5px; line-height: 1.5; color: var(--gray); margin: 20px 0 0; }
   </style>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Modèles de maisons Polistibrick · une maison, 3 systèmes constructifs">
+  <meta property="og:description" content="Vous choisissez d'abord la maison, pas le budget. Le même plan se construit en trois systèmes, et le prix change selon la structure.">
+  <meta name="twitter:card" content="summary_large_image">
 </head>
-<body class="has-slider" data-base="../">
+<body data-base="../">
 
 <header class="nav" data-include="nav"></header>
 
-<!-- FULL VIEWPORT CAROUSEL -->
-<main class="slider">
-
-  <!-- Slide 1: Valencia -->
-  <section class="slide is-active" style="background-image: url('../images/projets/projet-valencia.png');" data-project="valencia">
-    <div class="slide-overlay"></div>
-    <div class="slide-inner">
-      <span class="slide-category">Villa d'Architecte · Espagne</span>
-      <h1 class="slide-title">Villa Valencia</h1>
-      
-      <div class="slide-metrics">
-        <div class="metric-item">
-          <span class="metric-label">Surface</span>
-          <span class="metric-value">280 m²</span>
-        </div>
-        <div class="metric-item">
-          <span class="metric-label">Gros Œuvre</span>
-          <span class="metric-value">7 Semaines</span>
-        </div>
-        <div class="metric-item">
-          <span class="metric-label">Isolation</span>
-          <span class="metric-value">0 h clim</span>
-        </div>
-        <div class="metric-item">
-          <span class="metric-label">Système</span>
-          <span class="metric-value">MBK 210 + TBK</span>
-        </div>
-      </div>
-
-      <button class="btn btn-circle" onclick="openProject('valencia')">Découvrir le projet →</button>
-    </div>
-  </section>
-
-  <!-- Slide 2: Cluj-Napoca -->
-  <section class="slide" style="background-image: url('../images/projets/projet-cluj.png');" data-project="cluj">
-    <div class="slide-overlay"></div>
-    <div class="slide-inner">
-      <span class="slide-category">Maison Individuelle · Roumanie</span>
-      <h1 class="slide-title">Maison Cluj-Napoca</h1>
-
-      <div class="slide-metrics">
-        <div class="metric-item">
-          <span class="metric-label">Surface</span>
-          <span class="metric-value">180 m²</span>
-        </div>
-        <div class="metric-item">
-          <span class="metric-label">Gros Œuvre</span>
-          <span class="metric-value">5 Semaines</span>
-        </div>
-        <div class="metric-item">
-          <span class="metric-label">Facture Élec.</span>
-          <span class="metric-value">38 € / mois</span>
-        </div>
-        <div class="metric-item">
-          <span class="metric-label">Système</span>
-          <span class="metric-value">MBK 270 + PBK</span>
-        </div>
-      </div>
-
-      <button class="btn btn-circle" onclick="openProject('cluj')">Découvrir le projet →</button>
-    </div>
-  </section>
-
-  <!-- Slide 3: Lyon -->
-  <section class="slide" style="background-image: url('../images/projets/ensemble-lyon.png');" data-project="lyon">
-    <div class="slide-overlay"></div>
-    <div class="slide-inner">
-      <span class="slide-category">Ensemble Collectif · France</span>
-      <h1 class="slide-title">Ensemble Lyon</h1>
-
-      <div class="slide-metrics">
-        <div class="metric-item">
-          <span class="metric-label">Logements</span>
-          <span class="metric-value">24 Unités</span>
-        </div>
-        <div class="metric-item">
-          <span class="metric-label">Gros Œuvre</span>
-          <span class="metric-value">6 Mois (total)</span>
-        </div>
-        <div class="metric-item">
-          <span class="metric-label">Norme</span>
-          <span class="metric-value">Passivhaus 100 %</span>
-        </div>
-        <div class="metric-item">
-          <span class="metric-label">Système</span>
-          <span class="metric-value">MBK 270</span>
-        </div>
-      </div>
-
-      <button class="btn btn-circle" onclick="openProject('lyon')">Découvrir le projet →</button>
-    </div>
-  </section>
-
-  <!-- Slider arrows -->
-  <div class="slider-controls">
-    <button class="slider-arrow" onclick="prevSlide()" aria-label="Précédent">←</button>
-    <button class="slider-arrow" onclick="nextSlide()" aria-label="Suivant">→</button>
+<section class="case-hero">
+  <div class="container">
+    <span class="badge">Projets</span>
+    <h1>La même maison, en trois budgets.</h1>
+    <p class="lead">Jusqu'ici, le budget choisissait la maison. On en voulait une, on en prenait une autre.<br>Nous avons fait chaque modèle en trois variantes de construction, pour que personne ne renonce à la maison qu'il veut.</p>
   </div>
+</section>
 
-</main>
+<section class="section section--cream">
+  <div class="container container--wide">
 
-<!-- DETAILS DRAWER OVERLAY -->
-<div class="detail-overlay" id="detailOverlay">
-  <button class="detail-close" onclick="closeProject()">×</button>
-  <div class="detail-container" id="detailContainer">
-    <!-- Dynamic Content Injected here by Javascript -->
+    <div class="case-grid">
+
+      <!-- MODÈLE 1 -->
+      <article class="case-card" data-model="1">
+        <div class="case-photo">
+          <img src="../images/case/pbk7-fatada-strada.jpg" alt="Riva — maison de plain-pied, avec garage, vue depuis la rue" loading="lazy">
+        </div>
+        <div class="case-body">
+          <h2>Riva</h2>
+          <p class="case-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>107</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>3</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>1</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>plain-pied</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16v3H2z"/><path d="M4 13l2-5h8l2 5"/><circle cx="6" cy="16" r="1.2"/><circle cx="14" cy="16" r="1.2"/></svg>garage</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16"/><path d="M4 13V7M10 13V7M16 13V7"/><path d="M3 7h14"/><path d="M4 13v4M16 13v4"/></svg>terrasse</i></p>
+          <div class="var-list">
+            <div class="var" title="Structure béton, isolation, finitions"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
+            <div class="var" title="Structure béton, isolation"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
+            <div class="var var--wood" title="Structure bois, isolation"><span class="var-name">Polistisip<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
+          </div>
+        </div>
+      </article>
+
+      <div class="detail" id="detail-1">
+        <div class="detail-wrap">
+        <div class="detail-inner">
+          <div>
+            <div class="gal-main"><img src="../images/case/pbk7-fatada-strada.jpg" alt="Riva — la façade côté rue"></div>
+            <div class="gal-thumbs">
+            <img src="../images/case/pbk7-fatada-strada.jpg" alt="Façade côté rue" loading="lazy" data-full="../images/case/pbk7-fatada-strada.jpg" class="on">
+            <img src="../images/case/pbk7-fatada-gradina.jpg" alt="Façade côté jardin" loading="lazy" data-full="../images/case/pbk7-fatada-gradina.jpg" class="">
+            <img src="../images/case/pbk7-living.jpg" alt="Séjour · cuisine · salle à manger" loading="lazy" data-full="../images/case/pbk7-living.jpg" class="">
+            <img src="../images/case/pbk7-bucatarie.jpg" alt="La cuisine" loading="lazy" data-full="../images/case/pbk7-bucatarie.jpg" class="">
+            <img src="../images/case/pbk7-dormitor.jpg" alt="La chambre principale" loading="lazy" data-full="../images/case/pbk7-dormitor.jpg" class="">
+            <img src="../images/case/pbk7-baie.jpg" alt="La salle de bains" loading="lazy" data-full="../images/case/pbk7-baie.jpg" class="">
+            <img src="../images/case/pbk7-plan.png" alt="Le plan du rez-de-chaussée" loading="lazy" data-full="../images/case/pbk7-plan.png" class="">
+            </div>
+          </div>
+          <div>
+            <h3>Riva</h3>
+            <p class="d-spec">Maison de plain-pied avec 3 chambres et garage · 107 m² utiles</p>
+            <div class="d-facts">
+            <div class="d-fact"><b>107 m²</b><span>surface utile</span></div>
+            <div class="d-fact"><b>158 m²</b><span>surface construite</span></div>
+            <div class="d-fact"><b>3</b><span>chambres</span></div>
+            <div class="d-fact"><b>48 m²</b><span>séjour + cuisine</span></div>
+            <div class="d-fact"><b>25 m²</b><span>garage</span></div>
+            <div class="d-fact"><b>28 m²</b><span>terrasse couverte</span></div>
+            </div>
+          <p>Riva est une maison longue, sur un seul niveau, pensée pour un terrain ordinaire. Pas d'escalier, pas d'étage à entretenir — tout ce qui sert au quotidien est au même niveau, y compris à 70 ans.</p>
+          <p>L'espace de vie occupe le milieu : séjour, cuisine et salle à manger dans un seul volume de 48 m², ouvert sur la terrasse couverte par une large baie coulissante. La cuisine a un îlot et une fenêtre sur le jardin.</p>
+          <p>Les chambres sont groupées à l'autre bout, séparées de l'espace de vie par un couloir. La principale, de 14 m², a une sortie directe sur la terrasse. La salle de bains et le WC séparé desservent les trois chambres sans passer par le séjour.</p>
+            <ul class="d-points">
+              <li>Le garage à l'opposé des chambres — le bruit de la voiture n'arrive pas là où l'on dort</li>
+              <li>Entrée séparée, avec son propre vestibule — on n'entre pas directement dans le séjour</li>
+              <li>Mur coupe-feu en béton de 15 cm entre le garage et la maison</li>
+              <li>Mur extérieur de 38 cm, U = 0,14 W/m²K — se chauffe avec une petite chaudière</li>
+              <li>Toutes les pièces ont une fenêtre sur l'extérieur, aucune n'est aveugle</li>
+            </ul>
+            <button type="button" class="btn btn-primary btn-arrow js-next" data-model="Riva">Je souhaite aller plus loin</button>
+          </div>
+        </div>
+        <button class="detail-close" aria-label="Fermer">×</button>
+        </div>
+      </div>
+
+      <!-- MODÈLE 2 -->
+      <article class="case-card" data-model="2">
+        <div class="case-photo">
+          <img src="../images/case/pbk9-fatada-terasa.jpg" alt="Luna — maison en L de plain-pied, avec terrasse abritée" loading="lazy">
+        </div>
+        <div class="case-body">
+          <h2>Luna</h2>
+          <p class="case-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>126</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>3</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>1</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>plain-pied</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16v3H2z"/><path d="M4 13l2-5h8l2 5"/><circle cx="6" cy="16" r="1.2"/><circle cx="14" cy="16" r="1.2"/></svg>garage</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16"/><path d="M4 13V7M10 13V7M16 13V7"/><path d="M3 7h14"/><path d="M4 13v4M16 13v4"/></svg>terrasse</i></p>
+          <div class="var-list">
+            <div class="var" title="Structure béton, isolation, finitions"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
+            <div class="var" title="Structure béton, isolation"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
+            <div class="var var--wood" title="Structure bois, isolation"><span class="var-name">Polistisip<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
+          </div>
+        </div>
+      </article>
+
+      <div class="detail" id="detail-2">
+        <div class="detail-wrap">
+        <div class="detail-inner">
+          <div>
+            <div class="gal-main"><img src="../images/case/pbk9-fatada-terasa.jpg" alt="Luna — maison en L de plain-pied, avec terrasse abritée"></div>
+            <div class="gal-thumbs">
+            <img src="../images/case/pbk9-fatada-strada.jpg" alt="Façade côté rue" loading="lazy" data-full="../images/case/pbk9-fatada-strada.jpg" class="">
+            <img src="../images/case/pbk9-fatada-terasa.jpg" alt="Façade côté jardin" loading="lazy" data-full="../images/case/pbk9-fatada-terasa.jpg" class="on">
+            <img src="../images/case/pbk9-living.jpg" alt="Séjour · cuisine · salle à manger" loading="lazy" data-full="../images/case/pbk9-living.jpg" class="">
+            <img src="../images/case/pbk9-bucatarie.jpg" alt="La cuisine" loading="lazy" data-full="../images/case/pbk9-bucatarie.jpg" class="">
+            <img src="../images/case/pbk9-dormitor.jpg" alt="La chambre principale" loading="lazy" data-full="../images/case/pbk9-dormitor.jpg" class="">
+            <img src="../images/case/pbk9-baie.jpg" alt="La salle de bains" loading="lazy" data-full="../images/case/pbk9-baie.jpg" class="">
+            <img src="../images/case/pbk9-plan.png" alt="Le plan du rez-de-chaussée" loading="lazy" data-full="../images/case/pbk9-plan.png" class="">
+            </div>
+          </div>
+          <div>
+            <h3>Luna</h3>
+            <p class="d-spec">Maison en L de plain-pied, avec 3 chambres et garage · 126 m² utiles</p>
+            <div class="d-facts">
+            <div class="d-fact"><b>126 m²</b><span>surface utile</span></div>
+            <div class="d-fact"><b>178 m²</b><span>surface construite</span></div>
+            <div class="d-fact"><b>3</b><span>chambres</span></div>
+            <div class="d-fact"><b>52 m²</b><span>séjour + cuisine</span></div>
+            <div class="d-fact"><b>28 m²</b><span>garage</span></div>
+            <div class="d-fact"><b>30 m²</b><span>terrasse couverte</span></div>
+            </div>
+          <p>Luna est construite en L. Les deux ailes se rejoignent à angle droit et enferment la terrasse entre elles — abritée du vent sur deux côtés, pas exposée comme sur une maison droite.</p>
+          <p>L'espace de vie occupe une aile entière : 52 m² de séjour, cuisine et salle à manger, avec des fenêtres sur trois côtés. Il a un cellier séparé, ce qui garde la cuisine propre.</p>
+          <p>Les trois chambres occupent l'aile longue, égales — 12,6 m² chacune. Personne ne reçoit la petite chambre. Le garage est à l'autre bout, aussi loin que possible de la zone où l'on dort.</p>
+            <ul class="d-points">
+              <li>La terrasse loge dans le creux du L — on peut rester dehors même par grand vent</li>
+              <li>Trois chambres égales de 12,6 m² — sans la petite chambre dont personne ne veut</li>
+              <li>Cellier séparé de 6,7 m², près de l'entrée</li>
+              <li>Mur coupe-feu en béton de 15 cm entre le garage et la maison</li>
+              <li>Mur extérieur de 38 cm, U = 0,14 W/m²K</li>
+            </ul>
+            <button type="button" class="btn btn-primary btn-arrow js-next" data-model="Luna">Je souhaite aller plus loin</button>
+          </div>
+        </div>
+        <button class="detail-close" aria-label="Fermer">×</button>
+        </div>
+      </div>
+
+      <!-- MODÈLE 3 — exemple avec une variante indisponible -->
+      <article class="case-card" data-model="3">
+        <div class="case-photo">
+          <img src="../images/case/pbk10-fatada-terasa.jpg" alt="Pura — maison cubique de plain-pied, avec toit-terrasse" loading="lazy">
+        </div>
+        <div class="case-body">
+          <h2>Pura</h2>
+          <p class="case-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>131</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>3</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>1</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>plain-pied</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16"/><path d="M4 13V7M10 13V7M16 13V7"/><path d="M3 7h14"/><path d="M4 13v4M16 13v4"/></svg>terrasse</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h8v14H6z"/><path d="M3 3v14M17 3v14"/></svg>petit terrain</i></p>
+          <div class="var-list">
+            <div class="var" title="Structure béton, isolation, finitions"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
+            <div class="var" title="Structure béton, isolation"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
+            <div class="var var--wood" title="Structure bois, isolation"><span class="var-name">Polistisip<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
+          </div>
+        </div>
+      </article>
+
+      <div class="detail" id="detail-3">
+        <div class="detail-wrap">
+        <div class="detail-inner">
+          <div>
+            <div class="gal-main"><img src="../images/case/pbk10-fatada-terasa.jpg" alt="Pura — maison cubique de plain-pied, avec toit-terrasse"></div>
+            <div class="gal-thumbs">
+            <img src="../images/case/pbk10-fatada-strada.jpg" alt="Façade côté rue" loading="lazy" data-full="../images/case/pbk10-fatada-strada.jpg" class="">
+            <img src="../images/case/pbk10-fatada-terasa.jpg" alt="Façade côté jardin" loading="lazy" data-full="../images/case/pbk10-fatada-terasa.jpg" class="on">
+            <img src="../images/case/pbk10-living.jpg" alt="Séjour · cuisine · salle à manger" loading="lazy" data-full="../images/case/pbk10-living.jpg" class="">
+            <img src="../images/case/pbk10-bucatarie.jpg" alt="La cuisine" loading="lazy" data-full="../images/case/pbk10-bucatarie.jpg" class="">
+            <img src="../images/case/pbk10-dormitor.jpg" alt="La chambre principale" loading="lazy" data-full="../images/case/pbk10-dormitor.jpg" class="">
+            <img src="../images/case/pbk10-baie.jpg" alt="La salle de bains" loading="lazy" data-full="../images/case/pbk10-baie.jpg" class="">
+            <img src="../images/case/pbk10-plan.png" alt="Le plan du rez-de-chaussée" loading="lazy" data-full="../images/case/pbk10-plan.png" class="">
+            </div>
+          </div>
+          <div>
+            <h3>Pura</h3>
+            <p class="d-spec">Maison compacte de plain-pied, toit-terrasse, 3 chambres · 131 m² utiles</p>
+            <div class="d-facts">
+            <div class="d-fact"><b>131 m²</b><span>surface utile</span></div>
+            <div class="d-fact"><b>156 m²</b><span>surface construite</span></div>
+            <div class="d-fact"><b>3</b><span>chambres</span></div>
+            <div class="d-fact"><b>50 m²</b><span>séjour + cuisine</span></div>
+            <div class="d-fact"><b>16 m²</b><span>chambre principale</span></div>
+            <div class="d-fact"><b>13 m²</b><span>salle de bains</span></div>
+            </div>
+          <p>Pura est la maison la plus resserrée du catalogue : 156 m² d'emprise pour trois chambres. Volume presque carré, avec toit-terrasse — sans charpente, sans combles.</p>
+          <p>L'espace de vie est une seule pièce de 50 m², orientée vers la terrasse en béton. La cuisine a sa propre fenêtre au-dessus du plan de travail, ce qui compte quand on cuisine dos au séjour.</p>
+          <p>La chambre principale fait 16,1 m², la plus grande du catalogue. La salle de bains est unique, mais de 12,6 m² — avec baignoire et douche séparée — plus un WC près de l'entrée, pour que les invités ne traversent pas la zone de nuit.</p>
+            <ul class="d-points">
+              <li>La plus petite emprise au sol du catalogue pour trois chambres — pour terrain étroit</li>
+              <li>Sans garage, donc aussi le plus petit prix de structure</li>
+              <li>Chambre principale de 16,1 m², la plus grande du catalogue</li>
+              <li>Salle de bains de 12,6 m² avec baignoire et douche séparée, plus WC près de l'entrée</li>
+              <li>Toit-terrasse — sans charpente à entretenir</li>
+            </ul>
+            <button type="button" class="btn btn-primary btn-arrow js-next" data-model="Pura">Je souhaite aller plus loin</button>
+          </div>
+        </div>
+        <button class="detail-close" aria-label="Fermer">×</button>
+        </div>
+      </div>
+
+      <!-- MODÈLE 4 -->
+      <article class="case-card" data-model="4">
+        <div class="case-photo">
+          <img src="../images/case/home3-fatada-terasa.jpg" alt="Aura — maison premium de plain-pied, avec suite parentale" loading="lazy">
+        </div>
+        <div class="case-body">
+          <h2>Aura</h2>
+          <p class="case-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>161</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>3</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>2</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>plain-pied</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16v3H2z"/><path d="M4 13l2-5h8l2 5"/><circle cx="6" cy="16" r="1.2"/><circle cx="14" cy="16" r="1.2"/></svg>garage double</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16"/><path d="M4 13V7M10 13V7M16 13V7"/><path d="M3 7h14"/><path d="M4 13v4M16 13v4"/></svg>terrasse</i></p>
+          <div class="var-list">
+            <div class="var" title="Structure béton, isolation, finitions"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
+            <div class="var" title="Structure béton, isolation"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
+            <div class="var var--wood" title="Structure bois, isolation"><span class="var-name">Polistisip<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
+          </div>
+        </div>
+      </article>
+
+      <div class="detail" id="detail-4">
+        <div class="detail-wrap">
+        <div class="detail-inner">
+          <div>
+            <div class="gal-main"><img src="../images/case/home3-fatada-terasa.jpg" alt="Aura — la façade côté jardin"></div>
+            <div class="gal-thumbs">
+            <img src="../images/case/home3-fatada-strada.jpg" alt="Façade côté rue" loading="lazy" data-full="../images/case/home3-fatada-strada.jpg" class="">
+            <img src="../images/case/home3-fatada-terasa.jpg" alt="Façade côté jardin" loading="lazy" data-full="../images/case/home3-fatada-terasa.jpg" class="on">
+            <img src="../images/case/home3-living.jpg" alt="Séjour · cuisine · salle à manger" loading="lazy" data-full="../images/case/home3-living.jpg" class="">
+            <img src="../images/case/home3-bucatarie.jpg" alt="La cuisine" loading="lazy" data-full="../images/case/home3-bucatarie.jpg" class="">
+            <img src="../images/case/home3-dormitor.jpg" alt="La chambre parentale" loading="lazy" data-full="../images/case/home3-dormitor.jpg" class="">
+            <img src="../images/case/home3-baie.jpg" alt="La salle de bains parentale" loading="lazy" data-full="../images/case/home3-baie.jpg" class="">
+            <img src="../images/case/home3-plan.png" alt="Le plan du rez-de-chaussée" loading="lazy" data-full="../images/case/home3-plan.png" class="">
+            </div>
+          </div>
+          <div>
+            <h3>Aura</h3>
+            <p class="d-spec">Maison premium de plain-pied, avec suite parentale et garage double · 161 m² utiles</p>
+            <div class="d-facts">
+            <div class="d-fact"><b>161 m²</b><span>surface utile</span></div>
+            <div class="d-fact"><b>231 m²</b><span>surface construite</span></div>
+            <div class="d-fact"><b>3</b><span>chambres</span></div>
+            <div class="d-fact"><b>52 m²</b><span>séjour + cuisine</span></div>
+            <div class="d-fact"><b>37 m²</b><span>garage double</span></div>
+            <div class="d-fact"><b>10 m²</b><span>bureau</span></div>
+            </div>
+          <p>Aura est le modèle le mieux équipé du catalogue. Toujours sur un niveau, mais avec les espaces séparés comme dans une maison bien plus grande : jour, nuit, travail et voitures ne se mélangent pas.</p>
+          <p>La chambre parentale de 17,5 m² a son propre dressing et sa propre salle de bains, groupés en suite au bout de la maison. Les deux autres chambres ont leur salle de bains, de l'autre côté du couloir — le matin, on ne fait pas la queue.</p>
+          <p>Le bureau de 10,4 m² est près de l'espace de vie, pas entre les chambres. On peut travailler ou recevoir un client sans traverser la chambre de personne. Le garage double entre dans la maison par un cellier technique, pas directement dans le séjour.</p>
+            <ul class="d-points">
+              <li>Suite parentale : chambre 17,5 m² + dressing + salle de bains privée</li>
+              <li>Une deuxième salle de bains, séparée, pour les deux autres chambres</li>
+              <li>Bureau de 10,4 m² près de l'espace de vie — on ne travaille pas depuis la chambre</li>
+              <li>Garage double de 36,5 m², avec mur coupe-feu en béton côté maison</li>
+              <li>Mur extérieur de 38 cm, U = 0,14 W/m²K</li>
+            </ul>
+            <button type="button" class="btn btn-primary btn-arrow js-next" data-model="Aura">Je souhaite aller plus loin</button>
+          </div>
+        </div>
+        <button class="detail-close" aria-label="Fermer">×</button>
+        </div>
+      </div>
+
+      <!-- MODÈLE 5 -->
+      <article class="case-card" data-model="5">
+        <div class="case-photo">
+          <img src="../images/case/e5-fatada-terasa.jpg" alt="Vega — maison compacte à étage, pour petit terrain" loading="lazy">
+        </div>
+        <div class="case-body">
+          <h2>Vega</h2>
+          <p class="case-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>131</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>3</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>1</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>R+1</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16"/><path d="M4 13V7M10 13V7M16 13V7"/><path d="M3 7h14"/><path d="M4 13v4M16 13v4"/></svg>terrasse</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h8v14H6z"/><path d="M3 3v14M17 3v14"/></svg>81 m² au sol</i></p>
+          <div class="var-list">
+            <div class="var" title="Structure béton, isolation, finitions"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
+            <div class="var" title="Structure béton, isolation"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
+            <div class="var var--wood" title="Structure bois, isolation"><span class="var-name">Polistisip<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
+          </div>
+        </div>
+      </article>
+
+      <div class="detail" id="detail-5">
+        <div class="detail-wrap">
+        <div class="detail-inner">
+          <div>
+            <div class="gal-main"><img src="../images/case/e5-fatada-terasa.jpg" alt="Vega — la façade côté jardin"></div>
+            <div class="gal-thumbs">
+            <img src="../images/case/e5-fatada-strada.jpg" alt="Façade côté rue" loading="lazy" data-full="../images/case/e5-fatada-strada.jpg" class="">
+            <img src="../images/case/e5-fatada-terasa.jpg" alt="Façade côté jardin" loading="lazy" data-full="../images/case/e5-fatada-terasa.jpg" class="on">
+            <img src="../images/case/e5-living.jpg" alt="Séjour · cuisine · salle à manger" loading="lazy" data-full="../images/case/e5-living.jpg" class="">
+            <img src="../images/case/e5-bucatarie.jpg" alt="La cuisine" loading="lazy" data-full="../images/case/e5-bucatarie.jpg" class="">
+            <img src="../images/case/e5-dormitor.jpg" alt="La chambre principale" loading="lazy" data-full="../images/case/e5-dormitor.jpg" class="">
+            <img src="../images/case/e5-baie.jpg" alt="La salle de bains" loading="lazy" data-full="../images/case/e5-baie.jpg" class="">
+            <img src="../images/case/e5-plan.png" alt="Le plan du rez-de-chaussée et de l'étage" loading="lazy" data-full="../images/case/e5-plan.png" class="">
+            </div>
+          </div>
+          <div>
+            <h3>Vega</h3>
+            <p class="d-spec">Maison compacte à étage, 3 chambres · 131 m² utiles sur seulement 81 m² de terrain</p>
+            <div class="d-facts">
+            <div class="d-fact"><b>131 m²</b><span>surface utile</span></div>
+            <div class="d-fact"><b>81 m²</b><span>emprise au sol</span></div>
+            <div class="d-fact"><b>3</b><span>chambres</span></div>
+            <div class="d-fact"><b>43 m²</b><span>séjour + cuisine</span></div>
+            <div class="d-fact"><b>R+1</b><span>deux niveaux</span></div>
+            <div class="d-fact"><b>11 m²</b><span>salle de bains</span></div>
+            </div>
+          <p>Vega est la réponse au petit terrain. Elle n'occupe que 81 m² au sol — la moitié de ce que demandent les autres modèles — et en tire 131 m² utiles, parce qu'elle monte au lieu de s'étaler.</p>
+          <p>Le rez-de-chaussée est une seule pièce : séjour, cuisine et salle à manger, 43 m², avec baie coulissante vers la terrasse. L'escalier monte près de l'entrée, sans couper l'espace. En bas, il ne reste qu'un WC et le local technique.</p>
+          <p>Les trois chambres sont à l'étage, avec la salle de bains de 11 m². La séparation entre jour et nuit, c'est le plancher qui la fait, pas un mur — le meilleur isolant phonique d'une maison.</p>
+            <ul class="d-points">
+              <li>La plus petite emprise au sol du catalogue — 81 m², pour terrain étroit ou reculs serrés</li>
+              <li>Les chambres à l'étage, à l'abri du bruit de la rue</li>
+              <li>Le rez-de-chaussée est une seule pièce ouverte, sans couloirs perdus</li>
+              <li>Plancher en panneaux PBK avec dalle de compression, portée libre jusqu'à 9 m</li>
+              <li>Mur extérieur de 38 cm, U = 0,14 W/m²K</li>
+            </ul>
+            <button type="button" class="btn btn-primary btn-arrow js-next" data-model="Vega">Je souhaite aller plus loin</button>
+          </div>
+        </div>
+        <button class="detail-close" aria-label="Fermer">×</button>
+        </div>
+      </div>
+
+      <!-- MODÈLE 6 -->
+      <article class="case-card" data-model="6">
+        <div class="case-photo">
+          <img src="../images/case/e3-fatada-terasa.jpg" alt="Silva — maison à étage avec garage" loading="lazy">
+        </div>
+        <div class="case-body">
+          <h2>Silva</h2>
+          <p class="case-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>147</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>3</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>1</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>R+1</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16v3H2z"/><path d="M4 13l2-5h8l2 5"/><circle cx="6" cy="16" r="1.2"/><circle cx="14" cy="16" r="1.2"/></svg>garage</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16"/><path d="M4 13V7M10 13V7M16 13V7"/><path d="M3 7h14"/><path d="M4 13v4M16 13v4"/></svg>terrasse</i></p>
+          <div class="var-list">
+            <div class="var" title="Structure béton, isolation, finitions"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
+            <div class="var" title="Structure béton, isolation"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
+            <div class="var var--wood" title="Structure bois, isolation"><span class="var-name">Polistisip<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
+          </div>
+        </div>
+      </article>
+
+      <div class="detail" id="detail-6">
+        <div class="detail-wrap">
+        <div class="detail-inner">
+          <div>
+            <div class="gal-main"><img src="../images/case/e3-fatada-terasa.jpg" alt="Silva — la façade côté jardin"></div>
+            <div class="gal-thumbs">
+            <img src="../images/case/e3-fatada-strada.jpg" alt="Façade côté rue" loading="lazy" data-full="../images/case/e3-fatada-strada.jpg" class="">
+            <img src="../images/case/e3-fatada-terasa.jpg" alt="Façade côté jardin" loading="lazy" data-full="../images/case/e3-fatada-terasa.jpg" class="on">
+            <img src="../images/case/e3-living.jpg" alt="Séjour · cuisine · salle à manger" loading="lazy" data-full="../images/case/e3-living.jpg" class="">
+            <img src="../images/case/e3-bucatarie.jpg" alt="La cuisine" loading="lazy" data-full="../images/case/e3-bucatarie.jpg" class="">
+            <img src="../images/case/e3-dormitor.jpg" alt="Chambre à l'étage" loading="lazy" data-full="../images/case/e3-dormitor.jpg" class="">
+            <img src="../images/case/e3-baie.jpg" alt="La salle de bains" loading="lazy" data-full="../images/case/e3-baie.jpg" class="">
+            <img src="../images/case/e3-plan.png" alt="Le plan du rez-de-chaussée et de l'étage" loading="lazy" data-full="../images/case/e3-plan.png" class="">
+            </div>
+          </div>
+          <div>
+            <h3>Silva</h3>
+            <p class="d-spec">Maison à étage avec garage, 3 chambres · 147 m² utiles</p>
+            <div class="d-facts">
+            <div class="d-fact"><b>147 m²</b><span>surface utile</span></div>
+            <div class="d-fact"><b>115 m²</b><span>emprise au sol</span></div>
+            <div class="d-fact"><b>3</b><span>chambres</span></div>
+            <div class="d-fact"><b>48 m²</b><span>séjour + cuisine</span></div>
+            <div class="d-fact"><b>22 m²</b><span>garage</span></div>
+            <div class="d-fact"><b>16 m²</b><span>chaque chambre</span></div>
+            </div>
+          <p>Silva résout le cas le plus courant : famille avec enfants, voiture, terrain en ville. L'espace de vie au rez-de-chaussée, les chambres à l'étage, le garage accolé à la maison.</p>
+          <p>Le rez-de-chaussée est un seul volume de 48 m² — séjour, cuisine et salle à manger — avec baie coulissante vers la terrasse. L'escalier monte près de l'entrée. En bas aussi, un WC et un cellier, pour ne pas monter à l'étage pour chaque broutille.</p>
+          <p>En haut, trois chambres presque égales : 15,8 · 15,9 · 16,2 m². Il n'y a pas de petite chambre pour laquelle les enfants se disputent. La salle de bains de 9,4 m² dessert les trois.</p>
+            <ul class="d-points">
+              <li>Le garage ne se construit qu'au rez-de-chaussée — au-dessus, pas d'étage</li>
+              <li>La façade reste basse côté rue, au lieu d'un bloc haut collé au trottoir</li>
+              <li>Trois chambres entre 15,8 et 16,2 m² — aucune n'est « la petite chambre »</li>
+              <li>Plancher en panneaux PBK avec dalle de compression, portée libre jusqu'à 9 m</li>
+              <li>Mur coupe-feu en béton de 15 cm entre le garage et la maison</li>
+            </ul>
+            <button type="button" class="btn btn-primary btn-arrow js-next" data-model="Silva">Je souhaite aller plus loin</button>
+          </div>
+        </div>
+        <button class="detail-close" aria-label="Fermer">×</button>
+        </div>
+      </div>
+
+      <!-- MODÈLE 7 -->
+      <article class="case-card" data-model="7">
+        <div class="case-photo">
+          <img src="../images/case/terra-fatada-terasa.jpg" alt="Terra — maison familiale à étage, 4 chambres" loading="lazy">
+        </div>
+        <div class="case-body">
+          <h2>Terra</h2>
+          <p class="case-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>144</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>4</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>3</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>R+1</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16v3H2z"/><path d="M4 13l2-5h8l2 5"/><circle cx="6" cy="16" r="1.2"/><circle cx="14" cy="16" r="1.2"/></svg>garage en option</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16"/><path d="M4 13V7M10 13V7M16 13V7"/><path d="M3 7h14"/><path d="M4 13v4M16 13v4"/></svg>jardin</i></p>
+          <div class="var-list">
+            <div class="var" title="Structure béton, isolation, finitions"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
+            <div class="var" title="Structure béton, isolation"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
+            <div class="var var--wood" title="Structure bois, isolation"><span class="var-name">Polistisip<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
+          </div>
+        </div>
+      </article>
+
+      <div class="detail" id="detail-7">
+        <div class="detail-wrap">
+        <div class="detail-inner">
+          <div>
+            <div class="gal-main"><img src="../images/case/terra-fatada-terasa.jpg" alt="Terra — la façade côté jardin"></div>
+            <div class="gal-thumbs">
+            <img src="../images/case/terra-fatada-strada.jpg" alt="Façade côté rue" loading="lazy" data-full="../images/case/terra-fatada-strada.jpg" class="">
+            <img src="../images/case/terra-fatada-terasa.jpg" alt="Façade côté jardin" loading="lazy" data-full="../images/case/terra-fatada-terasa.jpg" class="on">
+            <img src="../images/case/terra-living.jpg" alt="Séjour · cuisine · salle à manger" loading="lazy" data-full="../images/case/terra-living.jpg" class="">
+            <img src="../images/case/terra-bucatarie.jpg" alt="La cuisine" loading="lazy" data-full="../images/case/terra-bucatarie.jpg" class="">
+            <img src="../images/case/terra-dormitor.jpg" alt="La chambre du rez-de-chaussée" loading="lazy" data-full="../images/case/terra-dormitor.jpg" class="">
+            <img src="../images/case/terra-baie.jpg" alt="La salle de bains de l'étage" loading="lazy" data-full="../images/case/terra-baie.jpg" class="">
+            <img src="../images/case/terra-plan.png" alt="Le plan du rez-de-chaussée et de l'étage" loading="lazy" data-full="../images/case/terra-plan.png" class="">
+            </div>
+          </div>
+          <div>
+            <h3>Terra</h3>
+            <p class="d-spec">Maison familiale à étage, 4 chambres et 3 salles de bains · 144 m² utiles</p>
+            <div class="d-facts">
+            <div class="d-fact"><b>144 m²</b><span>surface utile</span></div>
+            <div class="d-fact"><b>121 m²</b><span>emprise au sol</span></div>
+            <div class="d-fact"><b>4</b><span>chambres</span></div>
+            <div class="d-fact"><b>3</b><span>salles de bains</span></div>
+            <div class="d-fact"><b>41 m²</b><span>séjour + cuisine</span></div>
+            <div class="d-fact"><b>20 m²</b><span>garage en option</span></div>
+            </div>
+          <p>Terra est la maison pour la grande famille, ou pour celle qui grandit. Quatre chambres et trois salles de bains, sans ressembler à un immeuble : l'étage ne s'élève que sur le corps principal, le reste demeure sur un niveau.</p>
+          <p>La chambre de 17,8 m² est au rez-de-chaussée, près de la salle de bains et de la buanderie. Elle peut être la chambre des grands-parents, le bureau ou la chambre d'amis — personne ne monte d'escalier s'il ne veut pas. Les trois autres sont en haut, avec deux salles de bains entre elles.</p>
+          <p>Le rez-de-chaussée a le séjour ouvert de 41 m², une buanderie séparée et une salle de bains complète. Le garage se construit ou non : il est dessiné en trait interrompu, et le mur entre lui et la maison reste de toute façon, comme mur extérieur.</p>
+            <ul class="d-points">
+              <li>Quatre chambres, une au rez-de-chaussée — pour les grands-parents, le bureau ou les invités, sans escalier</li>
+              <li>Trois salles de bains pour quatre chambres — une en bas, deux en haut</li>
+              <li>Buanderie séparée de la salle de bains, au rez-de-chaussée</li>
+              <li>Garage en option de 20 m² — il se construit ou non, le plan reste le même</li>
+              <li>Plancher en panneaux PBK avec dalle de compression, portée libre jusqu'à 9 m</li>
+            </ul>
+            <button type="button" class="btn btn-primary btn-arrow js-next" data-model="Terra">Je souhaite aller plus loin</button>
+          </div>
+        </div>
+        <button class="detail-close" aria-label="Fermer">×</button>
+        </div>
+      </div>
+
+      <!-- MODÈLE 8 -->
+      <article class="case-card" data-model="8">
+        <div class="case-photo">
+          <img src="../images/case/nova-fatada-terasa.jpg" alt="Nova — maison compacte de plain-pied, avec 2 chambres" loading="lazy">
+        </div>
+        <div class="case-body">
+          <h2>Nova</h2>
+          <p class="case-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>80</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>2</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>1</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>plain-pied</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16v3H2z"/><path d="M4 13l2-5h8l2 5"/><circle cx="6" cy="16" r="1.2"/><circle cx="14" cy="16" r="1.2"/></svg>garage en option</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h8v14H6z"/><path d="M3 3v14M17 3v14"/></svg>petit terrain</i></p>
+          <div class="var-list">
+            <div class="var" title="Structure béton, isolation, finitions"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
+            <div class="var" title="Structure béton, isolation"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
+            <div class="var var--wood" title="Structure bois, isolation"><span class="var-name">Polistisip<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
+          </div>
+        </div>
+      </article>
+
+      <div class="detail" id="detail-8">
+        <div class="detail-wrap">
+        <div class="detail-inner">
+          <div>
+            <div class="gal-main"><img src="../images/case/nova-fatada-terasa.jpg" alt="Nova — la façade côté jardin"></div>
+            <div class="gal-thumbs">
+            <img src="../images/case/nova-fatada-strada.jpg" alt="Façade côté rue" loading="lazy" data-full="../images/case/nova-fatada-strada.jpg" class="">
+            <img src="../images/case/nova-fatada-terasa.jpg" alt="Façade côté jardin" loading="lazy" data-full="../images/case/nova-fatada-terasa.jpg" class="on">
+            <img src="../images/case/nova-living.jpg" alt="Séjour · cuisine · salle à manger" loading="lazy" data-full="../images/case/nova-living.jpg" class="">
+            <img src="../images/case/nova-bucatarie.jpg" alt="La cuisine" loading="lazy" data-full="../images/case/nova-bucatarie.jpg" class="">
+            <img src="../images/case/nova-dormitor.jpg" alt="La chambre principale" loading="lazy" data-full="../images/case/nova-dormitor.jpg" class="">
+            <img src="../images/case/nova-baie.jpg" alt="La salle de bains" loading="lazy" data-full="../images/case/nova-baie.jpg" class="">
+            <img src="../images/case/nova-plan.png" alt="Le plan du rez-de-chaussée" loading="lazy" data-full="../images/case/nova-plan.png" class="">
+            </div>
+          </div>
+          <div>
+            <h3>Nova</h3>
+            <p class="d-spec">Maison compacte de plain-pied, 2 chambres, garage en option · 80 m² utiles</p>
+            <div class="d-facts">
+            <div class="d-fact"><b>80 m²</b><span>surface utile</span></div>
+            <div class="d-fact"><b>97 m²</b><span>emprise sans garage</span></div>
+            <div class="d-fact"><b>2</b><span>chambres</span></div>
+            <div class="d-fact"><b>30 m²</b><span>séjour + cuisine</span></div>
+            <div class="d-fact"><b>7 m²</b><span>salle de bains</span></div>
+            <div class="d-fact"><b>13 m²</b><span>garage en option</span></div>
+            </div>
+          <p>Nova est la plus petite du catalogue et la moins chère à construire. Quatre-vingts mètres utiles, deux chambres, tout sur un niveau — pour un jeune couple, pour la première maison ou pour qui ne veut pas chauffer des espaces qu'il n'utilise pas.</p>
+          <p>Le séjour de 30 m² s'ouvre sur le jardin, et la cuisine a son propre cellier de 6,8 m² — rare pour une maison de cette taille, mais ça fait la différence quand on n'a nulle part où ranger.</p>
+          <p>La grande chambre fait 15,6 m², la deuxième 12,3. La salle de bains de 7 m² est complète, avec baignoire et douche. Le garage se construit ou non : il est dessiné en pointillé, et sans lui l'emprise descend de 113 à 97 m².</p>
+            <ul class="d-points">
+              <li>La plus petite surface utile du catalogue — le plus petit coût de construction</li>
+              <li>Cellier de 6,8 m², inhabituel pour une maison de 80 m²</li>
+              <li>Garage en option de 13 m² — sans lui, l'emprise descend à 97 m²</li>
+              <li>Tout sur un niveau, sans escalier</li>
+              <li>Mur extérieur de 38 cm, U = 0,14 W/m²K</li>
+            </ul>
+            <button type="button" class="btn btn-primary btn-arrow js-next" data-model="Nova">Je souhaite aller plus loin</button>
+          </div>
+        </div>
+        <button class="detail-close" aria-label="Fermer">×</button>
+        </div>
+      </div>
+
+      <!-- MODÈLE 9 -->
+      <article class="case-card" data-model="9">
+        <div class="case-photo">
+          <img src="../images/case/aria-fatada-terasa.jpg" alt="Aria — maison à étage, 4 chambres" loading="lazy">
+        </div>
+        <div class="case-body">
+          <h2>Aria</h2>
+          <p class="case-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>119</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>4</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>1</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>R+1</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16v3H2z"/><path d="M4 13l2-5h8l2 5"/><circle cx="6" cy="16" r="1.2"/><circle cx="14" cy="16" r="1.2"/></svg>garage en option</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h8v14H6z"/><path d="M3 3v14M17 3v14"/></svg>90 m² au sol</i></p>
+          <div class="var-list">
+            <div class="var" title="Structure béton, isolation, finitions"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
+            <div class="var" title="Structure béton, isolation"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
+            <div class="var var--wood" title="Structure bois, isolation"><span class="var-name">Polistisip<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
+          </div>
+        </div>
+      </article>
+
+      <div class="detail" id="detail-9">
+        <div class="detail-wrap">
+        <div class="detail-inner">
+          <div>
+            <div class="gal-main"><img src="../images/case/aria-fatada-terasa.jpg" alt="Aria — la façade côté jardin"></div>
+            <div class="gal-thumbs">
+            <img src="../images/case/aria-fatada-strada.jpg" alt="Façade côté rue" loading="lazy" data-full="../images/case/aria-fatada-strada.jpg" class="">
+            <img src="../images/case/aria-fatada-terasa.jpg" alt="Façade côté jardin" loading="lazy" data-full="../images/case/aria-fatada-terasa.jpg" class="on">
+            <img src="../images/case/aria-living.jpg" alt="Le séjour" loading="lazy" data-full="../images/case/aria-living.jpg" class="">
+            <img src="../images/case/aria-bucatarie.jpg" alt="La cuisine fermée" loading="lazy" data-full="../images/case/aria-bucatarie.jpg" class="">
+            <img src="../images/case/aria-dormitor.jpg" alt="Chambre à l'étage" loading="lazy" data-full="../images/case/aria-dormitor.jpg" class="">
+            <img src="../images/case/aria-baie.jpg" alt="La salle de bains" loading="lazy" data-full="../images/case/aria-baie.jpg" class="">
+            <img src="../images/case/aria-plan.png" alt="Le plan du rez-de-chaussée et de l'étage" loading="lazy" data-full="../images/case/aria-plan.png" class="">
+            </div>
+          </div>
+          <div>
+            <h3>Aria</h3>
+            <p class="d-spec">Maison à étage, 4 chambres, cuisine fermée · 119 m² utiles sur 90 m² de terrain</p>
+            <div class="d-facts">
+            <div class="d-fact"><b>119 m²</b><span>surface utile</span></div>
+            <div class="d-fact"><b>90 m²</b><span>emprise au sol</span></div>
+            <div class="d-fact"><b>4</b><span>chambres</span></div>
+            <div class="d-fact"><b>28 m²</b><span>séjour</span></div>
+            <div class="d-fact"><b>26 m²</b><span>garage en option</span></div>
+            <div class="d-fact"><b>5 m²</b><span>buanderie</span></div>
+            </div>
+          <p>Aria tire quatre chambres de seulement 90 m² de terrain. L'étage couvre toute l'emprise, garage compris — voilà pourquoi tant de choses tiennent dans un volume aussi petit.</p>
+          <p>Les quatre chambres sont presque identiques : entre 13,6 et 14,2 m², deux de chaque côté du palier. Dans une maison avec quatre enfants, ou avec enfants et bureau, cela veut dire que personne ne se sent lésé.</p>
+          <p>La cuisine est une pièce séparée, pas ouverte sur le séjour. On perd l'effet d'espace, on gagne le calme et l'absence d'odeurs — certains la veulent, d'autres non, mais il est bon que cette variante existe aussi au catalogue.</p>
+            <ul class="d-points">
+              <li>Quatre chambres sur une emprise de seulement 90 m²</li>
+              <li>Des chambres presque égales, entre 13,6 et 14,2 m²</li>
+              <li>Cuisine fermée, la seule du catalogue — pas d'odeurs dans l'espace de vie</li>
+              <li>Buanderie à l'étage, près de la salle de bains</li>
+              <li>Au-dessus du garage, une chambre : le plancher PBK arrive déjà isolé, sans pont thermique</li>
+            </ul>
+            <button type="button" class="btn btn-primary btn-arrow js-next" data-model="Aria">Je souhaite aller plus loin</button>
+          </div>
+        </div>
+        <button class="detail-close" aria-label="Fermer">×</button>
+        </div>
+      </div>
+
+      <!-- MODÈLE 10 -->
+      <article class="case-card" data-model="10">
+        <div class="case-photo">
+          <img src="../images/case/vela-fatada-terasa.jpg" alt="Vela — maison blanche de plain-pied, avec 3 chambres" loading="lazy">
+        </div>
+        <div class="case-body">
+          <h2>Vela</h2>
+          <p class="case-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>92</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>3</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>1</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>plain-pied</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16"/><path d="M4 13V7M10 13V7M16 13V7"/><path d="M3 7h14"/><path d="M4 13v4M16 13v4"/></svg>terrasse</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h8v14H6z"/><path d="M3 3v14M17 3v14"/></svg>sans garage</i></p>
+          <div class="var-list">
+            <div class="var" title="Structure béton, isolation, finitions"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
+            <div class="var" title="Structure béton, isolation"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
+            <div class="var var--wood" title="Structure bois, isolation"><span class="var-name">Polistisip<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
+          </div>
+        </div>
+      </article>
+
+      <div class="detail" id="detail-10">
+        <div class="detail-wrap">
+        <div class="detail-inner">
+          <div>
+            <div class="gal-main"><img src="../images/case/vela-fatada-terasa.jpg" alt="Vela — la façade côté jardin"></div>
+            <div class="gal-thumbs">
+            <img src="../images/case/vela-fatada-strada.jpg" alt="Façade côté rue" loading="lazy" data-full="../images/case/vela-fatada-strada.jpg" class="">
+            <img src="../images/case/vela-fatada-terasa.jpg" alt="Façade côté jardin" loading="lazy" data-full="../images/case/vela-fatada-terasa.jpg" class="on">
+            <img src="../images/case/vela-living.jpg" alt="Séjour · cuisine · salle à manger" loading="lazy" data-full="../images/case/vela-living.jpg" class="">
+            <img src="../images/case/vela-bucatarie.jpg" alt="La cuisine" loading="lazy" data-full="../images/case/vela-bucatarie.jpg" class="">
+            <img src="../images/case/vela-dormitor.jpg" alt="La chambre principale" loading="lazy" data-full="../images/case/vela-dormitor.jpg" class="">
+            <img src="../images/case/vela-baie.jpg" alt="La salle de bains" loading="lazy" data-full="../images/case/vela-baie.jpg" class="">
+            <img src="../images/case/vela-plan.png" alt="Le plan du rez-de-chaussée" loading="lazy" data-full="../images/case/vela-plan.png" class="">
+            </div>
+          </div>
+          <div>
+            <h3>Vela</h3>
+            <p class="d-spec">Maison sur un niveau, 3 chambres, séjour ouvert de 42 m² · 92 m² utiles</p>
+            <div class="d-facts">
+            <div class="d-fact"><b>92 m²</b><span>surface utile</span></div>
+            <div class="d-fact"><b>112 m²</b><span>emprise au sol</span></div>
+            <div class="d-fact"><b>3</b><span>chambres</span></div>
+            <div class="d-fact"><b>42 m²</b><span>séjour + cuisine</span></div>
+            <div class="d-fact"><b>8,6 m²</b><span>salle de bains</span></div>
+            <div class="d-fact"><b>—</b><span>sans garage</span></div>
+            </div>
+          <p>Vela a le plus grand séjour rapporté à la surface de tout le catalogue : 42 m² sur un total de 92. Presque la moitié de la maison est la zone où l'on vit vraiment, pas celle qu'on ne fait que chauffer.</p>
+          <p>Les trois chambres et la salle de bains sont regroupées dans la moitié est, reliées par un couloir court. Rien ne se perd en couloirs — c'est pourquoi il en reste autant pour l'espace de vie.</p>
+          <p>Sans garage et sans découpes dans le plan : un rectangle propre de 13 sur 8,6 mètres. C'est la plus simple et la moins chère à monter du catalogue, à la même qualité de mur.</p>
+            <ul class="d-points">
+              <li>Le plus grand séjour du catalogue rapporté à la surface — 42 sur 92 m²</li>
+              <li>Volume rectangulaire simple, sans découpes — le moins cher à monter</li>
+              <li>Salle de bains de 8,6 m², généreuse pour une maison de 92 m²</li>
+              <li>Sans garage — le stationnement reste sur l'allée</li>
+              <li>Mur extérieur de 38 cm, U = 0,14 W/m²K</li>
+            </ul>
+            <button type="button" class="btn btn-primary btn-arrow js-next" data-model="Vela">Je souhaite aller plus loin</button>
+          </div>
+        </div>
+        <button class="detail-close" aria-label="Fermer">×</button>
+        </div>
+      </div>
+
+      <!-- MODÈLE 11 -->
+      <article class="case-card" data-model="11">
+        <div class="case-photo">
+          <img src="../images/case/mira-fatada-terasa.jpg" alt="Mira — maison de plain-pied avec 4 chambres" loading="lazy">
+        </div>
+        <div class="case-body">
+          <h2>Mira</h2>
+          <p class="case-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>97</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>4</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>1</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>plain-pied</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16v3H2z"/><path d="M4 13l2-5h8l2 5"/><circle cx="6" cy="16" r="1.2"/><circle cx="14" cy="16" r="1.2"/></svg>garage en option</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16"/><path d="M4 13V7M10 13V7M16 13V7"/><path d="M3 7h14"/><path d="M4 13v4M16 13v4"/></svg>terrasse</i></p>
+          <div class="var-list">
+            <div class="var" title="Structure béton, isolation, finitions"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
+            <div class="var" title="Structure béton, isolation"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
+            <div class="var var--wood" title="Structure bois, isolation"><span class="var-name">Polistisip<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
+          </div>
+        </div>
+      </article>
+
+      <div class="detail" id="detail-11">
+        <div class="detail-wrap">
+        <div class="detail-inner">
+          <div>
+            <div class="gal-main"><img src="../images/case/mira-fatada-terasa.jpg" alt="Mira — la façade côté jardin"></div>
+            <div class="gal-thumbs">
+            <img src="../images/case/mira-fatada-strada.jpg" alt="Façade côté rue" loading="lazy" data-full="../images/case/mira-fatada-strada.jpg" class="">
+            <img src="../images/case/mira-fatada-terasa.jpg" alt="Façade côté jardin" loading="lazy" data-full="../images/case/mira-fatada-terasa.jpg" class="on">
+            <img src="../images/case/mira-living.jpg" alt="Séjour · cuisine · salle à manger" loading="lazy" data-full="../images/case/mira-living.jpg" class="">
+            <img src="../images/case/mira-bucatarie.jpg" alt="La cuisine" loading="lazy" data-full="../images/case/mira-bucatarie.jpg" class="">
+            <img src="../images/case/mira-dormitor.jpg" alt="Une chambre" loading="lazy" data-full="../images/case/mira-dormitor.jpg" class="">
+            <img src="../images/case/mira-baie.jpg" alt="La salle de bains" loading="lazy" data-full="../images/case/mira-baie.jpg" class="">
+            <img src="../images/case/mira-plan.png" alt="Le plan du rez-de-chaussée" loading="lazy" data-full="../images/case/mira-plan.png" class="">
+            </div>
+          </div>
+          <div>
+            <h3>Mira</h3>
+            <p class="d-spec">Maison sur un niveau avec 4 chambres, garage en option · 97 m² utiles</p>
+            <div class="d-facts">
+            <div class="d-fact"><b>97 m²</b><span>surface utile</span></div>
+            <div class="d-fact"><b>149 m²</b><span>emprise avec garage</span></div>
+            <div class="d-fact"><b>4</b><span>chambres</span></div>
+            <div class="d-fact"><b>35 m²</b><span>séjour + cuisine</span></div>
+            <div class="d-fact"><b>28 m²</b><span>garage en option</span></div>
+            <div class="d-fact"><b>—</b><span>sans escalier</span></div>
+            </div>
+          <p>Mira est la seule maison du catalogue avec <strong>quatre chambres sur un seul niveau</strong>. Terra et Aria en ont quatre aussi, mais avec étage. Ici tout est en bas : personne ne monte d'escalier, jamais.</p>
+          <p>Cela la rend adaptée à deux situations que le reste du catalogue ne couvre pas : la grande famille avec de jeunes enfants, où l'escalier est un souci de plus, et deux générations sous le même toit, où les grands-parents ne peuvent pas monter.</p>
+          <p>Les quatre chambres sont groupées deux par deux de part et d'autre d'un couloir court, avec la salle de bains au bout. L'espace de vie reste séparé, à l'autre bout de la maison, près du cellier et du garage.</p>
+            <ul class="d-points">
+              <li>La seule du catalogue avec quatre chambres sans étage</li>
+              <li>Sans escalier — pour les jeunes enfants ou pour les parents âgés</li>
+              <li>L'espace de vie à un bout, les chambres à l'autre, avec un couloir entre les deux</li>
+              <li>Garage en option de 28 m², le plus grand du catalogue après Aura</li>
+              <li>Mur extérieur de 38 cm, U = 0,14 W/m²K</li>
+            </ul>
+            <button type="button" class="btn btn-primary btn-arrow js-next" data-model="Mira">Je souhaite aller plus loin</button>
+          </div>
+        </div>
+        <button class="detail-close" aria-label="Fermer">×</button>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="case-note">
+      Les prix se complètent une fois la grille établie. Tous les modèles peuvent s'adapter — surface, distribution, finitions.
+      La structure en bois du Polistisip utilise une ressource qui se renouvelle et demande moins de béton ; les chiffres exacts d'empreinte, nous les publions quand l'analyse complète est prête.
+    </p>
+
+  </div>
+</section>
+
+
+<!-- LE CHOIX DU SYSTÈME -->
+<div class="sysmodal" id="sysmodal" hidden>
+  <div class="sysmodal-back" data-close></div>
+  <div class="sysmodal-box" role="dialog" aria-modal="true" aria-labelledby="sysmodal-title">
+    <button class="sysmodal-x" data-close aria-label="Fermer">×</button>
+    <p class="sysmodal-kicker" id="sysmodal-model">Riva</p>
+    <h2 id="sysmodal-title">Dans quel système la construisons-nous ?</h2>
+    <p class="sysmodal-lead">La même maison, le même plan. La structure et la finition changent — et avec elles le prix.</p>
+
+    <div class="sysgrid">
+
+      <article class="syscard" data-sistem="Polistibrick">
+        <h3>Polistibrick</h3>
+        <p class="sys-what">Structure béton · isolation · <strong>finitions</strong></p>
+        <dl class="sys-specs">
+          <div><dt>Mur extérieur</dt><dd>38 cm</dd></div>
+          <div><dt>Transfert thermique U</dt><dd>0,14 W/m²K</dd></div>
+          <div><dt>Poids du mur</dt><dd>396 kg/m²</dd></div>
+          <div><dt>Confort d'été</dt><dd>très bon</dd></div>
+          <div><dt>Réaction au feu</dt><dd>A1</dd></div>
+        </dl>
+        <p class="sys-inc">Il arrive avec la plaque de fibrociment sur les deux faces. On enduit directement, sans couche d'égalisation.</p>
+        <div class="sys-preturi">
+          <div class="sys-rand"><span>Le coffrage seul</span><b>— €<small>/m²</small></b></div>
+          <div class="sys-rand"><span>La construction gros œuvre</span><b>— €<small>/m²</small></b></div>
+        </div>
+        <button type="button" class="btn btn-primary btn-arrow sys-go">Je continue avec Polistibrick</button>
+      </article>
+
+      <article class="syscard" data-sistem="Polistiwall">
+        <h3>Polistiwall</h3>
+        <p class="sys-what">Structure béton · isolation</p>
+        <dl class="sys-specs">
+          <div><dt>Mur extérieur</dt><dd>38 cm</dd></div>
+          <div><dt>Transfert thermique U</dt><dd>0,14 W/m²K</dd></div>
+          <div><dt>Poids du mur</dt><dd>396 kg/m²</dd></div>
+          <div><dt>Confort d'été</dt><dd>très bon</dd></div>
+          <div><dt>Réaction au feu</dt><dd>A1</dd></div>
+        </dl>
+        <p class="sys-inc">La même structure et la même isolation. La finition reste à votre charge — c'est pour ça que ça coûte moins.</p>
+        <div class="sys-preturi">
+          <div class="sys-rand"><span>Le coffrage seul</span><b>— €<small>/m²</small></b></div>
+          <div class="sys-rand"><span>La construction gros œuvre</span><b>— €<small>/m²</small></b></div>
+        </div>
+        <button type="button" class="btn btn-primary btn-arrow sys-go">Je continue avec Polistiwall</button>
+      </article>
+
+      <article class="syscard syscard--wood" data-sistem="Polistisip">
+        <h3>Polistisip<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></h3>
+        <p class="sys-what">Structure bois · isolation</p>
+        <dl class="sys-specs">
+          <div><dt>Mur extérieur</dt><dd>30 cm</dd></div>
+          <div><dt>Transfert thermique U</dt><dd>0,11 W/m²K</dd></div>
+          <div><dt>Poids du mur</dt><dd>23 kg/m²</dd></div>
+          <div><dt>Confort d'été</dt><dd>bon</dd></div>
+          <div><dt>Réaction au feu</dt><dd>bois</dd></div>
+        </dl>
+        <p class="sys-inc">Un mur plus mince et mieux isolé, 17 fois plus léger. Vous gagnez sur la surface utile et sur la fondation.</p>
+        <div class="sys-preturi">
+          <div class="sys-rand"><span>Les panneaux seuls</span><b>— €<small>/m²</small></b></div>
+          <div class="sys-rand"><span>La construction gros œuvre</span><b>— €<small>/m²</small></b></div>
+        </div>
+        <button type="button" class="btn btn-primary btn-arrow sys-go">Je continue avec Polistisip</button>
+      </article>
+
+    </div>
+    <p class="sysmodal-note">Les prix sont estimatifs et se confirment après avoir vu le terrain et le projet. Le coffrage, c'est le matériau livré ; le gros œuvre, c'est la fondation, la structure et la toiture, montées par nous. Les données thermiques viennent des fiches Ubakus du mur.</p>
   </div>
 </div>
 
-<!-- COMPACT LIGHTBOX -->
-<div class="lightbox" id="lightbox" onclick="closeLightbox()">
-  <span class="lightbox-close">×</span>
-  <img class="lightbox-img" id="lightboxImg" src="" alt="Vue agrandie">
-  <div class="lightbox-caption" id="lightboxCaption"></div>
-</div>
+<footer class="site-footer" data-include="footer"></footer>
 
-<script src="../assets/js/site.js"></script>
 <script>
-  // SLIDER LOGIC
-  const slides = document.querySelectorAll('.slide');
-  let currentIdx = 0;
+(function () {
+  var cards = document.querySelectorAll('.case-card[data-model]');
 
-  function showSlide(index) {
-    slides[currentIdx].classList.remove('is-active');
-    currentIdx = (index + slides.length) % slides.length;
-    slides[currentIdx].classList.add('is-active');
+  function close(d, adu) {
+    var card = document.querySelector('.case-card[data-model="' + d.id.split('-')[1] + '"]');
+    d.classList.remove('open');
+    setTimeout(function () { if (!d.classList.contains('open')) d.classList.remove('shown'); }, 460);
+    card.classList.remove('is-open');
+    // la carte vient de réapparaître et a poussé la page — je la ramène sous les yeux
+    if (adu) {
+      var r = card.getBoundingClientRect();
+      if (r.top < 90 || r.bottom > innerHeight) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
   }
 
-  function nextSlide() { showSlide(currentIdx + 1); }
-  function prevSlide() { showSlide(currentIdx - 1); }
+  cards.forEach(function (card) {
+    var id = card.dataset.model;
+    var detail = document.getElementById('detail-' + id);
+    if (!detail) return;
 
-  // Auto transition slides every 8 seconds unless open
-  let sliderInterval = setInterval(nextSlide, 8000);
-  function pauseSlider() { clearInterval(sliderInterval); }
-  function resumeSlider() { sliderInterval = setInterval(nextSlide, 8000); }
-
-  // PROJECT DATA FOR OVERLAY
-  const PROJECT_DETAILS = {
-    valencia: {
-      title: "Villa Valencia",
-      subtitle: "Espagne · Climat Chaud · Gros œuvre ultra-rapide",
-      quote: "« Avec le système modulaire Polistibrick MBK 210, notre équipe de 4 personnes a monté l'intégralité des murs en seulement 2 semaines, sans aucun moyen de levage lourd. L'armature pré-positionnée intégrée a supprimé des jours de ligaturage fastidieux. Sous les 38 °C de Valence, l'inertie du béton monolithique combinée à l'isolation double face maintient la villa à 24 °C en permanence sans aucune climatisation. »",
-      author: "Diego Alvarez",
-      authorRole: "Chef de chantier & Propriétaire",
-      desc: "<p>Ce projet illustre la pertinence de Polistibrick en climat tempéré-chaud. Construit avec le bloc MBK 210, la structure dispose d'une isolation optimale qui rejette le rayonnement thermique externe.</p><p>Le gros œuvre a été finalisé en 4 semaines au total, permettant d'entamer les finitions extérieures et intérieures et de livrer la villa clés en main en 4 mois seulement.</p>",
-      gallery: [
-        { label: "Sem. 1 — Excavation & Dalle", caption: "Préparation du terrain et coulage de la dalle support.", img: "" },
-        { label: "Sem. 2 — Assemblage RDC", caption: "Montage du système modulaire MBK 210 par 4 personnes.", img: "" },
-        { label: "Sem. 3 — Pose Toit TBK", caption: "Installation de la toiture isolante préfabriquée TBK.", img: "" },
-        { label: "Sem. 4 — Coulage Béton", caption: "Coulage monolithique de la structure de la villa.", img: "" },
-        { label: "Sem. 5-7 — Finitions & Piscine", caption: "Application de l'enduit méditerranéen et intégration extérieure.", img: "" },
-        { label: "Rendu Final — Vue Piscine", caption: "La villa achevée et habitée sans climatisation active.", img: "../images/projets/projet-valencia.png" }
-      ]
-    },
-    cluj: {
-      title: "Maison Cluj-Napoca",
-      subtitle: "Roumanie · Climat Continental · Étanchéité Thermique",
-      quote: "« Monter 180 m² en 5 semaines avec seulement 3 personnes a bluffé le voisinage. Les blocs se manipulent et s'assemblent comme des LEGO avec une précision millimétrique. Le test Blower Door a donné un n50 exceptionnel de 0,48, garantissant des charges de chauffage réelles moyennes de 38 €/mois pour la famille. »",
-      author: "Andrei Mureșan",
-      authorRole: "Propriétaire & Ingénieur structure",
-      desc: "<p>En climat continental où les hivers peuvent chuter sous les -15 °C, la performance de l'isolation continue sans ponts thermiques Polistibrick MBK 270 élimine les factures de chauffage abusives.</p><p>La structure en béton armé assure une longévité de 50+ ans tandis que le doublage fibre-ciment garantit une réaction incombustible A1 au feu.</p>",
-      gallery: [
-        { label: "Sem. 1 — Fondation", caption: "Terrassement et fondation filante sur terrain stable.", img: "" },
-        { label: "Sem. 2 — Murs RDC", caption: "Assemblage rapide des blocs MBK 270 sans grue.", img: "" },
-        { label: "Sem. 3 — Plancher PBK", caption: "Mise en place des dalles de plancher isolantes PBK 250.", img: "" },
-        { label: "Sem. 3 — Toit TBK", caption: "Installation de la couverture thermique brevetée.", img: "" },
-        { label: "Sem. 4 — Coulage structure", caption: "Coulage du béton monolithique dans les coffrages intégrés.", img: "" },
-        { label: "Maison Finalisée", caption: "La maison passive livrée avec factures contrôlées.", img: "../images/projets/projet-cluj.png" }
-      ]
-    },
-    lyon: {
-      title: "Ensemble Lyon",
-      subtitle: "France · Programme Promoteur · 24 Logements Collectifs",
-      quote: "« Pour ce programme immobilier d'envergure, nous devions livrer des logements passifs certifiés sous des délais stricts. Polistibrick nous a permis de finaliser le gros œuvre des 24 unités en 6 mois, nous faisant gagner 6 mois de planning complet par rapport à la brique traditionnelle. La prévisibilité du système est un atout financier indéniable. »",
-      author: "Marc Laurent",
-      authorRole: "Directeur de projet, Bâti-Durable",
-      desc: "<p>Ce projet d'ensemble résidentiel collectif démontre l'applicabilité industrielle du système Polistibrick sur les programmes collectifs. Les 24 unités ont été coulées par tranches successives.</p><p>L'ensemble a obtenu la certification Passivhaus directement du premier coup, garantissant un retour sur investissement optimal et une prime à la vente de +18%.</p>",
-      gallery: [
-        { label: "Mois 1 — Terrassement", caption: "Préparation générale de la plate-forme et dalles.", img: "" },
-        { label: "Mois 2 — Élévation modules 1-6", caption: "Montage en parallèle des structures coffrantes.", img: "" },
-        { label: "Mois 3 — Toits modules collectifs", caption: "Pose simultanée des toitures thermiques par grue.", img: "" },
-        { label: "Mois 4 — Coulage de masse", caption: "Gestion logistique du coulage béton par phases.", img: "" },
-        { label: "Mois 5 — Installations techniques", caption: "Passage direct des gaines d'installations.", img: "" },
-        { label: "Ensemble Finalisé", caption: "Les 24 logements passifs certifiés et vendus.", img: "../images/projets/ensemble-lyon.png" }
-      ]
-    }
-  };
-
-  // OPEN DETAILS OVERLAY
-  function openProject(id) {
-    pauseSlider();
-    const data = PROJECT_DETAILS[id];
-    if (!data) return;
-
-    const overlay = document.getElementById('detailOverlay');
-    const container = document.getElementById('detailContainer');
-
-    // Build gallery html
-    let galleryHtml = "";
-    data.gallery.forEach(item => {
-      // Use fallback SVG icon if no image source
-      const imgTag = item.img 
-        ? `<img src="${item.img}" alt="${item.label}">` 
-        : `<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>`;
-      
-      const clickAction = item.img ? `onclick="openLightbox('${item.img}', '${item.caption}')"` : `onclick="alert('Cette photo de chantier est issue du dossier technique confidentiel. Contactez notre équipe pour y accéder.');"`;
-
-      galleryHtml += `
-        <div class="gallery-card" ${clickAction}>
-          <div class="gallery-img-wrap">
-            ${imgTag}
-          </div>
-          <div class="gallery-label">${item.label}</div>
-        </div>
-      `;
+    card.addEventListener('click', function (e) {
+      // les boutons et les liens font leur travail, ils n'ouvrent pas le panneau
+      if (e.target.closest('a, .js-next')) return;
+      var eraDeschis = detail.classList.contains('open');
+      document.querySelectorAll('.detail.open').forEach(close);
+      if (!eraDeschis) {
+        detail.classList.add('shown');
+        requestAnimationFrame(function () { detail.classList.add('open'); });
+        card.classList.add('is-open');
+        setTimeout(function () { detail.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }, 120);
+      }
     });
 
-    container.innerHTML = `
-      <div class="detail-grid">
-        <!-- Left details and quote -->
-        <div>
-          <span class="detail-subtitle">${data.subtitle}</span>
-          <h2 class="detail-title">${data.title}</h2>
-          
-          <div class="detail-quote-box">
-            <p class="detail-quote">${data.quote}</p>
-            <span class="detail-author"><strong>${data.author}</strong>, ${data.authorRole}</span>
-          </div>
+    detail.querySelector('.detail-close').addEventListener('click', function () { close(detail); });
 
-          <div class="detail-desc">
-            ${data.desc}
-          </div>
-
-          <a href="../contact/?subject=Demande+de+dossier+technique+:+${encodeURIComponent(data.title)}&type=document&doc=${encodeURIComponent('Dossier Technique - ' + data.title)}" class="btn-circle">Demander le dossier technique →</a>
-        </div>
-
-        <!-- Right stage photo gallery -->
-        <div>
-          <h3 class="gallery-section-title">Phases de chantier & Rendu</h3>
-          <div class="gallery-grid-compact">
-            ${galleryHtml}
-          </div>
-        </div>
-      </div>
-    `;
-
-    overlay.classList.add('is-active');
-    document.body.style.overflow = 'hidden';
-  }
-
-  // CLOSE DETAILS OVERLAY
-  function closeProject() {
-    document.getElementById('detailOverlay').classList.remove('is-active');
-    document.body.style.overflow = '';
-    resumeSlider();
-  }
-
-  // LIGHTBOX LOGIC
-  function openLightbox(src, caption) {
-    const lightbox = document.getElementById('lightbox');
-    document.getElementById('lightboxImg').src = src;
-    document.getElementById('lightboxCaption').textContent = caption;
-    lightbox.classList.add('is-active');
-  }
-
-  function closeLightbox() {
-    document.getElementById('lightbox').classList.remove('is-active');
-  }
-
-  // Deep Link from hash URL (e.g. projets/#valencia)
-  window.addEventListener('load', () => {
-    const hash = window.location.hash.substring(1);
-    if (hash && PROJECT_DETAILS[hash]) {
-      // Find index of slide
-      const keys = Object.keys(PROJECT_DETAILS);
-      const idx = keys.indexOf(hash);
-      if (idx !== -1) showSlide(idx);
-      openProject(hash);
-    }
+    // la galerie : la miniature change la grande image
+    var mare = detail.querySelector('.gal-main img');
+    // le plan est trop petit pour se lire ici : un clic l'ouvre en entier
+    mare.addEventListener('click', function () {
+      if (/plan\.png$/.test(mare.getAttribute('src'))) window.open(mare.src, '_blank');
+    });
+    detail.querySelectorAll('.gal-thumbs img').forEach(function (t) {
+      t.addEventListener('click', function () {
+        mare.src = t.dataset.full;
+        detail.querySelectorAll('.gal-thumbs img').forEach(function (x) { x.classList.remove('on'); });
+        t.classList.add('on');
+      });
+    });
   });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') document.querySelectorAll('.detail.open').forEach(function (d) { close(d, true); });
+  });
+})();
 </script>
+
+<script>
+(function () {
+  var modal = document.getElementById('sysmodal');
+  if (!modal) return;
+  var eticheta = document.getElementById('sysmodal-model');
+  var model = '';
+  var deUndeAmVenit = null;
+
+  function deschide(numeModel, buton) {
+    model = numeModel; deUndeAmVenit = buton;
+    eticheta.textContent = numeModel;
+    modal.hidden = false;
+    requestAnimationFrame(function () { modal.classList.add('on'); });
+    document.body.style.overflow = 'hidden';
+    modal.querySelector('.sysmodal-x').focus();
+  }
+  function inchide() {
+    modal.classList.remove('on');
+    setTimeout(function () { modal.hidden = true; }, 280);
+    document.body.style.overflow = '';
+    if (deUndeAmVenit) deUndeAmVenit.focus();
+  }
+
+  document.querySelectorAll('.js-next').forEach(function (b) {
+    b.addEventListener('click', function () { deschide(b.dataset.model || '', b); });
+  });
+  modal.querySelectorAll('[data-close]').forEach(function (x) {
+    x.addEventListener('click', inchide);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !modal.hidden) inchide();
+  });
+
+  // le système choisi part vers le formulaire dans l'adresse de la page
+  modal.querySelectorAll('.sys-go').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var sistem = b.closest('.syscard').dataset.sistem;
+      var baza = document.body.dataset.base || '../';
+      location.href = baza + 'contact/?model=' + encodeURIComponent(model) +
+                      '&sistem=' + encodeURIComponent(sistem);
+    });
+  });
+})();
+</script>
+<script src="../assets/js/site.js" defer></script>
 </body>
 </html>
