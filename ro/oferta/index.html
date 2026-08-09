@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cere o ofertă · Polistibrick</title>
-  <meta name="description" content="Ofertă instantanee cu AI Polistibrick — încarcă planurile și primești estimarea pe loc. Sau contactează-ne prin formular, răspuns în 48 de ore.">
+  <title>Demandez un devis · Polistibrick</title>
+  <meta name="description" content="Ofertă instantané avec l'IA Polistibrick — téléversez vos plans et recevez l'estimation sur fața locului. Ou contactez-nous via le formulaire, réponse sous 48 h.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
   <link rel="stylesheet" href="../assets/css/site.css">
   <style>
     .wm-section {
@@ -130,10 +130,7 @@
       border-color: rgba(196, 62, 47, 0.25);
       background: linear-gradient(180deg, #fff 0%, #fffaf8 100%);
     }
-    .oferta-choice-icon {
-      font-size: 28px;
-      line-height: 1;
-    }
+    .oferta-choice-icon { font-size: 28px; line-height: 1; }
     .oferta-choice h2 {
       font-family: var(--serif);
       font-size: 20px;
@@ -149,18 +146,9 @@
       margin: 0;
       flex: 1;
     }
-    .oferta-choice .btn {
-      width: 100%;
-      justify-content: center;
-      margin-top: 6px;
-    }
-    .oferta-ai-panel {
-      margin-top: 28px;
-      text-align: left;
-    }
-    .oferta-ai-panel[hidden] {
-      display: none !important;
-    }
+    .oferta-choice .btn { width: 100%; justify-content: center; margin-top: 6px; }
+    .oferta-ai-panel { margin-top: 28px; text-align: left; }
+    .oferta-ai-panel[hidden] { display: none !important; }
     .oferta-ai-panel-head {
       display: flex;
       align-items: center;
@@ -219,38 +207,38 @@
       </div>
 
       <div class="wm-stage">
-        <h1>Oferta dvs., <em>cât mai repede.</em></h1>
+        <h1>Votre devis, <em>sans attendre.</em></h1>
         <p class="oferta-lead">
-          Acum vă putem da o estimare <strong>pe loc</strong> cu AI Polistibrick.
+          Nous pouvons vous donner une estimation <strong>sur place</strong> avec l'IA Polistibrick.
         </p>
         <p class="oferta-thanks">
-          Sau, dacă preferați, continuați prin formularul de contact — un specialist vă răspunde în 48 de ore.
+          Ou, si vous préférez, continuez via le formulaire de contact — un spécialiste vous répond sous 48 h.
         </p>
 
         <div class="oferta-choices">
           <div class="oferta-choice oferta-choice--primary">
             <span class="oferta-choice-icon" aria-hidden="true">⚡</span>
-            <h2>Generator AI</h2>
-            <p>Încarcă planurile (PDF, DWG, DXF) sau descrie proiectul — primești oferta estimativă în câteva minute.</p>
-            <button type="button" class="btn btn-primary btn-arrow" id="btn-start-ai">Pornește generatorul</button>
+            <h2>Générateur IA</h2>
+            <p>Téléversez vos plans (PDF, DWG, DXF) ou décrivez le projet — devis estimatif en quelques minutes.</p>
+            <button type="button" class="btn btn-primary btn-arrow" id="btn-start-ai">Lancer le générateur</button>
           </div>
           <div class="oferta-choice">
             <span class="oferta-choice-icon" aria-hidden="true">✉️</span>
-            <h2>Formular de contact</h2>
-            <p>Preferați să ne scrieți direct? Trimiteți detaliile proiectului — revenim personal în maximum 48 de ore.</p>
-            <a href="../contact/?subiect=Cere+o+ofertă&rol=proprietar" class="btn btn-ghost btn-arrow">Mergi la contact</a>
+            <h2>Formulaire de contact</h2>
+            <p>Vous préférez nous écrire directement ? Envoyez les détails — nous revenons vers vous sous 48 h maximum.</p>
+            <a href="../contact/?subject=Demande+de+devis&role=particulier" class="btn btn-ghost btn-arrow">Aller au contact</a>
           </div>
         </div>
 
         <div class="oferta-ai-panel" id="oferta-ai-panel" hidden>
           <div class="oferta-ai-panel-head">
-            <h3>Configurator AI Polistibrick</h3>
-            <button type="button" class="oferta-ai-close" id="btn-close-ai">Închide</button>
+            <h3>Configurateur IA Polistibrick</h3>
+            <button type="button" class="oferta-ai-close" id="btn-close-ai">Fermer</button>
           </div>
           <div class="wm-devis-embed">
             <iframe
               id="pb-devis-frame"
-              title="Configurator ofertă Polistibrick"
+              title="Configurateur de devis Polistibrick"
               data-pays="RO"
               data-app-url="https://devis.polistibrick.ro"
               data-preview-url="https://polistibrick-configurator.vercel.app"
@@ -266,7 +254,7 @@
 </section>
 
 <footer class="site-footer" data-include="footer"></footer>
-<script src="../assets/js/site.js?v=160ec36c" defer></script>
+<script src="../assets/js/site.js?v=c64a9d8d" defer></script>
 <script src="../assets/js/devis-embed.js" defer></script>
 <script>
 (function () {

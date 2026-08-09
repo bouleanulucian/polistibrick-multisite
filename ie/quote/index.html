@@ -7,8 +7,8 @@
   <meta name="description" content="Instant quote with Polistibrick AI — upload your plans and receive an on-the-spot estimate. Or contact us via the form — response within 48 hours.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
   <link rel="stylesheet" href="../assets/css/site.css">
   <style>
     .wm-section {
@@ -147,16 +147,6 @@
       flex: 1;
     }
     .oferta-choice .btn { width: 100%; justify-content: center; margin-top: 6px; }
-
-    .oferta-choice--soon { opacity: .72; }
-    .oferta-choice-soon {
-      display: inline-block; margin-bottom: 10px; padding: 4px 12px;
-      background: var(--red-soft, #fdeaee); color: var(--red, #c8102e);
-      border-radius: 999px; font-size: 11.5px; font-weight: 700;
-      letter-spacing: .08em; text-transform: uppercase;
-    }
-    .oferta-choice-soon { align-self: flex-start; width: fit-content; }
-    .oferta-choice--soon .btn[disabled] { opacity: .45; cursor: not-allowed; pointer-events: none; }
     .oferta-ai-panel { margin-top: 28px; text-align: left; }
     .oferta-ai-panel[hidden] { display: none !important; }
     .oferta-ai-panel-head {
@@ -219,25 +209,24 @@
       <div class="wm-stage">
         <h1>Your quote, <em>without waiting.</em></h1>
         <p class="oferta-lead">
-          Send us your plans and receive a <strong>tailored quote</strong> prepared by our specialists.
+          We can give you an <strong>on-the-spot</strong> estimate with Polistibrick AI.
         </p>
         <p class="oferta-thanks">
           Or, if you prefer, continue via the contact form — a specialist will respond within 48 hours.
         </p>
 
         <div class="oferta-choices">
-          <div class="oferta-choice oferta-choice--primary oferta-choice--soon">
-            <span class="oferta-choice-soon">Coming soon</span>
+          <div class="oferta-choice oferta-choice--primary">
             <span class="oferta-choice-icon" aria-hidden="true">⚡</span>
             <h2>AI generator</h2>
-            <p>The configurator is coming to this market shortly. In the meantime, send us your plans through the contact form — a specialist replies within 48 hours.</p>
-            <button type="button" disabled aria-disabled="true" class="btn btn-primary btn-arrow" id="btn-start-ai">Start the generator</button>
+            <p>Upload your plans (PDF, DWG, DXF) or describe the project — estimated quote in a few minutes.</p>
+            <button type="button" class="btn btn-primary btn-arrow" id="btn-start-ai">Start the calculator</button>
           </div>
           <div class="oferta-choice">
             <span class="oferta-choice-icon" aria-hidden="true">✉️</span>
             <h2>Contact form</h2>
             <p>Prefer to write to us directly? Send the details — we will get back to you within 48 hours.</p>
-            <a href="../contact/?subject=Request+a+quote&role=particulier" class="btn btn-ghost btn-arrow">Go to contact</a>
+            <a href="../contact/?subject=Demande+de+devis&role=particulier" class="btn btn-ghost btn-arrow">Go to contact</a>
           </div>
         </div>
 
@@ -265,7 +254,7 @@
 </section>
 
 <footer class="site-footer" data-include="footer"></footer>
-<script src="../assets/js/site.js?v=160ec36c" defer></script>
+<script src="../assets/js/site.js?v=c64a9d8d" defer></script>
 <script src="../assets/js/devis-embed.js" defer></script>
 <script>
 (function () {
@@ -294,9 +283,9 @@
     });
   }
 
-  // No automatic opening: the configurator is shown only if the visitor clicks
-  // "Start the generator". Landing on the page with the form already expanded
-  // confuses them — they never asked for it.
+  // Pas d'ouverture automatique : le configurateur ne s'affiche que si le client
+  // clique sur « Lancer le générateur ». Arriver sur la page avec le formulaire
+  // déjà déplié le déroute — il n'a rien demandé.
 })();
 </script>
 </body>

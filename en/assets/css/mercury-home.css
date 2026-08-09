@@ -14,6 +14,12 @@
     --sans: 'Inter', -apple-system, sans-serif;
   }
 
+  /* Red pill tags retired — do not reintroduce */
+  .card-tag,
+  .bubble-tag {
+    display: none !important;
+  }
+
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   html {
@@ -3270,7 +3276,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   /* Panneau déroulant (style ZURU) — descend depuis le coin haut-droit */
   .nav-drawer {
     top: 72px; right: 16px; left: auto; bottom: auto;
-    width: min(209px, calc(100vw - 24px));
+    width: min(calc(209px + 4mm), calc(100vw - 24px));
     height: auto; max-height: calc(100vh - 96px);
     background: rgba(255, 255, 255, 0.20);
     -webkit-backdrop-filter: blur(24px) saturate(1.4);
@@ -3883,7 +3889,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     position: relative;
     background:
       linear-gradient(rgba(13, 12, 10, 0.55), rgba(13, 12, 10, 0.65)),
-      url('../../images/presence/presence-factory.jpg') center/cover no-repeat;
+      url('/bouleanulucian/polistibrick-multisite/images/presence/presence-factory.jpg') center/cover no-repeat;
     color: #FFFFFF;
     padding: clamp(100px, 12vh, 150px) clamp(24px, 5vw, 64px) clamp(100px, 12vh, 150px);
     overflow: hidden;
@@ -4829,7 +4835,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     background: 
       linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0) 65%, #FFFFFF 85%),
       linear-gradient(90deg, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0.80) 30%, rgba(255, 255, 255, 0.90) 50%, #FFFFFF 100%),
-      url('../../images/bundle/bundle-bg.png') -12% center/cover no-repeat;
+      url('/bouleanulucian/polistibrick-multisite/images/bundle/bundle-bg.png') -12% center/cover no-repeat;
     background-attachment: scroll, scroll, fixed;
     overflow: hidden;
   }
@@ -5003,10 +5009,15 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     position: relative;
     background: 
       linear-gradient(180deg, #0F0E0C 0%, rgba(15, 14, 12, 0.68) 30%, rgba(15, 14, 12, 0.78) 75%, #0F0E0C 100%),
-      url('../../images/systeme/systeme-bg.png') center/cover no-repeat;
+      url('/bouleanulucian/polistibrick-multisite/images/systeme/systeme-bg.png') center/cover no-repeat;
     background-attachment: scroll, fixed;
     padding: 80px 0;
     overflow-x: clip;
+  }
+  .sistem-section > .container {
+    max-width: 1480px;
+    padding-left: clamp(20px, 2.5vw, 40px);
+    padding-right: clamp(20px, 2.5vw, 40px);
   }
   .sistem-stage-wrap {
     position: relative;
@@ -5021,27 +5032,6 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     padding: 6px 24px 40px;
     overflow: visible;
   }
-  .sistem-hero {
-    flex: 1;
-    min-width: 0;
-    margin: 0;
-    position: relative;
-    background: 
-      radial-gradient(circle at center, rgba(255, 26, 59, 0.08) 0%, rgba(15, 14, 12, 0) 70%),
-      rgba(255, 255, 255, 0.03);
-    -webkit-backdrop-filter: blur(8px);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    padding: 24px 24px 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    overflow: visible;
-  }
-  .sistem-hero img { display: inline-block; width: auto; max-width: 667px; height: auto; transform: translateX(-4mm); filter: drop-shadow(0 20px 32px rgba(0,0,0,0.35)); }
-  .sistem-hero-inner { position: relative; width: 100%; max-width: 580px; display: block; }
   .sistem-wrap { position: relative; z-index: 8; }
   .sistem-watermark {
     position: absolute; top: 0; left: 50%; width: 100vw; margin-left: -50vw;
@@ -5054,7 +5044,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   .sistem-watermark .wm-top { color: transparent; -webkit-text-stroke: 1.5px rgba(255,255,255,0.22); clip-path: inset(0 0 62% 0); }
   .sistem-watermark .wm-bottom { color: #FFFFFF; -webkit-text-stroke: 0; clip-path: inset(38% 0 0 0); }
   .sistem-intro {
-    max-width: 760px; margin: 0 auto 48px; text-align: center;
+    max-width: min(1100px, 100%); margin: 0 auto 48px; text-align: center;
   }
   .sistem-intro .bubble-tag {
     display: inline-block; background: var(--red-soft); color: var(--red);
@@ -5066,124 +5056,168 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     color: #FFFFFF; letter-spacing: -0.02em; line-height: 1.05; margin-bottom: 14px;
   }
   .sistem-intro h2 em { font-style: italic; color: var(--red); font-weight: 400; }
-  .sistem-intro p { font-size: 15px; color: rgba(255, 255, 255, 0.7); line-height: 1.6; margin: 0; }
-  
-  .sistem-layout { display: flex; gap: clamp(28px, 4vw, 56px); align-items: stretch; }
-  .sistem-layout > .sistem-grid { flex: 0 0 clamp(420px, calc(48% + 38px), 640px); }
-  .sistem-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+  .sistem-intro p {
+    font-size: 15px; color: rgba(255, 255, 255, 0.7); line-height: 1.45; margin: 0;
+    white-space: nowrap;
   }
-  .sistem-card {
-    background: rgba(255, 255, 255, 0.03);
-    -webkit-backdrop-filter: blur(8px);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    padding: 16px 18px;
+  @media (max-width: 1100px) {
+    .sistem-intro p { white-space: normal; }
+  }
+
+  .sistem-grid--families {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(16px, 1.6vw, 24px);
+    max-width: min(1480px, calc(100vw - 48px));
+    width: 100%;
+    margin: 0 auto;
+  }
+  .sistem-card--family {
+    position: relative;
+    background: rgba(255, 255, 255, 0.04);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    padding: clamp(32px, 3.2vw, 44px) clamp(28px, 2.8vw, 40px) clamp(28px, 2.8vw, 36px);
     transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s ease, border-color 0.3s ease, background-color 0.3s ease;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
     text-decoration: none;
     color: #FFFFFF;
+    min-height: 100%;
   }
-  .sistem-card-text { display: flex; flex-direction: column; min-width: 0; }
-  .sistem-layout .sistem-card .bubble-tag { margin-bottom: 6px; align-self: flex-start; }
-  .sistem-layout .sistem-card h3 { font-size: 17px; line-height: 1.15; margin: 0 0 4px; color: #FFFFFF; }
-  .sistem-layout .sistem-card p { font-size: 12.5px; line-height: 1.42; margin: 0 0 8px; color: rgba(255, 255, 255, 0.7); }
-  .sistem-layout .sistem-card-spec { font-size: 11.5px; margin-bottom: 0; color: rgba(255, 255, 255, 0.85); }
-  .sistem-layout .sistem-card-spec .sistem-link { display: inline; font-size: 11.5px; }
-  .sistem-card:hover {
+  .sistem-eco {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    pointer-events: none;
+  }
+  .sistem-eco svg {
+    width: 18px;
+    height: 18px;
+    display: block;
+    /* coadă ~ora 10, vârf în jos */
+    transform: rotate(210deg);
+  }
+  .sistem-card--family:hover {
     transform: translateY(-6px);
     box-shadow: 0 24px 50px rgba(0,0,0,0.35);
-    border-color: var(--red);
-    background-color: rgba(255, 26, 59, 0.04);
+    border-color: #3E9B5A;
+    background-color: rgba(62, 155, 90, 0.10);
   }
-  .sistem-card-img {
-    flex: 0 0 92px;
-    width: 92px;
-    aspect-ratio: 1;
-    margin-bottom: 0;
-    display: flex; align-items: center; justify-content: center;
-    overflow: hidden;
+  .sistem-card--family:hover .sistem-card-cta {
+    color: #3E9B5A;
   }
-  .sistem-card-img img {
-    max-width: 90%; max-height: 90%;
-    object-fit: contain; display: block;
+  .sistem-card-label {
+    display: inline-block;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase;
+    color: rgba(255,255,255,0.55); margin-bottom: 14px;
   }
-  .sistem-card .bubble-tag {
-    display: inline-block; background: var(--red-soft); color: var(--red);
-    padding: 3px 10px; border-radius: 4px; font-size: 10.5px; font-weight: 600;
-    letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 12px;
-    align-self: flex-start;
+  .sistem-card--family h3 {
+    font-family: var(--serif); font-size: clamp(30px, 2.8vw, 38px); font-weight: 500;
+    color: #FFFFFF; margin: 0 0 16px; letter-spacing: -0.02em; line-height: 1.08;
   }
-  .sistem-card h3 {
-    font-family: var(--serif); font-size: 22px; font-weight: 500;
-    color: var(--ink); margin-bottom: 10px; letter-spacing: -0.01em;
-    line-height: 1.15;
+  .sistem-card--family h3 em { font-style: italic; color: var(--red); font-weight: 400; }
+  .sistem-card--family p {
+    font-size: clamp(15px, 1.15vw, 17px); color: rgba(255, 255, 255, 0.72); line-height: 1.5;
+    margin: 0 0 26px; flex: 1;
   }
-  .sistem-card h3 em { font-style: italic; color: var(--red); font-weight: 400; }
-  .sistem-card p {
-    font-size: 13.5px; color: var(--gray); line-height: 1.55; margin: 0 0 18px;
-    flex: 1;
+  .sistem-card--family p strong { color: #fff; font-weight: 600; }
+  .sistem-card-cta {
+    font-size: 13px; font-weight: 600; color: var(--red);
+    letter-spacing: 0.02em;
   }
-  .sistem-card-spec {
-    font-size: 12px; color: var(--ink-soft); margin-bottom: 18px;
-    padding-top: 14px; border-top: 1px solid var(--border);
+  .sistem-foot {
+    text-align: center; margin: 28px 0 0;
+    font-size: 14px;
   }
-  .sistem-card-spec strong { color: var(--red); font-family: var(--serif); font-size: 15px; }
-  .sistem-link {
-    font-size: 12.5px; font-weight: 600; color: var(--red);
-    text-transform: uppercase; letter-spacing: 0.06em;
-    transition: gap 0.2s ease; display: inline-flex; align-items: center; gap: 6px;
+  .sistem-foot a {
+    color: rgba(255,255,255,0.7); font-weight: 600; text-decoration: none;
   }
-  .sistem-card:hover .sistem-link { gap: 10px; }
+  .sistem-foot a:hover { color: var(--red); }
 
-  @media (max-width: 968px) {
-    /* Compactare mobil: elimin golul mare de sus + carduri mai mici, păstrez tot conținutul */
-    .sistem-section { padding: 24px 0 40px; }
+  @media (max-width: 900px) {
+    .sistem-section { padding: 40px 0 48px; }
     .sistem-stage { padding: 10px 18px 16px; }
-    .sistem-intro { margin: 0 auto 22px; }
+    .sistem-intro { margin: 0 auto 24px; }
     .sistem-intro h2 { font-size: 26px; margin-bottom: 9px; }
     .sistem-intro p { font-size: 13.5px; line-height: 1.5; }
-    .sistem-layout { flex-direction: column; align-items: stretch; }
-    .sistem-layout > .sistem-grid { flex: none; }
-    .sistem-grid { gap: 11px; }
-    .sistem-card { padding: 13px 15px; gap: 13px; }
-    .sistem-card-img { flex: 0 0 64px; width: 64px; }
-    .sistem-layout .sistem-card .bubble-tag { font-size: 10px; margin-bottom: 4px; }
-    .sistem-layout .sistem-card h3 { font-size: 14px; line-height: 1.12; margin: 0 0 3px; }
-    .sistem-layout .sistem-card p { font-size: 11px; line-height: 1.34; margin: 0 0 6px; }
-    .sistem-layout .sistem-card-spec { font-size: 10px; padding-top: 7px; margin-bottom: 0; }
-    .sistem-card-spec strong { font-size: 11px; }
-    /* Casa 3D explodată — ascunsă pe mobil (e interactivă cu hover pe desktop, n-are sens aici) */
-    .sistem-hero { display: none; }
+    .sistem-grid--families { grid-template-columns: 1fr; gap: 12px; }
+    .sistem-card--family { padding: 22px 20px 20px; }
+    .sistem-card--family h3 { font-size: 24px; margin-bottom: 10px; }
+    .sistem-card--family p { font-size: 14px; margin-bottom: 16px; }
+    .sistem-foot { margin-top: 20px; }
   }
 
-/* --- section --- */
-
-/* Casa = 3 straturi curate suprapuse (fara imagine de baza dedesubt) */
+  /* Legacy layout (alte țări): carduri stânga + casă 3D */
+  .sistem-layout { display: flex; gap: clamp(28px, 4vw, 56px); align-items: stretch; }
+  .sistem-layout > .sistem-grid { flex: 0 0 clamp(420px, calc(48% + 38px), 640px); }
+  .sistem-layout .sistem-grid {
+    display: flex; flex-direction: column; gap: 16px;
+  }
+  .sistem-layout .sistem-card {
+    background: rgba(255, 255, 255, 0.03);
+    -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px;
+    padding: 16px 18px;
+    transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s ease, border-color 0.3s ease, background-color 0.3s ease;
+    display: flex; flex-direction: row; align-items: center; gap: 16px;
+    text-decoration: none; color: #FFFFFF;
+  }
+  .sistem-layout .sistem-card-text { display: flex; flex-direction: column; min-width: 0; }
+  .sistem-layout .sistem-card h3 { font-family: var(--serif); font-size: 17px; line-height: 1.15; margin: 0 0 4px; color: #FFFFFF; font-weight: 500; }
+  .sistem-layout .sistem-card h3 em { font-style: italic; color: var(--red); font-weight: 400; }
+  .sistem-layout .sistem-card p { font-size: 12.5px; line-height: 1.42; margin: 0 0 8px; color: rgba(255, 255, 255, 0.7); }
+  .sistem-layout .sistem-card-spec { font-size: 11.5px; margin-bottom: 0; color: rgba(255, 255, 255, 0.85); padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.12); }
+  .sistem-layout .sistem-card-spec strong { color: var(--red); font-family: var(--serif); font-size: 15px; }
+  .sistem-layout .sistem-card:hover {
+    transform: translateY(-6px); box-shadow: 0 24px 50px rgba(0,0,0,0.35);
+    border-color: var(--red); background-color: rgba(255, 26, 59, 0.04);
+  }
+  .sistem-layout .sistem-card-img {
+    flex: 0 0 92px; width: 92px; aspect-ratio: 1; margin-bottom: 0;
+    display: flex; align-items: center; justify-content: center; overflow: hidden;
+  }
+  .sistem-layout .sistem-card-img img { max-width: 90%; max-height: 90%; object-fit: contain; display: block; }
+  .sistem-hero {
+    flex: 1; min-width: 0; margin: 0; position: relative;
+    background: radial-gradient(circle at center, rgba(255, 26, 59, 0.08) 0%, rgba(15, 14, 12, 0) 70%), rgba(255, 255, 255, 0.03);
+    -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px;
+    padding: 24px 24px 48px; display: flex; align-items: center; justify-content: center;
+    box-sizing: border-box; overflow: visible;
+  }
+  .sistem-hero img { display: inline-block; width: auto; max-width: 667px; height: auto; transform: translateX(-4mm); filter: drop-shadow(0 20px 32px rgba(0,0,0,0.35)); }
+  .sistem-hero-inner { position: relative; width: 100%; max-width: 580px; display: block; }
   .sistem-hero .sh-layer {
     display: block; width: 100%; height: auto;
     transition: transform .4s cubic-bezier(.22,1,.36,1), filter .35s ease;
   }
-  .sistem-hero .sh-sizer { position: relative; z-index: 1; top: 4mm; left: 1mm; }   /* murs: coborat 4mm + 1mm dreapta */
-  .sistem-hero .sh-layer[data-layer="plancher"] { position: absolute; top: 0; left: 0; z-index: 2; }
-  .sistem-hero .sh-layer[data-layer="toit"]     { position: absolute; top: 0; left: 0; z-index: 3; }
-  .sistem-hero .sh-layer[data-layer="toit"]     { transform-origin: 50% 22%; }
-  .sistem-hero .sh-layer[data-layer="plancher"] { transform-origin: 50% 50%; }
-  .sistem-hero .sh-layer[data-layer="murs"]     { transform-origin: 50% 80%; }
-  /* la hover: intuneca toate, apoi piesa activa ramane luminata, se mareste si vine in fata */
+  .sistem-hero .sh-sizer { position: relative; z-index: 1; top: 4mm; left: 1mm; }
+  .sistem-hero .sh-layer[data-layer="plancher"] { position: absolute; top: 0; left: 0; z-index: 2; transform-origin: 50% 50%; }
+  .sistem-hero .sh-layer[data-layer="toit"] { position: absolute; top: 0; left: 0; z-index: 3; transform-origin: 50% 22%; }
+  .sistem-hero .sh-layer[data-layer="murs"] { transform-origin: 50% 80%; }
   .sistem-hero.hl-on .sh-layer { filter: brightness(.4) saturate(.75); }
-  .sistem-hero.hl-toit     .sh-layer[data-layer="toit"]     { filter: none; transform: translateY(-25px) scale(1.06); z-index: 5; }
+  .sistem-hero.hl-toit .sh-layer[data-layer="toit"] { filter: none; transform: translateY(-25px) scale(1.06); z-index: 5; }
   .sistem-hero.hl-plancher .sh-layer[data-layer="plancher"] { filter: none; transform: scale(1.06); z-index: 5; }
-  .sistem-hero.hl-murs     .sh-layer[data-layer="murs"]     { filter: none; transform: translateY(25px) scale(1.06); z-index: 5; }
-  /* feedback discret pe cardul activ */
-  .sistem-card.is-active { border-color: var(--red); }
-  .sistem-card.is-active .bubble-tag { background: var(--red); color: #fff; }
+  .sistem-hero.hl-murs .sh-layer[data-layer="murs"] { filter: none; transform: translateY(25px) scale(1.06); z-index: 5; }
+  .sistem-layout .sistem-card.is-active { border-color: var(--red); }
+  @media (max-width: 968px) {
+    .sistem-layout { flex-direction: column; align-items: stretch; }
+    .sistem-layout > .sistem-grid { flex: none; }
+    .sistem-layout .sistem-grid { gap: 11px; }
+    .sistem-layout .sistem-card { padding: 13px 15px; gap: 13px; }
+    .sistem-layout .sistem-card-img { flex: 0 0 64px; width: 64px; }
+    .sistem-layout .sistem-card h3 { font-size: 14px; }
+    .sistem-layout .sistem-card p { font-size: 11px; }
+    .sistem-hero { display: none; }
+  }
 
 /* --- section --- */
 
@@ -5363,6 +5397,19 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   }
   .montaj-cta p strong { color: var(--red); font-weight: 500; }
   .montaj-cta-actions { display: flex; gap: 12px; flex-wrap: wrap; flex-shrink: 0; }
+  .montaj-cta--systems {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 18px;
+  }
+  .montaj-cta--systems p {
+    flex: none;
+    font-size: clamp(16px, 1.4vw, 20px);
+  }
+  .montaj-cta--systems .montaj-cta-actions {
+    justify-content: center;
+  }
 
   @media (max-width: 1100px) {
     .montaj-grid { grid-template-columns: repeat(2, 1fr); }

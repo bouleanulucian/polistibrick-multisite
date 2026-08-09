@@ -7,8 +7,8 @@
   <meta name="description" content="Contactez l'équipe Polistibrick de votre pays. Sélectionnez le drapeau du pays où vous construisez et recevez le contact direct.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
   <link rel="stylesheet" href="../assets/css/site.css">
   <style>
     .wm-section { padding: clamp(60px, 8vw, 100px) 0; background: var(--cream); }
@@ -243,8 +243,7 @@
 
           <!-- LEFT -->
           <div class="wm-text">
-            <span class="bubble-tag">Parlons-en</span>
-            <h2>Des spécialistes <em>à un clic.</em></h2>
+<h2>Des spécialistes <em>à un clic.</em></h2>
             <p>Nous répondons à vos questions techniques, préparons des devis personnalisés et offrons un conseil gratuit pour tout projet.</p>
             <p>Sélectionnez le pays où vous construisez pour voir le contact de l'équipe locale et lui envoyer votre message directement.</p>
 
@@ -312,6 +311,7 @@
                 <textarea class="form-textarea" id="cmsg" name="message" required placeholder="Comment pouvons-nous vous aider ?"></textarea>
               </div>
 
+<!-- Ataşamentele cer planul Web3Forms Pro — blocul se restaurează de aici când se face upgrade:
               <div class="form-row">
                 <label class="form-label">Pièces jointes (facultatif)</label>
                 <label class="form-file-drop" for="cfiles" id="fileDropZone">
@@ -324,6 +324,8 @@
                 </label>
                 <div class="form-file-list" id="filesList"></div>
               </div>
+
+-->
 
               <button type="submit" class="btn btn-primary btn-large btn-arrow" style="width:100%;justify-content:center;">Envoyer le message</button>
 
@@ -350,7 +352,7 @@
 </section>
 
 <footer class="site-footer" data-include="footer"></footer>
-<script src="../assets/js/site.js?v=160ec36c" defer></script>
+<script src="../assets/js/site.js?v=c64a9d8d" defer></script>
 <script src="../assets/js/forms.js" defer></script>
 <script>
   // Pour afficher la photo et le nom du responsable d'un pays, ajoutez à son entrée :
@@ -525,8 +527,8 @@
     }
   });
 
-  /* === AUTO-FILL formular pe baza query params din URL ===
-     Exemple URL apelat din /pour/architectes/:
+  /* === PRÉ-REMPLISSAGE du formulaire à partir des paramètres d'URL ===
+     Exemple d'URL appelée depuis /pour/architectes/ :
        ?subject=Demande+document+:+CAD+DWG&role=architecte-bet&doc=CAD+DWG&type=document */
   (function prefillFromURL() {
     var params = new URLSearchParams(window.location.search);
@@ -535,7 +537,7 @@
     var doc = params.get('doc');
     var type = params.get('type');
 
-    // Pre-select rol (Architecte / BET / etc)
+    // Pré-sélection du rôle (Architecte / BET / etc.)
     var roleSelect = document.getElementById('crole');
     if (role && roleSelect) {
       var roleMap = {

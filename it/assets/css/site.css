@@ -18,7 +18,8 @@
   --red-soft: #FCE4E8;
   --border: rgba(15, 15, 15, 0.08);
   --border-strong: rgba(15, 15, 15, 0.15);
-  --serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  /* Un seul font sur tout le site — même décision que mercury-home.css */
+  --serif: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
   --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
   --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.06);
@@ -57,14 +58,14 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.02em;
   line-height: 1.15;
 }
-h1 { font-size: clamp(40px, 6vw, 80px); font-weight: 400; line-height: 1.05; letter-spacing: -0.03em; }
-h2 { font-size: clamp(30px, 4vw, 52px); font-weight: 400; line-height: 1.08; }
-h3 { font-size: clamp(22px, 2.4vw, 32px); }
-h4 { font-size: clamp(18px, 1.6vw, 22px); }
+h1 { font-size: clamp(32px, 4.2vw, 52px); font-weight: 400; line-height: 1.08; letter-spacing: -0.03em; }
+h2 { font-size: clamp(26px, 3vw, 40px); font-weight: 400; line-height: 1.12; }
+h3 { font-size: clamp(18px, 1.8vw, 24px); }
+h4 { font-size: clamp(16px, 1.4vw, 20px); }
 em { font-style: italic; color: var(--red); font-weight: 400; }
 strong { font-weight: 600; color: var(--ink); }
 p { line-height: 1.65; color: var(--gray); }
-.lead { font-size: clamp(17px, 1.4vw, 21px); color: var(--gray); line-height: 1.55; }
+.lead { font-size: clamp(15px, 1.15vw, 18px); color: var(--gray); line-height: 1.55; }
 
 /* === LAYOUT === */
 .container {
@@ -274,7 +275,7 @@ p { line-height: 1.65; color: var(--gray); }
   text-align: left;
 }
 .subhero h1 {
-  font-size: clamp(36px, 5.5vw, 72px);
+  font-size: clamp(30px, 4vw, 48px);
   margin-bottom: 16px;
 }
 .subhero .lead {
@@ -314,17 +315,10 @@ p { line-height: 1.65; color: var(--gray); }
   border-color: var(--border-strong);
 }
 .card--cream { background: var(--cream-light); }
-.card-tag {
-  display: inline-block;
-  background: var(--red-soft);
-  color: var(--red);
-  padding: 3px 10px;
-  border-radius: 4px;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  margin-bottom: 12px;
+/* Red pill tags retired — do not reintroduce .card-tag / .bubble-tag */
+.card-tag,
+.bubble-tag {
+  display: none !important;
 }
 
 /* === GRIDS === */
@@ -383,7 +377,7 @@ p { line-height: 1.65; color: var(--gray); }
 }
 .fact-num {
   font-family: var(--serif);
-  font-size: clamp(40px, 5vw, 64px);
+  font-size: clamp(28px, 3.2vw, 44px);
   font-weight: 500;
   color: var(--red);
   line-height: 1;
@@ -539,8 +533,19 @@ p { line-height: 1.65; color: var(--gray); }
   margin: 0 32px;
 }
 .cta-band h2 { color: var(--cream); margin-bottom: 14px; }
-.cta-band p { color: rgba(247, 244, 237, 0.7); margin: 0 auto 28px; max-width: 600px; font-size: 16px; }
-.cta-band-actions { display: inline-flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+.cta-band p { color: rgba(247, 244, 237, 0.7); margin: 0 auto 22px; max-width: 600px; font-size: 15px; }
+.cta-band-actions { display: inline-flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+.cta-band .btn-cta-main {
+  padding: 12px 22px;
+  font-size: 13.5px;
+  border-radius: 999px;
+}
+.cta-band .btn-cta-soft {
+  padding: 10px 18px;
+  font-size: 13px;
+  border-radius: 999px;
+  font-weight: 600;
+}
 
 /* === FOOTER === */
 .site-footer {
@@ -1179,7 +1184,7 @@ html { scroll-behavior: auto !important; }
 /* Panneau déroulant frosted */
 .nav-drawer {
   position: fixed; top: calc(var(--nav-height) + 2px); right: 16px;
-  width: min(209px, calc(100vw - 24px)); max-height: calc(100vh - 96px); overflow-y: auto;
+  width: min(calc(209px + 4mm), calc(100vw - 24px)); max-height: calc(100vh - 96px); overflow-y: auto;
   background: rgba(255,255,255,0.55);
   -webkit-backdrop-filter: blur(24px) saturate(1.4); backdrop-filter: blur(24px) saturate(1.4);
   border: 1px solid rgba(255,255,255,0.55); border-radius: 18px;

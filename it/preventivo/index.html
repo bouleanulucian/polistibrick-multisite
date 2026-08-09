@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Richiedi un preventivo · Polistibrick</title>
-  <meta name="description" content="Preventivo istantaneo con l'IA Polistibrick — carica i tuoi progetti e ricevi la stima sul posto. Oppure contattaci tramite il modulo, risposta entro 48 h.">
+  <title>Demandez un devis · Polistibrick</title>
+  <meta name="description" content="Preventivo instantané avec l'IA Polistibrick — téléversez vos plans et recevez l'estimation sur posto. Ou contactez-nous via le formulaire, réponse sous 48 h.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
   <link rel="stylesheet" href="../assets/css/site.css">
   <style>
     .wm-section {
@@ -147,16 +147,6 @@
       flex: 1;
     }
     .oferta-choice .btn { width: 100%; justify-content: center; margin-top: 6px; }
-
-    .oferta-choice--soon { opacity: .72; }
-    .oferta-choice-soon {
-      display: inline-block; margin-bottom: 10px; padding: 4px 12px;
-      background: var(--red-soft, #fdeaee); color: var(--red, #c8102e);
-      border-radius: 999px; font-size: 11.5px; font-weight: 700;
-      letter-spacing: .08em; text-transform: uppercase;
-    }
-    .oferta-choice-soon { align-self: flex-start; width: fit-content; }
-    .oferta-choice--soon .btn[disabled] { opacity: .45; cursor: not-allowed; pointer-events: none; }
     .oferta-ai-panel { margin-top: 28px; text-align: left; }
     .oferta-ai-panel[hidden] { display: none !important; }
     .oferta-ai-panel-head {
@@ -217,39 +207,38 @@
       </div>
 
       <div class="wm-stage">
-        <h1>Il tuo preventivo, <em>senza attesa.</em></h1>
+        <h1>Votre devis, <em>sans attendre.</em></h1>
         <p class="oferta-lead">
-          Inviaci i tuoi progetti e ricevi un <strong>preventivo personalizzato</strong> preparato dai nostri specialisti.
+          Nous pouvons vous donner une estimation <strong>sur place</strong> avec l'IA Polistibrick.
         </p>
         <p class="oferta-thanks">
-          Oppure, se preferisci, continua tramite il modulo di contatto — uno specialista ti risponde entro 48 h.
+          Ou, si vous préférez, continuez via le formulaire de contact — un spécialiste vous répond sous 48 h.
         </p>
 
         <div class="oferta-choices">
-          <div class="oferta-choice oferta-choice--primary oferta-choice--soon">
-            <span class="oferta-choice-soon">Presto disponibile</span>
+          <div class="oferta-choice oferta-choice--primary">
             <span class="oferta-choice-icon" aria-hidden="true">⚡</span>
-            <h2>Generatore IA</h2>
-            <p>Il configuratore arriverà presto su questo mercato. Nel frattempo, inviaci i tuoi progetti tramite il modulo di contatto — uno specialista ti risponde entro 48 h.</p>
-            <button type="button" disabled aria-disabled="true" class="btn btn-primary btn-arrow" id="btn-start-ai">Avvia il generatore</button>
+            <h2>Générateur IA</h2>
+            <p>Téléversez vos plans (PDF, DWG, DXF) ou décrivez le projet — devis estimatif en quelques minutes.</p>
+            <button type="button" class="btn btn-primary btn-arrow" id="btn-start-ai">Lancer le générateur</button>
           </div>
           <div class="oferta-choice">
             <span class="oferta-choice-icon" aria-hidden="true">✉️</span>
-            <h2>Modulo di contatto</h2>
-            <p>Preferisci scriverci direttamente? Invia i dettagli — ti rispondiamo entro 48 h al massimo.</p>
-            <a href="../contact/?subject=Richiesta+di+preventivo&role=particulier" class="btn btn-ghost btn-arrow">Vai al contatto</a>
+            <h2>Formulaire de contact</h2>
+            <p>Vous préférez nous écrire directement ? Envoyez les détails — nous revenons vers vous sous 48 h maximum.</p>
+            <a href="../contact/?subject=Demande+de+devis&role=particulier" class="btn btn-ghost btn-arrow">Aller au contact</a>
           </div>
         </div>
 
         <div class="oferta-ai-panel" id="oferta-ai-panel" hidden>
           <div class="oferta-ai-panel-head">
-            <h3>Configuratore IA Polistibrick</h3>
-            <button type="button" class="oferta-ai-close" id="btn-close-ai">Chiudi</button>
+            <h3>Configurateur IA Polistibrick</h3>
+            <button type="button" class="oferta-ai-close" id="btn-close-ai">Fermer</button>
           </div>
           <div class="wm-devis-embed">
             <iframe
               id="pb-devis-frame"
-              title="Configuratore preventivo Polistibrick"
+              title="Configurateur de devis Polistibrick"
               data-pays="IT"
               data-app-url="https://devis.polistibrick.it"
               data-preview-url="https://polistibrick-configurator.vercel.app"
@@ -265,7 +254,7 @@
 </section>
 
 <footer class="site-footer" data-include="footer"></footer>
-<script src="../assets/js/site.js?v=160ec36c" defer></script>
+<script src="../assets/js/site.js?v=c64a9d8d" defer></script>
 <script src="../assets/js/devis-embed.js" defer></script>
 <script>
 (function () {

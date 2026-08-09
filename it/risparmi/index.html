@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calcolatore dei risparmi · Quanto risparmi con Polistibrick — 25 anni</title>
-  <meta name="description" content="Calcolatore dinamico che mostra quanto risparmi con Polistibrick rispetto al mattone classico su 25 anni. Inserisci i m², il clima, il prezzo dell'energia e visualizza la differenza reale.">
+  <title>Calcolatore risparmi · Quanto risparmi con Polistibrick — 25 anni</title>
+  <meta name="description" content="Calcolatore dynamique qui montre combien vous économisez avec Polistibrick par rapport à la mattone classique sur 25 ans. Saisissez les m², le climat, le prix de l'énergie et visualisez la différence réelle.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
   <link rel="stylesheet" href="../assets/css/site.css">
   <style>
-    /* === Card cu watermark === */
+    /* === Carte avec filigrane === */
     .wm-section { padding: clamp(60px, 8vw, 100px) 0; background: var(--cream); }
     .wm-stage-wrap { position: relative; margin: 70px auto 0; max-width: 1480px; }
     .wm-watermark {
@@ -109,81 +109,80 @@
 
 <header class="nav" data-include="nav"></header>
 
-<!-- ============ CARDUL PRINCIPAL CU WATERMARK ============ -->
+<!-- ============ CARTE PRINCIPALE AVEC FILIGRANE ============ -->
 <section class="wm-section">
   <div class="container">
     <div class="wm-stage-wrap reveal">
       <div class="wm-watermark" aria-hidden="true">
-        <span class="wm-half wm-top">Risparmi</span>
-        <span class="wm-half wm-bottom">Risparmi</span>
+        <span class="wm-half wm-top">Économies</span>
+        <span class="wm-half wm-bottom">Économies</span>
       </div>
 
       <div class="wm-stage">
 
         <div class="wm-intro">
-          <span class="bubble-tag">Quanto risparmi in 25 anni</span>
-          <h2>Polistibrick vs mattone: <em>i tuoi numeri.</em></h2>
-          <p>Calcolatore dinamico che ti mostra ESATTAMENTE quanto risparmi su energia, manutenzione e costi totali in 25 anni, per la casa che desideri costruire. Inserisci i tuoi dati, visualizza il risultato in tempo reale.</p>
+<h2>Polistibrick vs mattone : <em>vos chiffres.</em></h2>
+          <p>Calcolatore dynamique qui vous montre EXACTEMENT combien vous économisez sur l'énergie, l'entretien et les coûts totaux sur 25 ans, pour la maison que vous souhaitez construire. Saisissez vos chiffres, visualisez le résultat en temps réel.</p>
         </div>
 
         <div class="comp-grid">
 
           <!-- FORM -->
           <form id="compForm" class="comp-form-card">
-            <h3>I dati della tua casa.</h3>
+            <h3>Les données de votre maison.</h3>
 
             <div class="form-row">
-              <label class="form-label" for="cSurface">Superficie della casa (m²)</label>
+              <label class="form-label" for="cSurface">Surface de la maison (m²)</label>
               <input class="form-input" type="number" id="cSurface" value="150" min="50" max="1000" step="10">
             </div>
 
             <div class="form-row">
-              <label class="form-label" for="cYears">Anni di occupazione considerati</label>
+              <label class="form-label" for="cYears">Anni di abitazione considerati</label>
               <select class="form-select" id="cYears">
-                <option value="10">10 anni</option>
-                <option value="15">15 anni</option>
-                <option value="20">20 anni</option>
-                <option value="25" selected>25 anni (consigliato)</option>
-                <option value="30">30 anni</option>
-                <option value="40">40 anni</option>
-                <option value="50">50 anni</option>
+                <option value="10">10 ans</option>
+                <option value="15">15 ans</option>
+                <option value="20">20 ans</option>
+                <option value="25" selected>25 ans (recommandé)</option>
+                <option value="30">30 ans</option>
+                <option value="40">40 ans</option>
+                <option value="50">50 ans</option>
               </select>
             </div>
 
             <div class="form-row">
-              <label class="form-label" for="cClimate">Clima</label>
+              <label class="form-label" for="cClimate">Climat</label>
               <select class="form-select" id="cClimate">
-                <option value="cold" data-brick-energy="180" data-poli-energy="45">Freddo (zone montane, nord — &lt; 8 °C in media)</option>
-                <option value="temperate" data-brick-energy="130" data-poli-energy="35" selected>Temperato (Europa centrale — 8-14 °C in media)</option>
-                <option value="warm" data-brick-energy="100" data-poli-energy="25">Caldo (sud, mediterraneo — &gt; 14 °C in media)</option>
+                <option value="cold" data-brick-energy="180" data-poli-energy="45">Froid (zones montagneuses, nord — &lt; 8 °C en moyenne)</option>
+                <option value="temperate" data-brick-energy="130" data-poli-energy="35" selected>Tempéré (Europe centrale — 8-14 °C en moyenne)</option>
+                <option value="warm" data-brick-energy="100" data-poli-energy="25">Chaud (sud, méditerranéen — &gt; 14 °C en moyenne)</option>
               </select>
-              <p style="font-size:11px;color:var(--gray);margin-top:6px;">Il calcolo include sia il riscaldamento (inverno) sia il condizionamento (estate).</p>
+              <p style="font-size:11px;color:var(--gray);margin-top:6px;">Le calcul inclut à la fois le riscaldamento (inverno) et la climatisation (été).</p>
             </div>
 
             <div class="form-row">
-              <label class="form-label" for="cEnergyPrice">Prezzo medio dell'energia (€/kWh)</label>
+              <label class="form-label" for="cEnergyPrice">Prezzo medio energia (€/kWh)</label>
               <input class="form-input" type="number" id="cEnergyPrice" value="0.22" min="0.05" max="0.60" step="0.01">
-              <p style="font-size:11px;color:var(--gray);margin-top:6px;">Usa la media per il tuo paese (RO ~0,18, FR ~0,25, DE ~0,32, ES ~0,20).</p>
+              <p style="font-size:11px;color:var(--gray);margin-top:6px;">Usa la media per il tuo paese (RO ~0.18, FR ~0.25, DE ~0.32, ES ~0.20).</p>
             </div>
 
             <div class="form-row">
-              <label class="form-label" for="cEnergyInflation">Aumento annuo del prezzo dell'energia (%)</label>
+              <label class="form-label" for="cEnergyInflation">Aumento annuo prezzo energia (%)</label>
               <select class="form-select" id="cEnergyInflation">
-                <option value="0">0% — prezzo costante (ottimista)</option>
-                <option value="2">2% — inflazione stabile</option>
-                <option value="4" selected>4% — realistico (media UE 2010-2024)</option>
-                <option value="6">6% — pessimista (crisi energetica)</option>
+                <option value="0">0 % — prix constant (optimiste)</option>
+                <option value="2">2 % — inflation stable</option>
+                <option value="4" selected>4 % — réaliste (moyenne UE 2010-2024)</option>
+                <option value="6">6 % — pessimiste (crise énergétique)</option>
               </select>
             </div>
 
             <hr style="border:0;border-top:1px solid var(--border);margin:20px 0;">
 
-            <p style="font-size:12.5px;color:var(--gray);margin-bottom:12px;">💡 Il calcolo include:</p>
+            <p style="font-size:12.5px;color:var(--gray);margin-bottom:12px;">💡 Le calcul inclut :</p>
             <ul style="display:flex;flex-direction:column;gap:5px;font-size:12.5px;color:var(--ink-soft);padding-left:4px;list-style:none;">
-              <li>✓ Costo di costruzione (pannelli + manodopera, escluse finiture)</li>
-              <li>✓ Costo dell'energia negli anni selezionati</li>
-              <li>✓ Costo di manutenzione stimato</li>
-              <li>✓ Il tutto proiettato con l'inflazione scelta</li>
+              <li>✓ Coût de construction (panneaux + main-d'œuvre, hors finitions)</li>
+              <li>✓ Coût de l'énergie sur les années sélectionnées</li>
+              <li>✓ Coût d'entretien estimé</li>
+              <li>✓ Le tout projeté avec l'inflation choisie</li>
             </ul>
           </form>
 
@@ -192,7 +191,7 @@
 
             <div class="comp-savings">
               <div class="comp-savings-big" id="totalSavings">— <small>€</small></div>
-              <p style="font-size:13.5px;color:rgba(247,244,237,0.75);">in <span id="yearsLabel">25</span> anni, per una casa di <span id="surfaceLabel">150</span> m²</p>
+              <p style="font-size:13.5px;color:rgba(247,244,237,0.75);">sur <span id="yearsLabel">25</span> anni, per una casa di <span id="surfaceLabel">150</span> m²</p>
             </div>
 
             <div class="comp-bar-container">
@@ -211,7 +210,7 @@
 
             <div style="background:white;border:1px solid var(--border);border-radius:14px;margin-top:18px;overflow:hidden;">
               <div class="comp-row is-header">
-                <span>Costo</span>
+                <span>Coût</span>
                 <span class="num">Mattone</span>
                 <span class="num">Polistibrick</span>
               </div>
@@ -221,17 +220,17 @@
                 <span class="num" id="poliBuild">— €</span>
               </div>
               <div class="comp-row">
-                <span>Energia (cumulato)</span>
+                <span>Énergie (cumulé)</span>
                 <span class="num" id="brickEnergy">— €</span>
                 <span class="num num-good" id="poliEnergy">— €</span>
               </div>
               <div class="comp-row">
-                <span>Manutenzione</span>
+                <span>Entretien</span>
                 <span class="num" id="brickMaint">— €</span>
                 <span class="num num-good" id="poliMaint">— €</span>
               </div>
               <div class="comp-row is-total">
-                <span>TOTALE</span>
+                <span>TOTAL</span>
                 <span class="num" id="brickTotal">— €</span>
                 <span class="num num-good" id="poliTotal">— €</span>
               </div>
@@ -250,24 +249,24 @@
 <section class="section section--cream">
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 40px;">
-      <h2>Metodologia <em>trasparente.</em></h2>
+      <h2>Méthodologie <em>trasparente.</em></h2>
     </div>
     <div class="grid grid-2 reveal" style="max-width:980px;margin:0 auto;">
       <div class="card">
-        <h4 style="margin-bottom:12px;">Costo di costruzione</h4>
-        <p style="font-size:14px;line-height:1.6;">Mattone: ~1.000 €/m² in standard non conforme. Polistibrick: ~1.050 €/m² (+5%) per una casa passiva A+++. Include materiali e manodopera, escluse finiture interne o esterne.</p>
+        <h4 style="margin-bottom:12px;">Coût de construction</h4>
+        <p style="font-size:14px;line-height:1.6;">Mattone : ~1 000 €/m² en standard non conforme. Polistibrick : ~1 050 €/m² (+5 %) pour une casa passiva A+++. Inclut les matériaux et la main-d'œuvre, hors finitions intérieures ou extérieures.</p>
       </div>
       <div class="card">
-        <h4 style="margin-bottom:12px;">Costo dell'energia</h4>
-        <p style="font-size:14px;line-height:1.6;">Basato sul consumo tipico per clima: il mattone consuma in media 100-180 kWh/m²/anno per riscaldamento e condizionamento. Polistibrick (passiva) consuma 25-45 kWh/m²/anno. Riduzione media del 70%.</p>
+        <h4 style="margin-bottom:12px;">Coût de l'énergie</h4>
+        <p style="font-size:14px;line-height:1.6;">Basé sur la consommation typique par climat : la mattone consomme en moyenne 100-180 kWh/m²/an pour le riscaldamento et la climatisation. Polistibrick (passiva) consuma 25-45 kWh/m²/anno. Réduction moyenne de 70 %.</p>
       </div>
       <div class="card">
-        <h4 style="margin-bottom:12px;">Manutenzione in 25 anni</h4>
-        <p style="font-size:14px;line-height:1.6;">Mattone: rinnovo dell'isolamento termico a 15 anni (~5.000 €), riparazioni dovute all'umidità, rifacimento della facciata. Polistibrick: niente di tutto questo — l'EPS non assorbe acqua, non si degrada, la struttura monolitica non si fessura.</p>
+        <h4 style="margin-bottom:12px;">Entretien sur 25 ans</h4>
+        <p style="font-size:14px;line-height:1.6;">Mattone : rénovation de l'isolamento thermique à 15 ans (~5 000 €), réparations dues à l'humidité, ravalement de façade. Polistibrick : rien de tout cela — l'EPS n'absorbe pas l'eau, ne se dégrade pas, la structure monolithique ne se fissure pas.</p>
       </div>
       <div class="card">
-        <h4 style="margin-bottom:12px;">Inflazione energetica</h4>
-        <p style="font-size:14px;line-height:1.6;">Negli ultimi 14 anni, il prezzo dell'elettricità nell'UE è aumentato di circa il 4% all'anno. Il nostro calcolo integra la capitalizzazione annuale — il risparmio reale in 25 anni è superiore alla differenza di oggi × 25.</p>
+        <h4 style="margin-bottom:12px;">Inflation énergétique</h4>
+        <p style="font-size:14px;line-height:1.6;">Au cours des 14 dernières années, le prix de l'électricité dans l'UE a augmenté d'environ 4 % par an. Notre calcul intègre la capitalisation annuelle — l'économie réelle sur 25 ans est supérieure à la différence d'aujourd'hui × 25.</p>
       </div>
     </div>
   </div>
@@ -275,8 +274,8 @@
 
 <section class="section section--tight">
   <div class="cta-band reveal">
-    <h2>Convinto dai <em>tuoi numeri?</em></h2>
-    <p>Richiedi un preventivo personalizzato Polistibrick — un calcolo preciso per il tuo progetto, senza impegno, senza costi nascosti.</p>
+    <h2>Convinto da <em>vos chiffres ?</em></h2>
+    <p>Demandez un devis personnalisé Polistibrick — un calcul précis pour votre projet, sans engagement, sans coûts cachés.</p>
     <div class="cta-band-actions">
       <a href="../preventivo/" class="btn btn-on-dark btn-large btn-arrow">Richiedi un preventivo personalizzato</a>
       <a href="../contact/" class="btn btn-on-dark-ghost btn-large">Parla con uno specialista</a>
@@ -285,7 +284,7 @@
 </section>
 
 <footer class="site-footer" data-include="footer"></footer>
-<script src="../assets/js/site.js?v=160ec36c" defer></script>
+<script src="../assets/js/site.js?v=c64a9d8d" defer></script>
 <script>
   (function() {
     const form = document.getElementById('compForm');
@@ -301,7 +300,7 @@
 
     const fmt = (n) => {
       if (!isFinite(n) || n <= 0) return '— €';
-      return new Intl.NumberFormat('it-IT', { maximumFractionDigits: 0 }).format(Math.round(n)) + ' €';
+      return new Intl.NumberFormat('fr-FR', { maximumFractionDigits: 0 }).format(Math.round(n)) + ' €';
     };
 
     function recalc() {
