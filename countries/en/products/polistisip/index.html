@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PolistiSIP · Maison structure sandwich bois (SIP) — Polistibrick</title>
+  <meta name="description" content="PolistiSIP : mur SIP300 (U=0,11, 30 cm, 23 kg/m², déphasage 11,3 h) et SIP250 roofure/plancher (U=0,13, 25 cm, 22 kg/m², déphasage 7,3 h).">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/site.css">
+  <style>
+    .wm-section { padding: clamp(60px, 8vw, 100px) 0; background: var(--cream); }
+    .wm-stage-wrap { position: relative; margin: 70px auto 0; max-width: 1480px; }
+    .wm-watermark {
+      position: absolute; top: 0; left: 50%; width: 100vw; margin-left: -50vw;
+      pointer-events: none; user-select: none; transform: translateY(-50%);
+      height: 1em; line-height: 1; text-align: center; text-transform: uppercase;
+      font-family: var(--serif); font-size: clamp(64px, 12vw, 200px);
+      font-weight: 500; letter-spacing: -0.06em; z-index: 2;
+    }
+    .wm-watermark .wm-half { position: absolute; inset: 0; width: 100%; display: block; }
+    .wm-watermark .wm-top { color: transparent; -webkit-text-stroke: 1.4px rgba(15,15,15,0.30); clip-path: inset(0 0 50% 0); }
+    .wm-watermark .wm-bottom { color: var(--cream-dark); opacity: 0.65; clip-path: inset(50% 0 0 0); }
+    .wm-stage {
+      position: relative; background: var(--cream-light); border: 1px solid var(--border);
+      border-radius: 32px; padding: 56px; display: grid; grid-template-columns: 0.95fr 1.05fr;
+      gap: 48px; align-items: center;
+    }
+    .wm-text { padding-right: 8px; }
+    .wm-text .bubble-tag {
+      display: inline-block; background: var(--red-soft); color: var(--red);
+      padding: 4px 12px; border-radius: 4px; font-size: 11px; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 16px;
+    }
+    .wm-text h1 {
+      font-family: var(--serif); font-size: clamp(30px, 3.6vw, 44px); font-weight: 500;
+      color: var(--ink); letter-spacing: -0.02em; line-height: 1.05; margin-bottom: 18px;
+    }
+    .wm-text h1 em { font-style: italic; color: var(--red); font-weight: 400; }
+    .wm-text p.lead { font-size: 16px; color: var(--gray); line-height: 1.65; margin-bottom: 26px; }
+    .wm-text p.lead strong { color: var(--ink); font-weight: 600; }
+    .wm-visual {
+      background: white; border: 1px solid var(--border); border-radius: 20px;
+      padding: 24px; box-shadow: var(--shadow-md); margin-top: 10mm;
+      aspect-ratio: 4/5; display: flex; align-items: center; justify-content: center;
+    }
+    .wm-visual img { width: 90%; height: 90%; object-fit: contain; display: block; margin: auto; }
+    .wm-visual-wrap { margin-top: 10mm; }
+    .wm-visual-wrap .wm-visual { margin-top: 0; }
+    .wm-visual--3d {
+      position: relative; padding: 0; overflow: hidden;
+      background: radial-gradient(ellipse at 50% 38%, #ffffff 0%, #eceae5 52%, #dcd9d2 100%);
+    }
+    .wm-visual--3d model-viewer {
+      display: block; width: 100%; height: 100%;
+      --poster-color: transparent; background: transparent;
+    }
+    .sip-live3d {
+      position: absolute; top: 12px; right: 12px; z-index: 2;
+      font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--ink); background: rgba(255,255,255,.92); border: 1px solid var(--border);
+      padding: 5px 10px; border-radius: 999px; pointer-events: none;
+    }
+    .sip-live3d::after {
+      content: ""; display: inline-block; width: 6px; height: 6px; margin-left: 6px;
+      border-radius: 50%; background: #2f80ed; vertical-align: 1px;
+      box-shadow: 0 0 0 0 rgba(47,128,237,.45); animation: sip-pulse 1.6s ease infinite;
+    }
+    @keyframes sip-pulse {
+      70% { box-shadow: 0 0 0 6px rgba(47,128,237,0); }
+      100% { box-shadow: 0 0 0 0 rgba(47,128,237,0); }
+    }
+    .viz3d-legenda {
+      list-style: none; margin: 16px 0 0; padding: 0;
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 20px;
+    }
+    .viz3d-legenda li {
+      display: inline-flex; align-items: center; gap: 9px; font-size: 12.5px; color: var(--gray);
+    }
+    .viz3d-legenda span {
+      width: 15px; height: 15px; border-radius: 4px; flex: none;
+      border: 1px solid rgba(0,0,0,.14);
+    }
+    @media (max-width: 1100px) {
+      .wm-stage { grid-template-columns: 1fr; gap: 32px; padding: 36px; }
+      .wm-visual { margin-top: 0; aspect-ratio: 1 / 1; min-height: 360px; }
+    }
+    @media (max-width: 768px) {
+      .wm-stage { padding: 28px 20px; }
+      .wm-visual--3d { aspect-ratio: 4 / 5; min-height: 400px; }
+    }
+    .fam-tabs {
+      display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+      margin: 0 auto 36px; max-width: 720px;
+    }
+    .fam-tab {
+      appearance: none; border: 1px solid var(--border); background: var(--cream-light);
+      color: var(--ink); font-family: var(--sans); font-size: 13px; font-weight: 600;
+      letter-spacing: 0.04em; text-transform: uppercase; padding: 10px 18px;
+      border-radius: 999px; cursor: pointer; transition: background .2s, color .2s, border-color .2s;
+    }
+    .fam-tab[aria-selected="true"] {
+      background: var(--ink); color: var(--cream); border-color: var(--ink);
+    }
+    .fam-panel[hidden] { display: none !important; }
+    .dual-badge {
+      display: inline-flex; gap: 6px; align-items: center; flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+    .dual-badge span {
+      display: inline-block; background: var(--red-soft); color: var(--red);
+      padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase;
+    }
+    .roof-where {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 28px;
+    }
+    @media (max-width: 900px) { .roof-where { grid-template-columns: 1fr; } }
+    .roof-where a {
+      display: block; text-decoration: none; color: inherit;
+      background: var(--cream-light); border: 1px solid var(--border);
+      border-radius: 16px; padding: 20px 22px;
+    }
+    .roof-where a strong { display: block; font-size: 15px; margin-bottom: 6px; }
+    .roof-where a span { font-size: 13px; color: var(--gray); }
+    .placeholder-note {
+      margin-top: 18px; padding: 14px 16px; border-radius: 12px;
+      background: rgba(200,16,46,0.06); border: 1px solid rgba(200,16,46,0.14);
+      font-size: 13.5px; color: var(--ink); line-height: 1.5;
+    }
+
+  
+    .diff-strip {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+      border: 1px solid var(--border); border-radius: 20px; overflow: hidden;
+      background: var(--cream-light); margin-top: 36px;
+    }
+    .diff-strip article {
+      padding: 28px 24px; border-right: 1px solid var(--border);
+    }
+    .diff-strip article:last-child { border-right: 0; }
+    .diff-strip .ds-label {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--red); margin-bottom: 8px;
+    }
+    .diff-strip h3 { font-family: var(--serif); font-size: 22px; font-weight: 500; margin-bottom: 10px; }
+    .diff-strip p { font-size: 14px; color: var(--gray); line-height: 1.55; margin: 0; }
+    .diff-strip .ds-one {
+      display: block; margin-top: 14px; font-size: 13px; font-weight: 700; color: var(--ink);
+    }
+    @media (max-width: 900px) {
+      .diff-strip { grid-template-columns: 1fr; }
+      .diff-strip article { border-right: 0; border-bottom: 1px solid var(--border); }
+      .diff-strip article:last-child { border-bottom: 0; }
+    }
+    .include-list { list-style: none; padding: 0; margin: 20px 0 0; }
+    .include-list li {
+      display: flex; gap: 10px; align-items: flex-start;
+      padding: 10px 0; border-bottom: 1px solid var(--border);
+      font-size: 14.5px; color: var(--ink); line-height: 1.45;
+    }
+    .include-list li:last-child { border-bottom: 0; }
+    .include-list .ok { color: var(--red); font-weight: 700; min-width: 1.2em; }
+    .include-list .no { color: #999; font-weight: 700; min-width: 1.2em; }
+    .fiche-row {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px; margin-top: 28px;
+    }
+    .fiche-row a, .fiche-row button {
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      width: 100%; text-align: left; text-decoration: none; cursor: pointer;
+      background: var(--cream-light); border: 1px solid var(--border);
+      border-radius: 14px; padding: 16px 18px; color: inherit;
+      font-family: inherit; font-size: 14px;
+    }
+    .fiche-row strong { display: block; font-size: 14.5px; margin-bottom: 2px; }
+    .fiche-row span.meta { font-size: 12.5px; color: var(--gray); }
+    .compare-callout {
+      margin-top: 28px; padding: 20px 22px; border-radius: 16px;
+      background: rgba(15,14,12,0.04); border: 1px solid var(--border);
+      font-size: 14.5px; line-height: 1.55; color: var(--ink);
+    }
+    .compare-callout strong { color: var(--red); }
+
+    .sip-video-wrap {
+      position: relative; border-radius: 20px; overflow: hidden;
+      border: 1px solid var(--border); background: #0f0f0f;
+      box-shadow: var(--shadow-md); aspect-ratio: 16/9;
+    }
+    .sip-video-wrap video { width: 100%; height: 100%; display: block; object-fit: cover; }
+    .anatomy-grid {
+      display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 32px; align-items: start;
+    }
+    @media (max-width: 980px) { .anatomy-grid { grid-template-columns: 1fr; } }
+    .anatomy-left { display: flex; flex-direction: column; gap: 14px; }
+    .anatomy-pills {
+      display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+    }
+    .anatomy-pill {
+      appearance: none; border: 1px solid var(--border); background: #fff;
+      color: var(--ink); font-family: var(--sans); font-size: 12px; font-weight: 600;
+      padding: 8px 12px; border-radius: 999px; cursor: pointer; display: inline-flex;
+      align-items: center; gap: 7px; transition: background .2s, color .2s, border-color .2s;
+    }
+    .anatomy-pill .dot {
+      width: 20px; height: 20px; border-radius: 999px; background: var(--ink); color: #fff;
+      display: inline-flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700;
+    }
+    .anatomy-pill.is-active {
+      background: var(--ink); color: var(--cream); border-color: var(--ink);
+    }
+    .anatomy-pill.is-active .dot { background: #fff; color: var(--ink); }
+    .anatomy-map {
+      position: relative; width: 100%; max-width: 560px; margin: 0 auto;
+      aspect-ratio: 1030 / 970;
+    }
+    .anatomy-map img {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: contain; display: block;
+    }
+    .anatomy-hotspot {
+      position: absolute; z-index: 3; width: 36px; height: 36px; border-radius: 999px;
+      border: 0; cursor: pointer; font-family: var(--sans); font-size: 13px; font-weight: 700;
+      background: #fff; color: var(--ink); box-shadow: 0 8px 22px rgba(15,15,15,0.16);
+      transform: translate(-50%, -50%); transition: background .2s, color .2s, transform .2s;
+    }
+    .anatomy-hotspot:hover { transform: translate(-50%, -50%) scale(1.06); }
+    .anatomy-hotspot.is-active {
+      background: var(--ink); color: #fff;
+      box-shadow: 0 0 0 4px rgba(15,15,15,0.12), 0 10px 24px rgba(15,15,15,0.2);
+    }
+    .anatomy-card {
+      position: relative; background: #fff; border: 1px solid var(--border);
+      border-radius: 16px; padding: 18px 20px; box-shadow: var(--shadow-md);
+      display: grid; grid-template-columns: 40px 1fr auto; gap: 14px; align-items: start;
+    }
+    .anatomy-card[hidden] { display: none !important; }
+    .anatomy-card .n {
+      width: 40px; height: 40px; border-radius: 12px; background: var(--ink); color: #fff;
+      display: flex; align-items: center; justify-content: center; font-weight: 700;
+    }
+    .anatomy-card h4 { font-size: 16px; font-weight: 700; margin: 0 0 4px; }
+    .anatomy-card .spec {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+      color: rgba(15,15,15,0.55); margin-bottom: 8px;
+    }
+    .anatomy-card p { font-size: 13.5px; color: var(--gray); line-height: 1.5; margin: 0; }
+    .anatomy-close {
+      appearance: none; border: 0; background: transparent; color: #999; cursor: pointer;
+      font-size: 20px; line-height: 1; padding: 0 2px;
+    }
+    .anatomy-hint {
+      text-align: center; color: var(--gray); font-size: 13.5px; padding: 10px 0 2px;
+    }
+    .anatomy-hint[hidden] { display: none !important; }
+    .anatomy-side { display: flex; flex-direction: column; gap: 12px; }
+    .anatomy-tabs {
+      display: flex; gap: 6px; padding: 5px; background: rgba(15,15,15,0.04);
+      border-radius: 14px;
+    }
+    .anatomy-tab {
+      flex: 1; appearance: none; border: 0; background: transparent; cursor: pointer;
+      font-family: var(--sans); font-size: 13px; font-weight: 600; color: var(--gray);
+      padding: 10px 8px; border-radius: 10px; transition: background .2s, color .2s;
+    }
+    .anatomy-tab[aria-selected="true"] {
+      background: var(--ink); color: var(--cream); box-shadow: 0 4px 14px rgba(15,15,15,0.12);
+    }
+    .anatomy-panel {
+      background: #fff; border: 1px solid var(--border); border-radius: 18px; padding: 22px;
+    }
+    .anatomy-panel[hidden] { display: none !important; }
+    .anatomy-panel h3 { font-size: 18px; font-weight: 700; margin: 0 0 10px; }
+    .anatomy-panel > p { font-size: 14px; color: var(--gray); line-height: 1.55; margin: 0 0 18px; }
+    .anatomy-stat {
+      display: flex; align-items: center; gap: 14px; padding: 12px 14px;
+      border-radius: 14px; background: var(--cream); border: 1px solid var(--border);
+      margin-bottom: 10px;
+    }
+    .anatomy-stat:last-child { margin-bottom: 0; }
+    .anatomy-stat .label {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--gray); margin-bottom: 2px;
+    }
+    .anatomy-stat .value { font-family: var(--sans); font-size: 14px; font-weight: 700; }
+    .anatomy-ready {
+      margin-top: 12px; background: var(--ink); color: var(--cream);
+      border-radius: 16px; padding: 18px 20px;
+    }
+    .anatomy-ready strong { display: block; margin-bottom: 6px; }
+    .anatomy-ready p { margin: 0; font-size: 12.5px; color: rgba(255,255,255,0.55); line-height: 1.45; }
+    .step-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    @media (max-width: 900px) { .step-grid { grid-template-columns: 1fr; } }
+    .step-card {
+      background: var(--cream-light); border: 1px solid var(--border);
+      border-radius: 18px; padding: 24px;
+    }
+    .step-card .num {
+      font-family: var(--serif); font-size: 28px; color: var(--red); font-weight: 500; margin-bottom: 8px;
+    }
+    .media-frame {
+      border-radius: 18px; overflow: hidden; border: 1px solid var(--border); background: white;
+    }
+    .media-frame img { width: 100%; height: auto; display: block; }
+    #produits-sip .container--wide { max-width: 1560px; }
+    #produits-sip .sip-products {
+      display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 28px; align-items: stretch;
+    }
+    #produits-sip .sip-products .card { padding: 28px 30px; }
+    #produits-sip .sip-products .spec-table-row {
+      grid-template-columns: 1.45fr 0.9fr;
+      gap: 12px;
+    }
+    #produits-sip .sip-products .spec-table-cell { font-size: 14.5px; }
+    #produits-sip .sip-products .spec-table-cell--value {
+      white-space: nowrap; text-align: right;
+    }
+    @media (max-width: 1100px) {
+      #produits-sip .sip-products { grid-template-columns: 1fr; }
+      #produits-sip .sip-products .spec-table-cell--value { white-space: normal; }
+    }
+</style>
+</head>
+<body data-base="../../">
+<header class="nav" data-include="nav"></header>
+
+<section class="wm-section">
+  <div class="container">
+    <div class="wm-stage-wrap reveal">
+      <div class="wm-watermark" aria-hidden="true">
+        <span class="wm-half wm-top">PolistiSIP</span>
+        <span class="wm-half wm-bottom">PolistiSIP</span>
+      </div>
+      <div class="wm-stage">
+        <div class="wm-text">
+          <h1>On construit aujourd’hui <em>the homes of tomorrow.</em></h1>
+          <p class="lead"><strong>PolistiSIP</strong> n’est pas un formwork concrete. C’est un système de maisons en <strong>panneaux sandwich bois (SIP)</strong> avec âme isolante et structure <strong>I-Joist STEICO</strong> — ponts thermiques éliminés, montage rapide, prêt Passivhaus.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
+            <a href="../../quote/" class="btn btn-primary btn-arrow">Request a quote</a>
+            <a href="#video" class="btn btn-ghost">Voir la vidéo</a>
+          </div>
+        </div>
+        <div class="wm-visual-wrap">
+          <div class="wm-visual wm-visual--3d">
+            <span class="sip-live3d" aria-hidden="true">Live 3D</span>
+            <model-viewer
+              src="../../images/polistisip/perete-polistisip-v2.glb"
+              alt="Panneau mur PolistiSIP — modèle 3D rotatif, OSB et EPS graphité avec I-Joist STEICO"
+              camera-controls
+              auto-rotate
+              rotation-per-second="30deg"
+              camera-orbit="218deg 72deg auto"
+              field-of-view="30deg"
+              min-camera-orbit="auto auto 5%"
+              max-camera-orbit="auto auto 200%"
+              interaction-prompt="none"
+              shadow-intensity="1"
+              exposure="0.8"
+              loading="eager"
+            ></model-viewer>
+          </div>
+          <ul class="viz3d-legenda">
+            <li><span style="background:#c4b49a"></span>OSB/3 15&nbsp;mm</li>
+            <li><span style="background:#3a3a3e"></span>EPS graphité 220 + 50&nbsp;mm</li>
+            <li><span style="background:#8b7355"></span>I-Joist STEICO</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="container">
+    <div class="grid grid-4 reveal">
+      <div class="fact"><span class="fact-num">0,11</span><span class="fact-label">U mur SIP300</span></div>
+      <div class="fact"><span class="fact-num">11,3<small> h</small></span><span class="fact-label">Déphasage mur</span></div>
+      <div class="fact"><span class="fact-num">23<small> kg/m²</small></span><span class="fact-label">Poids mur</span></div>
+      <div class="fact"><span class="fact-num">7–10<small> j</small></span><span class="fact-label">Structure 100–150 m²</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="grid grid-2 reveal" style="gap:48px;align-items:center;">
+      <div>
+        <h2>Forquoi les maisons perdent de la chaleur ?</h2>
+        <p class="lead" style="font-size:15.5px;margin-top:14px;">La plupart perdent de l’énergie par les <strong>ponts thermiques</strong> — là où le bois massif traverse l’insulation. PolistiSIP corrige ce point faible avec la technologie <strong>I-Joist STEICO</strong> : barrière thermique continue, jusqu’à <strong>40&nbsp;% d’efficacité thermique en plus</strong>.</p>
+        <ul class="include-list">
+          <li><span class="ok">✓</span><span><strong>Timber structure sandwich (SIP)</strong> — pas de concrete coulé dans le mur</span></li>
+          <li><span class="ok">✓</span><span><strong>I-Joist STEICO</strong> — contact minimal entre les peaux du panneau</span></li>
+          <li><span class="ok">✓</span><span><strong>Mur SIP300</strong> — 30 cm, U=0,11, déphasage 11,3 h, 23 kg/m²</span></li>
+          <li><span class="ok">✓</span><span><strong>Floor + roofure SIP250</strong> — 25 cm, U=0,13 (= TBK)</span></li>
+        </ul>
+        <div class="compare-callout">
+          Ce n’est <strong>pas</strong> Polistibrick. Si vous voulez du concrete armé → <a href="../polistibrick/" style="color:var(--red);font-weight:600;">Polistibrick</a> ou <a href="../polistiwall/" style="color:var(--red);font-weight:600;">Polistiwall</a>.
+        </div>
+      </div>
+      <div class="media-frame">
+        <img src="../../images/polistisip/energy_joist.webp" alt="Comparison pont thermique — I-Joist STEICO vs structure traditionnelle">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--cream">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:760px;margin:0 auto 36px;">
+      <h2>Précision d’usine. <em>Vitesse chantier.</em></h2>
+      <p class="lead" style="margin-top:12px;">Panneaux pré-découpés, kit complet, structure montée en jours — pas en months.</p>
+    </div>
+    <div class="step-grid reveal">
+      <article class="step-card">
+        <div class="num">01</div>
+        <h3 style="margin-bottom:8px;">Préfabrication millimétrique</h3>
+        <p style="font-size:14.5px;color:var(--gray);line-height:1.55;margin:0;">Walls, floors et roofure arrivent <strong>pre-cut</strong>, y compris les ouvertures. Chaque élément est codé et vérifié numériquement. Tolérance ±2&nbsp;mm.</p>
+      </article>
+      <article class="step-card">
+        <div class="num">02</div>
+        <h3 style="margin-bottom:8px;">Kit complet livré</h3>
+        <p style="font-size:14.5px;color:var(--gray);line-height:1.55;margin:0;">Panneaux structurels, fixations, membranes d’étanchéité, notices — tout étiqueté pour un montage sans improvisation.</p>
+      </article>
+      <article class="step-card">
+        <div class="num">03</div>
+        <h3 style="margin-bottom:8px;">Execution rapide</h3>
+        <p style="font-size:14.5px;color:var(--gray);line-height:1.55;margin:0;">Structure d’une maison 100–150&nbsp;m² en <strong>7–10 jours ouvrés</strong>. Moins de main-d’œuvre, moins d’exposition aux intempéries.</p>
+      </article>
+    </div>
+    <div class="media-frame reveal" style="margin-top:36px;max-width:1100px;margin-left:auto;margin-right:auto;">
+      <img src="../../images/polistisip/precizie-uzina.webp" alt="Préfabrication usine PolistiSIP — précision et vitesse chantier">
+    </div>
+  </div>
+</section>
+
+<section class="section" id="anatomie">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:760px;margin:0 auto 36px;">
+      <h2>Anatomie du panneau <em>« Premium Passive »</em></h2>
+      <p class="lead" style="margin-top:12px;">Explorez chaque couche. Total thickness mur ≈ <strong>30 cm</strong>.</p>
+    </div>
+    <div class="anatomy-grid reveal" data-anatomy>
+      <div class="anatomy-left">
+        <div class="anatomy-pills" aria-label="Couches du panneau">
+          <button type="button" class="anatomy-pill" data-layer="1" aria-pressed="false"><span class="dot">1</span> OSB/3 Structural 15mm</button>
+          <button type="button" class="anatomy-pill" data-layer="2" aria-pressed="false"><span class="dot">2</span> EPS Graphité 220mm</button>
+          <button type="button" class="anatomy-pill" data-layer="3" aria-pressed="false"><span class="dot">3</span> OSB/3 Structural 15mm</button>
+          <button type="button" class="anatomy-pill" data-layer="4" aria-pressed="false"><span class="dot">4</span> EPS Graphité 50mm</button>
+          <button type="button" class="anatomy-pill" data-layer="5" aria-pressed="false"><span class="dot">5</span> I-Joist STEICO</button>
+        </div>
+
+        <div class="anatomy-map">
+          <img src="../../images/polistisip/anatomy_image.webp" alt="Coupe panneau PolistiSIP — OSB, EPS graphité, I-Joist STEICO" width="1030" height="970">
+          <button type="button" class="anatomy-hotspot" data-layer="1" style="left:40%;top:55%;" aria-pressed="false" aria-label="Couche 1">1</button>
+          <button type="button" class="anatomy-hotspot" data-layer="2" style="left:70%;top:74%;" aria-pressed="false" aria-label="Couche 2">2</button>
+          <button type="button" class="anatomy-hotspot" data-layer="3" style="left:80%;top:55%;" aria-pressed="false" aria-label="Couche 3">3</button>
+          <button type="button" class="anatomy-hotspot" data-layer="4" style="left:88%;top:70%;" aria-pressed="false" aria-label="Couche 4">4</button>
+          <button type="button" class="anatomy-hotspot" data-layer="5" style="left:21%;top:40%;" aria-pressed="false" aria-label="Couche 5">5</button>
+        </div>
+
+        <div class="anatomy-hint" data-anatomy-hint>Select une couche sur l’image</div>
+
+        <article class="anatomy-card" data-layer-panel="1" hidden>
+          <div class="n">1</div>
+          <div>
+            <h4>Peau extérieure</h4>
+            <div class="spec">OSB/3 Structural 15 mm</div>
+            <p>Rigidité supérieure au standard 10–12 mm. Protection mécanique et stabilité dimensionnelle.</p>
+          </div>
+          <button type="button" class="anatomy-close" data-anatomy-close aria-label="Close">×</button>
+        </article>
+        <article class="anatomy-card" data-layer-panel="2" hidden>
+          <div class="n">2</div>
+          <div>
+            <h4>Noyau thermique structurel</h4>
+            <div class="spec">EPS graphité 220 mm</div>
+            <p>Haute densité, λ réduit. Jusqu’à 20&nbsp;% mieux que l’EPS classique (λ = 0,031 W/mK).</p>
+          </div>
+          <button type="button" class="anatomy-close" data-anatomy-close aria-label="Close">×</button>
+        </article>
+        <article class="anatomy-card" data-layer-panel="3" hidden>
+          <div class="n">3</div>
+          <div>
+            <h4>Peau intérieure</h4>
+            <div class="spec">OSB/3 Structural 15 mm</div>
+            <p>Surface area area area idéale pour finitions intérieures. Contribue à la capacité portante du panneau.</p>
+          </div>
+          <button type="button" class="anatomy-close" data-anatomy-close aria-label="Close">×</button>
+        </article>
+        <article class="anatomy-card" data-layer-panel="4" hidden>
+          <div class="n">4</div>
+          <div>
+            <h4>Strat de continuité</h4>
+            <div class="spec">EPS graphité 50 mm</div>
+            <p>Rupture de pont thermique. Scelle les jonctions et élimine les points faibles.</p>
+          </div>
+          <button type="button" class="anatomy-close" data-anatomy-close aria-label="Close">×</button>
+        </article>
+        <article class="anatomy-card" data-layer-panel="5" hidden>
+          <div class="n">5</div>
+          <div>
+            <h4>I-Joist STEICO</h4>
+            <div class="spec">Structure porteuse · Élimination des ponts thermiques</div>
+            <p>Poutre en I à âme composite — −40&nbsp;% de transfert thermique vs montants bois massif.</p>
+          </div>
+          <button type="button" class="anatomy-close" data-anatomy-close aria-label="Close">×</button>
+        </article>
+      </div>
+
+      <aside class="anatomy-side" data-anatomy-tabs>
+        <div class="anatomy-tabs" role="tablist" aria-label="Performances">
+          <button type="button" class="anatomy-tab" role="tab" aria-selected="true" data-tab="struct">Structure</button>
+          <button type="button" class="anatomy-tab" role="tab" aria-selected="false" data-tab="therm">Thermique</button>
+          <button type="button" class="anatomy-tab" role="tab" aria-selected="false" data-tab="cert">Certifications</button>
+        </div>
+
+        <div class="anatomy-panel" data-tab-panel="struct" role="tabpanel">
+          <h3>Robustesse structurelle</h3>
+          <p>L’innovation thermique s’appuie sur les I-Joist STEICO — un élément d’ingénierie supérieur au bois massif.</p>
+          <div class="anatomy-stat"><div><div class="label">Capacité portante walls</div><div class="value">&gt; 45 kN/m</div></div></div>
+          <div class="anatomy-stat"><div><div class="label">Capacité portante floors</div><div class="value">&gt; 6 kNm/m</div></div></div>
+          <div class="anatomy-stat"><div><div class="label">Cisaillement roofure</div><div class="value">&gt; 15 kN/m</div></div></div>
+        </div>
+
+        <div class="anatomy-panel" data-tab-panel="therm" role="tabpanel" hidden>
+          <h3>Mur SIP300 (Ubakus)</h3>
+          <div class="anatomy-stat"><div><div class="label">U</div><div class="value">0,11 W/m²K</div></div></div>
+          <div class="anatomy-stat"><div><div class="label">R total</div><div class="value">9,11 m²K/W</div></div></div>
+          <div class="anatomy-stat"><div><div class="label">Déphasage</div><div class="value">11,3 h</div></div></div>
+          <div class="anatomy-stat"><div><div class="label">Atténuation</div><div class="value">22,6</div></div></div>
+          <div class="anatomy-stat"><div><div class="label">Poids</div><div class="value">23 kg/m²</div></div></div>
+          <div class="anatomy-stat"><div><div class="label">Hygrométrie</div><div class="value">Pas de condensation</div></div></div>
+        </div>
+
+        <div class="anatomy-panel" data-tab-panel="cert" role="tabpanel" hidden>
+          <h3>Passive House Ready</h3>
+          <p>* Données complètes dans le manifeste technique du produit.</p>
+          <div class="anatomy-stat"><div><div class="value" style="font-family:inherit;font-size:14px;">✓ EN 13501 — Fire reaction</div></div></div>
+          <div class="anatomy-stat"><div><div class="value" style="font-family:inherit;font-size:14px;">✓ EN 14509 — Panneaux sandwich</div></div></div>
+          <div class="anatomy-stat"><div><div class="value" style="font-family:inherit;font-size:14px;">✓ Passive House Institute — nZEB</div></div></div>
+        </div>
+
+        <div class="anatomy-ready">
+          <strong>Fiches Ubakus</strong>
+          <p>Mur SIP300 et panneau SIP250 (roofure / plancher) — PDF téléchargeables ci-dessous.</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+<script>
+(function () {
+  var root = document.querySelector('[data-anatomy]');
+  if (!root) return;
+  var layerBtns = root.querySelectorAll('[data-layer]');
+  var cards = root.querySelectorAll('[data-layer-panel]');
+  var hint = root.querySelector('[data-anatomy-hint]');
+  var active = null;
+
+  function setLayer(id) {
+    active = id;
+    layerBtns.forEach(function (btn) {
+      var on = btn.getAttribute('data-layer') === id;
+      btn.classList.toggle('is-active', on);
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+    cards.forEach(function (card) {
+      card.hidden = card.getAttribute('data-layer-panel') !== id;
+    });
+    if (hint) hint.hidden = !!id;
+  }
+
+  layerBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var id = btn.getAttribute('data-layer');
+      setLayer(active === id ? null : id);
+    });
+  });
+  root.querySelectorAll('[data-anatomy-close]').forEach(function (btn) {
+    btn.addEventListener('click', function () { setLayer(null); });
+  });
+
+  var tabRoot = root.querySelector('[data-anatomy-tabs]');
+  if (!tabRoot) return;
+  var tabs = tabRoot.querySelectorAll('[data-tab]');
+  var panels = tabRoot.querySelectorAll('[data-tab-panel]');
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      var id = tab.getAttribute('data-tab');
+      tabs.forEach(function (t) { t.setAttribute('aria-selected', t === tab ? 'true' : 'false'); });
+      panels.forEach(function (p) { p.hidden = p.getAttribute('data-tab-panel') !== id; });
+    });
+  });
+})();
+</script>
+
+<section class="section section--cream" id="produits-sip">
+  <div class="container container--wide">
+    <div class="reveal" style="max-width:720px;margin:0 auto 36px;text-align:center;">
+      <h2>Three premium products</h2>
+      <p class="lead" style="margin-top:12px;">Mur SIP300 · Floor SIP250 · Roofure SIP250 (= TBK).</p>
+    </div>
+    <div class="sip-products reveal">
+      <article class="card" id="mur">
+        <h3 style="margin-bottom:8px;">Mur SIP300</h3>
+        <p style="font-size:14px;color:var(--gray);line-height:1.45;margin-bottom:18px;">OSB + EPS graphité + I-Joist STEICO</p>
+        <div class="spec-table" style="border-radius:12px;">
+          <div class="spec-table-row"><div class="spec-table-cell">U <span style="display:block;font-size:12px;color:var(--gray);font-weight:400;">performance thermique</span></div><div class="spec-table-cell spec-table-cell--value">0,11 W/m²K</div></div>
+          <div class="spec-table-row"><div class="spec-table-cell">Épaisseur <span style="display:block;font-size:12px;color:var(--gray);font-weight:400;">totale</span></div><div class="spec-table-cell spec-table-cell--value">30 cm</div></div>
+          <div class="spec-table-row"><div class="spec-table-cell">Poids <span style="display:block;font-size:12px;color:var(--gray);font-weight:400;">léger vs concrete</span></div><div class="spec-table-cell spec-table-cell--value">23 kg/m²</div></div>
+          <div class="spec-table-row"><div class="spec-table-cell">Déphasage <span style="display:block;font-size:12px;color:var(--gray);font-weight:400;">confort d’été</span></div><div class="spec-table-cell spec-table-cell--value">11,3 h</div></div>
+          <div class="spec-table-row"><div class="spec-table-cell">Composition <span style="display:block;font-size:12px;color:var(--gray);font-weight:400;">ce qu’il y a dans le mur</span></div><div class="spec-table-cell spec-table-cell--value">15 + 220 + 15 + 50 mm</div></div>
+        </div>
+        <p style="margin-top:18px;"><a href="../../downloads/SIP300.pdf" target="_blank" rel="noopener" style="color:var(--red);font-weight:600;">Fiche PDF SIP300 ↓</a></p>
+      </article>
+      <article class="card" id="plancher">
+        <h3 style="margin-bottom:8px;">Floor SIP250</h3>
+        <p style="font-size:14px;color:var(--gray);line-height:1.45;margin-bottom:18px;">OSB + EPS graphité + I-Joist STEICO</p>
+        <div class="spec-table" style="border-radius:12px;">
+          <div class="spec-table-row"><div class="spec-table-cell">U <span style="display:block;font-size:12px;color:var(--gray);font-weight:400;">performance thermique</span></div><div class="spec-table-cell spec-table-cell--value">0,13 W/m²K</div></div>
+          <div class="spec-table-row"><div class="spec-table-cell">Épaisseur <span style="display:block;font-size:12px;color:var(--gray);font-weight:400;">totale</span></div><div class="spec-table-cell spec-table-cell--value">25 cm</div></div>
+          <div class="spec-table-row"><div class="spec-table-cell">Poids <span style="display:block;font-size:12px;color:var(--gray);font-weight:400;">léger vs concrete</span></div><div class="spec-table-cell spec-table-cell--value">22 kg/m²</div></div>
+          <div class="spec-table-row"><div class="spec-table-cell">Déphasage <span style="display:block;font-size:12px;color:var(--gray);font-weight:400;">confort d’été</span></div><div class="spec-table-cell spec-table-cell--value">7,3 h</div></div>
+          <div class="spec-table-row"><div class="spec-table-cell">Composition <span style="display:block;font-size:12px;color:var(--gray);font-weight:400;">ce qu’il y a dans le plancher</span></div><div class="spec-table-cell spec-table-cell--value">15 + 220 + 15 mm</div></div>
+        </div>
+        <p style="margin-top:18px;"><a href="../../downloads/SIP250.pdf" target="_blank" rel="noopener" style="color:var(--red);font-weight:600;">Fiche PDF SIP250 ↓</a></p>
+      </article>
+      <article class="card" id="roofure">
+        <h3 style="margin-bottom:8px;">Roofure SIP250</h3>
+        <p style="font-size:14px;color:var(--gray);line-height:1.45;margin-bottom:18px;">OSB + EPS graphité + I-Joist STEICO</p>
+        <div class="spec-table" style="border-radius:12px;">
+          <div class="spec-table-row"><div class="spec-table-cell">U <span style="display:block;font-size:12px;color:var(--gray);font-weight:400;">performance thermique</span></div><div class="spec-table-cell spec-table-cell--value">0,13 W/m²K</div></div>
+          <div class="spec-table-row"><div class="spec-table-cell">Épaisseur <span style="display:block;font-size:12px;color:var(--gray);font-weight:400;">totale</span></div><div class="spec-table-cell spec-table-cell--value">25 cm</div></div>
+          <div class="spec-table-row"><div class="spec-table-cell">Poids <span style="display:block;font-size:12px;color:var(--gray);font-weight:400;">léger vs concrete</span></div><div class="spec-table-cell spec-table-cell--value">22 kg/m²</div></div>
+          <div class="spec-table-row"><div class="spec-table-cell">Déphasage <span style="display:block;font-size:12px;color:var(--gray);font-weight:400;">confort d’été</span></div><div class="spec-table-cell spec-table-cell--value">7,3 h</div></div>
+          <div class="spec-table-row"><div class="spec-table-cell">Composition <span style="display:block;font-size:12px;color:var(--gray);font-weight:400;">ce qu’il y a dans la roofure</span></div><div class="spec-table-cell spec-table-cell--value">15 + 220 + 15 mm</div></div>
+        </div>
+        <p style="margin-top:18px;"><a href="../../downloads/SIP250.pdf" target="_blank" rel="noopener" style="color:var(--red);font-weight:600;">Fiche PDF SIP250 ↓</a></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="grid grid-2 reveal" style="gap:40px;align-items:center;">
+      <div>
+        <h2>Dimensions Jumbo.</h2>
+        <p class="lead" style="font-size:15.5px;margin-top:12px;">Un mur de <strong>9 m</strong> en une seule manœuvre de grue → structure <strong>50–60&nbsp;% plus rapide</strong> qu’en traditionnel. Esthétique propre : moins de joints horizontaux visibles.</p>
+        <div class="grid grid-2" style="gap:16px;margin-top:24px;">
+          <div class="fact"><span class="fact-num">50–60%</span><span class="fact-label">Plus rapide</span></div>
+          <div class="fact"><span class="fact-num">9<small> m</small></span><span class="fact-label">Hauteur panneau</span></div>
+        </div>
+      </div>
+      <div class="media-frame">
+        <img src="../../images/polistisip/jumbo.webp" alt="Comparison dimensions Jumbo PolistiSIP">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--cream">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 32px;">
+      <h2>Avantages clés.</h2>
+    </div>
+    <div class="grid grid-3 reveal" style="gap:18px;">
+      <article class="card"><h3 style="margin-bottom:8px;">Étanchéité à l’air</h3><p style="font-size:14px;color:var(--gray);margin:0;line-height:1.5;">Contrôle de l’air intérieur et efficacité maximale de la VMC.</p></article>
+      <article class="card"><h3 style="margin-bottom:8px;">Vitesse de construction</h3><p style="font-size:14px;color:var(--gray);margin:0;line-height:1.5;">Projects plus courts, coûts de main-d’œuvre réduits.</p></article>
+      <article class="card"><h3 style="margin-bottom:8px;">Acoustique</h3><p style="font-size:14px;color:var(--gray);margin:0;line-height:1.5;">Atténuation jusqu’à Rw 55 dB (standard).</p></article>
+      <article class="card"><h3 style="margin-bottom:8px;">Soutenabilité</h3><p style="font-size:14px;color:var(--gray);margin:0;line-height:1.5;">Empreinte carbone réduite, déchets chantier minimaux.</p></article>
+      <article class="card"><h3 style="margin-bottom:8px;">Architectural freedom</h3><p style="font-size:14px;color:var(--gray);margin:0;line-height:1.5;">Grandes portées, peu de contraintes structurelles.</p></article>
+      <article class="card"><h3 style="margin-bottom:8px;">Résistance sismique</h3><p style="font-size:14px;color:var(--gray);margin:0;line-height:1.5;">Structure rigide et légère — absorbe les chocs sans fissures.</p></article>
+    </div>
+    <div class="reveal" style="margin-top:28px;text-align:center;">
+      <p style="font-size:13.5px;color:var(--gray);">Certifications : EN 13501 · EN 14509 · Passive House / nZEB ready</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="video">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:760px;margin:0 auto 28px;">
+      <h2>La construction PolistiSIP <em>en action.</em></h2>
+      <p class="lead" style="margin-top:12px;">Flux complet : préfabrication, montage rapide et finitions on site. Durée ≈ 1:15.</p>
+    </div>
+    <div class="sip-video-wrap reveal">
+      <video
+        controls
+        playsinline
+        preload="none"
+        poster="../../images/polistisip/video-poster.jpg"
+        title="Construction PolistiSIP — du préfabriqué à la clé">
+        <source src="../../images/polistisip/video_polistisip_final.mp4" type="video/mp4">
+      </video>
+    </div>
+    <p class="reveal" style="text-align:center;margin-top:14px;font-size:13.5px;color:var(--gray);font-style:italic;">Processus complet — de la fondation à la clé. Le film se charge uniquement au clic Play.</p>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="cta-band reveal">
+    <h2>Construire en PolistiSIP.</h2>
+    <p>Quote pour ce système, ou un coup d’œil aux deux autres.</p>
+    <div class="cta-band-actions">
+      <a href="../../quote/" class="btn btn-on-dark btn-cta-main btn-arrow">Request a quote</a>
+      <a href="../polistibrick/" class="btn btn-on-dark-ghost btn-cta-soft">Voir Polistibrick</a>
+      <a href="../polistiwall/" class="btn btn-on-dark-ghost btn-cta-soft">Voir Polistiwall</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" data-include="footer"></footer>
+<script src="../../assets/js/site.js"></script>
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js" integrity="sha384-Ftcjj/GNLxPvzNDftO/oryXB9aGxsGZY9JGqsXG0uUKgQDl9RfDgsx9NJ/4IVNPe" crossorigin="anonymous"></script>
+</body>
+</html>

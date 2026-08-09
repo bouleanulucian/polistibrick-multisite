@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aviso legal · Polistibrick</title>
-  <meta name="description" content="Aviso legal del sitio polistibrick.fr — editor, alojamiento, contacto e información normativa.">
+  <title>Mentions légales · Polistibrick</title>
+  <meta name="description" content="Mentions légales du site polistibrick.fr — éditeur, hébergeur, contact et informations réglementaires.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../assets/css/site.css">
   <style>
     .wm-section { padding: clamp(60px, 8vw, 100px) 0; background: var(--cream); }
@@ -20,7 +20,7 @@
     .wm-content { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 48px; align-items: center; }
     .wm-text { padding-right: 8px; }
     .wm-text .bubble-tag { display: inline-block; background: var(--red-soft); color: var(--red); padding: 4px 12px; border-radius: 4px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 16px; }
-    .wm-text h1 { font-family: var(--serif); font-size: clamp(34px, 4vw, 56px); font-weight: 500; color: var(--ink); letter-spacing: -0.02em; line-height: 1.05; margin-bottom: 18px; }
+    .wm-text h1 { font-family: var(--serif); font-size: clamp(30px, 3.6vw, 44px); font-weight: 500; color: var(--ink); letter-spacing: -0.02em; line-height: 1.05; margin-bottom: 18px; }
     .wm-text p { font-size: 16px; color: var(--gray); line-height: 1.65; }
     .wm-visual { background: white; border: 1px solid var(--border); border-radius: 20px; padding: 24px; box-shadow: var(--shadow-md); margin-top: 10mm; aspect-ratio: 4/5; display: flex; align-items: center; justify-content: center; color: var(--gray); text-align: center; font-size: 13px; }
     @media (max-width: 1100px) {
@@ -39,15 +39,14 @@
   <div class="container">
     <div class="wm-stage-wrap reveal">
       <div class="wm-watermark" aria-hidden="true">
-        <span class="wm-half wm-top">Legale</span>
-        <span class="wm-half wm-bottom">Legale</span>
+        <span class="wm-half wm-top">Légal</span>
+        <span class="wm-half wm-bottom">Légal</span>
       </div>
       <div class="wm-stage">
         <div class="wm-content">
           <div class="wm-text">
-            <span class="bubble-tag">Obbligatorio LCEN</span>
-            <h1>Aviso legal</h1>
-            <p>Información normativa sobre el editor y el alojamiento del sitio polistibrick.fr, conforme a la ley francesa n.º 2004-575 de 21 de junio de 2004 para la confianza en la economía digital (LCEN).</p>
+          <h1>Mentions légales</h1>
+            <p>Informations réglementaires sur l'éditeur et l'hébergeur du site polistibrick.fr, conformément à la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique.</p>
           </div>
           <div class="wm-visual" style="background: linear-gradient(135deg, #1f2022 0%, #111213 100%); display: flex; flex-direction: column; gap: 20px; align-items: center; justify-content: center; border: none; color: #fff; box-shadow: var(--shadow-lg); padding: 24px; box-sizing: border-box;">
             <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -59,7 +58,7 @@
             </svg>
             <div style="text-align: center;">
               <div style="font-family: var(--serif); font-size: 20px; font-weight: 500; margin-bottom: 6px;">polistibrick.fr</div>
-              <div style="font-size: 11px; color: rgba(255,255,255,0.60); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600;">Editor · Alojamiento</div>
+              <div style="font-size: 11px; color: rgba(255,255,255,0.60); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600;">Éditeur · Hébergeur</div>
             </div>
           </div>
         </div>
@@ -71,30 +70,30 @@
 <section class="section">
   <div class="container container--narrow">
     <div class="reveal">
-      <h2 style="margin:32px 0 12px;">1. Editor del sitio</h2>
-      <p style="font-size:15px;margin-bottom:14px;">El sitio <strong>{{domain}}</strong> está editado por la sociedad <strong>{{company.name_legal}}</strong>, sociedad de responsabilidad limitada con un capital social de [a completar si procede] euros, inscrita en el RCS de Versalles con el número <strong>{{company.registration}}</strong> (SIRET de la sede: 984 804 872 00021), NIF intracomunitario: <strong>{{company.vat}}</strong>.</p>
-      <p style="font-size:15px;margin-bottom:14px;"><strong>Sede legale:</strong> {{company.address_street}}, {{company.address_zip}} {{company.address_city}}, {{company.address_country}}.<br>
-      <strong>Telefono:</strong> <a href="tel:{{contact.phone_raw}}" style="color:var(--red);">{{contact.phone_display}}</a><br>
-      <strong>Email:</strong> <a href="#" data-m64="{{contact.email_general|b64}}" style="color:var(--red);">Email</a></p>
+      <h2 style="margin:32px 0 12px;">1. Éditeur du site</h2>
+      <p style="font-size:15px;margin-bottom:14px;">Le site <strong>{{domain}}</strong> est édité par la société <strong>{{company.name_legal}}</strong>, société à responsabilité limitée au capital de [à compléter si besoin] euros, immatriculée au RCS de Versailles sous le numéro <strong>{{company.registration}}</strong> (SIRET du siège : 984 804 872 00021), numéro de TVA intracommunautaire : <strong>{{company.vat}}</strong>.</p>
+      <p style="font-size:15px;margin-bottom:14px;"><strong>Siège social :</strong> {{company.address_street}}, {{company.address_zip}} {{company.address_city}}, {{company.address_country}}.<br>
+      <strong>Téléphone :</strong> <a href="tel:{{contact.phone_raw}}" style="color:var(--red);">{{contact.phone_display}}</a><br>
+      <strong>Email :</strong> <a href="#" data-m64="{{contact.email_general|b64}}" style="color:var(--red);">Email</a></p>
 
-      <h2 style="margin:32px 0 12px;">2. Director de publicación</h2>
-      <p style="font-size:15px;margin-bottom:14px;"><strong>{{legal.publication_director}}</strong>, en calidad de representante legal de {{company.name_short}}.</p>
+      <h2 style="margin:32px 0 12px;">2. Directeur de la publication</h2>
+      <p style="font-size:15px;margin-bottom:14px;"><strong>{{legal.publication_director}}</strong>, en qualité de représentant légal de {{company.name_short}}.</p>
 
-      <h2 style="margin:32px 0 12px;">3. Hosting</h2>
-      <p style="font-size:15px;margin-bottom:14px;">El sitio está alojado en <strong>{{legal.hosting_provider}}</strong>, {{legal.hosting_address}}.<br>
-      Sitio web: <a href="https://www.cloudflare.com" style="color:var(--red);" rel="noopener" target="_blank">cloudflare.com</a></p>
+      <h2 style="margin:32px 0 12px;">3. Hébergeur</h2>
+      <p style="font-size:15px;margin-bottom:14px;">Le site est hébergé par <strong>{{legal.hosting_provider}}</strong>, {{legal.hosting_address}}.<br>
+      Site web : <a href="https://www.cloudflare.com" style="color:var(--red);" rel="noopener" target="_blank">cloudflare.com</a></p>
 
-      <h2 style="margin:32px 0 12px;">4. Propiedad intelectual</h2>
-      <p style="font-size:15px;margin-bottom:14px;">Todo el contenido del sitio (textos, imágenes, vídeos, logotipos, marcas, patentes) es propiedad exclusiva de {{company.name_legal}} o de sus socios. Queda prohibida cualquier reproducción, representación ofusión, total o parcial, sin autorización escrita previa.</p>
+      <h2 style="margin:32px 0 12px;">4. Propriété intellectuelle</h2>
+      <p style="font-size:15px;margin-bottom:14px;">L'ensemble du contenu du site (textes, images, vidéos, logos, marques, brevets) est la propriété exclusive de {{company.name_legal}} ou de ses partenaires. Toute reproduction, représentation ou diffusion, totale ou partielle, sans autorisation écrite préalable est interdite.</p>
 
-      <h2 style="margin:32px 0 12px;">5. Datos personales</h2>
-      <p style="font-size:15px;margin-bottom:14px;">Para cualquier información relativa al tratamiento de sus datos personales, consulte nuestra <a href="../privacidad/" style="color:var(--red);">política de privacidad (RGPD)</a>. Para ejercer sus derechos: <a href="#" data-m64="{{legal.privacy_contact_email|b64}}" style="color:var(--red);">Email</a>.</p>
+      <h2 style="margin:32px 0 12px;">5. Données personnelles</h2>
+      <p style="font-size:15px;margin-bottom:14px;">Para toute information relative au traitement de vos données personnelles, consultez notre <a href="../privacidad/" style="color:var(--red);">politique de confidentialité (RGPD)</a>. Para exercer vos droits : <a href="#" data-m64="{{legal.privacy_contact_email|b64}}" style="color:var(--red);">Email</a>.</p>
 
       <h2 style="margin:32px 0 12px;">6. Cookies</h2>
-      <p style="font-size:15px;margin-bottom:14px;">Consulte nuestra <a href="../cookies/" style="color:var(--red);">política de cookies</a> para conocer los rastreadores utilizados y gestionar sus preferencias.</p>
+      <p style="font-size:15px;margin-bottom:14px;">Consultez notre <a href="../cookies/" style="color:var(--red);">politique de cookies</a> pour connaître les traceurs utilisés et gérer vos préférences.</p>
 
-      <h2 style="margin:32px 0 12px;">7. Contacto</h2>
-      <p style="font-size:15px;margin-bottom:14px;">Para cualquier duda relativa al sitio o a sus contenidos: <a href="#" data-m64="{{contact.email_general|b64}}" style="color:var(--red);">Email</a> o a través del <a href="../../contact/" style="color:var(--red);">formulario de contacto</a>.</p>
+      <h2 style="margin:32px 0 12px;">7. Contactooo</h2>
+      <p style="font-size:15px;margin-bottom:14px;">Para toute question relative au site ou à son contenu : <a href="#" data-m64="{{contact.email_general|b64}}" style="color:var(--red);">Email</a> ou via le <a href="../../contact/" style="color:var(--red);">formulaire de contact</a>.</p>
     </div>
   </div>
 </section>

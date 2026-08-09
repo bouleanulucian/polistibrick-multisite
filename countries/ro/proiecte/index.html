@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Proiecte Polistibrick · modele de case, o casă în trei sisteme</title>
-  <meta name="description" content="Proiectele de case Polistibrick: modele pe parter de la 80 la 178 m², fiecare în trei sisteme constructive. Plan, fotografii şi date termice pentru fiecare.">
+  <title>Proiecte Polistibrick · modèles de maisons, une maison en trois systèmes</title>
+  <meta name="description" content="Les maisons Polistibrick : des modèles de 80 à 178 m², chacun en trois systèmes constructifs. Plan, photos et données thermiques pour chacun.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/site.css">
   <style>
     .case-hero { padding: clamp(90px, 12vh, 150px) 0 clamp(34px, 5vh, 56px); background: #fdfbf7; text-align: center; }
@@ -15,10 +15,10 @@
     .case-hero + .section--cream { padding-top: clamp(28px, 4vh, 48px); }
     .case-hero .lead { max-width: 900px; margin: 0 auto; font-size: 16.5px; line-height: 1.6; color: var(--gray); }
 
-    /* fâșia care explică cele trei variante — apare o singură dată, sus */
+    /* la bande qui explique les trois variantes — n'apparaît qu'une fois, en haut */
     .leaf { display: inline-block; margin-left: 5px; }
 
-    /* grila de modele */
+    /* la grille de modèles */
     .case-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
     @media (max-width: 1080px) { .case-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 700px)  { .case-grid { grid-template-columns: 1fr; } }
@@ -36,7 +36,7 @@
     .case-spec svg { width: 15px; height: 15px; flex: 0 0 15px; color: var(--gray); }
     .ic-leaf { width: 13px; height: 13px; vertical-align: -2px; margin-left: 3px; color: #12833f; }
 
-    /* cele trei variante de sistem, în interiorul cardului */
+    /* les trois variantes de système, à l'intérieur de la carte */
     .var-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin: 0 0 14px; }
     .var { padding: 8px 6px; border: 1px solid var(--border); border-radius: 9px; text-align: center; }
     .var-name { display: block; font-weight: 700; font-size: 11px; letter-spacing: .01em; }
@@ -49,7 +49,7 @@
     .case-cta { margin-top: auto; }
 
 
-    /* panoul care se deschide sub grilă */
+    /* le panneau qui s'ouvre sous la grille */
     .case-card { cursor: pointer; }
     .case-card.is-open { display: none; }
     .detail { display: none; grid-column: 1 / -1; overflow: hidden; max-height: 0; opacity: 0; transition: max-height .45s ease, opacity .3s ease, margin .35s; margin: 0; }
@@ -61,7 +61,7 @@
     .detail-close:hover { border-color: var(--ink); color: var(--ink); }
     .detail-wrap { position: relative; }
 
-    /* galeria */
+    /* la galerie */
     .gal-main { aspect-ratio: 16/10; border-radius: 14px; overflow: hidden; background: var(--cream-dark); margin-bottom: 10px; }
     .gal-main img[src$="plan.png"] { object-fit: contain; background: #fff; cursor: zoom-in; }
     .gal-thumbs img[src$="plan.png"] { object-fit: contain; background: #fff; }
@@ -71,7 +71,7 @@
     .gal-thumbs img:hover { opacity: 1; }
     .gal-thumbs img.on { border-color: var(--primary); opacity: 1; }
 
-    /* coloana de text */
+    /* la colonne de texte */
     .detail h3 { font-size: 26px; margin: 0 0 6px; letter-spacing: -.01em; }
     .detail .d-spec { font-size: 14px; color: var(--gray); margin-bottom: 18px; }
     .d-points { list-style: none; margin: 4px 0 20px; padding: 0; }
@@ -84,7 +84,7 @@
     .d-fact span { font-size: 12px; color: var(--gray); }
     .case-note { max-width: 720px; margin: 40px auto 0; text-align: center; font-size: 13px; line-height: 1.55; color: var(--gray); }
 
-    /* ── alegerea sistemului ── */
+    /* ── le choix du système ── */
     .sysmodal { position: fixed; inset: 0; z-index: 200; display: flex; align-items: center; justify-content: center; padding: 24px; }
     .sysmodal[hidden] { display: none; }
     .sysmodal-back { position: absolute; inset: 0; background: rgba(12,12,12,.55); backdrop-filter: blur(3px); opacity: 0; transition: opacity .25s; }
@@ -119,8 +119,8 @@
     .sysmodal-note { font-size: 11.5px; line-height: 1.5; color: var(--gray); margin: 20px 0 0; }
   </style>
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Modele de case Polistibrick · o casă, 3 sisteme constructive">
-  <meta property="og:description" content="Alegi casa întâi, nu bugetul. Același plan se construiește în trei sisteme, iar prețul se schimbă după structură.">
+  <meta property="og:title" content="Modèles de maisons Polistibrick · une maison, 3 systèmes constructifs">
+  <meta property="og:description" content="Vous choisissez d'abord la maison, pas le budget. Le même plan se construit en trois systèmes, et le prix change selon la structure.">
   <meta name="twitter:card" content="summary_large_image">
 </head>
 <body data-base="../">
@@ -130,8 +130,8 @@
 <section class="case-hero">
   <div class="container">
     <span class="badge">Proiecte</span>
-    <h1>Aceeași casă, în trei bugete.</h1>
-    <p class="lead">Până azi bugetul alegea casa. Se voia una, se lua alta.<br>Am făcut fiecare model în trei variante de construcție, ca nimeni să nu mai renunțe la casa pe care o vrea.</p>
+    <h1>La même maison, en trois budgets.</h1>
+    <p class="lead">Jusqu'ici, le budget choisissait la maison. On en voulait une, on en prenait une autre.<br>Nous avons décliné chaque modèle en trois variantes de construction, pour que personne ne renonce à la maison qu'il veut.</p>
   </div>
 </section>
 
@@ -140,18 +140,18 @@
 
     <div class="case-grid">
 
-      <!-- MODEL 1 -->
+      <!-- MODÈLE 1 -->
       <article class="case-card" data-model="1">
         <div class="case-photo">
-          <img src="../images/case/pbk7-fatada-strada.jpg" alt="Riva — casă pe parter, cu garaj, văzută dinspre stradă" loading="lazy">
+          <img src="../images/case/pbk7-fatada-strada.jpg" alt="Riva — maison de plain-pied avec garage, vue depuis la rue" loading="lazy">
         </div>
         <div class="case-body">
           <h2>Riva</h2>
-          <p class="case-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>107</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>3</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>1</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>parter</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16v3H2z"/><path d="M4 13l2-5h8l2 5"/><circle cx="6" cy="16" r="1.2"/><circle cx="14" cy="16" r="1.2"/></svg>garaj</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16"/><path d="M4 13V7M10 13V7M16 13V7"/><path d="M3 7h14"/><path d="M4 13v4M16 13v4"/></svg>terasă</i></p>
+          <p class="case-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>107</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>3</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>1</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>plain-pied</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16v3H2z"/><path d="M4 13l2-5h8l2 5"/><circle cx="6" cy="16" r="1.2"/><circle cx="14" cy="16" r="1.2"/></svg>garage</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16"/><path d="M4 13V7M10 13V7M16 13V7"/><path d="M3 7h14"/><path d="M4 13v4M16 13v4"/></svg>terrasse</i></p>
           <div class="var-list">
-            <div class="var" title="Structură beton, izolație, finisat"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
-            <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
-            <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">Polistisip<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
+            <div class="var" title="Structure beton, izolație, finitions"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
+            <div class="var" title="Structure beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
+            <div class="var var--wood" title="Structure bois, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
           </div>
         </div>
       </article>
@@ -160,57 +160,57 @@
         <div class="detail-wrap">
         <div class="detail-inner">
           <div>
-            <div class="gal-main"><img src="../images/case/pbk7-fatada-strada.jpg" alt="Riva — fațada dinspre stradă"></div>
+            <div class="gal-main"><img src="../images/case/pbk7-fatada-strada.jpg" alt="Riva — façade côté rue"></div>
             <div class="gal-thumbs">
-            <img src="../images/case/pbk7-fatada-strada.jpg" alt="Fațada dinspre stradă" loading="lazy" data-full="../images/case/pbk7-fatada-strada.jpg" class="on">
-            <img src="../images/case/pbk7-fatada-gradina.jpg" alt="Fațada dinspre grădină" loading="lazy" data-full="../images/case/pbk7-fatada-gradina.jpg" class="">
-            <img src="../images/case/pbk7-living.jpg" alt="Living · bucătărie · dining" loading="lazy" data-full="../images/case/pbk7-living.jpg" class="">
-            <img src="../images/case/pbk7-bucatarie.jpg" alt="Bucătăria" loading="lazy" data-full="../images/case/pbk7-bucatarie.jpg" class="">
-            <img src="../images/case/pbk7-dormitor.jpg" alt="Dormitorul principal" loading="lazy" data-full="../images/case/pbk7-dormitor.jpg" class="">
-            <img src="../images/case/pbk7-baie.jpg" alt="Baia" loading="lazy" data-full="../images/case/pbk7-baie.jpg" class="">
-            <img src="../images/case/pbk7-plan.png" alt="Planul parterului" loading="lazy" data-full="../images/case/pbk7-plan.png" class="">
+            <img src="../images/case/pbk7-fatada-strada.jpg" alt="Façade côté rue" loading="lazy" data-full="../images/case/pbk7-fatada-strada.jpg" class="on">
+            <img src="../images/case/pbk7-fatada-gradina.jpg" alt="Façade côté jardin" loading="lazy" data-full="../images/case/pbk7-fatada-gradina.jpg" class="">
+            <img src="../images/case/pbk7-living.jpg" alt="Séjour · cuisine · salle à manger" loading="lazy" data-full="../images/case/pbk7-living.jpg" class="">
+            <img src="../images/case/pbk7-bucatarie.jpg" alt="La cuisine" loading="lazy" data-full="../images/case/pbk7-bucatarie.jpg" class="">
+            <img src="../images/case/pbk7-dormitor.jpg" alt="La chambre principale" loading="lazy" data-full="../images/case/pbk7-dormitor.jpg" class="">
+            <img src="../images/case/pbk7-baie.jpg" alt="La salle de bains" loading="lazy" data-full="../images/case/pbk7-baie.jpg" class="">
+            <img src="../images/case/pbk7-plan.png" alt="Le plan du rez-de-chaussée" loading="lazy" data-full="../images/case/pbk7-plan.png" class="">
             </div>
           </div>
           <div>
             <h3>Riva</h3>
-            <p class="d-spec">Casă pe parter cu 3 dormitoare și garaj · 107 m² utili</p>
+            <p class="d-spec">Maison de plain-pied avec 3 chambres et garage · 107 m² utiles</p>
             <div class="d-facts">
-            <div class="d-fact"><b>107 m²</b><span>suprafață utilă</span></div>
-            <div class="d-fact"><b>158 m²</b><span>suprafață construită</span></div>
-            <div class="d-fact"><b>3</b><span>dormitoare</span></div>
-            <div class="d-fact"><b>48 m²</b><span>living + bucătărie</span></div>
-            <div class="d-fact"><b>25 m²</b><span>garaj</span></div>
-            <div class="d-fact"><b>28 m²</b><span>terasă acoperită</span></div>
+            <div class="d-fact"><b>107 m²</b><span>surface utile</span></div>
+            <div class="d-fact"><b>158 m²</b><span>surface construite</span></div>
+            <div class="d-fact"><b>3</b><span>chambres</span></div>
+            <div class="d-fact"><b>48 m²</b><span>séjour + cuisine</span></div>
+            <div class="d-fact"><b>25 m²</b><span>garage</span></div>
+            <div class="d-fact"><b>28 m²</b><span>terrasse couverte</span></div>
             </div>
-          <p>Riva e o casă lungă, pe un singur nivel, gândită pentru un lot obișnuit. Fără scări, fără etaj de întreținut — tot ce folosești zi de zi e la același nivel, inclusiv la 70 de ani.</p>
-          <p>Zona de zi stă la mijloc: living, bucătărie și dining într-un singur spațiu de 48 m², deschis spre terasa acoperită printr-o glisantă largă. Bucătăria are insulă și fereastră spre grădină.</p>
-          <p>Dormitoarele sunt grupate la celălalt capăt, despărțite de zona de zi printr-un hol. Cel principal, de 14 m², are ieșire directă pe terasă. Baia și WC-ul separat servesc toate trei camerele fără să treci prin living.</p>
+          <p>Riva est une maison longue, sur un seul niveau, pensée pour un terrain ordinaire. Pas d'escalier, pas d'étage à entretenir — tout ce que vous utilisez au quotidien est au même niveau, y compris à 70 ans.</p>
+          <p>L'espace de vie est au centre : séjour, cuisine et salle à manger dans un seul volume de 48 m², ouvert sur la terrasse couverte par une large baie coulissante. La cuisine a un îlot et une fenêtre sur le jardin.</p>
+          <p>Les chambres sont regroupées à l'autre bout, séparées de l'espace de vie par un couloir. La principale, de 14 m², a une sortie directe sur la terrasse. La salle de bains et le WC séparé desservent les trois chambres sans passer par le séjour.</p>
             <ul class="d-points">
-              <li>Garajul la capătul opus dormitoarelor — zgomotul mașinii nu ajunge unde dormi</li>
-              <li>Intrare separată, cu vestibul propriu — nu se intră direct în living</li>
-              <li>Perete de foc din beton de 15 cm între garaj și casă</li>
-              <li>Perete exterior de 38 cm, U = 0,14 W/m²K — se încălzește cu o centrală mică</li>
-              <li>Toate camerele au fereastră spre exterior, niciuna nu e oarbă</li>
+              <li>Le garage à l'opposé des chambres — le bruit de la voiture n'arrive pas là où vous dormez</li>
+              <li>Entrée séparée, avec son propre vestibule — on n'entre pas directement dans le séjour</li>
+              <li>Mur coupe-feu en beton de 15 cm entre le garage et la maison</li>
+              <li>Mur extérieur de 38 cm, U = 0,14 W/m²K — se chauffe avec une petite centrală termică</li>
+              <li>Toutes les pièces ont une fenêtre sur l'extérieur, aucune n'est aveugle</li>
             </ul>
-            <button type="button" class="btn btn-primary btn-arrow js-next" data-model="Riva">Doresc să merg mai departe</button>
+            <button type="button" class="btn btn-primary btn-arrow js-next" data-model="Riva">Je souhaite aller plus loin</button>
           </div>
         </div>
-        <button class="detail-close" aria-label="Închide">×</button>
+        <button class="detail-close" aria-label="Fermer">×</button>
         </div>
       </div>
 
-      <!-- MODEL 2 -->
+      <!-- MODÈLE 2 -->
       <article class="case-card" data-model="2">
         <div class="case-photo">
-          <img src="../images/case/pbk9-fatada-terasa.jpg" alt="Luna — casă în L pe parter, cu terasă adăpostită" loading="lazy">
+          <img src="../images/case/pbk9-fatada-terasa.jpg" alt="Luna — maison en L de plain-pied, avec terrasse abritée" loading="lazy">
         </div>
         <div class="case-body">
           <h2>Luna</h2>
-          <p class="case-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>126</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>3</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>1</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>parter</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16v3H2z"/><path d="M4 13l2-5h8l2 5"/><circle cx="6" cy="16" r="1.2"/><circle cx="14" cy="16" r="1.2"/></svg>garaj</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16"/><path d="M4 13V7M10 13V7M16 13V7"/><path d="M3 7h14"/><path d="M4 13v4M16 13v4"/></svg>terasă</i></p>
+          <p class="case-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>126</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>3</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>1</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>plain-pied</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16v3H2z"/><path d="M4 13l2-5h8l2 5"/><circle cx="6" cy="16" r="1.2"/><circle cx="14" cy="16" r="1.2"/></svg>garage</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16"/><path d="M4 13V7M10 13V7M16 13V7"/><path d="M3 7h14"/><path d="M4 13v4M16 13v4"/></svg>terrasse</i></p>
           <div class="var-list">
-            <div class="var" title="Structură beton, izolație, finisat"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
-            <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
-            <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">Polistisip<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
+            <div class="var" title="Structure beton, izolație, finitions"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
+            <div class="var" title="Structure beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
+            <div class="var var--wood" title="Structure bois, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
           </div>
         </div>
       </article>
@@ -219,57 +219,57 @@
         <div class="detail-wrap">
         <div class="detail-inner">
           <div>
-            <div class="gal-main"><img src="../images/case/pbk9-fatada-terasa.jpg" alt="Luna — casă în L pe parter, cu terasă adăpostită"></div>
+            <div class="gal-main"><img src="../images/case/pbk9-fatada-terasa.jpg" alt="Luna — maison en L de plain-pied, avec terrasse abritée"></div>
             <div class="gal-thumbs">
-            <img src="../images/case/pbk9-fatada-strada.jpg" alt="Fațada dinspre stradă" loading="lazy" data-full="../images/case/pbk9-fatada-strada.jpg" class="">
-            <img src="../images/case/pbk9-fatada-terasa.jpg" alt="Fațada dinspre grădină" loading="lazy" data-full="../images/case/pbk9-fatada-terasa.jpg" class="on">
-            <img src="../images/case/pbk9-living.jpg" alt="Living · bucătărie · dining" loading="lazy" data-full="../images/case/pbk9-living.jpg" class="">
-            <img src="../images/case/pbk9-bucatarie.jpg" alt="Bucătăria" loading="lazy" data-full="../images/case/pbk9-bucatarie.jpg" class="">
-            <img src="../images/case/pbk9-dormitor.jpg" alt="Dormitorul principal" loading="lazy" data-full="../images/case/pbk9-dormitor.jpg" class="">
-            <img src="../images/case/pbk9-baie.jpg" alt="Baia" loading="lazy" data-full="../images/case/pbk9-baie.jpg" class="">
-            <img src="../images/case/pbk9-plan.png" alt="Planul parterului" loading="lazy" data-full="../images/case/pbk9-plan.png" class="">
+            <img src="../images/case/pbk9-fatada-strada.jpg" alt="Façade côté rue" loading="lazy" data-full="../images/case/pbk9-fatada-strada.jpg" class="">
+            <img src="../images/case/pbk9-fatada-terasa.jpg" alt="Façade côté jardin" loading="lazy" data-full="../images/case/pbk9-fatada-terasa.jpg" class="on">
+            <img src="../images/case/pbk9-living.jpg" alt="Séjour · cuisine · salle à manger" loading="lazy" data-full="../images/case/pbk9-living.jpg" class="">
+            <img src="../images/case/pbk9-bucatarie.jpg" alt="La cuisine" loading="lazy" data-full="../images/case/pbk9-bucatarie.jpg" class="">
+            <img src="../images/case/pbk9-dormitor.jpg" alt="La chambre principale" loading="lazy" data-full="../images/case/pbk9-dormitor.jpg" class="">
+            <img src="../images/case/pbk9-baie.jpg" alt="La salle de bains" loading="lazy" data-full="../images/case/pbk9-baie.jpg" class="">
+            <img src="../images/case/pbk9-plan.png" alt="Le plan du rez-de-chaussée" loading="lazy" data-full="../images/case/pbk9-plan.png" class="">
             </div>
           </div>
           <div>
             <h3>Luna</h3>
-            <p class="d-spec">Casă în L pe parter, cu 3 dormitoare și garaj · 126 m² utili</p>
+            <p class="d-spec">Maison en L de plain-pied, avec 3 chambres et garage · 126 m² utiles</p>
             <div class="d-facts">
-            <div class="d-fact"><b>126 m²</b><span>suprafață utilă</span></div>
-            <div class="d-fact"><b>178 m²</b><span>suprafață construită</span></div>
-            <div class="d-fact"><b>3</b><span>dormitoare</span></div>
-            <div class="d-fact"><b>52 m²</b><span>living + bucătărie</span></div>
-            <div class="d-fact"><b>28 m²</b><span>garaj</span></div>
-            <div class="d-fact"><b>30 m²</b><span>terasă acoperită</span></div>
+            <div class="d-fact"><b>126 m²</b><span>surface utile</span></div>
+            <div class="d-fact"><b>178 m²</b><span>surface construite</span></div>
+            <div class="d-fact"><b>3</b><span>chambres</span></div>
+            <div class="d-fact"><b>52 m²</b><span>séjour + cuisine</span></div>
+            <div class="d-fact"><b>28 m²</b><span>garage</span></div>
+            <div class="d-fact"><b>30 m²</b><span>terrasse couverte</span></div>
             </div>
-          <p>Luna e construită în L. Cele două aripi se întâlnesc în unghi drept și închid între ele terasa — adăpostită de vânt din două părți, nu expusă cum e la o casă dreaptă.</p>
-          <p>Zona de zi ocupă o aripă întreagă: 52 m² de living, bucătărie și dining, cu ferestre pe trei laturi. Are cămară separată, ceea ce ține bucătăria curată.</p>
-          <p>Cele trei dormitoare stau pe aripa lungă, egale — 12,6 m² fiecare. Nimeni nu primește camera mică. Garajul e la capătul opus, cât mai departe de zona în care se doarme.</p>
+          <p>Luna est construite en L. Les deux ailes se rejoignent à angle droit et enferment la terrasse entre elles — abritée du vent sur deux côtés, pas exposée comme sur une maison droite.</p>
+          <p>L'espace de vie occupe une aile entière : 52 m² de séjour, cuisine et salle à manger, avec des fenêtres sur trois côtés. Il a un cellier séparé, ce qui garde la cuisine en ordre.</p>
+          <p>Les trois chambres occupent l'aile longue, égales — 12,6 m² chacune. Personne ne reçoit la petite chambre. Le garage est à l'autre bout, aussi loin que possible de la zone où l'on dort.</p>
             <ul class="d-points">
-              <li>Terasa stă în scobitura L-ului — se poate sta afară și pe vânt</li>
-              <li>Trei dormitoare egale de 12,6 m² — fără camera mică pe care n-o vrea nimeni</li>
-              <li>Cămară separată de 6,7 m², lângă intrare</li>
-              <li>Perete de foc din beton de 15 cm între garaj și casă</li>
-              <li>Perete exterior de 38 cm, U = 0,14 W/m²K</li>
+              <li>La terrasse est nichée dans le creux du L — on peut rester dehors même par vent</li>
+              <li>Trois chambres égales de 12,6 m² — sans la petite chambre dont personne ne veut</li>
+              <li>Cellier séparé de 6,7 m², près de l'entrée</li>
+              <li>Mur coupe-feu en beton de 15 cm entre le garage et la maison</li>
+              <li>Mur extérieur de 38 cm, U = 0,14 W/m²K</li>
             </ul>
-            <button type="button" class="btn btn-primary btn-arrow js-next" data-model="Luna">Doresc să merg mai departe</button>
+            <button type="button" class="btn btn-primary btn-arrow js-next" data-model="Luna">Je souhaite aller plus loin</button>
           </div>
         </div>
-        <button class="detail-close" aria-label="Închide">×</button>
+        <button class="detail-close" aria-label="Fermer">×</button>
         </div>
       </div>
 
-      <!-- MODEL 3 — exemplu cu o variantă indisponibilă -->
+      <!-- MODÈLE 3 — exemple avec une variante indisponible -->
       <article class="case-card" data-model="3">
         <div class="case-photo">
-          <img src="../images/case/pbk10-fatada-terasa.jpg" alt="Pura — casă cubică pe parter, cu acoperiș terasă" loading="lazy">
+          <img src="../images/case/pbk10-fatada-terasa.jpg" alt="Pura — maison cubique de plain-pied, avec acoperiș-terrasse" loading="lazy">
         </div>
         <div class="case-body">
           <h2>Pura</h2>
-          <p class="case-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>131</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>3</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>1</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>parter</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16"/><path d="M4 13V7M10 13V7M16 13V7"/><path d="M3 7h14"/><path d="M4 13v4M16 13v4"/></svg>terasă</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h8v14H6z"/><path d="M3 3v14M17 3v14"/></svg>lot mic</i></p>
+          <p class="case-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>131</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>3</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>1</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>plain-pied</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16"/><path d="M4 13V7M10 13V7M16 13V7"/><path d="M3 7h14"/><path d="M4 13v4M16 13v4"/></svg>terrasse</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h8v14H6z"/><path d="M3 3v14M17 3v14"/></svg>petit terrain</i></p>
           <div class="var-list">
-            <div class="var" title="Structură beton, izolație, finisat"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
-            <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
-            <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">Polistisip<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
+            <div class="var" title="Structure beton, izolație, finitions"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
+            <div class="var" title="Structure beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
+            <div class="var var--wood" title="Structure bois, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
           </div>
         </div>
       </article>
@@ -278,57 +278,57 @@
         <div class="detail-wrap">
         <div class="detail-inner">
           <div>
-            <div class="gal-main"><img src="../images/case/pbk10-fatada-terasa.jpg" alt="Pura — casă cubică pe parter, cu acoperiș terasă"></div>
+            <div class="gal-main"><img src="../images/case/pbk10-fatada-terasa.jpg" alt="Pura — maison cubique de plain-pied, avec acoperiș-terrasse"></div>
             <div class="gal-thumbs">
-            <img src="../images/case/pbk10-fatada-strada.jpg" alt="Fațada dinspre stradă" loading="lazy" data-full="../images/case/pbk10-fatada-strada.jpg" class="">
-            <img src="../images/case/pbk10-fatada-terasa.jpg" alt="Fațada dinspre grădină" loading="lazy" data-full="../images/case/pbk10-fatada-terasa.jpg" class="on">
-            <img src="../images/case/pbk10-living.jpg" alt="Living · bucătărie · dining" loading="lazy" data-full="../images/case/pbk10-living.jpg" class="">
-            <img src="../images/case/pbk10-bucatarie.jpg" alt="Bucătăria" loading="lazy" data-full="../images/case/pbk10-bucatarie.jpg" class="">
-            <img src="../images/case/pbk10-dormitor.jpg" alt="Dormitorul principal" loading="lazy" data-full="../images/case/pbk10-dormitor.jpg" class="">
-            <img src="../images/case/pbk10-baie.jpg" alt="Baia" loading="lazy" data-full="../images/case/pbk10-baie.jpg" class="">
-            <img src="../images/case/pbk10-plan.png" alt="Planul parterului" loading="lazy" data-full="../images/case/pbk10-plan.png" class="">
+            <img src="../images/case/pbk10-fatada-strada.jpg" alt="Façade côté rue" loading="lazy" data-full="../images/case/pbk10-fatada-strada.jpg" class="">
+            <img src="../images/case/pbk10-fatada-terasa.jpg" alt="Façade côté jardin" loading="lazy" data-full="../images/case/pbk10-fatada-terasa.jpg" class="on">
+            <img src="../images/case/pbk10-living.jpg" alt="Séjour · cuisine · salle à manger" loading="lazy" data-full="../images/case/pbk10-living.jpg" class="">
+            <img src="../images/case/pbk10-bucatarie.jpg" alt="La cuisine" loading="lazy" data-full="../images/case/pbk10-bucatarie.jpg" class="">
+            <img src="../images/case/pbk10-dormitor.jpg" alt="La chambre principale" loading="lazy" data-full="../images/case/pbk10-dormitor.jpg" class="">
+            <img src="../images/case/pbk10-baie.jpg" alt="La salle de bains" loading="lazy" data-full="../images/case/pbk10-baie.jpg" class="">
+            <img src="../images/case/pbk10-plan.png" alt="Le plan du rez-de-chaussée" loading="lazy" data-full="../images/case/pbk10-plan.png" class="">
             </div>
           </div>
           <div>
             <h3>Pura</h3>
-            <p class="d-spec">Casă compactă pe parter, acoperiș terasă, 3 dormitoare · 131 m² utili</p>
+            <p class="d-spec">Maison compacte de plain-pied, acoperiș-terrasse, 3 chambres · 131 m² utiles</p>
             <div class="d-facts">
-            <div class="d-fact"><b>131 m²</b><span>suprafață utilă</span></div>
-            <div class="d-fact"><b>156 m²</b><span>suprafață construită</span></div>
-            <div class="d-fact"><b>3</b><span>dormitoare</span></div>
-            <div class="d-fact"><b>50 m²</b><span>living + bucătărie</span></div>
-            <div class="d-fact"><b>16 m²</b><span>dormitor principal</span></div>
-            <div class="d-fact"><b>13 m²</b><span>baie</span></div>
+            <div class="d-fact"><b>131 m²</b><span>surface utile</span></div>
+            <div class="d-fact"><b>156 m²</b><span>surface construite</span></div>
+            <div class="d-fact"><b>3</b><span>chambres</span></div>
+            <div class="d-fact"><b>50 m²</b><span>séjour + cuisine</span></div>
+            <div class="d-fact"><b>16 m²</b><span>chambre principale</span></div>
+            <div class="d-fact"><b>13 m²</b><span>salle de bains</span></div>
             </div>
-          <p>Pura e cea mai strânsă casă din catalog: 156 m² de amprentă pentru trei dormitoare. Volum aproape pătrat, cu acoperiș terasă — fără șarpantă, fără pod.</p>
-          <p>Zona de zi e o singură cameră de 50 m², orientată spre terasa de beton. Bucătăria are fereastră proprie deasupra blatului, ceea ce contează când gătești cu spatele la living.</p>
-          <p>Dormitorul principal are 16,1 m², cel mai mare din catalog. Baia e una singură, dar de 12,6 m² — cu cadă și duș separat — plus un WC lângă intrare, ca oaspeții să nu treacă prin zona de noapte.</p>
+          <p>Pura est la maison la plus ramassée du catalogue : 156 m² d'emprise pour trois chambres. Volume presque carré, avec acoperiș-terrasse — sans charpente, sans combles.</p>
+          <p>L'espace de vie est une seule pièce de 50 m², orientée vers la terrasse en beton. La cuisine a sa propre fenêtre au-dessus du plan de travail, ce qui compte quand on cuisine dos au séjour.</p>
+          <p>La chambre principale fait 16,1 m², la plus grande du catalogue. Il n'y a qu'une seule salle de bains, mais de 12,6 m² — avec baignoire et douche séparée — plus un WC près de l'entrée, pour que les invités ne traversent pas la zone de nuit.</p>
             <ul class="d-points">
-              <li>Cea mai mică amprentă la sol din catalog pentru trei dormitoare — pentru lot strâmt</li>
-              <li>Fără garaj, deci și cel mai mic preț de structură</li>
-              <li>Dormitor principal de 16,1 m², cel mai mare din catalog</li>
-              <li>Baie de 12,6 m² cu cadă și duș separat, plus WC lângă intrare</li>
-              <li>Acoperiș terasă — fără șarpantă de întreținut</li>
+              <li>La plus petite emprise au sol du catalogue pour trois chambres — pour terrain étroit</li>
+              <li>Sans garage, donc aussi le plus petit prix de structure</li>
+              <li>Chambre principale de 16,1 m², la plus grande du catalogue</li>
+              <li>Salle de bains de 12,6 m² avec baignoire et douche séparée, plus WC près de l'entrée</li>
+              <li>Acoperiș-terrasse — pas de charpente à entretenir</li>
             </ul>
-            <button type="button" class="btn btn-primary btn-arrow js-next" data-model="Pura">Doresc să merg mai departe</button>
+            <button type="button" class="btn btn-primary btn-arrow js-next" data-model="Pura">Je souhaite aller plus loin</button>
           </div>
         </div>
-        <button class="detail-close" aria-label="Închide">×</button>
+        <button class="detail-close" aria-label="Fermer">×</button>
         </div>
       </div>
 
-      <!-- MODEL 4 -->
+      <!-- MODÈLE 4 -->
       <article class="case-card" data-model="4">
         <div class="case-photo">
-          <img src="../images/case/home3-fatada-terasa.jpg" alt="Aura — casă premium pe parter, cu suită matrimonială" loading="lazy">
+          <img src="../images/case/home3-fatada-terasa.jpg" alt="Aura — casă premium de plain-pied, avec suite parentale" loading="lazy">
         </div>
         <div class="case-body">
           <h2>Aura</h2>
-          <p class="case-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>161</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>3</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>2</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>parter</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16v3H2z"/><path d="M4 13l2-5h8l2 5"/><circle cx="6" cy="16" r="1.2"/><circle cx="14" cy="16" r="1.2"/></svg>garaj dublu</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16"/><path d="M4 13V7M10 13V7M16 13V7"/><path d="M3 7h14"/><path d="M4 13v4M16 13v4"/></svg>terasă</i></p>
+          <p class="case-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>161</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>3</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>2</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>plain-pied</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16v3H2z"/><path d="M4 13l2-5h8l2 5"/><circle cx="6" cy="16" r="1.2"/><circle cx="14" cy="16" r="1.2"/></svg>garage double</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16"/><path d="M4 13V7M10 13V7M16 13V7"/><path d="M3 7h14"/><path d="M4 13v4M16 13v4"/></svg>terrasse</i></p>
           <div class="var-list">
-            <div class="var" title="Structură beton, izolație, finisat"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
-            <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
-            <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">Polistisip<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
+            <div class="var" title="Structure beton, izolație, finitions"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
+            <div class="var" title="Structure beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
+            <div class="var var--wood" title="Structure bois, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
           </div>
         </div>
       </article>
@@ -337,57 +337,57 @@
         <div class="detail-wrap">
         <div class="detail-inner">
           <div>
-            <div class="gal-main"><img src="../images/case/home3-fatada-terasa.jpg" alt="Aura — fațada dinspre grădină"></div>
+            <div class="gal-main"><img src="../images/case/home3-fatada-terasa.jpg" alt="Aura — façade côté jardin"></div>
             <div class="gal-thumbs">
-            <img src="../images/case/home3-fatada-strada.jpg" alt="Fațada dinspre stradă" loading="lazy" data-full="../images/case/home3-fatada-strada.jpg" class="">
-            <img src="../images/case/home3-fatada-terasa.jpg" alt="Fațada dinspre grădină" loading="lazy" data-full="../images/case/home3-fatada-terasa.jpg" class="on">
-            <img src="../images/case/home3-living.jpg" alt="Living · bucătărie · dining" loading="lazy" data-full="../images/case/home3-living.jpg" class="">
-            <img src="../images/case/home3-bucatarie.jpg" alt="Bucătăria" loading="lazy" data-full="../images/case/home3-bucatarie.jpg" class="">
-            <img src="../images/case/home3-dormitor.jpg" alt="Dormitorul matrimonial" loading="lazy" data-full="../images/case/home3-dormitor.jpg" class="">
-            <img src="../images/case/home3-baie.jpg" alt="Baia matrimonială" loading="lazy" data-full="../images/case/home3-baie.jpg" class="">
-            <img src="../images/case/home3-plan.png" alt="Planul parterului" loading="lazy" data-full="../images/case/home3-plan.png" class="">
+            <img src="../images/case/home3-fatada-strada.jpg" alt="Façade côté rue" loading="lazy" data-full="../images/case/home3-fatada-strada.jpg" class="">
+            <img src="../images/case/home3-fatada-terasa.jpg" alt="Façade côté jardin" loading="lazy" data-full="../images/case/home3-fatada-terasa.jpg" class="on">
+            <img src="../images/case/home3-living.jpg" alt="Séjour · cuisine · salle à manger" loading="lazy" data-full="../images/case/home3-living.jpg" class="">
+            <img src="../images/case/home3-bucatarie.jpg" alt="La cuisine" loading="lazy" data-full="../images/case/home3-bucatarie.jpg" class="">
+            <img src="../images/case/home3-dormitor.jpg" alt="La chambre parentale" loading="lazy" data-full="../images/case/home3-dormitor.jpg" class="">
+            <img src="../images/case/home3-baie.jpg" alt="La salle de bains parentale" loading="lazy" data-full="../images/case/home3-baie.jpg" class="">
+            <img src="../images/case/home3-plan.png" alt="Le plan du rez-de-chaussée" loading="lazy" data-full="../images/case/home3-plan.png" class="">
             </div>
           </div>
           <div>
             <h3>Aura</h3>
-            <p class="d-spec">Casă premium pe parter, cu suită matrimonială și garaj dublu · 161 m² utili</p>
+            <p class="d-spec">Casa premium de plain-pied, avec suite parentale et garage double · 161 m² utiles</p>
             <div class="d-facts">
-            <div class="d-fact"><b>161 m²</b><span>suprafață utilă</span></div>
-            <div class="d-fact"><b>231 m²</b><span>suprafață construită</span></div>
-            <div class="d-fact"><b>3</b><span>dormitoare</span></div>
-            <div class="d-fact"><b>52 m²</b><span>living + bucătărie</span></div>
-            <div class="d-fact"><b>37 m²</b><span>garaj dublu</span></div>
-            <div class="d-fact"><b>10 m²</b><span>birou</span></div>
+            <div class="d-fact"><b>161 m²</b><span>surface utile</span></div>
+            <div class="d-fact"><b>231 m²</b><span>surface construite</span></div>
+            <div class="d-fact"><b>3</b><span>chambres</span></div>
+            <div class="d-fact"><b>52 m²</b><span>séjour + cuisine</span></div>
+            <div class="d-fact"><b>37 m²</b><span>garage double</span></div>
+            <div class="d-fact"><b>10 m²</b><span>bureau</span></div>
             </div>
-          <p>Aura e cel mai bine echipat model din catalog. Tot pe un nivel, dar cu spațiile separate ca într-o casă mult mai mare: zi, noapte, lucru și mașini nu se amestecă.</p>
-          <p>Dormitorul matrimonial de 17,5 m² are dressing propriu și baie proprie, grupate într-o suită la capătul casei. Celelalte două dormitoare au baia lor, de partea cealaltă a coridorului — dimineața nu se stă la rând.</p>
-          <p>Biroul de 10,4 m² e lângă zona de zi, nu între dormitoare. Se poate lucra sau primi un client fără să treci prin camerele nimănui. Garajul dublu intră în casă printr-o cămară tehnică, nu direct în living.</p>
+          <p>Aura est le modèle le mieux équipé du catalogue. Toujours sur un niveau, mais avec les espaces séparés comme dans une maison bien plus grande : jour, nuit, travail et voitures ne se mélangent pas.</p>
+          <p>La chambre parentale de 17,5 m² a son propre dressing et sa propre salle de bains, regroupés en suite au bout de la maison. Les deux autres chambres ont leur salle de bains, de l'autre côté du couloir — pas de file d'attente le matin.</p>
+          <p>Le bureau de 10,4 m² est près de l'espace de vie, pas entre les chambres. On peut travailler ou recevoir un client sans traverser la chambre de personne. Le garage double communique avec la maison par un cellier technique, pas directement par le séjour.</p>
             <ul class="d-points">
-              <li>Suită matrimonială: dormitor 17,5 m² + dressing + baie proprie</li>
-              <li>A doua baie, separată, pentru celelalte două dormitoare</li>
-              <li>Birou de 10,4 m² lângă zona de zi — nu se lucrează din dormitor</li>
-              <li>Garaj dublu de 36,5 m², cu perete de foc din beton spre casă</li>
-              <li>Perete exterior de 38 cm, U = 0,14 W/m²K</li>
+              <li>Suite parentale : chambre de 17,5 m² + dressing + salle de bains privative</li>
+              <li>Une deuxième salle de bains, séparée, pour les deux autres chambres</li>
+              <li>Bureau de 10,4 m² près de l'espace de vie — on ne travaille pas depuis la chambre</li>
+              <li>Garage double de 36,5 m², avec mur coupe-feu en beton côté maison</li>
+              <li>Mur extérieur de 38 cm, U = 0,14 W/m²K</li>
             </ul>
-            <button type="button" class="btn btn-primary btn-arrow js-next" data-model="Aura">Doresc să merg mai departe</button>
+            <button type="button" class="btn btn-primary btn-arrow js-next" data-model="Aura">Je souhaite aller plus loin</button>
           </div>
         </div>
-        <button class="detail-close" aria-label="Închide">×</button>
+        <button class="detail-close" aria-label="Fermer">×</button>
         </div>
       </div>
 
-      <!-- MODEL 5 -->
+      <!-- MODÈLE 5 -->
       <article class="case-card" data-model="5">
         <div class="case-photo">
-          <img src="../images/case/e5-fatada-terasa.jpg" alt="Vega — casă compactă cu etaj, pentru lot mic" loading="lazy">
+          <img src="../images/case/e5-fatada-terasa.jpg" alt="Vega — maison compacte à étage, pour petit terrain" loading="lazy">
         </div>
         <div class="case-body">
           <h2>Vega</h2>
-          <p class="case-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>131</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>3</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>1</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>P+E</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16"/><path d="M4 13V7M10 13V7M16 13V7"/><path d="M3 7h14"/><path d="M4 13v4M16 13v4"/></svg>terasă</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h8v14H6z"/><path d="M3 3v14M17 3v14"/></svg>81 m² la sol</i></p>
+          <p class="case-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>131</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>3</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>1</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>R+1</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16"/><path d="M4 13V7M10 13V7M16 13V7"/><path d="M3 7h14"/><path d="M4 13v4M16 13v4"/></svg>terrasse</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h8v14H6z"/><path d="M3 3v14M17 3v14"/></svg>81 m² au sol</i></p>
           <div class="var-list">
-            <div class="var" title="Structură beton, izolație, finisat"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
-            <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
-            <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">Polistisip<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
+            <div class="var" title="Structure beton, izolație, finitions"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
+            <div class="var" title="Structure beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
+            <div class="var var--wood" title="Structure bois, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
           </div>
         </div>
       </article>
@@ -396,57 +396,57 @@
         <div class="detail-wrap">
         <div class="detail-inner">
           <div>
-            <div class="gal-main"><img src="../images/case/e5-fatada-terasa.jpg" alt="Vega — fațada dinspre grădină"></div>
+            <div class="gal-main"><img src="../images/case/e5-fatada-terasa.jpg" alt="Vega — façade côté jardin"></div>
             <div class="gal-thumbs">
-            <img src="../images/case/e5-fatada-strada.jpg" alt="Fațada dinspre stradă" loading="lazy" data-full="../images/case/e5-fatada-strada.jpg" class="">
-            <img src="../images/case/e5-fatada-terasa.jpg" alt="Fațada dinspre grădină" loading="lazy" data-full="../images/case/e5-fatada-terasa.jpg" class="on">
-            <img src="../images/case/e5-living.jpg" alt="Living · bucătărie · dining" loading="lazy" data-full="../images/case/e5-living.jpg" class="">
-            <img src="../images/case/e5-bucatarie.jpg" alt="Bucătăria" loading="lazy" data-full="../images/case/e5-bucatarie.jpg" class="">
-            <img src="../images/case/e5-dormitor.jpg" alt="Dormitorul principal" loading="lazy" data-full="../images/case/e5-dormitor.jpg" class="">
-            <img src="../images/case/e5-baie.jpg" alt="Baia" loading="lazy" data-full="../images/case/e5-baie.jpg" class="">
-            <img src="../images/case/e5-plan.png" alt="Planul parterului și al etajului" loading="lazy" data-full="../images/case/e5-plan.png" class="">
+            <img src="../images/case/e5-fatada-strada.jpg" alt="Façade côté rue" loading="lazy" data-full="../images/case/e5-fatada-strada.jpg" class="">
+            <img src="../images/case/e5-fatada-terasa.jpg" alt="Façade côté jardin" loading="lazy" data-full="../images/case/e5-fatada-terasa.jpg" class="on">
+            <img src="../images/case/e5-living.jpg" alt="Séjour · cuisine · salle à manger" loading="lazy" data-full="../images/case/e5-living.jpg" class="">
+            <img src="../images/case/e5-bucatarie.jpg" alt="La cuisine" loading="lazy" data-full="../images/case/e5-bucatarie.jpg" class="">
+            <img src="../images/case/e5-dormitor.jpg" alt="La chambre principale" loading="lazy" data-full="../images/case/e5-dormitor.jpg" class="">
+            <img src="../images/case/e5-baie.jpg" alt="La salle de bains" loading="lazy" data-full="../images/case/e5-baie.jpg" class="">
+            <img src="../images/case/e5-plan.png" alt="Le plan du rez-de-chaussée et de l'étage" loading="lazy" data-full="../images/case/e5-plan.png" class="">
             </div>
           </div>
           <div>
             <h3>Vega</h3>
-            <p class="d-spec">Casă compactă cu etaj, 3 dormitoare · 131 m² utili pe doar 81 m² de teren</p>
+            <p class="d-spec">Maison compacte à étage, 3 chambres · 131 m² utiles sur seulement 81 m² de terrain</p>
             <div class="d-facts">
-            <div class="d-fact"><b>131 m²</b><span>suprafață utilă</span></div>
-            <div class="d-fact"><b>81 m²</b><span>amprentă la sol</span></div>
-            <div class="d-fact"><b>3</b><span>dormitoare</span></div>
-            <div class="d-fact"><b>43 m²</b><span>living + bucătărie</span></div>
-            <div class="d-fact"><b>P+E</b><span>două niveluri</span></div>
-            <div class="d-fact"><b>11 m²</b><span>baie</span></div>
+            <div class="d-fact"><b>131 m²</b><span>surface utile</span></div>
+            <div class="d-fact"><b>81 m²</b><span>emprise au sol</span></div>
+            <div class="d-fact"><b>3</b><span>chambres</span></div>
+            <div class="d-fact"><b>43 m²</b><span>séjour + cuisine</span></div>
+            <div class="d-fact"><b>R+1</b><span>deux niveaux</span></div>
+            <div class="d-fact"><b>11 m²</b><span>salle de bains</span></div>
             </div>
-          <p>Vega e răspunsul pentru terenul mic. Ocupă doar 81 m² la sol — jumătate din cât cer celelalte modele — și scoate din ei 131 m² utili, pentru că urcă în loc să se întindă.</p>
-          <p>Parterul e o singură cameră: living, bucătărie și dining, 43 m², cu glisantă spre terasă. Scara urcă lângă intrare, fără să taie spațiul. Jos mai e doar un WC și camera tehnică.</p>
-          <p>Toate cele trei dormitoare stau la etaj, împreună cu baia de 11 m². Separarea între zi și noapte o face planșeul, nu un zid — cel mai bun izolator fonic dintr-o casă.</p>
+          <p>Vega est la réponse au petit terrain. Elle n'occupe que 81 m² au sol — la moitié de ce que demandent les autres modèles — et en tire 131 m² utiles, parce qu'elle monte au lieu de s'étaler.</p>
+          <p>Le rez-de-chaussée est une seule pièce : séjour, cuisine et salle à manger, 43 m², avec une baie coulissante vers la terrasse. L'escalier monte près de l'entrée, sans couper l'espace. En bas, il ne reste qu'un WC et le local technique.</p>
+          <p>Les trois chambres sont à l'étage, avec la salle de bains de 11 m². La séparation entre jour et nuit, c'est le plancher qui la fait, pas une cloison — le meilleur isolant phonique d'une maison.</p>
             <ul class="d-points">
-              <li>Cea mai mică amprentă la sol din catalog — 81 m², pentru lot îngust sau retrageri strânse</li>
-              <li>Dormitoarele la etaj, ferite de zgomotul străzii</li>
-              <li>Parterul e o singură cameră deschisă, fără culoare pierdute</li>
-              <li>Planșeu din panouri PBK cu suprabetonare, deschidere liberă până la 9 m</li>
-              <li>Perete exterior de 38 cm, U = 0,14 W/m²K</li>
+              <li>La plus petite emprise au sol du catalogue — 81 m², pour terrain étroit ou reculs serrés</li>
+              <li>Les chambres à l'étage, à l'abri du bruit de la rue</li>
+              <li>Le rez-de-chaussée est une seule pièce ouverte, sans couloirs perdus</li>
+              <li>Planșeu en panneaux PBK avec dalle de compression, portée libre jusqu'à 9 m</li>
+              <li>Mur extérieur de 38 cm, U = 0,14 W/m²K</li>
             </ul>
-            <button type="button" class="btn btn-primary btn-arrow js-next" data-model="Vega">Doresc să merg mai departe</button>
+            <button type="button" class="btn btn-primary btn-arrow js-next" data-model="Vega">Je souhaite aller plus loin</button>
           </div>
         </div>
-        <button class="detail-close" aria-label="Închide">×</button>
+        <button class="detail-close" aria-label="Fermer">×</button>
         </div>
       </div>
 
-      <!-- MODEL 6 -->
+      <!-- MODÈLE 6 -->
       <article class="case-card" data-model="6">
         <div class="case-photo">
-          <img src="../images/case/e3-fatada-terasa.jpg" alt="Silva — casă cu etaj și garaj" loading="lazy">
+          <img src="../images/case/e3-fatada-terasa.jpg" alt="Silva — maison à étage avec garage" loading="lazy">
         </div>
         <div class="case-body">
           <h2>Silva</h2>
-          <p class="case-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>147</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>3</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>1</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>P+E</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16v3H2z"/><path d="M4 13l2-5h8l2 5"/><circle cx="6" cy="16" r="1.2"/><circle cx="14" cy="16" r="1.2"/></svg>garaj</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16"/><path d="M4 13V7M10 13V7M16 13V7"/><path d="M3 7h14"/><path d="M4 13v4M16 13v4"/></svg>terasă</i></p>
+          <p class="case-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>147</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>3</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>1</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>R+1</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16v3H2z"/><path d="M4 13l2-5h8l2 5"/><circle cx="6" cy="16" r="1.2"/><circle cx="14" cy="16" r="1.2"/></svg>garage</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16"/><path d="M4 13V7M10 13V7M16 13V7"/><path d="M3 7h14"/><path d="M4 13v4M16 13v4"/></svg>terrasse</i></p>
           <div class="var-list">
-            <div class="var" title="Structură beton, izolație, finisat"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
-            <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
-            <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">Polistisip<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
+            <div class="var" title="Structure beton, izolație, finitions"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
+            <div class="var" title="Structure beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
+            <div class="var var--wood" title="Structure bois, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
           </div>
         </div>
       </article>
@@ -455,57 +455,57 @@
         <div class="detail-wrap">
         <div class="detail-inner">
           <div>
-            <div class="gal-main"><img src="../images/case/e3-fatada-terasa.jpg" alt="Silva — fațada dinspre grădină"></div>
+            <div class="gal-main"><img src="../images/case/e3-fatada-terasa.jpg" alt="Silva — façade côté jardin"></div>
             <div class="gal-thumbs">
-            <img src="../images/case/e3-fatada-strada.jpg" alt="Fațada dinspre stradă" loading="lazy" data-full="../images/case/e3-fatada-strada.jpg" class="">
-            <img src="../images/case/e3-fatada-terasa.jpg" alt="Fațada dinspre grădină" loading="lazy" data-full="../images/case/e3-fatada-terasa.jpg" class="on">
-            <img src="../images/case/e3-living.jpg" alt="Living · bucătărie · dining" loading="lazy" data-full="../images/case/e3-living.jpg" class="">
-            <img src="../images/case/e3-bucatarie.jpg" alt="Bucătăria" loading="lazy" data-full="../images/case/e3-bucatarie.jpg" class="">
-            <img src="../images/case/e3-dormitor.jpg" alt="Dormitor la etaj" loading="lazy" data-full="../images/case/e3-dormitor.jpg" class="">
-            <img src="../images/case/e3-baie.jpg" alt="Baia" loading="lazy" data-full="../images/case/e3-baie.jpg" class="">
-            <img src="../images/case/e3-plan.png" alt="Planul parterului și al etajului" loading="lazy" data-full="../images/case/e3-plan.png" class="">
+            <img src="../images/case/e3-fatada-strada.jpg" alt="Façade côté rue" loading="lazy" data-full="../images/case/e3-fatada-strada.jpg" class="">
+            <img src="../images/case/e3-fatada-terasa.jpg" alt="Façade côté jardin" loading="lazy" data-full="../images/case/e3-fatada-terasa.jpg" class="on">
+            <img src="../images/case/e3-living.jpg" alt="Séjour · cuisine · salle à manger" loading="lazy" data-full="../images/case/e3-living.jpg" class="">
+            <img src="../images/case/e3-bucatarie.jpg" alt="La cuisine" loading="lazy" data-full="../images/case/e3-bucatarie.jpg" class="">
+            <img src="../images/case/e3-dormitor.jpg" alt="Chambre à l'étage" loading="lazy" data-full="../images/case/e3-dormitor.jpg" class="">
+            <img src="../images/case/e3-baie.jpg" alt="La salle de bains" loading="lazy" data-full="../images/case/e3-baie.jpg" class="">
+            <img src="../images/case/e3-plan.png" alt="Le plan du rez-de-chaussée et de l'étage" loading="lazy" data-full="../images/case/e3-plan.png" class="">
             </div>
           </div>
           <div>
             <h3>Silva</h3>
-            <p class="d-spec">Casă cu etaj și garaj, 3 dormitoare · 147 m² utili</p>
+            <p class="d-spec">Maison à étage avec garage, 3 chambres · 147 m² utiles</p>
             <div class="d-facts">
-            <div class="d-fact"><b>147 m²</b><span>suprafață utilă</span></div>
-            <div class="d-fact"><b>115 m²</b><span>amprentă la sol</span></div>
-            <div class="d-fact"><b>3</b><span>dormitoare</span></div>
-            <div class="d-fact"><b>48 m²</b><span>living + bucătărie</span></div>
-            <div class="d-fact"><b>22 m²</b><span>garaj</span></div>
-            <div class="d-fact"><b>16 m²</b><span>fiecare dormitor</span></div>
+            <div class="d-fact"><b>147 m²</b><span>surface utile</span></div>
+            <div class="d-fact"><b>115 m²</b><span>emprise au sol</span></div>
+            <div class="d-fact"><b>3</b><span>chambres</span></div>
+            <div class="d-fact"><b>48 m²</b><span>séjour + cuisine</span></div>
+            <div class="d-fact"><b>22 m²</b><span>garage</span></div>
+            <div class="d-fact"><b>16 m²</b><span>chaque chambre</span></div>
             </div>
-          <p>Silva rezolvă cazul cel mai obișnuit: familie cu copii, mașină, teren de oraș. Zona de zi la parter, dormitoarele la etaj, garajul lipit de casă.</p>
-          <p>Parterul e un singur spațiu de 48 m² — living, bucătărie și dining — cu glisantă spre terasă. Scara urcă lângă intrare. Tot jos sunt un WC și o cămară, ca să nu urci la etaj pentru fiecare fleac.</p>
-          <p>Sus, trei dormitoare aproape egale: 15,8 · 15,9 · 16,2 m². Nu există camera mică pentru care se ceartă copiii. Baia de 9,4 m² le deservește pe toate trei.</p>
+          <p>Silva règle le cas le plus courant : famille avec enfants, voiture, terrain en ville. L'espace de vie au rez-de-chaussée, les chambres à l'étage, le garage accolé à la maison.</p>
+          <p>Le rez-de-chaussée est un seul volume de 48 m² — séjour, cuisine et salle à manger — avec une baie coulissante vers la terrasse. L'escalier monte près de l'entrée. En bas aussi, un WC et un cellier, pour ne pas monter à l'étage pour chaque petite chose.</p>
+          <p>En haut, trois chambres presque égales : 15,8 · 15,9 · 16,2 m². Pas de petite chambre pour laquelle les enfants se disputent. La salle de bains de 9,4 m² dessert les trois.</p>
             <ul class="d-points">
-              <li>Garajul se construiește doar la parter — deasupra lui nu se ridică etaj</li>
-              <li>Fațada rămâne joasă spre stradă, în loc de un bloc înalt lipit de trotuar</li>
-              <li>Trei dormitoare între 15,8 și 16,2 m² — niciunul nu e „camera mică"</li>
-              <li>Planșeu din panouri PBK cu suprabetonare, deschidere liberă până la 9 m</li>
-              <li>Perete de foc din beton de 15 cm între garaj și casă</li>
+              <li>Le garage ne se construit qu'au rez-de-chaussée — au-dessus, pas d'étage</li>
+              <li>La façade reste basse côté rue, au lieu d'un bloc haut collé au trottoir</li>
+              <li>Trois chambres entre 15,8 et 16,2 m² — aucune n'est « la petite chambre »</li>
+              <li>Planșeu en panneaux PBK avec dalle de compression, portée libre jusqu'à 9 m</li>
+              <li>Mur coupe-feu en beton de 15 cm entre le garage et la maison</li>
             </ul>
-            <button type="button" class="btn btn-primary btn-arrow js-next" data-model="Silva">Doresc să merg mai departe</button>
+            <button type="button" class="btn btn-primary btn-arrow js-next" data-model="Silva">Je souhaite aller plus loin</button>
           </div>
         </div>
-        <button class="detail-close" aria-label="Închide">×</button>
+        <button class="detail-close" aria-label="Fermer">×</button>
         </div>
       </div>
 
-      <!-- MODEL 7 -->
+      <!-- MODÈLE 7 -->
       <article class="case-card" data-model="7">
         <div class="case-photo">
-          <img src="../images/case/terra-fatada-terasa.jpg" alt="Terra — casă de familie cu etaj, 4 dormitoare" loading="lazy">
+          <img src="../images/case/terra-fatada-terasa.jpg" alt="Terra — maison familiale à étage, 4 chambres" loading="lazy">
         </div>
         <div class="case-body">
           <h2>Terra</h2>
-          <p class="case-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>144</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>4</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>3</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>P+E</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16v3H2z"/><path d="M4 13l2-5h8l2 5"/><circle cx="6" cy="16" r="1.2"/><circle cx="14" cy="16" r="1.2"/></svg>garaj opțional</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16"/><path d="M4 13V7M10 13V7M16 13V7"/><path d="M3 7h14"/><path d="M4 13v4M16 13v4"/></svg>grădină</i></p>
+          <p class="case-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>144</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>4</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>3</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>R+1</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16v3H2z"/><path d="M4 13l2-5h8l2 5"/><circle cx="6" cy="16" r="1.2"/><circle cx="14" cy="16" r="1.2"/></svg>garage en option</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16"/><path d="M4 13V7M10 13V7M16 13V7"/><path d="M3 7h14"/><path d="M4 13v4M16 13v4"/></svg>jardin</i></p>
           <div class="var-list">
-            <div class="var" title="Structură beton, izolație, finisat"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
-            <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
-            <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">Polistisip<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
+            <div class="var" title="Structure beton, izolație, finitions"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
+            <div class="var" title="Structure beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
+            <div class="var var--wood" title="Structure bois, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
           </div>
         </div>
       </article>
@@ -514,57 +514,57 @@
         <div class="detail-wrap">
         <div class="detail-inner">
           <div>
-            <div class="gal-main"><img src="../images/case/terra-fatada-terasa.jpg" alt="Terra — fațada dinspre grădină"></div>
+            <div class="gal-main"><img src="../images/case/terra-fatada-terasa.jpg" alt="Terra — façade côté jardin"></div>
             <div class="gal-thumbs">
-            <img src="../images/case/terra-fatada-strada.jpg" alt="Fațada dinspre stradă" loading="lazy" data-full="../images/case/terra-fatada-strada.jpg" class="">
-            <img src="../images/case/terra-fatada-terasa.jpg" alt="Fațada dinspre grădină" loading="lazy" data-full="../images/case/terra-fatada-terasa.jpg" class="on">
-            <img src="../images/case/terra-living.jpg" alt="Living · bucătărie · dining" loading="lazy" data-full="../images/case/terra-living.jpg" class="">
-            <img src="../images/case/terra-bucatarie.jpg" alt="Bucătăria" loading="lazy" data-full="../images/case/terra-bucatarie.jpg" class="">
-            <img src="../images/case/terra-dormitor.jpg" alt="Dormitorul de la parter" loading="lazy" data-full="../images/case/terra-dormitor.jpg" class="">
-            <img src="../images/case/terra-baie.jpg" alt="Baia de la etaj" loading="lazy" data-full="../images/case/terra-baie.jpg" class="">
-            <img src="../images/case/terra-plan.png" alt="Planul parterului și al etajului" loading="lazy" data-full="../images/case/terra-plan.png" class="">
+            <img src="../images/case/terra-fatada-strada.jpg" alt="Façade côté rue" loading="lazy" data-full="../images/case/terra-fatada-strada.jpg" class="">
+            <img src="../images/case/terra-fatada-terasa.jpg" alt="Façade côté jardin" loading="lazy" data-full="../images/case/terra-fatada-terasa.jpg" class="on">
+            <img src="../images/case/terra-living.jpg" alt="Séjour · cuisine · salle à manger" loading="lazy" data-full="../images/case/terra-living.jpg" class="">
+            <img src="../images/case/terra-bucatarie.jpg" alt="La cuisine" loading="lazy" data-full="../images/case/terra-bucatarie.jpg" class="">
+            <img src="../images/case/terra-dormitor.jpg" alt="La chambre du rez-de-chaussée" loading="lazy" data-full="../images/case/terra-dormitor.jpg" class="">
+            <img src="../images/case/terra-baie.jpg" alt="La salle de bains de l'étage" loading="lazy" data-full="../images/case/terra-baie.jpg" class="">
+            <img src="../images/case/terra-plan.png" alt="Le plan du rez-de-chaussée et de l'étage" loading="lazy" data-full="../images/case/terra-plan.png" class="">
             </div>
           </div>
           <div>
             <h3>Terra</h3>
-            <p class="d-spec">Casă de familie cu etaj, 4 dormitoare și 3 băi · 144 m² utili</p>
+            <p class="d-spec">Maison familiale à étage, 4 chambres et 3 salles de bains · 144 m² utiles</p>
             <div class="d-facts">
-            <div class="d-fact"><b>144 m²</b><span>suprafață utilă</span></div>
-            <div class="d-fact"><b>121 m²</b><span>amprentă la sol</span></div>
-            <div class="d-fact"><b>4</b><span>dormitoare</span></div>
-            <div class="d-fact"><b>3</b><span>băi</span></div>
-            <div class="d-fact"><b>41 m²</b><span>living + bucătărie</span></div>
-            <div class="d-fact"><b>20 m²</b><span>garaj opțional</span></div>
+            <div class="d-fact"><b>144 m²</b><span>surface utile</span></div>
+            <div class="d-fact"><b>121 m²</b><span>emprise au sol</span></div>
+            <div class="d-fact"><b>4</b><span>chambres</span></div>
+            <div class="d-fact"><b>3</b><span>salles de bains</span></div>
+            <div class="d-fact"><b>41 m²</b><span>séjour + cuisine</span></div>
+            <div class="d-fact"><b>20 m²</b><span>garage en option</span></div>
             </div>
-          <p>Terra e casa pentru familia mare, sau pentru cea care crește. Patru dormitoare și trei băi, dar fără să pară un bloc: etajul se ridică doar peste corpul principal, iar restul rămâne pe un nivel.</p>
-          <p>Dormitorul de 17,8 m² e la parter, lângă baie și spălătorie. Poate fi camera bunicilor, biroul sau camera de oaspeți — nimeni nu urcă scări dacă nu vrea. Celelalte trei stau sus, cu două băi între ele.</p>
-          <p>Parterul are livingul deschis de 41 m², spălătorie separată și o baie completă. Garajul se poate construi sau nu: e desenat cu linie întreruptă, iar peretele dintre el și casă rămâne oricum, ca perete exterior.</p>
+          <p>Terra est la maison de la grande famille, ou de celle qui grandit. Quatre chambres et trois salles de bains, sans ressembler à un immeuble : l'étage ne monte que sur le corps principal, le reste demeure sur un niveau.</p>
+          <p>La chambre de 17,8 m² est au rez-de-chaussée, près de la salle de bains et de la buanderie. Elle peut être la chambre des grands-parents, le bureau ou la chambre d'amis — personne ne monte d'escalier s'il ne veut pas. Les trois autres sont en haut, avec deux salles de bains entre elles.</p>
+          <p>Le rez-de-chaussée a le séjour ouvert de 41 m², une buanderie séparée et une salle de bains complète. Le garage peut se construire ou non : il est dessiné en trait interrompu, et le mur entre lui et la maison reste de toute façon, comme mur extérieur.</p>
             <ul class="d-points">
-              <li>Patru dormitoare, unul la parter — pentru bunici, birou sau oaspeți, fără scări</li>
-              <li>Trei băi la patru dormitoare — una jos, două sus</li>
-              <li>Spălătorie separată de baie, la parter</li>
-              <li>Garaj opțional de 20 m² — se construiește sau nu, planul rămâne același</li>
-              <li>Planșeu din panouri PBK cu suprabetonare, deschidere liberă până la 9 m</li>
+              <li>Quatre chambres, dont une au rez-de-chaussée — pour les grands-parents, le bureau ou les invités, sans escalier</li>
+              <li>Trois salles de bains pour quatre chambres — une en bas, deux en haut</li>
+              <li>Buanderie séparée de la salle de bains, au rez-de-chaussée</li>
+              <li>Garage en option de 20 m² — qu'on le construise ou non, le plan reste le même</li>
+              <li>Planșeu en panneaux PBK avec dalle de compression, portée libre jusqu'à 9 m</li>
             </ul>
-            <button type="button" class="btn btn-primary btn-arrow js-next" data-model="Terra">Doresc să merg mai departe</button>
+            <button type="button" class="btn btn-primary btn-arrow js-next" data-model="Terra">Je souhaite aller plus loin</button>
           </div>
         </div>
-        <button class="detail-close" aria-label="Închide">×</button>
+        <button class="detail-close" aria-label="Fermer">×</button>
         </div>
       </div>
 
-      <!-- MODEL 8 -->
+      <!-- MODÈLE 8 -->
       <article class="case-card" data-model="8">
         <div class="case-photo">
-          <img src="../images/case/nova-fatada-terasa.jpg" alt="Nova — casă compactă pe parter, cu 2 dormitoare" loading="lazy">
+          <img src="../images/case/nova-fatada-terasa.jpg" alt="Nova — maison compacte de plain-pied, avec 2 chambres" loading="lazy">
         </div>
         <div class="case-body">
           <h2>Nova</h2>
-          <p class="case-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>80</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>2</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>1</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>parter</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16v3H2z"/><path d="M4 13l2-5h8l2 5"/><circle cx="6" cy="16" r="1.2"/><circle cx="14" cy="16" r="1.2"/></svg>garaj opțional</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h8v14H6z"/><path d="M3 3v14M17 3v14"/></svg>lot mic</i></p>
+          <p class="case-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>80</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>2</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>1</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>plain-pied</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16v3H2z"/><path d="M4 13l2-5h8l2 5"/><circle cx="6" cy="16" r="1.2"/><circle cx="14" cy="16" r="1.2"/></svg>garage en option</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h8v14H6z"/><path d="M3 3v14M17 3v14"/></svg>petit terrain</i></p>
           <div class="var-list">
-            <div class="var" title="Structură beton, izolație, finisat"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
-            <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
-            <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">Polistisip<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
+            <div class="var" title="Structure beton, izolație, finitions"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
+            <div class="var" title="Structure beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
+            <div class="var var--wood" title="Structure bois, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
           </div>
         </div>
       </article>
@@ -573,57 +573,57 @@
         <div class="detail-wrap">
         <div class="detail-inner">
           <div>
-            <div class="gal-main"><img src="../images/case/nova-fatada-terasa.jpg" alt="Nova — fațada dinspre grădină"></div>
+            <div class="gal-main"><img src="../images/case/nova-fatada-terasa.jpg" alt="Nova — façade côté jardin"></div>
             <div class="gal-thumbs">
-            <img src="../images/case/nova-fatada-strada.jpg" alt="Fațada dinspre stradă" loading="lazy" data-full="../images/case/nova-fatada-strada.jpg" class="">
-            <img src="../images/case/nova-fatada-terasa.jpg" alt="Fațada dinspre grădină" loading="lazy" data-full="../images/case/nova-fatada-terasa.jpg" class="on">
-            <img src="../images/case/nova-living.jpg" alt="Living · bucătărie · dining" loading="lazy" data-full="../images/case/nova-living.jpg" class="">
-            <img src="../images/case/nova-bucatarie.jpg" alt="Bucătăria" loading="lazy" data-full="../images/case/nova-bucatarie.jpg" class="">
-            <img src="../images/case/nova-dormitor.jpg" alt="Dormitorul principal" loading="lazy" data-full="../images/case/nova-dormitor.jpg" class="">
-            <img src="../images/case/nova-baie.jpg" alt="Baia" loading="lazy" data-full="../images/case/nova-baie.jpg" class="">
-            <img src="../images/case/nova-plan.png" alt="Planul parterului" loading="lazy" data-full="../images/case/nova-plan.png" class="">
+            <img src="../images/case/nova-fatada-strada.jpg" alt="Façade côté rue" loading="lazy" data-full="../images/case/nova-fatada-strada.jpg" class="">
+            <img src="../images/case/nova-fatada-terasa.jpg" alt="Façade côté jardin" loading="lazy" data-full="../images/case/nova-fatada-terasa.jpg" class="on">
+            <img src="../images/case/nova-living.jpg" alt="Séjour · cuisine · salle à manger" loading="lazy" data-full="../images/case/nova-living.jpg" class="">
+            <img src="../images/case/nova-bucatarie.jpg" alt="La cuisine" loading="lazy" data-full="../images/case/nova-bucatarie.jpg" class="">
+            <img src="../images/case/nova-dormitor.jpg" alt="La chambre principale" loading="lazy" data-full="../images/case/nova-dormitor.jpg" class="">
+            <img src="../images/case/nova-baie.jpg" alt="La salle de bains" loading="lazy" data-full="../images/case/nova-baie.jpg" class="">
+            <img src="../images/case/nova-plan.png" alt="Le plan du rez-de-chaussée" loading="lazy" data-full="../images/case/nova-plan.png" class="">
             </div>
           </div>
           <div>
             <h3>Nova</h3>
-            <p class="d-spec">Casă compactă pe parter, 2 dormitoare, garaj opțional · 80 m² utili</p>
+            <p class="d-spec">Maison compacte de plain-pied, 2 chambres, garage en option · 80 m² utiles</p>
             <div class="d-facts">
-            <div class="d-fact"><b>80 m²</b><span>suprafață utilă</span></div>
-            <div class="d-fact"><b>97 m²</b><span>amprentă fără garaj</span></div>
-            <div class="d-fact"><b>2</b><span>dormitoare</span></div>
-            <div class="d-fact"><b>30 m²</b><span>living + bucătărie</span></div>
-            <div class="d-fact"><b>7 m²</b><span>baie</span></div>
-            <div class="d-fact"><b>13 m²</b><span>garaj opțional</span></div>
+            <div class="d-fact"><b>80 m²</b><span>surface utile</span></div>
+            <div class="d-fact"><b>97 m²</b><span>emprise sans garage</span></div>
+            <div class="d-fact"><b>2</b><span>chambres</span></div>
+            <div class="d-fact"><b>30 m²</b><span>séjour + cuisine</span></div>
+            <div class="d-fact"><b>7 m²</b><span>salle de bains</span></div>
+            <div class="d-fact"><b>13 m²</b><span>garage en option</span></div>
             </div>
-          <p>Nova e cea mai mică din catalog și cea mai ieftină de construit. Optzeci de metri utili, două dormitoare, totul pe un nivel — pentru un cuplu tânăr, pentru prima casă sau pentru cine nu vrea să încălzească spații pe care nu le folosește.</p>
-          <p>Livingul de 30 m² se deschide spre grădină, iar bucătăria are cămară proprie de 6,8 m² — rar la o casă de mărimea asta, dar face diferența când n-ai unde depozita.</p>
-          <p>Dormitorul mare are 15,6 m², al doilea 12,3. Baia de 7 m² e completă, cu cadă și duș. Garajul se poate construi sau nu: e desenat punctat, iar fără el amprenta scade de la 113 la 97 m².</p>
+          <p>Nova est la plus petite du catalogue et la moins chère à construire. Quatre-vingts mètres utiles, deux chambres, tout sur un niveau — pour un jeune couple, pour une première maison ou pour qui ne veut pas chauffer des espaces qu'il n'utilise pas.</p>
+          <p>Le séjour de 30 m² s'ouvre sur le jardin, et la cuisine a son propre cellier de 6,8 m² — rare pour une maison de cette taille, mais ça fait la différence quand on n'a nulle part où ranger.</p>
+          <p>La grande chambre fait 15,6 m², la deuxième 12,3. La salle de bains de 7 m² est complète, avec baignoire et douche. Le garage peut se construire ou non : il est dessiné en pointillé, et sans lui l'emprise passe de 113 à 97 m².</p>
             <ul class="d-points">
-              <li>Cea mai mică suprafață utilă din catalog — cel mai mic cost de construcție</li>
-              <li>Cămară proprie de 6,8 m², neobișnuit la o casă de 80 m²</li>
-              <li>Garaj opțional de 13 m² — fără el, amprenta scade la 97 m²</li>
-              <li>Totul pe un nivel, fără scări</li>
-              <li>Perete exterior de 38 cm, U = 0,14 W/m²K</li>
+              <li>La plus petite surface utile du catalogue — le plus petit coût de construction</li>
+              <li>Cellier de 6,8 m², inhabituel pour une maison de 80 m²</li>
+              <li>Garage en option de 13 m² — sans lui, l'emprise descend à 97 m²</li>
+              <li>Tout sur un niveau, sans escalier</li>
+              <li>Mur extérieur de 38 cm, U = 0,14 W/m²K</li>
             </ul>
-            <button type="button" class="btn btn-primary btn-arrow js-next" data-model="Nova">Doresc să merg mai departe</button>
+            <button type="button" class="btn btn-primary btn-arrow js-next" data-model="Nova">Je souhaite aller plus loin</button>
           </div>
         </div>
-        <button class="detail-close" aria-label="Închide">×</button>
+        <button class="detail-close" aria-label="Fermer">×</button>
         </div>
       </div>
 
-      <!-- MODEL 9 -->
+      <!-- MODÈLE 9 -->
       <article class="case-card" data-model="9">
         <div class="case-photo">
-          <img src="../images/case/aria-fatada-terasa.jpg" alt="Aria — casă cu etaj, 4 dormitoare" loading="lazy">
+          <img src="../images/case/aria-fatada-terasa.jpg" alt="Aria — maison à étage, 4 chambres" loading="lazy">
         </div>
         <div class="case-body">
           <h2>Aria</h2>
-          <p class="case-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>119</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>4</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>1</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>P+E</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16v3H2z"/><path d="M4 13l2-5h8l2 5"/><circle cx="6" cy="16" r="1.2"/><circle cx="14" cy="16" r="1.2"/></svg>garaj opțional</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h8v14H6z"/><path d="M3 3v14M17 3v14"/></svg>90 m² la sol</i></p>
+          <p class="case-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>119</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>4</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>1</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>R+1</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16v3H2z"/><path d="M4 13l2-5h8l2 5"/><circle cx="6" cy="16" r="1.2"/><circle cx="14" cy="16" r="1.2"/></svg>garage en option</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h8v14H6z"/><path d="M3 3v14M17 3v14"/></svg>90 m² au sol</i></p>
           <div class="var-list">
-            <div class="var" title="Structură beton, izolație, finisat"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
-            <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
-            <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">Polistisip<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
+            <div class="var" title="Structure beton, izolație, finitions"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
+            <div class="var" title="Structure beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
+            <div class="var var--wood" title="Structure bois, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
           </div>
         </div>
       </article>
@@ -632,57 +632,57 @@
         <div class="detail-wrap">
         <div class="detail-inner">
           <div>
-            <div class="gal-main"><img src="../images/case/aria-fatada-terasa.jpg" alt="Aria — fațada dinspre grădină"></div>
+            <div class="gal-main"><img src="../images/case/aria-fatada-terasa.jpg" alt="Aria — façade côté jardin"></div>
             <div class="gal-thumbs">
-            <img src="../images/case/aria-fatada-strada.jpg" alt="Fațada dinspre stradă" loading="lazy" data-full="../images/case/aria-fatada-strada.jpg" class="">
-            <img src="../images/case/aria-fatada-terasa.jpg" alt="Fațada dinspre grădină" loading="lazy" data-full="../images/case/aria-fatada-terasa.jpg" class="on">
-            <img src="../images/case/aria-living.jpg" alt="Livingul" loading="lazy" data-full="../images/case/aria-living.jpg" class="">
-            <img src="../images/case/aria-bucatarie.jpg" alt="Bucătăria închisă" loading="lazy" data-full="../images/case/aria-bucatarie.jpg" class="">
-            <img src="../images/case/aria-dormitor.jpg" alt="Dormitor la etaj" loading="lazy" data-full="../images/case/aria-dormitor.jpg" class="">
-            <img src="../images/case/aria-baie.jpg" alt="Baia" loading="lazy" data-full="../images/case/aria-baie.jpg" class="">
-            <img src="../images/case/aria-plan.png" alt="Planul parterului și al etajului" loading="lazy" data-full="../images/case/aria-plan.png" class="">
+            <img src="../images/case/aria-fatada-strada.jpg" alt="Façade côté rue" loading="lazy" data-full="../images/case/aria-fatada-strada.jpg" class="">
+            <img src="../images/case/aria-fatada-terasa.jpg" alt="Façade côté jardin" loading="lazy" data-full="../images/case/aria-fatada-terasa.jpg" class="on">
+            <img src="../images/case/aria-living.jpg" alt="Le séjour" loading="lazy" data-full="../images/case/aria-living.jpg" class="">
+            <img src="../images/case/aria-bucatarie.jpg" alt="La cuisine fermée" loading="lazy" data-full="../images/case/aria-bucatarie.jpg" class="">
+            <img src="../images/case/aria-dormitor.jpg" alt="Chambre à l'étage" loading="lazy" data-full="../images/case/aria-dormitor.jpg" class="">
+            <img src="../images/case/aria-baie.jpg" alt="La salle de bains" loading="lazy" data-full="../images/case/aria-baie.jpg" class="">
+            <img src="../images/case/aria-plan.png" alt="Le plan du rez-de-chaussée et de l'étage" loading="lazy" data-full="../images/case/aria-plan.png" class="">
             </div>
           </div>
           <div>
             <h3>Aria</h3>
-            <p class="d-spec">Casă cu etaj, 4 dormitoare, bucătărie închisă · 119 m² utili pe 90 m² de teren</p>
+            <p class="d-spec">Maison à étage, 4 chambres, cuisine fermée · 119 m² utiles sur 90 m² de terrain</p>
             <div class="d-facts">
-            <div class="d-fact"><b>119 m²</b><span>suprafață utilă</span></div>
-            <div class="d-fact"><b>90 m²</b><span>amprentă la sol</span></div>
-            <div class="d-fact"><b>4</b><span>dormitoare</span></div>
-            <div class="d-fact"><b>28 m²</b><span>living</span></div>
-            <div class="d-fact"><b>26 m²</b><span>garaj opțional</span></div>
-            <div class="d-fact"><b>5 m²</b><span>cameră de rufe</span></div>
+            <div class="d-fact"><b>119 m²</b><span>surface utile</span></div>
+            <div class="d-fact"><b>90 m²</b><span>emprise au sol</span></div>
+            <div class="d-fact"><b>4</b><span>chambres</span></div>
+            <div class="d-fact"><b>28 m²</b><span>séjour</span></div>
+            <div class="d-fact"><b>26 m²</b><span>garage en option</span></div>
+            <div class="d-fact"><b>5 m²</b><span>buanderie</span></div>
             </div>
-          <p>Aria scoate patru dormitoare din doar 90 m² de teren. Etajul acoperă toată amprenta, inclusiv garajul — de aceea intră atât de mult într-un volum atât de mic.</p>
-          <p>Cele patru dormitoare sunt aproape identice: între 13,6 și 14,2 m², câte două de fiecare parte a palierului. La o casă cu patru copii, sau cu copii și birou, asta înseamnă că nimeni nu se simte nedreptățit.</p>
-          <p>Bucătăria e cameră separată, nu deschisă spre living. Se pierde efectul de spațiu, se câștigă liniștea și lipsa mirosurilor — unii o vor, alții nu, dar e bine să existe și varianta asta în catalog.</p>
+          <p>Aria tire quatre chambres de seulement 90 m² de terrain. L'étage couvre toute l'emprise, garage compris — c'est pourquoi tant de choses tiennent dans un volume aussi petit.</p>
+          <p>Les quatre chambres sont presque identiques : entre 13,6 et 14,2 m², deux de chaque côté du palier. Dans une maison avec quatre enfants, ou avec enfants et bureau, cela veut dire que personne ne se sent lésé.</p>
+          <p>La cuisine est une pièce séparée, pas ouverte sur le séjour. On perd l'effet d'espace, on gagne le calme et l'absence d'odeurs — certains la veulent, d'autres non, mais il est bon que cette variante existe aussi au catalogue.</p>
             <ul class="d-points">
-              <li>Patru dormitoare pe o amprentă de doar 90 m²</li>
-              <li>Camere aproape egale, între 13,6 și 14,2 m²</li>
-              <li>Bucătărie închisă, singura din catalog — fără mirosuri în zona de zi</li>
-              <li>Cameră de rufe proprie la etaj, lângă baie</li>
-              <li>Peste garaj e dormitor: planșeul PBK vine deja izolat, fără punte termică</li>
+              <li>Quatre chambres sur une emprise de seulement 90 m²</li>
+              <li>Des chambres presque égales, entre 13,6 et 14,2 m²</li>
+              <li>Cuisine fermée, la seule du catalogue — pas d'odeurs dans l'espace de vie</li>
+              <li>Buanderie à l'étage, près de la salle de bains</li>
+              <li>Au-dessus du garage, une chambre : le plancher PBK arrive déjà isolé, sans pont thermique</li>
             </ul>
-            <button type="button" class="btn btn-primary btn-arrow js-next" data-model="Aria">Doresc să merg mai departe</button>
+            <button type="button" class="btn btn-primary btn-arrow js-next" data-model="Aria">Je souhaite aller plus loin</button>
           </div>
         </div>
-        <button class="detail-close" aria-label="Închide">×</button>
+        <button class="detail-close" aria-label="Fermer">×</button>
         </div>
       </div>
 
-      <!-- MODEL 10 -->
+      <!-- MODÈLE 10 -->
       <article class="case-card" data-model="10">
         <div class="case-photo">
-          <img src="../images/case/vela-fatada-terasa.jpg" alt="Vela — casă albă pe parter, cu 3 dormitoare" loading="lazy">
+          <img src="../images/case/vela-fatada-terasa.jpg" alt="Vela — maison blanche de plain-pied, avec 3 chambres" loading="lazy">
         </div>
         <div class="case-body">
           <h2>Vela</h2>
-          <p class="case-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>92</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>3</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>1</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>parter</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16"/><path d="M4 13V7M10 13V7M16 13V7"/><path d="M3 7h14"/><path d="M4 13v4M16 13v4"/></svg>terasă</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h8v14H6z"/><path d="M3 3v14M17 3v14"/></svg>fără garaj</i></p>
+          <p class="case-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>92</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>3</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>1</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>plain-pied</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16"/><path d="M4 13V7M10 13V7M16 13V7"/><path d="M3 7h14"/><path d="M4 13v4M16 13v4"/></svg>terrasse</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h8v14H6z"/><path d="M3 3v14M17 3v14"/></svg>sans garage</i></p>
           <div class="var-list">
-            <div class="var" title="Structură beton, izolație, finisat"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
-            <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
-            <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">Polistisip<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
+            <div class="var" title="Structure beton, izolație, finitions"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
+            <div class="var" title="Structure beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
+            <div class="var var--wood" title="Structure bois, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
           </div>
         </div>
       </article>
@@ -691,57 +691,57 @@
         <div class="detail-wrap">
         <div class="detail-inner">
           <div>
-            <div class="gal-main"><img src="../images/case/vela-fatada-terasa.jpg" alt="Vela — fațada dinspre grădină"></div>
+            <div class="gal-main"><img src="../images/case/vela-fatada-terasa.jpg" alt="Vela — façade côté jardin"></div>
             <div class="gal-thumbs">
-            <img src="../images/case/vela-fatada-strada.jpg" alt="Fațada dinspre stradă" loading="lazy" data-full="../images/case/vela-fatada-strada.jpg" class="">
-            <img src="../images/case/vela-fatada-terasa.jpg" alt="Fațada dinspre grădină" loading="lazy" data-full="../images/case/vela-fatada-terasa.jpg" class="on">
-            <img src="../images/case/vela-living.jpg" alt="Living · bucătărie · dining" loading="lazy" data-full="../images/case/vela-living.jpg" class="">
-            <img src="../images/case/vela-bucatarie.jpg" alt="Bucătăria" loading="lazy" data-full="../images/case/vela-bucatarie.jpg" class="">
-            <img src="../images/case/vela-dormitor.jpg" alt="Dormitorul principal" loading="lazy" data-full="../images/case/vela-dormitor.jpg" class="">
-            <img src="../images/case/vela-baie.jpg" alt="Baia" loading="lazy" data-full="../images/case/vela-baie.jpg" class="">
-            <img src="../images/case/vela-plan.png" alt="Planul parterului" loading="lazy" data-full="../images/case/vela-plan.png" class="">
+            <img src="../images/case/vela-fatada-strada.jpg" alt="Façade côté rue" loading="lazy" data-full="../images/case/vela-fatada-strada.jpg" class="">
+            <img src="../images/case/vela-fatada-terasa.jpg" alt="Façade côté jardin" loading="lazy" data-full="../images/case/vela-fatada-terasa.jpg" class="on">
+            <img src="../images/case/vela-living.jpg" alt="Séjour · cuisine · salle à manger" loading="lazy" data-full="../images/case/vela-living.jpg" class="">
+            <img src="../images/case/vela-bucatarie.jpg" alt="La cuisine" loading="lazy" data-full="../images/case/vela-bucatarie.jpg" class="">
+            <img src="../images/case/vela-dormitor.jpg" alt="La chambre principale" loading="lazy" data-full="../images/case/vela-dormitor.jpg" class="">
+            <img src="../images/case/vela-baie.jpg" alt="La salle de bains" loading="lazy" data-full="../images/case/vela-baie.jpg" class="">
+            <img src="../images/case/vela-plan.png" alt="Le plan du rez-de-chaussée" loading="lazy" data-full="../images/case/vela-plan.png" class="">
             </div>
           </div>
           <div>
             <h3>Vela</h3>
-            <p class="d-spec">Casă pe un nivel, 3 dormitoare, living deschis de 42 m² · 92 m² utili</p>
+            <p class="d-spec">Maison sur un niveau, 3 chambres, séjour ouvert de 42 m² · 92 m² utiles</p>
             <div class="d-facts">
-            <div class="d-fact"><b>92 m²</b><span>suprafață utilă</span></div>
-            <div class="d-fact"><b>112 m²</b><span>amprentă la sol</span></div>
-            <div class="d-fact"><b>3</b><span>dormitoare</span></div>
-            <div class="d-fact"><b>42 m²</b><span>living + bucătărie</span></div>
-            <div class="d-fact"><b>8,6 m²</b><span>baie</span></div>
-            <div class="d-fact"><b>—</b><span>fără garaj</span></div>
+            <div class="d-fact"><b>92 m²</b><span>surface utile</span></div>
+            <div class="d-fact"><b>112 m²</b><span>emprise au sol</span></div>
+            <div class="d-fact"><b>3</b><span>chambres</span></div>
+            <div class="d-fact"><b>42 m²</b><span>séjour + cuisine</span></div>
+            <div class="d-fact"><b>8,6 m²</b><span>salle de bains</span></div>
+            <div class="d-fact"><b>—</b><span>sans garage</span></div>
             </div>
-          <p>Vela are cel mai mare living raportat la suprafață din tot catalogul: 42 m² dintr-un total de 92. Aproape jumătate din casă e zona în care stai efectiv, nu pe care doar o încălzești.</p>
-          <p>Cele trei dormitoare și baia sunt strânse compact în jumătatea de est, legate de un hol scurt. Nu se pierde nimic pe culoare — de aceea rămâne atât de mult pentru zona de zi.</p>
-          <p>Fără garaj și fără decupaje în plan: un dreptunghi curat de 13 pe 8,6 metri. E cea mai simplă și cea mai ieftină de ridicat din catalog, la aceeași calitate de perete.</p>
+          <p>Vela a le plus grand séjour rapporté à la surface de tout le catalogue : 42 m² sur un total de 92. Près de la moitié de la maison est la zone où l'on vit vraiment, pas celle qu'on ne fait que chauffer.</p>
+          <p>Les trois chambres et la salle de bains sont regroupées de façon compacte dans la moitié est, reliées par un couloir court. Rien ne se perd en couloirs — c'est pourquoi il en reste autant pour l'espace de vie.</p>
+          <p>Sans garage et sans découpes dans le plan : un rectangle net de 13 sur 8,6 mètres. C'est la plus simple et la moins chère à monter du catalogue, à qualité de mur égale.</p>
             <ul class="d-points">
-              <li>Cel mai mare living din catalog raportat la suprafață — 42 din 92 m²</li>
-              <li>Volum dreptunghiular simplu, fără decupaje — cel mai ieftin de ridicat</li>
-              <li>Baie de 8,6 m², generoasă pentru o casă de 92 m²</li>
-              <li>Fără garaj — parcarea rămâne pe alee</li>
-              <li>Perete exterior de 38 cm, U = 0,14 W/m²K</li>
+              <li>Le plus grand séjour du catalogue rapporté à la surface — 42 sur 92 m²</li>
+              <li>Volume rectangulaire simple, sans découpes — le moins cher à monter</li>
+              <li>Salle de bains de 8,6 m², généreuse pour une maison de 92 m²</li>
+              <li>Sans garage — le stationnement reste sur l'allée</li>
+              <li>Mur extérieur de 38 cm, U = 0,14 W/m²K</li>
             </ul>
-            <button type="button" class="btn btn-primary btn-arrow js-next" data-model="Vela">Doresc să merg mai departe</button>
+            <button type="button" class="btn btn-primary btn-arrow js-next" data-model="Vela">Je souhaite aller plus loin</button>
           </div>
         </div>
-        <button class="detail-close" aria-label="Închide">×</button>
+        <button class="detail-close" aria-label="Fermer">×</button>
         </div>
       </div>
 
-      <!-- MODEL 11 -->
+      <!-- MODÈLE 11 -->
       <article class="case-card" data-model="11">
         <div class="case-photo">
-          <img src="../images/case/mira-fatada-terasa.jpg" alt="Mira — casă pe parter cu 4 dormitoare" loading="lazy">
+          <img src="../images/case/mira-fatada-terasa.jpg" alt="Mira — maison de plain-pied avec 4 chambres" loading="lazy">
         </div>
         <div class="case-body">
           <h2>Mira</h2>
-          <p class="case-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>97</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>4</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>1</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>parter</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16v3H2z"/><path d="M4 13l2-5h8l2 5"/><circle cx="6" cy="16" r="1.2"/><circle cx="14" cy="16" r="1.2"/></svg>garaj opțional</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16"/><path d="M4 13V7M10 13V7M16 13V7"/><path d="M3 7h14"/><path d="M4 13v4M16 13v4"/></svg>terasă</i></p>
+          <p class="case-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>97</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>4</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>1</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>plain-pied</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16v3H2z"/><path d="M4 13l2-5h8l2 5"/><circle cx="6" cy="16" r="1.2"/><circle cx="14" cy="16" r="1.2"/></svg>garage en option</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16"/><path d="M4 13V7M10 13V7M16 13V7"/><path d="M3 7h14"/><path d="M4 13v4M16 13v4"/></svg>terrasse</i></p>
           <div class="var-list">
-            <div class="var" title="Structură beton, izolație, finisat"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
-            <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
-            <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">Polistisip<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
+            <div class="var" title="Structure beton, izolație, finitions"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
+            <div class="var" title="Structure beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
+            <div class="var var--wood" title="Structure bois, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
           </div>
         </div>
       </article>
@@ -750,123 +750,126 @@
         <div class="detail-wrap">
         <div class="detail-inner">
           <div>
-            <div class="gal-main"><img src="../images/case/mira-fatada-terasa.jpg" alt="Mira — fațada dinspre grădină"></div>
+            <div class="gal-main"><img src="../images/case/mira-fatada-terasa.jpg" alt="Mira — façade côté jardin"></div>
             <div class="gal-thumbs">
-            <img src="../images/case/mira-fatada-strada.jpg" alt="Fațada dinspre stradă" loading="lazy" data-full="../images/case/mira-fatada-strada.jpg" class="">
-            <img src="../images/case/mira-fatada-terasa.jpg" alt="Fațada dinspre grădină" loading="lazy" data-full="../images/case/mira-fatada-terasa.jpg" class="on">
-            <img src="../images/case/mira-living.jpg" alt="Living · bucătărie · dining" loading="lazy" data-full="../images/case/mira-living.jpg" class="">
-            <img src="../images/case/mira-bucatarie.jpg" alt="Bucătăria" loading="lazy" data-full="../images/case/mira-bucatarie.jpg" class="">
-            <img src="../images/case/mira-dormitor.jpg" alt="Un dormitor" loading="lazy" data-full="../images/case/mira-dormitor.jpg" class="">
-            <img src="../images/case/mira-baie.jpg" alt="Baia" loading="lazy" data-full="../images/case/mira-baie.jpg" class="">
-            <img src="../images/case/mira-plan.png" alt="Planul parterului" loading="lazy" data-full="../images/case/mira-plan.png" class="">
+            <img src="../images/case/mira-fatada-strada.jpg" alt="Façade côté rue" loading="lazy" data-full="../images/case/mira-fatada-strada.jpg" class="">
+            <img src="../images/case/mira-fatada-terasa.jpg" alt="Façade côté jardin" loading="lazy" data-full="../images/case/mira-fatada-terasa.jpg" class="on">
+            <img src="../images/case/mira-living.jpg" alt="Séjour · cuisine · salle à manger" loading="lazy" data-full="../images/case/mira-living.jpg" class="">
+            <img src="../images/case/mira-bucatarie.jpg" alt="La cuisine" loading="lazy" data-full="../images/case/mira-bucatarie.jpg" class="">
+            <img src="../images/case/mira-dormitor.jpg" alt="Une chambre" loading="lazy" data-full="../images/case/mira-dormitor.jpg" class="">
+            <img src="../images/case/mira-baie.jpg" alt="La salle de bains" loading="lazy" data-full="../images/case/mira-baie.jpg" class="">
+            <img src="../images/case/mira-plan.png" alt="Le plan du rez-de-chaussée" loading="lazy" data-full="../images/case/mira-plan.png" class="">
             </div>
           </div>
           <div>
             <h3>Mira</h3>
-            <p class="d-spec">Casă pe un nivel cu 4 dormitoare, garaj opțional · 97 m² utili</p>
+            <p class="d-spec">Maison sur un niveau avec 4 chambres, garage en option · 97 m² utiles</p>
             <div class="d-facts">
-            <div class="d-fact"><b>97 m²</b><span>suprafață utilă</span></div>
-            <div class="d-fact"><b>149 m²</b><span>amprentă cu garaj</span></div>
-            <div class="d-fact"><b>4</b><span>dormitoare</span></div>
-            <div class="d-fact"><b>35 m²</b><span>living + bucătărie</span></div>
-            <div class="d-fact"><b>28 m²</b><span>garaj opțional</span></div>
-            <div class="d-fact"><b>—</b><span>fără scări</span></div>
+            <div class="d-fact"><b>97 m²</b><span>surface utile</span></div>
+            <div class="d-fact"><b>149 m²</b><span>emprise avec garage</span></div>
+            <div class="d-fact"><b>4</b><span>chambres</span></div>
+            <div class="d-fact"><b>35 m²</b><span>séjour + cuisine</span></div>
+            <div class="d-fact"><b>28 m²</b><span>garage en option</span></div>
+            <div class="d-fact"><b>—</b><span>sans escalier</span></div>
             </div>
-          <p>Mira e singura casă din catalog cu <strong>patru dormitoare pe un singur nivel</strong>. Terra și Aria au tot patru, dar cu etaj. Aici totul e jos: nimeni nu urcă scări, niciodată.</p>
-          <p>Asta o face potrivită pentru două situații pe care restul catalogului nu le acoperă: familie mare cu copii mici, unde scările sunt o grijă în plus, și două generații sub același acoperiș, unde bunicii nu pot urca.</p>
-          <p>Cele patru camere sunt grupate două câte două de o parte și de alta a unui hol scurt, cu baia la capăt. Zona de zi rămâne separată, la celălalt capăt al casei, lângă cămară și garaj.</p>
+          <p>Mira est la seule maison du catalogue avec <strong>quatre chambres sur un seul niveau</strong>. Terra et Aria en ont quatre aussi, mais avec étage. Ici, tout est en bas : personne ne monte d'escalier, jamais.</p>
+          <p>Cela la rend adaptée à deux situations que le reste du catalogue ne couvre pas : la grande famille avec de jeunes enfants, où l'escalier est un souci de plus, et deux générations sous le même acoperiș, où les grands-parents ne peuvent pas monter.</p>
+          <p>Les quatre chambres sont groupées deux par deux de part et d'autre d'un couloir court, avec la salle de bains au bout. L'espace de vie reste séparé, à l'autre bout de la maison, près du cellier et du garage.</p>
             <ul class="d-points">
-              <li>Singura din catalog cu patru dormitoare fără etaj</li>
-              <li>Fără scări — pentru copii mici sau pentru părinți în vârstă</li>
-              <li>Zona de zi la un capăt, dormitoarele la celălalt, cu hol între ele</li>
-              <li>Garaj opțional de 28 m², cel mai mare din catalog după Aura</li>
-              <li>Perete exterior de 38 cm, U = 0,14 W/m²K</li>
+              <li>La seule du catalogue avec quatre chambres sans étage</li>
+              <li>Sans escalier — pour les jeunes enfants ou les parents âgés</li>
+              <li>L'espace de vie à un bout, les chambres à l'autre, un couloir entre les deux</li>
+              <li>Garage en option de 28 m², le plus grand du catalogue après Aura</li>
+              <li>Mur extérieur de 38 cm, U = 0,14 W/m²K</li>
             </ul>
-            <button type="button" class="btn btn-primary btn-arrow js-next" data-model="Mira">Doresc să merg mai departe</button>
+            <button type="button" class="btn btn-primary btn-arrow js-next" data-model="Mira">Je souhaite aller plus loin</button>
           </div>
         </div>
-        <button class="detail-close" aria-label="Închide">×</button>
+        <button class="detail-close" aria-label="Fermer">×</button>
         </div>
       </div>
 
     </div>
 
     <p class="case-note">
-      Prețurile se completează după ce stabilim grila. Toate modelele se pot adapta — suprafață, compartimentare, finisaje.
-      Structura din lemn a Polistisip folosește o resursă care se reface și cere mai puțin beton; cifrele exacte de amprentă le publicăm când avem analiza completă.
+      Les prix seront renseignés une fois notre grille établie. Tous les modèles peuvent être adaptés — surface, distribution, finitions.
+      La structure en bois du PolistiSIP utilise une ressource qui se renouvelle et demande moins de beton ; nous publierons les chiffres exacts d'empreinte quand l'analyse complète sera prête.
     </p>
 
   </div>
 </section>
 
 
-<!-- ALEGEREA SISTEMULUI -->
+<!-- LE CHOIX DU SYSTÈME -->
 <div class="sysmodal" id="sysmodal" hidden>
   <div class="sysmodal-back" data-close></div>
   <div class="sysmodal-box" role="dialog" aria-modal="true" aria-labelledby="sysmodal-title">
-    <button class="sysmodal-x" data-close aria-label="Închide">×</button>
+    <button class="sysmodal-x" data-close aria-label="Fermer">×</button>
     <p class="sysmodal-kicker" id="sysmodal-model">Riva</p>
-    <h2 id="sysmodal-title">În ce sistem o construim?</h2>
-    <p class="sysmodal-lead">Aceeași casă, același plan. Se schimbă structura, finisajul — și cu ele prețul.</p>
+    <h2 id="sysmodal-title">Dans quel système la construisons-nous ?</h2>
+    <p class="sysmodal-lead">Même maison, même plan. La structure et les finitions changent — et le prix avec elles.</p>
 
     <div class="sysgrid">
 
       <article class="syscard" data-sistem="Polistibrick">
         <h3>Polistibrick</h3>
-        <p class="sys-what">Structură beton · izolație · <strong>finisat</strong></p>
+        <p class="sys-what">Structure beton · izolație · <strong>finitions</strong></p>
         <dl class="sys-specs">
-          <div><dt>Perete exterior</dt><dd>38 cm</dd></div>
-          <div><dt>Transfer termic U</dt><dd>0,14 W/m²K</dd></div>
-          <div><dt>Greutate perete</dt><dd>396 kg/m²</dd></div>
-          <div><dt>Confort vara</dt><dd>foarte bun</dd></div>
+          <div><dt>Mur extérieur</dt><dd>38 cm</dd></div>
+          <div><dt>Transfert thermique U</dt><dd>0,14 W/m²K</dd></div>
+          <div><dt>Poids du mur</dt><dd>396 kg/m²</dd></div>
+          <div><dt>Confort d'été</dt><dd>très bon</dd></div>
           <div><dt>Reacție la foc</dt><dd>A1</dd></div>
         </dl>
-        <p class="sys-inc">Vine cu placa de fibrociment pe ambele fețe. Se tencuiește direct, fără strat de egalizare.</p>
+        <p class="sys-inc">Livré avec la plaque de fibrociment sur les deux faces. On enduit directement, sans couche d'égalisation.</p>
         <div class="sys-preturi">
-          <div class="sys-rand"><span>Doar cofrajul</span><b>— €<small>/m²</small></b></div>
-          <div class="sys-rand"><span>Construcția la gri</span><b>— €<small>/m²</small></b></div>
+          <div class="sys-rand"><span>Le cofraj seul</span><b>— €<small>/m²</small></b></div>
+          <div class="sys-rand"><span>Le gros œuvre</span><b>— €<small>/m²</small></b></div>
         </div>
-        <button type="button" class="btn btn-primary btn-arrow sys-go">Continui cu Polistibrick</button>
+        <button type="button" class="btn btn-primary btn-arrow sys-go">Je continue avec Polistibrick</button>
+        <a href="../produse/polistibrick/" class="sys-fiche" style="display:inline-block;margin-top:10px;font-size:13px;font-weight:600;color:var(--red);">Voir la fiche famille →</a>
       </article>
 
       <article class="syscard" data-sistem="Polistiwall">
         <h3>Polistiwall</h3>
-        <p class="sys-what">Structură beton · izolație</p>
+        <p class="sys-what">Structure beton · izolație</p>
         <dl class="sys-specs">
-          <div><dt>Perete exterior</dt><dd>38 cm</dd></div>
-          <div><dt>Transfer termic U</dt><dd>0,14 W/m²K</dd></div>
-          <div><dt>Greutate perete</dt><dd>396 kg/m²</dd></div>
-          <div><dt>Confort vara</dt><dd>foarte bun</dd></div>
+          <div><dt>Mur extérieur</dt><dd>38 cm</dd></div>
+          <div><dt>Transfert thermique U</dt><dd>0,14 W/m²K</dd></div>
+          <div><dt>Poids du mur</dt><dd>396 kg/m²</dd></div>
+          <div><dt>Confort d'été</dt><dd>très bon</dd></div>
           <div><dt>Reacție la foc</dt><dd>A1</dd></div>
         </dl>
-        <p class="sys-inc">Aceeași structură și aceeași izolație. Finisajul rămâne în sarcina ta — de asta costă mai puțin.</p>
+        <p class="sys-inc">Même structure, même izolație. Les finitions restent à votre charge — c'est pour cela que ça coûte moins.</p>
         <div class="sys-preturi">
-          <div class="sys-rand"><span>Doar cofrajul</span><b>— €<small>/m²</small></b></div>
-          <div class="sys-rand"><span>Construcția la gri</span><b>— €<small>/m²</small></b></div>
+          <div class="sys-rand"><span>Le cofraj seul</span><b>— €<small>/m²</small></b></div>
+          <div class="sys-rand"><span>Le gros œuvre</span><b>— €<small>/m²</small></b></div>
         </div>
-        <button type="button" class="btn btn-primary btn-arrow sys-go">Continui cu Polistiwall</button>
+        <button type="button" class="btn btn-primary btn-arrow sys-go">Je continue avec Polistiwall</button>
+        <a href="../produse/polistiwall/" class="sys-fiche" style="display:inline-block;margin-top:10px;font-size:13px;font-weight:600;color:var(--red);">Voir la fiche famille →</a>
       </article>
 
-      <article class="syscard syscard--wood" data-sistem="Polistisip">
-        <h3>Polistisip<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></h3>
-        <p class="sys-what">Structură lemn · izolație</p>
+      <article class="syscard syscard--wood" data-sistem="PolistiSIP">
+        <h3>PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></h3>
+        <p class="sys-what">Structure bois · izolație</p>
         <dl class="sys-specs">
-          <div><dt>Perete exterior</dt><dd>30 cm</dd></div>
-          <div><dt>Transfer termic U</dt><dd>0,11 W/m²K</dd></div>
-          <div><dt>Greutate perete</dt><dd>23 kg/m²</dd></div>
-          <div><dt>Confort vara</dt><dd>bun</dd></div>
-          <div><dt>Reacție la foc</dt><dd>lemn</dd></div>
+          <div><dt>Mur extérieur</dt><dd>30 cm</dd></div>
+          <div><dt>Transfert thermique U</dt><dd>0,11 W/m²K</dd></div>
+          <div><dt>Poids du mur</dt><dd>23 kg/m²</dd></div>
+          <div><dt>Confort d'été</dt><dd>bon</dd></div>
+          <div><dt>Reacție la foc</dt><dd>bois</dd></div>
         </dl>
-        <p class="sys-inc">Perete mai subțire și mai bine izolat, de 17 ori mai ușor. Câștigi din suprafața utilă și din fundație.</p>
+        <p class="sys-inc">Mur plus mince et mieux isolé, 17 fois plus léger. Vous gagnez sur la surface utile et sur la fondation.</p>
         <div class="sys-preturi">
-          <div class="sys-rand"><span>Doar panourile</span><b>— €<small>/m²</small></b></div>
-          <div class="sys-rand"><span>Construcția la gri</span><b>— €<small>/m²</small></b></div>
+          <div class="sys-rand"><span>Les panneaux seuls</span><b>— €<small>/m²</small></b></div>
+          <div class="sys-rand"><span>Le gros œuvre</span><b>— €<small>/m²</small></b></div>
         </div>
-        <button type="button" class="btn btn-primary btn-arrow sys-go">Continui cu Polistisip</button>
+        <button type="button" class="btn btn-primary btn-arrow sys-go">Je continue avec PolistiSIP</button>
+        <a href="../produse/polistisip/" class="sys-fiche" style="display:inline-block;margin-top:10px;font-size:13px;font-weight:600;color:var(--red);">Voir la fiche famille →</a>
       </article>
 
     </div>
-    <p class="sysmodal-note">Prețurile sunt estimative și se confirmă după ce vedem terenul și proiectul. Cofrajul înseamnă materialul livrat; la gri înseamnă fundație, structură și acoperiș, montate de noi. Datele termice sunt din fișele Ubakus ale peretelui.</p>
+    <p class="sysmodal-note">Les prix sont estimatifs et se confirment après examen du terrain et du projet. Le cofraj, c'est le matériau livré ; le gros œuvre, c'est la fondation, la structure et la acoperișure, montées par nous. Les données thermiques viennent des fiches Ubakus du mur.</p>
   </div>
 </div>
 
@@ -881,7 +884,7 @@
     d.classList.remove('open');
     setTimeout(function () { if (!d.classList.contains('open')) d.classList.remove('shown'); }, 460);
     card.classList.remove('is-open');
-    // cardul tocmai a reapărut şi a împins pagina — îl aduc înapoi sub ochi
+    // la carte vient de réapparaître et a poussé la page — je la ramène sous les yeux
     if (adu) {
       var r = card.getBoundingClientRect();
       if (r.top < 90 || r.bottom > innerHeight) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -894,7 +897,7 @@
     if (!detail) return;
 
     card.addEventListener('click', function (e) {
-      // butoanele şi linkurile îşi fac treaba lor, nu deschid panoul
+      // les boutons et les liens font leur travail, ils n'ouvrent pas le panneau
       if (e.target.closest('a, .js-next')) return;
       var eraDeschis = detail.classList.contains('open');
       document.querySelectorAll('.detail.open').forEach(close);
@@ -908,9 +911,9 @@
 
     detail.querySelector('.detail-close').addEventListener('click', function () { close(detail); });
 
-    // galeria: miniatura schimbă imaginea mare
+    // la galerie : la miniature change la grande image
     var mare = detail.querySelector('.gal-main img');
-    // planul e prea mic ca sa se citeasca aici: clic pe el il deschide intreg
+    // le plan est trop petit pour se lire ici : un clic l'ouvre en entier
     mare.addEventListener('click', function () {
       if (/plan\.png$/.test(mare.getAttribute('src'))) window.open(mare.src, '_blank');
     });
@@ -962,7 +965,7 @@
     if (e.key === 'Escape' && !modal.hidden) inchide();
   });
 
-  // sistemul ales pleaca spre formular in adresa paginii
+  // le système choisi part vers le formulaire dans l'adresse de la page
   modal.querySelectorAll('.sys-go').forEach(function (b) {
     b.addEventListener('click', function () {
       var sistem = b.closest('.syscard').dataset.sistem;

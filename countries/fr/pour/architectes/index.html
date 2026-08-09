@@ -7,7 +7,7 @@
   <meta name="description" content="Polistibrick pour architectes et bureaux d'études : coffrage classique pour béton armé, calculs Eurocode 2 standard, bibliothèque CAD/Revit, support technique dédié, RE2020 au Passif+.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../assets/css/site.css">
   <style>
     /* HERO watermark */
@@ -21,7 +21,7 @@
     .wm-content { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 48px; align-items: center; }
     .wm-text { padding-right: 8px; }
     .wm-text .bubble-tag { display: inline-block; background: var(--red-soft); color: var(--red); padding: 4px 12px; border-radius: 4px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 16px; }
-    .wm-text h1 { font-family: var(--serif); font-size: clamp(34px, 4vw, 56px); font-weight: 500; color: var(--ink); letter-spacing: -0.02em; line-height: 1.05; margin-bottom: 18px; }
+    .wm-text h1 { font-family: var(--serif); font-size: clamp(30px, 3.6vw, 44px); font-weight: 500; color: var(--ink); letter-spacing: -0.02em; line-height: 1.05; margin-bottom: 18px; }
     .wm-text h1 em { font-style: italic; color: var(--red); font-weight: 400; }
     .wm-text p.lead { font-size: 16px; color: var(--gray); line-height: 1.65; margin-bottom: 26px; }
     .wm-visual { background: linear-gradient(180deg, var(--cream-light) 0%, var(--cream-dark) 100%); border: 1px solid var(--border); border-radius: 20px; padding: 0; box-shadow: var(--shadow-md); margin-top: 10mm; aspect-ratio: 4/5; overflow: hidden; display: flex; align-items: center; justify-content: center; }
@@ -151,8 +151,7 @@
       <div class="wm-stage">
         <div class="wm-content">
           <div class="wm-text">
-            <span class="bubble-tag">Pour architectes et BET</span>
-            <h1>Concevez sans compromis. <em>Calculez comme d'habitude.</em></h1>
+          <h1>Concevez sans compromis. <em>Calculez comme d'habitude.</em></h1>
             <p class="lead">Polistibrick est un <strong>coffrage classique pour béton armé</strong>. Vous gardez vos méthodes Eurocode 2 habituelles. En plus : isolation continue moulée dans le panneau, du RE2020 au Passif+, bibliothèque CAD/Revit centralisée, ingénieur Polistibrick dédié à votre projet.</p>
             <div style="display:flex;gap:12px;flex-wrap:wrap;">
               <a href="#espace-pro" class="btn btn-primary btn-arrow">Accès Espace Pro</a>
@@ -236,7 +235,7 @@
         <div class="tier-u">U = 0,14 W/m²K · 15 cm EPS + 15 cm béton · mur 38 cm</div>
         <div class="tier-position">Conforme RE2020 standard. Idéal pour résidentiel classique premium.</div>
         <div class="tier-desc">Pour les projets visant la conformité réglementaire RE2020. Tous les avantages Polistibrick (A1 feu, acoustique 52 dB, hydrofuge, antisismique).</div>
-        <a href="../../produits/murs-mbk/" class="tier-link">Voir la fiche MBK 210 →</a>
+        <a href="../../produits/polistibrick/#coffrage" class="tier-link">Voir la fiche MBK 210 →</a>
       </div>
       <div class="tier-card tier-card--passif">
         <span class="tier-badge tier-badge--passif">Passif</span>
@@ -244,7 +243,7 @@
         <div class="tier-u">U = 0,12 W/m²K · 20 cm EPS + 15 cm béton · mur 42 cm</div>
         <div class="tier-position">Dépasse RE2020. Atteint le standard maison passive.</div>
         <div class="tier-desc">Pour les projets visant la performance énergétique premium. Compatible avec la certification Passivhaus Institut. Très peu de chauffage nécessaire (~25 kWh/m²/an).</div>
-        <a href="../../produits/murs-mbk/" class="tier-link">Voir la fiche MBK 270 →</a>
+        <a href="../../produits/polistibrick/#coffrage" class="tier-link">Voir la fiche MBK 270 →</a>
       </div>
       <div class="tier-card tier-card--passif-plus">
         <span class="tier-badge tier-badge--passif-plus">Passif+</span>
@@ -252,7 +251,7 @@
         <div class="tier-u">U = 0,10 W/m²K · 25 cm EPS + 15 cm béton · mur 47 cm</div>
         <div class="tier-position">Dépasse largement RE2020. Standard Passivhaus certifié.</div>
         <div class="tier-desc">Pour les maisons premium / de luxe. Performance thermique extrême (~15 kWh/m²/an chauffage). Idéal pour climats froids ou projets zéro carbone.</div>
-        <a href="../../produits/murs-mbk/" class="tier-link">Voir la fiche MBK 300 →</a>
+        <a href="../../produits/polistibrick/#coffrage" class="tier-link">Voir la fiche MBK 300 →</a>
       </div>
     </div>
   </div>
@@ -274,29 +273,26 @@
           <h3>Fiches techniques produits</h3>
         </div>
         <div class="product-cols">
-          <!-- COL 1 — MBK (Murs) -->
           <div class="product-col">
-            <div class="product-col-head">
-              <span class="product-col-name">MBK</span>
-              <span class="product-col-desc">Murs</span>
-            </div>
-            <button class="download-item" onclick="requestFiche('Fiche technique MBK')"><span class="download-icon">📄</span><span class="download-info"><span class="download-label">Fiche technique</span><span class="download-meta">MBK 210 · 270 · 300</span></span><span class="download-arrow">→</span></button>
+            <div class="product-col-head"><span class="product-col-name">Polistibrick</span><span class="product-col-desc">MBK · PBK · TBK</span></div>
+            <button class="download-item" onclick="requestFiche('Fiche technique MBK')"><span class="download-icon">📄</span><span class="download-info"><span class="download-label">Coffrages MBK</span><span class="download-meta">210 · 270 · 300</span></span><span class="download-arrow">→</span></button>
+            <button class="download-item" onclick="requestFiche('Fiche technique PBK')"><span class="download-icon">📄</span><span class="download-info"><span class="download-label">Planchers PBK</span><span class="download-meta">200 · 250 · 300</span></span><span class="download-arrow">→</span></button>
+            <button class="download-item" onclick="requestFiche('Fiche technique TBK / SIP250')"><span class="download-icon">📄</span><span class="download-info"><span class="download-label">Toiture TBK</span><span class="download-meta">= SIP250 · panneau commun</span></span><span class="download-arrow">→</span></button>
+            <a href="../../produits/polistibrick/" class="download-item" style="text-decoration:none;"><span class="download-icon">→</span><span class="download-info"><span class="download-label">Page famille</span><span class="download-meta">polistibrick</span></span><span class="download-arrow">→</span></a>
           </div>
-          <!-- COL 2 — PBK (Planchers) -->
           <div class="product-col">
-            <div class="product-col-head">
-              <span class="product-col-name">PBK</span>
-              <span class="product-col-desc">Planchers</span>
-            </div>
-            <button class="download-item" onclick="requestFiche('Fiche technique PBK')"><span class="download-icon">📄</span><span class="download-info"><span class="download-label">Fiche technique</span><span class="download-meta">Planchers isolants</span></span><span class="download-arrow">→</span></button>
+            <div class="product-col-head"><span class="product-col-name">Polistiwall</span><span class="product-col-desc">Mur · Plancher · Toiture</span></div>
+            <button class="download-item" onclick="requestFiche('Fiche technique Polistiwall mur')"><span class="download-icon">📄</span><span class="download-info"><span class="download-label">Mur Polistiwall</span><span class="download-meta">1 modèle</span></span><span class="download-arrow">→</span></button>
+            <button class="download-item" onclick="requestFiche('Fiche technique Polistiwall plancher')"><span class="download-icon">📄</span><span class="download-info"><span class="download-label">Plancher Polistiwall</span><span class="download-meta">1 modèle</span></span><span class="download-arrow">→</span></button>
+            <button class="download-item" onclick="requestFiche('Fiche technique TBK / SIP250')"><span class="download-icon">📄</span><span class="download-info"><span class="download-label">Toiture commune</span><span class="download-meta">TBK / SIP250</span></span><span class="download-arrow">→</span></button>
+            <a href="../../produits/polistiwall/" class="download-item" style="text-decoration:none;"><span class="download-icon">→</span><span class="download-info"><span class="download-label">Page famille</span><span class="download-meta">polistiwall</span></span><span class="download-arrow">→</span></a>
           </div>
-          <!-- COL 3 — TBK (Toit) -->
           <div class="product-col">
-            <div class="product-col-head">
-              <span class="product-col-name">TBK</span>
-              <span class="product-col-desc">Toit</span>
-            </div>
-            <button class="download-item" onclick="requestFiche('Fiche technique TBK')"><span class="download-icon">📄</span><span class="download-info"><span class="download-label">Fiche technique</span><span class="download-meta">Toiture isolante</span></span><span class="download-arrow">→</span></button>
+            <div class="product-col-head"><span class="product-col-name">PolistiSIP</span><span class="product-col-desc">Mur · Plancher · SIP250</span></div>
+            <button class="download-item" onclick="requestFiche('Fiche technique PolistiSIP mur')"><span class="download-icon">📄</span><span class="download-info"><span class="download-label">Mur PolistiSIP</span><span class="download-meta">1 modèle</span></span><span class="download-arrow">→</span></button>
+            <button class="download-item" onclick="requestFiche('Fiche technique PolistiSIP plancher')"><span class="download-icon">📄</span><span class="download-info"><span class="download-label">Plancher PolistiSIP</span><span class="download-meta">1 modèle</span></span><span class="download-arrow">→</span></button>
+            <button class="download-item" onclick="requestFiche('Fiche technique TBK / SIP250')"><span class="download-icon">📄</span><span class="download-info"><span class="download-label">Toiture SIP250</span><span class="download-meta">= TBK · panneau commun</span></span><span class="download-arrow">→</span></button>
+            <a href="../../produits/polistisip/" class="download-item" style="text-decoration:none;"><span class="download-icon">→</span><span class="download-info"><span class="download-label">Page famille</span><span class="download-meta">polistisip</span></span><span class="download-arrow">→</span></a>
           </div>
         </div>
         <div class="product-col-extra">

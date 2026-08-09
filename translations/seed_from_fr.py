@@ -41,6 +41,9 @@ def seed(code: str) -> None:
     for item in TEMPLATE.iterdir():
         if item.name == "_config.json":
             continue
+        # Images/videos/GLBs live in shared/ — do not multiply per country
+        if item.name == "images":
+            continue
         target = dest / item.name
         if item.is_dir():
             shutil.copytree(item, target)

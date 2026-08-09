@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projets Polistibrick · modèles de maisons, une maison en trois systèmes</title>
-  <meta name="description" content="Les projets de maisons Polistibrick : des modèles de plain-pied de 80 à 178 m², chacun en trois systèmes constructifs. Plan, photos et données thermiques pour chacun.">
+  <meta name="description" content="Les maisons Polistibrick : des modèles de 80 à 178 m², chacun en trois systèmes constructifs. Plan, photos et données thermiques pour chacun.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/site.css">
   <style>
     .case-hero { padding: clamp(90px, 12vh, 150px) 0 clamp(34px, 5vh, 56px); background: #fdfbf7; text-align: center; }
@@ -15,10 +15,10 @@
     .case-hero + .section--cream { padding-top: clamp(28px, 4vh, 48px); }
     .case-hero .lead { max-width: 900px; margin: 0 auto; font-size: 16.5px; line-height: 1.6; color: var(--gray); }
 
-    /* la bande qui explique les trois variantes — apparaît une seule fois, en haut */
+    /* la bande qui explique les trois variantes — n'apparaît qu'une fois, en haut */
     .leaf { display: inline-block; margin-left: 5px; }
 
-    /* la grille des modèles */
+    /* la grille de modèles */
     .case-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
     @media (max-width: 1080px) { .case-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 700px)  { .case-grid { grid-template-columns: 1fr; } }
@@ -36,7 +36,7 @@
     .case-spec svg { width: 15px; height: 15px; flex: 0 0 15px; color: var(--gray); }
     .ic-leaf { width: 13px; height: 13px; vertical-align: -2px; margin-left: 3px; color: #12833f; }
 
-    /* les trois variantes de système, dans la carte */
+    /* les trois variantes de système, à l'intérieur de la carte */
     .var-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin: 0 0 14px; }
     .var { padding: 8px 6px; border: 1px solid var(--border); border-radius: 9px; text-align: center; }
     .var-name { display: block; font-weight: 700; font-size: 11px; letter-spacing: .01em; }
@@ -131,7 +131,7 @@
   <div class="container">
     <span class="badge">Projets</span>
     <h1>La même maison, en trois budgets.</h1>
-    <p class="lead">Jusqu'ici, le budget choisissait la maison. On en voulait une, on en prenait une autre.<br>Nous avons fait chaque modèle en trois variantes de construction, pour que personne ne renonce à la maison qu'il veut.</p>
+    <p class="lead">Jusqu'ici, le budget choisissait la maison. On en voulait une, on en prenait une autre.<br>Nous avons décliné chaque modèle en trois variantes de construction, pour que personne ne renonce à la maison qu'il veut.</p>
   </div>
 </section>
 
@@ -143,7 +143,7 @@
       <!-- MODÈLE 1 -->
       <article class="case-card" data-model="1">
         <div class="case-photo">
-          <img src="../images/case/pbk7-fatada-strada.jpg" alt="Riva — maison de plain-pied, avec garage, vue depuis la rue" loading="lazy">
+          <img src="../images/case/pbk7-fatada-strada.jpg" alt="Riva — maison de plain-pied avec garage, vue depuis la rue" loading="lazy">
         </div>
         <div class="case-body">
           <h2>Riva</h2>
@@ -151,7 +151,7 @@
           <div class="var-list">
             <div class="var" title="Structure béton, isolation, finitions"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
             <div class="var" title="Structure béton, isolation"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
-            <div class="var var--wood" title="Structure bois, isolation"><span class="var-name">Polistisip<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
+            <div class="var var--wood" title="Structure bois, isolation"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
           </div>
         </div>
       </article>
@@ -160,7 +160,7 @@
         <div class="detail-wrap">
         <div class="detail-inner">
           <div>
-            <div class="gal-main"><img src="../images/case/pbk7-fatada-strada.jpg" alt="Riva — la façade côté rue"></div>
+            <div class="gal-main"><img src="../images/case/pbk7-fatada-strada.jpg" alt="Riva — façade côté rue"></div>
             <div class="gal-thumbs">
             <img src="../images/case/pbk7-fatada-strada.jpg" alt="Façade côté rue" loading="lazy" data-full="../images/case/pbk7-fatada-strada.jpg" class="on">
             <img src="../images/case/pbk7-fatada-gradina.jpg" alt="Façade côté jardin" loading="lazy" data-full="../images/case/pbk7-fatada-gradina.jpg" class="">
@@ -182,11 +182,11 @@
             <div class="d-fact"><b>25 m²</b><span>garage</span></div>
             <div class="d-fact"><b>28 m²</b><span>terrasse couverte</span></div>
             </div>
-          <p>Riva est une maison longue, sur un seul niveau, pensée pour un terrain ordinaire. Pas d'escalier, pas d'étage à entretenir — tout ce qui sert au quotidien est au même niveau, y compris à 70 ans.</p>
-          <p>L'espace de vie occupe le milieu : séjour, cuisine et salle à manger dans un seul volume de 48 m², ouvert sur la terrasse couverte par une large baie coulissante. La cuisine a un îlot et une fenêtre sur le jardin.</p>
-          <p>Les chambres sont groupées à l'autre bout, séparées de l'espace de vie par un couloir. La principale, de 14 m², a une sortie directe sur la terrasse. La salle de bains et le WC séparé desservent les trois chambres sans passer par le séjour.</p>
+          <p>Riva est une maison longue, sur un seul niveau, pensée pour un terrain ordinaire. Pas d'escalier, pas d'étage à entretenir — tout ce que vous utilisez au quotidien est au même niveau, y compris à 70 ans.</p>
+          <p>L'espace de vie est au centre : séjour, cuisine et salle à manger dans un seul volume de 48 m², ouvert sur la terrasse couverte par une large baie coulissante. La cuisine a un îlot et une fenêtre sur le jardin.</p>
+          <p>Les chambres sont regroupées à l'autre bout, séparées de l'espace de vie par un couloir. La principale, de 14 m², a une sortie directe sur la terrasse. La salle de bains et le WC séparé desservent les trois chambres sans passer par le séjour.</p>
             <ul class="d-points">
-              <li>Le garage à l'opposé des chambres — le bruit de la voiture n'arrive pas là où l'on dort</li>
+              <li>Le garage à l'opposé des chambres — le bruit de la voiture n'arrive pas là où vous dormez</li>
               <li>Entrée séparée, avec son propre vestibule — on n'entre pas directement dans le séjour</li>
               <li>Mur coupe-feu en béton de 15 cm entre le garage et la maison</li>
               <li>Mur extérieur de 38 cm, U = 0,14 W/m²K — se chauffe avec une petite chaudière</li>
@@ -210,7 +210,7 @@
           <div class="var-list">
             <div class="var" title="Structure béton, isolation, finitions"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
             <div class="var" title="Structure béton, isolation"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
-            <div class="var var--wood" title="Structure bois, isolation"><span class="var-name">Polistisip<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
+            <div class="var var--wood" title="Structure bois, isolation"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
           </div>
         </div>
       </article>
@@ -242,10 +242,10 @@
             <div class="d-fact"><b>30 m²</b><span>terrasse couverte</span></div>
             </div>
           <p>Luna est construite en L. Les deux ailes se rejoignent à angle droit et enferment la terrasse entre elles — abritée du vent sur deux côtés, pas exposée comme sur une maison droite.</p>
-          <p>L'espace de vie occupe une aile entière : 52 m² de séjour, cuisine et salle à manger, avec des fenêtres sur trois côtés. Il a un cellier séparé, ce qui garde la cuisine propre.</p>
+          <p>L'espace de vie occupe une aile entière : 52 m² de séjour, cuisine et salle à manger, avec des fenêtres sur trois côtés. Il a un cellier séparé, ce qui garde la cuisine en ordre.</p>
           <p>Les trois chambres occupent l'aile longue, égales — 12,6 m² chacune. Personne ne reçoit la petite chambre. Le garage est à l'autre bout, aussi loin que possible de la zone où l'on dort.</p>
             <ul class="d-points">
-              <li>La terrasse loge dans le creux du L — on peut rester dehors même par grand vent</li>
+              <li>La terrasse est nichée dans le creux du L — on peut rester dehors même par vent</li>
               <li>Trois chambres égales de 12,6 m² — sans la petite chambre dont personne ne veut</li>
               <li>Cellier séparé de 6,7 m², près de l'entrée</li>
               <li>Mur coupe-feu en béton de 15 cm entre le garage et la maison</li>
@@ -269,7 +269,7 @@
           <div class="var-list">
             <div class="var" title="Structure béton, isolation, finitions"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
             <div class="var" title="Structure béton, isolation"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
-            <div class="var var--wood" title="Structure bois, isolation"><span class="var-name">Polistisip<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
+            <div class="var var--wood" title="Structure bois, isolation"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
           </div>
         </div>
       </article>
@@ -300,15 +300,15 @@
             <div class="d-fact"><b>16 m²</b><span>chambre principale</span></div>
             <div class="d-fact"><b>13 m²</b><span>salle de bains</span></div>
             </div>
-          <p>Pura est la maison la plus resserrée du catalogue : 156 m² d'emprise pour trois chambres. Volume presque carré, avec toit-terrasse — sans charpente, sans combles.</p>
+          <p>Pura est la maison la plus ramassée du catalogue : 156 m² d'emprise pour trois chambres. Volume presque carré, avec toit-terrasse — sans charpente, sans combles.</p>
           <p>L'espace de vie est une seule pièce de 50 m², orientée vers la terrasse en béton. La cuisine a sa propre fenêtre au-dessus du plan de travail, ce qui compte quand on cuisine dos au séjour.</p>
-          <p>La chambre principale fait 16,1 m², la plus grande du catalogue. La salle de bains est unique, mais de 12,6 m² — avec baignoire et douche séparée — plus un WC près de l'entrée, pour que les invités ne traversent pas la zone de nuit.</p>
+          <p>La chambre principale fait 16,1 m², la plus grande du catalogue. Il n'y a qu'une seule salle de bains, mais de 12,6 m² — avec baignoire et douche séparée — plus un WC près de l'entrée, pour que les invités ne traversent pas la zone de nuit.</p>
             <ul class="d-points">
               <li>La plus petite emprise au sol du catalogue pour trois chambres — pour terrain étroit</li>
               <li>Sans garage, donc aussi le plus petit prix de structure</li>
               <li>Chambre principale de 16,1 m², la plus grande du catalogue</li>
               <li>Salle de bains de 12,6 m² avec baignoire et douche séparée, plus WC près de l'entrée</li>
-              <li>Toit-terrasse — sans charpente à entretenir</li>
+              <li>Toit-terrasse — pas de charpente à entretenir</li>
             </ul>
             <button type="button" class="btn btn-primary btn-arrow js-next" data-model="Pura">Je souhaite aller plus loin</button>
           </div>
@@ -328,7 +328,7 @@
           <div class="var-list">
             <div class="var" title="Structure béton, isolation, finitions"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
             <div class="var" title="Structure béton, isolation"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
-            <div class="var var--wood" title="Structure bois, isolation"><span class="var-name">Polistisip<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
+            <div class="var var--wood" title="Structure bois, isolation"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
           </div>
         </div>
       </article>
@@ -337,7 +337,7 @@
         <div class="detail-wrap">
         <div class="detail-inner">
           <div>
-            <div class="gal-main"><img src="../images/case/home3-fatada-terasa.jpg" alt="Aura — la façade côté jardin"></div>
+            <div class="gal-main"><img src="../images/case/home3-fatada-terasa.jpg" alt="Aura — façade côté jardin"></div>
             <div class="gal-thumbs">
             <img src="../images/case/home3-fatada-strada.jpg" alt="Façade côté rue" loading="lazy" data-full="../images/case/home3-fatada-strada.jpg" class="">
             <img src="../images/case/home3-fatada-terasa.jpg" alt="Façade côté jardin" loading="lazy" data-full="../images/case/home3-fatada-terasa.jpg" class="on">
@@ -360,10 +360,10 @@
             <div class="d-fact"><b>10 m²</b><span>bureau</span></div>
             </div>
           <p>Aura est le modèle le mieux équipé du catalogue. Toujours sur un niveau, mais avec les espaces séparés comme dans une maison bien plus grande : jour, nuit, travail et voitures ne se mélangent pas.</p>
-          <p>La chambre parentale de 17,5 m² a son propre dressing et sa propre salle de bains, groupés en suite au bout de la maison. Les deux autres chambres ont leur salle de bains, de l'autre côté du couloir — le matin, on ne fait pas la queue.</p>
-          <p>Le bureau de 10,4 m² est près de l'espace de vie, pas entre les chambres. On peut travailler ou recevoir un client sans traverser la chambre de personne. Le garage double entre dans la maison par un cellier technique, pas directement dans le séjour.</p>
+          <p>La chambre parentale de 17,5 m² a son propre dressing et sa propre salle de bains, regroupés en suite au bout de la maison. Les deux autres chambres ont leur salle de bains, de l'autre côté du couloir — pas de file d'attente le matin.</p>
+          <p>Le bureau de 10,4 m² est près de l'espace de vie, pas entre les chambres. On peut travailler ou recevoir un client sans traverser la chambre de personne. Le garage double communique avec la maison par un cellier technique, pas directement par le séjour.</p>
             <ul class="d-points">
-              <li>Suite parentale : chambre 17,5 m² + dressing + salle de bains privée</li>
+              <li>Suite parentale : chambre de 17,5 m² + dressing + salle de bains privative</li>
               <li>Une deuxième salle de bains, séparée, pour les deux autres chambres</li>
               <li>Bureau de 10,4 m² près de l'espace de vie — on ne travaille pas depuis la chambre</li>
               <li>Garage double de 36,5 m², avec mur coupe-feu en béton côté maison</li>
@@ -387,7 +387,7 @@
           <div class="var-list">
             <div class="var" title="Structure béton, isolation, finitions"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
             <div class="var" title="Structure béton, isolation"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
-            <div class="var var--wood" title="Structure bois, isolation"><span class="var-name">Polistisip<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
+            <div class="var var--wood" title="Structure bois, isolation"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
           </div>
         </div>
       </article>
@@ -396,7 +396,7 @@
         <div class="detail-wrap">
         <div class="detail-inner">
           <div>
-            <div class="gal-main"><img src="../images/case/e5-fatada-terasa.jpg" alt="Vega — la façade côté jardin"></div>
+            <div class="gal-main"><img src="../images/case/e5-fatada-terasa.jpg" alt="Vega — façade côté jardin"></div>
             <div class="gal-thumbs">
             <img src="../images/case/e5-fatada-strada.jpg" alt="Façade côté rue" loading="lazy" data-full="../images/case/e5-fatada-strada.jpg" class="">
             <img src="../images/case/e5-fatada-terasa.jpg" alt="Façade côté jardin" loading="lazy" data-full="../images/case/e5-fatada-terasa.jpg" class="on">
@@ -419,8 +419,8 @@
             <div class="d-fact"><b>11 m²</b><span>salle de bains</span></div>
             </div>
           <p>Vega est la réponse au petit terrain. Elle n'occupe que 81 m² au sol — la moitié de ce que demandent les autres modèles — et en tire 131 m² utiles, parce qu'elle monte au lieu de s'étaler.</p>
-          <p>Le rez-de-chaussée est une seule pièce : séjour, cuisine et salle à manger, 43 m², avec baie coulissante vers la terrasse. L'escalier monte près de l'entrée, sans couper l'espace. En bas, il ne reste qu'un WC et le local technique.</p>
-          <p>Les trois chambres sont à l'étage, avec la salle de bains de 11 m². La séparation entre jour et nuit, c'est le plancher qui la fait, pas un mur — le meilleur isolant phonique d'une maison.</p>
+          <p>Le rez-de-chaussée est une seule pièce : séjour, cuisine et salle à manger, 43 m², avec une baie coulissante vers la terrasse. L'escalier monte près de l'entrée, sans couper l'espace. En bas, il ne reste qu'un WC et le local technique.</p>
+          <p>Les trois chambres sont à l'étage, avec la salle de bains de 11 m². La séparation entre jour et nuit, c'est le plancher qui la fait, pas une cloison — le meilleur isolant phonique d'une maison.</p>
             <ul class="d-points">
               <li>La plus petite emprise au sol du catalogue — 81 m², pour terrain étroit ou reculs serrés</li>
               <li>Les chambres à l'étage, à l'abri du bruit de la rue</li>
@@ -446,7 +446,7 @@
           <div class="var-list">
             <div class="var" title="Structure béton, isolation, finitions"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
             <div class="var" title="Structure béton, isolation"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
-            <div class="var var--wood" title="Structure bois, isolation"><span class="var-name">Polistisip<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
+            <div class="var var--wood" title="Structure bois, isolation"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
           </div>
         </div>
       </article>
@@ -455,7 +455,7 @@
         <div class="detail-wrap">
         <div class="detail-inner">
           <div>
-            <div class="gal-main"><img src="../images/case/e3-fatada-terasa.jpg" alt="Silva — la façade côté jardin"></div>
+            <div class="gal-main"><img src="../images/case/e3-fatada-terasa.jpg" alt="Silva — façade côté jardin"></div>
             <div class="gal-thumbs">
             <img src="../images/case/e3-fatada-strada.jpg" alt="Façade côté rue" loading="lazy" data-full="../images/case/e3-fatada-strada.jpg" class="">
             <img src="../images/case/e3-fatada-terasa.jpg" alt="Façade côté jardin" loading="lazy" data-full="../images/case/e3-fatada-terasa.jpg" class="on">
@@ -477,9 +477,9 @@
             <div class="d-fact"><b>22 m²</b><span>garage</span></div>
             <div class="d-fact"><b>16 m²</b><span>chaque chambre</span></div>
             </div>
-          <p>Silva résout le cas le plus courant : famille avec enfants, voiture, terrain en ville. L'espace de vie au rez-de-chaussée, les chambres à l'étage, le garage accolé à la maison.</p>
-          <p>Le rez-de-chaussée est un seul volume de 48 m² — séjour, cuisine et salle à manger — avec baie coulissante vers la terrasse. L'escalier monte près de l'entrée. En bas aussi, un WC et un cellier, pour ne pas monter à l'étage pour chaque broutille.</p>
-          <p>En haut, trois chambres presque égales : 15,8 · 15,9 · 16,2 m². Il n'y a pas de petite chambre pour laquelle les enfants se disputent. La salle de bains de 9,4 m² dessert les trois.</p>
+          <p>Silva règle le cas le plus courant : famille avec enfants, voiture, terrain en ville. L'espace de vie au rez-de-chaussée, les chambres à l'étage, le garage accolé à la maison.</p>
+          <p>Le rez-de-chaussée est un seul volume de 48 m² — séjour, cuisine et salle à manger — avec une baie coulissante vers la terrasse. L'escalier monte près de l'entrée. En bas aussi, un WC et un cellier, pour ne pas monter à l'étage pour chaque petite chose.</p>
+          <p>En haut, trois chambres presque égales : 15,8 · 15,9 · 16,2 m². Pas de petite chambre pour laquelle les enfants se disputent. La salle de bains de 9,4 m² dessert les trois.</p>
             <ul class="d-points">
               <li>Le garage ne se construit qu'au rez-de-chaussée — au-dessus, pas d'étage</li>
               <li>La façade reste basse côté rue, au lieu d'un bloc haut collé au trottoir</li>
@@ -505,7 +505,7 @@
           <div class="var-list">
             <div class="var" title="Structure béton, isolation, finitions"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
             <div class="var" title="Structure béton, isolation"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
-            <div class="var var--wood" title="Structure bois, isolation"><span class="var-name">Polistisip<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
+            <div class="var var--wood" title="Structure bois, isolation"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
           </div>
         </div>
       </article>
@@ -514,7 +514,7 @@
         <div class="detail-wrap">
         <div class="detail-inner">
           <div>
-            <div class="gal-main"><img src="../images/case/terra-fatada-terasa.jpg" alt="Terra — la façade côté jardin"></div>
+            <div class="gal-main"><img src="../images/case/terra-fatada-terasa.jpg" alt="Terra — façade côté jardin"></div>
             <div class="gal-thumbs">
             <img src="../images/case/terra-fatada-strada.jpg" alt="Façade côté rue" loading="lazy" data-full="../images/case/terra-fatada-strada.jpg" class="">
             <img src="../images/case/terra-fatada-terasa.jpg" alt="Façade côté jardin" loading="lazy" data-full="../images/case/terra-fatada-terasa.jpg" class="on">
@@ -536,14 +536,14 @@
             <div class="d-fact"><b>41 m²</b><span>séjour + cuisine</span></div>
             <div class="d-fact"><b>20 m²</b><span>garage en option</span></div>
             </div>
-          <p>Terra est la maison pour la grande famille, ou pour celle qui grandit. Quatre chambres et trois salles de bains, sans ressembler à un immeuble : l'étage ne s'élève que sur le corps principal, le reste demeure sur un niveau.</p>
+          <p>Terra est la maison de la grande famille, ou de celle qui grandit. Quatre chambres et trois salles de bains, sans ressembler à un immeuble : l'étage ne monte que sur le corps principal, le reste demeure sur un niveau.</p>
           <p>La chambre de 17,8 m² est au rez-de-chaussée, près de la salle de bains et de la buanderie. Elle peut être la chambre des grands-parents, le bureau ou la chambre d'amis — personne ne monte d'escalier s'il ne veut pas. Les trois autres sont en haut, avec deux salles de bains entre elles.</p>
-          <p>Le rez-de-chaussée a le séjour ouvert de 41 m², une buanderie séparée et une salle de bains complète. Le garage se construit ou non : il est dessiné en trait interrompu, et le mur entre lui et la maison reste de toute façon, comme mur extérieur.</p>
+          <p>Le rez-de-chaussée a le séjour ouvert de 41 m², une buanderie séparée et une salle de bains complète. Le garage peut se construire ou non : il est dessiné en trait interrompu, et le mur entre lui et la maison reste de toute façon, comme mur extérieur.</p>
             <ul class="d-points">
-              <li>Quatre chambres, une au rez-de-chaussée — pour les grands-parents, le bureau ou les invités, sans escalier</li>
+              <li>Quatre chambres, dont une au rez-de-chaussée — pour les grands-parents, le bureau ou les invités, sans escalier</li>
               <li>Trois salles de bains pour quatre chambres — une en bas, deux en haut</li>
               <li>Buanderie séparée de la salle de bains, au rez-de-chaussée</li>
-              <li>Garage en option de 20 m² — il se construit ou non, le plan reste le même</li>
+              <li>Garage en option de 20 m² — qu'on le construise ou non, le plan reste le même</li>
               <li>Plancher en panneaux PBK avec dalle de compression, portée libre jusqu'à 9 m</li>
             </ul>
             <button type="button" class="btn btn-primary btn-arrow js-next" data-model="Terra">Je souhaite aller plus loin</button>
@@ -564,7 +564,7 @@
           <div class="var-list">
             <div class="var" title="Structure béton, isolation, finitions"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
             <div class="var" title="Structure béton, isolation"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
-            <div class="var var--wood" title="Structure bois, isolation"><span class="var-name">Polistisip<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
+            <div class="var var--wood" title="Structure bois, isolation"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
           </div>
         </div>
       </article>
@@ -573,7 +573,7 @@
         <div class="detail-wrap">
         <div class="detail-inner">
           <div>
-            <div class="gal-main"><img src="../images/case/nova-fatada-terasa.jpg" alt="Nova — la façade côté jardin"></div>
+            <div class="gal-main"><img src="../images/case/nova-fatada-terasa.jpg" alt="Nova — façade côté jardin"></div>
             <div class="gal-thumbs">
             <img src="../images/case/nova-fatada-strada.jpg" alt="Façade côté rue" loading="lazy" data-full="../images/case/nova-fatada-strada.jpg" class="">
             <img src="../images/case/nova-fatada-terasa.jpg" alt="Façade côté jardin" loading="lazy" data-full="../images/case/nova-fatada-terasa.jpg" class="on">
@@ -595,9 +595,9 @@
             <div class="d-fact"><b>7 m²</b><span>salle de bains</span></div>
             <div class="d-fact"><b>13 m²</b><span>garage en option</span></div>
             </div>
-          <p>Nova est la plus petite du catalogue et la moins chère à construire. Quatre-vingts mètres utiles, deux chambres, tout sur un niveau — pour un jeune couple, pour la première maison ou pour qui ne veut pas chauffer des espaces qu'il n'utilise pas.</p>
+          <p>Nova est la plus petite du catalogue et la moins chère à construire. Quatre-vingts mètres utiles, deux chambres, tout sur un niveau — pour un jeune couple, pour une première maison ou pour qui ne veut pas chauffer des espaces qu'il n'utilise pas.</p>
           <p>Le séjour de 30 m² s'ouvre sur le jardin, et la cuisine a son propre cellier de 6,8 m² — rare pour une maison de cette taille, mais ça fait la différence quand on n'a nulle part où ranger.</p>
-          <p>La grande chambre fait 15,6 m², la deuxième 12,3. La salle de bains de 7 m² est complète, avec baignoire et douche. Le garage se construit ou non : il est dessiné en pointillé, et sans lui l'emprise descend de 113 à 97 m².</p>
+          <p>La grande chambre fait 15,6 m², la deuxième 12,3. La salle de bains de 7 m² est complète, avec baignoire et douche. Le garage peut se construire ou non : il est dessiné en pointillé, et sans lui l'emprise passe de 113 à 97 m².</p>
             <ul class="d-points">
               <li>La plus petite surface utile du catalogue — le plus petit coût de construction</li>
               <li>Cellier de 6,8 m², inhabituel pour une maison de 80 m²</li>
@@ -623,7 +623,7 @@
           <div class="var-list">
             <div class="var" title="Structure béton, isolation, finitions"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
             <div class="var" title="Structure béton, isolation"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
-            <div class="var var--wood" title="Structure bois, isolation"><span class="var-name">Polistisip<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
+            <div class="var var--wood" title="Structure bois, isolation"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
           </div>
         </div>
       </article>
@@ -632,7 +632,7 @@
         <div class="detail-wrap">
         <div class="detail-inner">
           <div>
-            <div class="gal-main"><img src="../images/case/aria-fatada-terasa.jpg" alt="Aria — la façade côté jardin"></div>
+            <div class="gal-main"><img src="../images/case/aria-fatada-terasa.jpg" alt="Aria — façade côté jardin"></div>
             <div class="gal-thumbs">
             <img src="../images/case/aria-fatada-strada.jpg" alt="Façade côté rue" loading="lazy" data-full="../images/case/aria-fatada-strada.jpg" class="">
             <img src="../images/case/aria-fatada-terasa.jpg" alt="Façade côté jardin" loading="lazy" data-full="../images/case/aria-fatada-terasa.jpg" class="on">
@@ -654,7 +654,7 @@
             <div class="d-fact"><b>26 m²</b><span>garage en option</span></div>
             <div class="d-fact"><b>5 m²</b><span>buanderie</span></div>
             </div>
-          <p>Aria tire quatre chambres de seulement 90 m² de terrain. L'étage couvre toute l'emprise, garage compris — voilà pourquoi tant de choses tiennent dans un volume aussi petit.</p>
+          <p>Aria tire quatre chambres de seulement 90 m² de terrain. L'étage couvre toute l'emprise, garage compris — c'est pourquoi tant de choses tiennent dans un volume aussi petit.</p>
           <p>Les quatre chambres sont presque identiques : entre 13,6 et 14,2 m², deux de chaque côté du palier. Dans une maison avec quatre enfants, ou avec enfants et bureau, cela veut dire que personne ne se sent lésé.</p>
           <p>La cuisine est une pièce séparée, pas ouverte sur le séjour. On perd l'effet d'espace, on gagne le calme et l'absence d'odeurs — certains la veulent, d'autres non, mais il est bon que cette variante existe aussi au catalogue.</p>
             <ul class="d-points">
@@ -682,7 +682,7 @@
           <div class="var-list">
             <div class="var" title="Structure béton, isolation, finitions"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
             <div class="var" title="Structure béton, isolation"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
-            <div class="var var--wood" title="Structure bois, isolation"><span class="var-name">Polistisip<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
+            <div class="var var--wood" title="Structure bois, isolation"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
           </div>
         </div>
       </article>
@@ -691,7 +691,7 @@
         <div class="detail-wrap">
         <div class="detail-inner">
           <div>
-            <div class="gal-main"><img src="../images/case/vela-fatada-terasa.jpg" alt="Vela — la façade côté jardin"></div>
+            <div class="gal-main"><img src="../images/case/vela-fatada-terasa.jpg" alt="Vela — façade côté jardin"></div>
             <div class="gal-thumbs">
             <img src="../images/case/vela-fatada-strada.jpg" alt="Façade côté rue" loading="lazy" data-full="../images/case/vela-fatada-strada.jpg" class="">
             <img src="../images/case/vela-fatada-terasa.jpg" alt="Façade côté jardin" loading="lazy" data-full="../images/case/vela-fatada-terasa.jpg" class="on">
@@ -713,9 +713,9 @@
             <div class="d-fact"><b>8,6 m²</b><span>salle de bains</span></div>
             <div class="d-fact"><b>—</b><span>sans garage</span></div>
             </div>
-          <p>Vela a le plus grand séjour rapporté à la surface de tout le catalogue : 42 m² sur un total de 92. Presque la moitié de la maison est la zone où l'on vit vraiment, pas celle qu'on ne fait que chauffer.</p>
-          <p>Les trois chambres et la salle de bains sont regroupées dans la moitié est, reliées par un couloir court. Rien ne se perd en couloirs — c'est pourquoi il en reste autant pour l'espace de vie.</p>
-          <p>Sans garage et sans découpes dans le plan : un rectangle propre de 13 sur 8,6 mètres. C'est la plus simple et la moins chère à monter du catalogue, à la même qualité de mur.</p>
+          <p>Vela a le plus grand séjour rapporté à la surface de tout le catalogue : 42 m² sur un total de 92. Près de la moitié de la maison est la zone où l'on vit vraiment, pas celle qu'on ne fait que chauffer.</p>
+          <p>Les trois chambres et la salle de bains sont regroupées de façon compacte dans la moitié est, reliées par un couloir court. Rien ne se perd en couloirs — c'est pourquoi il en reste autant pour l'espace de vie.</p>
+          <p>Sans garage et sans découpes dans le plan : un rectangle net de 13 sur 8,6 mètres. C'est la plus simple et la moins chère à monter du catalogue, à qualité de mur égale.</p>
             <ul class="d-points">
               <li>Le plus grand séjour du catalogue rapporté à la surface — 42 sur 92 m²</li>
               <li>Volume rectangulaire simple, sans découpes — le moins cher à monter</li>
@@ -741,7 +741,7 @@
           <div class="var-list">
             <div class="var" title="Structure béton, isolation, finitions"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
             <div class="var" title="Structure béton, isolation"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
-            <div class="var var--wood" title="Structure bois, isolation"><span class="var-name">Polistisip<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
+            <div class="var var--wood" title="Structure bois, isolation"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
           </div>
         </div>
       </article>
@@ -750,7 +750,7 @@
         <div class="detail-wrap">
         <div class="detail-inner">
           <div>
-            <div class="gal-main"><img src="../images/case/mira-fatada-terasa.jpg" alt="Mira — la façade côté jardin"></div>
+            <div class="gal-main"><img src="../images/case/mira-fatada-terasa.jpg" alt="Mira — façade côté jardin"></div>
             <div class="gal-thumbs">
             <img src="../images/case/mira-fatada-strada.jpg" alt="Façade côté rue" loading="lazy" data-full="../images/case/mira-fatada-strada.jpg" class="">
             <img src="../images/case/mira-fatada-terasa.jpg" alt="Façade côté jardin" loading="lazy" data-full="../images/case/mira-fatada-terasa.jpg" class="on">
@@ -772,13 +772,13 @@
             <div class="d-fact"><b>28 m²</b><span>garage en option</span></div>
             <div class="d-fact"><b>—</b><span>sans escalier</span></div>
             </div>
-          <p>Mira est la seule maison du catalogue avec <strong>quatre chambres sur un seul niveau</strong>. Terra et Aria en ont quatre aussi, mais avec étage. Ici tout est en bas : personne ne monte d'escalier, jamais.</p>
+          <p>Mira est la seule maison du catalogue avec <strong>quatre chambres sur un seul niveau</strong>. Terra et Aria en ont quatre aussi, mais avec étage. Ici, tout est en bas : personne ne monte d'escalier, jamais.</p>
           <p>Cela la rend adaptée à deux situations que le reste du catalogue ne couvre pas : la grande famille avec de jeunes enfants, où l'escalier est un souci de plus, et deux générations sous le même toit, où les grands-parents ne peuvent pas monter.</p>
           <p>Les quatre chambres sont groupées deux par deux de part et d'autre d'un couloir court, avec la salle de bains au bout. L'espace de vie reste séparé, à l'autre bout de la maison, près du cellier et du garage.</p>
             <ul class="d-points">
               <li>La seule du catalogue avec quatre chambres sans étage</li>
-              <li>Sans escalier — pour les jeunes enfants ou pour les parents âgés</li>
-              <li>L'espace de vie à un bout, les chambres à l'autre, avec un couloir entre les deux</li>
+              <li>Sans escalier — pour les jeunes enfants ou les parents âgés</li>
+              <li>L'espace de vie à un bout, les chambres à l'autre, un couloir entre les deux</li>
               <li>Garage en option de 28 m², le plus grand du catalogue après Aura</li>
               <li>Mur extérieur de 38 cm, U = 0,14 W/m²K</li>
             </ul>
@@ -792,8 +792,8 @@
     </div>
 
     <p class="case-note">
-      Les prix se complètent une fois la grille établie. Tous les modèles peuvent s'adapter — surface, distribution, finitions.
-      La structure en bois du Polistisip utilise une ressource qui se renouvelle et demande moins de béton ; les chiffres exacts d'empreinte, nous les publions quand l'analyse complète est prête.
+      Les prix seront renseignés une fois notre grille établie. Tous les modèles peuvent être adaptés — surface, distribution, finitions.
+      La structure en bois du PolistiSIP utilise une ressource qui se renouvelle et demande moins de béton ; nous publierons les chiffres exacts d'empreinte quand l'analyse complète sera prête.
     </p>
 
   </div>
@@ -807,7 +807,7 @@
     <button class="sysmodal-x" data-close aria-label="Fermer">×</button>
     <p class="sysmodal-kicker" id="sysmodal-model">Riva</p>
     <h2 id="sysmodal-title">Dans quel système la construisons-nous ?</h2>
-    <p class="sysmodal-lead">La même maison, le même plan. La structure et la finition changent — et avec elles le prix.</p>
+    <p class="sysmodal-lead">Même maison, même plan. La structure et les finitions changent — et le prix avec elles.</p>
 
     <div class="sysgrid">
 
@@ -821,12 +821,13 @@
           <div><dt>Confort d'été</dt><dd>très bon</dd></div>
           <div><dt>Réaction au feu</dt><dd>A1</dd></div>
         </dl>
-        <p class="sys-inc">Il arrive avec la plaque de fibrociment sur les deux faces. On enduit directement, sans couche d'égalisation.</p>
+        <p class="sys-inc">Livré avec la plaque de fibrociment sur les deux faces. On enduit directement, sans couche d'égalisation.</p>
         <div class="sys-preturi">
           <div class="sys-rand"><span>Le coffrage seul</span><b>— €<small>/m²</small></b></div>
-          <div class="sys-rand"><span>La construction gros œuvre</span><b>— €<small>/m²</small></b></div>
+          <div class="sys-rand"><span>Le gros œuvre</span><b>— €<small>/m²</small></b></div>
         </div>
         <button type="button" class="btn btn-primary btn-arrow sys-go">Je continue avec Polistibrick</button>
+        <a href="../produits/polistibrick/" class="sys-fiche" style="display:inline-block;margin-top:10px;font-size:13px;font-weight:600;color:var(--red);">Voir la fiche famille →</a>
       </article>
 
       <article class="syscard" data-sistem="Polistiwall">
@@ -839,16 +840,17 @@
           <div><dt>Confort d'été</dt><dd>très bon</dd></div>
           <div><dt>Réaction au feu</dt><dd>A1</dd></div>
         </dl>
-        <p class="sys-inc">La même structure et la même isolation. La finition reste à votre charge — c'est pour ça que ça coûte moins.</p>
+        <p class="sys-inc">Même structure, même isolation. Les finitions restent à votre charge — c'est pour cela que ça coûte moins.</p>
         <div class="sys-preturi">
           <div class="sys-rand"><span>Le coffrage seul</span><b>— €<small>/m²</small></b></div>
-          <div class="sys-rand"><span>La construction gros œuvre</span><b>— €<small>/m²</small></b></div>
+          <div class="sys-rand"><span>Le gros œuvre</span><b>— €<small>/m²</small></b></div>
         </div>
         <button type="button" class="btn btn-primary btn-arrow sys-go">Je continue avec Polistiwall</button>
+        <a href="../produits/polistiwall/" class="sys-fiche" style="display:inline-block;margin-top:10px;font-size:13px;font-weight:600;color:var(--red);">Voir la fiche famille →</a>
       </article>
 
-      <article class="syscard syscard--wood" data-sistem="Polistisip">
-        <h3>Polistisip<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></h3>
+      <article class="syscard syscard--wood" data-sistem="PolistiSIP">
+        <h3>PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></h3>
         <p class="sys-what">Structure bois · isolation</p>
         <dl class="sys-specs">
           <div><dt>Mur extérieur</dt><dd>30 cm</dd></div>
@@ -857,16 +859,17 @@
           <div><dt>Confort d'été</dt><dd>bon</dd></div>
           <div><dt>Réaction au feu</dt><dd>bois</dd></div>
         </dl>
-        <p class="sys-inc">Un mur plus mince et mieux isolé, 17 fois plus léger. Vous gagnez sur la surface utile et sur la fondation.</p>
+        <p class="sys-inc">Mur plus mince et mieux isolé, 17 fois plus léger. Vous gagnez sur la surface utile et sur la fondation.</p>
         <div class="sys-preturi">
           <div class="sys-rand"><span>Les panneaux seuls</span><b>— €<small>/m²</small></b></div>
-          <div class="sys-rand"><span>La construction gros œuvre</span><b>— €<small>/m²</small></b></div>
+          <div class="sys-rand"><span>Le gros œuvre</span><b>— €<small>/m²</small></b></div>
         </div>
-        <button type="button" class="btn btn-primary btn-arrow sys-go">Je continue avec Polistisip</button>
+        <button type="button" class="btn btn-primary btn-arrow sys-go">Je continue avec PolistiSIP</button>
+        <a href="../produits/polistisip/" class="sys-fiche" style="display:inline-block;margin-top:10px;font-size:13px;font-weight:600;color:var(--red);">Voir la fiche famille →</a>
       </article>
 
     </div>
-    <p class="sysmodal-note">Les prix sont estimatifs et se confirment après avoir vu le terrain et le projet. Le coffrage, c'est le matériau livré ; le gros œuvre, c'est la fondation, la structure et la toiture, montées par nous. Les données thermiques viennent des fiches Ubakus du mur.</p>
+    <p class="sysmodal-note">Les prix sont estimatifs et se confirment après examen du terrain et du projet. Le coffrage, c'est le matériau livré ; le gros œuvre, c'est la fondation, la structure et la toiture, montées par nous. Les données thermiques viennent des fiches Ubakus du mur.</p>
   </div>
 </div>
 

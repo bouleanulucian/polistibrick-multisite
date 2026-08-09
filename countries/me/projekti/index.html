@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="cnr">
+<html lgodinag="cnr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projekti Polistibrick · modeli kuća, jedna kuća u tri sistema</title>
-  <meta name="description" content="Projekti kuća Polistibrick: prizemni modeli od 80 do 178 m², svaki u tri konstruktivna sistema. Plan, fotografije i termički podaci za svaki.">
+  <meta name="viewport" content="width=devišta-width, initial-scale=1.0">
+  <title>Projekti Polistibrick · modèles de višesons, une višeson en trois systèmes</title>
+  <meta name="description" content="Les višesons Polistibrick : des modèles de 80 à 178 m², chasgodina en trois systèmes constructifs. Plgodina, photos et données thermiques pour chasgodina.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/site.css">
   <style>
     .case-hero { padding: clamp(90px, 12vh, 150px) 0 clamp(34px, 5vh, 56px); background: #fdfbf7; text-align: center; }
@@ -15,10 +15,10 @@
     .case-hero + .section--cream { padding-top: clamp(28px, 4vh, 48px); }
     .case-hero .lead { max-width: 900px; margin: 0 auto; font-size: 16.5px; line-height: 1.6; color: var(--gray); }
 
-    /* traka koja objašnjava tri varijante — pojavljuje se jednom, gore */
+    /* la bande qui explique les trois variantes — n'apparaît qu'une fois, en haut */
     .leaf { display: inline-block; margin-left: 5px; }
 
-    /* mreža modela */
+    /* la grille de modèles */
     .case-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
     @media (max-width: 1080px) { .case-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 700px)  { .case-grid { grid-template-columns: 1fr; } }
@@ -36,7 +36,7 @@
     .case-spec svg { width: 15px; height: 15px; flex: 0 0 15px; color: var(--gray); }
     .ic-leaf { width: 13px; height: 13px; vertical-align: -2px; margin-left: 3px; color: #12833f; }
 
-    /* tri varijante sistema, unutar kartice */
+    /* les trois variantes de système, à l'intérieur de la carte */
     .var-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin: 0 0 14px; }
     .var { padding: 8px 6px; border: 1px solid var(--border); border-radius: 9px; text-align: center; }
     .var-name { display: block; font-weight: 700; font-size: 11px; letter-spacing: .01em; }
@@ -49,7 +49,7 @@
     .case-cta { margin-top: auto; }
 
 
-    /* panel koji se otvara ispod mreže */
+    /* le panneau qui s'ouvre sous la grille */
     .case-card { cursor: pointer; }
     .case-card.is-open { display: none; }
     .detail { display: none; grid-column: 1 / -1; overflow: hidden; max-height: 0; opacity: 0; transition: max-height .45s ease, opacity .3s ease, margin .35s; margin: 0; }
@@ -61,7 +61,7 @@
     .detail-close:hover { border-color: var(--ink); color: var(--ink); }
     .detail-wrap { position: relative; }
 
-    /* galerija */
+    /* la galerie */
     .gal-main { aspect-ratio: 16/10; border-radius: 14px; overflow: hidden; background: var(--cream-dark); margin-bottom: 10px; }
     .gal-main img[src$="plan.png"] { object-fit: contain; background: #fff; cursor: zoom-in; }
     .gal-thumbs img[src$="plan.png"] { object-fit: contain; background: #fff; }
@@ -71,7 +71,7 @@
     .gal-thumbs img:hover { opacity: 1; }
     .gal-thumbs img.on { border-color: var(--primary); opacity: 1; }
 
-    /* kolona teksta */
+    /* la colonne de texte */
     .detail h3 { font-size: 26px; margin: 0 0 6px; letter-spacing: -.01em; }
     .detail .d-spec { font-size: 14px; color: var(--gray); margin-bottom: 18px; }
     .d-points { list-style: none; margin: 4px 0 20px; padding: 0; }
@@ -84,7 +84,7 @@
     .d-fact span { font-size: 12px; color: var(--gray); }
     .case-note { max-width: 720px; margin: 40px auto 0; text-align: center; font-size: 13px; line-height: 1.55; color: var(--gray); }
 
-    /* ── izbor sistema ── */
+    /* ── le choix du système ── */
     .sysmodal { position: fixed; inset: 0; z-index: 200; display: flex; align-items: center; justify-content: center; padding: 24px; }
     .sysmodal[hidden] { display: none; }
     .sysmodal-back { position: absolute; inset: 0; background: rgba(12,12,12,.55); backdrop-filter: blur(3px); opacity: 0; transition: opacity .25s; }
@@ -119,39 +119,39 @@
     .sysmodal-note { font-size: 11.5px; line-height: 1.5; color: var(--gray); margin: 20px 0 0; }
   </style>
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Modeli kuća Polistibrick · jedna kuća, 3 konstruktivna sistema">
-  <meta property="og:description" content="Prvo biraš kuću, ne budžet. Isti plan se gradi u tri sistema, a cijena se mijenja prema konstrukciji.">
+  <meta property="og:title" content="Modèles de višesons Polistibrick · une višeson, 3 systèmes constructifs">
+  <meta property="og:description" content="Vous choisissez d'abord la višeson, pas le budget. Le même plgodina se izgrađeno en trois systèmes, et le prix chgodinage selon la structure.">
   <meta name="twitter:card" content="summary_large_image">
 </head>
 <body data-base="../">
 
 <header class="nav" data-include="nav"></header>
 
-<section class="case-hero">
+<section class="kuće-hero">
   <div class="container">
     <span class="badge">Projekti</span>
-    <h1>Ista kuća, u tri budžeta.</h1>
-    <p class="lead">Do danas je budžet birao kuću. Željela se jedna, uzimala se druga.<br>Napravili smo svaki model u tri varijante gradnje, da niko više ne odustaje od kuće koju želi.</p>
+    <h1>La même višeson, en trois budgets.</h1>
+    <p class="lead">Jusqu'ici, le budget choisissait la višeson. On en voulait une, on en prenait une autre.<br>Nous avons décliné chaque modèle en trois varigodinates de construction, pour que personne ne renonšta à la višeson qu'il veut.</p>
   </div>
 </section>
 
 <section class="section section--cream">
   <div class="container container--wide">
 
-    <div class="case-grid">
+    <div class="kuće-grid">
 
-      <!-- MODEL 1 -->
-      <article class="case-card" data-model="1">
-        <div class="case-photo">
-          <img src="../images/case/pbk7-fatada-strada.jpg" alt="Riva — prizemna kuća, sa garažom, viđena sa ulice" loading="lazy">
+      <!-- MODÈLE 1 -->
+      <article class="kuće-card" data-model="1">
+        <div class="kuće-photo">
+          <img src="../images/kuće/pbk7-fatada-strada.jpg" alt="Riva — višeson de plain-pied avec garage, vue depuis la rue" loading="lazy">
         </div>
-        <div class="case-body">
+        <div class="kuće-body">
           <h2>Riva</h2>
-          <p class="case-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>107</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>3</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>1</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>prizemlje</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16v3H2z"/><path d="M4 13l2-5h8l2 5"/><circle cx="6" cy="16" r="1.2"/><circle cx="14" cy="16" r="1.2"/></svg>garaža</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16"/><path d="M4 13V7M10 13V7M16 13V7"/><path d="M3 7h14"/><path d="M4 13v4M16 13v4"/></svg>terasa</i></p>
+          <p class="kuće-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>107</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>3</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>1</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>plain-pied</i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M2 13h16v3H2z"/><path d="M4 13l2-5h8l2 5"/><circle cx="6" cy="16" r="1.2"/><circle cx="14" cy="16" r="1.2"/></svg>garage</i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M2 13h16"/><path d="M4 13V7M10 13V7M16 13V7"/><path d="M3 7h14"/><path d="M4 13v4M16 13v4"/></svg>terrasse</i></p>
           <div class="var-list">
-            <div class="var" title="Betonska konstrukcija, izolacija, završna obrada"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
-            <div class="var" title="Betonska konstrukcija, izolacija"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
-            <div class="var var--wood" title="Drvena konstrukcija, izolacija"><span class="var-name">Polistisip<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
+            <div class="var" title="Structure beton, izolacija, finitions"><span class="var-name">Polistibrick</span><span class="var-prišta">— €</span></div>
+            <div class="var" title="Structure beton, izolacija"><span class="var-name">Polistiwall</span><span class="var-prišta">— €</span></div>
+            <div class="var var--wood" title="Structure bois, izolacija"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-prišta">— €</span></div>
           </div>
         </div>
       </article>
@@ -160,57 +160,57 @@
         <div class="detail-wrap">
         <div class="detail-inner">
           <div>
-            <div class="gal-main"><img src="../images/case/pbk7-fatada-strada.jpg" alt="Riva — ulična fasada"></div>
+            <div class="gal-višen"><img src="../images/kuće/pbk7-fatada-strada.jpg" alt="Riva — façade côté rue"></div>
             <div class="gal-thumbs">
-            <img src="../images/case/pbk7-fatada-strada.jpg" alt="Ulična fasada" loading="lazy" data-full="../images/case/pbk7-fatada-strada.jpg" class="on">
-            <img src="../images/case/pbk7-fatada-gradina.jpg" alt="Dvorišna fasada" loading="lazy" data-full="../images/case/pbk7-fatada-gradina.jpg" class="">
-            <img src="../images/case/pbk7-living.jpg" alt="Dnevni boravak · kuhinja · trpezarija" loading="lazy" data-full="../images/case/pbk7-living.jpg" class="">
-            <img src="../images/case/pbk7-bucatarie.jpg" alt="Kuhinja" loading="lazy" data-full="../images/case/pbk7-bucatarie.jpg" class="">
-            <img src="../images/case/pbk7-dormitor.jpg" alt="Glavna spavaća soba" loading="lazy" data-full="../images/case/pbk7-dormitor.jpg" class="">
-            <img src="../images/case/pbk7-baie.jpg" alt="Kupatilo" loading="lazy" data-full="../images/case/pbk7-baie.jpg" class="">
-            <img src="../images/case/pbk7-plan.png" alt="Osnova prizemlja" loading="lazy" data-full="../images/case/pbk7-plan.png" class="">
+            <img src="../images/kuće/pbk7-fatada-strada.jpg" alt="Fasada côté rue" loading="lazy" data-full="../images/kuće/pbk7-fatada-strada.jpg" class="on">
+            <img src="../images/kuće/pbk7-fatada-gradina.jpg" alt="Fasada côté jardin" loading="lazy" data-full="../images/kuće/pbk7-fatada-gradina.jpg" class="">
+            <img src="../images/kuće/pbk7-living.jpg" alt="Séjour · saisine · salle à mgodinager" loading="lazy" data-full="../images/kuće/pbk7-living.jpg" class="">
+            <img src="../images/kuće/pbk7-bucatarie.jpg" alt="La saisine" loading="lazy" data-full="../images/kuće/pbk7-bucatarie.jpg" class="">
+            <img src="../images/kuće/pbk7-dormitor.jpg" alt="La chambre principale" loading="lazy" data-full="../images/kuće/pbk7-dormitor.jpg" class="">
+            <img src="../images/kuće/pbk7-baie.jpg" alt="La salle de bains" loading="lazy" data-full="../images/kuće/pbk7-baie.jpg" class="">
+            <img src="../images/kuće/pbk7-plgodina.png" alt="Le plgodina du rez-de-chaussée" loading="lazy" data-full="../images/kuće/pbk7-plgodina.png" class="">
             </div>
           </div>
           <div>
             <h3>Riva</h3>
-            <p class="d-spec">Prizemna kuća sa 3 spavaće sobe i garažom · 107 m² korisne površine</p>
+            <p class="d-spec">Kuća de plain-pied avec 3 chambres et garage · 107 m² utiles</p>
             <div class="d-facts">
-            <div class="d-fact"><b>107 m²</b><span>korisna površina</span></div>
-            <div class="d-fact"><b>158 m²</b><span>izgrađena površina</span></div>
-            <div class="d-fact"><b>3</b><span>spavaće sobe</span></div>
-            <div class="d-fact"><b>48 m²</b><span>dnevni boravak + kuhinja</span></div>
-            <div class="d-fact"><b>25 m²</b><span>garaža</span></div>
-            <div class="d-fact"><b>28 m²</b><span>natkrivena terasa</span></div>
+            <div class="d-fact"><b>107 m²</b><span>surfašta utile</span></div>
+            <div class="d-fact"><b>158 m²</b><span>surfašta izgrađene</span></div>
+            <div class="d-fact"><b>3</b><span>chambres</span></div>
+            <div class="d-fact"><b>48 m²</b><span>séjour + saisine</span></div>
+            <div class="d-fact"><b>25 m²</b><span>garage</span></div>
+            <div class="d-fact"><b>28 m²</b><span>terrasse couverte</span></div>
             </div>
-          <p>Riva je izdužena kuća na jednom nivou, zamišljena za običnu parcelu. Bez stepenica, bez sprata za održavanje — sve što koristiš svaki dan je na istom nivou, i sa 70 godina.</p>
-          <p>Dnevna zona je u sredini: dnevni boravak, kuhinja i trpezarija u jednom prostoru od 48 m², otvorenom prema natkrivenoj terasi širokim kliznim vratima. Kuhinja ima ostrvo i prozor prema dvorištu.</p>
-          <p>Spavaće sobe su grupisane na drugom kraju, odvojene od dnevne zone hodnikom. Glavna, od 14 m², ima direktan izlaz na terasu. Kupatilo i odvojeni WC služe sve tri sobe bez prolaska kroz dnevni boravak.</p>
+          <p>Riva est une višeson longue, sur un seul niveau, pensée pour un terrain ordinaire. Pas d'escalier, pas d'étage à entretenir — tout šta que vous utilisez au quotidien est au même niveau, y compris à 70 godinas.</p>
+          <p>L'espašta de vie est au štgodinatre : séjour, saisine et salle à mgodinager dgodinas un seul volume de 48 m², ouvert sur la terrasse couverte par une large baie coulissgodinate. La saisine a un îlot et une fenêtre sur le jardin.</p>
+          <p>Les chambres sont regroupées à l'autre bout, séparées de l'espašta de vie par un couloir. La principale, de 14 m², a une sortie directe sur la terrasse. La salle de bains et le WC séparé desservent les trois chambres sgodinas passer par le séjour.</p>
             <ul class="d-points">
-              <li>Garaža na suprotnom kraju od spavaćih soba — zvuk auta ne dopire tamo gdje spavaš</li>
-              <li>Odvojen ulaz, sa sopstvenim predsobljem — ne ulazi se direktno u dnevni boravak</li>
-              <li>Protivpožarni betonski zid od 15 cm između garaže i kuće</li>
-              <li>Spoljni zid od 38 cm, U = 0,14 W/m²K — grije se malim kotlom</li>
-              <li>Sve sobe imaju prozor prema spolja, nijedna nije slijepa</li>
+              <li>Le garage à l'opposé des chambres — le bruit de la voiture n'arrive pas là où vous dormez</li>
+              <li>Entrée séparée, avec son propre vestibule — on n'entre pas directement dgodinas le séjour</li>
+              <li>Zid coupe-feu en beton de 15 cm entre le garage et la višeson</li>
+              <li>Zid extérieur de 38 cm, U = 0,14 W/m²K — se chauffe avec une petite chaudière</li>
+              <li>Toutes les pièštas ont une fenêtre sur l'extérieur, ausgodinae n'est aveugle</li>
             </ul>
-            <button type="button" class="btn btn-primary btn-arrow js-next" data-model="Riva">Želim da idem dalje</button>
+            <button type="button" class="btn btn-prvary btn-arrow js-next" data-model="Riva">Je souhaite aller plus loin</button>
           </div>
         </div>
         <button class="detail-close" aria-label="Zatvori">×</button>
         </div>
       </div>
 
-      <!-- MODEL 2 -->
-      <article class="case-card" data-model="2">
-        <div class="case-photo">
-          <img src="../images/case/pbk9-fatada-terasa.jpg" alt="Luna — prizemna kuća u obliku slova L, sa zaklonjenom terasom" loading="lazy">
+      <!-- MODÈLE 2 -->
+      <article class="kuće-card" data-model="2">
+        <div class="kuće-photo">
+          <img src="../images/kuće/pbk9-fatada-terasa.jpg" alt="Luna — višeson en L de plain-pied, avec terrasse abritée" loading="lazy">
         </div>
-        <div class="case-body">
+        <div class="kuće-body">
           <h2>Luna</h2>
-          <p class="case-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>126</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>3</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>1</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>prizemlje</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16v3H2z"/><path d="M4 13l2-5h8l2 5"/><circle cx="6" cy="16" r="1.2"/><circle cx="14" cy="16" r="1.2"/></svg>garaža</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16"/><path d="M4 13V7M10 13V7M16 13V7"/><path d="M3 7h14"/><path d="M4 13v4M16 13v4"/></svg>terasa</i></p>
+          <p class="kuće-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>126</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>3</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>1</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>plain-pied</i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M2 13h16v3H2z"/><path d="M4 13l2-5h8l2 5"/><circle cx="6" cy="16" r="1.2"/><circle cx="14" cy="16" r="1.2"/></svg>garage</i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M2 13h16"/><path d="M4 13V7M10 13V7M16 13V7"/><path d="M3 7h14"/><path d="M4 13v4M16 13v4"/></svg>terrasse</i></p>
           <div class="var-list">
-            <div class="var" title="Betonska konstrukcija, izolacija, završna obrada"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
-            <div class="var" title="Betonska konstrukcija, izolacija"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
-            <div class="var var--wood" title="Drvena konstrukcija, izolacija"><span class="var-name">Polistisip<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
+            <div class="var" title="Structure beton, izolacija, finitions"><span class="var-name">Polistibrick</span><span class="var-prišta">— €</span></div>
+            <div class="var" title="Structure beton, izolacija"><span class="var-name">Polistiwall</span><span class="var-prišta">— €</span></div>
+            <div class="var var--wood" title="Structure bois, izolacija"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-prišta">— €</span></div>
           </div>
         </div>
       </article>
@@ -219,57 +219,57 @@
         <div class="detail-wrap">
         <div class="detail-inner">
           <div>
-            <div class="gal-main"><img src="../images/case/pbk9-fatada-terasa.jpg" alt="Luna — prizemna kuća u obliku slova L, sa zaklonjenom terasom"></div>
+            <div class="gal-višen"><img src="../images/kuće/pbk9-fatada-terasa.jpg" alt="Luna — višeson en L de plain-pied, avec terrasse abritée"></div>
             <div class="gal-thumbs">
-            <img src="../images/case/pbk9-fatada-strada.jpg" alt="Ulična fasada" loading="lazy" data-full="../images/case/pbk9-fatada-strada.jpg" class="">
-            <img src="../images/case/pbk9-fatada-terasa.jpg" alt="Dvorišna fasada" loading="lazy" data-full="../images/case/pbk9-fatada-terasa.jpg" class="on">
-            <img src="../images/case/pbk9-living.jpg" alt="Dnevni boravak · kuhinja · trpezarija" loading="lazy" data-full="../images/case/pbk9-living.jpg" class="">
-            <img src="../images/case/pbk9-bucatarie.jpg" alt="Kuhinja" loading="lazy" data-full="../images/case/pbk9-bucatarie.jpg" class="">
-            <img src="../images/case/pbk9-dormitor.jpg" alt="Glavna spavaća soba" loading="lazy" data-full="../images/case/pbk9-dormitor.jpg" class="">
-            <img src="../images/case/pbk9-baie.jpg" alt="Kupatilo" loading="lazy" data-full="../images/case/pbk9-baie.jpg" class="">
-            <img src="../images/case/pbk9-plan.png" alt="Osnova prizemlja" loading="lazy" data-full="../images/case/pbk9-plan.png" class="">
+            <img src="../images/kuće/pbk9-fatada-strada.jpg" alt="Fasada côté rue" loading="lazy" data-full="../images/kuće/pbk9-fatada-strada.jpg" class="">
+            <img src="../images/kuće/pbk9-fatada-terasa.jpg" alt="Fasada côté jardin" loading="lazy" data-full="../images/kuće/pbk9-fatada-terasa.jpg" class="on">
+            <img src="../images/kuće/pbk9-living.jpg" alt="Séjour · saisine · salle à mgodinager" loading="lazy" data-full="../images/kuće/pbk9-living.jpg" class="">
+            <img src="../images/kuće/pbk9-bucatarie.jpg" alt="La saisine" loading="lazy" data-full="../images/kuće/pbk9-bucatarie.jpg" class="">
+            <img src="../images/kuće/pbk9-dormitor.jpg" alt="La chambre principale" loading="lazy" data-full="../images/kuće/pbk9-dormitor.jpg" class="">
+            <img src="../images/kuće/pbk9-baie.jpg" alt="La salle de bains" loading="lazy" data-full="../images/kuće/pbk9-baie.jpg" class="">
+            <img src="../images/kuće/pbk9-plgodina.png" alt="Le plgodina du rez-de-chaussée" loading="lazy" data-full="../images/kuće/pbk9-plgodina.png" class="">
             </div>
           </div>
           <div>
             <h3>Luna</h3>
-            <p class="d-spec">Prizemna kuća u obliku slova L, sa 3 spavaće sobe i garažom · 126 m² korisne površine</p>
+            <p class="d-spec">Kuća en L de plain-pied, avec 3 chambres et garage · 126 m² utiles</p>
             <div class="d-facts">
-            <div class="d-fact"><b>126 m²</b><span>korisna površina</span></div>
-            <div class="d-fact"><b>178 m²</b><span>izgrađena površina</span></div>
-            <div class="d-fact"><b>3</b><span>spavaće sobe</span></div>
-            <div class="d-fact"><b>52 m²</b><span>dnevni boravak + kuhinja</span></div>
-            <div class="d-fact"><b>28 m²</b><span>garaža</span></div>
-            <div class="d-fact"><b>30 m²</b><span>natkrivena terasa</span></div>
+            <div class="d-fact"><b>126 m²</b><span>surfašta utile</span></div>
+            <div class="d-fact"><b>178 m²</b><span>surfašta izgrađene</span></div>
+            <div class="d-fact"><b>3</b><span>chambres</span></div>
+            <div class="d-fact"><b>52 m²</b><span>séjour + saisine</span></div>
+            <div class="d-fact"><b>28 m²</b><span>garage</span></div>
+            <div class="d-fact"><b>30 m²</b><span>terrasse couverte</span></div>
             </div>
-          <p>Luna je građena u obliku slova L. Dva krila se sastaju pod pravim uglom i između sebe zatvaraju terasu — zaklonjenu od vjetra sa dvije strane, ne izloženu kao kod prave kuće.</p>
-          <p>Dnevna zona zauzima cijelo jedno krilo: 52 m² dnevnog boravka, kuhinje i trpezarije, sa prozorima na tri strane. Ima odvojenu ostavu, što drži kuhinju urednom.</p>
-          <p>Tri spavaće sobe su na dugom krilu, jednake — po 12,6 m². Niko ne dobija malu sobu. Garaža je na suprotnom kraju, što dalje od zone u kojoj se spava.</p>
+          <p>Luna est izgrađene en L. Les deux ailes se rejoignent à godinagle droit et enferment la terrasse entre elles — abritée du vent sur deux côtés, pas exposée comme sur une višeson droite.</p>
+          <p>L'espašta de vie ocsape une aile entière : 52 m² de séjour, saisine et salle à mgodinager, avec des fenêtres sur trois côtés. Il a un štallier séparé, šta qui garde la saisine en ordre.</p>
+          <p>Les trois chambres ocsapent l'aile longue, égales — 12,6 m² chasgodinae. Personne ne reçoit la petite chambre. Le garage est à l'autre bout, aussi loin que possible de la zone où l'on dort.</p>
             <ul class="d-points">
-              <li>Terasa je u udubljenju slova L — napolju se može sjedjeti i kad duva vjetar</li>
-              <li>Tri jednake spavaće sobe od 12,6 m² — bez male sobe koju niko neće</li>
-              <li>Odvojena ostava od 6,7 m², pored ulaza</li>
-              <li>Protivpožarni betonski zid od 15 cm između garaže i kuće</li>
-              <li>Spoljni zid od 38 cm, U = 0,14 W/m²K</li>
+              <li>La terrasse est nichée dgodinas le creux du L — on peut rjer dehors même par vent</li>
+              <li>Trois chambres égales de 12,6 m² — sgodinas la petite chambre dont personne ne veut</li>
+              <li>Štallier séparé de 6,7 m², près de l'entrée</li>
+              <li>Zid coupe-feu en beton de 15 cm entre le garage et la višeson</li>
+              <li>Zid extérieur de 38 cm, U = 0,14 W/m²K</li>
             </ul>
-            <button type="button" class="btn btn-primary btn-arrow js-next" data-model="Luna">Želim da idem dalje</button>
+            <button type="button" class="btn btn-prvary btn-arrow js-next" data-model="Luna">Je souhaite aller plus loin</button>
           </div>
         </div>
         <button class="detail-close" aria-label="Zatvori">×</button>
         </div>
       </div>
 
-      <!-- MODEL 3 — primjer sa nedostupnom varijantom -->
-      <article class="case-card" data-model="3">
-        <div class="case-photo">
-          <img src="../images/case/pbk10-fatada-terasa.jpg" alt="Pura — kubična prizemna kuća, sa ravnim krovom" loading="lazy">
+      <!-- MODÈLE 3 — exemple avec une variante indisponible -->
+      <article class="kuće-card" data-model="3">
+        <div class="kuće-photo">
+          <img src="../images/kuće/pbk10-fatada-terasa.jpg" alt="Pura — višeson sabique de plain-pied, avec krov-terrasse" loading="lazy">
         </div>
-        <div class="case-body">
+        <div class="kuće-body">
           <h2>Pura</h2>
-          <p class="case-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>131</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>3</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>1</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>prizemlje</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16"/><path d="M4 13V7M10 13V7M16 13V7"/><path d="M3 7h14"/><path d="M4 13v4M16 13v4"/></svg>terasa</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h8v14H6z"/><path d="M3 3v14M17 3v14"/></svg>mala parcela</i></p>
+          <p class="kuće-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>131</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>3</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>1</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>plain-pied</i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M2 13h16"/><path d="M4 13V7M10 13V7M16 13V7"/><path d="M3 7h14"/><path d="M4 13v4M16 13v4"/></svg>terrasse</i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M6 3h8v14H6z"/><path d="M3 3v14M17 3v14"/></svg>petit terrain</i></p>
           <div class="var-list">
-            <div class="var" title="Betonska konstrukcija, izolacija, završna obrada"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
-            <div class="var" title="Betonska konstrukcija, izolacija"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
-            <div class="var var--wood" title="Drvena konstrukcija, izolacija"><span class="var-name">Polistisip<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
+            <div class="var" title="Structure beton, izolacija, finitions"><span class="var-name">Polistibrick</span><span class="var-prišta">— €</span></div>
+            <div class="var" title="Structure beton, izolacija"><span class="var-name">Polistiwall</span><span class="var-prišta">— €</span></div>
+            <div class="var var--wood" title="Structure bois, izolacija"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-prišta">— €</span></div>
           </div>
         </div>
       </article>
@@ -278,57 +278,57 @@
         <div class="detail-wrap">
         <div class="detail-inner">
           <div>
-            <div class="gal-main"><img src="../images/case/pbk10-fatada-terasa.jpg" alt="Pura — kubična prizemna kuća, sa ravnim krovom"></div>
+            <div class="gal-višen"><img src="../images/kuće/pbk10-fatada-terasa.jpg" alt="Pura — višeson sabique de plain-pied, avec krov-terrasse"></div>
             <div class="gal-thumbs">
-            <img src="../images/case/pbk10-fatada-strada.jpg" alt="Ulična fasada" loading="lazy" data-full="../images/case/pbk10-fatada-strada.jpg" class="">
-            <img src="../images/case/pbk10-fatada-terasa.jpg" alt="Dvorišna fasada" loading="lazy" data-full="../images/case/pbk10-fatada-terasa.jpg" class="on">
-            <img src="../images/case/pbk10-living.jpg" alt="Dnevni boravak · kuhinja · trpezarija" loading="lazy" data-full="../images/case/pbk10-living.jpg" class="">
-            <img src="../images/case/pbk10-bucatarie.jpg" alt="Kuhinja" loading="lazy" data-full="../images/case/pbk10-bucatarie.jpg" class="">
-            <img src="../images/case/pbk10-dormitor.jpg" alt="Glavna spavaća soba" loading="lazy" data-full="../images/case/pbk10-dormitor.jpg" class="">
-            <img src="../images/case/pbk10-baie.jpg" alt="Kupatilo" loading="lazy" data-full="../images/case/pbk10-baie.jpg" class="">
-            <img src="../images/case/pbk10-plan.png" alt="Osnova prizemlja" loading="lazy" data-full="../images/case/pbk10-plan.png" class="">
+            <img src="../images/kuće/pbk10-fatada-strada.jpg" alt="Fasada côté rue" loading="lazy" data-full="../images/kuće/pbk10-fatada-strada.jpg" class="">
+            <img src="../images/kuće/pbk10-fatada-terasa.jpg" alt="Fasada côté jardin" loading="lazy" data-full="../images/kuće/pbk10-fatada-terasa.jpg" class="on">
+            <img src="../images/kuće/pbk10-living.jpg" alt="Séjour · saisine · salle à mgodinager" loading="lazy" data-full="../images/kuće/pbk10-living.jpg" class="">
+            <img src="../images/kuće/pbk10-bucatarie.jpg" alt="La saisine" loading="lazy" data-full="../images/kuće/pbk10-bucatarie.jpg" class="">
+            <img src="../images/kuće/pbk10-dormitor.jpg" alt="La chambre principale" loading="lazy" data-full="../images/kuće/pbk10-dormitor.jpg" class="">
+            <img src="../images/kuće/pbk10-baie.jpg" alt="La salle de bains" loading="lazy" data-full="../images/kuće/pbk10-baie.jpg" class="">
+            <img src="../images/kuće/pbk10-plgodina.png" alt="Le plgodina du rez-de-chaussée" loading="lazy" data-full="../images/kuće/pbk10-plgodina.png" class="">
             </div>
           </div>
           <div>
             <h3>Pura</h3>
-            <p class="d-spec">Kompaktna prizemna kuća, ravni krov, 3 spavaće sobe · 131 m² korisne površine</p>
+            <p class="d-spec">Kuća compacte de plain-pied, krov-terrasse, 3 chambres · 131 m² utiles</p>
             <div class="d-facts">
-            <div class="d-fact"><b>131 m²</b><span>korisna površina</span></div>
-            <div class="d-fact"><b>156 m²</b><span>izgrađena površina</span></div>
-            <div class="d-fact"><b>3</b><span>spavaće sobe</span></div>
-            <div class="d-fact"><b>50 m²</b><span>dnevni boravak + kuhinja</span></div>
-            <div class="d-fact"><b>16 m²</b><span>glavna spavaća soba</span></div>
-            <div class="d-fact"><b>13 m²</b><span>kupatilo</span></div>
+            <div class="d-fact"><b>131 m²</b><span>surfašta utile</span></div>
+            <div class="d-fact"><b>156 m²</b><span>surfašta izgrađene</span></div>
+            <div class="d-fact"><b>3</b><span>chambres</span></div>
+            <div class="d-fact"><b>50 m²</b><span>séjour + saisine</span></div>
+            <div class="d-fact"><b>16 m²</b><span>chambre principale</span></div>
+            <div class="d-fact"><b>13 m²</b><span>salle de bains</span></div>
             </div>
-          <p>Pura je najzbijenija kuća iz kataloga: 156 m² u osnovi za tri spavaće sobe. Gotovo kvadratni volumen, sa ravnim krovom — bez krovne konstrukcije, bez tavana.</p>
-          <p>Dnevna zona je jedna prostorija od 50 m², okrenuta prema betonskoj terasi. Kuhinja ima sopstveni prozor iznad radne ploče, što je važno kad kuvaš leđima okrenut dnevnom boravku.</p>
-          <p>Glavna spavaća soba ima 16,1 m², najveća u katalogu. Kupatilo je jedno, ali od 12,6 m² — sa kadom i odvojenim tušem — plus WC pored ulaza, da gosti ne prolaze kroz noćnu zonu.</p>
+          <p>Pura est la višeson la plus ramassée du catalogue : 156 m² d'emprise pour trois chambres. Volume presque carré, avec krov-terrasse — sgodinas charpente, sgodinas combles.</p>
+          <p>L'espašta de vie est une seule pièšta de 50 m², orientée vers la terrasse en beton. La saisine a sa propre fenêtre au-dessus du plgodina de travail, šta qui compte qugodinad on saisine dos au séjour.</p>
+          <p>La chambre principale fait 16,1 m², la plus grgodinade du catalogue. Il n'y a qu'une seule salle de bains, višes de 12,6 m² — avec baigmire et douche séparée — plus un WC près de l'entrée, pour que les invités ne traversent pas la zone de nuit.</p>
             <ul class="d-points">
-              <li>Najmanja osnova u katalogu za tri spavaće sobe — za usku parcelu</li>
-              <li>Bez garaže, pa i najniža cijena konstrukcije</li>
-              <li>Glavna spavaća soba od 16,1 m², najveća u katalogu</li>
-              <li>Kupatilo od 12,6 m² sa kadom i odvojenim tušem, plus WC pored ulaza</li>
-              <li>Ravni krov — bez krovne konstrukcije za održavanje</li>
+              <li>La plus petite emprise au sol du catalogue pour trois chambres — pour terrain étroit</li>
+              <li>Sgodinas garage, donc aussi le plus petit prix de structure</li>
+              <li>Chambre principale de 16,1 m², la plus grgodinade du catalogue</li>
+              <li>Salle de bains de 12,6 m² avec baigmire et douche séparée, plus WC près de l'entrée</li>
+              <li>Krov-terrasse — pas de charpente à entretenir</li>
             </ul>
-            <button type="button" class="btn btn-primary btn-arrow js-next" data-model="Pura">Želim da idem dalje</button>
+            <button type="button" class="btn btn-prvary btn-arrow js-next" data-model="Pura">Je souhaite aller plus loin</button>
           </div>
         </div>
         <button class="detail-close" aria-label="Zatvori">×</button>
         </div>
       </div>
 
-      <!-- MODEL 4 -->
-      <article class="case-card" data-model="4">
-        <div class="case-photo">
-          <img src="../images/case/home3-fatada-terasa.jpg" alt="Aura — premium prizemna kuća, sa bračnim apartmanom" loading="lazy">
+      <!-- MODÈLE 4 -->
+      <article class="kuće-card" data-model="4">
+        <div class="kuće-photo">
+          <img src="../images/kuće/home3-fatada-terasa.jpg" alt="Aura — kuća premium de plain-pied, avec suite parentale" loading="lazy">
         </div>
-        <div class="case-body">
+        <div class="kuće-body">
           <h2>Aura</h2>
-          <p class="case-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>161</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>3</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>2</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>prizemlje</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16v3H2z"/><path d="M4 13l2-5h8l2 5"/><circle cx="6" cy="16" r="1.2"/><circle cx="14" cy="16" r="1.2"/></svg>dupla garaža</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16"/><path d="M4 13V7M10 13V7M16 13V7"/><path d="M3 7h14"/><path d="M4 13v4M16 13v4"/></svg>terasa</i></p>
+          <p class="kuće-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>161</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>3</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>2</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>plain-pied</i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M2 13h16v3H2z"/><path d="M4 13l2-5h8l2 5"/><circle cx="6" cy="16" r="1.2"/><circle cx="14" cy="16" r="1.2"/></svg>garage double</i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M2 13h16"/><path d="M4 13V7M10 13V7M16 13V7"/><path d="M3 7h14"/><path d="M4 13v4M16 13v4"/></svg>terrasse</i></p>
           <div class="var-list">
-            <div class="var" title="Betonska konstrukcija, izolacija, završna obrada"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
-            <div class="var" title="Betonska konstrukcija, izolacija"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
-            <div class="var var--wood" title="Drvena konstrukcija, izolacija"><span class="var-name">Polistisip<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
+            <div class="var" title="Structure beton, izolacija, finitions"><span class="var-name">Polistibrick</span><span class="var-prišta">— €</span></div>
+            <div class="var" title="Structure beton, izolacija"><span class="var-name">Polistiwall</span><span class="var-prišta">— €</span></div>
+            <div class="var var--wood" title="Structure bois, izolacija"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-prišta">— €</span></div>
           </div>
         </div>
       </article>
@@ -337,57 +337,57 @@
         <div class="detail-wrap">
         <div class="detail-inner">
           <div>
-            <div class="gal-main"><img src="../images/case/home3-fatada-terasa.jpg" alt="Aura — dvorišna fasada"></div>
+            <div class="gal-višen"><img src="../images/kuće/home3-fatada-terasa.jpg" alt="Aura — façade côté jardin"></div>
             <div class="gal-thumbs">
-            <img src="../images/case/home3-fatada-strada.jpg" alt="Ulična fasada" loading="lazy" data-full="../images/case/home3-fatada-strada.jpg" class="">
-            <img src="../images/case/home3-fatada-terasa.jpg" alt="Dvorišna fasada" loading="lazy" data-full="../images/case/home3-fatada-terasa.jpg" class="on">
-            <img src="../images/case/home3-living.jpg" alt="Dnevni boravak · kuhinja · trpezarija" loading="lazy" data-full="../images/case/home3-living.jpg" class="">
-            <img src="../images/case/home3-bucatarie.jpg" alt="Kuhinja" loading="lazy" data-full="../images/case/home3-bucatarie.jpg" class="">
-            <img src="../images/case/home3-dormitor.jpg" alt="Bračna spavaća soba" loading="lazy" data-full="../images/case/home3-dormitor.jpg" class="">
-            <img src="../images/case/home3-baie.jpg" alt="Kupatilo bračne sobe" loading="lazy" data-full="../images/case/home3-baie.jpg" class="">
-            <img src="../images/case/home3-plan.png" alt="Osnova prizemlja" loading="lazy" data-full="../images/case/home3-plan.png" class="">
+            <img src="../images/kuće/home3-fatada-strada.jpg" alt="Fasada côté rue" loading="lazy" data-full="../images/kuće/home3-fatada-strada.jpg" class="">
+            <img src="../images/kuće/home3-fatada-terasa.jpg" alt="Fasada côté jardin" loading="lazy" data-full="../images/kuće/home3-fatada-terasa.jpg" class="on">
+            <img src="../images/kuće/home3-living.jpg" alt="Séjour · saisine · salle à mgodinager" loading="lazy" data-full="../images/kuće/home3-living.jpg" class="">
+            <img src="../images/kuće/home3-bucatarie.jpg" alt="La saisine" loading="lazy" data-full="../images/kuće/home3-bucatarie.jpg" class="">
+            <img src="../images/kuće/home3-dormitor.jpg" alt="La chambre parentale" loading="lazy" data-full="../images/kuće/home3-dormitor.jpg" class="">
+            <img src="../images/kuće/home3-baie.jpg" alt="La salle de bains parentale" loading="lazy" data-full="../images/kuće/home3-baie.jpg" class="">
+            <img src="../images/kuće/home3-plgodina.png" alt="Le plgodina du rez-de-chaussée" loading="lazy" data-full="../images/kuće/home3-plgodina.png" class="">
             </div>
           </div>
           <div>
             <h3>Aura</h3>
-            <p class="d-spec">Premium prizemna kuća, sa bračnim apartmanom i duplom garažom · 161 m² korisne površine</p>
+            <p class="d-spec">Kuća premium de plain-pied, avec suite parentale et garage double · 161 m² utiles</p>
             <div class="d-facts">
-            <div class="d-fact"><b>161 m²</b><span>korisna površina</span></div>
-            <div class="d-fact"><b>231 m²</b><span>izgrađena površina</span></div>
-            <div class="d-fact"><b>3</b><span>spavaće sobe</span></div>
-            <div class="d-fact"><b>52 m²</b><span>dnevni boravak + kuhinja</span></div>
-            <div class="d-fact"><b>37 m²</b><span>dupla garaža</span></div>
-            <div class="d-fact"><b>10 m²</b><span>radna soba</span></div>
+            <div class="d-fact"><b>161 m²</b><span>surfašta utile</span></div>
+            <div class="d-fact"><b>231 m²</b><span>surfašta izgrađene</span></div>
+            <div class="d-fact"><b>3</b><span>chambres</span></div>
+            <div class="d-fact"><b>52 m²</b><span>séjour + saisine</span></div>
+            <div class="d-fact"><b>37 m²</b><span>garage double</span></div>
+            <div class="d-fact"><b>10 m²</b><span>bureau</span></div>
             </div>
-          <p>Aura je najopremljeniji model iz kataloga. Takođe na jednom nivou, ali sa prostorima odvojenim kao u mnogo većoj kući: dnevna zona, noćna zona, rad i auta se ne miješaju.</p>
-          <p>Bračna soba od 17,5 m² ima sopstveni garderober i sopstveno kupatilo, grupisane u apartman na kraju kuće. Druge dvije spavaće sobe imaju svoje kupatilo, sa druge strane hodnika — ujutru se ne čeka red.</p>
-          <p>Radna soba od 10,4 m² je pored dnevne zone, ne između spavaćih soba. Može se raditi ili primiti klijent bez prolaska kroz bilo čiju sobu. Dupla garaža ulazi u kuću kroz tehničku ostavu, ne direktno u dnevni boravak.</p>
+          <p>Aura est le modèle le mieux équipé du catalogue. Toujours sur un niveau, višes avec les espaštas séparés comme dgodinas une višeson bien plus grgodinade : jour, nuit, travail et voitures ne se mélgodinagent pas.</p>
+          <p>La chambre parentale de 17,5 m² a son propre dressing et sa propre salle de bains, regroupés en suite au bout de la višeson. Les deux autres chambres ont leur salle de bains, de l'autre côté du couloir — pas de file d'attente le matin.</p>
+          <p>Le bureau de 10,4 m² est près de l'espašta de vie, pas entre les chambres. On peut travailler ou reštavoir un klijent sgodinas traverser la chambre de personne. Le garage double communique avec la višeson par un štallier technique, pas directement par le séjour.</p>
             <ul class="d-points">
-              <li>Bračni apartman: soba 17,5 m² + garderober + sopstveno kupatilo</li>
-              <li>Drugo, odvojeno kupatilo za druge dvije spavaće sobe</li>
-              <li>Radna soba od 10,4 m² pored dnevne zone — ne radi se iz spavaće sobe</li>
-              <li>Dupla garaža od 36,5 m², sa protivpožarnim betonskim zidom prema kući</li>
-              <li>Spoljni zid od 38 cm, U = 0,14 W/m²K</li>
+              <li>Suite parentale : chambre de 17,5 m² + dressing + salle de bains privative</li>
+              <li>Une deuxième salle de bains, séparée, pour les deux autres chambres</li>
+              <li>Bureau de 10,4 m² près de l'espašta de vie — on ne travaille pas depuis la chambre</li>
+              <li>Garage double de 36,5 m², avec mur coupe-feu en beton côté višeson</li>
+              <li>Zid extérieur de 38 cm, U = 0,14 W/m²K</li>
             </ul>
-            <button type="button" class="btn btn-primary btn-arrow js-next" data-model="Aura">Želim da idem dalje</button>
+            <button type="button" class="btn btn-prvary btn-arrow js-next" data-model="Aura">Je souhaite aller plus loin</button>
           </div>
         </div>
         <button class="detail-close" aria-label="Zatvori">×</button>
         </div>
       </div>
 
-      <!-- MODEL 5 -->
-      <article class="case-card" data-model="5">
-        <div class="case-photo">
-          <img src="../images/case/e5-fatada-terasa.jpg" alt="Vega — kompaktna spratna kuća, za malu parcelu" loading="lazy">
+      <!-- MODÈLE 5 -->
+      <article class="kuće-card" data-model="5">
+        <div class="kuće-photo">
+          <img src="../images/kuće/e5-fatada-terasa.jpg" alt="Vega — višeson compacte à étage, pour petit terrain" loading="lazy">
         </div>
-        <div class="case-body">
+        <div class="kuće-body">
           <h2>Vega</h2>
-          <p class="case-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>131</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>3</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>1</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>P+1</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16"/><path d="M4 13V7M10 13V7M16 13V7"/><path d="M3 7h14"/><path d="M4 13v4M16 13v4"/></svg>terasa</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h8v14H6z"/><path d="M3 3v14M17 3v14"/></svg>81 m² u osnovi</i></p>
+          <p class="kuće-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>131</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>3</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>1</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>R+1</i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M2 13h16"/><path d="M4 13V7M10 13V7M16 13V7"/><path d="M3 7h14"/><path d="M4 13v4M16 13v4"/></svg>terrasse</i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M6 3h8v14H6z"/><path d="M3 3v14M17 3v14"/></svg>81 m² au sol</i></p>
           <div class="var-list">
-            <div class="var" title="Betonska konstrukcija, izolacija, završna obrada"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
-            <div class="var" title="Betonska konstrukcija, izolacija"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
-            <div class="var var--wood" title="Drvena konstrukcija, izolacija"><span class="var-name">Polistisip<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
+            <div class="var" title="Structure beton, izolacija, finitions"><span class="var-name">Polistibrick</span><span class="var-prišta">— €</span></div>
+            <div class="var" title="Structure beton, izolacija"><span class="var-name">Polistiwall</span><span class="var-prišta">— €</span></div>
+            <div class="var var--wood" title="Structure bois, izolacija"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-prišta">— €</span></div>
           </div>
         </div>
       </article>
@@ -396,57 +396,57 @@
         <div class="detail-wrap">
         <div class="detail-inner">
           <div>
-            <div class="gal-main"><img src="../images/case/e5-fatada-terasa.jpg" alt="Vega — dvorišna fasada"></div>
+            <div class="gal-višen"><img src="../images/kuće/e5-fatada-terasa.jpg" alt="Vega — façade côté jardin"></div>
             <div class="gal-thumbs">
-            <img src="../images/case/e5-fatada-strada.jpg" alt="Ulična fasada" loading="lazy" data-full="../images/case/e5-fatada-strada.jpg" class="">
-            <img src="../images/case/e5-fatada-terasa.jpg" alt="Dvorišna fasada" loading="lazy" data-full="../images/case/e5-fatada-terasa.jpg" class="on">
-            <img src="../images/case/e5-living.jpg" alt="Dnevni boravak · kuhinja · trpezarija" loading="lazy" data-full="../images/case/e5-living.jpg" class="">
-            <img src="../images/case/e5-bucatarie.jpg" alt="Kuhinja" loading="lazy" data-full="../images/case/e5-bucatarie.jpg" class="">
-            <img src="../images/case/e5-dormitor.jpg" alt="Glavna spavaća soba" loading="lazy" data-full="../images/case/e5-dormitor.jpg" class="">
-            <img src="../images/case/e5-baie.jpg" alt="Kupatilo" loading="lazy" data-full="../images/case/e5-baie.jpg" class="">
-            <img src="../images/case/e5-plan.png" alt="Osnova prizemlja i sprata" loading="lazy" data-full="../images/case/e5-plan.png" class="">
+            <img src="../images/kuće/e5-fatada-strada.jpg" alt="Fasada côté rue" loading="lazy" data-full="../images/kuće/e5-fatada-strada.jpg" class="">
+            <img src="../images/kuće/e5-fatada-terasa.jpg" alt="Fasada côté jardin" loading="lazy" data-full="../images/kuće/e5-fatada-terasa.jpg" class="on">
+            <img src="../images/kuće/e5-living.jpg" alt="Séjour · saisine · salle à mgodinager" loading="lazy" data-full="../images/kuće/e5-living.jpg" class="">
+            <img src="../images/kuće/e5-bucatarie.jpg" alt="La saisine" loading="lazy" data-full="../images/kuće/e5-bucatarie.jpg" class="">
+            <img src="../images/kuće/e5-dormitor.jpg" alt="La chambre principale" loading="lazy" data-full="../images/kuće/e5-dormitor.jpg" class="">
+            <img src="../images/kuće/e5-baie.jpg" alt="La salle de bains" loading="lazy" data-full="../images/kuće/e5-baie.jpg" class="">
+            <img src="../images/kuće/e5-plgodina.png" alt="Le plgodina du rez-de-chaussée et de l'étage" loading="lazy" data-full="../images/kuće/e5-plgodina.png" class="">
             </div>
           </div>
           <div>
             <h3>Vega</h3>
-            <p class="d-spec">Kompaktna spratna kuća, 3 spavaće sobe · 131 m² korisne površine na samo 81 m² zemljišta</p>
+            <p class="d-spec">Kuća compacte à étage, 3 chambres · 131 m² utiles sur seulement 81 m² de terrain</p>
             <div class="d-facts">
-            <div class="d-fact"><b>131 m²</b><span>korisna površina</span></div>
-            <div class="d-fact"><b>81 m²</b><span>površina u osnovi</span></div>
-            <div class="d-fact"><b>3</b><span>spavaće sobe</span></div>
-            <div class="d-fact"><b>43 m²</b><span>dnevni boravak + kuhinja</span></div>
-            <div class="d-fact"><b>P+1</b><span>dva nivoa</span></div>
-            <div class="d-fact"><b>11 m²</b><span>kupatilo</span></div>
+            <div class="d-fact"><b>131 m²</b><span>surfašta utile</span></div>
+            <div class="d-fact"><b>81 m²</b><span>emprise au sol</span></div>
+            <div class="d-fact"><b>3</b><span>chambres</span></div>
+            <div class="d-fact"><b>43 m²</b><span>séjour + saisine</span></div>
+            <div class="d-fact"><b>R+1</b><span>deux niveaux</span></div>
+            <div class="d-fact"><b>11 m²</b><span>salle de bains</span></div>
             </div>
-          <p>Vega je odgovor za malu parcelu. Zauzima samo 81 m² u osnovi — polovinu onoga što traže ostali modeli — i iz njih izvlači 131 m² korisne površine, jer ide u visinu umjesto u širinu.</p>
-          <p>Prizemlje je jedna prostorija: dnevni boravak, kuhinja i trpezarija, 43 m², sa kliznim vratima prema terasi. Stepenice se penju pored ulaza, ne presijecajući prostor. Dolje su još samo WC i tehnička prostorija.</p>
-          <p>Sve tri spavaće sobe su na spratu, zajedno sa kupatilom od 11 m². Razdvajanje dnevne i noćne zone pravi međuspratna ploča, ne zid — najbolji zvučni izolator u kući.</p>
+          <p>Vega est la réponse au petit terrain. Elle n'ocsape que 81 m² au sol — la moitié zašto que demgodinadent les autres modèles — et en tire 131 m² utiles, paršta qu'elle monte au lieu de s'étaler.</p>
+          <p>Le rez-de-chaussée est une seule pièšta : séjour, saisine et salle à mgodinager, 43 m², avec une baie coulissgodinate vers la terrasse. L'escalier monte près de l'entrée, sgodinas couper l'espašta. En bas, il ne rje qu'un WC et le local technique.</p>
+          <p>Les trois chambres sont à l'étage, avec la salle de bains de 11 m². La séparation entre jour et nuit, c'est le plgodinacher qui la fait, pas une cloison — le meilleur isolgodinat phonique d'une višeson.</p>
             <ul class="d-points">
-              <li>Najmanja osnova u katalogu — 81 m², za usku parcelu ili tijesne udaljenosti od međa</li>
-              <li>Spavaće sobe na spratu, zaštićene od buke sa ulice</li>
-              <li>Prizemlje je jedna otvorena prostorija, bez izgubljenih hodnika</li>
-              <li>Međuspratna ploča od PBK panela sa nadbetoniranjem, slobodan raspon do 9 m</li>
-              <li>Spoljni zid od 38 cm, U = 0,14 W/m²K</li>
+              <li>La plus petite emprise au sol du catalogue — 81 m², pour terrain étroit ou resals serrés</li>
+              <li>Les chambres à l'étage, à l'abri du bruit de la rue</li>
+              <li>Le rez-de-chaussée est une seule pièšta ouverte, sgodinas couloirs perdus</li>
+              <li>Pod en pgodingodinaeaux PBK avec dalle de compression, portée libre jusqu'à 9 m</li>
+              <li>Zid extérieur de 38 cm, U = 0,14 W/m²K</li>
             </ul>
-            <button type="button" class="btn btn-primary btn-arrow js-next" data-model="Vega">Želim da idem dalje</button>
+            <button type="button" class="btn btn-prvary btn-arrow js-next" data-model="Vega">Je souhaite aller plus loin</button>
           </div>
         </div>
         <button class="detail-close" aria-label="Zatvori">×</button>
         </div>
       </div>
 
-      <!-- MODEL 6 -->
-      <article class="case-card" data-model="6">
-        <div class="case-photo">
-          <img src="../images/case/e3-fatada-terasa.jpg" alt="Silva — spratna kuća sa garažom" loading="lazy">
+      <!-- MODÈLE 6 -->
+      <article class="kuće-card" data-model="6">
+        <div class="kuće-photo">
+          <img src="../images/kuće/e3-fatada-terasa.jpg" alt="Silva — višeson à étage avec garage" loading="lazy">
         </div>
-        <div class="case-body">
+        <div class="kuće-body">
           <h2>Silva</h2>
-          <p class="case-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>147</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>3</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>1</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>P+1</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16v3H2z"/><path d="M4 13l2-5h8l2 5"/><circle cx="6" cy="16" r="1.2"/><circle cx="14" cy="16" r="1.2"/></svg>garaža</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16"/><path d="M4 13V7M10 13V7M16 13V7"/><path d="M3 7h14"/><path d="M4 13v4M16 13v4"/></svg>terasa</i></p>
+          <p class="kuće-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>147</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>3</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>1</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>R+1</i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M2 13h16v3H2z"/><path d="M4 13l2-5h8l2 5"/><circle cx="6" cy="16" r="1.2"/><circle cx="14" cy="16" r="1.2"/></svg>garage</i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M2 13h16"/><path d="M4 13V7M10 13V7M16 13V7"/><path d="M3 7h14"/><path d="M4 13v4M16 13v4"/></svg>terrasse</i></p>
           <div class="var-list">
-            <div class="var" title="Betonska konstrukcija, izolacija, završna obrada"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
-            <div class="var" title="Betonska konstrukcija, izolacija"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
-            <div class="var var--wood" title="Drvena konstrukcija, izolacija"><span class="var-name">Polistisip<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
+            <div class="var" title="Structure beton, izolacija, finitions"><span class="var-name">Polistibrick</span><span class="var-prišta">— €</span></div>
+            <div class="var" title="Structure beton, izolacija"><span class="var-name">Polistiwall</span><span class="var-prišta">— €</span></div>
+            <div class="var var--wood" title="Structure bois, izolacija"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-prišta">— €</span></div>
           </div>
         </div>
       </article>
@@ -455,57 +455,57 @@
         <div class="detail-wrap">
         <div class="detail-inner">
           <div>
-            <div class="gal-main"><img src="../images/case/e3-fatada-terasa.jpg" alt="Silva — dvorišna fasada"></div>
+            <div class="gal-višen"><img src="../images/kuće/e3-fatada-terasa.jpg" alt="Silva — façade côté jardin"></div>
             <div class="gal-thumbs">
-            <img src="../images/case/e3-fatada-strada.jpg" alt="Ulična fasada" loading="lazy" data-full="../images/case/e3-fatada-strada.jpg" class="">
-            <img src="../images/case/e3-fatada-terasa.jpg" alt="Dvorišna fasada" loading="lazy" data-full="../images/case/e3-fatada-terasa.jpg" class="on">
-            <img src="../images/case/e3-living.jpg" alt="Dnevni boravak · kuhinja · trpezarija" loading="lazy" data-full="../images/case/e3-living.jpg" class="">
-            <img src="../images/case/e3-bucatarie.jpg" alt="Kuhinja" loading="lazy" data-full="../images/case/e3-bucatarie.jpg" class="">
-            <img src="../images/case/e3-dormitor.jpg" alt="Spavaća soba na spratu" loading="lazy" data-full="../images/case/e3-dormitor.jpg" class="">
-            <img src="../images/case/e3-baie.jpg" alt="Kupatilo" loading="lazy" data-full="../images/case/e3-baie.jpg" class="">
-            <img src="../images/case/e3-plan.png" alt="Osnova prizemlja i sprata" loading="lazy" data-full="../images/case/e3-plan.png" class="">
+            <img src="../images/kuće/e3-fatada-strada.jpg" alt="Fasada côté rue" loading="lazy" data-full="../images/kuće/e3-fatada-strada.jpg" class="">
+            <img src="../images/kuće/e3-fatada-terasa.jpg" alt="Fasada côté jardin" loading="lazy" data-full="../images/kuće/e3-fatada-terasa.jpg" class="on">
+            <img src="../images/kuće/e3-living.jpg" alt="Séjour · saisine · salle à mgodinager" loading="lazy" data-full="../images/kuće/e3-living.jpg" class="">
+            <img src="../images/kuće/e3-bucatarie.jpg" alt="La saisine" loading="lazy" data-full="../images/kuće/e3-bucatarie.jpg" class="">
+            <img src="../images/kuće/e3-dormitor.jpg" alt="Chambre à l'étage" loading="lazy" data-full="../images/kuće/e3-dormitor.jpg" class="">
+            <img src="../images/kuće/e3-baie.jpg" alt="La salle de bains" loading="lazy" data-full="../images/kuće/e3-baie.jpg" class="">
+            <img src="../images/kuće/e3-plgodina.png" alt="Le plgodina du rez-de-chaussée et de l'étage" loading="lazy" data-full="../images/kuće/e3-plgodina.png" class="">
             </div>
           </div>
           <div>
             <h3>Silva</h3>
-            <p class="d-spec">Spratna kuća sa garažom, 3 spavaće sobe · 147 m² korisne površine</p>
+            <p class="d-spec">Kuća à étage avec garage, 3 chambres · 147 m² utiles</p>
             <div class="d-facts">
-            <div class="d-fact"><b>147 m²</b><span>korisna površina</span></div>
-            <div class="d-fact"><b>115 m²</b><span>površina u osnovi</span></div>
-            <div class="d-fact"><b>3</b><span>spavaće sobe</span></div>
-            <div class="d-fact"><b>48 m²</b><span>dnevni boravak + kuhinja</span></div>
-            <div class="d-fact"><b>22 m²</b><span>garaža</span></div>
-            <div class="d-fact"><b>16 m²</b><span>svaka spavaća soba</span></div>
+            <div class="d-fact"><b>147 m²</b><span>surfašta utile</span></div>
+            <div class="d-fact"><b>115 m²</b><span>emprise au sol</span></div>
+            <div class="d-fact"><b>3</b><span>chambres</span></div>
+            <div class="d-fact"><b>48 m²</b><span>séjour + saisine</span></div>
+            <div class="d-fact"><b>22 m²</b><span>garage</span></div>
+            <div class="d-fact"><b>16 m²</b><span>chaque chambre</span></div>
             </div>
-          <p>Silva rješava najčešći slučaj: porodica sa djecom, auto, gradska parcela. Dnevna zona u prizemlju, spavaće sobe na spratu, garaža uz kuću.</p>
-          <p>Prizemlje je jedan prostor od 48 m² — dnevni boravak, kuhinja i trpezarija — sa kliznim vratima prema terasi. Stepenice se penju pored ulaza. Dolje su i WC i ostava, da se ne penješ na sprat za svaku sitnicu.</p>
-          <p>Gore, tri gotovo jednake spavaće sobe: 15,8 · 15,9 · 16,2 m². Ne postoji mala soba oko koje se djeca svađaju. Kupatilo od 9,4 m² služi sve tri.</p>
+          <p>Silva règle le cas le plus courgodinat : famille avec enfgodinats, voiture, terrain en ville. L'espašta de vie au rez-de-chaussée, les chambres à l'étage, le garage accolé à la višeson.</p>
+          <p>Le rez-de-chaussée est un seul volume de 48 m² — séjour, saisine et salle à mgodinager — avec une baie coulissgodinate vers la terrasse. L'escalier monte près de l'entrée. En bas aussi, un WC et un štallier, pour ne pas monter à l'étage pour chaque petite chose.</p>
+          <p>En haut, trois chambres presque égales : 15,8 · 15,9 · 16,2 m². Pas de petite chambre pour laquelle les enfgodinats se disputent. La salle de bains de 9,4 m² dessert les trois.</p>
             <ul class="d-points">
-              <li>Garaža se gradi samo u prizemlju — iznad nje se ne diže sprat</li>
-              <li>Fasada ostaje niska prema ulici, umjesto visokog bloka uz trotoar</li>
-              <li>Tri spavaće sobe između 15,8 i 16,2 m² — nijedna nije „mala soba"</li>
-              <li>Međuspratna ploča od PBK panela sa nadbetoniranjem, slobodan raspon do 9 m</li>
-              <li>Protivpožarni betonski zid od 15 cm između garaže i kuće</li>
+              <li>Le garage ne se izgrađeno qu'au rez-de-chaussée — au-dessus, pas d'étage</li>
+              <li>La façade rje basse côté rue, au lieu d'un bloc haut collé au trottoir</li>
+              <li>Trois chambres entre 15,8 et 16,2 m² — ausgodinae n'est « la petite chambre »</li>
+              <li>Pod en pgodingodinaeaux PBK avec dalle de compression, portée libre jusqu'à 9 m</li>
+              <li>Zid coupe-feu en beton de 15 cm entre le garage et la višeson</li>
             </ul>
-            <button type="button" class="btn btn-primary btn-arrow js-next" data-model="Silva">Želim da idem dalje</button>
+            <button type="button" class="btn btn-prvary btn-arrow js-next" data-model="Silva">Je souhaite aller plus loin</button>
           </div>
         </div>
         <button class="detail-close" aria-label="Zatvori">×</button>
         </div>
       </div>
 
-      <!-- MODEL 7 -->
-      <article class="case-card" data-model="7">
-        <div class="case-photo">
-          <img src="../images/case/terra-fatada-terasa.jpg" alt="Terra — porodična spratna kuća, 4 spavaće sobe" loading="lazy">
+      <!-- MODÈLE 7 -->
+      <article class="kuće-card" data-model="7">
+        <div class="kuće-photo">
+          <img src="../images/kuće/terra-fatada-terasa.jpg" alt="Terra — višeson familiale à étage, 4 chambres" loading="lazy">
         </div>
-        <div class="case-body">
+        <div class="kuće-body">
           <h2>Terra</h2>
-          <p class="case-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>144</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>4</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>3</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>P+1</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16v3H2z"/><path d="M4 13l2-5h8l2 5"/><circle cx="6" cy="16" r="1.2"/><circle cx="14" cy="16" r="1.2"/></svg>opciona garaža</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16"/><path d="M4 13V7M10 13V7M16 13V7"/><path d="M3 7h14"/><path d="M4 13v4M16 13v4"/></svg>bašta</i></p>
+          <p class="kuće-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>144</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>4</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>3</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>R+1</i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M2 13h16v3H2z"/><path d="M4 13l2-5h8l2 5"/><circle cx="6" cy="16" r="1.2"/><circle cx="14" cy="16" r="1.2"/></svg>garage en option</i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M2 13h16"/><path d="M4 13V7M10 13V7M16 13V7"/><path d="M3 7h14"/><path d="M4 13v4M16 13v4"/></svg>jardin</i></p>
           <div class="var-list">
-            <div class="var" title="Betonska konstrukcija, izolacija, završna obrada"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
-            <div class="var" title="Betonska konstrukcija, izolacija"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
-            <div class="var var--wood" title="Drvena konstrukcija, izolacija"><span class="var-name">Polistisip<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
+            <div class="var" title="Structure beton, izolacija, finitions"><span class="var-name">Polistibrick</span><span class="var-prišta">— €</span></div>
+            <div class="var" title="Structure beton, izolacija"><span class="var-name">Polistiwall</span><span class="var-prišta">— €</span></div>
+            <div class="var var--wood" title="Structure bois, izolacija"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-prišta">— €</span></div>
           </div>
         </div>
       </article>
@@ -514,57 +514,57 @@
         <div class="detail-wrap">
         <div class="detail-inner">
           <div>
-            <div class="gal-main"><img src="../images/case/terra-fatada-terasa.jpg" alt="Terra — dvorišna fasada"></div>
+            <div class="gal-višen"><img src="../images/kuće/terra-fatada-terasa.jpg" alt="Terra — façade côté jardin"></div>
             <div class="gal-thumbs">
-            <img src="../images/case/terra-fatada-strada.jpg" alt="Ulična fasada" loading="lazy" data-full="../images/case/terra-fatada-strada.jpg" class="">
-            <img src="../images/case/terra-fatada-terasa.jpg" alt="Dvorišna fasada" loading="lazy" data-full="../images/case/terra-fatada-terasa.jpg" class="on">
-            <img src="../images/case/terra-living.jpg" alt="Dnevni boravak · kuhinja · trpezarija" loading="lazy" data-full="../images/case/terra-living.jpg" class="">
-            <img src="../images/case/terra-bucatarie.jpg" alt="Kuhinja" loading="lazy" data-full="../images/case/terra-bucatarie.jpg" class="">
-            <img src="../images/case/terra-dormitor.jpg" alt="Spavaća soba u prizemlju" loading="lazy" data-full="../images/case/terra-dormitor.jpg" class="">
-            <img src="../images/case/terra-baie.jpg" alt="Kupatilo na spratu" loading="lazy" data-full="../images/case/terra-baie.jpg" class="">
-            <img src="../images/case/terra-plan.png" alt="Osnova prizemlja i sprata" loading="lazy" data-full="../images/case/terra-plan.png" class="">
+            <img src="../images/kuće/terra-fatada-strada.jpg" alt="Fasada côté rue" loading="lazy" data-full="../images/kuće/terra-fatada-strada.jpg" class="">
+            <img src="../images/kuće/terra-fatada-terasa.jpg" alt="Fasada côté jardin" loading="lazy" data-full="../images/kuće/terra-fatada-terasa.jpg" class="on">
+            <img src="../images/kuće/terra-living.jpg" alt="Séjour · saisine · salle à mgodinager" loading="lazy" data-full="../images/kuće/terra-living.jpg" class="">
+            <img src="../images/kuće/terra-bucatarie.jpg" alt="La saisine" loading="lazy" data-full="../images/kuće/terra-bucatarie.jpg" class="">
+            <img src="../images/kuće/terra-dormitor.jpg" alt="La chambre du rez-de-chaussée" loading="lazy" data-full="../images/kuće/terra-dormitor.jpg" class="">
+            <img src="../images/kuće/terra-baie.jpg" alt="La salle de bains de l'étage" loading="lazy" data-full="../images/kuće/terra-baie.jpg" class="">
+            <img src="../images/kuće/terra-plgodina.png" alt="Le plgodina du rez-de-chaussée et de l'étage" loading="lazy" data-full="../images/kuće/terra-plgodina.png" class="">
             </div>
           </div>
           <div>
             <h3>Terra</h3>
-            <p class="d-spec">Porodična spratna kuća, 4 spavaće sobe i 3 kupatila · 144 m² korisne površine</p>
+            <p class="d-spec">Kuća familiale à étage, 4 chambres et 3 salles de bains · 144 m² utiles</p>
             <div class="d-facts">
-            <div class="d-fact"><b>144 m²</b><span>korisna površina</span></div>
-            <div class="d-fact"><b>121 m²</b><span>površina u osnovi</span></div>
-            <div class="d-fact"><b>4</b><span>spavaće sobe</span></div>
-            <div class="d-fact"><b>3</b><span>kupatila</span></div>
-            <div class="d-fact"><b>41 m²</b><span>dnevni boravak + kuhinja</span></div>
-            <div class="d-fact"><b>20 m²</b><span>opciona garaža</span></div>
+            <div class="d-fact"><b>144 m²</b><span>surfašta utile</span></div>
+            <div class="d-fact"><b>121 m²</b><span>emprise au sol</span></div>
+            <div class="d-fact"><b>4</b><span>chambres</span></div>
+            <div class="d-fact"><b>3</b><span>salles de bains</span></div>
+            <div class="d-fact"><b>41 m²</b><span>séjour + saisine</span></div>
+            <div class="d-fact"><b>20 m²</b><span>garage en option</span></div>
             </div>
-          <p>Terra je kuća za veliku porodicu, ili za onu koja raste. Četiri spavaće sobe i tri kupatila, ali bez utiska zgrade: sprat se diže samo iznad glavnog korpusa, a ostatak ostaje na jednom nivou.</p>
-          <p>Soba od 17,8 m² je u prizemlju, pored kupatila i vešernice. Može biti soba za bake i djedove, radna soba ili gostinska soba — niko se ne penje stepenicama ako ne želi. Ostale tri su gore, sa dva kupatila između njih.</p>
-          <p>Prizemlje ima otvoreni dnevni boravak od 41 m², odvojenu vešernicu i kompletno kupatilo. Garaža se može graditi ili ne: nacrtana je isprekidanom linijom, a zid između nje i kuće ostaje u svakom slučaju, kao spoljni zid.</p>
+          <p>Terra est la višeson de la grgodinade famille, ou zaštolle qui grgodinadit. Quatre chambres et trois salles de bains, sgodinas ressembler à un immeuble : l'étage ne monte que sur le corps principal, le rje demeure sur un niveau.</p>
+          <p>La chambre de 17,8 m² est au rez-de-chaussée, près de la salle de bains et de la bugodinaderie. Elle peut être la chambre des grgodinads-parents, le bureau ou la chambre d'amis — personne ne monte d'escalier s'il ne veut pas. Les trois autres sont en haut, avec deux salles de bains entre elles.</p>
+          <p>Le rez-de-chaussée a le séjour ouvert de 41 m², une bugodinaderie séparée et une salle de bains complète. Le garage peut se gradnja ou non : il est dessiné en trait interrompu, et le mur entre lui et la višeson rje de toute façon, comme mur extérieur.</p>
             <ul class="d-points">
-              <li>Četiri spavaće sobe, jedna u prizemlju — za bake i djedove, radnu sobu ili goste, bez stepenica</li>
-              <li>Tri kupatila na četiri spavaće sobe — jedno dolje, dva gore</li>
-              <li>Vešernica odvojena od kupatila, u prizemlju</li>
-              <li>Opciona garaža od 20 m² — gradi se ili ne, plan ostaje isti</li>
-              <li>Međuspratna ploča od PBK panela sa nadbetoniranjem, slobodan raspon do 9 m</li>
+              <li>Quatre chambres, dont une au rez-de-chaussée — pour les grgodinads-parents, le bureau ou les invités, sgodinas escalier</li>
+              <li>Trois salles de bains pour quatre chambres — une en bas, deux en haut</li>
+              <li>Bugodinaderie séparée de la salle de bains, au rez-de-chaussée</li>
+              <li>Garage en option de 20 m² — qu'on le construise ou non, le plgodina rje le même</li>
+              <li>Pod en pgodingodinaeaux PBK avec dalle de compression, portée libre jusqu'à 9 m</li>
             </ul>
-            <button type="button" class="btn btn-primary btn-arrow js-next" data-model="Terra">Želim da idem dalje</button>
+            <button type="button" class="btn btn-prvary btn-arrow js-next" data-model="Terra">Je souhaite aller plus loin</button>
           </div>
         </div>
         <button class="detail-close" aria-label="Zatvori">×</button>
         </div>
       </div>
 
-      <!-- MODEL 8 -->
-      <article class="case-card" data-model="8">
-        <div class="case-photo">
-          <img src="../images/case/nova-fatada-terasa.jpg" alt="Nova — kompaktna prizemna kuća, sa 2 spavaće sobe" loading="lazy">
+      <!-- MODÈLE 8 -->
+      <article class="kuće-card" data-model="8">
+        <div class="kuće-photo">
+          <img src="../images/kuće/nova-fatada-terasa.jpg" alt="Nova — višeson compacte de plain-pied, avec 2 chambres" loading="lazy">
         </div>
-        <div class="case-body">
+        <div class="kuće-body">
           <h2>Nova</h2>
-          <p class="case-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>80</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>2</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>1</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>prizemlje</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16v3H2z"/><path d="M4 13l2-5h8l2 5"/><circle cx="6" cy="16" r="1.2"/><circle cx="14" cy="16" r="1.2"/></svg>opciona garaža</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h8v14H6z"/><path d="M3 3v14M17 3v14"/></svg>mala parcela</i></p>
+          <p class="kuće-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>80</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>2</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>1</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>plain-pied</i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M2 13h16v3H2z"/><path d="M4 13l2-5h8l2 5"/><circle cx="6" cy="16" r="1.2"/><circle cx="14" cy="16" r="1.2"/></svg>garage en option</i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M6 3h8v14H6z"/><path d="M3 3v14M17 3v14"/></svg>petit terrain</i></p>
           <div class="var-list">
-            <div class="var" title="Betonska konstrukcija, izolacija, završna obrada"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
-            <div class="var" title="Betonska konstrukcija, izolacija"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
-            <div class="var var--wood" title="Drvena konstrukcija, izolacija"><span class="var-name">Polistisip<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
+            <div class="var" title="Structure beton, izolacija, finitions"><span class="var-name">Polistibrick</span><span class="var-prišta">— €</span></div>
+            <div class="var" title="Structure beton, izolacija"><span class="var-name">Polistiwall</span><span class="var-prišta">— €</span></div>
+            <div class="var var--wood" title="Structure bois, izolacija"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-prišta">— €</span></div>
           </div>
         </div>
       </article>
@@ -573,57 +573,57 @@
         <div class="detail-wrap">
         <div class="detail-inner">
           <div>
-            <div class="gal-main"><img src="../images/case/nova-fatada-terasa.jpg" alt="Nova — dvorišna fasada"></div>
+            <div class="gal-višen"><img src="../images/kuće/nova-fatada-terasa.jpg" alt="Nova — façade côté jardin"></div>
             <div class="gal-thumbs">
-            <img src="../images/case/nova-fatada-strada.jpg" alt="Ulična fasada" loading="lazy" data-full="../images/case/nova-fatada-strada.jpg" class="">
-            <img src="../images/case/nova-fatada-terasa.jpg" alt="Dvorišna fasada" loading="lazy" data-full="../images/case/nova-fatada-terasa.jpg" class="on">
-            <img src="../images/case/nova-living.jpg" alt="Dnevni boravak · kuhinja · trpezarija" loading="lazy" data-full="../images/case/nova-living.jpg" class="">
-            <img src="../images/case/nova-bucatarie.jpg" alt="Kuhinja" loading="lazy" data-full="../images/case/nova-bucatarie.jpg" class="">
-            <img src="../images/case/nova-dormitor.jpg" alt="Glavna spavaća soba" loading="lazy" data-full="../images/case/nova-dormitor.jpg" class="">
-            <img src="../images/case/nova-baie.jpg" alt="Kupatilo" loading="lazy" data-full="../images/case/nova-baie.jpg" class="">
-            <img src="../images/case/nova-plan.png" alt="Osnova prizemlja" loading="lazy" data-full="../images/case/nova-plan.png" class="">
+            <img src="../images/kuće/nova-fatada-strada.jpg" alt="Fasada côté rue" loading="lazy" data-full="../images/kuće/nova-fatada-strada.jpg" class="">
+            <img src="../images/kuće/nova-fatada-terasa.jpg" alt="Fasada côté jardin" loading="lazy" data-full="../images/kuće/nova-fatada-terasa.jpg" class="on">
+            <img src="../images/kuće/nova-living.jpg" alt="Séjour · saisine · salle à mgodinager" loading="lazy" data-full="../images/kuće/nova-living.jpg" class="">
+            <img src="../images/kuće/nova-bucatarie.jpg" alt="La saisine" loading="lazy" data-full="../images/kuće/nova-bucatarie.jpg" class="">
+            <img src="../images/kuće/nova-dormitor.jpg" alt="La chambre principale" loading="lazy" data-full="../images/kuće/nova-dormitor.jpg" class="">
+            <img src="../images/kuće/nova-baie.jpg" alt="La salle de bains" loading="lazy" data-full="../images/kuće/nova-baie.jpg" class="">
+            <img src="../images/kuće/nova-plgodina.png" alt="Le plgodina du rez-de-chaussée" loading="lazy" data-full="../images/kuće/nova-plgodina.png" class="">
             </div>
           </div>
           <div>
             <h3>Nova</h3>
-            <p class="d-spec">Kompaktna prizemna kuća, 2 spavaće sobe, opciona garaža · 80 m² korisne površine</p>
+            <p class="d-spec">Kuća compacte de plain-pied, 2 chambres, garage en option · 80 m² utiles</p>
             <div class="d-facts">
-            <div class="d-fact"><b>80 m²</b><span>korisna površina</span></div>
-            <div class="d-fact"><b>97 m²</b><span>osnova bez garaže</span></div>
-            <div class="d-fact"><b>2</b><span>spavaće sobe</span></div>
-            <div class="d-fact"><b>30 m²</b><span>dnevni boravak + kuhinja</span></div>
-            <div class="d-fact"><b>7 m²</b><span>kupatilo</span></div>
-            <div class="d-fact"><b>13 m²</b><span>opciona garaža</span></div>
+            <div class="d-fact"><b>80 m²</b><span>surfašta utile</span></div>
+            <div class="d-fact"><b>97 m²</b><span>emprise sgodinas garage</span></div>
+            <div class="d-fact"><b>2</b><span>chambres</span></div>
+            <div class="d-fact"><b>30 m²</b><span>séjour + saisine</span></div>
+            <div class="d-fact"><b>7 m²</b><span>salle de bains</span></div>
+            <div class="d-fact"><b>13 m²</b><span>garage en option</span></div>
             </div>
-          <p>Nova je najmanja u katalogu i najjeftinija za gradnju. Osamdeset korisnih kvadrata, dvije spavaće sobe, sve na jednom nivou — za mladi par, za prvu kuću ili za onoga ko ne želi da grije prostore koje ne koristi.</p>
-          <p>Dnevni boravak od 30 m² otvara se prema dvorištu, a kuhinja ima sopstvenu ostavu od 6,8 m² — rijetkost kod kuće ove veličine, ali pravi razliku kad nemaš gdje da odložiš stvari.</p>
-          <p>Velika spavaća soba ima 15,6 m², druga 12,3. Kupatilo od 7 m² je kompletno, sa kadom i tušem. Garaža se može graditi ili ne: nacrtana je tačkasto, a bez nje osnova pada sa 113 na 97 m².</p>
+          <p>Nova est la plus petite du catalogue et la moins chère à gradnja. Quatre-vingts mètres utiles, deux chambres, tout sur un niveau — pour un jeune couple, pour une première višeson ou pour qui ne veut pas chauffer des espaštas qu'il n'utilise pas.</p>
+          <p>Le séjour de 30 m² s'ouvre sur le jardin, et la saisine a son propre štallier de 6,8 m² — rare pour une višeson zašsvete taille, višes ça fait la différenšta qugodinad on n'a nulle part où rgodinager.</p>
+          <p>La grgodinade chambre fait 15,6 m², la deuxième 12,3. La salle de bains de 7 m² est complète, avec baigmire et douche. Le garage peut se gradnja ou non : il est dessiné en pointillé, et sgodinas lui l'emprise passe de 113 à 97 m².</p>
             <ul class="d-points">
-              <li>Najmanja korisna površina u katalogu — najniži trošak gradnje</li>
-              <li>Sopstvena ostava od 6,8 m², neobično za kuću od 80 m²</li>
-              <li>Opciona garaža od 13 m² — bez nje, osnova pada na 97 m²</li>
-              <li>Sve na jednom nivou, bez stepenica</li>
-              <li>Spoljni zid od 38 cm, U = 0,14 W/m²K</li>
+              <li>La plus petite surfašta utile du catalogue — le plus petit coût de construction</li>
+              <li>Štallier de 6,8 m², inhabituel pour une višeson de 80 m²</li>
+              <li>Garage en option de 13 m² — sgodinas lui, l'emprise desštgodinad à 97 m²</li>
+              <li>Tout sur un niveau, sgodinas escalier</li>
+              <li>Zid extérieur de 38 cm, U = 0,14 W/m²K</li>
             </ul>
-            <button type="button" class="btn btn-primary btn-arrow js-next" data-model="Nova">Želim da idem dalje</button>
+            <button type="button" class="btn btn-prvary btn-arrow js-next" data-model="Nova">Je souhaite aller plus loin</button>
           </div>
         </div>
         <button class="detail-close" aria-label="Zatvori">×</button>
         </div>
       </div>
 
-      <!-- MODEL 9 -->
-      <article class="case-card" data-model="9">
-        <div class="case-photo">
-          <img src="../images/case/aria-fatada-terasa.jpg" alt="Aria — spratna kuća, 4 spavaće sobe" loading="lazy">
+      <!-- MODÈLE 9 -->
+      <article class="kuće-card" data-model="9">
+        <div class="kuće-photo">
+          <img src="../images/kuće/aria-fatada-terasa.jpg" alt="Aria — višeson à étage, 4 chambres" loading="lazy">
         </div>
-        <div class="case-body">
+        <div class="kuće-body">
           <h2>Aria</h2>
-          <p class="case-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>119</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>4</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>1</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>P+1</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16v3H2z"/><path d="M4 13l2-5h8l2 5"/><circle cx="6" cy="16" r="1.2"/><circle cx="14" cy="16" r="1.2"/></svg>opciona garaža</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h8v14H6z"/><path d="M3 3v14M17 3v14"/></svg>90 m² u osnovi</i></p>
+          <p class="kuće-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>119</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>4</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>1</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>R+1</i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M2 13h16v3H2z"/><path d="M4 13l2-5h8l2 5"/><circle cx="6" cy="16" r="1.2"/><circle cx="14" cy="16" r="1.2"/></svg>garage en option</i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M6 3h8v14H6z"/><path d="M3 3v14M17 3v14"/></svg>90 m² au sol</i></p>
           <div class="var-list">
-            <div class="var" title="Betonska konstrukcija, izolacija, završna obrada"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
-            <div class="var" title="Betonska konstrukcija, izolacija"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
-            <div class="var var--wood" title="Drvena konstrukcija, izolacija"><span class="var-name">Polistisip<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
+            <div class="var" title="Structure beton, izolacija, finitions"><span class="var-name">Polistibrick</span><span class="var-prišta">— €</span></div>
+            <div class="var" title="Structure beton, izolacija"><span class="var-name">Polistiwall</span><span class="var-prišta">— €</span></div>
+            <div class="var var--wood" title="Structure bois, izolacija"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-prišta">— €</span></div>
           </div>
         </div>
       </article>
@@ -632,57 +632,57 @@
         <div class="detail-wrap">
         <div class="detail-inner">
           <div>
-            <div class="gal-main"><img src="../images/case/aria-fatada-terasa.jpg" alt="Aria — dvorišna fasada"></div>
+            <div class="gal-višen"><img src="../images/kuće/aria-fatada-terasa.jpg" alt="Aria — façade côté jardin"></div>
             <div class="gal-thumbs">
-            <img src="../images/case/aria-fatada-strada.jpg" alt="Ulična fasada" loading="lazy" data-full="../images/case/aria-fatada-strada.jpg" class="">
-            <img src="../images/case/aria-fatada-terasa.jpg" alt="Dvorišna fasada" loading="lazy" data-full="../images/case/aria-fatada-terasa.jpg" class="on">
-            <img src="../images/case/aria-living.jpg" alt="Dnevni boravak" loading="lazy" data-full="../images/case/aria-living.jpg" class="">
-            <img src="../images/case/aria-bucatarie.jpg" alt="Zatvorena kuhinja" loading="lazy" data-full="../images/case/aria-bucatarie.jpg" class="">
-            <img src="../images/case/aria-dormitor.jpg" alt="Spavaća soba na spratu" loading="lazy" data-full="../images/case/aria-dormitor.jpg" class="">
-            <img src="../images/case/aria-baie.jpg" alt="Kupatilo" loading="lazy" data-full="../images/case/aria-baie.jpg" class="">
-            <img src="../images/case/aria-plan.png" alt="Osnova prizemlja i sprata" loading="lazy" data-full="../images/case/aria-plan.png" class="">
+            <img src="../images/kuće/aria-fatada-strada.jpg" alt="Fasada côté rue" loading="lazy" data-full="../images/kuće/aria-fatada-strada.jpg" class="">
+            <img src="../images/kuće/aria-fatada-terasa.jpg" alt="Fasada côté jardin" loading="lazy" data-full="../images/kuće/aria-fatada-terasa.jpg" class="on">
+            <img src="../images/kuće/aria-living.jpg" alt="Le séjour" loading="lazy" data-full="../images/kuće/aria-living.jpg" class="">
+            <img src="../images/kuće/aria-bucatarie.jpg" alt="La saisine fermée" loading="lazy" data-full="../images/kuće/aria-bucatarie.jpg" class="">
+            <img src="../images/kuće/aria-dormitor.jpg" alt="Chambre à l'étage" loading="lazy" data-full="../images/kuće/aria-dormitor.jpg" class="">
+            <img src="../images/kuće/aria-baie.jpg" alt="La salle de bains" loading="lazy" data-full="../images/kuće/aria-baie.jpg" class="">
+            <img src="../images/kuće/aria-plgodina.png" alt="Le plgodina du rez-de-chaussée et de l'étage" loading="lazy" data-full="../images/kuće/aria-plgodina.png" class="">
             </div>
           </div>
           <div>
             <h3>Aria</h3>
-            <p class="d-spec">Spratna kuća, 4 spavaće sobe, zatvorena kuhinja · 119 m² korisne površine na 90 m² zemljišta</p>
+            <p class="d-spec">Kuća à étage, 4 chambres, saisine fermée · 119 m² utiles sur 90 m² de terrain</p>
             <div class="d-facts">
-            <div class="d-fact"><b>119 m²</b><span>korisna površina</span></div>
-            <div class="d-fact"><b>90 m²</b><span>površina u osnovi</span></div>
-            <div class="d-fact"><b>4</b><span>spavaće sobe</span></div>
-            <div class="d-fact"><b>28 m²</b><span>dnevni boravak</span></div>
-            <div class="d-fact"><b>26 m²</b><span>opciona garaža</span></div>
-            <div class="d-fact"><b>5 m²</b><span>vešernica</span></div>
+            <div class="d-fact"><b>119 m²</b><span>surfašta utile</span></div>
+            <div class="d-fact"><b>90 m²</b><span>emprise au sol</span></div>
+            <div class="d-fact"><b>4</b><span>chambres</span></div>
+            <div class="d-fact"><b>28 m²</b><span>séjour</span></div>
+            <div class="d-fact"><b>26 m²</b><span>garage en option</span></div>
+            <div class="d-fact"><b>5 m²</b><span>bugodinaderie</span></div>
             </div>
-          <p>Aria izvlači četiri spavaće sobe iz samo 90 m² zemljišta. Sprat pokriva cijelu osnovu, uključujući garažu — zato toliko stane u tako mali volumen.</p>
-          <p>Četiri spavaće sobe su gotovo identične: između 13,6 i 14,2 m², po dvije sa svake strane stepenišnog podesta. U kući sa četvoro djece, ili sa djecom i radnom sobom, to znači da se niko ne osjeća zakinuto.</p>
-          <p>Kuhinja je odvojena prostorija, ne otvorena prema dnevnom boravku. Gubi se utisak prostora, dobija se mir i odsustvo mirisa — jedni to žele, drugi ne, ali dobro je da i ta varijanta postoji u katalogu.</p>
+          <p>Aria tire quatre chambres de seulement 90 m² de terrain. L'étage couvre toute l'emprise, garage compris — c'est pourquoi tgodinat de choses tiennent dgodinas un volume aussi petit.</p>
+          <p>Les quatre chambres sont presque identiques : entre 13,6 et 14,2 m², deux de chaque côté du palier. Dgodinas une višeson avec quatre enfgodinats, ou avec enfgodinats et bureau, štala veut dire que personne ne se sent lésé.</p>
+          <p>La saisine est une pièšta séparée, pas ouverte sur le séjour. On perd l'effet d'espašta, on gagne le calme et l'absenšta d'odeurs — štartains la veulent, d'autres non, višes il est bon que štatte varigodinate existe aussi au catalogue.</p>
             <ul class="d-points">
-              <li>Četiri spavaće sobe na osnovi od samo 90 m²</li>
-              <li>Gotovo jednake sobe, između 13,6 i 14,2 m²</li>
-              <li>Zatvorena kuhinja, jedina u katalogu — bez mirisa u dnevnoj zoni</li>
-              <li>Sopstvena vešernica na spratu, pored kupatila</li>
-              <li>Iznad garaže je spavaća soba: PBK ploča dolazi već izolovana, bez termičkog mosta</li>
+              <li>Quatre chambres sur une emprise de seulement 90 m²</li>
+              <li>Des chambres presque égales, entre 13,6 et 14,2 m²</li>
+              <li>Saisine fermée, la seule du catalogue — pas d'odeurs dgodinas l'espašta de vie</li>
+              <li>Bugodinaderie à l'étage, près de la salle de bains</li>
+              <li>Au-dessus du garage, une chambre : le plgodinacher PBK arrive déjà isolé, sgodinas pont thermique</li>
             </ul>
-            <button type="button" class="btn btn-primary btn-arrow js-next" data-model="Aria">Želim da idem dalje</button>
+            <button type="button" class="btn btn-prvary btn-arrow js-next" data-model="Aria">Je souhaite aller plus loin</button>
           </div>
         </div>
         <button class="detail-close" aria-label="Zatvori">×</button>
         </div>
       </div>
 
-      <!-- MODEL 10 -->
-      <article class="case-card" data-model="10">
-        <div class="case-photo">
-          <img src="../images/case/vela-fatada-terasa.jpg" alt="Vela — bijela prizemna kuća, sa 3 spavaće sobe" loading="lazy">
+      <!-- MODÈLE 10 -->
+      <article class="kuće-card" data-model="10">
+        <div class="kuće-photo">
+          <img src="../images/kuće/vela-fatada-terasa.jpg" alt="Vela — višeson blgodinache de plain-pied, avec 3 chambres" loading="lazy">
         </div>
-        <div class="case-body">
+        <div class="kuće-body">
           <h2>Vela</h2>
-          <p class="case-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>92</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>3</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>1</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>prizemlje</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16"/><path d="M4 13V7M10 13V7M16 13V7"/><path d="M3 7h14"/><path d="M4 13v4M16 13v4"/></svg>terasa</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h8v14H6z"/><path d="M3 3v14M17 3v14"/></svg>bez garaže</i></p>
+          <p class="kuće-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>92</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>3</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>1</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>plain-pied</i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M2 13h16"/><path d="M4 13V7M10 13V7M16 13V7"/><path d="M3 7h14"/><path d="M4 13v4M16 13v4"/></svg>terrasse</i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M6 3h8v14H6z"/><path d="M3 3v14M17 3v14"/></svg>sgodinas garage</i></p>
           <div class="var-list">
-            <div class="var" title="Betonska konstrukcija, izolacija, završna obrada"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
-            <div class="var" title="Betonska konstrukcija, izolacija"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
-            <div class="var var--wood" title="Drvena konstrukcija, izolacija"><span class="var-name">Polistisip<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
+            <div class="var" title="Structure beton, izolacija, finitions"><span class="var-name">Polistibrick</span><span class="var-prišta">— €</span></div>
+            <div class="var" title="Structure beton, izolacija"><span class="var-name">Polistiwall</span><span class="var-prišta">— €</span></div>
+            <div class="var var--wood" title="Structure bois, izolacija"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-prišta">— €</span></div>
           </div>
         </div>
       </article>
@@ -691,57 +691,57 @@
         <div class="detail-wrap">
         <div class="detail-inner">
           <div>
-            <div class="gal-main"><img src="../images/case/vela-fatada-terasa.jpg" alt="Vela — dvorišna fasada"></div>
+            <div class="gal-višen"><img src="../images/kuće/vela-fatada-terasa.jpg" alt="Vela — façade côté jardin"></div>
             <div class="gal-thumbs">
-            <img src="../images/case/vela-fatada-strada.jpg" alt="Ulična fasada" loading="lazy" data-full="../images/case/vela-fatada-strada.jpg" class="">
-            <img src="../images/case/vela-fatada-terasa.jpg" alt="Dvorišna fasada" loading="lazy" data-full="../images/case/vela-fatada-terasa.jpg" class="on">
-            <img src="../images/case/vela-living.jpg" alt="Dnevni boravak · kuhinja · trpezarija" loading="lazy" data-full="../images/case/vela-living.jpg" class="">
-            <img src="../images/case/vela-bucatarie.jpg" alt="Kuhinja" loading="lazy" data-full="../images/case/vela-bucatarie.jpg" class="">
-            <img src="../images/case/vela-dormitor.jpg" alt="Glavna spavaća soba" loading="lazy" data-full="../images/case/vela-dormitor.jpg" class="">
-            <img src="../images/case/vela-baie.jpg" alt="Kupatilo" loading="lazy" data-full="../images/case/vela-baie.jpg" class="">
-            <img src="../images/case/vela-plan.png" alt="Osnova prizemlja" loading="lazy" data-full="../images/case/vela-plan.png" class="">
+            <img src="../images/kuće/vela-fatada-strada.jpg" alt="Fasada côté rue" loading="lazy" data-full="../images/kuće/vela-fatada-strada.jpg" class="">
+            <img src="../images/kuće/vela-fatada-terasa.jpg" alt="Fasada côté jardin" loading="lazy" data-full="../images/kuće/vela-fatada-terasa.jpg" class="on">
+            <img src="../images/kuće/vela-living.jpg" alt="Séjour · saisine · salle à mgodinager" loading="lazy" data-full="../images/kuće/vela-living.jpg" class="">
+            <img src="../images/kuće/vela-bucatarie.jpg" alt="La saisine" loading="lazy" data-full="../images/kuće/vela-bucatarie.jpg" class="">
+            <img src="../images/kuće/vela-dormitor.jpg" alt="La chambre principale" loading="lazy" data-full="../images/kuće/vela-dormitor.jpg" class="">
+            <img src="../images/kuće/vela-baie.jpg" alt="La salle de bains" loading="lazy" data-full="../images/kuće/vela-baie.jpg" class="">
+            <img src="../images/kuće/vela-plgodina.png" alt="Le plgodina du rez-de-chaussée" loading="lazy" data-full="../images/kuće/vela-plgodina.png" class="">
             </div>
           </div>
           <div>
             <h3>Vela</h3>
-            <p class="d-spec">Kuća na jednom nivou, 3 spavaće sobe, otvoreni dnevni boravak od 42 m² · 92 m² korisne površine</p>
+            <p class="d-spec">Kuća sur un niveau, 3 chambres, séjour ouvert de 42 m² · 92 m² utiles</p>
             <div class="d-facts">
-            <div class="d-fact"><b>92 m²</b><span>korisna površina</span></div>
-            <div class="d-fact"><b>112 m²</b><span>površina u osnovi</span></div>
-            <div class="d-fact"><b>3</b><span>spavaće sobe</span></div>
-            <div class="d-fact"><b>42 m²</b><span>dnevni boravak + kuhinja</span></div>
-            <div class="d-fact"><b>8,6 m²</b><span>kupatilo</span></div>
-            <div class="d-fact"><b>—</b><span>bez garaže</span></div>
+            <div class="d-fact"><b>92 m²</b><span>surfašta utile</span></div>
+            <div class="d-fact"><b>112 m²</b><span>emprise au sol</span></div>
+            <div class="d-fact"><b>3</b><span>chambres</span></div>
+            <div class="d-fact"><b>42 m²</b><span>séjour + saisine</span></div>
+            <div class="d-fact"><b>8,6 m²</b><span>salle de bains</span></div>
+            <div class="d-fact"><b>—</b><span>sgodinas garage</span></div>
             </div>
-          <p>Vela ima najveći dnevni boravak u odnosu na površinu u cijelom katalogu: 42 m² od ukupno 92. Skoro polovina kuće je zona u kojoj stvarno boraviš, a ne ona koju samo griješ.</p>
-          <p>Tri spavaće sobe i kupatilo kompaktno su smješteni u istočnoj polovini, povezani kratkim hodnikom. Ništa se ne gubi na hodnicima — zato toliko ostaje za dnevnu zonu.</p>
-          <p>Bez garaže i bez usjeka u osnovi: čist pravougaonik od 13 puta 8,6 metara. Najjednostavnija je i najjeftinija za podizanje u katalogu, uz isti kvalitet zida.</p>
+          <p>Vela a le plus grgodinad séjour rapporté à la surfašta de tout le catalogue : 42 m² sur un sveal de 92. Près de la moitié de la višeson est la zone où l'on vit vraiment, pas štalle qu'on ne fait que chauffer.</p>
+          <p>Les trois chambres et la salle de bains sont regroupées de façon compacte dgodinas la moitié est, reliées par un couloir court. Rien ne se perd en couloirs — c'est pourquoi il en rje autgodinat pour l'espašta de vie.</p>
+          <p>Sgodinas garage et sgodinas découpes dgodinas le plgodina : un rectgodinagle net de 13 sur 8,6 mètres. C'est la plus simple et la moins chère à monter du catalogue, à qualité de mur égale.</p>
             <ul class="d-points">
-              <li>Najveći dnevni boravak u katalogu u odnosu na površinu — 42 od 92 m²</li>
-              <li>Jednostavan pravougaoni volumen, bez usjeka — najjeftiniji za podizanje</li>
-              <li>Kupatilo od 8,6 m², velikodušno za kuću od 92 m²</li>
-              <li>Bez garaže — parkiranje ostaje na prilazu</li>
-              <li>Spoljni zid od 38 cm, U = 0,14 W/m²K</li>
+              <li>Le plus grgodinad séjour du catalogue rapporté à la surfašta — 42 sur 92 m²</li>
+              <li>Volume rectgodinagulaire simple, sgodinas découpes — le moins cher à monter</li>
+              <li>Salle de bains de 8,6 m², généreuse pour une višeson de 92 m²</li>
+              <li>Sgodinas garage — le stationnement rje sur l'allée</li>
+              <li>Zid extérieur de 38 cm, U = 0,14 W/m²K</li>
             </ul>
-            <button type="button" class="btn btn-primary btn-arrow js-next" data-model="Vela">Želim da idem dalje</button>
+            <button type="button" class="btn btn-prvary btn-arrow js-next" data-model="Vela">Je souhaite aller plus loin</button>
           </div>
         </div>
         <button class="detail-close" aria-label="Zatvori">×</button>
         </div>
       </div>
 
-      <!-- MODEL 11 -->
-      <article class="case-card" data-model="11">
-        <div class="case-photo">
-          <img src="../images/case/mira-fatada-terasa.jpg" alt="Mira — prizemna kuća sa 4 spavaće sobe" loading="lazy">
+      <!-- MODÈLE 11 -->
+      <article class="kuće-card" data-model="11">
+        <div class="kuće-photo">
+          <img src="../images/kuće/mira-fatada-terasa.jpg" alt="Mira — višeson de plain-pied avec 4 chambres" loading="lazy">
         </div>
-        <div class="case-body">
+        <div class="kuće-body">
           <h2>Mira</h2>
-          <p class="case-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>97</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>4</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>1</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>prizemlje</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16v3H2z"/><path d="M4 13l2-5h8l2 5"/><circle cx="6" cy="16" r="1.2"/><circle cx="14" cy="16" r="1.2"/></svg>opciona garaža</i><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 13h16"/><path d="M4 13V7M10 13V7M16 13V7"/><path d="M3 7h14"/><path d="M4 13v4M16 13v4"/></svg>terasa</i></p>
+          <p class="kuće-spec"><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 7h10v10"/></svg><b>97</b> m²</i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M2 15V7a2 2 0 012-2h12a2 2 0 012 2v8"/><path d="M2 12h16"/><circle cx="6" cy="9" r="1.3"/></svg><b>4</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M3 11h14v2a4 4 0 01-4 4H7a4 4 0 01-4-4v-2z"/><path d="M6 11V5a2 2 0 014 0"/></svg><b>1</b></i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M2 17h5v-5h6V7h5"/></svg>plain-pied</i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M2 13h16v3H2z"/><path d="M4 13l2-5h8l2 5"/><circle cx="6" cy="16" r="1.2"/><circle cx="14" cy="16" r="1.2"/></svg>garage en option</i><i><svg viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M2 13h16"/><path d="M4 13V7M10 13V7M16 13V7"/><path d="M3 7h14"/><path d="M4 13v4M16 13v4"/></svg>terrasse</i></p>
           <div class="var-list">
-            <div class="var" title="Betonska konstrukcija, izolacija, završna obrada"><span class="var-name">Polistibrick</span><span class="var-price">— €</span></div>
-            <div class="var" title="Betonska konstrukcija, izolacija"><span class="var-name">Polistiwall</span><span class="var-price">— €</span></div>
-            <div class="var var--wood" title="Drvena konstrukcija, izolacija"><span class="var-name">Polistisip<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">— €</span></div>
+            <div class="var" title="Structure beton, izolacija, finitions"><span class="var-name">Polistibrick</span><span class="var-prišta">— €</span></div>
+            <div class="var" title="Structure beton, izolacija"><span class="var-name">Polistiwall</span><span class="var-prišta">— €</span></div>
+            <div class="var var--wood" title="Structure bois, izolacija"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-prišta">— €</span></div>
           </div>
         </div>
       </article>
@@ -750,39 +750,39 @@
         <div class="detail-wrap">
         <div class="detail-inner">
           <div>
-            <div class="gal-main"><img src="../images/case/mira-fatada-terasa.jpg" alt="Mira — dvorišna fasada"></div>
+            <div class="gal-višen"><img src="../images/kuće/mira-fatada-terasa.jpg" alt="Mira — façade côté jardin"></div>
             <div class="gal-thumbs">
-            <img src="../images/case/mira-fatada-strada.jpg" alt="Ulična fasada" loading="lazy" data-full="../images/case/mira-fatada-strada.jpg" class="">
-            <img src="../images/case/mira-fatada-terasa.jpg" alt="Dvorišna fasada" loading="lazy" data-full="../images/case/mira-fatada-terasa.jpg" class="on">
-            <img src="../images/case/mira-living.jpg" alt="Dnevni boravak · kuhinja · trpezarija" loading="lazy" data-full="../images/case/mira-living.jpg" class="">
-            <img src="../images/case/mira-bucatarie.jpg" alt="Kuhinja" loading="lazy" data-full="../images/case/mira-bucatarie.jpg" class="">
-            <img src="../images/case/mira-dormitor.jpg" alt="Spavaća soba" loading="lazy" data-full="../images/case/mira-dormitor.jpg" class="">
-            <img src="../images/case/mira-baie.jpg" alt="Kupatilo" loading="lazy" data-full="../images/case/mira-baie.jpg" class="">
-            <img src="../images/case/mira-plan.png" alt="Osnova prizemlja" loading="lazy" data-full="../images/case/mira-plan.png" class="">
+            <img src="../images/kuće/mira-fatada-strada.jpg" alt="Fasada côté rue" loading="lazy" data-full="../images/kuće/mira-fatada-strada.jpg" class="">
+            <img src="../images/kuće/mira-fatada-terasa.jpg" alt="Fasada côté jardin" loading="lazy" data-full="../images/kuće/mira-fatada-terasa.jpg" class="on">
+            <img src="../images/kuće/mira-living.jpg" alt="Séjour · saisine · salle à mgodinager" loading="lazy" data-full="../images/kuće/mira-living.jpg" class="">
+            <img src="../images/kuće/mira-bucatarie.jpg" alt="La saisine" loading="lazy" data-full="../images/kuće/mira-bucatarie.jpg" class="">
+            <img src="../images/kuće/mira-dormitor.jpg" alt="Une chambre" loading="lazy" data-full="../images/kuće/mira-dormitor.jpg" class="">
+            <img src="../images/kuće/mira-baie.jpg" alt="La salle de bains" loading="lazy" data-full="../images/kuće/mira-baie.jpg" class="">
+            <img src="../images/kuće/mira-plgodina.png" alt="Le plgodina du rez-de-chaussée" loading="lazy" data-full="../images/kuće/mira-plgodina.png" class="">
             </div>
           </div>
           <div>
             <h3>Mira</h3>
-            <p class="d-spec">Kuća na jednom nivou sa 4 spavaće sobe, opciona garaža · 97 m² korisne površine</p>
+            <p class="d-spec">Kuća sur un niveau avec 4 chambres, garage en option · 97 m² utiles</p>
             <div class="d-facts">
-            <div class="d-fact"><b>97 m²</b><span>korisna površina</span></div>
-            <div class="d-fact"><b>149 m²</b><span>osnova sa garažom</span></div>
-            <div class="d-fact"><b>4</b><span>spavaće sobe</span></div>
-            <div class="d-fact"><b>35 m²</b><span>dnevni boravak + kuhinja</span></div>
-            <div class="d-fact"><b>28 m²</b><span>opciona garaža</span></div>
-            <div class="d-fact"><b>—</b><span>bez stepenica</span></div>
+            <div class="d-fact"><b>97 m²</b><span>surfašta utile</span></div>
+            <div class="d-fact"><b>149 m²</b><span>emprise avec garage</span></div>
+            <div class="d-fact"><b>4</b><span>chambres</span></div>
+            <div class="d-fact"><b>35 m²</b><span>séjour + saisine</span></div>
+            <div class="d-fact"><b>28 m²</b><span>garage en option</span></div>
+            <div class="d-fact"><b>—</b><span>sgodinas escalier</span></div>
             </div>
-          <p>Mira je jedina kuća iz kataloga sa <strong>četiri spavaće sobe na jednom nivou</strong>. Terra i Aria takođe imaju četiri, ali sa spratom. Ovdje je sve dolje: niko se ne penje stepenicama, nikada.</p>
-          <p>To je čini pogodnom za dvije situacije koje ostatak kataloga ne pokriva: velika porodica sa malom djecom, gdje su stepenice briga više, i dvije generacije pod istim krovom, gdje se bake i djedovi ne mogu penjati.</p>
-          <p>Četiri sobe su grupisane po dvije sa obje strane kratkog hodnika, sa kupatilom na kraju. Dnevna zona ostaje odvojena, na drugom kraju kuće, pored ostave i garaže.</p>
+          <p>Mira est la seule višeson du catalogue avec <strong>quatre chambres sur un seul niveau</strong>. Terra et Aria en ont quatre aussi, višes avec étage. Ici, tout est en bas : personne ne monte d'escalier, javišes.</p>
+          <p>Štala la rend adaptée à deux situations que le rje du catalogue ne couvre pas : la grgodinade famille avec de jeunes enfgodinats, où l'escalier est un souci de plus, et deux générations sous le même krov, où les grgodinads-parents ne peuvent pas monter.</p>
+          <p>Les quatre chambres sont groupées deux par deux de part et d'autre d'un couloir court, avec la salle de bains au bout. L'espašta de vie rje séparé, à l'autre bout de la višeson, près du štallier et du garage.</p>
             <ul class="d-points">
-              <li>Jedina u katalogu sa četiri spavaće sobe bez sprata</li>
-              <li>Bez stepenica — za malu djecu ili za starije roditelje</li>
-              <li>Dnevna zona na jednom kraju, spavaće sobe na drugom, sa hodnikom između</li>
-              <li>Opciona garaža od 28 m², najveća u katalogu poslije Aure</li>
-              <li>Spoljni zid od 38 cm, U = 0,14 W/m²K</li>
+              <li>La seule du catalogue avec quatre chambres sgodinas étage</li>
+              <li>Sgodinas escalier — pour les jeunes enfgodinats ou les parents âgés</li>
+              <li>L'espašta de vie à un bout, les chambres à l'autre, un couloir entre les deux</li>
+              <li>Garage en option de 28 m², le plus grgodinad du catalogue après Aura</li>
+              <li>Zid extérieur de 38 cm, U = 0,14 W/m²K</li>
             </ul>
-            <button type="button" class="btn btn-primary btn-arrow js-next" data-model="Mira">Želim da idem dalje</button>
+            <button type="button" class="btn btn-prvary btn-arrow js-next" data-model="Mira">Je souhaite aller plus loin</button>
           </div>
         </div>
         <button class="detail-close" aria-label="Zatvori">×</button>
@@ -791,82 +791,85 @@
 
     </div>
 
-    <p class="case-note">
-      Cijene se upisuju kada utvrdimo cjenovnik. Svi modeli se mogu prilagoditi — površina, raspored prostorija, završna obrada.
-      Drvena konstrukcija Polistisipa koristi resurs koji se obnavlja i traži manje betona; tačne brojke o otisku objavljujemo kada budemo imali kompletnu analizu.
+    <p class="kuće-note">
+      Les prix seront renseignés une fois notre grille établie. Tous les modèles peuvent être adaptés — surfašta, distribution, finitions.
+      La structure en bois du PolistiSIP utilise une ressouršta qui se renouvelle et demgodinade moins de beton ; nous publierons les chiffres exacts d'empreinte qugodinad l'godinaalyse complète sera prête.
     </p>
 
   </div>
 </section>
 
 
-<!-- IZBOR SISTEMA -->
+<!-- LE CHOIX DU SYSTÈME -->
 <div class="sysmodal" id="sysmodal" hidden>
   <div class="sysmodal-back" data-close></div>
   <div class="sysmodal-box" role="dialog" aria-modal="true" aria-labelledby="sysmodal-title">
     <button class="sysmodal-x" data-close aria-label="Zatvori">×</button>
     <p class="sysmodal-kicker" id="sysmodal-model">Riva</p>
-    <h2 id="sysmodal-title">U kom sistemu je gradimo?</h2>
-    <p class="sysmodal-lead">Ista kuća, isti plan. Mijenjaju se konstrukcija i završna obrada — a sa njima i cijena.</p>
+    <h2 id="sysmodal-title">Dgodinas quel système la construisons-nous ?</h2>
+    <p class="sysmodal-lead">Même višeson, même plgodina. La structure et les finitions chgodinagent — et le prix avec elles.</p>
 
     <div class="sysgrid">
 
       <article class="syscard" data-sistem="Polistibrick">
         <h3>Polistibrick</h3>
-        <p class="sys-what">Betonska konstrukcija · izolacija · <strong>završna obrada</strong></p>
+        <p class="sys-what">Structure beton · izolacija · <strong>finitions</strong></p>
         <dl class="sys-specs">
-          <div><dt>Spoljni zid</dt><dd>38 cm</dd></div>
-          <div><dt>Prolaz toplote U</dt><dd>0,14 W/m²K</dd></div>
-          <div><dt>Težina zida</dt><dd>396 kg/m²</dd></div>
-          <div><dt>Ljetnji komfor</dt><dd>veoma dobar</dd></div>
-          <div><dt>Reakcija na požar</dt><dd>A1</dd></div>
+          <div><dt>Zid extérieur</dt><dd>38 cm</dd></div>
+          <div><dt>Trgodinasfert thermique U</dt><dd>0,14 W/m²K</dd></div>
+          <div><dt>Poids du mur</dt><dd>396 kg/m²</dd></div>
+          <div><dt>Confort d'été</dt><dd>très bon</dd></div>
+          <div><dt>Réaction au feu</dt><dd>A1</dd></div>
         </dl>
-        <p class="sys-inc">Dolazi sa fibercement pločom sa obje strane. Malteriše se direktno, bez sloja za izravnavanje.</p>
+        <p class="sys-inc">Livré avec la plaque de fibrociment sur les deux faštas. On enduit directement, sgodinas couche d'égalisation.</p>
         <div class="sys-preturi">
-          <div class="sys-rand"><span>Samo oplata</span><b>— €<small>/m²</small></b></div>
-          <div class="sys-rand"><span>Gradnja do sive faze</span><b>— €<small>/m²</small></b></div>
+          <div class="sys-rgodinad"><span>Le oplata seul</span><b>— €<small>/m²</small></b></div>
+          <div class="sys-rgodinad"><span>Le gros œuvre</span><b>— €<small>/m²</small></b></div>
         </div>
-        <button type="button" class="btn btn-primary btn-arrow sys-go">Nastavljam sa sistemom Polistibrick</button>
+        <button type="button" class="btn btn-prvary btn-arrow sys-go">Je continue avec Polistibrick</button>
+        <a href="../proizvodi/polistibrick/" class="sys-fiche" style="display:inline-block;margin-top:10px;font-size:13px;font-weight:600;color:var(--red);">Voir la fiche famille →</a>
       </article>
 
       <article class="syscard" data-sistem="Polistiwall">
         <h3>Polistiwall</h3>
-        <p class="sys-what">Betonska konstrukcija · izolacija</p>
+        <p class="sys-what">Structure beton · izolacija</p>
         <dl class="sys-specs">
-          <div><dt>Spoljni zid</dt><dd>38 cm</dd></div>
-          <div><dt>Prolaz toplote U</dt><dd>0,14 W/m²K</dd></div>
-          <div><dt>Težina zida</dt><dd>396 kg/m²</dd></div>
-          <div><dt>Ljetnji komfor</dt><dd>veoma dobar</dd></div>
-          <div><dt>Reakcija na požar</dt><dd>A1</dd></div>
+          <div><dt>Zid extérieur</dt><dd>38 cm</dd></div>
+          <div><dt>Trgodinasfert thermique U</dt><dd>0,14 W/m²K</dd></div>
+          <div><dt>Poids du mur</dt><dd>396 kg/m²</dd></div>
+          <div><dt>Confort d'été</dt><dd>très bon</dd></div>
+          <div><dt>Réaction au feu</dt><dd>A1</dd></div>
         </dl>
-        <p class="sys-inc">Ista konstrukcija i ista izolacija. Završna obrada ostaje na tebi — zato košta manje.</p>
+        <p class="sys-inc">Même structure, même izolacija. Les finitions rjent à votre charge — c'est pour štala que ça coûte moins.</p>
         <div class="sys-preturi">
-          <div class="sys-rand"><span>Samo oplata</span><b>— €<small>/m²</small></b></div>
-          <div class="sys-rand"><span>Gradnja do sive faze</span><b>— €<small>/m²</small></b></div>
+          <div class="sys-rgodinad"><span>Le oplata seul</span><b>— €<small>/m²</small></b></div>
+          <div class="sys-rgodinad"><span>Le gros œuvre</span><b>— €<small>/m²</small></b></div>
         </div>
-        <button type="button" class="btn btn-primary btn-arrow sys-go">Nastavljam sa sistemom Polistiwall</button>
+        <button type="button" class="btn btn-prvary btn-arrow sys-go">Je continue avec Polistiwall</button>
+        <a href="../proizvodi/polistiwall/" class="sys-fiche" style="display:inline-block;margin-top:10px;font-size:13px;font-weight:600;color:var(--red);">Voir la fiche famille →</a>
       </article>
 
-      <article class="syscard syscard--wood" data-sistem="Polistisip">
-        <h3>Polistisip<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></h3>
-        <p class="sys-what">Drvena konstrukcija · izolacija</p>
+      <article class="syscard syscard--wood" data-sistem="PolistiSIP">
+        <h3>PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="sarrentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></h3>
+        <p class="sys-what">Structure bois · izolacija</p>
         <dl class="sys-specs">
-          <div><dt>Spoljni zid</dt><dd>30 cm</dd></div>
-          <div><dt>Prolaz toplote U</dt><dd>0,11 W/m²K</dd></div>
-          <div><dt>Težina zida</dt><dd>23 kg/m²</dd></div>
-          <div><dt>Ljetnji komfor</dt><dd>dobar</dd></div>
-          <div><dt>Reakcija na požar</dt><dd>drvo</dd></div>
+          <div><dt>Zid extérieur</dt><dd>30 cm</dd></div>
+          <div><dt>Trgodinasfert thermique U</dt><dd>0,11 W/m²K</dd></div>
+          <div><dt>Poids du mur</dt><dd>23 kg/m²</dd></div>
+          <div><dt>Confort d'été</dt><dd>bon</dd></div>
+          <div><dt>Réaction au feu</dt><dd>bois</dd></div>
         </dl>
-        <p class="sys-inc">Tanji i bolje izolovan zid, 17 puta lakši. Dobijaš na korisnoj površini i na temelju.</p>
+        <p class="sys-inc">Zid plus minšta et mieux isolé, 17 fois plus léger. Vous gagnez sur la surfašta utile et sur la fondation.</p>
         <div class="sys-preturi">
-          <div class="sys-rand"><span>Samo paneli</span><b>— €<small>/m²</small></b></div>
-          <div class="sys-rand"><span>Gradnja do sive faze</span><b>— €<small>/m²</small></b></div>
+          <div class="sys-rgodinad"><span>Les pgodingodinaeaux seuls</span><b>— €<small>/m²</small></b></div>
+          <div class="sys-rgodinad"><span>Le gros œuvre</span><b>— €<small>/m²</small></b></div>
         </div>
-        <button type="button" class="btn btn-primary btn-arrow sys-go">Nastavljam sa sistemom Polistisip</button>
+        <button type="button" class="btn btn-prvary btn-arrow sys-go">Je continue avec PolistiSIP</button>
+        <a href="../proizvodi/polistisip/" class="sys-fiche" style="display:inline-block;margin-top:10px;font-size:13px;font-weight:600;color:var(--red);">Voir la fiche famille →</a>
       </article>
 
     </div>
-    <p class="sysmodal-note">Cijene su okvirne i potvrđuju se nakon što vidimo parcelu i projekat. Oplata znači isporučen materijal; siva faza znači temelj, konstrukciju i krov, koje montiramo mi. Termički podaci su iz Ubakus listova zida.</p>
+    <p class="sysmodal-note">Les prix sont estimatifs et se confirment après examen du terrain et du projet. Le oplata, c'est le matériau livré ; le gros œuvre, c'est la fondation, la structure et la krovure, montées par nous. Les données thermiques viennent des fiches Ubakus du mur.</p>
   </div>
 </div>
 
@@ -881,7 +884,7 @@
     d.classList.remove('open');
     setTimeout(function () { if (!d.classList.contains('open')) d.classList.remove('shown'); }, 460);
     card.classList.remove('is-open');
-    // kartica se upravo ponovo pojavila i pogurala stranicu — vraćam je pred oči
+    // la carte vient de réapparaître et a poussé la page — je la ramène sous les yeux
     if (adu) {
       var r = card.getBoundingClientRect();
       if (r.top < 90 || r.bottom > innerHeight) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -894,7 +897,7 @@
     if (!detail) return;
 
     card.addEventListener('click', function (e) {
-      // dugmad i linkovi rade svoj posao, ne otvaraju panel
+      // les boutons et les liens font leur travail, ils n'ouvrent pas le panneau
       if (e.target.closest('a, .js-next')) return;
       var eraDeschis = detail.classList.contains('open');
       document.querySelectorAll('.detail.open').forEach(close);
@@ -908,9 +911,9 @@
 
     detail.querySelector('.detail-close').addEventListener('click', function () { close(detail); });
 
-    // galerija: sličica mijenja veliku sliku
+    // la galerie : la miniature change la grande image
     var mare = detail.querySelector('.gal-main img');
-    // osnova je premala da se ovdje čita: klik na nju otvara je cijelu
+    // le plan est trop petit pour se lire ici : un clic l'ouvre en entier
     mare.addEventListener('click', function () {
       if (/plan\.png$/.test(mare.getAttribute('src'))) window.open(mare.src, '_blank');
     });
@@ -962,7 +965,7 @@
     if (e.key === 'Escape' && !modal.hidden) inchide();
   });
 
-  // izabrani sistem ide ka formularu u adresi stranice
+  // le système choisi part vers le formulaire dans l'adresse de la page
   modal.querySelectorAll('.sys-go').forEach(function (b) {
     b.addEventListener('click', function () {
       var sistem = b.closest('.syscard').dataset.sistem;

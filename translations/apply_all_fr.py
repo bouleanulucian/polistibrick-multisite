@@ -15,8 +15,13 @@ SKIP = re.compile(
 )
 
 
+def lang_key_for(code: str) -> str:
+    """Country folder code → translation file suffix."""
+    return {"ie": "en", "me": "cnr"}.get(code, code)
+
+
 def load_merged(lang: str) -> dict[str, str]:
-    lang_key = "en" if lang == "ie" else lang
+    lang_key = lang_key_for(lang)
     merged: dict[str, str] = {}
     for pattern in [
         f"fr_to_{lang_key}.json",

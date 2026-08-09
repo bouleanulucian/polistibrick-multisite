@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contatto · Polistibrick — 9 paesi europei</title>
-  <meta name="description" content="Contatta il team Polistibrick del tuo paese. Seleziona la bandiera del paese in cui costruisci e ricevi il contatto diretto.">
+  <title>Contatti · Polistibrick — 9 paesi europei</title>
+  <meta name="description" content="Contattiez l'équipe Polistibrick de votre pays. Sélectionnez le drapeau du pays où vous construisez et recevez le contact direct.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/site.css">
   <style>
     .wm-section { padding: clamp(60px, 8vw, 100px) 0; background: var(--cream); }
@@ -217,31 +217,30 @@
   <div class="container">
     <div class="wm-stage-wrap reveal">
       <div class="wm-watermark" aria-hidden="true">
-        <span class="wm-half wm-top">Contatto</span>
-        <span class="wm-half wm-bottom">Contatto</span>
+        <span class="wm-half wm-top">Contatti</span>
+        <span class="wm-half wm-bottom">Contatti</span>
       </div>
 
       <div class="wm-stage">
 
         <!-- FLAGS ROW SELECTOR -->
-        <div class="country-flags" role="tablist" aria-label="Seleziona il paese">
+        <div class="country-flags" role="tablist" aria-label="Sélectionnez le pays">
           <button class="country-flag-btn" data-country="RO" role="tab"><span class="country-flag-emoji">🇷🇴</span><span>Romania</span></button>
-          <button class="country-flag-btn" data-country="ES" role="tab"><span class="country-flag-emoji">🇪🇸</span><span>Spagna</span></button>
+          <button class="country-flag-btn" data-country="ES" role="tab"><span class="country-flag-emoji">🇪🇸</span><span>Espagne</span></button>
           <button class="country-flag-btn" data-country="FR" role="tab"><span class="country-flag-emoji">🇫🇷</span><span>Francia</span></button>
-          <button class="country-flag-btn" data-country="BE" role="tab"><span class="country-flag-emoji">🇧🇪</span><span>Belgio</span></button>
-          <button class="country-flag-btn" data-country="IT" role="tab"><span class="country-flag-emoji">🇮🇹</span><span>Italia</span></button>
-          <button class="country-flag-btn" data-country="AT" role="tab"><span class="country-flag-emoji">🇦🇹</span><span>Austria</span></button>
-          <button class="country-flag-btn" data-country="GB" role="tab"><span class="country-flag-emoji">🇬🇧</span><span>Regno Unito</span></button>
+          <button class="country-flag-btn" data-country="BE" role="tab"><span class="country-flag-emoji">🇧🇪</span><span>Belgique</span></button>
+          <button class="country-flag-btn" data-country="IT" role="tab"><span class="country-flag-emoji">🇮🇹</span><span>Italie</span></button>
+          <button class="country-flag-btn" data-country="AT" role="tab"><span class="country-flag-emoji">🇦🇹</span><span>Autriche</span></button>
+          <button class="country-flag-btn" data-country="GB" role="tab"><span class="country-flag-emoji">🇬🇧</span><span>Royaume-Uni</span></button>
         </div>
 
         <div class="wm-content">
 
           <!-- LEFT -->
           <div class="wm-text">
-            <span class="bubble-tag">Parliamone</span>
-            <h2>Specialisti <em>a un clic.</em></h2>
-            <p>Rispondiamo alle tue domande tecniche, prepariamo preventivi personalizzati e offriamo consulenza gratuita per ogni progetto.</p>
-            <p>Seleziona il paese in cui costruisci per vedere il contatto del team locale e inviargli il tuo messaggio direttamente.</p>
+<h2>Des spécialistes <em>à un clic.</em></h2>
+            <p>Nous répondons à vos questions techniques, préparons des devis personnalisés et offrons un conseil gratuit pour tout projet.</p>
+            <p>Sélectionnez le pays où vous construisez pour voir le contact de l'équipe locale et lui envoyer votre message directement.</p>
 
             <div class="country-office-card" id="activeOfficeCard"></div>
           </div>
@@ -249,91 +248,94 @@
           <!-- RIGHT -->
           <div class="wm-form-card">
             <div class="wm-form-target">
-              <span id="formTargetFlag">🇮🇹</span>
-              <span>Messaggio a <strong id="formTargetCountry">Italia</strong></span>
+              <span id="formTargetFlag">🇫🇷</span>
+              <span>Messaggio a <strong id="formTargetCountry">Francia</strong></span>
             </div>
-            <h3>Scrivici direttamente.</h3>
-            <p>Il tuo messaggio arriva direttamente al team del paese selezionato.</p>
+            <h3>Écrivez-nous directement.</h3>
+            <p>Votre message arrive directement à l'équipe du pays sélectionné.</p>
 
             <form id="contactForm" class="pb-form" data-pb-form="contact">
-              <input type="hidden" name="target_country" id="formCountryHidden" value="IT">
-              <input type="hidden" name="target_office" id="formTargetOfficeHidden" value="Italia">
+              <input type="hidden" name="target_country" id="formCountryHidden" value="FR">
+              <input type="hidden" name="target_office" id="formTargetOfficeHidden" value="Francia">
 
               <div class="form-row form-row--split">
                 <div>
-                  <label class="form-label" for="cname">Nome *</label>
-                  <input class="form-input" type="text" id="cname" name="name" required placeholder="Il tuo nome">
+                  <label class="form-label" for="cname">Nom *</label>
+                  <input class="form-input" type="text" id="cname" name="name" required placeholder="Votre nom">
                 </div>
                 <div>
                   <label class="form-label" for="cemail">Email *</label>
-                  <input class="form-input" type="email" id="cemail" name="email" required placeholder="email@esempio.it">
+                  <input class="form-input" type="email" id="cemail" name="email" required placeholder="email@exemple.fr">
                 </div>
               </div>
 
               <div class="form-row form-row--split">
                 <div>
                   <label class="form-label" for="cphone">Telefono (facoltativo)</label>
-                  <input class="form-input" type="tel" id="cphone" name="phone" placeholder="+39 3XX XXX XXXX">
+                  <input class="form-input" type="tel" id="cphone" name="phone" placeholder="+33 6 XX XX XX XX">
                 </div>
                 <div>
-                  <label class="form-label" for="crole">Tu sei</label>
+                  <label class="form-label" for="crole">Vous êtes</label>
                   <select class="form-select" id="crole" name="role">
-                    <option value="">— Seleziona —</option>
-                    <option value="architecte">Architetto</option>
-                    <option value="bet">Studio di ingegneria strutturale</option>
-                    <option value="constructeur">Costruttore / Impresa</option>
-                    <option value="particulier">Privato / Proprietario</option>
-                    <option value="promoteur">Promotore / Investitore</option>
-                    <option value="autre">Altro</option>
+                    <option value="">— Sélectionnez —</option>
+                    <option value="architecte">Architecte</option>
+                    <option value="bet">Bureau d'études (BET)</option>
+                    <option value="constructeur">Constructeur / Entrepreneur</option>
+                    <option value="particulier">Particulier / Propriétaire</option>
+                    <option value="promoteur">Promoteur / Investisseur</option>
+                    <option value="autre">Autre</option>
                   </select>
                 </div>
               </div>
 
               <div class="form-row">
-                <label class="form-label" for="csubject">Oggetto</label>
+                <label class="form-label" for="csubject">Sujet</label>
                 <select class="form-select" id="csubject" name="subject">
                   <option>Domanda tecnica</option>
-                  <option>Richiesta documentazione</option>
-                  <option>Supporto prodotto</option>
+                  <option>Demande de documentation</option>
+                  <option>Support produit</option>
                   <option>Diventa partner</option>
-                  <option>Richiesta di preventivo</option>
+                  <option>Demande de devis</option>
                   <option>Stampa / Media</option>
-                  <option>Altro</option>
+                  <option>Autre</option>
                 </select>
               </div>
 
               <div class="form-row">
-                <label class="form-label" for="cmsg">Messaggio *</label>
-                <textarea class="form-textarea" id="cmsg" name="message" required placeholder="Come possiamo aiutarti?"></textarea>
+                <label class="form-label" for="cmsg">Message *</label>
+                <textarea class="form-textarea" id="cmsg" name="message" required placeholder="Comment pouvons-nous vous aider ?"></textarea>
               </div>
 
+<!-- Ataşamentele cer planul Web3Forms Pro — blocul se restaurează de aici când se face upgrade:
               <div class="form-row">
-                <label class="form-label">Allegati (facoltativo)</label>
+                <label class="form-label">Pièces jointes (facultatif)</label>
                 <label class="form-file-drop" for="cfiles" id="fileDropZone">
                   <span class="form-file-icon">📎</span>
                   <div class="form-file-text">
-                    <strong>Allega progetti, schizzi o documenti</strong>
-                    <span>PDF · DWG · DXF · JPG · PNG · ZIP — max 10 MB / file</span>
+                    <strong>Joignez plans, croquis ou documents</strong>
+                    <span>PDF · DWG · DXF · JPG · PNG · ZIP — max 10 Mo / fichier</span>
                   </div>
                   <input type="file" id="cfiles" name="files" accept=".pdf,.dwg,.dxf,.jpg,.jpeg,.png,.zip" multiple style="display:none;">
                 </label>
                 <div class="form-file-list" id="filesList"></div>
               </div>
 
-              <button type="submit" class="btn btn-primary btn-large btn-arrow" style="width:100%;justify-content:center;">Invia il messaggio</button>
+-->
+
+              <button type="submit" class="btn btn-primary btn-large btn-arrow" style="width:100%;justify-content:center;">Envoyer le message</button>
 
               <div class="pb-form-consent">
                 <label class="pb-consent-label">
                   <input type="checkbox" name="privacy_consent" value="1" required>
-                  <span>Accetto che i miei dati siano trattati conformemente alla <a href="../legal/privacy/" target="_blank" rel="noopener">politica sulla privacy (GDPR)</a>. *</span>
+                  <span>J'accepte que mes données soient traitées conformément à la <a href="../legal/privacy/" target="_blank" rel="noopener">politique de confidentialité (RGPD)</a>. *</span>
                 </label>
               </div>
 
-              <p style="font-size:11.5px;color:var(--gray);text-align:center;margin-top:12px;">Rispondiamo entro 24 ore lavorative al massimo.</p>
+              <p style="font-size:11.5px;color:var(--gray);text-align:center;margin-top:12px;">Rispondiamo entro massimo 24 ore lavorative.</p>
 
               <div class="pb-form-thanks" hidden>
-                <h3>Messaggio inviato ✓</h3>
-                <p>Grazie! Il nostro team ti risponde entro 24 ore lavorative.</p>
+                <h3>Message envoyé ✓</h3>
+                <p>Merci ! Notre équipe vous répond sous 24 heures ouvrées.</p>
               </div>
             </form>
           </div>
@@ -348,17 +350,17 @@
 <script src="../assets/js/site.js" defer></script>
 <script src="../assets/js/forms.js" defer></script>
 <script>
-  // Per afficher la photo et le nom du responsable d'un pays, ajoutez à son entrée :
+  // Pour afficher la photo et le nom du responsable d'un pays, ajoutez à son entrée :
   //   photo: 'images/team/NOM-FICHIER.jpg', contact: 'Prénom Nom'
   // (sans photo, un cercle avec le drapeau s'affiche par défaut)
   const COUNTRIES = {
-    RO: { flag: '🇷🇴', name: 'Romania', city: 'Craiova', phone: '+40 371 550 550', phoneRaw: '+40371550550', email: null, address: 'Prelungirea Ghencea 281,<br>settore 6, Bucarest', site: 'polistibrick.ro', langs: 'RO · EN', badge: 'Sede RO' },
-    ES: { flag: '🇪🇸', name: 'Spagna', city: 'Valencia', phone: '+34 642 777 216', phoneRaw: '+34642777216', email: null, address: 'Pol. 24, 106,<br>Santa Eulalia del Rio', site: 'polistibrick.es', langs: 'ES · EN', badge: 'Sede ES' },
-    FR: { flag: '🇫🇷', name: 'Francia', city: 'Croissy-sur-Seine', phone: '+33 1 61 30 40 09', phoneRaw: '+33161304009', email: null, address: '4 Rue Hans List,<br>78290 Croissy-sur-Seine', site: 'polistibrick.fr', langs: 'FR · EN', badge: 'Sede FR' },
-    BE: { flag: '🇧🇪', name: 'Belgio', city: 'Lessines', phone: '+32 471 693 531', phoneRaw: '+32471693531', email: null, address: 'Profond Chemin 2,<br>7860 Lessines', site: 'polistibrick.be', langs: 'FR · NL · EN', badge: 'Sede BE' },
-    IT: { flag: '🇮🇹', name: 'Italia', city: "Città Sant'Angelo", phone: '+39 328 164 8085', phoneRaw: '+393281648085', email: null, address: "Città Sant'Angelo (PE),<br>Via Magliano del Gioco 16", site: 'polistibrick.it', langs: 'IT · EN', badge: 'Sede IT' },
-    AT: { flag: '🇦🇹', name: 'Austria', city: '—', phone: null, phoneRaw: null, email: null, address: 'Contatto tramite modulo online<br>o tramite polistibrick.at', site: 'polistibrick.at', langs: 'DE · EN', badge: 'Online' },
-    GB: { flag: '🇬🇧', name: 'Regno Unito', city: 'Servito dalla Romania', phone: '+40 371 550 550', phoneRaw: '+40371550550', email: null, address: 'Contatto tramite polistibrick.uk<br>o direttamente dalla Romania', site: 'polistibrick.uk', langs: 'EN', badge: 'Online · Supporto RO' },
+    RO: { flag: '🇷🇴', name: 'Roumanie', city: 'Craiova', phone: '+40 371 550 550', phoneRaw: '+40371550550', email: null, address: 'Prelungirea Ghencea 281,<br>sector 6, Bucarest', site: 'polistibrick.ro', langs: 'RO · EN', badge: 'Siège RO' },
+    ES: { flag: '🇪🇸', name: 'Espagne', city: 'Valencia', phone: '+34 642 777 216', phoneRaw: '+34642777216', email: null, address: 'Pol. 24, 106,<br>Santa Eulalia del Rio', site: 'polistibrick.es', langs: 'ES · EN', badge: 'Siège ES' },
+    FR: { flag: '🇫🇷', name: 'France', city: 'Croissy-sur-Seine', phone: '+33 1 61 30 40 09', phoneRaw: '+33161304009', email: null, address: '4 Rue Hans List,<br>78290 Croissy-sur-Seine', site: 'polistibrick.fr', langs: 'FR · EN', badge: 'Siège FR' },
+    BE: { flag: '🇧🇪', name: 'Belgique', city: 'Lessines', phone: '+32 471 693 531', phoneRaw: '+32471693531', email: null, address: 'Profond Chemin 2,<br>7860 Lessines', site: 'polistibrick.be', langs: 'FR · NL · EN', badge: 'Siège BE' },
+    IT: { flag: '🇮🇹', name: 'Italie', city: "Città Sant'Angelo", phone: '+39 328 164 8085', phoneRaw: '+393281648085', email: null, address: "Città Sant'Angelo (PE),<br>Via Magliano del Gioco 16", site: 'polistibrick.it', langs: 'IT · EN', badge: 'Siège IT' },
+    AT: { flag: '🇦🇹', name: 'Autriche', city: '—', phone: null, phoneRaw: null, email: null, address: 'Contact via formulaire en ligne<br>ou via polistibrick.at', site: 'polistibrick.at', langs: 'DE · EN', badge: 'En ligne' },
+    GB: { flag: '🇬🇧', name: 'Royaume-Uni', city: 'Servi depuis la Roumanie', phone: '+40 371 550 550', phoneRaw: '+40371550550', email: null, address: 'Contact via polistibrick.uk<br>ou directement depuis la Roumanie', site: 'polistibrick.uk', langs: 'EN', badge: 'En ligne · Support RO' },
   };
 
   const FALLBACK_MAP = {
@@ -368,7 +370,7 @@
     'RS': 'RO', 'BA': 'RO', 'MK': 'RO', 'AL': 'RO', 'IE': 'GB',
   };
 
-  let activeCountry = 'IT';
+  let activeCountry = 'FR';
 
   function renderActiveCountry(code) {
     activeCountry = code;
@@ -435,7 +437,7 @@
     btn.addEventListener('click', () => renderActiveCountry(btn.dataset.country));
   });
 
-  renderActiveCountry('IT');
+  renderActiveCountry('FR');
   function runContactGeo() {
     detect().then(code => {
       if (code) {
@@ -465,7 +467,7 @@
       item.className = 'form-file-item';
       item.innerHTML = `
         <span class="form-file-item-name">📄 ${file.name} <small>${sizeMB} MB</small></span>
-        <button type="button" class="form-file-item-remove" data-idx="${idx}" aria-label="Rimuovi">×</button>
+        <button type="button" class="form-file-item-remove" data-idx="${idx}" aria-label="Supprimer">×</button>
       `;
       filesList.appendChild(item);
     });
@@ -478,7 +480,7 @@
   function addFiles(newFiles) {
     Array.from(newFiles).forEach(file => {
       if (file.size > MAX_FILE_SIZE) {
-        alert(`Il file "${file.name}" è troppo grande (${(file.size/1024/1024).toFixed(1)} MB). Massimo 10 MB per file.`);
+        alert(`Le fichier "${file.name}" est trop volumineux (${(file.size/1024/1024).toFixed(1)} Mo). Maximum 10 Mo par fichier.`);
         return;
       }
       // Avoid duplicates
@@ -520,9 +522,9 @@
     }
   });
 
-  /* === AUTO-FILL formular pe baza query params din URL ===
-     Esempio URL chiamato da /per/architetti/:
-       ?subject=Richiesta+documento:+CAD+DWG&role=architecte-bet&doc=CAD+DWG&type=document */
+  /* === PRÉ-REMPLISSAGE du formulaire à partir des paramètres d'URL ===
+     Exemple d'URL appelée depuis /per/architetti/ :
+       ?subject=Demande+document+:+CAD+DWG&role=architecte-bet&doc=CAD+DWG&type=document */
   (function prefillFromURL() {
     var params = new URLSearchParams(window.location.search);
     var subject = params.get('subject');
@@ -530,7 +532,7 @@
     var doc = params.get('doc');
     var type = params.get('type');
 
-    // Pre-select rol (Architecte / BET / etc)
+    // Pré-sélection du rôle (Architecte / BET / etc.)
     var roleSelect = document.getElementById('crole');
     if (role && roleSelect) {
       var roleMap = {
@@ -549,9 +551,9 @@
     var subjectSelect = document.getElementById('csubject');
     if (subjectSelect) {
       if (type === 'document' || (subject && subject.toLowerCase().indexOf('document') !== -1)) {
-        // Force "Richiesta documentazione"
+        // Force "Demande de documentation"
         for (var i = 0; i < subjectSelect.options.length; i++) {
-          if (subjectSelect.options[i].text === 'Richiesta documentazione') {
+          if (subjectSelect.options[i].text === 'Demande de documentation') {
             subjectSelect.selectedIndex = i;
             break;
           }
@@ -571,20 +573,20 @@
     var msgField = document.getElementById('cmsg');
     if (msgField && (doc || subject)) {
       var roleText = '';
-      if (role === 'architecte-bet' || role === 'architecte') roleText = 'architetto';
-      else if (role === 'bet') roleText = 'studio di ingegneria strutturale';
-      else if (role === 'constructeur') roleText = 'costruttore';
-      else if (role === 'promoteur') roleText = 'promotore / investitore';
+      if (role === 'architecte-bet' || role === 'architecte') roleText = 'architecte';
+      else if (role === 'bet') roleText = 'bureau d\'études (BET)';
+      else if (role === 'constructeur') roleText = 'constructeur';
+      else if (role === 'promoteur') roleText = 'promoteur / investisseur';
 
       var msg = '';
       if (doc) {
         if (roleText) {
-          msg = 'Buongiorno,\n\nIn qualità di ' + roleText + ', desidero ricevere il seguente documento:\n\n• ' + doc + '\n\nGrazie in anticipo.';
+          msg = 'Bonjour,\n\nEn tant que ' + roleText + ', je souhaite recevoir le document suivant :\n\n• ' + doc + '\n\nMerci d\'avance.';
         } else {
-          msg = 'Buongiorno,\n\nDesidero ricevere il seguente documento:\n\n• ' + doc + '\n\nGrazie in anticipo.';
+          msg = 'Bonjour,\n\nJe souhaite recevoir le document suivant :\n\n• ' + doc + '\n\nMerci d\'avance.';
         }
       } else if (subject) {
-        msg = 'Buongiorno,\n\nRichiesta: ' + subject + '\n\nGrazie in anticipo.';
+        msg = 'Bonjour,\n\nDemande : ' + subject + '\n\nMerci d\'avance.';
       }
       msgField.value = msg;
     }
