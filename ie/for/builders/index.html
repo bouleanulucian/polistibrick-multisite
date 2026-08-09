@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For builders · Polistibrick partner programme</title>
+  <meta name="description" content="Polistibrick pour constructeurs : système 5-in-1 = marges up to 50% (une équipe = 5 équipes), gros œuvre 4–6 weeks, formation certifiante free, leads transmis. Become Constructeur Certifié Polistibrick.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
+  <link rel="stylesheet" href="../../assets/css/site.css">
+  <style>
+    /* Light Premium & Airy (aligné architectes / investisseurs) */
+    html, body {
+      background: var(--cream);
+      color: var(--ink-soft);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Ambient Glow Effects */
+    .glow-ambient {
+      position: absolute;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(226, 62, 68, 0.04) 0%, rgba(247, 244, 237, 0) 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .glow-1 { top: -100px; left: -200px; }
+    .glow-2 { top: 800px; right: -250px; }
+    .glow-3 { bottom: 300px; left: 15%; }
+    @media (max-width: 768px) {
+      .glow-ambient { display: none; }
+    }
+
+    /* Hero Section - Luxurious & Airy */
+    .hero-builders {
+      padding: clamp(140px, 16vh, 200px) 0 80px 0;
+      position: relative;
+      z-index: 1;
+      background: var(--cream);
+    }
+    .hero-builders-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .hero-builders-text {
+      padding-right: 20px;
+    }
+    .hero-builders-tag {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: var(--red);
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+    .hero-builders-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(38px, 4.5vw, 64px);
+      font-weight: 300;
+      line-height: 1.1;
+      margin: 0 0 24px 0;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+    }
+    .hero-builders-title em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--red);
+    }
+    .hero-builders-desc {
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--gray);
+      margin-bottom: 24px;
+      font-weight: 300;
+    }
+    .hero-builders-desc strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+    .hero-builders-cta {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+
+    /* Hero Visual Panel - Light Framed Image */
+    .hero-builders-visual {
+      background: linear-gradient(180deg, var(--cream-light) 0%, var(--cream-dark) 100%);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 12px;
+      box-shadow: var(--shadow-md);
+      aspect-ratio: 1/1;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-builders-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+
+    /* Concerns Section */
+    .pains-section {
+      padding: 100px 0;
+      background: #fff;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      z-index: 1;
+    }
+    .section-intro {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 60px;
+      padding: 0 40px;
+    }
+    .section-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--red);
+      margin-bottom: 16px;
+      display: inline-block;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 3.8vw, 48px);
+      font-weight: 300;
+      line-height: 1.2;
+      margin: 0 0 16px 0;
+      color: var(--ink);
+    }
+    .section-title em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--red);
+    }
+    .section-desc {
+      font-size: 15.5px;
+      line-height: 1.7;
+      color: var(--gray);
+      font-weight: 300;
+    }
+
+    .pains-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 40px;
+      box-sizing: border-box;
+    }
+    .pain-card {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--red);
+      border-radius: 20px;
+      padding: 36px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+    }
+    .pain-card:hover {
+      border-color: var(--border-strong);
+      border-left-color: var(--red);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+    .pain-q {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 19px;
+      font-style: italic;
+      color: var(--ink);
+      margin-bottom: 16px;
+      line-height: 1.4;
+      display: flex;
+      gap: 12px;
+    }
+    .pain-q::before {
+      content: '✕';
+      color: var(--red);
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      margin-top: 2px;
+    }
+    .pain-a {
+      font-size: 13.5px;
+      color: var(--gray);
+      line-height: 1.65;
+      font-weight: 300;
+      padding-left: 20px;
+    }
+    .pain-a strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+    .pain-a::before {
+      content: '✓';
+      color: #10b981;
+      font-weight: 700;
+      margin-right: 8px;
+    }
+
+    /* Advantages Section */
+    .atouts-section {
+      padding: 100px 0;
+      position: relative;
+      z-index: 1;
+      background: var(--cream);
+    }
+    .atouts-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      box-sizing: border-box;
+    }
+    .atout-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 48px 36px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .atout-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--red);
+      box-shadow: var(--shadow-lg);
+    }
+    .atout-icon {
+      width: 72px; height: 72px;
+      background: var(--red-soft);
+      border: 1px solid rgba(226,62,68,0.15);
+      border-radius: 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 28px;
+      color: var(--red);
+      transition: all 0.3s ease;
+    }
+    .atout-card:hover .atout-icon {
+      background: var(--red);
+      color: white;
+      transform: scale(1.05);
+    }
+    .atout-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+    .atout-card h3 em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--red);
+    }
+    .atout-card p {
+      font-size: 13.5px;
+      color: var(--gray);
+      line-height: 1.7;
+      margin: 0;
+      font-weight: 300;
+    }
+
+    /* Certified Partner Program Advantages */
+    .partner-section {
+      padding: 100px 0;
+      background: #fff;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      z-index: 1;
+    }
+    .partner-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      box-sizing: border-box;
+    }
+    .partner-card {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 36px 30px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+    }
+    .partner-card:hover {
+      border-color: var(--border-strong);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+    .partner-card-icon {
+      font-size: 24px;
+      width: 48px; height: 48px;
+      background: var(--red-soft);
+      border: 1px solid rgba(226,62,68,0.12);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .partner-card h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 19px;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+    .partner-card h4 em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--red);
+    }
+    .partner-card p {
+      font-size: 13px;
+      color: var(--gray);
+      line-height: 1.65;
+      margin: 0;
+      font-weight: 300;
+    }
+    .partner-card p strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    /* 4-Step Process Section - Clean Connected Timeline */
+    .process-section {
+      padding: 100px 0;
+      position: relative;
+      z-index: 1;
+      background: var(--cream);
+    }
+    .process-timeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      box-sizing: border-box;
+      position: relative;
+    }
+    .process-timeline::before {
+      content: '';
+      position: absolute;
+      top: 58px; left: 60px; right: 60px;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(226,62,68,0) 0%, rgba(226,62,68,0.3) 15%, rgba(226,62,68,0.3) 85%, rgba(226,62,68,0) 100%);
+      z-index: 0;
+    }
+    .process-step {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+    .process-num-wrap {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: var(--red);
+      border: 1px solid var(--red);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      box-shadow: 0 6px 16px rgba(226,62,68,0.2);
+      transition: all 0.3s ease;
+    }
+    .process-step:hover .process-num-wrap {
+      box-shadow: 0 8px 22px rgba(226,62,68,0.35);
+      transform: scale(1.05);
+    }
+    .process-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 500;
+      color: white;
+    }
+    .process-step h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 12px;
+    }
+    .process-step p {
+      font-size: 13px;
+      color: var(--gray);
+      line-height: 1.6;
+      margin-bottom: 16px;
+      font-weight: 300;
+    }
+    .step-duration {
+      display: inline-block;
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--red);
+      background: rgba(226,62,68,0.06);
+      border: 1px solid rgba(226,62,68,0.12);
+      padding: 4px 10px;
+      border-radius: 100px;
+    }
+
+    /* Testimonial Section */
+    .testim-section {
+      padding: 100px 0;
+      background: #fff;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      z-index: 1;
+    }
+    .testim-card {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px;
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      box-shadow: var(--shadow-sm);
+      box-sizing: border-box;
+      position: relative;
+    }
+    .testim-card::before {
+      content: '“';
+      position: absolute;
+      top: 20px; left: 40px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 140px;
+      color: rgba(226,62,68,0.08);
+      line-height: 1;
+    }
+    .testim-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(20px, 2.8vw, 26px);
+      font-style: italic;
+      color: var(--ink-soft);
+      line-height: 1.55;
+      margin-bottom: 32px;
+      position: relative;
+      z-index: 1;
+    }
+    .testim-author {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+    }
+    .testim-author-avatar {
+      width: 60px; height: 60px;
+      border-radius: 50%;
+      background: var(--red-soft);
+      border: 1px solid rgba(226,62,68,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .testim-author-info {
+      font-size: 13px;
+      color: var(--gray);
+    }
+    .testim-author-info strong {
+      display: block;
+      color: var(--ink);
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    /* Resources Dashboard (Espace Pro) */
+    .espace-pro-section {
+      padding: 100px 0;
+      position: relative;
+      z-index: 1;
+      background: var(--cream);
+    }
+    .download-groups {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+    }
+    .download-group {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: var(--shadow-sm);
+    }
+    .download-group-head {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    .download-group-icon {
+      font-size: 20px;
+      width: 44px; height: 44px;
+      background: var(--red-soft);
+      border: 1px solid rgba(226,62,68,0.12);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .download-group h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--ink);
+      margin: 0;
+    }
+    
+    .download-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .download-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 20px;
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      color: var(--ink);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+      text-align: left;
+      width: 100%;
+    }
+    .download-item:hover {
+      background: var(--cream-dark);
+      border-color: var(--border-strong);
+      transform: translateX(4px);
+    }
+    .download-icon {
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+    .download-info {
+      flex: 1;
+      min-width: 0;
+    }
+    .download-label {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.4;
+      display: block;
+    }
+    .download-meta {
+      font-size: 11px;
+      color: #a8740e;
+      margin-top: 3px;
+      font-weight: 600;
+      display: block;
+      letter-spacing: 0.05em;
+    }
+    .download-arrow {
+      color: var(--red);
+      font-size: 16px;
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+    .download-item:hover .download-arrow {
+      transform: translateX(3px);
+    }
+
+    /* Product Guides Layout */
+    .product-cols {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .product-col {
+      background: var(--cream-light);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .product-col-head {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      padding: 0 4px 12px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 4px;
+    }
+    .product-col-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--ink);
+    }
+    .product-col-desc {
+      font-size: 9px;
+      color: var(--gray);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .product-col .download-item {
+      background: #fff;
+    }
+
+    /* Bottom CTA Section */
+    .cta-esc-section {
+      padding: 100px 0;
+      position: relative;
+      z-index: 1;
+      background: #fff;
+    }
+    .cta-esc-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      box-sizing: border-box;
+    }
+    .cta-esc-card {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 44px 32px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .cta-esc-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--red);
+      box-shadow: var(--shadow-lg);
+    }
+    .cta-esc-card--primary {
+      background: var(--ink);
+      border-color: var(--ink);
+    }
+    .cta-esc-card--primary:hover {
+      background: var(--ink-soft);
+      border-color: var(--red);
+    }
+    .cta-esc-icon {
+      font-size: 28px;
+      width: 56px; height: 56px;
+      background: var(--red-soft);
+      border: 1px solid rgba(226,62,68,0.12);
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 24px;
+    }
+    .cta-esc-card--primary .cta-esc-icon {
+      background: rgba(226,62,68,0.25);
+      border-color: rgba(226,62,68,0.4);
+      color: white;
+    }
+    .cta-esc-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 21px;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 12px;
+    }
+    .cta-esc-card--primary .cta-esc-title {
+      color: var(--cream);
+    }
+    .cta-esc-desc {
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: var(--gray);
+      margin-bottom: 28px;
+      flex: 1;
+      font-weight: 300;
+    }
+    .cta-esc-card--primary .cta-esc-desc {
+      color: rgba(247,244,237,0.75);
+    }
+    .cta-esc-btn {
+      display: inline-block;
+      padding: 12px 28px;
+      border-radius: 100px;
+      background: var(--red);
+      border: 1px solid var(--red);
+      color: white;
+      font-size: 13px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .cta-esc-card:hover .cta-esc-btn {
+      background: var(--ink);
+      color: var(--cream);
+      border-color: var(--ink);
+    }
+    .cta-esc-card--primary .cta-esc-btn {
+      background: white;
+      color: var(--ink);
+      border-color: white;
+    }
+    .cta-esc-card--primary:hover .cta-esc-btn {
+      background: var(--red);
+      color: white;
+      border-color: var(--red);
+    }
+
+    /* Responsive adjusts */
+    @media (max-width: 1200px) {
+      .hero-builders-inner { grid-template-columns: 1fr; gap: 50px; text-align: center; }
+      .hero-builders-text { padding-right: 0; }
+      .hero-builders-cta { justify-content: center; }
+      .hero-builders-visual { max-width: 600px; margin: 0 auto; }
+      .partner-grid { grid-template-columns: repeat(2, 1fr); }
+      .process-timeline { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+      .process-timeline::before { display: none; }
+    }
+    @media (max-width: 900px) {
+      .pains-grid { grid-template-columns: 1fr; }
+      .atouts-grid { grid-template-columns: 1fr; }
+      .download-list { grid-template-columns: 1fr; }
+      .product-cols { grid-template-columns: 1fr; }
+      .cta-esc-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .partner-grid { grid-template-columns: 1fr; }
+      .process-timeline { grid-template-columns: 1fr; }
+      .testim-card { padding: 40px 24px; }
+      .download-group { padding: 24px; }
+    }
+
+    /* CTA Section styling */
+    .cta-cert-section {
+      max-width: 1400px;
+      margin: 0 auto 120px;
+      padding: 80px 40px 0;
+      box-sizing: border-box;
+    }
+    .cta-cert-card {
+      background: var(--ink);
+      border: 1px solid var(--ink);
+      border-radius: 32px;
+      padding: clamp(60px, 8vw, 90px) clamp(40px, 6vw, 80px);
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+    .cta-cert-card::after {
+      content: '';
+      position: absolute;
+      right: 0; bottom: 0;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(226, 62, 68, 0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cta-cert-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 300;
+      color: var(--cream);
+      margin: 0 0 20px 0;
+      line-height: 1.15;
+    }
+    .cta-cert-desc {
+      font-size: 15px;
+      line-height: 1.75;
+      color: rgba(247,244,237,0.75);
+      margin: 0;
+      font-weight: 300;
+      max-width: 720px;
+    }
+    .cta-cert-action {
+      justify-self: end;
+    }
+    .btn-circle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 18px 40px;
+      background: var(--red);
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      border-radius: 100px;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 10px 30px rgba(226, 62, 68, 0.2);
+    }
+    .btn-circle:hover {
+      background: white;
+      color: black;
+      transform: translateY(-2px);
+      box-shadow: 0 15px 35px rgba(255,255,255,0.25);
+    }
+
+    /* — calculateur de l'équipe (adapté depuis investisseurs) — */
+    /* CALCULATEUR ROI ensemble — star section */
+    .roi-section { background: white; padding: 80px 0; }
+    .roi-intro { max-width: 760px; margin: 0 auto 40px; text-align: center; }
+    .roi-stage { max-width: 1100px; margin: 0 auto; background: linear-gradient(135deg, var(--cream) 0%, var(--cream-light) 100%); border: 1px solid var(--border); border-radius: 24px; padding: 48px; }
+    .roi-input-row { display: flex; align-items: center; gap: 24px; max-width: 600px; margin: 0 auto 40px; flex-wrap: wrap; }
+    .roi-input-row label { font-size: 14px; font-weight: 600; color: var(--ink); min-width: 240px; }
+    .roi-input-row input[type="number"] { flex: 1; min-width: 120px; padding: 12px 18px; font-size: 18px; font-weight: 600; border: 1px solid var(--border); border-radius: 10px; background: white; font-family: inherit; color: var(--ink); text-align: center; }
+    .roi-input-row input[type="number"]:focus { outline: 2px solid var(--red); outline-offset: 2px; }
+    .roi-slider { width: 100%; max-width: 600px; margin: 0 auto 40px; display: block; }
+    .roi-results { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 32px; }
+    .roi-card { background: white; border-radius: 14px; padding: 24px 20px; text-align: center; border: 1px solid var(--border); }
+    .roi-card--highlight { border: 2px solid #1a7d3a; background: linear-gradient(180deg, white 60%, rgba(26,125,58,0.04) 100%); }
+    .roi-card-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gray); margin-bottom: 10px; }
+    .roi-card-value { font-family: var(--serif); font-size: 32px; font-weight: 500; line-height: 1.1; color: var(--ink); margin-bottom: 4px; }
+    .roi-card--highlight .roi-card-value { color: #1a7d3a; }
+    .roi-card-unit { font-size: 12px; color: var(--gray); }
+    .roi-summary { background: linear-gradient(135deg, rgba(26,125,58,0.10), rgba(26,125,58,0.04)); border: 1px solid rgba(26,125,58,0.25); border-radius: 14px; padding: 24px 28px; text-align: center; }
+    .roi-summary-text { font-size: 15px; color: var(--ink); line-height: 1.6; }
+    .roi-summary-text strong { color: #1a7d3a; font-weight: 700; }
+    .roi-note { max-width: 760px; margin: 20px auto 0; text-align: center; font-size: 12px; color: var(--gray); line-height: 1.5; }
+    @media (max-width: 768px) {
+      .roi-stage { padding: 28px 18px; }
+      .roi-results { grid-template-columns: 1fr; }
+      .roi-card-value { font-size: 26px; }
+    }
+  </style>
+<link rel="canonical" href="https://polistibrick.ie/for/builders/">
+<meta property="og:url" content="https://polistibrick.ie/for/builders/">
+<link rel="alternate" hreflang="en-IE" href="https://polistibrick.ie/for/builders/">
+<link rel="alternate" hreflang="x-default" href="https://polistibrick.ie/for/builders/">
+</head>
+<body data-base="../../">
+
+<div class="glow-ambient glow-1"></div>
+<div class="glow-ambient glow-2"></div>
+<div class="glow-ambient glow-3"></div>
+
+<header class="nav" data-include="nav"></header>
+
+<!-- 1. HERO -->
+<section class="hero-builders">
+  <div class="hero-builders-inner">
+    <div class="hero-builders-text">
+      <span class="hero-builders-tag">For builders and contractors</span>
+      <h1 class="hero-builders-title">Vous savez poser du BA13 ? <br><em>You know how to build with Polistibrick.</em></h1>
+      <p class="hero-builders-desc">It is <strong>classic formwork</strong> : you measure it, cut it, fix it — exactly like any other formwork system. The only real imperative on site: <strong>be precise in measurements</strong> and not cutting the panel 5 cm too short. The rest is guided installation.</p>
+      <p class="hero-builders-desc">Thanks to the 5-in-1 structural system, <strong>one team does the work of 5 trades</strong> (structure, insulation, airtightness, acoustics and finishes). Operating margins can reach <strong>50 %</strong> per project by capturing value previously subcontracted.</p>
+      
+      <div class="hero-builders-cta">
+        <a href="../../become-a-partner/" class="btn btn-primary btn-arrow">Postuler maintenant</a>
+      </div>
+    </div>
+    
+    <div class="hero-builders-visual">
+      <img src="/polistibrick-multisite/fr/images/personas/pour-constructeur.jpg" alt="Polistibrick site: concrete pour on a housing development" loading="eager">
+    </div>
+  </div>
+</section>
+
+<!-- 2. PROBLÈMES / INQUIÉTUDES -->
+<section class="pains-section">
+  <div class="section-intro">
+    <h2 class="section-title">What holds you back from adopting <em>a new process.</em></h2>
+    <p class="section-desc">We designed our programme to eliminate the inherent risks of adopting an innovative construction system.</p>
+  </div>
+
+  <div class="pains-grid">
+    <div class="pain-card">
+      <h3 class="pain-q">« I am afraid of losing money while my team learns. »</h3>
+      <p class="pain-a">Technical training of <strong>2 to 3 days free at the factory</strong> + <strong>direct technical support on your first site</strong>. The team is productive from day one of assembly.</p>
+    </div>
+    
+    <div class="pain-card">
+      <h3 class="pain-q">« If a problem arises, I will be alone facing the client. »</h3>
+      <p class="pain-a">Our structural engineers <strong>respond within 24 hours</strong> for any technical question. Classic ten-year warranty covers the works, backed by the Polistibrick manubillr's warranty.</p>
+    </div>
+    
+    <div class="pain-card">
+      <h3 class="pain-q">"Delivery delays on site will cost me dearly."</h3>
+      <p class="pain-a">With our 2 production plants, we ship the complete structure of a house in <strong>just 1 to 2 lorries</strong>. Deadlines are firm and contractually guaranteed.</p>
+    </div>
+    
+    <div class="pain-card">
+      <h3 class="pain-q">"How do I convince clients and find new projects?"</h3>
+      <p class="pain-a">We <strong>pass on qualified leads</strong> from architects and homeowners in your area. You also benefit from co-branding on our regional channels.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 3. ATOUTS UNIQUES -->
+<section class="atouts-section">
+  <div class="section-intro">
+    <h2 class="section-title">What this changes <em>for your financial performance.</em></h2>
+  </div>
+
+  <div class="atouts-grid">
+    <!-- Atout 1: Marges -->
+    <article class="atout-card">
+      <div class="atout-icon">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 2" opacity="0.4"/>
+          <path d="M12 21L16 17L19 20L23 15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <polyline points="20,15 23,15 23,18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M10 11H22" stroke="currentColor" stroke-width="1.2" opacity="0.5"/>
+        </svg>
+      </div>
+      <h3>Marges <em>up to 50%</em></h3>
+      <p>Integrate into your own structure the added value of external insulation, finishes and acoustics. Maximise gain per square metre built.</p>
+    </article>
+
+    <!-- Atout 2: Vitesse -->
+    <article class="atout-card">
+      <div class="atout-icon">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M13 6L21 14L11 16L19 26" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+        </svg>
+      </div>
+      <h3>La maison à 80 % en <em>4 to 6 weeks</em></h3>
+      <p>Execution 2 to 3 times faster than traditional masonry. You complete more projects per year without increasing your team size.</p>
+    </article>
+
+    <!-- Atout 3: Fiabilité -->
+    <article class="atout-card">
+      <div class="atout-icon">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 8V24M8 16H24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+          <rect x="6" y="6" width="20" height="20" rx="4" stroke="currentColor" stroke-width="1.8"/>
+        </svg>
+      </div>
+      <h3>Zero claims, <em>zéro stress</em></h3>
+      <p>La technologie solide du concrete armé banché dans un formwork isolant calibré en usine. Les risques d'erreurs de coupe et de malfaçons thermiques sont neutralisés.</p>
+    </article>
+  </div>
+</section>
+
+<!-- 4. PROGRAMME PARTENAIRE — déplacé sur /become-a-partner/ -->
+
+
+<!-- 5. LE MONTAGE EN 4 ÉTAPES -->
+<section class="process-section" id="montaj">
+  <div class="section-intro">
+    <h2 class="section-title">Le montage, en <em>4 étapes.</em></h2>
+    <p class="section-desc">From foundation to la structure coulée, avec 2 to 3 people sur le chantier. No crane, sans mortier, sans temps de séchage entre les étapes.</p>
+  </div>
+
+  <div class="process-timeline">
+    <div class="process-step">
+      <div class="process-num-wrap">
+        <span class="process-num">1</span>
+      </div>
+      <h4>Formwork</h4>
+      <p>Les walls EPS sont dressés et fixés sur la fondation avec des étaiements latéraux en bois. Assemblage à sec : sans mortier, sans perte d'insulation.</p>
+      <span class="step-duration">Manuel, sans grue</span>
+    </div>
+
+    <div class="process-step">
+      <div class="process-num-wrap">
+        <span class="process-num">2</span>
+      </div>
+      <h4>Floor</h4>
+      <p>Les panneaux PBK se posent horizontalement — couches EPS-Graphite + fibre cement, prêtes à recevoir l'armature.</p>
+      <span class="step-duration">Pose horizontale</span>
+    </div>
+
+    <div class="process-step">
+      <div class="process-num-wrap">
+        <span class="process-num">3</span>
+      </div>
+      <h4>Reinforcement</h4>
+      <p>Les treillis d'acier se posent entre les nervures EPS-Graphite. C'est ce qui crée la liaison monolithique entre les walls et le plancher.</p>
+      <span class="step-duration">Sans soudure</span>
+    </div>
+
+    <div class="process-step">
+      <div class="process-num-wrap">
+        <span class="process-num">4</span>
+      </div>
+      <h4>Coulage du concrete</h4>
+      <p>Tous les éléments sont assemblés et vérifiés, le formwork est fermé. After the concrete pour, the structure becomes monolithic within 24 hours.</p>
+      <span class="step-duration">Monolithic in 24 h</span>
+    </div>
+  </div>
+
+
+  <div style="text-align:center;margin-top:40px;">
+    <a href="../../installation/" class="btn btn-primary btn-arrow">Voir le montage en détail</a>
+  </div>
+</section>
+
+<section class="process-section" style="padding-top:0;">
+  <div style="max-width:1000px;margin:0 auto;padding:0 40px;box-sizing:border-box;">
+    <div style="background:white;border:1px solid var(--border);border-radius:20px;padding:44px 36px;">
+      <h3 style="font-family:var(--serif);font-size:24px;font-weight:500;color:var(--ink);text-align:center;margin:0 0 32px;">The construction site, réduit à <em style="font-style:italic;color:var(--red);font-weight:400;">l'essentiel.</em></h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:28px;">
+        <div style="text-align:center;">
+          <div style="font-family:var(--serif);font-size:clamp(30px,3.4vw,44px);color:var(--red);line-height:1;margin-bottom:8px;">~1 months</div>
+          <div style="font-size:13.5px;color:var(--gray);">structure, insulation, finitions</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-family:var(--serif);font-size:clamp(30px,3.4vw,44px);color:var(--red);line-height:1;margin-bottom:8px;">2–3</div>
+          <div style="font-size:13.5px;color:var(--gray);">personnes sur le chantier</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-family:var(--serif);font-size:clamp(30px,3.4vw,44px);color:var(--red);line-height:1;margin-bottom:8px;">0</div>
+          <div style="font-size:13.5px;color:var(--gray);">grue ou engin lourd</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-family:var(--serif);font-size:clamp(30px,3.4vw,44px);color:var(--red);line-height:1;margin-bottom:8px;">24 h</div>
+          <div style="font-size:13.5px;color:var(--gray);">jusqu'à devenir monolithique</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="roi-section" id="calculator-echipa">
+  <div class="container">
+    <div class="roi-intro reveal">
+      <h2 style="font-family:var(--serif);font-size:clamp(28px,3.2vw,42px);font-weight:500;color:var(--ink);letter-spacing:-0.02em;margin-bottom:14px;">Combien vous gagnez en plus, <em style="font-style:italic;color:var(--red);font-weight:400;">par an.</em></h2>
+      <p style="font-size:15.5px;color:var(--gray);line-height:1.65;">Une équipe Polistibrick fait le travail de 5 équipes. Dites-nous combien de maisons vous construisez par an — nous calculons ce qui reste dans l'entreprise au lieu de partir chez les sous-traitants.</p>
+    </div>
+
+    <div class="roi-stage reveal">
+      <div class="roi-input-row">
+        <label for="cc-units">Completed homes par an :</label>
+        <input type="number" id="cc-units" min="1" max="50" step="1" value="5">
+        <span style="font-weight:600;font-size:18px;color:var(--gray);">maisons</span>
+      </div>
+      <input type="range" id="cc-slider" class="roi-slider" min="1" max="50" step="1" value="5">
+
+      <div class="roi-results">
+        <div class="roi-card roi-card--highlight">
+          <div class="roi-card-label">Gain supplémentaire par an</div>
+          <div class="roi-card-value" id="cc-profit">+120 000 €</div>
+          <div class="roi-card-unit">40 % de la main-d'œuvre des 5 corps de métier</div>
+        </div>
+        <div class="roi-card">
+          <div class="roi-card-label">Main-d'œuvre gardée dans l'entreprise</div>
+          <div class="roi-card-value" id="cc-labor">300 000 €</div>
+          <div class="roi-card-unit">au lieu de partir chez les sous-traitants</div>
+        </div>
+        <div class="roi-card">
+          <div class="roi-card-label">Avec la même équipe</div>
+          <div class="roi-card-value">2–3×</div>
+          <div class="roi-card-unit">plus de projets par an</div>
+        </div>
+      </div>
+
+      <div class="roi-summary">
+        <div class="roi-summary-text">À <strong id="cc-units-display">5 maisons</strong> par an, <strong>le gain supplémentaire estimé</strong> with Polistibrick. <strong id="cc-total">~120 000 €</strong> par rapport au travail avec 5 équipes.</div>
+      </div>
+    </div>
+
+    <p class="roi-note">Estimation sur des hypothèses standard : 150 m²/maison, main-d'œuvre totale des 5 corps de métier 400 €/m², dont 40 % restent en gain dans l'entreprise. For des chiffres sur votre entreprise, contactez-nous.</p>
+  </div>
+</section>
+
+<script>
+// CALCULATEUR ÉQUIPE CONSTRUCTEUR
+(function(){
+  var unitsInput = document.getElementById('cc-units');
+  var unitsSlider = document.getElementById('cc-slider');
+  var profitEl = document.getElementById('cc-profit');
+  var laborEl = document.getElementById('cc-labor');
+  var unitsDisplayEl = document.getElementById('cc-units-display');
+  var totalEl = document.getElementById('cc-total');
+  if (!unitsInput) return;
+
+  var SURFACE = 150;        // m² par maison (moyenne)
+  var LABOR_PER_M2 = 400;   // €/m², main-d'œuvre des 5 corps de métier
+  var KEPT = 0.40;          // la part qui reste en gain dans l'entreprise
+
+  function fmt(n) { return Math.round(n).toLocaleString('fr-FR') + ' €'; }
+
+  function calc() {
+    var u = parseInt(unitsInput.value, 10);
+    if (isNaN(u) || u < 1) u = 1;
+    if (u > 50) u = 50;
+    unitsInput.value = u;
+    unitsSlider.value = u;
+
+    var labor = u * SURFACE * LABOR_PER_M2;
+    var profit = labor * KEPT;
+
+    profitEl.textContent = '+' + fmt(profit);
+    laborEl.textContent = fmt(labor);
+    unitsDisplayEl.textContent = u + (u === 1 ? ' maison' : ' maisons');
+    totalEl.textContent = '~' + fmt(profit);
+  }
+
+  unitsInput.addEventListener('input', calc);
+  unitsSlider.addEventListener('input', function(){ unitsInput.value = this.value; calc(); });
+  calc();
+})();
+</script>
+
+<!-- 6. TÉMOIGNAGES RÉELS -->
+<section class="testim-section" id="testimoniale-reale" style="display:none;">
+  <div class="container">
+    <div id="testim-lista" style="display:grid;gap:28px;"></div>
+    <div style="text-align:center;margin-top:40px;">
+      <a href="../../testimonials/" class="btn btn-ghost btn-arrow">Consulter les témoignages</a>
+    </div>
+  </div>
+</section>
+
+<script>
+// TÉMOIGNAGES RÉELS — lus depuis la page de témoignages (publiés via le studio).
+// Tant qu'il n'y en a aucun, la section reste masquée.
+(function(){
+  var sec = document.getElementById('testimoniale-reale');
+  var lista = document.getElementById('testim-lista');
+  if (!sec || !lista || !window.fetch) return;
+
+  function cale(p) { return (p || '').replace('../images/', '../../images/'); }
+
+  fetch('../../testimonials/').then(function(r){ return r.text(); }).then(function(html){
+    var doc = new DOMParser().parseFromString(html, 'text/html');
+    var reale = doc.querySelectorAll('article[data-testimonial]');
+    if (!reale.length) return;
+
+    Array.prototype.slice.call(reale, 0, 2).forEach(function(c){
+      var nume = c.querySelector('.video-author-info strong');
+      var meta = c.querySelector('.video-author-info span');
+      var citat = c.querySelector('.video-quote');
+      var video = c.querySelector('video');
+
+      var card = document.createElement('div');
+      card.className = 'testim-card';
+
+      if (video) {
+        var v = document.createElement('video');
+        v.controls = true; v.preload = 'none'; v.setAttribute('playsinline', '');
+        v.poster = cale(video.getAttribute('poster'));
+        v.style.cssText = 'width:100%;max-height:420px;border-radius:14px;margin-bottom:24px;background:#000;display:block;';
+        var s0 = video.querySelector('source');
+        if (s0) { var s = document.createElement('source'); s.src = cale(s0.getAttribute('src')); s.type = 'video/mp4'; v.appendChild(s); }
+        var t0 = video.querySelector('track');
+        if (t0) { var tr = document.createElement('track'); tr.kind = 'subtitles';
+                  tr.src = cale(t0.getAttribute('src')); tr.srclang = t0.getAttribute('srclang') || 'fr';
+                  tr.setAttribute('default', ''); v.appendChild(tr); }
+        card.appendChild(v);
+      }
+
+      if (citat && citat.textContent.trim()) {
+        var q = document.createElement('p');
+        q.className = 'testim-quote';
+        q.textContent = citat.textContent.trim();
+        card.appendChild(q);
+      }
+
+      var a = document.createElement('div');
+      a.className = 'testim-author';
+      var info = document.createElement('div');
+      info.className = 'testim-author-info';
+      var st = document.createElement('strong');
+      st.textContent = nume ? nume.textContent.trim() : '';
+      var sp = document.createElement('span');
+      sp.textContent = meta ? meta.textContent.trim() : '';
+      sp.style.display = 'block';
+      info.appendChild(st); info.appendChild(sp);
+      a.appendChild(info);
+      card.appendChild(a);
+
+      lista.appendChild(card);
+    });
+
+    sec.style.display = '';
+  }).catch(function(){ /* reste masquée */ });
+})();
+</script>
+
+<!-- 7. CTA PARTENARIAT -->
+<section class="cta-cert-section" style="margin-top: 60px;">
+  <div class="cta-cert-card">
+    <div>
+      <h2 class="cta-cert-title">Ready to transform your sites?</h2>
+      <p class="cta-cert-desc">Become a Polistibrick Certified Builder. Access free technical training, benefit from qualified leads in your region and maximise operational margins.</p>
+    </div>
+    <div class="cta-cert-action">
+      <a href="../../become-a-partner/" class="btn-circle" style="white-space: nowrap;">
+        Become a partner
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2.5 7H11.5M11.5 7L8 3.5M11.5 7L8 10.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" data-include="footer"></footer>
+
+<script src="../../assets/js/site.js?v=b76a1df4" defer></script>
+</body>
+</html>

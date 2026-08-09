@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le montage Polistibrick · Une maison montée à la main, en quelques semanas</title>
+  <meta name="description" content="Comment se monte une maison Polistibrick : assemblage à sec, sans grue, par 2 à 3 personnes. De la fondation au encofrado fermé en quelques semanas, monolithique en 24 h après le coulage.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700&family=Inter:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700&family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <style>
+    /* --- Hero watermark (même pattern que les autres sous-pages) --- */
+    .wm-section { padding: clamp(60px, 8vw, 100px) 0; background: var(--cream); }
+    .wm-stage-wrap { position: relative; margin: 70px auto 0; max-width: 1480px; }
+    .wm-watermark {
+      position: absolute; top: 0; left: 50%; width: 100vw; margin-left: -50vw;
+      pointer-events: none; user-select: none; transform: translateY(-50%);
+      height: 1em; line-height: 1; text-align: center; text-transform: uppercase;
+      font-family: var(--serif); font-size: clamp(64px, 12vw, 200px);
+      font-weight: 500; letter-spacing: -0.06em; z-index: 2;
+    }
+    .wm-watermark .wm-half { position: absolute; inset: 0; width: 100%; display: block; }
+    .wm-watermark .wm-top { color: transparent; -webkit-text-stroke: 1.4px rgba(15,15,15,0.30); clip-path: inset(0 0 50% 0); }
+    .wm-watermark .wm-bottom { color: var(--cream-dark); opacity: 0.65; clip-path: inset(50% 0 0 0); }
+    .wm-stage { position: relative; background: var(--cream-light); border: 1px solid var(--border); border-radius: 32px; padding: 56px; }
+    .wm-content { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 48px; align-items: center; }
+    .wm-text { padding-right: 8px; }
+    .wm-text .bubble-tag { display: inline-block; background: var(--red-soft); color: var(--red); padding: 4px 12px; border-radius: 4px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 16px; }
+    .wm-text h1 { font-family: var(--serif); font-size: clamp(30px, 3.6vw, 44px); font-weight: 500; color: var(--ink); letter-spacing: -0.02em; line-height: 1.05; margin-bottom: 18px; }
+    .wm-text h1 em { font-style: italic; color: var(--red); font-weight: 400; }
+    .wm-text p { font-size: 16px; color: var(--gray); line-height: 1.65; }
+    .wm-text p strong { color: var(--ink); font-weight: 600; }
+    .wm-visual { background: linear-gradient(180deg, var(--cream-light) 0%, var(--cream-dark) 100%); border: 1px solid var(--border); border-radius: 20px; box-shadow: var(--shadow-md); aspect-ratio: 4/5; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+    .wm-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    @media (max-width: 1100px) {
+      .wm-content { grid-template-columns: 1fr; gap: 32px; }
+      .wm-stage { padding: 36px; }
+      .wm-visual { aspect-ratio: 16/10; }
+    }
+    @media (max-width: 768px) { .wm-stage { padding: 28px 20px; } }
+
+    /* --- Vidéo du montage --- */
+    .montage-video {
+      position: relative; width: 100%; aspect-ratio: 16/9;
+      border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-md);
+      background: #1A1A1A; display: block;
+    }
+    .montage-video--placeholder {
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px;
+      background:
+        linear-gradient(180deg, rgba(15,14,12,0.55), rgba(15,14,12,0.78)),
+        url('/polistibrick-multisite/fr/images/construction/stage4-final.jpg') center/cover no-repeat;
+      color: #fff; text-align: center;
+    }
+    .montage-video--placeholder .mv-play {
+      width: 76px; height: 76px; border-radius: 50%;
+      background: var(--red); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 26px; padding-left: 5px;
+      box-shadow: 0 12px 40px rgba(200,16,46,0.45);
+    }
+    .montage-video--placeholder .mv-label { font-family: var(--serif); font-size: clamp(20px,2.4vw,28px); font-weight: 500; line-height: 1.2; }
+    .montage-video--placeholder .mv-label span { display: block; font-family: var(--sans); font-size: 13px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.8; margin-top: 8px; }
+    .montage-video-caption { text-align: center; font-size: 14px; color: var(--gray); margin-top: 16px; }
+
+    /* --- Étapes de montage --- */
+    .montage-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .montage-step { background: var(--cream-light); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; }
+    .montage-step .ms-img { position: relative; aspect-ratio: 4/3; overflow: hidden; background: var(--cream-dark); }
+    .montage-step .ms-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .montage-step .ms-num { position: absolute; top: 12px; left: 12px; width: 38px; height: 38px; border-radius: 50%; background: var(--red); color: #fff; font-family: var(--serif); font-weight: 600; font-size: 16px; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(0,0,0,0.25); }
+    .montage-step .ms-body { padding: 20px 20px 24px; }
+    .montage-step .ms-body h3 { font-family: var(--serif); font-size: 19px; font-weight: 500; color: var(--ink); margin-bottom: 8px; }
+    .montage-step .ms-body p { font-size: 14px; color: var(--gray); line-height: 1.55; }
+    @media (max-width: 1100px) { .montage-steps { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .montage-steps { grid-template-columns: 1fr; } }
+
+    /* bande de mise en avant après les étapes */
+    .montage-note { margin-top: 36px; background: var(--red-soft); border: 1px solid rgba(200,16,46,0.18); border-radius: 16px; padding: 24px 28px; text-align: center; font-size: 16px; color: var(--ink); }
+    .montage-note strong { color: var(--red); }
+
+    /* bande pro */
+    .montage-pro { display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; background: var(--cream-light); border:1px solid var(--border); border-radius:20px; padding:28px 32px; }
+    .montage-pro p { font-size:15px; color:var(--gray); max-width:640px; margin:0; }
+    .montage-pro p strong { color: var(--ink); }
+  </style>
+<link rel="canonical" href="https://polistibrick.es/montaje/">
+<meta property="og:url" content="https://polistibrick.es/montaje/">
+<link rel="alternate" hreflang="es-ES" href="https://polistibrick.es/montaje/">
+<link rel="alternate" hreflang="x-default" href="https://polistibrick.es/montaje/">
+</head>
+<body data-base="../">
+
+<header class="nav" data-include="nav"></header>
+
+<!-- HERO -->
+<section class="wm-section">
+  <div class="container">
+    <div class="wm-stage-wrap reveal">
+      <div class="wm-watermark" aria-hidden="true">
+        <span class="wm-half wm-top">Montage</span>
+        <span class="wm-half wm-bottom">Montage</span>
+      </div>
+      <div class="wm-stage">
+        <div class="wm-content">
+          <div class="wm-text">
+          <h1>Montée à la main, <em>en quelques semanas.</em></h1>
+            <p>Pas de grue. Pas de gros œuvre interminable. Le système Polistibrick s'assemble <strong>à sec</strong>, élément par élément, par une équipe de <strong>2 à 3 personnes</strong> — jusqu'au encofrado fermé, prêt pour le coulage du hormigón.</p>
+          </div>
+          <div class="wm-visual">
+            <img src="/polistibrick-multisite/fr/images/construction/stage1-cofraj.jpg" alt="Montage des muros Polistibrick sur le chantier" loading="eager">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDÉO -->
+<section class="section section--tight">
+  <div class="container container--narrow reveal">
+    <!-- ▼▼▼ VIDÉO DU MONTAGE — À REMPLACER QUAND ELLE EST PRÊTE ▼▼▼
+         Mettez le fichier vidéo dans  images/montaje/  puis remplacez TOUT le bloc
+         <div class="montage-video montage-video--placeholder"> ... </div>  par :
+
+         <video class="montage-video" controls playsinline preload="metadata"
+                poster="/polistibrick-multisite/fr/images/construction/stage4-final.jpg">
+           <source src="/polistibrick-multisite/fr/images/montaje/montage-complet.mp4" type="video/mp4">
+         </video>
+         ▲▲▲ -->
+    <div class="montage-video montage-video--placeholder" role="img" aria-label="Vidéo du montage — bientôt disponible">
+      <div class="mv-play" aria-hidden="true">▶</div>
+      <div class="mv-label">Le montage en vidéo<span>Bientôt disponible</span></div>
+    </div>
+    <p class="montage-video-caption">Le montage complet, du sol au encofrado fermé.</p>
+  </div>
+</section>
+
+<!-- ÉTAPES -->
+<section class="section section--cream">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 50px;">
+      <h2>Una casa completa <em>en 4 pasos.</em></h2>
+      <p class="lead" style="margin-top:16px;">De la fondation au encofrado fermé. L'ensemble du processus en quelques semanas, avec seulement 2 à 3 personnes sur le chantier — sans mortier et sans perte d'aislamiento.</p>
+    </div>
+
+    <div class="montage-steps reveal">
+      <article class="montage-step">
+        <div class="ms-img"><span class="ms-num">1</span><img src="/polistibrick-multisite/fr/images/construction/stage1-cofraj.jpg" alt="Encofrado : muros EPS dressés avec étaiement" loading="lazy"></div>
+        <div class="ms-body"><h3>Encofrado</h3><p>Les muros EPS sont dressés et fixés sur la fondation avec un étaiement latéral en bois. Assemblage à sec : sans mortier, sans perte d'aislamiento.</p></div>
+      </article>
+      <article class="montage-step">
+        <div class="ms-img"><span class="ms-num">2</span><img src="/polistibrick-multisite/fr/images/construction/stage3-planseu.jpg" alt="Forjado PBK posé" loading="lazy"></div>
+        <div class="ms-body"><h3>Forjado</h3><p>Les panneaux PBK 250 sont posés horizontalement — couches EPS-Graphite + fibrociment, prêtes à recevoir l'armature.</p></div>
+      </article>
+      <article class="montage-step">
+        <div class="ms-img"><span class="ms-num">3</span><img src="/polistibrick-multisite/fr/images/construction/stage2-fierbeton.jpg" alt="Acero de refuerzo entre les nervures" loading="lazy"></div>
+        <div class="ms-body"><h3>Armadura</h3><p>Les treillis d'acier se placent entre les nervures EPS-Graphite. C'est ce qui crée la liaison monolithique entre les muros et le plancher.</p></div>
+      </article>
+      <article class="montage-step">
+        <div class="ms-img"><span class="ms-num">4</span><img src="/polistibrick-multisite/fr/images/construction/stage4-final.jpg" alt="Encofrado fermé, prêt pour le coulage" loading="lazy"></div>
+        <div class="ms-body"><h3>Cierre del encofrado</h3><p>Tous les éléments sont assemblés et vérifiés. La maison est désormais prête pour le coulage du hormigón.</p></div>
+      </article>
+    </div>
+
+    <div class="montage-note reveal">Après le coulage, la structure devient <strong>monolítica en 24 horas</strong> — muros, forjados et tejado isolés en continu, sans ponts thermiques.</div>
+  </div>
+</section>
+
+<!-- POURQUOI DIFFÉRENT -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 50px;">
+      <h2>Un chantier <em>plus simple, plus rapide, plus propre.</em></h2>
+    </div>
+    <div class="grid grid-3 reveal">
+      <div class="card card--cream"><h3 style="margin-bottom:12px;">Sans grue</h3><p style="font-size:15px;">Les éléments sont légers et se manipulent à la main. Aucun engin de levage lourd, aucun accès spécial requis sur le terrain.</p></div>
+      <div class="card card--cream"><h3 style="margin-bottom:12px;">2 à 3 personnes</h3><p style="font-size:15px;">Une petite équipe suffit. Moins de main-d'œuvre, moins de coordination, moins de coûts de chantier.</p></div>
+      <div class="card card--cream"><h3 style="margin-bottom:12px;">À sec, sans mortier</h3><p style="font-size:15px;">L'assemblage est mécanique et à sec. Pas de temps de séchage entre les étapes, pas de météo qui bloque le chantier.</p></div>
+      <div class="card card--cream"><h3 style="margin-bottom:12px;">Quelques semanas</h3><p style="font-size:15px;">Le gros œuvre fermé en semanas au lieu de mois. Vous emménagez plus tôt et payez moins d'intérêts de chantier.</p></div>
+      <div class="card card--cream"><h3 style="margin-bottom:12px;">Monolithique en 24 h</h3><p style="font-size:15px;">Après le coulage, hormigón et aislamiento ne font plus qu'un. Une coquille continue, sans joints ni ponts thermiques.</p></div>
+      <div class="card card--cream"><h3 style="margin-bottom:12px;">Propre et précis</h3><p style="font-size:15px;">Peu de déchets, peu de poussière, des tolérances d'usine. Un chantier net du début à la fin.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- EN CHIFFRES -->
+<section class="section section--cream">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 50px;">
+      <h2>Le chantier, <em>réduit à l'essentiel.</em></h2>
+    </div>
+    <div class="grid grid-4 reveal">
+      <div class="fact"><span class="fact-num">~1<small> mois</small></span><span class="fact-label">Gros œuvre fermé (vs 4–5 mois)</span></div>
+      <div class="fact"><span class="fact-num">2–3</span><span class="fact-label">Personnes sur le chantier</span></div>
+      <div class="fact"><span class="fact-num">0</span><span class="fact-label">Grue ou engin de levage lourd</span></div>
+      <div class="fact"><span class="fact-num">24<small> h</small></span><span class="fact-label">Para devenir monolithique</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PAR ÉLÉMENT -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 50px;">
+      <h2>Trois éléments, <em>une seule coquille.</em></h2>
+    </div>
+    <div class="grid grid-3 reveal">
+      <a href="../productos/polistibrick/#encofrado" class="card card-hover" style="text-decoration:none;color:inherit;">
+        
+          <h3 style="margin-bottom:10px;">Muros MBK</h3>
+        <p style="font-size:15px;margin-bottom:18px;">Le encofrado isolant qui se dresse à la main. Aislamiento intégrée, prêt pour le hormigón.</p>
+        <span style="color:var(--red);font-weight:600;font-size:13px;">Voir les muros MBK →</span>
+      </a>
+      <a href="../productos/polistibrick/#plancher" class="card card-hover" style="text-decoration:none;color:inherit;">
+        
+          <h3 style="margin-bottom:10px;">Forjados PBK</h3>
+        <p style="font-size:15px;margin-bottom:18px;">Les dalles porteuses EPS-Graphite + fibrociment, posées horizontalement et armées sur pie de obra.</p>
+        <span style="color:var(--red);font-weight:600;font-size:13px;">Voir les forjados PBK →</span>
+      </a>
+      <a href="../productos/techo-tbk-sip250/" class="card card-hover" style="text-decoration:none;color:inherit;">
+        
+          <h3 style="margin-bottom:10px;">Tejado TBK</h3>
+        <p style="font-size:15px;margin-bottom:18px;">La tejadoure Passivhaus qui sort d'usine prête à poser. Étanche à l'air, sans pont thermique.</p>
+        <span style="color:var(--red);font-weight:600;font-size:13px;">Voir le tejado TBK →</span>
+      </a>
+    </div>
+
+    <div class="montage-pro reveal" style="margin-top:36px;">
+      <p><strong>Vous êtes constructeur ?</strong> Manuels de montage détaillés, vidéos par élément (muros, forjados, tejado) et fiches techniques sont disponibles dans l'espace professionnel.</p>
+      <a href="../para/constructores/" class="btn btn-primary btn-arrow">Espace constructeurs</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section--tight">
+  <div class="cta-band reveal">
+    <h2>Prêt à voir votre maison <em>sortir de terre ?</em></h2>
+    <p>Envoyez-nous votre plan et recevez un devis personnalisé sous 48 heures. Sin compromiso, sin costes ocultos.</p>
+    <div class="cta-band-actions">
+      <a href="../presupuesto/" class="btn btn-on-dark btn-large btn-arrow">Pide un presupuesto</a>
+      <a href="../contact/" class="btn btn-on-dark-ghost btn-large">Parler avec nous</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" data-include="footer"></footer>
+<script src="../assets/js/site.js?v=b76a1df4" defer></script>
+</body>
+</html>
