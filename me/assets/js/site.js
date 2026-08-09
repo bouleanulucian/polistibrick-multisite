@@ -24,12 +24,12 @@
     return depth <= 1 ? '' : '../'.repeat(depth - 1);
   })();
 
-  // Pe github.io media e o dată la /user/repo/images/ (nu sub fiecare țară)
+  // Pe github.io media e o dată la /REPO/images/ (user e în hostname, nu în path)
   const IMG = (function () {
     if (!location.hostname.includes('github.io')) return BASE;
     const parts = location.pathname.split('/').filter(Boolean);
-    if (parts.length < 2) return BASE;
-    return '/' + parts[0] + '/' + parts[1] + '/';
+    if (parts.length < 1) return BASE;
+    return '/' + parts[0] + '/';
   })();
 
   const NAV_HTML = `
