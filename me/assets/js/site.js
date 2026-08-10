@@ -39,7 +39,7 @@
           </button>
           <div class="country-switcher-panel" role="menu" aria-hidden="true">
             <div class="country-switcher-header">🌍 Odaberite svoju zemlju</div>
-            <a href="#" data-country="ro" data-domain="https://polistibrick.ro" data-folder="ro" class="country-switcher-item"><span class="flag">🇷🇴</span><span class="name">România</span><span class="domain">polistibrick.ro</span></a>
+            <a href="#" data-country="ro" data-domain="https://polistibrick.ro" data-folder="ro" class="country-switcher-item"><span class="flag">🇷🇴</span><span class="name">Rumunija</span><span class="domain">polistibrick.ro</span></a>
             <a href="#" data-country="fr" data-domain="https://polistibrick.fr" data-folder="fr" class="country-switcher-item"><span class="flag">🇫🇷</span><span class="name">Francuska</span><span class="domain">polistibrick.fr</span></a>
             <a href="#" data-country="it" data-domain="https://polistibrick.it" data-folder="it" class="country-switcher-item"><span class="flag">🇮🇹</span><span class="name">Italija</span><span class="domain">polistibrick.it</span></a>
             <a href="#" data-country="es" data-domain="https://polistibrick.es" data-folder="es" class="country-switcher-item"><span class="flag">🇪🇸</span><span class="name">Španija</span><span class="domain">polistibrick.es</span></a>

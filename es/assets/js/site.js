@@ -39,7 +39,7 @@
           </button>
           <div class="country-switcher-panel" role="menu" aria-hidden="true">
             <div class="country-switcher-header">🌍 Elige tu país</div>
-            <a href="#" data-country="ro" data-domain="https://polistibrick.ro" data-folder="ro" class="country-switcher-item"><span class="flag">🇷🇴</span><span class="name">România</span><span class="domain">polistibrick.ro</span></a>
+            <a href="#" data-country="ro" data-domain="https://polistibrick.ro" data-folder="ro" class="country-switcher-item"><span class="flag">🇷🇴</span><span class="name">Rumanía</span><span class="domain">polistibrick.ro</span></a>
             <a href="#" data-country="fr" data-domain="https://polistibrick.fr" data-folder="fr" class="country-switcher-item"><span class="flag">🇫🇷</span><span class="name">Francia</span><span class="domain">polistibrick.fr</span></a>
             <a href="#" data-country="it" data-domain="https://polistibrick.it" data-folder="it" class="country-switcher-item"><span class="flag">🇮🇹</span><span class="name">Italia</span><span class="domain">polistibrick.it</span></a>
             <a href="#" data-country="es" data-domain="https://polistibrick.es" data-folder="es" class="country-switcher-item"><span class="flag">🇪🇸</span><span class="name">España</span><span class="domain">polistibrick.es</span></a>
@@ -47,7 +47,7 @@
             <a href="#" data-country="ie" data-domain="https://polistibrick.ie" data-folder="ie" class="country-switcher-item"><span class="flag">🇮🇪</span><span class="name">Irlanda</span><span class="domain">polistibrick.ie</span></a>
             <a href="#" data-country="uk" data-domain="https://polistibrick.uk" data-folder="en" class="country-switcher-item"><span class="flag">🇬🇧</span><span class="name">Reino Unido</span><span class="domain">polistibrick.uk</span></a>
             <a href="#" data-country="ch" data-domain="https://polistibrick.com" data-folder="de" class="country-switcher-item"><span class="flag">🇨🇭</span><span class="name">Suiza</span><span class="domain">polistibrick.com</span></a>
-            <a href="#" data-country="me" data-domain="https://polistibrick.me" data-folder="me" class="country-switcher-item"><span class="flag">🇲🇪</span><span class="name">Crna Gora</span><span class="domain">polistibrick.me</span></a>
+            <a href="#" data-country="me" data-domain="https://polistibrick.me" data-folder="me" class="country-switcher-item"><span class="flag">🇲🇪</span><span class="name">Montenegro</span><span class="domain">polistibrick.me</span></a>
           </div>
         </div>
         <a href="${BASE}presupuesto/" class="btn btn-primary nav-cta-devis">Presupuesto gratis</a>
