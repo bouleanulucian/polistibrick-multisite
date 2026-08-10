@@ -898,7 +898,7 @@
     </div>
     
     <div class="hero-builders-visual">
-      <img src="/polistibrick-multisite/images/personas/pour-constructeur.jpg" alt="Chantier Polistibrick : coulage du béton dans un lotissement de maisons" loading="eager">
+      <img src="../../images/personas/pour-constructeur.jpg" alt="Chantier Polistibrick : coulage du béton dans un lotissement de maisons" loading="eager">
     </div>
   </div>
 </section>
@@ -1159,7 +1159,7 @@
   var lista = document.getElementById('testim-lista');
   if (!sec || !lista || !window.fetch) return;
 
-  function cale(p) { return (p || '').replace('/polistibrick-multisite/images/', '/polistibrick-multisite/images/'); }
+  function cale(p) { return (p || '').replace('../images/', '../../images/'); }
 
   fetch('../../temoignages/').then(function(r){ return r.text(); }).then(function(html){
     var doc = new DOMParser().parseFromString(html, 'text/html');

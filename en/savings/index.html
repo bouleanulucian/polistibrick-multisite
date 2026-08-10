@@ -114,8 +114,8 @@
   <div class="container">
     <div class="wm-stage-wrap reveal">
       <div class="wm-watermark" aria-hidden="true">
-        <span class="wm-half wm-top">Économies</span>
-        <span class="wm-half wm-bottom">Économies</span>
+        <span class="wm-half wm-top">Savings</span>
+        <span class="wm-half wm-bottom">Savings</span>
       </div>
 
       <div class="wm-stage">
@@ -132,8 +132,8 @@
             <h3>Your home's data.</h3>
 
             <div class="form-row">
-              <label class="form-label" for="cSurface area area area">House area (m²)</label>
-              <input class="form-input" type="number" id="cSurface area area area" value="150" min="50" max="1000" step="10">
+              <label class="form-label" for="cSurface area area area area area area area area area area area area area area area area area area area area area">House area (m²)</label>
+              <input class="form-input" type="number" id="cSurface area area area area area area area area area area area area area area area area area area area area area" value="150" min="50" max="1000" step="10">
             </div>
 
             <div class="form-row">
@@ -142,7 +142,7 @@
                 <option value="10">10 ans</option>
                 <option value="15">15 ans</option>
                 <option value="20">20 ans</option>
-                <option value="25" selected>25 ans (recommandé)</option>
+                <option value="25" selected>25 years (recommended)</option>
                 <option value="30">30 ans</option>
                 <option value="40">40 ans</option>
                 <option value="50">50 ans</option>
@@ -153,8 +153,8 @@
               <label class="form-label" for="cClimate">Climat</label>
               <select class="form-select" id="cClimate">
                 <option value="cold" data-brick-energy="180" data-poli-energy="45">Froid (zones montagneuses, nord — &lt; 8 °C en moyenne)</option>
-                <option value="temperate" data-brick-energy="130" data-poli-energy="35" selected>Tempéré (Europe centrale — 8-14 °C en moyenne)</option>
-                <option value="warm" data-brick-energy="100" data-poli-energy="25">Chaud (sud, méditerranéen — &gt; 14 °C en moyenne)</option>
+                <option value="temperate" data-brick-energy="130" data-poli-energy="35" selected>Temperate (Central Europe — 8–14 °C avg.oyenne)</option>
+                <option value="warm" data-brick-energy="100" data-poli-energy="25">Warm (south, Mediterranean — &gt; 14 °C average)</option>
               </select>
               <p style="font-size:11px;color:var(--gray);margin-top:6px;">The calculation includes both heating (winter) and air conditioning (summer).</p>
             </div>
@@ -170,18 +170,18 @@
               <select class="form-select" id="cEnergyInflation">
                 <option value="0">0% — stable price (optimistic)</option>
                 <option value="2">2% — stable inflation</option>
-                <option value="4" selected>4 % — réaliste (moyenne UE 2010-2024)</option>
+                <option value="4" selected>4% — realistic (EU average 2010–2024)</option>
                 <option value="6">6% — pessimistic (energy crisis)</option>
               </select>
             </div>
 
             <hr style="border:0;border-top:1px solid var(--border);margin:20px 0;">
 
-            <p style="font-size:12.5px;color:var(--gray);margin-bottom:12px;">💡 Le calcul inclut :</p>
+            <p style="font-size:12.5px;color:var(--gray);margin-bottom:12px;">💡 The calculation includes:</p>
             <ul style="display:flex;flex-direction:column;gap:5px;font-size:12.5px;color:var(--ink-soft);padding-left:4px;list-style:none;">
               <li>✓ Construction cost (panels + labour, excl. finishes)</li>
               <li>✓ Energy cost over selected years</li>
-              <li>✓ Coût d'entretien estimé</li>
+              <li>✓ Estimated maintenance cost</li>
               <li>✓ All projected at the chosen inflation rate</li>
             </ul>
           </form>
@@ -210,7 +210,7 @@
 
             <div style="background:white;border:1px solid var(--border);border-radius:14px;margin-top:18px;overflow:hidden;">
               <div class="comp-row is-header">
-                <span>Coût</span>
+                <span>Cost</span>
                 <span class="num">Brick</span>
                 <span class="num">Polistibrick</span>
               </div>
@@ -220,7 +220,7 @@
                 <span class="num" id="poliBuild">— €</span>
               </div>
               <div class="comp-row">
-                <span>Énergie (cumulé)</span>
+                <span>Energy (cumulative)</span>
                 <span class="num" id="brickEnergy">— €</span>
                 <span class="num num-good" id="poliEnergy">— €</span>
               </div>
@@ -236,7 +236,7 @@
               </div>
             </div>
 
-            <a href="../quote/" class="btn btn-primary btn-large btn-arrow" style="width:100%;justify-content:center;margin-top:18px;">Request a personalized quote</a>
+            <a href="../quote/" class="btn btn-primary btn-large btn-arrow" style="width:100%;justify-content:center;margin-top:18px;">Request a personalised quote</a>
 
           </div>
 
@@ -249,20 +249,20 @@
 <section class="section section--cream">
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 40px;">
-      <h2>Méthodologie <em>transparent.</em></h2>
+      <h2>Methodology <em>transparent.</em></h2>
     </div>
     <div class="grid grid-2 reveal" style="max-width:980px;margin:0 auto;">
       <div class="card">
         <h4 style="margin-bottom:12px;">Construction cost</h4>
-        <p style="font-size:14px;line-height:1.6;">Brick : ~1 000 €/m² en standard non conforme. Polistibrick : ~1 050 €/m² (+5 %) pour une passive house A+++. Inclut les matériaux et la main-d'œuvre, hors finitions intérieures ou extérieures.</p>
+        <p style="font-size:14px;line-height:1.6;">Brick: ~€1,000/m² to a non-compliant standard. Polistibrick: ~€1,050/m² (+5%) for an A+++ passive house. Includes materials and labour, excluding interior or exterior finishes.</p>
       </div>
       <div class="card">
-        <h4 style="margin-bottom:12px;">Coût de l'énergie</h4>
+        <h4 style="margin-bottom:12px;">Energy cost</h4>
         <p style="font-size:14px;line-height:1.6;">Based on typical climate consumption: brick averages 100–180 kWh/m²/year for heating and air conditioning. Polistibrick (passive) consumes 25–45 kWh/m²/year. Average reduction of 70%.</p>
       </div>
       <div class="card">
         <h4 style="margin-bottom:12px;">Maintenance over 25 years</h4>
-        <p style="font-size:14px;line-height:1.6;">Brick : rénovation de l'insulation thermique à 15 ans (~5 000 €), réparations dues à l'humidité, ravalement de façade. Polistibrick : rien de tout cela — l'EPS n'absorbe pas l'eau, ne se dégrade pas, la structure monolithique ne se fissure pas.</p>
+        <p style="font-size:14px;line-height:1.6;">Brick: thermal insulation retrofit at 15 years (~€5,000), moisture-related repairs, façade renovation. Polistibrick: none of this — EPS does not absorb water, does not degrade, and the monolithic structure does not crack.</p>
       </div>
       <div class="card">
         <h4 style="margin-bottom:12px;">Energy inflation</h4>
@@ -277,7 +277,7 @@
     <h2>Convinced by <em>vos chiffres ?</em></h2>
     <p>Request a personalised Polistibrick quote — exact calculation for your project, no obligation, no hidden costs.</p>
     <div class="cta-band-actions">
-      <a href="../quote/" class="btn btn-on-dark btn-large btn-arrow">Request a personalized quote</a>
+      <a href="../quote/" class="btn btn-on-dark btn-large btn-arrow">Request a personalised quote</a>
       <a href="../contact/" class="btn btn-on-dark-ghost btn-large">Talk to a specialist</a>
     </div>
   </div>

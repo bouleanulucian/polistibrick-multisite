@@ -122,14 +122,14 @@
 
         <div class="wm-intro">
 <h2>Polistibrick vs mattone : <em>vos chiffres.</em></h2>
-          <p>Calcolatore dynamique qui vous montre EXACTEMENT combien vous économisez sur l'énergie, l'entretien et les coûts totaux sur 25 ans, pour la maison que vous souhaitez construire. Saisissez vos chiffres, visualisez le résultat en temps réel.</p>
+          <p>Calcolatore dinamico che mostra ESATTAMENTE quanto risparmiate su energia, manutenzione e costi totali in 25 anni, per la casa che volete costruire. Inserite i vostri dati, visualizzate il risultato in tempo reale.</p>
         </div>
 
         <div class="comp-grid">
 
           <!-- FORM -->
           <form id="compForm" class="comp-form-card">
-            <h3>Les données de votre maison.</h3>
+            <h3>I dati della vostra casa.</h3>
 
             <div class="form-row">
               <label class="form-label" for="cSurface">Surface de la maison (m²)</label>
@@ -142,7 +142,7 @@
                 <option value="10">10 ans</option>
                 <option value="15">15 ans</option>
                 <option value="20">20 ans</option>
-                <option value="25" selected>25 ans (recommandé)</option>
+                <option value="25" selected>25 anni (consigliato)</option>
                 <option value="30">30 ans</option>
                 <option value="40">40 ans</option>
                 <option value="50">50 ans</option>
@@ -152,11 +152,11 @@
             <div class="form-row">
               <label class="form-label" for="cClimate">Climat</label>
               <select class="form-select" id="cClimate">
-                <option value="cold" data-brick-energy="180" data-poli-energy="45">Froid (zones montagneuses, nord — &lt; 8 °C en moyenne)</option>
-                <option value="temperate" data-brick-energy="130" data-poli-energy="35" selected>Tempéré (Europe centrale — 8-14 °C en moyenne)</option>
-                <option value="warm" data-brick-energy="100" data-poli-energy="25">Chaud (sud, méditerranéen — &gt; 14 °C en moyenne)</option>
+                <option value="cold" data-mattone-energy="180" data-poli-energy="45">Froid (zones montagneuses, nord — &lt; 8 °C en moyenne)</option>
+                <option value="temperate" data-mattone-energy="130" data-poli-energy="35" selected>Temperato (Europa centrale — 8-14 °C in media)</option>
+                <option value="warm" data-mattone-energy="100" data-poli-energy="25">Chaud (sud, méditerranéen — &gt; 14 °C en moyenne)</option>
               </select>
-              <p style="font-size:11px;color:var(--gray);margin-top:6px;">Le calcul inclut à la fois le riscaldamento (inverno) et la climatisation (été).</p>
+              <p style="font-size:11px;color:var(--gray);margin-top:6px;">Il calcolo include sia il riscaldamento (inverno) sia la climatizzazione (estate).</p>
             </div>
 
             <div class="form-row">
@@ -171,18 +171,18 @@
                 <option value="0">0 % — prix constant (optimiste)</option>
                 <option value="2">2 % — inflation stable</option>
                 <option value="4" selected>4 % — réaliste (moyenne UE 2010-2024)</option>
-                <option value="6">6 % — pessimiste (crise énergétique)</option>
+                <option value="6">6% — pessimista (crisi energetica)</option>
               </select>
             </div>
 
             <hr style="border:0;border-top:1px solid var(--border);margin:20px 0;">
 
-            <p style="font-size:12.5px;color:var(--gray);margin-bottom:12px;">💡 Le calcul inclut :</p>
+            <p style="font-size:12.5px;color:var(--gray);margin-bottom:12px;">💡 Il calcolo include:</p>
             <ul style="display:flex;flex-direction:column;gap:5px;font-size:12.5px;color:var(--ink-soft);padding-left:4px;list-style:none;">
-              <li>✓ Coût de construction (panneaux + main-d'œuvre, hors finitions)</li>
+              <li>✓ Coût de construction (panneaux + manodopera, hors finiture)</li>
               <li>✓ Coût de l'énergie sur les années sélectionnées</li>
               <li>✓ Coût d'entretien estimé</li>
-              <li>✓ Le tout projeté avec l'inflation choisie</li>
+              <li>✓ Tutti proiettati all'inflazione scelta</li>
             </ul>
           </form>
 
@@ -197,9 +197,9 @@
             <div class="comp-bar-container">
               <div class="comp-bar-label">
                 <span>Mattone classico</span>
-                <strong id="brickTotalLabel">— €</strong>
+                <strong id="mattoneTotalLabel">— €</strong>
               </div>
-              <div class="comp-bar"><div class="comp-bar-fill" id="brickBar" style="width:100%;"></div></div>
+              <div class="comp-bar"><div class="comp-bar-fill" id="mattoneBar" style="width:100%;"></div></div>
 
               <div class="comp-bar-label" style="margin-top:14px;">
                 <span>Polistibrick</span>
@@ -216,22 +216,22 @@
               </div>
               <div class="comp-row">
                 <span>Costruzione iniziale</span>
-                <span class="num" id="brickBuild">— €</span>
+                <span class="num" id="mattoneBuild">— €</span>
                 <span class="num" id="poliBuild">— €</span>
               </div>
               <div class="comp-row">
                 <span>Énergie (cumulé)</span>
-                <span class="num" id="brickEnergy">— €</span>
+                <span class="num" id="mattoneEnergy">— €</span>
                 <span class="num num-good" id="poliEnergy">— €</span>
               </div>
               <div class="comp-row">
                 <span>Entretien</span>
-                <span class="num" id="brickMaint">— €</span>
+                <span class="num" id="mattoneMaint">— €</span>
                 <span class="num num-good" id="poliMaint">— €</span>
               </div>
               <div class="comp-row is-total">
                 <span>TOTAL</span>
-                <span class="num" id="brickTotal">— €</span>
+                <span class="num" id="mattoneTotal">— €</span>
                 <span class="num num-good" id="poliTotal">— €</span>
               </div>
             </div>
@@ -254,19 +254,19 @@
     <div class="grid grid-2 reveal" style="max-width:980px;margin:0 auto;">
       <div class="card">
         <h4 style="margin-bottom:12px;">Coût de construction</h4>
-        <p style="font-size:14px;line-height:1.6;">Mattone : ~1 000 €/m² en standard non conforme. Polistibrick : ~1 050 €/m² (+5 %) pour une casa passiva A+++. Inclut les matériaux et la main-d'œuvre, hors finitions intérieures ou extérieures.</p>
+        <p style="font-size:14px;line-height:1.6;">Mattone : ~1 000 €/m² en standard non conforme. Polistibrick : ~1 050 €/m² (+5 %) pour une casa passiva A+++. Inclut les matériaux et la manodopera, hors finiture intérieures ou extérieures.</p>
       </div>
       <div class="card">
         <h4 style="margin-bottom:12px;">Coût de l'énergie</h4>
-        <p style="font-size:14px;line-height:1.6;">Basé sur la consommation typique par climat : la mattone consomme en moyenne 100-180 kWh/m²/an pour le riscaldamento et la climatisation. Polistibrick (passiva) consuma 25-45 kWh/m²/anno. Réduction moyenne de 70 %.</p>
+        <p style="font-size:14px;line-height:1.6;">Basato sul consumo tipico per clima: il mattone consuma in media 100-180 kWh/m²/anno per riscaldamento e climatizzazione. Polistibrick (passiva) consuma 25-45 kWh/m²/anno. Riduzione media del 70%.</p>
       </div>
       <div class="card">
         <h4 style="margin-bottom:12px;">Entretien sur 25 ans</h4>
         <p style="font-size:14px;line-height:1.6;">Mattone : rénovation de l'isolamento thermique à 15 ans (~5 000 €), réparations dues à l'humidité, ravalement de façade. Polistibrick : rien de tout cela — l'EPS n'absorbe pas l'eau, ne se dégrade pas, la structure monolithique ne se fissure pas.</p>
       </div>
       <div class="card">
-        <h4 style="margin-bottom:12px;">Inflation énergétique</h4>
-        <p style="font-size:14px;line-height:1.6;">Au cours des 14 dernières années, le prix de l'électricité dans l'UE a augmenté d'environ 4 % par an. Notre calcul intègre la capitalisation annuelle — l'économie réelle sur 25 ans est supérieure à la différence d'aujourd'hui × 25.</p>
+        <h4 style="margin-bottom:12px;">Inflazione energia</h4>
+        <p style="font-size:14px;line-height:1.6;">Negli ultimi 14 anni, il prezzo dell'elettricità nell'UE è aumentato di circa il 4% all'anno. Il nostro calcolo integra la capitalizzazione annuale — il risparmio reale in 25 anni è superiore alla differenza di oggi × 25.</p>
       </div>
     </div>
   </div>
@@ -275,7 +275,7 @@
 <section class="section section--tight">
   <div class="cta-band reveal">
     <h2>Convinto da <em>vos chiffres ?</em></h2>
-    <p>Demandez un devis personnalisé Polistibrick — un calcul précis pour votre projet, sans engagement, sans coûts cachés.</p>
+    <p>Richiedi un preventivo personalizzato Polistibrick — calcolo esatto per il tuo progetto, senza impegno, senza costi nascosti.</p>
     <div class="cta-band-actions">
       <a href="../preventivo/" class="btn btn-on-dark btn-large btn-arrow">Richiedi un preventivo personalizzato</a>
       <a href="../contact/" class="btn btn-on-dark-ghost btn-large">Parla con uno specialista</a>

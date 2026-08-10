@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="cnr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,7 +51,7 @@
         <div class="wm-content">
           <div class="wm-text">
           <h1>Pravne napomene</h1>
-            <p>Regulatorne informacije o izdavaču i hosting provajderu sajta polistibrick.fr, u skladu sa francuskim zakonom br. 2004-575 od 21. juna 2004. o povjerenju u digitalnu ekonomiju.</p>
+            <p>Regulatorne informacije o izdavaču i hosting provajderu sajta polistibrick.fr, u skladu sa fransaskim zakonom br. 2004-575 od 21. juna 2004. o povjerenju u digitalnu ekonomiju.</p>
           </div>
           <div class="wm-visual" style="background: linear-gradient(135deg, #1f2022 0%, #111213 100%); display: flex; flex-direction: column; gap: 20px; align-items: center; justify-content: center; border: none; color: #fff; box-shadow: var(--shadow-lg); padding: 24px; box-sizing: border-box;">
             <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -76,29 +76,29 @@
   <div class="container container--narrow">
     <div class="reveal">
       <h2 style="margin:32px 0 12px;">1. Izdavač sajta</h2>
-      <p style="font-size:15px;margin-bottom:14px;">Sajt <strong>polistibrick.me</strong> izdaje kompanija <strong>Polistibrick Crna Gora DOO</strong>, društvo sa ograničenom odgovornošću sa kapitalom od [dopuniti po potrebi] eura, registrovano u privrednom registru (RCS) u Versaju pod brojem <strong>[za unos]</strong> (SIRET sjedišta: 984 804 872 00021), PDV broj unutar EU: <strong>ME[za unos]</strong>.</p>
+      <p style="font-size:15px;margin-bottom:14px;">Sajt <strong>polistibrick.me</strong> izdaje kompanja <strong>Polistibrick Crna Gora DOO</strong>, društvo sa ograničenom odgovornošću sa kapitalom od [dopuniti po potrebi] eura, registrovano u privrednom registru (RCS) u Versaju pod brojem <strong>[za unos]</strong> (SIRET sjedišta: 984 804 872 00021), PDV broj unutar EU: <strong>ME[za unos]</strong>.</p>
       <p style="font-size:15px;margin-bottom:14px;"><strong>Sjedište:</strong> [za unos], [za unos] Podgorica, Crna Gora.<br>
-      <strong>Telefon:</strong> <a href="tel:+382[za unos]" style="color:var(--red);">+382 [za unos]</a><br>
-      <strong>E-mail:</strong> <a href="#" data-m64="Y29udGFjdEBwb2xpc3RpYnJpY2suY29t" style="color:var(--red);">E-mail</a></p>
+      <strong>Telefon:</strong> <a href="tel:{{kontakt.phone_raw}}" style="color:var(--red);">{{kontakt.phone_display}}</a><br>
+      <strong>E-mail:</strong> <a href="#" data-m64="{{kontakt.email_general|b64}}" style="color:var(--red);">E-mail</a></p>
 
       <h2 style="margin:32px 0 12px;">2. Odgovorni urednik</h2>
-      <p style="font-size:15px;margin-bottom:14px;"><strong>Lucian Bouleanu</strong>, u svojstvu zakonskog zastupnika kompanije Polistibrick Crna Gora.</p>
+      <p style="font-size:15px;margin-bottom:14px;"><strong>Lucian Bouleanu</strong>, u svojstvu zakonskog zastupnika kompanje Polistibrick Crna Gora.</p>
 
       <h2 style="margin:32px 0 12px;">3. Hosting provajder</h2>
       <p style="font-size:15px;margin-bottom:14px;">Sajt hostuje <strong>Cloudflare, Inc.</strong>, 101 Townsend St, San Francisco, CA 94107, USA.<br>
       Veb sajt: <a href="https://www.cloudflare.com" style="color:var(--red);" rel="noopener" target="_blank">cloudflare.com</a></p>
 
       <h2 style="margin:32px 0 12px;">4. Intelektualna svojina</h2>
-      <p style="font-size:15px;margin-bottom:14px;">Cjelokupan sadržaj sajta (tekstovi, slike, video zapisi, logotipi, žigovi, patenti) isključivo je vlasništvo kompanije Polistibrick Crna Gora DOO ili njenih partnera. Svaka reprodukcija, prikazivanje ili distribucija, potpuna ili djelimična, bez prethodnog pisanog odobrenja je zabranjena.</p>
+      <p style="font-size:15px;margin-bottom:14px;">Cjelokupan sadržaj sajta (tekstovi, slike, video zapisi, logotipi, žigovi, patenti) isključivo je vlasništvo kompanje Polistibrick Crna Gora DOO ili njenih partnera. Svaka reprodukcija, prikazivanje ili distribucija, potpuna ili djelimična, bez prethodnog pisanog odobrenja je zabranjena.</p>
 
       <h2 style="margin:32px 0 12px;">5. Lični podaci</h2>
-      <p style="font-size:15px;margin-bottom:14px;">Za sve informacije o obradi vaših ličnih podataka, pogledajte našu <a href="../privatnost/" style="color:var(--red);">politiku privatnosti (GDPR)</a>. Za ostvarivanje vaših prava: <a href="#" data-m64="Y29udGFjdEBwb2xpc3RpYnJpY2suY29t" style="color:var(--red);">E-mail</a>.</p>
+      <p style="font-size:15px;margin-bottom:14px;">Za sve informacije o obradi vaših ličnih podataka, pogledajte našu <a href="../privatnost/" style="color:var(--red);">politiku privatnosti (GDPR)</a>. Za ostvarivanje vaših prava: <a href="#" data-m64="{{legal.privacy_kontakt_email|b64}}" style="color:var(--red);">E-mail</a>.</p>
 
       <h2 style="margin:32px 0 12px;">6. Kolačići</h2>
       <p style="font-size:15px;margin-bottom:14px;">Pogledajte našu <a href="../kolacici/" style="color:var(--red);">politiku kolačića</a> da biste saznali koji se trekeri koriste i upravljali svojim postavkama.</p>
 
       <h2 style="margin:32px 0 12px;">7. Kontakt</h2>
-      <p style="font-size:15px;margin-bottom:14px;">Za sva pitanja u vezi sa sajtom ili njegovim sadržajem: <a href="#" data-m64="Y29udGFjdEBwb2xpc3RpYnJpY2suY29t" style="color:var(--red);">E-mail</a> ili putem <a href="../../contact/" style="color:var(--red);">kontakt formulara</a>.</p>
+      <p style="font-size:15px;margin-bottom:14px;">Za sva pitanja u pogledaj sa sajtom ili njegovim sadržajem: <a href="#" data-m64="{{kontakt.email_general|b64}}" style="color:var(--red);">E-mail</a> ili putem <a href="../../kontakt/" style="color:var(--red);">kontakt formulara</a>.</p>
     </div>
   </div>
 </section>

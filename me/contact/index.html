@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="cnr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -247,7 +247,7 @@
             <p>Odgovaramo na vaša tehnička pitanja, pripremamo personalizovane ponude i nudimo besplatan savjet za svaki projekat.</p>
             <p>Odaberite zemlju u kojoj gradite da vidite kontakt lokalnog tima i pošaljete mu poruku direktno.</p>
 
-            <div class="country-office-card" id="activeOfficeCard"></div>
+            <div class="country-office-card" id="activeOffištaCard"></div>
           </div>
 
           <!-- RIGHT -->
@@ -259,9 +259,9 @@
             <h3>Pišite nam direktno.</h3>
             <p>Vaša poruka stiže direktno timu odabrane zemlje.</p>
 
-            <form id="contactForm" class="pb-form" data-pb-form="contact">
+            <form id="kontaktForm" class="pb-form" data-pb-form="kontakt">
               <input type="hidden" name="target_country" id="formCountryHidden" value="FR">
-              <input type="hidden" name="target_office" id="formTargetOfficeHidden" value="France">
+              <input type="hidden" name="target_office" id="formTargetOffištaHidden" value="Francuska">
 
               <div class="form-row form-row--split">
                 <div>
@@ -286,7 +286,7 @@
                     <option value="architecte">Arhitekta</option>
                     <option value="bet">Projektni biro</option>
                     <option value="constructeur">Građevinac / Izvođač</option>
-                    <option value="particulier">Fizičko lice / Vlasnik</option>
+                    <option value="partisalier">Fizičko lišta / Vlasnik</option>
                     <option value="promoteur">Promoter / Investitor</option>
                     <option value="autre">Drugo</option>
                   </select>
@@ -356,7 +356,7 @@
 <script src="../assets/js/forms.js" defer></script>
 <script>
   // Pour afficher la photo et le nom du responsable d'un pays, ajoutez à son entrée :
-  //   photo: '/polistibrick-multisite/images/team/NOM-FICHIER.jpg', contact: 'Prénom Nom'
+  //   photo: 'images/team/NOM-FICHIER.jpg', contact: 'Prénom Nom'
   // (sans photo, un cercle avec le drapeau s'affiche par défaut)
   const COUNTRIES = {
     RO: { flag: '🇷🇴', name: 'Roumanie', city: 'Craiova', phone: '+40 371 550 550', phoneRaw: '+40371550550', email: null, address: 'Prelungirea Ghencea 281,<br>sector 6, Bucarest', site: 'polistibrick.ro', langs: 'RO · EN', badge: 'Siège RO' },

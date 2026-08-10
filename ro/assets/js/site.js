@@ -24,10 +24,18 @@
     return depth <= 1 ? '' : '../'.repeat(depth - 1);
   })();
 
+  // Preview github.io: media comună în /polistibrick-multisite/fr/images/
+  const IMG = (function () {
+    if (!location.hostname.includes('github.io')) return BASE;
+    const parts = location.pathname.split('/').filter(Boolean);
+    if (parts.length < 1) return BASE;
+    return '/' + parts[0] + '/fr/';
+  })();
+
   const NAV_HTML = `
     <div class="nav-inner">
       <a href="${BASE}" class="logo nav-logo" aria-label="Polistibrick — acasă">
-        <img src="/polistibrick-multisite/images/logo.png" alt="Polistibrick" class="logo-img" loading="eager">
+        <img src="${IMG}images/logo.png" alt="Polistibrick" class="logo-img" loading="eager">
       </a>
       <div class="nav-cta">
         <!-- COUNTRY SWITCHER -->
@@ -113,7 +121,7 @@
       <div class="footer-grid">
         <div>
           <a href="${BASE}" class="footer-logo">
-            <img src="/polistibrick-multisite/images/logo.png" alt="Polistibrick" style="height:32px;">
+            <img src="${IMG}images/logo.png" alt="Polistibrick" style="height:32px;">
           </a>
           <p class="footer-brand-tagline">Sistemul ICF brevetat pentru case pasive premium, fără facturi de energie. Fabricat în UE.</p>
         </div>
