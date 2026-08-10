@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lgodinag="cnr">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=devišta-width, initial-scale=1.0">
-  <title>Kalkulator d'uštede · Combien écoimeisez-vi sa Polistibrick — 25 godinas</title>
-  <meta name="description" content="Kalkulator dynamique qui montre combien vous économisez avec Polistibrick par rapport à la cigla classique sur 25 godinas. Saisissez les m², le climat, le prix de l'énergie et visualisez la différenšta réelle.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalkulator ušteda · Koliko štedite sa Polistibrick sistemom — 25 godina</title>
+  <meta name="description" content="Dinamički kalkulator koji pokazuje koliko štedite sa Polistibrick sistemom u odnosu na klasičnu ciglu za 25 godina. Unesite m², klimu, cijenu energije i vidite stvarnu razliku.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -116,68 +116,68 @@
       <div class="wm-stage">
 
         <div class="wm-intro">
-<h2>Polistibrick vs cigla : <em>vos chiffres.</em></h2>
-          <p>Kalkulator dynamique qui vous montre EXACTEMENT combien vous économisez sur l'énergie, l'entretien et les coûts sveaux sur 25 godinas, pour la višeson que vous souhaitez gradnja. Saisissez vos chiffres, visualisez le résultat en temps réel.</p>
+<h2>Polistibrick naspram cigle: <em>vaše brojke.</em></h2>
+          <p>Dinamički kalkulator koji vam pokazuje TAČNO koliko štedite na energiji, održavanju i ukupnim troškovima za 25 godina, za kuću koju želite da gradite. Unesite svoje brojke, vidite rezultat u realnom vremenu.</p>
         </div>
 
         <div class="comp-grid">
 
           <!-- FORM -->
           <form id="compForm" class="comp-form-card">
-            <h3>Les données de votre višeson.</h3>
+            <h3>Podaci o vašoj kući.</h3>
 
             <div class="form-row">
-              <label class="form-label" for="cSurfašta">Surfašta de la višeson (m²)</label>
-              <input class="form-input" type="number" id="cSurfašta" value="150" min="50" max="1000" step="10">
+              <label class="form-label" for="cSurface">Površina kuće (m²)</label>
+              <input class="form-input" type="number" id="cSurface" value="150" min="50" max="1000" step="10">
             </div>
 
             <div class="form-row">
-              <label class="form-label" for="cYears">Godine d'ocsapation prises en compte</label>
+              <label class="form-label" for="cYears">Godine stanovanja uzete u obzir</label>
               <select class="form-select" id="cYears">
-                <option value="10">10 godinas</option>
-                <option value="15">15 godinas</option>
-                <option value="20">20 godinas</option>
-                <option value="25" selected>25 godinas (recommgodinadé)</option>
-                <option value="30">30 godinas</option>
-                <option value="40">40 godinas</option>
-                <option value="50">50 godinas</option>
+                <option value="10">10 godina</option>
+                <option value="15">15 godina</option>
+                <option value="20">20 godina</option>
+                <option value="25" selected>25 godina (preporučeno)</option>
+                <option value="30">30 godina</option>
+                <option value="40">40 godina</option>
+                <option value="50">50 godina</option>
               </select>
             </div>
 
             <div class="form-row">
-              <label class="form-label" for="cClimate">Climat</label>
+              <label class="form-label" for="cClimate">Klima</label>
               <select class="form-select" id="cClimate">
-                <option value="cold" data-brick-energy="180" data-poli-energy="45">Froid (zones montagneuses, nord — &lt; 8 °C en moyenne)</option>
-                <option value="temperate" data-brick-energy="130" data-poli-energy="35" selected>Tempéré (Europe štgodinatrale — 8-14 °C en moyenne)</option>
-                <option value="warm" data-brick-energy="100" data-poli-energy="25">Chaud (sud, méditerrgodinaéen — &gt; 14 °C en moyenne)</option>
+                <option value="cold" data-brick-energy="180" data-poli-energy="45">Hladna (planinski predjeli, sjever — &lt; 8 °C u prosjeku)</option>
+                <option value="temperate" data-brick-energy="130" data-poli-energy="35" selected>Umjerena (centralna Evropa — 8-14 °C u prosjeku)</option>
+                <option value="warm" data-brick-energy="100" data-poli-energy="25">Topla (jug, mediteranska — &gt; 14 °C u prosjeku)</option>
               </select>
-              <p style="font-size:11px;color:var(--gray);margin-top:6px;">Le calsal inclut à la fois le grijgodinaje (hiver) et la climatisation (été).</p>
+              <p style="font-size:11px;color:var(--gray);margin-top:6px;">Proračun uključuje i grijanje (zima) i klimatizaciju (ljeto).</p>
             </div>
 
             <div class="form-row">
-              <label class="form-label" for="cEnergyPrišta">Cijena moyen de l'energija (€/kWh)</label>
-              <input class="form-input" type="number" id="cEnergyPrišta" value="0.22" min="0.05" max="0.60" step="0.01">
-              <p style="font-size:11px;color:var(--gray);margin-top:6px;">Utipročitajte la moyenne za vaš zemlja (RO ~0,18, FR ~0,25, DE ~0,32, ES ~0,20).</p>
+              <label class="form-label" for="cEnergyPrice">Prosječna cijena energije (€/kWh)</label>
+              <input class="form-input" type="number" id="cEnergyPrice" value="0.22" min="0.05" max="0.60" step="0.01">
+              <p style="font-size:11px;color:var(--gray);margin-top:6px;">Koristite prosjek za svoju zemlju (RO ~0,18, FR ~0,25, DE ~0,32, ES ~0,20).</p>
             </div>
 
             <div class="form-row">
-              <label class="form-label" for="cEnergyInflation">Augmentation godingodinauelle du cijena de l'energija (%)</label>
+              <label class="form-label" for="cEnergyInflation">Godišnji rast cijene energije (%)</label>
               <select class="form-select" id="cEnergyInflation">
-                <option value="0">0 % — prix constgodinat (optimiste)</option>
-                <option value="2">2 % — inflation stable</option>
-                <option value="4" selected>4 % — réaliste (moyenne UE 2010-2024)</option>
-                <option value="6">6 % — pessimiste (crise énergétique)</option>
+                <option value="0">0 % — konstantna cijena (optimistično)</option>
+                <option value="2">2 % — stabilna inflacija</option>
+                <option value="4" selected>4 % — realistično (prosjek EU 2010-2024)</option>
+                <option value="6">6 % — pesimistički (energetska kriza)</option>
               </select>
             </div>
 
             <hr style="border:0;border-top:1px solid var(--border);margin:20px 0;">
 
-            <p style="font-size:12.5px;color:var(--gray);margin-bottom:12px;">💡 Le calsal inclut :</p>
+            <p style="font-size:12.5px;color:var(--gray);margin-bottom:12px;">💡 Obračun uključuje:</p>
             <ul style="display:flex;flex-direction:column;gap:5px;font-size:12.5px;color:var(--ink-soft);padding-left:4px;list-style:none;">
-              <li>✓ Trošak de construction (pgodingodinaeaux + višen-d'œuvre, hors finitions)</li>
-              <li>✓ Trošak de l'énergie sur les godingodinaées sélectionnées</li>
-              <li>✓ Trošak d'entretien estimé</li>
-              <li>✓ Le tout projeté avec l'inflation choisie</li>
+              <li>✓ Trošak gradnje (paneli + rad, bez završnih radova)</li>
+              <li>✓ Trošak energije za odabrane godine</li>
+              <li>✓ Procijenjeni trošak održavanja</li>
+              <li>✓ Sve projektovano sa odabranom inflacijom</li>
             </ul>
           </form>
 
@@ -185,20 +185,20 @@
           <div class="comp-result">
 
             <div class="comp-savings">
-              <div class="comp-savings-big" id="svealSavings">— <small>€</small></div>
-              <p style="font-size:13.5px;color:rgba(247,244,237,0.75);">sur <span id="yearsLabel">25</span> godinas, za une kuća de <span id="surfaštaLabel">150</span> m²</p>
+              <div class="comp-savings-big" id="totalSavings">— <small>€</small></div>
+              <p style="font-size:13.5px;color:rgba(247,244,237,0.75);">za <span id="yearsLabel">25</span> godina, za kuću od <span id="surfaceLabel">150</span> m²</p>
             </div>
 
             <div class="comp-bar-container">
               <div class="comp-bar-label">
                 <span>Klasična cigla</span>
-                <strong id="brickUkupnoLabel">— €</strong>
+                <strong id="brickTotalLabel">— €</strong>
               </div>
               <div class="comp-bar"><div class="comp-bar-fill" id="brickBar" style="width:100%;"></div></div>
 
               <div class="comp-bar-label" style="margin-top:14px;">
                 <span>Polistibrick</span>
-                <strong id="poliUkupnoLabel">— €</strong>
+                <strong id="poliTotalLabel">— €</strong>
               </div>
               <div class="comp-bar"><div class="comp-bar-fill comp-bar-fill--good" id="poliBar" style="width:50%;"></div></div>
             </div>
@@ -215,23 +215,23 @@
                 <span class="num" id="poliBuild">— €</span>
               </div>
               <div class="comp-row">
-                <span>Energija (kakoulé)</span>
+                <span>Energija (kumulativno)</span>
                 <span class="num" id="brickEnergy">— €</span>
                 <span class="num num-good" id="poliEnergy">— €</span>
               </div>
               <div class="comp-row">
-                <span>Entretien</span>
-                <span class="num" id="brickVišent">— €</span>
-                <span class="num num-good" id="poliVišent">— €</span>
+                <span>Održavanje</span>
+                <span class="num" id="brickMaint">— €</span>
+                <span class="num num-good" id="poliMaint">— €</span>
               </div>
-              <div class="comp-row is-sveal">
-                <span>TOTAL</span>
-                <span class="num" id="brickUkupno">— €</span>
-                <span class="num num-good" id="poliUkupno">— €</span>
+              <div class="comp-row is-total">
+                <span>UKUPNO</span>
+                <span class="num" id="brickTotal">— €</span>
+                <span class="num num-good" id="poliTotal">— €</span>
               </div>
             </div>
 
-            <a href="../ponuda/" class="btn btn-prvary btn-large btn-arrow" style="width:100%;justify-content:štgodinater;margin-top:18px;">Zatražite un ponuda personnalisé</a>
+            <a href="../ponuda/" class="btn btn-primary btn-large btn-arrow" style="width:100%;justify-content:center;margin-top:18px;">Zatražite personalizovanu ponudu</a>
 
           </div>
 
@@ -243,37 +243,37 @@
 
 <section class="section section--cream">
   <div class="container">
-    <div class="reveal" style="text-align:štgodinater;max-width:720px;margin:0 auto 40px;">
-      <h2>Méthodologie <em>trgodinasparente.</em></h2>
+    <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 40px;">
+      <h2>Metodologija <em>transparentna.</em></h2>
     </div>
     <div class="grid grid-2 reveal" style="max-width:980px;margin:0 auto;">
       <div class="card">
-        <h4 style="margin-bottom:12px;">Trošak de construction</h4>
-        <p style="font-size:14px;line-height:1.6;">Cigla : ~1 000 €/m² en stgodinadard non conforme. Polistibrick : ~1 050 €/m² (+5 %) pour une pasivna kuća A+++. Inclut les matériaux et la višen-d'œuvre, hors finitions intérieures ou extérieures.</p>
+        <h4 style="margin-bottom:12px;">Trošak gradnje</h4>
+        <p style="font-size:14px;line-height:1.6;">Cigla: ~1 000 €/m² u standardu koji ne ispunjava propise. Polistibrick: ~1 050 €/m² (+5 %) za pasivnu kuću A+++. Uključuje materijale i rad, bez unutrašnjih i spoljašnjih završnih radova.</p>
       </div>
       <div class="card">
-        <h4 style="margin-bottom:12px;">Trošak de l'énergie</h4>
-        <p style="font-size:14px;line-height:1.6;">Basé sur la consommation typique par climat : la cigla consomme en moyenne 100-180 kWh/m²/godina pour le grijgodinaje et la climatisation. Polistibrick (pasivna) consomme 25-45 kWh/m²/godina. Réduction moyenne de 70 %.</p>
+        <h4 style="margin-bottom:12px;">Trošak energije</h4>
+        <p style="font-size:14px;line-height:1.6;">Zasnovano na tipičnoj potrošnji po klimi: cigla u prosjeku troši 100-180 kWh/m²/god za grijanje i hlađenje. Polistibrick (pasivna) troši 25-45 kWh/m²/god. Prosječno smanjenje od 70 %.</p>
       </div>
       <div class="card">
-        <h4 style="margin-bottom:12px;">Entretien sur 25 godinas</h4>
-        <p style="font-size:14px;line-height:1.6;">Cigla : rénovation de l'izolacija thermique à 15 godinas (~5 000 €), réparations dues à l'humidité, ravalement de façade. Polistibrick : rien de tout štala — l'EPS n'absorbe pas l'eau, ne se dégrade pas, la structure monolithique ne se fissure pas.</p>
+        <h4 style="margin-bottom:12px;">Održavanje za 25 godina</h4>
+        <p style="font-size:14px;line-height:1.6;">Cigla: obnova termičke izolacije nakon 15 godina (~5 000 €), popravke zbog vlage, obnova fasade. Polistibrick: ništa od toga — EPS ne upija vodu, ne propada, monolitna konstrukcija ne puca.</p>
       </div>
       <div class="card">
-        <h4 style="margin-bottom:12px;">Inflation énergétique</h4>
-        <p style="font-size:14px;line-height:1.6;">Au cours des 14 dernières godingodinaées, le prix de l'électricité dgodinas l'UE a augmenté d'environ 4 % par godina. Notre calsal intègre la capitalisation godingodinauelle — l'économie réelle sur 25 godinas est supérieure à la différenšta d'aujourd'hui × 25.</p>
+        <h4 style="margin-bottom:12px;">Energetska inflacija</h4>
+        <p style="font-size:14px;line-height:1.6;">Tokom posljednjih 14 godina cijena električne energije u EU rasla je oko 4 % godišnje. Naš obračun uključuje godišnju kapitalizaciju — stvarna ušteda za 25 godina veća je od današnje razlike × 25.</p>
       </div>
     </div>
   </div>
 </section>
 
 <section class="section section--tight">
-  <div class="cta-bgodinad reveal">
-    <h2>Uvjereni u <em>vos chiffres ?</em></h2>
-    <p>Demgodinadez un devis personnalisé Polistibrick — un calsal précis pour votre projet, sgodinas engagement, sgodinas coûts cachés.</p>
-    <div class="cta-bgodinad-actions">
-      <a href="../ponuda/" class="btn btn-on-dark btn-large btn-arrow">Zatražite un ponuda personnalisé</a>
-      <a href="../kontakt/" class="btn btn-on-dark-ghost btn-large">Parler à un spécialiste</a>
+  <div class="cta-band reveal">
+    <h2>Uvjerili su vas <em>vaši brojevi?</em></h2>
+    <p>Zatražite personalizovanu Polistibrick ponudu — precizan obračun za vaš projekat, bez obaveze, bez skrivenih troškova.</p>
+    <div class="cta-band-actions">
+      <a href="../ponuda/" class="btn btn-on-dark btn-large btn-arrow">Zatražite personalizovanu ponudu</a>
+      <a href="../contact/" class="btn btn-on-dark-ghost btn-large">Razgovarajte sa specijalistom</a>
     </div>
   </div>
 </section>

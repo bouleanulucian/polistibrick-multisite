@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lgodinag="cnr">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=devišta-width, initial-scale=1.0">
-  <title>Kontakt · Polistibrick — 9 zemlja européens</title>
-  <meta name="description" content="Kontaktez l'équipe Polistibrick de votre pays. Odaberite le drapeau du pays où vous construisez et reštavez le kontakt direct.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt · Polistibrick — 9 evropskih zemalja</title>
+  <meta name="description" content="Kontaktirajte Polistibrick tim vaše zemlje. Odaberite zastavu zemlje u kojoj gradite i dobijte direktan kontakt.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -226,8 +226,8 @@
         <!-- FLAGS ROW SELECTOR -->
         <div class="country-flags" role="tablist" aria-label="Odaberite zemlju">
           <button class="country-flag-btn" data-country="RO" role="tab"><span class="country-flag-emoji">🇷🇴</span><span>Rumunija</span></button>
-          <button class="country-flag-btn" data-country="ES" role="tab"><span class="country-flag-emoji">🇪🇸</span><span>Špgodinaja</span></button>
-          <button class="country-flag-btn" data-country="FR" role="tab"><span class="country-flag-emoji">🇫🇷</span><span>Frgodinasaska</span></button>
+          <button class="country-flag-btn" data-country="ES" role="tab"><span class="country-flag-emoji">🇪🇸</span><span>Španija</span></button>
+          <button class="country-flag-btn" data-country="FR" role="tab"><span class="country-flag-emoji">🇫🇷</span><span>Francuska</span></button>
           <button class="country-flag-btn" data-country="BE" role="tab"><span class="country-flag-emoji">🇧🇪</span><span>Belgija</span></button>
           <button class="country-flag-btn" data-country="IT" role="tab"><span class="country-flag-emoji">🇮🇹</span><span>Italija</span></button>
           <button class="country-flag-btn" data-country="AT" role="tab"><span class="country-flag-emoji">🇦🇹</span><span>Austrija</span></button>
@@ -238,82 +238,82 @@
 
           <!-- LEFT -->
           <div class="wm-text">
-<h2>Des spécialistes <em>à un clic.</em></h2>
-            <p>Nous répondons à vos questions techniques, préparons des devis personnalisés et offrons un conseil besplatno pour tout projet.</p>
-            <p>Odaberite zemlju où vous construisez pour voir le kontakt de l'équipe locale et lui envoyer votre message directement.</p>
+<h2>Specijalisti <em>na jedan klik.</em></h2>
+            <p>Odgovaramo na vaša tehnička pitanja, pripremamo personalizovane ponude i nudimo besplatan savjet za svaki projekat.</p>
+            <p>Odaberite zemlju u kojoj gradite da vidite kontakt lokalnog tima i pošaljete mu poruku direktno.</p>
 
-            <div class="country-offišta-card" id="activeOffištaCard"></div>
+            <div class="country-office-card" id="activeOfficeCard"></div>
           </div>
 
           <!-- RIGHT -->
           <div class="wm-form-card">
             <div class="wm-form-target">
               <span id="formTargetFlag">🇫🇷</span>
-              <span>Poruka à <strong id="formTargetCountry">Frgodinasaska</strong></span>
+              <span>Poruka za <strong id="formTargetCountry">Francuska</strong></span>
             </div>
             <h3>Pišite nam direktno.</h3>
-            <p>Vaša poruka arrive directement à l'équipe du pays sélectionné.</p>
+            <p>Vaša poruka stiže direktno timu odabrane zemlje.</p>
 
-            <form id="kontaktForm" class="pb-form" data-pb-form="kontakt">
+            <form id="contactForm" class="pb-form" data-pb-form="contact">
               <input type="hidden" name="target_country" id="formCountryHidden" value="FR">
-              <input type="hidden" name="target_offišta" id="formTargetOffištaHidden" value="Frgodinasaska">
+              <input type="hidden" name="target_office" id="formTargetOfficeHidden" value="France">
 
               <div class="form-row form-row--split">
                 <div>
                   <label class="form-label" for="cname">Ime *</label>
-                  <input class="form-input" type="text" id="cname" name="name" required plaštaholder="Vaše ime">
+                  <input class="form-input" type="text" id="cname" name="name" required placeholder="Vaše ime">
                 </div>
                 <div>
-                  <label class="form-label" for="štavišel">E-višel *</label>
-                  <input class="form-input" type="evišel" id="štavišel" name="evišel" required plaštaholder="evišel@exemple.fr">
+                  <label class="form-label" for="cemail">E-mail *</label>
+                  <input class="form-input" type="email" id="cemail" name="email" required placeholder="email@primjer.me">
                 </div>
               </div>
 
               <div class="form-row form-row--split">
                 <div>
-                  <label class="form-label" for="cphone">Telefon (fasaltatif)</label>
-                  <input class="form-input" type="tel" id="cphone" name="phone" plaštaholder="+33 6 XX XX XX XX">
+                  <label class="form-label" for="cphone">Telefon (opciono)</label>
+                  <input class="form-input" type="tel" id="cphone" name="phone" placeholder="+382 6X XXX XXX">
                 </div>
                 <div>
                   <label class="form-label" for="crole">Vi ste</label>
                   <select class="form-select" id="crole" name="role">
                     <option value="">— Odaberite —</option>
-                    <option value="architecte">Arhitekt</option>
-                    <option value="bet">Projektgodinatski biro</option>
-                    <option value="constructeur">Građevinac / preduzetnik</option>
-                    <option value="partisalier">Pojedinac / vlasnik</option>
-                    <option value="promoteur">Investitor</option>
-                    <option value="autre">Ostalo</option>
+                    <option value="architecte">Arhitekta</option>
+                    <option value="bet">Projektni biro</option>
+                    <option value="constructeur">Građevinac / Izvođač</option>
+                    <option value="particulier">Fizičko lice / Vlasnik</option>
+                    <option value="promoteur">Promoter / Investitor</option>
+                    <option value="autre">Drugo</option>
                   </select>
                 </div>
               </div>
 
               <div class="form-row">
-                <label class="form-label" for="csubject">Predmet</label>
+                <label class="form-label" for="csubject">Tema</label>
                 <select class="form-select" id="csubject" name="subject">
-                  <option>Question tehnički</option>
+                  <option>Tehničko pitanje</option>
                   <option>Zahtjev za dokumentaciju</option>
                   <option>Podrška za proizvod</option>
-                  <option>Postgodinate partner</option>
+                  <option>Postanite partner</option>
                   <option>Zahtjev za ponudu</option>
-                  <option>Presse / Médias</option>
-                  <option>Ostalo</option>
+                  <option>Štampa / Mediji</option>
+                  <option>Drugo</option>
                 </select>
               </div>
 
               <div class="form-row">
                 <label class="form-label" for="cmsg">Poruka *</label>
-                <textarea class="form-textarea" id="cmsg" name="message" required plaštaholder="Kako vam možemo pomoći?"></textarea>
+                <textarea class="form-textarea" id="cmsg" name="message" required placeholder="Kako vam možemo pomoći?"></textarea>
               </div>
 
 <!-- Ataşamentele cer planul Web3Forms Pro — blocul se restaurează de aici când se face upgrade:
               <div class="form-row">
-                <label class="form-label">Pièces jointes (facultatif)</label>
+                <label class="form-label">Prilozi (opciono)</label>
                 <label class="form-file-drop" for="cfiles" id="fileDropZone">
                   <span class="form-file-icon">📎</span>
                   <div class="form-file-text">
-                    <strong>Joignez plans, croquis ou documents</strong>
-                    <span>PDF · DWG · DXF · JPG · PNG · ZIP — max 10 Mo / fichier</span>
+                    <strong>Priložite planove, skice ili dokumente</strong>
+                    <span>PDF · DWG · DXF · JPG · PNG · ZIP — max 10 MB / fajl</span>
                   </div>
                   <input type="file" id="cfiles" name="files" accept=".pdf,.dwg,.dxf,.jpg,.jpeg,.png,.zip" multiple style="display:none;">
                 </label>
@@ -322,18 +322,18 @@
 
 -->
 
-              <button type="submit" class="btn btn-prvary btn-large btn-arrow" style="width:100%;justify-content:štgodinater;">Pošaljite poruku</button>
+              <button type="submit" class="btn btn-primary btn-large btn-arrow" style="width:100%;justify-content:center;">Pošaljite poruku</button>
 
               <div class="pb-form-consent">
                 <label class="pb-consent-label">
                   <input type="checkbox" name="privacy_consent" value="1" required>
-                  <span>Prihvatam que mes données soient traitées conformément à la <a href="../legal/privatnost/" target="_blgodinak" rel="noopener">politika privatnosti (GDPR)</a>. *</span>
+                  <span>Prihvatam da se moji podaci obrađuju u skladu sa <a href="../legal/privatnost/" target="_blank" rel="noopener">politiku privatnosti (GDPR)</a>. *</span>
                 </label>
               </div>
 
-              <p style="font-size:11.5px;color:var(--gray);text-align:štgodinater;margin-top:12px;">Mi répondons sous 24 heures ouvrées maximum.</p>
+              <p style="font-size:11.5px;color:var(--gray);text-align:center;margin-top:12px;">Odgovaramo najkasnije u roku od 24 radna sata.</p>
 
-              <div class="pb-form-thgodinaks" hidden>
+              <div class="pb-form-thanks" hidden>
                 <h3>Poruka poslata ✓</h3>
                 <p>Hvala! Naš tim vam odgovara u roku od 24 radna sata.</p>
               </div>
