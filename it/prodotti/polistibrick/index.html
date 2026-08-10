@@ -469,10 +469,10 @@
         </div>
         <div class="wm-visual-wrap">
           <div class="wm-visual">
-            <div class="viz3d" data-viz3d data-stari='[{"eticheta":"Avant coulage","fisier":"../../images/polistibrick/mbk-cofraj-v4.glb?v=5"},{"eticheta":"Après coulage","fisier":"../../images/polistibrick/mbk-perete-v4.glb?v=5"}]'>
+            <div class="viz3d" data-viz3d data-stari='[{"eticheta":"Avant coulage","fisier":"/polistibrick-multisite/images/polistibrick/mbk-cofraj-v4.glb?v=5"},{"eticheta":"Après coulage","fisier":"/polistibrick-multisite/images/polistibrick/mbk-perete-v4.glb?v=5"}]'>
               <div class="viz3d-scena">
                 <canvas role="img" aria-label="Modèle 3D du mur Polistibrick MBK, rotatif"></canvas>
-                <img src="/polistibrick-multisite/fr/images/polistibrick/mbk-3d-poster-v4.jpg" alt="Cassero Polistibrick MBK : plaques de fibrociment, PSE graphité, armatures et connecteurs" width="800" height="1000">
+                <img src="/polistibrick-multisite/images/polistibrick/mbk-3d-poster-v4.jpg" alt="Cassero Polistibrick MBK : plaques de fibrociment, PSE graphité, armatures et connecteurs" width="800" height="1000">
                 <p class="viz3d-indiciu">Glissez pour tourner</p>
                 <div class="fam-tabs viz3d-comenzi" role="group" aria-label="État du mur">
                   <button type="button" class="fam-tab" data-viz3d-stare="0" aria-pressed="true">Avant coulage</button>
@@ -519,13 +519,13 @@
       </div>
       <figure>
         <div class="media-frame">
-          <img src="/polistibrick-multisite/fr/images/polistibrick/pont-thermique-classique.svg?v=2" alt="Mur classique : la dalle chaude traverse l’isolant et rejoint le bloc froid — la chaleur sort" width="640" height="480" loading="lazy">
+          <img src="/polistibrick-multisite/images/polistibrick/pont-thermique-classique.svg?v=2" alt="Mur classique : la dalle chaude traverse l’isolant et rejoint le bloc froid — la chaleur sort" width="640" height="480" loading="lazy">
         </div>
         <figcaption>Maison classique</figcaption>
       </figure>
       <figure>
         <div class="media-frame">
-          <img src="/polistibrick-multisite/fr/images/polistibrick/pont-thermique-mbk.svg?v=2" alt="Polistibrick MBK : PSE extérieur continu, mur et plancher coulés d’un seul tenant — la chaleur reste dedans" width="640" height="480" loading="lazy">
+          <img src="/polistibrick-multisite/images/polistibrick/pont-thermique-mbk.svg?v=2" alt="Polistibrick MBK : PSE extérieur continu, mur et plancher coulés d’un seul tenant — la chaleur reste dedans" width="640" height="480" loading="lazy">
         </div>
         <figcaption>Polistibrick MBK</figcaption>
       </figure>
@@ -538,7 +538,7 @@
     <div class="grid grid-2 reveal" style="gap:48px;align-items:center;">
       <div class="media-frame media-frame--cutaway">
         <span class="cutaway-scale" aria-hidden="true"><i></i><span>1 m</span></span>
-        <img src="/polistibrick-multisite/fr/images/wall-stage-cutaway.png" alt="Coupe mur Polistibrick — fibrociment, PSE, calcestruzzo armé" width="1000" height="1200" loading="lazy">
+        <img src="/polistibrick-multisite/images/wall-stage-cutaway.png" alt="Coupe mur Polistibrick — fibrociment, PSE, calcestruzzo armé" width="1000" height="1200" loading="lazy">
       </div>
       <div>
         <h2>Le mur, <em>couche par couche.</em></h2>
@@ -795,7 +795,7 @@
           </div>
         </div>
         <div class="wm-visual" style="margin:0;aspect-ratio:4/3;">
-          <img src="/polistibrick-multisite/fr/images/tbk-roof.png" alt="Coupe tettoure isolante TBK SIP250 Polistibrick" width="800" height="600">
+          <img src="/polistibrick-multisite/images/tbk-roof.png" alt="Coupe tettoure isolante TBK SIP250 Polistibrick" width="800" height="600">
         </div>
       </div>
       <div class="reveal">
@@ -877,9 +877,9 @@
         muted
         playsinline
         preload="none"
-        poster="/polistibrick-multisite/fr/images/polistibrick/video-poster.jpg"
+        poster="/polistibrick-multisite/images/polistibrick/video-poster.jpg"
         title="Costruzione Polistibrick — cassero isolant">
-        <source src="/polistibrick-multisite/fr/images/polistibrick/video_polistibrick_final.mp4?v=2" type="video/mp4">
+        <source src="/polistibrick-multisite/images/polistibrick/video_polistibrick_final.mp4?v=2" type="video/mp4">
       </video>
     </div>
     <p class="reveal" style="text-align:center;margin-top:14px;font-size:13.5px;color:var(--gray);font-style:italic;">Le film se charge uniquement lorsque vous lancez la lecture.</p>
@@ -899,7 +899,7 @@
 </section>
 <script>
 (function(){
-  var tabs=document.querySelectorAll('.fam-tab'),panels=document.querySelectorAll('.fam-panel');
+  var tabs=document.querySelectorAll('.fam-tab[data-panel]'),panels=document.querySelectorAll('.fam-panel');
   function activate(id){tabs.forEach(function(t){t.setAttribute('aria-selected',t.getAttribute('data-panel')===id?'true':'false');});panels.forEach(function(p){p.hidden=p.id!==id;});}
   tabs.forEach(function(t){t.addEventListener('click',function(){activate(t.getAttribute('data-panel'));});});
   var h=(location.hash||'').replace('#','');
