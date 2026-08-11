@@ -3,14 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calculator economii · Cât economisești cu Polistibrick — 25 years</title>
-  <meta name="description" content="Calculator dynamique qui montre combien vous économisez avec Polistibrick par rapport à la cărămidă classique sur 25 ans. Saisissez les m², le climat, le prix de l'énergie et visualisez la différence réelle.">
+  <title>Calculator economii: încălzirea casei pe 25 de ani</title>
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+  <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+  <meta name="description" content="Calculează cât economisești la încălzire și răcire în 25 de ani, față de o casă clasică. Prețul energiei din România, actualizat la zi.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/site.css">
   <style>
-    /* === Carte avec filigrane === */
+    /* === Card cu filigran === */
     .wm-section { padding: clamp(60px, 8vw, 100px) 0; background: var(--cream); }
     .wm-stage-wrap { position: relative; margin: 70px auto 0; max-width: 1480px; }
     .wm-watermark {
@@ -99,85 +101,124 @@
       .comp-form-card, .comp-savings { padding: 28px; }
     }
   </style>
+<!-- date-structurate -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebPage",
+   "@id": "{{domain_url}}/economii/#pagina",
+   "url": "{{domain_url}}/economii/",
+   "name": "Calculator economii",
+   "inLanguage": "{{lang}}",
+   "isPartOf": {
+    "@id": "{{domain_url}}/#site"
+   },
+   "publisher": {
+    "@id": "{{domain_url}}/#organizatie"
+   },
+   "description": "Calculator dinamic care arată cât economisești cu Polistibrick față de cărămida clasică pe 25 de ani. Introdu m², clima, prețul energiei și vezi diferența reală."
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "{{country_name}}",
+     "item": "{{domain_url}}/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Calculator economii",
+     "item": "{{domain_url}}/economii/"
+    }
+   ]
+  }
+ ]
+}
+</script>
 </head>
 <body data-base="../">
 
 <header class="nav" data-include="nav"></header>
 
-<!-- ============ CARTE PRINCIPALE AVEC FILIGRANE ============ -->
+<!-- ============ CARD PRINCIPAL CU FILIGRAN ============ -->
 <section class="wm-section">
   <div class="container">
     <div class="wm-stage-wrap reveal">
       <div class="wm-watermark" aria-hidden="true">
-        <span class="wm-half wm-top">Économies</span>
-        <span class="wm-half wm-bottom">Économies</span>
+        <span class="wm-half wm-top">Economii</span>
+        <span class="wm-half wm-bottom">Economii</span>
       </div>
 
       <div class="wm-stage">
 
         <div class="wm-intro">
-<h2>Polistibrick vs cărămidă : <em>vos chiffres.</em></h2>
-          <p>Calculator dynamique qui vous montre EXACTEMENT combien vous économisez sur l'énergie, l'entretien et les coûts totaux sur 25 ans, pour la maison que vous souhaitez construire. Saisissez vos chiffres, visualisez le résultat en temps réel.</p>
+<h2>Polistibrick vs cărămidă: <em>cifrele tale.</em></h2>
+          <p>Calculator dinamic care îți arată EXACT cât economisești la energie, întreținere și costuri totale pe 25 de ani, pentru casa pe care vrei să o construiești. Introdu cifrele, vezi rezultatul în timp real.</p>
         </div>
 
         <div class="comp-grid">
 
           <!-- FORM -->
           <form id="compForm" class="comp-form-card">
-            <h3>Les données de votre maison.</h3>
+            <h3>Datele casei tale.</h3>
 
             <div class="form-row">
-              <label class="form-label" for="cSurface">Surface de la maison (m²)</label>
+              <label class="form-label" for="cSurface">Suprafața casei (m²)</label>
               <input class="form-input" type="number" id="cSurface" value="150" min="50" max="1000" step="10">
             </div>
 
             <div class="form-row">
               <label class="form-label" for="cYears">Ani de locuit luați în calcul</label>
               <select class="form-select" id="cYears">
-                <option value="10">10 ans</option>
-                <option value="15">15 ans</option>
-                <option value="20">20 ans</option>
-                <option value="25" selected>25 ans (recommandé)</option>
-                <option value="30">30 ans</option>
-                <option value="40">40 ans</option>
-                <option value="50">50 ans</option>
+                <option value="10">10 ani</option>
+                <option value="15">15 ani</option>
+                <option value="20">20 ani</option>
+                <option value="25" selected>25 ani (recomandat)</option>
+                <option value="30">30 ani</option>
+                <option value="40">40 ani</option>
+                <option value="50">50 ani</option>
               </select>
             </div>
 
             <div class="form-row">
               <label class="form-label" for="cClimate">Climat</label>
               <select class="form-select" id="cClimate">
-                <option value="cold" data-brick-energy="180" data-poli-energy="45">Froid (zones montagneuses, nord — &lt; 8 °C en moyenne)</option>
-                <option value="temperate" data-brick-energy="130" data-poli-energy="35" selected>Tempéré (Europe centrale — 8-14 °C en moyenne)</option>
-                <option value="warm" data-brick-energy="100" data-poli-energy="25">Chaud (sud, méditerranéen — &gt; 14 °C en moyenne)</option>
+                <option value="cold" data-brick-energy="180" data-poli-energy="45">Rece (zone montane, nord — &lt; 8 °C în medie)</option>
+                <option value="temperate" data-brick-energy="130" data-poli-energy="35" selected>Temperat (Europa Centrală — 8–14 °C în medie)</option>
+                <option value="warm" data-brick-energy="100" data-poli-energy="25">Cald (sud, mediteranean — &gt; 14 °C în medie)</option>
               </select>
-              <p style="font-size:11px;color:var(--gray);margin-top:6px;">Le calcul inclut à la fois le încălzire (iarna) et la climatisation (été).</p>
+              <p style="font-size:11px;color:var(--gray);margin-top:6px;">Calculul include atât încălzirea (iarna) cât și climatizarea (vara).</p>
             </div>
 
             <div class="form-row">
               <label class="form-label" for="cEnergyPrice">Preț energie mediu (€/kWh)</label>
               <input class="form-input" type="number" id="cEnergyPrice" value="0.22" min="0.05" max="0.60" step="0.01">
-              <p style="font-size:11px;color:var(--gray);margin-top:6px;">Folosește media pentru tara ta (RO ~0.18, FR ~0.25, DE ~0.32, ES ~0.20).</p>
+              <p style="font-size:11px;color:var(--gray);margin-top:6px;">Folosește media pentru țara ta (RO ~0.18, FR ~0.25, DE ~0.32, ES ~0.20).</p>
             </div>
 
             <div class="form-row">
               <label class="form-label" for="cEnergyInflation">Creștere anuală preț energie (%)</label>
               <select class="form-select" id="cEnergyInflation">
-                <option value="0">0 % — prix constant (optimiste)</option>
-                <option value="2">2 % — inflation stable</option>
-                <option value="4" selected>4 % — réaliste (moyenne UE 2010-2024)</option>
-                <option value="6">6 % — pessimiste (crise énergétique)</option>
+                <option value="0">0 % — preț constant (optimist)</option>
+                <option value="2">2 % — inflație stabilă</option>
+                <option value="4" selected>4 % — realist (media UE 2010–2024)</option>
+                <option value="6">6 % — pesimist (criză energetică)</option>
               </select>
             </div>
 
             <hr style="border:0;border-top:1px solid var(--border);margin:20px 0;">
 
-            <p style="font-size:12.5px;color:var(--gray);margin-bottom:12px;">💡 Le calcul inclut :</p>
+            <p style="font-size:12.5px;color:var(--gray);margin-bottom:12px;">💡 Calculul include:</p>
             <ul style="display:flex;flex-direction:column;gap:5px;font-size:12.5px;color:var(--ink-soft);padding-left:4px;list-style:none;">
-              <li>✓ Coût de construction (panneaux + main-d'œuvre, hors finitions)</li>
-              <li>✓ Coût de l'énergie sur les années sélectionnées</li>
-              <li>✓ Coût d'entretien estimé</li>
-              <li>✓ Le tout projeté avec l'inflation choisie</li>
+              <li>✓ Cost de construcție (panouri + manoperă, fără finisaje)</li>
+              <li>✓ Costul energiei pe anii selectați</li>
+              <li>✓ Cost de întreținere estimat</li>
+              <li>✓ Totul proiectat cu inflația aleasă</li>
             </ul>
           </form>
 
@@ -186,7 +227,7 @@
 
             <div class="comp-savings">
               <div class="comp-savings-big" id="totalSavings">— <small>€</small></div>
-              <p style="font-size:13.5px;color:rgba(247,244,237,0.75);">sur <span id="yearsLabel">25</span> de years, pentru o house de <span id="surfaceLabel">150</span> m²</p>
+              <p style="font-size:13.5px;color:rgba(247,244,237,0.75);">pe <span id="yearsLabel">25</span> de ani, pentru o casă de <span id="surfaceLabel">150</span> m²</p>
             </div>
 
             <div class="comp-bar-container">
@@ -205,7 +246,7 @@
 
             <div style="background:white;border:1px solid var(--border);border-radius:14px;margin-top:18px;overflow:hidden;">
               <div class="comp-row is-header">
-                <span>Coût</span>
+                <span>Cost</span>
                 <span class="num">Cărămidă</span>
                 <span class="num">Polistibrick</span>
               </div>
@@ -215,12 +256,12 @@
                 <span class="num" id="poliBuild">— €</span>
               </div>
               <div class="comp-row">
-                <span>Énergie (cumulé)</span>
+                <span>Energie (cumulată)</span>
                 <span class="num" id="brickEnergy">— €</span>
                 <span class="num num-good" id="poliEnergy">— €</span>
               </div>
               <div class="comp-row">
-                <span>Entretien</span>
+                <span>Întreținere</span>
                 <span class="num" id="brickMaint">— €</span>
                 <span class="num num-good" id="poliMaint">— €</span>
               </div>
@@ -244,24 +285,24 @@
 <section class="section section--cream">
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 40px;">
-      <h2>Méthodologie <em>transparentă.</em></h2>
+      <h2>Metodologie <em>transparentă.</em></h2>
     </div>
     <div class="grid grid-2 reveal" style="max-width:980px;margin:0 auto;">
       <div class="card">
-        <h4 style="margin-bottom:12px;">Coût de construction</h4>
-        <p style="font-size:14px;line-height:1.6;">Cărămidă : ~1 000 €/m² en standard non conforme. Polistibrick : ~1 050 €/m² (+5 %) pour une casă pasivă A+++. Inclut les matériaux et la main-d'œuvre, hors finitions intérieures ou extérieures.</p>
+        <h4 style="margin-bottom:12px;">Cost de construcție</h4>
+        <p style="font-size:14px;line-height:1.6;">Cărămidă: ~1.000 €/m² în standard neconform. Polistibrick: ~1.050 €/m² (+5%) pentru o casă pasivă A+++. Include materialele și manopera, fără finisaje interioare sau exterioare.</p>
       </div>
       <div class="card">
-        <h4 style="margin-bottom:12px;">Coût de l'énergie</h4>
-        <p style="font-size:14px;line-height:1.6;">Basé sur la consommation typique par climat : la cărămidă consomme en moyenne 100-180 kWh/m²/an pour le încălzire et la climatisation. Polistibrick (pasivă) consumă 25-45 kWh/m²/year. Réduction moyenne de 70 %.</p>
+        <h4 style="margin-bottom:12px;">Costul energiei</h4>
+        <p style="font-size:14px;line-height:1.6;">Bazat pe consumul tipic pe climă: cărămida consumă în medie 100–180 kWh/m²/an pentru încălzire și climatizare. Polistibrick (pasiv) consumă 25–45 kWh/m²/an. Reducere medie de 70%.</p>
       </div>
       <div class="card">
-        <h4 style="margin-bottom:12px;">Entretien sur 25 ans</h4>
-        <p style="font-size:14px;line-height:1.6;">Cărămidă : rénovation de l'izolație thermique à 15 ans (~5 000 €), réparations dues à l'humidité, ravalement de façade. Polistibrick : rien de tout cela — l'EPS n'absorbe pas l'eau, ne se dégrade pas, la structure monolithique ne se fissure pas.</p>
+        <h4 style="margin-bottom:12px;">Întreținere pe 25 de ani</h4>
+        <p style="font-size:14px;line-height:1.6;">Cărămidă: reabilitare termoizolație la 15 ani (~5.000 €), reparații din cauza umidității, reabilitare fațadă. Polistibrick: nimic din toate acestea — EPS-ul nu absoarbe apă, nu se degradează, structura monolitică nu se fisurează.</p>
       </div>
       <div class="card">
-        <h4 style="margin-bottom:12px;">Inflation énergétique</h4>
-        <p style="font-size:14px;line-height:1.6;">Au cours des 14 dernières années, le prix de l'électricité dans l'UE a augmenté d'environ 4 % par an. Notre calcul intègre la capitalisation annuelle — l'économie réelle sur 25 ans est supérieure à la différence d'aujourd'hui × 25.</p>
+        <h4 style="margin-bottom:12px;">Inflație energetică</h4>
+        <p style="font-size:14px;line-height:1.6;">În ultimii 14 ani, prețul energiei electrice în UE a crescut cu aproximativ 4% pe an. Calculul nostru include capitalizarea anuală — economia reală pe 25 de ani e mai mare decât diferența de azi × 25.</p>
       </div>
     </div>
   </div>
@@ -269,11 +310,12 @@
 
 <section class="section section--tight">
   <div class="cta-band reveal">
-    <h2>Convins de <em>vos chiffres ?</em></h2>
-    <p>Demandez un devis personnalisé Polistibrick — un calcul précis pour votre projet, sans engagement, sans coûts cachés.</p>
+    <h2>Convins de <em>cifrele tale?</em></h2>
+    <p>Cere o ofertă personalizată Polistibrick — un calcul precis pentru proiectul tău, fără obligație, fără costuri ascunse.</p>
     <div class="cta-band-actions">
       <a href="../oferta/" class="btn btn-on-dark btn-large btn-arrow">Cere o ofertă personalizată</a>
-      <a href="../contact/" class="btn btn-on-dark-ghost btn-large">Vorbește cu un specialist</a>
+      <a href="../preturi/" class="btn btn-on-dark-ghost btn-large">Cât costă construcția</a>
+        <a href="../contact/" class="btn btn-on-dark-ghost btn-large">Vorbește cu un specialist</a>
     </div>
   </div>
 </section>
@@ -295,7 +337,7 @@
 
     const fmt = (n) => {
       if (!isFinite(n) || n <= 0) return '— €';
-      return new Intl.NumberFormat('fr-FR', { maximumFractionDigits: 0 }).format(Math.round(n)) + ' €';
+      return new Intl.NumberFormat('ro-RO', { maximumFractionDigits: 0 }).format(Math.round(n)) + ' €';
     };
 
     function recalc() {

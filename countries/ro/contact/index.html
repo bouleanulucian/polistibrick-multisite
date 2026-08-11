@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact · Polistibrick — 9 țări europene</title>
-  <meta name="description" content="Contactez l'équipe Polistibrick de votre pays. Sélectionnez le drapeau du pays où vous construisez et recevez le contact direct.">
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+  <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+  <meta name="description" content="Contactează echipa Polistibrick din țara ta. Selectează steagul țării unde construiești și primește contactul direct.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -208,6 +210,70 @@
       .country-flag-btn span:not(.country-flag-emoji) { display: none; }
     }
   </style>
+<!-- date-structurate -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "WebPage",
+    "ContactPage"
+   ],
+   "@id": "{{domain_url}}/contact/#pagina",
+   "url": "{{domain_url}}/contact/",
+   "name": "Contact",
+   "inLanguage": "{{lang}}",
+   "isPartOf": {
+    "@id": "{{domain_url}}/#site"
+   },
+   "publisher": {
+    "@id": "{{domain_url}}/#organizatie"
+   },
+   "description": "Contactează echipa Polistibrick din țara ta. Selectează steagul țării unde construiești și primește contactul direct."
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "{{country_name}}",
+     "item": "{{domain_url}}/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Contact",
+     "item": "{{domain_url}}/contact/"
+    }
+   ]
+  },
+  {
+   "@type": "Organization",
+   "@id": "{{domain_url}}/#organizatie",
+   "name": "{{company.name_legal}}",
+   "alternateName": "Polistibrick",
+   "url": "{{domain_url}}/",
+   "logo": "{{domain_url}}/images/logo.png",
+   "telephone": "{{contact.phone}}",
+   "email": "{{contact.email_general}}",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "{{company.address_street}}",
+    "addressLocality": "{{company.address_city}}",
+    "postalCode": "{{company.address_zip}}",
+    "addressCountry": "{{country}}"
+   },
+   "sameAs": [
+    "{{contact.social.facebook}}",
+    "{{contact.social.instagram}}",
+    "{{contact.social.linkedin}}"
+   ]
+  }
+ ]
+}
+</script>
 </head>
 <body data-base="../">
 
@@ -224,23 +290,23 @@
       <div class="wm-stage">
 
         <!-- FLAGS ROW SELECTOR -->
-        <div class="country-flags" role="tablist" aria-label="Sélectionnez le pays">
+        <div class="country-flags" role="tablist" aria-label="Selectează țara">
           <button class="country-flag-btn" data-country="RO" role="tab"><span class="country-flag-emoji">🇷🇴</span><span>România</span></button>
-          <button class="country-flag-btn" data-country="ES" role="tab"><span class="country-flag-emoji">🇪🇸</span><span>Espagne</span></button>
+          <button class="country-flag-btn" data-country="ES" role="tab"><span class="country-flag-emoji">🇪🇸</span><span>Spania</span></button>
           <button class="country-flag-btn" data-country="FR" role="tab"><span class="country-flag-emoji">🇫🇷</span><span>Franța</span></button>
-          <button class="country-flag-btn" data-country="BE" role="tab"><span class="country-flag-emoji">🇧🇪</span><span>Belgique</span></button>
-          <button class="country-flag-btn" data-country="IT" role="tab"><span class="country-flag-emoji">🇮🇹</span><span>Italie</span></button>
-          <button class="country-flag-btn" data-country="AT" role="tab"><span class="country-flag-emoji">🇦🇹</span><span>Autriche</span></button>
-          <button class="country-flag-btn" data-country="GB" role="tab"><span class="country-flag-emoji">🇬🇧</span><span>Royaume-Uni</span></button>
+          <button class="country-flag-btn" data-country="BE" role="tab"><span class="country-flag-emoji">🇧🇪</span><span>Belgia</span></button>
+          <button class="country-flag-btn" data-country="IT" role="tab"><span class="country-flag-emoji">🇮🇹</span><span>Italia</span></button>
+          <button class="country-flag-btn" data-country="AT" role="tab"><span class="country-flag-emoji">🇦🇹</span><span>Austria</span></button>
+          <button class="country-flag-btn" data-country="GB" role="tab"><span class="country-flag-emoji">🇬🇧</span><span>Regatul Unit</span></button>
         </div>
 
         <div class="wm-content">
 
           <!-- LEFT -->
           <div class="wm-text">
-<h2>Des spécialistes <em>à un clic.</em></h2>
-            <p>Nous répondons à vos questions techniques, préparons des devis personnalisés et offrons un conseil gratuit pour tout projet.</p>
-            <p>Sélectionnez le pays où vous construisez pour voir le contact de l'équipe locale et lui envoyer votre message directement.</p>
+<h2>Specialiști <em>la un clic.</em></h2>
+            <p>Răspundem la întrebările tale tehnice, pregătim oferte personalizate și oferim consultanță gratuită pentru orice proiect.</p>
+            <p>Selectează țara unde construiești pentru a vedea contactul echipei locale și a-i trimite mesajul direct.</p>
 
             <div class="country-office-card" id="activeOfficeCard"></div>
           </div>
@@ -248,72 +314,72 @@
           <!-- RIGHT -->
           <div class="wm-form-card">
             <div class="wm-form-target">
-              <span id="formTargetFlag">🇫🇷</span>
-              <span>Mesaj către <strong id="formTargetCountry">Franța</strong></span>
+              <span id="formTargetFlag">🇷🇴</span>
+              <span>Mesaj către <strong id="formTargetCountry">România</strong></span>
             </div>
-            <h3>Écrivez-nous directement.</h3>
-            <p>Votre message arrive directement à l'équipe du pays sélectionné.</p>
+            <h3>Scrie-ne direct.</h3>
+            <p>Mesajul tău ajunge direct la echipa din țara selectată.</p>
 
             <form id="contactForm" class="pb-form" data-pb-form="contact">
-              <input type="hidden" name="target_country" id="formCountryHidden" value="FR">
-              <input type="hidden" name="target_office" id="formTargetOfficeHidden" value="Franța">
+              <input type="hidden" name="target_country" id="formCountryHidden" value="RO">
+              <input type="hidden" name="target_office" id="formTargetOfficeHidden" value="România">
 
               <div class="form-row form-row--split">
                 <div>
-                  <label class="form-label" for="cname">Nom *</label>
-                  <input class="form-input" type="text" id="cname" name="name" required placeholder="Votre nom">
+                  <label class="form-label" for="cname">Nume *</label>
+                  <input class="form-input" type="text" id="cname" name="name" required placeholder="Numele tău">
                 </div>
                 <div>
                   <label class="form-label" for="cemail">Email *</label>
-                  <input class="form-input" type="email" id="cemail" name="email" required placeholder="email@exemple.fr">
+                  <input class="form-input" type="email" id="cemail" name="email" required placeholder="email@exemplu.ro">
                 </div>
               </div>
 
               <div class="form-row form-row--split">
                 <div>
                   <label class="form-label" for="cphone">Telefon (opțional)</label>
-                  <input class="form-input" type="tel" id="cphone" name="phone" placeholder="+33 6 XX XX XX XX">
+                  <input class="form-input" type="tel" id="cphone" name="phone" placeholder="+40 7XX XXX XXX">
                 </div>
                 <div>
-                  <label class="form-label" for="crole">Vous êtes</label>
+                  <label class="form-label" for="crole">Ești</label>
                   <select class="form-select" id="crole" name="role">
-                    <option value="">— Sélectionnez —</option>
-                    <option value="architecte">Architecte</option>
-                    <option value="bet">Bureau d'études (BET)</option>
-                    <option value="constructeur">Constructeur / Entrepreneur</option>
-                    <option value="particulier">Particulier / Propriétaire</option>
-                    <option value="promoteur">Promoteur / Investisseur</option>
-                    <option value="autre">Autre</option>
+                    <option value="">— Selectează —</option>
+                    <option value="architecte">Arhitect</option>
+                    <option value="bet">Birou de proiectare (BET)</option>
+                    <option value="constructeur">Constructor / Antreprenor</option>
+                    <option value="particulier">Persoană fizică / Proprietar</option>
+                    <option value="promoteur">Dezvoltator / Investitor</option>
+                    <option value="autre">Altele</option>
                   </select>
                 </div>
               </div>
 
               <div class="form-row">
-                <label class="form-label" for="csubject">Sujet</label>
+                <label class="form-label" for="csubject">Subiect</label>
                 <select class="form-select" id="csubject" name="subject">
                   <option>Întrebare tehnică</option>
-                  <option>Demande de documentation</option>
-                  <option>Support produit</option>
+                  <option>Cerere de documentație</option>
+                  <option>Asistență produs</option>
                   <option>Devino partener</option>
-                  <option>Demande de devis</option>
+                  <option>Cerere de ofertă</option>
                   <option>Presă / Media</option>
-                  <option>Autre</option>
+                  <option>Altele</option>
                 </select>
               </div>
 
               <div class="form-row">
-                <label class="form-label" for="cmsg">Message *</label>
-                <textarea class="form-textarea" id="cmsg" name="message" required placeholder="Comment pouvons-nous vous aider ?"></textarea>
+                <label class="form-label" for="cmsg">Mesaj *</label>
+                <textarea class="form-textarea" id="cmsg" name="message" required placeholder="Cum te putem ajuta?"></textarea>
               </div>
 
-<!-- Ataşamentele cer planul Web3Forms Pro — blocul se restaurează de aici când se face upgrade:
+<!-- Atașamentele cer planul Web3Forms Pro; blocul se restaurează de aici când se face upgrade:
               <div class="form-row">
-                <label class="form-label">Pièces jointes (facultatif)</label>
+                <label class="form-label">Atașamente (opțional)</label>
                 <label class="form-file-drop" for="cfiles" id="fileDropZone">
                   <span class="form-file-icon">📎</span>
                   <div class="form-file-text">
-                    <strong>Joignez plans, croquis ou documents</strong>
-                    <span>PDF · DWG · DXF · JPG · PNG · ZIP — max 10 Mo / fichier</span>
+                    <strong>Atașează planuri, schițe sau documente</strong>
+                    <span>PDF · DWG · DXF · JPG · PNG · ZIP — max 10 MB / fișier</span>
                   </div>
                   <input type="file" id="cfiles" name="files" accept=".pdf,.dwg,.dxf,.jpg,.jpeg,.png,.zip" multiple style="display:none;">
                 </label>
@@ -322,20 +388,20 @@
 
 -->
 
-              <button type="submit" class="btn btn-primary btn-large btn-arrow" style="width:100%;justify-content:center;">Envoyer le message</button>
+              <button type="submit" class="btn btn-primary btn-large btn-arrow" style="width:100%;justify-content:center;">Trimite mesajul</button>
 
               <div class="pb-form-consent">
                 <label class="pb-consent-label">
                   <input type="checkbox" name="privacy_consent" value="1" required>
-                  <span>J'accepte que mes données soient traitées conformément à la <a href="../legal/confidentialitate/" target="_blank" rel="noopener">politique de confidentialité (RGPD)</a>. *</span>
+                  <span>Accept că datele mele sunt prelucrate conform <a href="../legal/confidentialitate/" target="_blank" rel="noopener">politicii de confidențialitate (GDPR)</a>. *</span>
                 </label>
               </div>
 
-              <p style="font-size:11.5px;color:var(--gray);text-align:center;margin-top:12px;">Răspundem în maxim 24 hours lucrătoare.</p>
+              <p style="font-size:11.5px;color:var(--gray);text-align:center;margin-top:12px;">Răspundem în maxim 24 de ore lucrătoare.</p>
 
               <div class="pb-form-thanks" hidden>
-                <h3>Message envoyé ✓</h3>
-                <p>Merci ! Notre équipe vous répond sous 24 heures ouvrées.</p>
+                <h3>Mesaj trimis ✓</h3>
+                <p>Mulțumim! Echipa noastră vă va răspunde în termen de 24 de ore lucrătoare.</p>
               </div>
             </form>
           </div>
@@ -350,17 +416,17 @@
 <script src="../assets/js/site.js" defer></script>
 <script src="../assets/js/forms.js" defer></script>
 <script>
-  // Pour afficher la photo et le nom du responsable d'un pays, ajoutez à son entrée :
-  //   photo: 'images/team/NOM-FICHIER.jpg', contact: 'Prénom Nom'
-  // (sans photo, un cercle avec le drapeau s'affiche par défaut)
+  // Pentru a afișa poza și numele responsabilului unei țări, adaugă la intrarea lui:
+  //   photo: 'images/equipe/NUME-FISIER.jpg', contact: 'Prenume Nume'
+  // (fără poză, se afișează implicit un cerc cu steagul)
   const COUNTRIES = {
-    RO: { flag: '🇷🇴', name: 'Roumanie', city: 'Craiova', phone: '+40 371 550 550', phoneRaw: '+40371550550', email: null, address: 'Prelungirea Ghencea 281,<br>sector 6, Bucarest', site: 'polistibrick.ro', langs: 'RO · EN', badge: 'Siège RO' },
-    ES: { flag: '🇪🇸', name: 'Espagne', city: 'Valencia', phone: '+34 642 777 216', phoneRaw: '+34642777216', email: null, address: 'Pol. 24, 106,<br>Santa Eulalia del Rio', site: 'polistibrick.es', langs: 'ES · EN', badge: 'Siège ES' },
-    FR: { flag: '🇫🇷', name: 'France', city: 'Croissy-sur-Seine', phone: '+33 1 61 30 40 09', phoneRaw: '+33161304009', email: null, address: '4 Rue Hans List,<br>78290 Croissy-sur-Seine', site: 'polistibrick.fr', langs: 'FR · EN', badge: 'Siège FR' },
-    BE: { flag: '🇧🇪', name: 'Belgique', city: 'Lessines', phone: '+32 471 693 531', phoneRaw: '+32471693531', email: null, address: 'Profond Chemin 2,<br>7860 Lessines', site: 'polistibrick.be', langs: 'FR · NL · EN', badge: 'Siège BE' },
-    IT: { flag: '🇮🇹', name: 'Italie', city: "Città Sant'Angelo", phone: '+39 328 164 8085', phoneRaw: '+393281648085', email: null, address: "Città Sant'Angelo (PE),<br>Via Magliano del Gioco 16", site: 'polistibrick.it', langs: 'IT · EN', badge: 'Siège IT' },
-    AT: { flag: '🇦🇹', name: 'Autriche', city: '—', phone: null, phoneRaw: null, email: null, address: 'Contact via formulaire en ligne<br>ou via polistibrick.at', site: 'polistibrick.at', langs: 'DE · EN', badge: 'En ligne' },
-    GB: { flag: '🇬🇧', name: 'Royaume-Uni', city: 'Servi depuis la Roumanie', phone: '+40 371 550 550', phoneRaw: '+40371550550', email: null, address: 'Contact via polistibrick.uk<br>ou directement depuis la Roumanie', site: 'polistibrick.uk', langs: 'EN', badge: 'En ligne · Support RO' },
+    RO: { flag: '🇷🇴', name: 'România', city: 'București', phone: '031 630 81 15', phoneRaw: '+40316308115', email: null, address: 'Prelungirea Ghencea 281,<br>sector 6, București', site: 'polisti.ro', langs: 'RO · EN', badge: 'Sediu RO' },
+    ES: { flag: '🇪🇸', name: 'Spania', city: 'Valencia', phone: '+34 642 777 216', phoneRaw: '+34642777216', email: null, address: 'Pol. 24, 106,<br>Santa Eulalia del Rio', site: 'polistibrick.es', langs: 'ES · EN', badge: 'Sediu ES' },
+    FR: { flag: '🇫🇷', name: 'Franța', city: 'Croissy-sur-Seine', phone: '+33 1 61 30 40 09', phoneRaw: '+33161304009', email: null, address: '4 Rue Hans List,<br>78290 Croissy-sur-Seine', site: 'polistibrick.fr', langs: 'FR · EN', badge: 'Sediu FR' },
+    BE: { flag: '🇧🇪', name: 'Belgia', city: 'Lessines', phone: '+32 471 693 531', phoneRaw: '+32471693531', email: null, address: 'Profond Chemin 2,<br>7860 Lessines', site: 'polistibrick.be', langs: 'FR · NL · EN', badge: 'Sediu BE' },
+    IT: { flag: '🇮🇹', name: 'Italia', city: "Città Sant'Angelo", phone: '+39 328 164 8085', phoneRaw: '+393281648085', email: null, address: "Città Sant'Angelo (PE),<br>Via Magliano del Gioco 16", site: 'polistibrick.it', langs: 'IT · EN', badge: 'Sediu IT' },
+    AT: { flag: '🇦🇹', name: 'Austria', city: '—', phone: null, phoneRaw: null, email: null, address: 'Contact prin formular online<br>sau via polistibrick.at', site: 'polistibrick.at', langs: 'DE · EN', badge: 'Online' },
+    GB: { flag: '🇬🇧', name: 'Regatul Unit', city: 'Deservit din România', phone: '031 630 81 15', phoneRaw: '+40316308115', email: null, address: 'Contact via polistibrick.uk<br>sau direct din România', site: 'polistibrick.uk', langs: 'EN', badge: 'Online · Asistență RO' },
   };
 
   const FALLBACK_MAP = {
@@ -370,7 +436,7 @@
     'RS': 'RO', 'BA': 'RO', 'MK': 'RO', 'AL': 'RO', 'IE': 'GB',
   };
 
-  let activeCountry = 'FR';
+  let activeCountry = 'RO';
 
   function renderActiveCountry(code) {
     activeCountry = code;
@@ -437,7 +503,7 @@
     btn.addEventListener('click', () => renderActiveCountry(btn.dataset.country));
   });
 
-  renderActiveCountry('FR');
+  renderActiveCountry('RO');
   function runContactGeo() {
     detect().then(code => {
       if (code) {
@@ -467,7 +533,7 @@
       item.className = 'form-file-item';
       item.innerHTML = `
         <span class="form-file-item-name">📄 ${file.name} <small>${sizeMB} MB</small></span>
-        <button type="button" class="form-file-item-remove" data-idx="${idx}" aria-label="Supprimer">×</button>
+        <button type="button" class="form-file-item-remove" data-idx="${idx}" aria-label="Șterge">×</button>
       `;
       filesList.appendChild(item);
     });
@@ -480,7 +546,7 @@
   function addFiles(newFiles) {
     Array.from(newFiles).forEach(file => {
       if (file.size > MAX_FILE_SIZE) {
-        alert(`Le fichier "${file.name}" est trop volumineux (${(file.size/1024/1024).toFixed(1)} Mo). Maximum 10 Mo par fichier.`);
+        alert(`Fișierul "${file.name}" este prea mare (${(file.size/1024/1024).toFixed(1)} MB). Maxim 10 MB pe fișier.`);
         return;
       }
       // Avoid duplicates
@@ -522,8 +588,8 @@
     }
   });
 
-  /* === PRÉ-REMPLISSAGE du formulaire à partir des paramètres d'URL ===
-     Exemple d'URL appelée depuis /pentru/arhitecti/ :
+  /* === Precompletarea formularului din parametrii URL ===
+     Exemplu de URL apelat din /pentru/arhitecti/:
        ?subject=Demande+document+:+CAD+DWG&role=architecte-bet&doc=CAD+DWG&type=document */
   (function prefillFromURL() {
     var params = new URLSearchParams(window.location.search);
@@ -532,7 +598,7 @@
     var doc = params.get('doc');
     var type = params.get('type');
 
-    // Pré-sélection du rôle (Architecte / BET / etc.)
+    // Preselectarea rolului (arhitect / BET / etc.)
     var roleSelect = document.getElementById('crole');
     if (role && roleSelect) {
       var roleMap = {
@@ -547,13 +613,13 @@
       if (mappedRole) roleSelect.value = mappedRole;
     }
 
-    // Pre-select sujet — try to match existing option
+    // Preselectează subiectul, dacă există opțiunea
     var subjectSelect = document.getElementById('csubject');
     if (subjectSelect) {
       if (type === 'document' || (subject && subject.toLowerCase().indexOf('document') !== -1)) {
-        // Force "Demande de documentation"
+        // Forțează „Cerere de documentație”
         for (var i = 0; i < subjectSelect.options.length; i++) {
-          if (subjectSelect.options[i].text === 'Demande de documentation') {
+          if (subjectSelect.options[i].text === 'Cerere de documentație') {
             subjectSelect.selectedIndex = i;
             break;
           }
@@ -573,20 +639,20 @@
     var msgField = document.getElementById('cmsg');
     if (msgField && (doc || subject)) {
       var roleText = '';
-      if (role === 'architecte-bet' || role === 'architecte') roleText = 'architecte';
-      else if (role === 'bet') roleText = 'bureau d\'études (BET)';
-      else if (role === 'constructeur') roleText = 'constructeur';
-      else if (role === 'promoteur') roleText = 'promoteur / investisseur';
+      if (role === 'architecte-bet' || role === 'architecte') roleText = 'arhitect';
+      else if (role === 'bet') roleText = 'birou de proiectare (BET)';
+      else if (role === 'constructeur') roleText = 'constructor';
+      else if (role === 'promoteur') roleText = 'dezvoltator / investitor';
 
       var msg = '';
       if (doc) {
         if (roleText) {
-          msg = 'Bonjour,\n\nEn tant que ' + roleText + ', je souhaite recevoir le document suivant :\n\n• ' + doc + '\n\nMerci d\'avance.';
+          msg = 'Bună ziua,\n\nÎn calitate de ' + roleText + ', doresc să primesc următorul document:\n\n• ' + doc + '\n\nMulțumesc anticipat.';
         } else {
-          msg = 'Bonjour,\n\nJe souhaite recevoir le document suivant :\n\n• ' + doc + '\n\nMerci d\'avance.';
+          msg = 'Bună ziua,\n\nDoresc să primesc următorul document:\n\n• ' + doc + '\n\nMulțumesc anticipat.';
         }
       } else if (subject) {
-        msg = 'Bonjour,\n\nDemande : ' + subject + '\n\nMerci d\'avance.';
+        msg = 'Bună ziua,\n\nSolicitare: ' + subject + '\n\nMulțumesc anticipat.';
       }
       msgField.value = msg;
     }

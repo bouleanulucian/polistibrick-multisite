@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Demandez un devis · Polistibrick</title>
-  <meta name="description" content="Ofertă instantané avec l'IA Polistibrick — téléversez vos plans et recevez l'estimation sur fața locului. Ou contactez-nous via le formulaire, réponse sous 48 h.">
+  <title>Cereți o ofertă · Polistibrick</title>
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+  <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+  <meta name="description" content="Ofertă instantanee cu AI Polistibrick: încărcați planurile și primiți estimarea pe loc. Sau contactați-ne prin formular, răspuns în 48 h.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -188,6 +190,45 @@
       background: #f4f6f9;
     }
   </style>
+<!-- date-structurate -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebPage",
+   "@id": "{{domain_url}}/oferta/#pagina",
+   "url": "{{domain_url}}/oferta/",
+   "name": "Cereți o ofertă",
+   "inLanguage": "{{lang}}",
+   "isPartOf": {
+    "@id": "{{domain_url}}/#site"
+   },
+   "publisher": {
+    "@id": "{{domain_url}}/#organizatie"
+   },
+   "description": "Ofertă instantanee cu AI Polistibrick: încărcați planurile și primiți estimarea pe loc. Sau contactați-ne prin formular, răspuns în 48 h."
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "{{country_name}}",
+     "item": "{{domain_url}}/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Cereți o ofertă",
+     "item": "{{domain_url}}/oferta/"
+    }
+   ]
+  }
+ ]
+}
+</script>
 </head>
 <body data-base="../">
 
@@ -202,38 +243,39 @@
       </div>
 
       <div class="wm-stage">
-        <h1>Votre devis, <em>sans attendre.</em></h1>
+        <h1>Oferta dvs., <em>fără așteptare.</em></h1>
         <p class="oferta-lead">
-          Nous pouvons vous donner une estimation <strong>sur place</strong> avec l'IA Polistibrick.
+          Vă putem da o estimare <strong>pe loc</strong> cu Polistibrick AI.
         </p>
         <p class="oferta-thanks">
-          Ou, si vous préférez, continuez via le formulaire de contact — un spécialiste vous répond sous 48 h.
+          Sau, dacă preferați, continuați prin formularul de contact — un specialist vă va răspunde în termen de 48 de ore.
         </p>
 
         <div class="oferta-choices">
           <div class="oferta-choice oferta-choice--primary">
             <span class="oferta-choice-icon" aria-hidden="true">⚡</span>
-            <h2>Générateur IA</h2>
-            <p>Téléversez vos plans (PDF, DWG, DXF) ou décrivez le projet — devis estimatif en quelques minutes.</p>
-            <button type="button" class="btn btn-primary btn-arrow" id="btn-start-ai">Lancer le générateur</button>
+            <h2>Generator AI</h2>
+            <p>Încărcați planurile (PDF, DWG, DXF) sau descrieți proiectul. Primiți oferta estimată în câteva minute.</p>
+            <button type="button" class="btn btn-primary btn-arrow" id="btn-start-ai">Porniți generatorul</button>
           </div>
           <div class="oferta-choice">
             <span class="oferta-choice-icon" aria-hidden="true">✉️</span>
-            <h2>Formulaire de contact</h2>
-            <p>Vous préférez nous écrire directement ? Envoyez les détails — nous revenons vers vous sous 48 h maximum.</p>
-            <a href="../contact/?subject=Demande+de+devis&role=particulier" class="btn btn-ghost btn-arrow">Aller au contact</a>
+            <h2>Formular de contact</h2>
+            <p>Preferați să ne scrieți direct? Trimiteți detaliile. Vă contactăm în maxim 48 de ore.</p>
+            <a href="../contact/?subject=Cerere+de+ofertă&role=particulier" class="btn btn-ghost btn-arrow">Mergi la formular</a>
+            <p style="margin-top:14px;font-size:14px;color:var(--gray);">Vreți întâi o idee de preț? <a href="../preturi/" style="color:var(--red);font-weight:600;">Vezi prețurile pe metru pătrat</a>.</p>
           </div>
         </div>
 
         <div class="oferta-ai-panel" id="oferta-ai-panel" hidden>
           <div class="oferta-ai-panel-head">
-            <h3>Configurateur IA Polistibrick</h3>
-            <button type="button" class="oferta-ai-close" id="btn-close-ai">Fermer</button>
+            <h3>Configurator AI Polistibrick</h3>
+            <button type="button" class="oferta-ai-close" id="btn-close-ai">Închide</button>
           </div>
           <div class="wm-devis-embed">
             <iframe
               id="pb-devis-frame"
-              title="Configurateur de devis Polistibrick"
+              title="Configurator de deviz Polistibrick"
               data-pays="{{devis_app.pays}}"
               data-app-url="{{devis_app.url}}"
               data-preview-url="{{devis_app.preview_url}}"
@@ -278,9 +320,9 @@
     });
   }
 
-  // Pas d'ouverture automatique : le configurateur ne s'affiche que si le client
-  // clique sur « Lancer le générateur ». Arriver sur la page avec le formulaire
-  // déjà déplié le déroute — il n'a rien demandé.
+  // Fără deschidere automată: configuratorul apare doar când clientul apasă
+  // „Porniți generatorul”. O pagină care se deschide cu formularul deja desfăcut
+  // îl derutează: nu a cerut asta.
 })();
 </script>
 </body>

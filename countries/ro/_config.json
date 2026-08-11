@@ -4,22 +4,22 @@
   "country_name": "România",
   "country_name_native": "România",
   "country_flag": "🇷🇴",
-  "domain": "polistibrick.ro",
-  "domain_url": "https://polistibrick.ro",
+  "domain": "polisti.ro",
+  "domain_url": "https://polisti.ro",
   "company": {
-    "name_legal": "Polistibrick România SRL",
-    "name_short": "Polistibrick România",
-    "vat": "RO[completati]",
-    "registration": "J40/[completati]/2024",
-    "address_street": "Prelungirea Ghencea 281",
+    "name_legal": "POLISTIBRICK S.R.L.",
+    "name_short": "Polistibrick",
+    "vat": "RO36332957",
+    "registration": "J2023002053168",
+    "address_street": "Str. Grigore Ionescu nr. 63, bl. T73, sc. 2, et. 4, ap. 42, Sector 2",
     "address_city": "București",
-    "address_zip": "[zip]",
+    "address_zip": "023674",
     "address_country": "România"
   },
   "contact": {
-    "phone": "+40 371 550 550",
-    "phone_raw": "+40371550550",
-    "phone_display": "+40 371 550 550",
+    "phone": "+40 31 630 81 15",
+    "phone_raw": "+40316308115",
+    "phone_display": "031 630 81 15",
     "email_general": "contact@polistibrick.ro",
     "email_offer": "oferta@polistibrick.ro",
     "email_press": "press@polistibrick.ro",
@@ -69,8 +69,8 @@
     "privacy_slug": "confidentialitate"
   },
   "factory": {
-    "name": "Craiova",
-    "address": "[adresa fabrica Craiova]",
+    "name": "Balș (jud. Olt)",
+    "address": "lângă Balș, județul Olt — adresa exactă la cerere",
     "year_built": 2020
   },
   "metadata": {

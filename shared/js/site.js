@@ -39,7 +39,7 @@
           </button>
           <div class="country-switcher-panel" role="menu" aria-hidden="true">
             <div class="country-switcher-header">{{ui.cp_eyebrow}}</div>
-            <a href="#" data-country="ro" data-domain="https://polistibrick.ro" data-folder="ro" class="country-switcher-item"><span class="flag">🇷🇴</span><span class="name">{{ui.country_ro}}</span><span class="domain">polistibrick.ro</span></a>
+            <a href="#" data-country="ro" data-domain="https://polisti.ro" data-folder="ro" class="country-switcher-item"><span class="flag">🇷🇴</span><span class="name">{{ui.country_ro}}</span><span class="domain">polisti.ro</span></a>
             <a href="#" data-country="fr" data-domain="https://polistibrick.fr" data-folder="fr" class="country-switcher-item"><span class="flag">🇫🇷</span><span class="name">{{ui.country_fr}}</span><span class="domain">polistibrick.fr</span></a>
             <a href="#" data-country="it" data-domain="https://polistibrick.it" data-folder="it" class="country-switcher-item"><span class="flag">🇮🇹</span><span class="name">{{ui.country_it}}</span><span class="domain">polistibrick.it</span></a>
             <a href="#" data-country="es" data-domain="https://polistibrick.es" data-folder="es" class="country-switcher-item"><span class="flag">🇪🇸</span><span class="name">{{ui.country_es}}</span><span class="domain">polistibrick.es</span></a>
@@ -67,6 +67,7 @@
           <a href="${BASE}produse/polistisip/">{{ui.planseu_pbk}}</a>
         </div>
       </div>
+      {{ui.nav_link_preturi}}
       <div class="nav-drawer-group">
         <button class="nav-drawer-title" aria-expanded="false">{{ui.solutii}}<span class="nd-caret">▾</span></button>
         <div class="nav-acc">
@@ -137,6 +138,7 @@
         <div class="footer-col">
           <h5>{{ui.footer_h_resurse}}</h5>
           <ul>
+            {{ui.footer_link_preturi}}
             <li><a href="${BASE}proiecte/">{{ui.footer_proiecte_realizate}}</a></li>
             <li><a href="${BASE}economii/">{{ui.calc_econ}}</a></li>
             <li><a href="${BASE}resurse/faq/">{{ui.faq}}</a></li>
@@ -410,7 +412,7 @@ window.PB_SLUGS = {"ro":{},"fr":{"produse":"produits","pentru":"pour","despre":"
   // COUNTRY PICKER — redirects users to their country site
   // ========================================================================
   const POLISTIBRICK_COUNTRIES = {
-    RO: { name: 'România', flag: '🇷🇴', url: 'https://polistibrick.ro' },
+    RO: { name: 'România', flag: '🇷🇴', url: 'https://polisti.ro' },
     ES: { name: 'España', flag: '🇪🇸', url: 'https://polistibrick.es' },
     FR: { name: 'France', flag: '🇫🇷', url: 'https://polistibrick.fr' },
     BE: { name: 'Belgique', flag: '🇧🇪', url: 'https://polistibrick.be' },

@@ -5950,3 +5950,29 @@ h1 em, h2 em, h3 em, h4 em {
 .info-card { width: clamp(320px, 34vw, 500px); max-width: 94%; }
 .info-card h4 { font-size: 14px !important; white-space: nowrap; letter-spacing: 0; }
 .card-team, .card-materials { font-size: 12.5px; }
+
+/* Punte de la grila de sisteme spre pagina de preţuri */
+.sistem-pret-punte {
+  text-align: center;
+  margin: 26px auto 0;
+  max-width: 620px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--gray, #6b6b6b);
+}
+.sistem-pret-punte a {
+  color: var(--red, #e2211c);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+.sistem-pret-punte a:hover { opacity: .78; }
+
+/* Link direct în meniul ☰ — la acelaşi nivel cu titlurile de grup, fără acordeon */
+.nav-drawer-direct {
+  display: flex; align-items: center; justify-content: space-between;
+  font-size: 15px; font-weight: 700; color: #000; text-decoration: none;
+  padding: 13px 12px; border-radius: 10px; transition: background .15s ease;
+}
+.nav-drawer-direct::after { content: '→'; color: var(--red, #e2211c); font-weight: 700; }
+.nav-drawer-direct:hover { background: rgba(255,255,255,0.55); }

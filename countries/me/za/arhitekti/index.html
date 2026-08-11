@@ -437,7 +437,7 @@
 // TODO : quand les PDF seront disponibles, lier directement vers le fichier.
 function requestFiche(ficheName) {
   var params = new URLSearchParams({
-    subject: 'Demande de documentation',
+    subject: 'Zahtjev za dokumentaciju',
     type: 'document',
     doc: ficheName
   });
@@ -447,7 +447,7 @@ function requestFiche(ficheName) {
 // Pour TOUS les autres documents (CAD, BIM, calculs, rapports) — nécessite un rôle pro
 function requestDoc(docName) {
   var params = new URLSearchParams({
-    subject: 'Demande de documentation',
+    subject: 'Zahtjev za dokumentaciju',
     role: 'architecte-bet',
     type: 'document',
     doc: docName

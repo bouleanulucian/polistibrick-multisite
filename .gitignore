@@ -51,3 +51,4 @@ countries/*/images/presence/frame*.png
 
 # Graphify — harta codului (generata local)
 graphify-out/
+.playwright-mcp/

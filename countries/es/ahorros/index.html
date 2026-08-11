@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calculadora de ahorros · Cuánto ahorras con Polistibrick — 25 años</title>
-  <meta name="description" content="Calculadora dynamique qui montre combien vous économisez avec Polistibrick par rapport à la ladrillo classique sur 25 ans. Saisissez les m², le climat, le prix de l'énergie et visualisez la différence réelle.">
+  <meta name="description" content="Calculadora dinámica que muestra cuánto ahorras con Polistibrick frente al ladrillo clásico en 25 años. Introduce los m², el clima, el precio de la energía y visualiza la diferencia real.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -109,25 +109,25 @@
   <div class="container">
     <div class="wm-stage-wrap reveal">
       <div class="wm-watermark" aria-hidden="true">
-        <span class="wm-half wm-top">Économies</span>
-        <span class="wm-half wm-bottom">Économies</span>
+        <span class="wm-half wm-top">Ahorros</span>
+        <span class="wm-half wm-bottom">Ahorros</span>
       </div>
 
       <div class="wm-stage">
 
         <div class="wm-intro">
-<h2>Polistibrick vs ladrillo : <em>vos chiffres.</em></h2>
-          <p>Calculadora dynamique qui vous montre EXACTEMENT combien vous économisez sur l'énergie, l'entretien et les coûts totaux sur 25 ans, pour la maison que vous souhaitez construire. Saisissez vos chiffres, visualisez le résultat en temps réel.</p>
+<h2>Polistibrick vs ladrillo : <em>tus cifras.</em></h2>
+          <p>Calculadora dinámica que te muestra EXACTAMENTE cuánto ahorras en energía, mantenimiento y costes totales en 25 años, para la casa que quieres construir. Introduce tus cifras y visualiza el resultado en tiempo real.</p>
         </div>
 
         <div class="comp-grid">
 
           <!-- FORM -->
           <form id="compForm" class="comp-form-card">
-            <h3>Les données de votre maison.</h3>
+            <h3>Los datos de tu casa.</h3>
 
             <div class="form-row">
-              <label class="form-label" for="cSurface">Surface de la maison (m²)</label>
+              <label class="form-label" for="cSurface">Superficie de la casa (m²)</label>
               <input class="form-input" type="number" id="cSurface" value="150" min="50" max="1000" step="10">
             </div>
 
@@ -137,7 +137,7 @@
                 <option value="10">10 ans</option>
                 <option value="15">15 ans</option>
                 <option value="20">20 ans</option>
-                <option value="25" selected>25 ans (recommandé)</option>
+                <option value="25" selected>25 años (recomendado)</option>
                 <option value="30">30 ans</option>
                 <option value="40">40 ans</option>
                 <option value="50">50 ans</option>
@@ -148,10 +148,10 @@
               <label class="form-label" for="cClimate">Climat</label>
               <select class="form-select" id="cClimate">
                 <option value="cold" data-brick-energy="180" data-poli-energy="45">Froid (zones montagneuses, nord — &lt; 8 °C en moyenne)</option>
-                <option value="temperate" data-brick-energy="130" data-poli-energy="35" selected>Tempéré (Europe centrale — 8-14 °C en moyenne)</option>
-                <option value="warm" data-brick-energy="100" data-poli-energy="25">Chaud (sud, méditerranéen — &gt; 14 °C en moyenne)</option>
+                <option value="temperate" data-brick-energy="130" data-poli-energy="35" selected>Templado (Europa central — 8-14 °C de media)</option>
+                <option value="warm" data-brick-energy="100" data-poli-energy="25">Cálido (sur, mediterráneo — &gt; 14 °C de media)</option>
               </select>
-              <p style="font-size:11px;color:var(--gray);margin-top:6px;">Le calcul inclut à la fois le calefacción (invierno) et la climatisation (été).</p>
+              <p style="font-size:11px;color:var(--gray);margin-top:6px;">El cálculo incluye tanto la calefacción (invierno) como la climatización (verano).</p>
             </div>
 
             <div class="form-row">
@@ -163,21 +163,21 @@
             <div class="form-row">
               <label class="form-label" for="cEnergyInflation">Aumento anual del precio de la energía (%)</label>
               <select class="form-select" id="cEnergyInflation">
-                <option value="0">0 % — prix constant (optimiste)</option>
-                <option value="2">2 % — inflation stable</option>
-                <option value="4" selected>4 % — réaliste (moyenne UE 2010-2024)</option>
-                <option value="6">6 % — pessimiste (crise énergétique)</option>
+                <option value="0">0% — precio constante (optimista)</option>
+                <option value="2">2 % — inflación estable</option>
+                <option value="4" selected>4 % — realista (media UE 2010-2024)</option>
+                <option value="6">6 % — pesimista (crisis energética)</option>
               </select>
             </div>
 
             <hr style="border:0;border-top:1px solid var(--border);margin:20px 0;">
 
-            <p style="font-size:12.5px;color:var(--gray);margin-bottom:12px;">💡 Le calcul inclut :</p>
+            <p style="font-size:12.5px;color:var(--gray);margin-bottom:12px;">💡 El cálculo incluye:</p>
             <ul style="display:flex;flex-direction:column;gap:5px;font-size:12.5px;color:var(--ink-soft);padding-left:4px;list-style:none;">
-              <li>✓ Coût de construction (panneaux + main-d'œuvre, hors finitions)</li>
-              <li>✓ Coût de l'énergie sur les années sélectionnées</li>
-              <li>✓ Coût d'entretien estimé</li>
-              <li>✓ Le tout projeté avec l'inflation choisie</li>
+              <li>✓ Coste de construcción (paneles + mano de obra, sin acabados)</li>
+              <li>✓ Coste energético en los años seleccionados</li>
+              <li>✓ Coste de mantenimiento estimado</li>
+              <li>✓ Todo proyectado con la inflación elegida</li>
             </ul>
           </form>
 
@@ -205,7 +205,7 @@
 
             <div style="background:white;border:1px solid var(--border);border-radius:14px;margin-top:18px;overflow:hidden;">
               <div class="comp-row is-header">
-                <span>Coût</span>
+                <span>Coste</span>
                 <span class="num">Ladrillo</span>
                 <span class="num">Polistibrick</span>
               </div>
@@ -215,12 +215,12 @@
                 <span class="num" id="poliBuild">— €</span>
               </div>
               <div class="comp-row">
-                <span>Énergie (cumulé)</span>
+                <span>Energía (acumulado)</span>
                 <span class="num" id="brickEnergy">— €</span>
                 <span class="num num-good" id="poliEnergy">— €</span>
               </div>
               <div class="comp-row">
-                <span>Entretien</span>
+                <span>Mantenimiento</span>
                 <span class="num" id="brickMaint">— €</span>
                 <span class="num num-good" id="poliMaint">— €</span>
               </div>
@@ -244,24 +244,24 @@
 <section class="section section--cream">
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 40px;">
-      <h2>Méthodologie <em>transparente.</em></h2>
+      <h2>Metodología <em>transparente.</em></h2>
     </div>
     <div class="grid grid-2 reveal" style="max-width:980px;margin:0 auto;">
       <div class="card">
-        <h4 style="margin-bottom:12px;">Coût de construction</h4>
-        <p style="font-size:14px;line-height:1.6;">Ladrillo : ~1 000 €/m² en standard non conforme. Polistibrick : ~1 050 €/m² (+5 %) pour une casa pasiva A+++. Inclut les matériaux et la main-d'œuvre, hors finitions intérieures ou extérieures.</p>
+        <h4 style="margin-bottom:12px;">Coste de construcción</h4>
+        <p style="font-size:14px;line-height:1.6;">Ladrillo: ~1.000 €/m² en estándar no conforme. Polistibrick: ~1.050 €/m² (+5 %) para una casa pasiva A+++. Incluye materiales y mano de obra, sin acabados interiores ni exteriores.</p>
       </div>
       <div class="card">
-        <h4 style="margin-bottom:12px;">Coût de l'énergie</h4>
-        <p style="font-size:14px;line-height:1.6;">Basé sur la consommation typique par climat : la ladrillo consomme en moyenne 100-180 kWh/m²/an pour le calefacción et la climatisation. Polistibrick (pasiva) consume 25-45 kWh/m²/año. Réduction moyenne de 70 %.</p>
+        <h4 style="margin-bottom:12px;">Coste energético</h4>
+        <p style="font-size:14px;line-height:1.6;">Basado en el consumo típico por clima: el ladrillo consume de media 100-180 kWh/m²/año para calefacción y climatización. Polistibrick (pasiva) consume 25-45 kWh/m²/año. Reducción media del 70 %.</p>
       </div>
       <div class="card">
-        <h4 style="margin-bottom:12px;">Entretien sur 25 ans</h4>
-        <p style="font-size:14px;line-height:1.6;">Ladrillo : rénovation de l'aislamiento thermique à 15 ans (~5 000 €), réparations dues à l'humidité, ravalement de façade. Polistibrick : rien de tout cela — l'EPS n'absorbe pas l'eau, ne se dégrade pas, la structure monolithique ne se fissure pas.</p>
+        <h4 style="margin-bottom:12px;">Mantenimiento durante 25 años</h4>
+        <p style="font-size:14px;line-height:1.6;">Ladrillo: renovación del aislamiento térmico a los 15 años (~5.000 €), reparaciones por humedad, rehabilitación de fachada. Polistibrick: nada de eso — el EPS no absorbe agua, no se degrada, la estructura monolítica no se fisura.</p>
       </div>
       <div class="card">
-        <h4 style="margin-bottom:12px;">Inflation énergétique</h4>
-        <p style="font-size:14px;line-height:1.6;">Au cours des 14 dernières années, le prix de l'électricité dans l'UE a augmenté d'environ 4 % par an. Notre calcul intègre la capitalisation annuelle — l'économie réelle sur 25 ans est supérieure à la différence d'aujourd'hui × 25.</p>
+        <h4 style="margin-bottom:12px;">Inflación energética</h4>
+        <p style="font-size:14px;line-height:1.6;">En los últimos 14 años, el precio de la electricidad en la UE ha aumentado unos 4 % anuales. Nuestro cálculo integra la capitalización anual — el ahorro real en 25 años supera la diferencia de hoy × 25.</p>
       </div>
     </div>
   </div>
@@ -269,8 +269,8 @@
 
 <section class="section section--tight">
   <div class="cta-band reveal">
-    <h2>Convencido por <em>vos chiffres ?</em></h2>
-    <p>Demandez un devis personnalisé Polistibrick — un calcul précis pour votre projet, sans engagement, sans coûts cachés.</p>
+    <h2>Convencido por <em>tus cifras?</em></h2>
+    <p>Pide un presupuesto personalizado Polistibrick — un cálculo preciso para tu proyecto, sin compromiso, sin costes ocultos.</p>
     <div class="cta-band-actions">
       <a href="../presupuesto/" class="btn btn-on-dark btn-large btn-arrow">Pide un presupuesto personalizado</a>
       <a href="../contact/" class="btn btn-on-dark-ghost btn-large">Habla con un especialista</a>

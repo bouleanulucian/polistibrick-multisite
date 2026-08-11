@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mentions légales · Polistibrick</title>
-  <meta name="description" content="Mentions légales du site polistibrick.fr — éditeur, hébergeur, contact et informations réglementaires.">
+  <title>Note legali · Polistibrick</title>
+  <meta name="description" content="Note legali du site polistibrick.it — éditeur, hébergeur, contact et informations réglementaires.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -39,14 +39,14 @@
   <div class="container">
     <div class="wm-stage-wrap reveal">
       <div class="wm-watermark" aria-hidden="true">
-        <span class="wm-half wm-top">Légal</span>
-        <span class="wm-half wm-bottom">Légal</span>
+        <span class="wm-half wm-top">Note legali</span>
+        <span class="wm-half wm-bottom">Note legali</span>
       </div>
       <div class="wm-stage">
         <div class="wm-content">
           <div class="wm-text">
-          <h1>Mentions légales</h1>
-            <p>Informations réglementaires sur l'éditeur et l'hébergeur du site polistibrick.fr, conformément à la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique.</p>
+          <h1>Note legali</h1>
+            <p>Informazioni normative sull'editore e l'host del sito polistibrick.it, in conformità con la legge n° 2004-575 del 21 giugno 2004 per la fiducia nell'economia digitale.</p>
           </div>
           <div class="wm-visual" style="background: linear-gradient(135deg, #1f2022 0%, #111213 100%); display: flex; flex-direction: column; gap: 20px; align-items: center; justify-content: center; border: none; color: #fff; box-shadow: var(--shadow-lg); padding: 24px; box-sizing: border-box;">
             <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -57,8 +57,8 @@
               <rect x="18" y="51" width="32" height="3" rx="1.5" fill="rgba(255,255,255,0.25)"/>
             </svg>
             <div style="text-align: center;">
-              <div style="font-family: var(--serif); font-size: 20px; font-weight: 500; margin-bottom: 6px;">polistibrick.fr</div>
-              <div style="font-size: 11px; color: rgba(255,255,255,0.60); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600;">Éditeur · Hébergeur</div>
+              <div style="font-family: var(--serif); font-size: 20px; font-weight: 500; margin-bottom: 6px;">polistibrick.it</div>
+              <div style="font-size: 11px; color: rgba(255,255,255,0.60); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600;">Editore · Ospitante</div>
             </div>
           </div>
         </div>
@@ -70,30 +70,30 @@
 <section class="section">
   <div class="container container--narrow">
     <div class="reveal">
-      <h2 style="margin:32px 0 12px;">1. Éditeur du site</h2>
-      <p style="font-size:15px;margin-bottom:14px;">Le site <strong>{{domain}}</strong> est édité par la société <strong>{{company.name_legal}}</strong>, société à responsabilité limitée au capital de [à compléter si besoin] euros, immatriculée au RCS de Versailles sous le numéro <strong>{{company.registration}}</strong> (SIRET du siège : 984 804 872 00021), numéro de TVA intracommunautaire : <strong>{{company.vat}}</strong>.</p>
-      <p style="font-size:15px;margin-bottom:14px;"><strong>Siège social :</strong> {{company.address_street}}, {{company.address_zip}} {{company.address_city}}, {{company.address_country}}.<br>
-      <strong>Téléphone :</strong> <a href="tel:{{contact.phone_raw}}" style="color:var(--red);">{{contact.phone_display}}</a><br>
+      <h2 style="margin:32px 0 12px;">1. Editore del sito</h2>
+      <p style="font-size:15px;margin-bottom:14px;">Le site <strong>{{domain}}</strong> È pubblicato dalla società <strong>{{company.name_legal}}</strong>, società a responsabilità limitata con capitale di [da completare se necessario] euro, immatricolata al RCS di Versailles con il numero <strong>{{company.registration}}</strong> (SIRET della sede: 984 804 872 00021), numero di IVA intracomunitaria: <strong>{{company.vat}}</strong>.</p>
+      <p style="font-size:15px;margin-bottom:14px;"><strong>Sede sociale:</strong> {{company.address_street}}, {{company.address_zip}} {{company.address_city}}, {{company.address_country}}.<br>
+      <strong>Telefono:</strong> <a href="tel:{{contact.phone_raw}}" style="color:var(--red);">{{contact.phone_display}}</a><br>
       <strong>Email :</strong> <a href="#" data-m64="{{contact.email_general|b64}}" style="color:var(--red);">Email</a></p>
 
       <h2 style="margin:32px 0 12px;">2. Directeur de la publication</h2>
       <p style="font-size:15px;margin-bottom:14px;"><strong>{{legal.publication_director}}</strong>, en qualité de représentant légal de {{company.name_short}}.</p>
 
-      <h2 style="margin:32px 0 12px;">3. Hébergeur</h2>
-      <p style="font-size:15px;margin-bottom:14px;">Le site est hébergé par <strong>{{legal.hosting_provider}}</strong>, {{legal.hosting_address}}.<br>
+      <h2 style="margin:32px 0 12px;">3. Hosting provider</h2>
+      <p style="font-size:15px;margin-bottom:14px;">Il sito è ospitato da <strong>{{legal.hosting_provider}}</strong>, {{legal.hosting_address}}.<br>
       Site web : <a href="https://www.cloudflare.com" style="color:var(--red);" rel="noopener" target="_blank">cloudflare.com</a></p>
 
-      <h2 style="margin:32px 0 12px;">4. Propriété intellectuelle</h2>
-      <p style="font-size:15px;margin-bottom:14px;">L'ensemble du contenu du site (textes, images, vidéos, logos, marques, brevets) est la propriété exclusive de {{company.name_legal}} ou de ses partenaires. Toute reproduction, représentation ou diffusion, totale ou partielle, sans autorisation écrite préalable est interdite.</p>
+      <h2 style="margin:32px 0 12px;">4. Proprietà intellettuale</h2>
+      <p style="font-size:15px;margin-bottom:14px;">Tutti i contenuti del sito (testi, immagini, video, loghi, marchi, brevetti) sono di proprietà esclusiva di {{company.name_legal}} o dei suoi partner. Sono vietate la riproduzione, la rappresentazione o la diffusione, totale o parziale, senza previa autorizzazione scritta.</p>
 
-      <h2 style="margin:32px 0 12px;">5. Données personnelles</h2>
-      <p style="font-size:15px;margin-bottom:14px;">Per toute information relative au traitement de vos données personnelles, consultez notre <a href="../privacy/" style="color:var(--red);">politique de confidentialité (RGPD)</a>. Per exercer vos droits : <a href="#" data-m64="{{legal.privacy_contact_email|b64}}" style="color:var(--red);">Email</a>.</p>
+      <h2 style="margin:32px 0 12px;">5. Dati personali</h2>
+      <p style="font-size:15px;margin-bottom:14px;">Per tutte le informazioni relative al trattamento dei vostri dati personali, consultate il nostro <a href="../privacy/" style="color:var(--red);">informativa sulla privacy (GDPR)</a>. Per esercitare i vostri diritti: <a href="#" data-m64="{{legal.privacy_contact_email|b64}}" style="color:var(--red);">Email</a>.</p>
 
-      <h2 style="margin:32px 0 12px;">6. Cookie</h2>
-      <p style="font-size:15px;margin-bottom:14px;">Consultez notre <a href="../cookie/" style="color:var(--red);">politique de cookies</a> pour connaître les traceurs utilisés et gérer vos préférences.</p>
+      <h2 style="margin:32px 0 12px;">6. informativa sui cookie</h2>
+      <p style="font-size:15px;margin-bottom:14px;">Consultate la nostra <a href="../cookie/" style="color:var(--red);">informativa sui cookie</a> Per conoscere i tracciatori utilizzati e gestire le vostre preferenze.</p>
 
       <h2 style="margin:32px 0 12px;">7. Contatti</h2>
-      <p style="font-size:15px;margin-bottom:14px;">Per toute question relative au site ou à son contenu : <a href="#" data-m64="{{contact.email_general|b64}}" style="color:var(--red);">Email</a> ou via le <a href="../../contact/" style="color:var(--red);">formulaire de contact</a>.</p>
+      <p style="font-size:15px;margin-bottom:14px;">Per qualsiasi domanda relativa al sito o al suo contenuto: <a href="#" data-m64="{{contact.email_general|b64}}" style="color:var(--red);">Email</a> ou via le <a href="../../contact/" style="color:var(--red);">formulaire de contact</a>.</p>
     </div>
   </div>
 </section>

@@ -3,14 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Le montage Polistibrick · Une maison montée à la main, en quelques săptămâni</title>
-  <meta name="description" content="Comment se monte une maison Polistibrick : assemblage à sec, sans grue, par 2 à 3 personnes. De la fondation au cofraj fermé en quelques săptămâni, monolithique en 24 h après le coulage.">
+  <title>Montaj Polistibrick: casa la 80% în 4 săptămâni</title>
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+  <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+  <meta name="description" content="Se montează manual, cu trei oameni, fără macara și fără utilaj greu. Betonul se toarnă pe loc, iar structura devine monolitică în 24 de ore.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/site.css">
   <style>
-    /* --- Hero watermark (même pattern que les autres sous-pages) --- */
+    /* --- Filigran hero (același tipar ca la celelalte subpagini) --- */
     .wm-section { padding: clamp(60px, 8vw, 100px) 0; background: var(--cream); }
     .wm-stage-wrap { position: relative; margin: 70px auto 0; max-width: 1480px; }
     .wm-watermark {
@@ -40,7 +42,7 @@
     }
     @media (max-width: 768px) { .wm-stage { padding: 28px 20px; } }
 
-    /* --- Vidéo du montage --- */
+    /* --- Videoclipul montajului --- */
     .montage-video {
       position: relative; width: 100%; aspect-ratio: 16/9;
       border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-md);
@@ -64,7 +66,7 @@
     .montage-video--placeholder .mv-label span { display: block; font-family: var(--sans); font-size: 13px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.8; margin-top: 8px; }
     .montage-video-caption { text-align: center; font-size: 14px; color: var(--gray); margin-top: 16px; }
 
-    /* --- Étapes de montage --- */
+    /* --- Pașii montajului --- */
     .montage-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
     .montage-step { background: var(--cream-light); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; }
     .montage-step .ms-img { position: relative; aspect-ratio: 4/3; overflow: hidden; background: var(--cream-dark); }
@@ -76,15 +78,54 @@
     @media (max-width: 1100px) { .montage-steps { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 560px) { .montage-steps { grid-template-columns: 1fr; } }
 
-    /* bande de mise en avant après les étapes */
+    /* banda de evidențiere după pași */
     .montage-note { margin-top: 36px; background: var(--red-soft); border: 1px solid rgba(200,16,46,0.18); border-radius: 16px; padding: 24px 28px; text-align: center; font-size: 16px; color: var(--ink); }
     .montage-note strong { color: var(--red); }
 
-    /* bande pro */
+    /* banda pro */
     .montage-pro { display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; background: var(--cream-light); border:1px solid var(--border); border-radius:20px; padding:28px 32px; }
     .montage-pro p { font-size:15px; color:var(--gray); max-width:640px; margin:0; }
     .montage-pro p strong { color: var(--ink); }
   </style>
+<!-- date-structurate -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebPage",
+   "@id": "{{domain_url}}/montaj/#pagina",
+   "url": "{{domain_url}}/montaj/",
+   "name": "Montajul Polistibrick",
+   "inLanguage": "{{lang}}",
+   "isPartOf": {
+    "@id": "{{domain_url}}/#site"
+   },
+   "publisher": {
+    "@id": "{{domain_url}}/#organizatie"
+   },
+   "description": "Cum se montează o casă Polistibrick: asamblare uscată, fără macara, cu 2–3 persoane. De la fundație la cofraj închis în câteva săptămâni, monolitică în 24 h după turnare."
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "{{country_name}}",
+     "item": "{{domain_url}}/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Montajul Polistibrick",
+     "item": "{{domain_url}}/montaj/"
+    }
+   ]
+  }
+ ]
+}
+</script>
 </head>
 <body data-base="../">
 
@@ -95,17 +136,17 @@
   <div class="container">
     <div class="wm-stage-wrap reveal">
       <div class="wm-watermark" aria-hidden="true">
-        <span class="wm-half wm-top">Montage</span>
-        <span class="wm-half wm-bottom">Montage</span>
+        <span class="wm-half wm-top">Montaj</span>
+        <span class="wm-half wm-bottom">Montaj</span>
       </div>
       <div class="wm-stage">
         <div class="wm-content">
           <div class="wm-text">
-          <h1>Montée à la main, <em>en quelques săptămâni.</em></h1>
-            <p>Pas de grue. Pas de gros œuvre interminable. Le système Polistibrick s'assemble <strong>à sec</strong>, élément par élément, par une équipe de <strong>2 à 3 personnes</strong> — jusqu'au cofraj fermé, prêt pour le coulage du beton.</p>
+          <h1>Ridicată manual, <em>în câteva săptămâni.</em></h1>
+            <p>Fără macara. Fără structură interminabilă. Sistemul Polistibrick se asamblează <strong>uscat</strong>, element cu element, de o echipă de <strong>2–3 persoane</strong> — până la cofrajul închis, gata pentru turnarea betonului.</p>
           </div>
           <div class="wm-visual">
-            <img src="../images/construction/stage1-cofraj.jpg" alt="Montage des pereți Polistibrick sur le chantier" loading="eager">
+            <img src="../images/construction/stage1-cofraj.jpg" alt="Montaj pereți Polistibrick pe șantier" loading="eager">
           </div>
         </div>
       </div>
@@ -113,119 +154,119 @@
   </div>
 </section>
 
-<!-- VIDÉO -->
+<!-- VIDEO -->
 <section class="section section--tight">
   <div class="container container--narrow reveal">
-    <!-- ▼▼▼ VIDÉO DU MONTAGE — À REMPLACER QUAND ELLE EST PRÊTE ▼▼▼
-         Mettez le fichier vidéo dans  images/montaj/  puis remplacez TOUT le bloc
-         <div class="montage-video montage-video--placeholder"> ... </div>  par :
+    <!-- ▼▼▼ VIDEOCLIPUL MONTAJULUI — DE ÎNLOCUIT CÂND E GATA ▼▼▼
+         Pune fișierul video în  images/montaj/  apoi înlocuiește TOT blocul
+         <div class="montage-video montage-video--placeholder"> ... </div>  cu:
 
          <video class="montage-video" controls playsinline preload="metadata"
                 poster="../images/construction/stage4-final.jpg">
            <source src="../images/montaj/montage-complet.mp4" type="video/mp4">
          </video>
          ▲▲▲ -->
-    <div class="montage-video montage-video--placeholder" role="img" aria-label="Vidéo du montage — bientôt disponible">
+    <div class="montage-video montage-video--placeholder" role="img" aria-label="Videoclip montaj — în curând">
       <div class="mv-play" aria-hidden="true">▶</div>
-      <div class="mv-label">Le montage en vidéo<span>Bientôt disponible</span></div>
+      <div class="mv-label">Montajul în video<span>În curând</span></div>
     </div>
-    <p class="montage-video-caption">Le montage complet, du sol au cofraj fermé.</p>
+    <p class="montage-video-caption">Montajul complet, de la sol la cofrajul închis.</p>
   </div>
 </section>
 
-<!-- ÉTAPES -->
+<!-- PAȘI -->
 <section class="section section--cream">
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 50px;">
-      <h2>O casa completa <em>în 4 pași.</em></h2>
-      <p class="lead" style="margin-top:16px;">De la fondation au cofraj fermé. L'ensemble du processus en quelques săptămâni, avec seulement 2 à 3 personnes sur le chantier — sans mortier et sans perte d'izolație.</p>
+      <h2>O casă completă <em>în 4 pași.</em></h2>
+      <p class="lead" style="margin-top:16px;">De la fundație la cofrajul închis. Întregul proces în câteva săptămâni, cu doar 2–3 persoane pe șantier — fără mortar și fără pierderi de izolație.</p>
     </div>
 
     <div class="montage-steps reveal">
       <article class="montage-step">
-        <div class="ms-img"><span class="ms-num">1</span><img src="../images/construction/stage1-cofraj.jpg" alt="Cofraj : pereți EPS dressés avec étaiement" loading="lazy"></div>
-        <div class="ms-body"><h3>Cofraj</h3><p>Les pereți EPS sont dressés et fixés sur la fondation avec un étaiement latéral en bois. Assemblage à sec : sans mortier, sans perte d'izolație.</p></div>
+        <div class="ms-img"><span class="ms-num">1</span><img src="../images/construction/stage1-cofraj.jpg" alt="Cofraj: pereți EPS ridicați cu sprijiniri" loading="lazy"></div>
+        <div class="ms-body"><h3>Cofraj</h3><p>Panourile EPS sunt ridicate și fixate pe fundație cu sprijiniri laterale din lemn. Asamblare uscată: fără mortar, fără pierderi de izolație.</p></div>
       </article>
       <article class="montage-step">
-        <div class="ms-img"><span class="ms-num">2</span><img src="../images/construction/stage3-planseu.jpg" alt="Planșeu PBK posé" loading="lazy"></div>
-        <div class="ms-body"><h3>Planșeu</h3><p>Les panneaux PBK 250 sont posés horizontalement — couches EPS-Graphite + fibrociment, prêtes à recevoir l'armature.</p></div>
+        <div class="ms-img"><span class="ms-num">2</span><img src="../images/construction/stage3-planseu.jpg" alt="Planșeu PBK montat" loading="lazy"></div>
+        <div class="ms-body"><h3>Planșeu</h3><p>Panourile PBK 250 sunt așezate orizontal — straturi EPS-Grafit + fibrociment, gata să primească armătura.</p></div>
       </article>
       <article class="montage-step">
-        <div class="ms-img"><span class="ms-num">3</span><img src="../images/construction/stage2-fierbeton.jpg" alt="Fier-beton entre les nervures" loading="lazy"></div>
-        <div class="ms-body"><h3>Armătură</h3><p>Les treillis d'acier se placent entre les nervures EPS-Graphite. C'est ce qui crée la liaison monolithique entre les pereți et le plancher.</p></div>
+        <div class="ms-img"><span class="ms-num">3</span><img src="../images/construction/stage2-fierbeton.jpg" alt="Fier-beton între nervuri" loading="lazy"></div>
+        <div class="ms-body"><h3>Armătură</h3><p>Plasele de oțel se așază între nervurile EPS-Grafit. Aceasta creează legătura monolitică între pereți și planșeu.</p></div>
       </article>
       <article class="montage-step">
-        <div class="ms-img"><span class="ms-num">4</span><img src="../images/construction/stage4-final.jpg" alt="Cofraj fermé, prêt pour le coulage" loading="lazy"></div>
-        <div class="ms-body"><h3>Închiderea cofrajului</h3><p>Tous les éléments sont assemblés et vérifiés. La maison est désormais prête pour le coulage du beton.</p></div>
+        <div class="ms-img"><span class="ms-num">4</span><img src="../images/construction/stage4-final.jpg" alt="Cofraj închis, gata pentru turnare" loading="lazy"></div>
+        <div class="ms-body"><h3>Închiderea cofrajului</h3><p>Toate elementele sunt asamblate și verificate. Casa este acum gata pentru turnarea betonului.</p></div>
       </article>
     </div>
 
-    <div class="montage-note reveal">Après le coulage, la structure devient <strong>monolitică în 24 hours</strong> — pereți, planșee et acoperiș isolés en continu, sans ponts thermiques.</div>
+    <div class="montage-note reveal">După turnare, structura devine <strong>monolitică în 24 de ore</strong> — pereți, planșee și acoperiș izolate continuu, fără punți termice.</div>
   </div>
 </section>
 
-<!-- POURQUOI DIFFÉRENT -->
+<!-- DE CE E DIFERIT -->
 <section class="section">
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 50px;">
-      <h2>Un chantier <em>plus simple, plus rapide, plus propre.</em></h2>
+      <h2>Un șantier <em>mai simplu, mai rapid, mai curat.</em></h2>
     </div>
     <div class="grid grid-3 reveal">
-      <div class="card card--cream"><h3 style="margin-bottom:12px;">Sans grue</h3><p style="font-size:15px;">Les éléments sont légers et se manipulent à la main. Aucun engin de levage lourd, aucun accès spécial requis sur le terrain.</p></div>
-      <div class="card card--cream"><h3 style="margin-bottom:12px;">2 à 3 personnes</h3><p style="font-size:15px;">Une petite équipe suffit. Moins de main-d'œuvre, moins de coordination, moins de coûts de chantier.</p></div>
-      <div class="card card--cream"><h3 style="margin-bottom:12px;">À sec, sans mortier</h3><p style="font-size:15px;">L'assemblage est mécanique et à sec. Pas de temps de séchage entre les étapes, pas de météo qui bloque le chantier.</p></div>
-      <div class="card card--cream"><h3 style="margin-bottom:12px;">Quelques săptămâni</h3><p style="font-size:15px;">Le gros œuvre fermé en săptămâni au lieu de mois. Vous emménagez plus tôt et payez moins d'intérêts de chantier.</p></div>
-      <div class="card card--cream"><h3 style="margin-bottom:12px;">Monolithique en 24 h</h3><p style="font-size:15px;">Après le coulage, beton et izolație ne font plus qu'un. Une coquille continue, sans joints ni ponts thermiques.</p></div>
-      <div class="card card--cream"><h3 style="margin-bottom:12px;">Propre et précis</h3><p style="font-size:15px;">Peu de déchets, peu de poussière, des tolérances d'usine. Un chantier net du début à la fin.</p></div>
+      <div class="card card--cream"><h3 style="margin-bottom:12px;">Fără macara</h3><p style="font-size:15px;">Elementele sunt ușoare și se manipulează manual. Niciun utilaj greu de ridicat, niciun acces special pe teren.</p></div>
+      <div class="card card--cream"><h3 style="margin-bottom:12px;">2–3 persoane</h3><p style="font-size:15px;">O echipă mică e suficientă. Mai puțină manoperă, mai puțină coordonare, costuri mai mici de șantier.</p></div>
+      <div class="card card--cream"><h3 style="margin-bottom:12px;">Uscat, fără mortar</h3><p style="font-size:15px;">Asamblarea e mecanică și uscată. Fără timp de uscare între etape, fără vreme care blochează șantierul.</p></div>
+      <div class="card card--cream"><h3 style="margin-bottom:12px;">Câteva săptămâni</h3><p style="font-size:15px;">Structura se închide în săptămâni, nu luni. Te muți mai repede și plătești mai puține dobânzi de șantier.</p></div>
+      <div class="card card--cream"><h3 style="margin-bottom:12px;">Monolitică în 24 h</h3><p style="font-size:15px;">După turnare, betonul și izolația devin unul singur. O cochilie continuă, fără rosturi sau punți termice.</p></div>
+      <div class="card card--cream"><h3 style="margin-bottom:12px;">Curat și precis</h3><p style="font-size:15px;">Puține deșeuri, puțin praf, toleranțe de fabrică. Un șantier curat de la început până la sfârșit.</p></div>
     </div>
   </div>
 </section>
 
-<!-- EN CHIFFRES -->
+<!-- ÎN CIFRE -->
 <section class="section section--cream">
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 50px;">
-      <h2>Le chantier, <em>réduit à l'essentiel.</em></h2>
+      <h2>Șantierul, <em>redus la esențial.</em></h2>
     </div>
     <div class="grid grid-4 reveal">
-      <div class="fact"><span class="fact-num">~1<small> mois</small></span><span class="fact-label">Gros œuvre fermé (vs 4–5 mois)</span></div>
-      <div class="fact"><span class="fact-num">2–3</span><span class="fact-label">Personnes sur le chantier</span></div>
-      <div class="fact"><span class="fact-num">0</span><span class="fact-label">Grue ou engin de levage lourd</span></div>
-      <div class="fact"><span class="fact-num">24<small> h</small></span><span class="fact-label">Pentru devenir monolithique</span></div>
+      <div class="fact"><span class="fact-num">~1<small> lună</small></span><span class="fact-label">Structură închisă (vs 4–5 luni)</span></div>
+      <div class="fact"><span class="fact-num">2–3</span><span class="fact-label">Persoane pe șantier</span></div>
+      <div class="fact"><span class="fact-num">0</span><span class="fact-label">Macara sau utilaj greu de ridicat</span></div>
+      <div class="fact"><span class="fact-num">24<small> h</small></span><span class="fact-label">Până devine monolitică</span></div>
     </div>
   </div>
 </section>
 
-<!-- PAR ÉLÉMENT -->
+<!-- PE ELEMENT -->
 <section class="section">
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 50px;">
-      <h2>Trois éléments, <em>une seule coquille.</em></h2>
+      <h2>Trei elemente, <em>o singură cochilie.</em></h2>
     </div>
     <div class="grid grid-3 reveal">
       <a href="../produse/polistibrick/#cofraj" class="card card-hover" style="text-decoration:none;color:inherit;">
         
           <h3 style="margin-bottom:10px;">Pereți MBK</h3>
-        <p style="font-size:15px;margin-bottom:18px;">Le cofraj isolant qui se dresse à la main. Izolație intégrée, prêt pour le beton.</p>
-        <span style="color:var(--red);font-weight:600;font-size:13px;">Voir les pereți MBK →</span>
+        <p style="font-size:15px;margin-bottom:18px;">Cofrajul izolant ridicat manual. Izolație integrată, gata pentru beton.</p>
+        <span style="color:var(--red);font-weight:600;font-size:13px;">Vezi pereții MBK →</span>
       </a>
-      <a href="../produse/polistibrick/#plancher" class="card card-hover" style="text-decoration:none;color:inherit;">
+      <a href="../produse/polistibrick/#planșeu" class="card card-hover" style="text-decoration:none;color:inherit;">
         
           <h3 style="margin-bottom:10px;">Planșee PBK</h3>
-        <p style="font-size:15px;margin-bottom:18px;">Les dalles porteuses EPS-Graphite + fibrociment, posées horizontalement et armées sur fața locului.</p>
-        <span style="color:var(--red);font-weight:600;font-size:13px;">Voir les planșee PBK →</span>
+        <p style="font-size:15px;margin-bottom:18px;">Plăcile portante EPS-Grafit + fibrociment, așezate orizontal și armate pe fața locului.</p>
+        <span style="color:var(--red);font-weight:600;font-size:13px;">Vezi planșeele PBK →</span>
       </a>
       <a href="../produse/acoperis-tbk-sip250/" class="card card-hover" style="text-decoration:none;color:inherit;">
         
           <h3 style="margin-bottom:10px;">Acoperiș TBK</h3>
-        <p style="font-size:15px;margin-bottom:18px;">La acoperișure Passivhaus qui sort d'usine prête à poser. Étanche à l'air, sans pont thermique.</p>
-        <span style="color:var(--red);font-weight:600;font-size:13px;">Voir le acoperiș TBK →</span>
+        <p style="font-size:15px;margin-bottom:18px;">Acoperișul Passivhaus care iese din fabrică gata de montaj. Etanș la aer, fără punte termică.</p>
+        <span style="color:var(--red);font-weight:600;font-size:13px;">Vezi acoperișul TBK →</span>
       </a>
     </div>
 
     <div class="montage-pro reveal" style="margin-top:36px;">
-      <p><strong>Vous êtes constructeur ?</strong> Manuels de montage détaillés, vidéos par élément (pereți, planșee, acoperiș) et fiches techniques sont disponibles dans l'espace professionnel.</p>
-      <a href="../pentru/constructori/" class="btn btn-primary btn-arrow">Espace constructeurs</a>
+      <p><strong>Ești constructor?</strong> Manuale de montaj detaliate, videoclipuri pe element (pereți, planșee, acoperiș) și fișe tehnice sunt disponibile în spațiul profesional.</p>
+      <a href="../pentru/constructori/" class="btn btn-primary btn-arrow">Spațiu constructori</a>
     </div>
   </div>
 </section>
@@ -233,11 +274,11 @@
 <!-- CTA -->
 <section class="section section--tight">
   <div class="cta-band reveal">
-    <h2>Prêt à voir votre maison <em>sortir de terre ?</em></h2>
-    <p>Envoyez-nous votre plan et recevez un devis personnalisé sous 48 heures. Fără obligație, fără costuri ascunse.</p>
+    <h2>Gata să vezi casa ta <em>ridicându-se?</em></h2>
+    <p>Trimite-ne planul tău și primește o ofertă personalizată în 48 de ore. Fără obligație, fără costuri ascunse.</p>
     <div class="cta-band-actions">
       <a href="../oferta/" class="btn btn-on-dark btn-large btn-arrow">Cere o ofertă</a>
-      <a href="../contact/" class="btn btn-on-dark-ghost btn-large">Parler avec nous</a>
+      <a href="../contact/" class="btn btn-on-dark-ghost btn-large">Vorbește cu noi</a>
     </div>
   </div>
 </section>

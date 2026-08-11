@@ -23,7 +23,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        country: ${{ github.event_name == 'workflow_dispatch' && fromJSON(format('["{0}"]', github.event.inputs.country)) || fromJSON('["ro","fr","me","en","it","es","nl","de","ie"]') }}
+        # La push se publică DOAR România (decizie 11.08.2026 — restul ţărilor se
+        # lansează manual, una câte una, prin workflow_dispatch, când sunt gata).
+        country: ${{ github.event_name == 'workflow_dispatch' && fromJSON(format('["{0}"]', github.event.inputs.country)) || fromJSON('["ro"]') }}
     env:
       COUNTRY: ${{ matrix.country }}
     steps:

@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Politică cookies · Polistibrick</title>
-  <meta name="description" content="Cookies utilisés sur le site Polistibrick et comment les contrôler. Conforme à la Directive EU 2009/136/CE.">
+  <link rel="icon" type="image/png" href="../../images/favicon.png">
+  <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
+  <meta name="description" content="Cookie-uri folosite pe site-ul Polistibrick și cum le controlați. Conform Directivei EU 2009/136/CE.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -31,6 +33,51 @@
     }
     @media (max-width: 768px) { .wm-stage { padding: 28px 20px; } }
   </style>
+<!-- date-structurate -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebPage",
+   "@id": "{{domain_url}}/legal/cookies/#pagina",
+   "url": "{{domain_url}}/legal/cookies/",
+   "name": "Politică cookies",
+   "inLanguage": "{{lang}}",
+   "isPartOf": {
+    "@id": "{{domain_url}}/#site"
+   },
+   "publisher": {
+    "@id": "{{domain_url}}/#organizatie"
+   },
+   "description": "Cookie-uri folosite pe site-ul Polistibrick și cum le controlați. Conform Directivei EU 2009/136/CE."
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "{{country_name}}",
+     "item": "{{domain_url}}/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Legal",
+     "item": "{{domain_url}}/legal/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Politică cookies",
+     "item": "{{domain_url}}/legal/cookies/"
+    }
+   ]
+  }
+ ]
+}
+</script>
 </head>
 <body data-base="../../">
 
@@ -47,7 +94,7 @@
         <div class="wm-content">
           <div class="wm-text">
           <h1>Politică cookies</h1>
-            <p>Site-ul Polistibrick folosește cookies pentru a îmbunătăți experiența ta de navigare. Voici de quoi il s'agit et comment vous pouvez les contrôler.</p>
+            <p>Site-ul Polistibrick folosește cookie-uri pentru a-ți îmbunătăți experiența de navigare. Iată care sunt acestea și cum le puteți controla.</p>
           </div>
           <div class="wm-visual" style="background: linear-gradient(135deg, #1f2022 0%, #111213 100%); display: flex; flex-direction: column; gap: 20px; align-items: center; justify-content: center; border: none; color: #fff; box-shadow: var(--shadow-lg); padding: 24px; box-sizing: border-box;">
             <svg width="84" height="84" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -82,8 +129,8 @@
               </defs>
             </svg>
             <div style="text-align: center;">
-              <div style="font-family: var(--serif); font-size: 20px; font-weight: 500; margin-bottom: 6px; letter-spacing: -0.01em;">Gestion des Cookies</div>
-              <div style="font-size: 11px; color: rgba(255,255,255,0.60); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600;">Vos préférences</div>
+              <div style="font-family: var(--serif); font-size: 20px; font-weight: 500; margin-bottom: 6px; letter-spacing: -0.01em;">Gestionarea cookie-urilor</div>
+              <div style="font-size: 11px; color: rgba(255,255,255,0.60); text-traniform: uppercase; letter-spacing: 0.08em; font-weight: 600;">Preferințele dvs.</div>
             </div>
           </div>
         </div>
@@ -95,25 +142,25 @@
 <section class="section">
   <div class="container container--narrow">
     <div class="reveal">
-      <h2 style="margin:32px 0 12px;">Qu'est-ce que les cookies</h2>
-      <p style="font-size:15px;margin-bottom:14px;">Les cookies et technologies similaires sont de petits fichiers ou identifiants stockés par votre navigateur. Ils permettent au site de mémoriser vos préférences entre les visites.</p>
+      <h2 style="margin:32px 0 12px;">Ce sunt cookie-urile</h2>
+      <p style="font-size:15px;margin-bottom:14px;">Cookie-urile și tehnologiile similare sunt fișiere mici sau identificatori stocați de browserul dumneavoastră. Acestea permit site-ului să-ți amintească preferințele între vizite.</p>
 
-      <h2 style="margin:32px 0 12px;">Cookies pe care le folosim réellement</h2>
-      <p style="font-size:15px;margin-bottom:14px;"><strong>(1) Essentiels / strictement nécessaires</strong> — mémorisation de votre choix de consentement (<code>pb_cookie_consent</code> dans le stockage local du navigateur). Indispensables au respect de vos préférences RGPD.</p>
-      <p style="font-size:15px;margin-bottom:14px;"><strong>(2) Fonctionnels (avec consentement)</strong> — détection du pays via <strong>ipapi.co</strong> (adresse IP) pour pré-sélectionner le bureau Polistibrick le plus proche. Activé uniquement si vous cliquez « Accepter » sur la bannière cookies.</p>
-      <p style="font-size:15px;margin-bottom:14px;"><strong>(3) Polices web (Google Fonts)</strong> — lors du chargement des pages, votre navigateur contacte les serveurs de Google pour télécharger les polices Inter et Cormorant Garamond. Google peut recevoir votre adresse IP. Nous n'utilisons pas Google Analytics, Meta Pixel ni Google Ads sur ce site.</p>
+      <h2 style="margin:32px 0 12px;">Cookie-urile pe care le folosim cu adevărat</h2>
+      <p style="font-size:15px;margin-bottom:14px;"><strong>(1) Esențial / strict necesar</strong> — memorarea consimțământului ales de dvs. (<code>pb_cookie_consent</code> în stocarea locală a browserului). Indispensabile pentru respectarea preferințelor tale GDPR.</p>
+      <p style="font-size:15px;margin-bottom:14px;"><strong>(2) Funcțional (cu acord)</strong> — detectarea țării prin <strong>ipapi.co</strong> (adresă IP) pentru a preselecta cel mai apropiat birou Polistibrick. Activat numai dacă faceți clic pe „Accept” pe bannerul cookie-urilor.</p>
+      <p style="font-size:15px;margin-bottom:14px;"><strong>(3) Fonturi web (Google Fonts)</strong> — la încărcarea paginilor, browserul dumneavoastră contactează serverele Google pentru a descărca fonturile Inter și Cormorant Garamond. Google poate primi adresa dumneavoastră IP. Nu folosim Google Analytics, Meta Pixel sau Google Ads pe acest site.</p>
 
-      <h2 style="margin:32px 0 12px;">Contrôle des cookies</h2>
-      <p style="font-size:15px;margin-bottom:14px;">Lors de votre première visite, une bannière vous permet d'<strong>Accepter</strong> ou de <strong>Refuser</strong> les cookies non essentiels. Votre choix est enregistré 13 mois. Pentru le modifier, effacez les données du site dans les paramètres de votre navigateur — la bannière réapparaîtra.</p>
+      <h2 style="margin:32px 0 12px;">Controlul cookie-urilor</h2>
+      <p style="font-size:15px;margin-bottom:14px;">La prima vizită, un banner vă permite să <strong>acceptați</strong> sau să <strong>refuzați</strong> cookie-urile neesențiale. Alegerea ta este salvată timp de 13 luni. Pentru a-l modifica, ștergeți datele site-ului din setările browserului - bannerul va apărea din nou.</p>
 
-      <h2 style="margin:32px 0 12px;">Services tiers</h2>
-      <p style="font-size:15px;margin-bottom:14px;">Les prestataires suivants peuvent déposer ou recevoir des données selon votre navigation :</p>
+      <h2 style="margin:32px 0 12px;">Servicii terțe</h2>
+      <p style="font-size:15px;margin-bottom:14px;">Următorii furnizori pot depune sau primi date în funcție de navigarea dvs.:</p>
       <ul style="font-size:15px;margin:0 0 14px 20px;color:var(--gray);line-height:1.7;">
-        <li><a href="https://ipapi.co/privacy/" style="color:var(--red);" rel="noopener" target="_blank">ipapi.co</a> — géolocalisation IP (consentement requis)</li>
-        <li><a href="https://policies.google.com/privacy" style="color:var(--red);" rel="noopener" target="_blank">Google Fonts</a> — polices typographiques</li>
-        <li><a href="https://web3forms.com/privacy" style="color:var(--red);" rel="noopener" target="_blank">Web3Forms</a> — envoi des formulaires (pas de cookie marketing ; traitement des données du formulaire)</li>
+        <li><a href="https://ipapi.co/privacy/" style="color:var(--red);" rel="noopener" target="_blank">ipapi.co</a> — Geolocalizare IP (este necesar consimțământul)</li>
+        <li><a href="https://policies.google.com/privacy" style="color:var(--red);" rel="noopener" target="_blank">Google Fonts</a> — fonturi tipografice</li>
+        <li><a href="https://web3forms.com/privacy" style="color:var(--red);" rel="noopener" target="_blank">Web3Forms</a> — trimiterea de formulare (fără cookie-uri de marketing; prelucrarea datelor din formular)</li>
       </ul>
-      <p style="font-size:14px;margin-top:28px;color:var(--gray);">Pentru le traitement global de vos données : <a href="../confidentialitate/" style="color:var(--red);">politique de confidentialité</a>.</p>
+      <p style="font-size:14px;margin-top:28px;color:var(--gray);">În ceea ce privește prelucrarea generală a datelor dvs.: <a href="../confidentialitate/" style="color:var(--red);">Politica de confidențialitate</a>.</p>
     </div>
   </div>
 </section>

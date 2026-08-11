@@ -233,6 +233,43 @@ def path_rewrite_lang(country_code: str, lang: str) -> str | None:
     return None
 
 
+_SHARED_TEMPLATES: dict[str, str] | None = None
+
+
+def load_shared_templates() -> dict[str, str]:
+    """Extract NAV_HTML / FOOTER_HTML template bodies from shared/js/site.js.
+    Used to pre-render the nav and footer into the static HTML at build time,
+    so crawlers see the internal links without executing JavaScript. The
+    runtime JS still re-injects the same markup (harmless, identical)."""
+    global _SHARED_TEMPLATES
+    if _SHARED_TEMPLATES is None:
+        _SHARED_TEMPLATES = {}
+        site_js = ROOT / "shared" / "js" / "site.js"
+        if site_js.exists():
+            js = site_js.read_text(encoding="utf-8")
+            for name in ("NAV_HTML", "FOOTER_HTML"):
+                m = re.search(rf"const {name} = `(.*?)`;", js, re.S)
+                if m:
+                    _SHARED_TEMPLATES[name] = m.group(1)
+    return _SHARED_TEMPLATES
+
+
+def prerender_includes(content: str, rel: Path) -> str:
+    """Replace empty data-include mounts with the shared nav/footer markup."""
+    tpl = load_shared_templates()
+    nav_marker = '<header class="nav" data-include="nav"></header>'
+    foot_marker = '<footer class="site-footer" data-include="footer"></footer>'
+    if tpl.get("NAV_HTML") and nav_marker in content:
+        content = content.replace(
+            nav_marker,
+            '<header class="nav" data-include="nav">' + tpl["NAV_HTML"] + "</header>")
+    if tpl.get("FOOTER_HTML") and foot_marker in content:
+        content = content.replace(
+            foot_marker,
+            '<footer class="site-footer" data-include="footer">' + tpl["FOOTER_HTML"] + "</footer>")
+    return content
+
+
 def copy_tree(src: Path, dst: Path, transform: bool, config: dict, country_code: str = ""):
     """Copy src→dst. If transform=True, replace placeholders in .html/.css/.js."""
     if not src.exists():
@@ -249,7 +286,13 @@ def copy_tree(src: Path, dst: Path, transform: bool, config: dict, country_code:
         if transform and item.suffix.lower() in {".html", ".css", ".js", ".xml", ".txt", ".json"}:
             try:
                 content = item.read_text(encoding="utf-8")
+                if item.suffix.lower() == ".html":
+                    content = prerender_includes(content, rel)
                 content = apply_placeholders(content, config)
+                if item.suffix.lower() == ".html" and "${BASE}" in content:
+                    # depth-relative prefix for the pre-rendered nav/footer links
+                    base = "../" * (len(rel.parts) - 1)
+                    content = content.replace("${BASE}", base)
                 # Rewrite RO folder names in shared site.js → French paths (FR template countries)
                 if item.suffix.lower() in {".js", ".html"}:
                     rewrite = path_rewrite_lang(country_code, lang)
@@ -307,6 +350,8 @@ def generate_sitemap(out_dir: Path, config: dict):
         rel = html.relative_to(out_dir).as_posix()
         if rel in skip_files:
             continue
+        if 'name="robots" content="noindex' in html.read_text(encoding="utf-8", errors="ignore"):
+            continue  # pages marked noindex stay out of the sitemap
         if rel.endswith("/index.html"):
             rel = rel[:-10]
         elif rel == "index.html":

@@ -1342,7 +1342,7 @@
       for (var i = 0; i < totalSlides; i++) {
         var dot = document.createElement('button');
         dot.className = 'case-dot' + (i === 0 ? ' is-active' : '');
-        dot.setAttribute('aria-label', 'Aller à la maison ' + (i + 1));
+        dot.setAttribute('aria-label', 'Idi na kuću ' + (i + 1));
         dot.dataset.idx = i;
         dot.addEventListener('click', function(e){
           goToSlide(parseInt(e.currentTarget.dataset.idx, 10));
