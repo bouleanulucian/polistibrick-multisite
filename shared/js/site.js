@@ -82,7 +82,7 @@
         <button class="nav-drawer-title" aria-expanded="false">{{ui.proiecte}}<span class="nd-caret">▾</span></button>
         <div class="nav-acc">
           <a href="${BASE}proiecte/">{{ui.case_construite}}</a>
-          <a href="${BASE}testimoniale/">{{ui.testimoniale}}</a>
+          {{ui.nav_link_testimoniale}}
         </div>
       </div>
       <div class="nav-drawer-group">
