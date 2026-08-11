@@ -3278,7 +3278,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     top: 72px; right: 16px; left: auto; bottom: auto;
     width: min(calc(209px + 4mm), calc(100vw - 24px));
     height: auto; max-height: calc(100vh - 96px);
-    background: rgba(255, 255, 255, 0.20);
+    background: rgba(255, 255, 255, 0.97);
     -webkit-backdrop-filter: blur(24px) saturate(1.4);
     backdrop-filter: blur(24px) saturate(1.4);
     border: 1px solid rgba(255, 255, 255, 0.40); border-radius: 18px;
