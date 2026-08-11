@@ -992,6 +992,7 @@
   (function(){
     var lb = document.getElementById('confLightbox');
     if(!lb) return;
+    document.body.appendChild(lb); // scapă de stacking context-ul secţiunii animate
     var lbVideo = lb.querySelector('video');
     var triggers = [].slice.call(document.querySelectorAll('[data-conf-video]'));
     function open(src){
