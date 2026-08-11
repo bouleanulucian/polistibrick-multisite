@@ -1441,5 +1441,4 @@ html { scroll-behavior: auto !important; }
   font-size: 15px; font-weight: 700; color: #000; text-decoration: none;
   padding: 13px 12px; border-radius: 10px; transition: background .15s ease;
 }
-.nav-drawer-direct::after { content: '→'; color: var(--red, #e2211c); font-weight: 700; }
 .nav-drawer-direct:hover { background: rgba(255,255,255,0.55); }
