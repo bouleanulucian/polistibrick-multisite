@@ -121,7 +121,7 @@
     "country_me": "Muntenegru",
     "country_ro": "România",
     "footer_montaj": "Ghid de montaj",
-    "footer_link_acoperis": "<li><a href=\"${BASE}produse/acoperis-tbk-sip250/\">Acoperiș TBK · SIP250</a></li>",
+    "footer_link_acoperis": "",
     "footer_link_ghiduri": "<li><a href=\"${BASE}resurse/\">Ghiduri de construcție</a></li>"
   },
   "en": {
