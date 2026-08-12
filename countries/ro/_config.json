@@ -78,7 +78,7 @@
     "hreflang": "ro-RO"
   },
   "devis_app": {
-    "url": "https://devis.polistibrick.ro",
+    "url": "https://polistibrick-configurator.vercel.app",
     "preview_url": "https://polistibrick-configurator.vercel.app",
     "pays": "RO"
   }
