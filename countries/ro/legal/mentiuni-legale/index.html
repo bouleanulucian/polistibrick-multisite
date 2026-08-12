@@ -7,6 +7,13 @@
   <link rel="icon" type="image/png" href="../../images/favicon.png">
   <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
   <meta name="description" content="Mențiuni legale ale site-ului {{domain}} — editor, gazdă, contact și informații reglementare.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mențiuni legale · Polistibrick">
+  <meta property="og:description" content="Mențiuni legale ale site-ului {{domain}} — editor, gazdă, contact și informații reglementare.">
+  <meta property="og:image" content="https://polisti.ro/images/hero/hero-house-1.jpg">
+  <meta property="og:url" content="https://polisti.ro/legal/mentiuni-legale/">
+  <meta property="og:locale" content="ro_RO">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -118,7 +125,7 @@
   <div class="container container--narrow">
     <div class="reveal">
       <h2 style="margin:32px 0 12px;">1. Editor de site</h2>
-      <p style="font-size:15px;margin-bottom:14px;">Site-ul <strong>{{domain}}</strong> este editat de societatea <strong>{{company.name_legal}}</strong>, societate cu răspundere limitată cu capital de [se completează dacă este necesar] euro, înregistrată la RCS Versailles sub numărul <strong>{{company.registration}}</strong> (sediul SIRET: 984 804 872 00021), nr. de TVA intracomunitar: <strong>{{company.vat}}</strong>.</p>
+      <p style="font-size:15px;margin-bottom:14px;">Site-ul <strong>{{domain}}</strong> este editat de societatea <strong>{{company.name_legal}}</strong>, societate cu răspundere limitată înregistrată la Oficiul Național al Registrului Comerțului sub nr. <strong>{{company.registration}}</strong>, cod de identificare fiscală <strong>{{company.vat}}</strong>.</p>
       <p style="font-size:15px;margin-bottom:14px;"><strong>Sediul central:</strong> {{company.address_street}}, {{company.address_zip}} {{company.address_city}}, {{company.address_country}}.<br>
       <strong>Telefon:</strong> <a href="tel:{{contact.phone_raw}}" style="color:var(--red);">{{contact.phone_display}}</a><br>
       <strong>Email:</strong> <a href="#" data-m64="{{contact.email_general|b64}}" style="color:var(--red);">Email</a></p>
