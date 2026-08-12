@@ -443,6 +443,42 @@ def generate_cache_headers(out_dir: Path):
     (out_dir / ".htaccess").write_text(htaccess, encoding="utf-8")
 
 
+def check_footer_consistency(out_dir: Path) -> None:
+    """Fail the build if the footers diverge between pages.
+
+    The homepage keeps its footer written inline (it uses a different
+    stylesheet than the shared template), so a change made in site.js
+    silently skipped it — that bug shipped twice. This compares the set of
+    footer link targets across every built page and stops the build when
+    one page drifts, instead of letting it reach production unnoticed.
+    """
+    seen: dict[frozenset, list[str]] = {}
+    for html in out_dir.rglob("index.html"):
+        content = html.read_text(encoding="utf-8", errors="ignore")
+        m = re.search(r"<footer.*?</footer>", content, re.S)
+        if not m:
+            continue
+        depth = len(html.relative_to(out_dir).parts) - 1
+        tinte = set()
+        for href in re.findall(r'<a href="([^"]+)"', m.group(0)):
+            if href.startswith(("http", "#", "mailto", "tel")):
+                continue
+            tinta = re.sub(r"^(\.\./)+", "", href)      # scoate prefixul de adâncime
+            tinta = re.sub(r"^\./", "", tinta).lstrip("/")  # ./ , / şi "" = prima pagină
+            tinte.add(tinta)
+        seen.setdefault(frozenset(tinte), []).append(
+            str(html.parent.relative_to(out_dir)) or "/")
+    if len(seen) > 1:
+        variante = sorted(seen.items(), key=lambda kv: -len(kv[1]))
+        majoritar = set(variante[0][0])
+        print("\n  ✗ FOOTER INCONSECVENT — build oprit:")
+        for tinte, pagini in variante[1:]:
+            lipsa = majoritar - set(tinte)
+            in_plus = set(tinte) - majoritar
+            print(f"      {', '.join(pagini[:4])}: lipsesc {sorted(lipsa) or '-'}, în plus {sorted(in_plus) or '-'}")
+        raise SystemExit("Footerul trebuie să fie identic pe toate paginile.")
+
+
 def build_country(code: str):
     config = load_config(code)
     out_dir = BUILD_DIR / code
@@ -486,6 +522,9 @@ def build_country(code: str):
     # 3b) Performance — async fonts, defer site.js (pages that skipped transform)
     optimize_html_files(out_dir)
 
+    # 3c) footerul trebuie să fie identic peste tot (vezi funcția)
+    check_footer_consistency(out_dir)
+
     # 4) sitemap + robots + CDN cache headers
     generate_sitemap(out_dir, config)
     generate_robots(out_dir, config)
@@ -499,12 +538,18 @@ def main():
     codes = sys.argv[1:] or sorted(p.name for p in COUNTRIES_DIR.iterdir() if p.is_dir())
     print(f"\n→ Building {len(codes)} countries: {', '.join(codes)}\n")
     BUILD_DIR.mkdir(exist_ok=True)
+    esecuri = []
     for code in codes:
         try:
             build_country(code)
         except SystemExit as e:
-            print(e)
+            # O ţară cu probleme nu opreşte restul, dar build-ul iese cu cod ≠ 0
+            # ca deploy-ul din CI să NU publice o versiune stricată.
+            print(f"  ✗ {code}: {e}")
+            esecuri.append(code)
     print(f"\n✓ Done. Output: {BUILD_DIR.relative_to(ROOT)}/\n")
+    if esecuri:
+        sys.exit(f"Build oprit — ţări cu erori: {', '.join(esecuri)}")
 
 
 if __name__ == "__main__":
