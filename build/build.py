@@ -367,9 +367,15 @@ def generate_sitemap(out_dir: Path, config: dict):
 
 def generate_robots(out_dir: Path, config: dict):
     base = config.get("domain_url", "").rstrip("/")
+    ai_boti = ["GPTBot", "ClaudeBot", "Claude-Web", "PerplexityBot",
+               "Google-Extended", "CCBot", "meta-externalagent", "Applebot-Extended"]
+    grupuri_ai = "".join(f"User-agent: {b}\nAllow: /\n\n" for b in ai_boti)
     content = (
         "User-agent: *\n"
-        "Allow: /\n"
+        "Allow: /\n\n"
+        # Crawlerele AI sunt binevenite explicit — vizibilitatea în ChatGPT/
+        # Perplexity/AI Overviews e obiectiv de business, nu accident.
+        + grupuri_ai +
         f"Sitemap: {base}/sitemap.xml\n"
     )
     (out_dir / "robots.txt").write_text(content, encoding="utf-8")
@@ -399,6 +405,8 @@ def generate_cache_headers(out_dir: Path):
   Cache-Control: public, max-age=3600, must-revalidate
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  X-Frame-Options: DENY
 """
     (out_dir / "_headers").write_text(headers, encoding="utf-8")
 

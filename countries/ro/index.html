@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Polistibrick — O casă. Un sistem. Fără compromis.</title>
+<title>Polistibrick — cofraje izolante pentru case pasive</title>
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-<meta name="description" content="Sistem ICF complet — pereți, planșee, acoperiș. Standard A+++. Construit în 4 săptămâni. Fără compromis, fără facturi.">
+<meta name="description" content="Cofraj izolant din EPS + fibrociment, fabricat în România: pereți, planșeu și acoperiș pentru casă pasivă A+++, ridicată în 4 săptămâni. De la 197 €/m².">
 <meta property="og:title" content="Polistibrick — O casă. Un sistem.">
 <meta property="og:description" content="Sistem ICF complet pentru casă A+++. Pereți, planșee, acoperiș — un sistem premium.">
 <meta property="og:image" content="https://polisti.ro/images/hero/hero-house-1.jpg">
@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600&display=swap"></noscript>
-<link rel="preload" as="image" href="images/hero/hero-house-1.webp" type="image/webp" fetchpriority="high">
+<link rel="preload" as="image" href="images/hero/hero-house-1.webp" type="image/webp" imagesrcset="images/hero/hero-house-1-960.webp 960w, images/hero/hero-house-1-1600.webp 1600w, images/hero/hero-house-1.webp 2560w" imagesizes="100vw" fetchpriority="high">
 <link rel="stylesheet" href="assets/css/mercury-home.css?v=3">
 
 
@@ -46,7 +46,12 @@
    "@type": "Organization",
    "@id": "{{domain_url}}/#organizatie",
    "name": "{{company.name_legal}}",
-   "alternateName": "Polistibrick",
+   "alternateName": [
+    "Polisti",
+    "Polistibrick"
+   ],
+   "description": "Polisti este grupul românesc care fabrică, lângă Balș (jud. Olt), cele trei sisteme constructive: Polistibrick (cofraj izolant din beton armat, brevet EP 4372168 B1), Polistiwall și PolistiSIP (structură din lemn).",
+   "vatID": "{{company.vat}}",
    "url": "{{domain_url}}/",
    "logo": "{{domain_url}}/images/logo.png",
    "telephone": "{{contact.phone}}",
@@ -61,8 +66,12 @@
    "sameAs": [
     "{{contact.social.facebook}}",
     "{{contact.social.instagram}}",
-    "{{contact.social.linkedin}}"
-   ]
+    "{{contact.social.linkedin}}",
+    "https://worldwide.espacenet.com/patent/search?q=pn%3DEP4372168",
+    "https://euipo.europa.eu/eSearch/#details/trademarks/018936693",
+    "https://euipo.europa.eu/eSearch/#details/trademarks/019311167"
+   ],
+   "legalName": "{{company.name_legal}}"
   },
   {
    "@type": "WebSite",
@@ -73,6 +82,33 @@
    "publisher": {
     "@id": "{{domain_url}}/#organizatie"
    }
+  },
+  {
+   "@type": "VideoObject",
+   "name": "Testimonial video — Société Sainte-Hilaire, Paris",
+   "description": "Mărturie filmată pe șantier: constructor francez despre lucrul cu sistemul Polistibrick. Subtitrat în română.",
+   "thumbnailUrl": "https://polisti.ro/images/temoignages/testimonial-sainte-hilaire-paris-poster.jpg",
+   "contentUrl": "https://polisti.ro/images/temoignages/testimonial-sainte-hilaire-paris.mp4",
+   "uploadDate": "2026-08-11",
+   "inLanguage": "fr"
+  },
+  {
+   "@type": "VideoObject",
+   "name": "Testimonial video — Enzo, CSBTP",
+   "description": "Mărturie filmată pe șantier: constructorul Enzo (CSBTP) despre montajul panourilor Polistibrick. Subtitrat în română.",
+   "thumbnailUrl": "https://polisti.ro/images/temoignages/testimonial-enzo-csbtp-poster.jpg",
+   "contentUrl": "https://polisti.ro/images/temoignages/testimonial-enzo-csbtp.mp4",
+   "uploadDate": "2026-08-11",
+   "inLanguage": "fr"
+  },
+  {
+   "@type": "VideoObject",
+   "name": "Testimonial video — MBK Montesson",
+   "description": "Mărturie filmată pe șantier la Montesson: experiența echipei MBK cu sistemul Polistibrick. Subtitrat în română.",
+   "thumbnailUrl": "https://polisti.ro/images/temoignages/testimonial-mbk-montesson-poster.jpg",
+   "contentUrl": "https://polisti.ro/images/temoignages/testimonial-mbk-montesson.mp4",
+   "uploadDate": "2026-08-11",
+   "inLanguage": "fr"
   }
  ]
 }
@@ -280,8 +316,8 @@
 <section class="hero hero--photo" id="heroSection">
   <div class="hero-bg" aria-hidden="true">
     <picture class="hero-bg-poster">
-      <source type="image/webp" srcset="images/hero/hero-house-1.webp">
-      <img src="images/hero/hero-house-1.jpg" alt="" width="2560" height="1440" decoding="async" fetchpriority="high">
+      <source type="image/webp" srcset="images/hero/hero-house-1-960.webp 960w, images/hero/hero-house-1-1600.webp 1600w, images/hero/hero-house-1.webp 2560w" sizes="100vw">
+      <img src="images/hero/hero-house-1.jpg" alt="Casă pasivă construită cu sistemul de cofraj izolant Polistibrick" width="2560" height="1440" decoding="async" fetchpriority="high">
     </picture>
     <video id="heroVideo" class="hero-bg-video" muted loop playsinline preload="none"
            poster="images/hero/hero-house-1.webp"
@@ -311,6 +347,13 @@
 </section>
 </div>
 
+<!-- IDENTITATE: cine este Polisti (poziționare grup) -->
+<section class="grup-band">
+  <div class="container">
+    <p class="grup-band-text"><strong>Polisti este grupul-mamă.</strong> Fabricăm în România, lângă Balș (Olt), cele trei sisteme constructive: <a href="produse/polistibrick/">Polistibrick — cofraj izolant din beton armat</a>, <a href="produse/polistiwall/">Polistiwall — fața interioară din beton</a> și <a href="produse/polistisip/">PolistiSIP — structură din lemn</a>. Un <a href="despre/patent/">brevet european</a>. Livrăm în 9 țări.</p>
+  </div>
+</section>
+
 <!-- DIFERENȚE: comparație structurală perete Polistibrick vs izolație clasică -->
 
 <div class="differences-wrap">
@@ -339,7 +382,7 @@
               <div class="info-card-inner">
                 <div class="card-header-pb">
                   <span class="card-icon">🏗️</span>
-                  <h4>Sistem Polistibrick</h4>
+                  <p class="h4-card-label">Sistem Polistibrick</p>
                 </div>
                 <p class="card-team">👤 O echipă — 3 persoane</p>
                 <p class="card-materials">📦 <strong>3 materiale</strong>: Cofraj Polistibrick • Beton • Oțel</p>
@@ -359,7 +402,7 @@
               <div class="info-card-inner">
                 <div class="card-header-cl">
                   <span class="card-icon">🏗️</span>
-                  <h4>Sistem tradițional</h4>
+                  <p class="h4-card-label">Sistem tradițional</p>
                 </div>
                 <p class="card-team">👤👤👤👤👤 5 echipe — 15 persoane</p>
                 <p class="card-materials">📦 <strong>9 materiale</strong>: Blocuri • Mortar • Cofraj • Fier • Beton • Izolație • Placare • Șuruburi • etc.</p>
@@ -526,7 +569,7 @@
 <section class="personas-section" id="pour" aria-label="Ești...? Soluții pe rol">
 
   <div class="persona-slide active" data-href="pentru/constructori/">
-    <img src="images/personas/pour-constructeur.jpg" alt="Șantier Polistibrick: turnarea betonului într-un lot de case" fetchpriority="low" loading="lazy">
+    <picture><source type="image/webp" srcset="images/personas/pour-constructeur.webp"><img src="images/personas/pour-constructeur.jpg" alt="Șantier Polistibrick: turnarea betonului într-un lot de case" fetchpriority="low" loading="lazy"></picture>
     <div class="persona-scrim"></div>
     <div class="persona-content">
       <h2>De 2× mai rapid. <em>Marje protejate.</em></h2>
@@ -536,7 +579,7 @@
   </div>
 
   <div class="persona-slide" data-href="pentru/arhitecti/">
-    <img src="images/personas/pour-architecte.jpg" alt="Casă de arhitect contemporană cu console, realizată cu Polistibrick" loading="lazy">
+    <picture><source type="image/webp" srcset="images/personas/pour-architecte.webp"><img src="images/personas/pour-architecte.jpg" alt="Casă de arhitect contemporană cu console, realizată cu Polistibrick" loading="lazy"></picture>
     <div class="persona-scrim"></div>
     <div class="persona-content">
       <h2>Tu proiectezi,<br><em>Polistibrick execută.</em></h2>
@@ -546,7 +589,7 @@
   </div>
 
   <div class="persona-slide" data-href="pentru/proprietari/">
-    <img src="images/personas/pour-proprietaire.jpg" alt="Cuplu pe terasa unei case Polistibrick la apus" loading="lazy">
+    <picture><source type="image/webp" srcset="images/personas/pour-proprietaire.webp"><img src="images/personas/pour-proprietaire.jpg" alt="Cuplu pe terasa unei case Polistibrick la apus" loading="lazy"></picture>
     <div class="persona-scrim"></div>
     <div class="persona-content">
       <h2>Casa premium, <em>fără facturi.</em></h2>
@@ -556,7 +599,7 @@
   </div>
 
   <div class="persona-slide" data-href="pentru/investitori/">
-    <img src="images/personas/persona-promoteur.jpg" alt="" loading="lazy">
+    <picture><source type="image/webp" srcset="images/personas/persona-promoteur.webp"><img src="images/personas/persona-promoteur.jpg" alt="Ansamblu de locuințe construit cu Polistibrick pentru dezvoltatori" loading="lazy"></picture>
     <div class="persona-scrim"></div>
     <div class="persona-content">
       <h2>ROI maxim. <em>Risc minim.</em></h2>
@@ -629,6 +672,7 @@
   </div>
 <section class="reach-section presence-section" id="reach" aria-label="Prezență: două fabrici, nouă țări">
     <picture class="media-poster presence-poster" aria-hidden="true">
+    <source type="image/webp" srcset="images/presence/presence-factory.webp">
     <img src="images/presence/presence-factory.jpg" alt="" loading="lazy" decoding="async">
   </picture>
   <video class="presence-bg lazy-video" loop muted playsinline preload="none"

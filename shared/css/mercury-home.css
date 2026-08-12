@@ -4337,16 +4337,16 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
       transform: translateY(-4px);
       box-shadow: 0 40px 100px rgba(255, 255, 255, 0.12);
     }
-    .info-card h4 {
+    .info-card h4, .info-card .h4-card-label {
       font-family: var(--serif);
       font-size: clamp(17px, 2vw, 22px);
       font-weight: 500;
       margin: 0;
     }
-    .info-pb h4 {
+    .info-pb h4, .info-pb .h4-card-label {
       color: #FFFFFF;
     }
-    .info-cl h4 {
+    .info-cl h4, .info-cl .h4-card-label {
       color: #FFFFFF;
     }
     .card-header-pb, .card-header-cl {
@@ -4453,7 +4453,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
       .info-pb { left: 12px; right: auto; }
       .info-cl { right: 12px; left: auto; }
       .card-header-pb, .card-header-cl { margin-bottom: 8px; gap: 8px; }
-      .info-card h4 { font-size: 15px; }
+      .info-card h4, .info-card .h4-card-label { font-size: 15px; }
       .card-team, .card-materials { font-size: 11px; margin-bottom: 4px; }
       .pane-tag { top: 6px; }
       .pane-polistibrick .pane-tag { left: 10px; }
@@ -5948,7 +5948,7 @@ h1 em, h2 em, h3 em, h4 em {
 /* Cartes du slider POLISTIBRICK vs CLASSIQUE : titre sur UNE ligne — texte plus petit,
    cartes un peu plus larges (demande client) */
 .info-card { width: clamp(320px, 34vw, 500px); max-width: 94%; }
-.info-card h4 { font-size: 14px !important; white-space: nowrap; letter-spacing: 0; }
+.info-card h4, .info-card .h4-card-label { font-size: 14px !important; white-space: nowrap; letter-spacing: 0; }
 .card-team, .card-materials { font-size: 12.5px; }
 
 /* Punte de la grila de sisteme spre pagina de preţuri */
@@ -5980,3 +5980,10 @@ h1 em, h2 em, h3 em, h4 em {
 .footer-legal-links { display: flex; flex-wrap: wrap; gap: 4px 8px; font-size: 11.5px; align-items: center; }
 .footer-legal-links a { color: #ffffff; text-decoration: none; }
 .footer-legal-links a:hover { color: var(--red); }
+
+/* Banda de identitate grup (sub hero) — cine este Polisti */
+.grup-band { background: var(--cream); padding: 26px 0; border-bottom: 1px solid var(--border); }
+.grup-band-text { max-width: 980px; margin: 0 auto; text-align: center; font-size: 15px; line-height: 1.75; color: var(--gray); }
+.grup-band-text strong { color: var(--ink); }
+.grup-band-text a { color: var(--ink); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.grup-band-text a:hover { color: var(--red); }

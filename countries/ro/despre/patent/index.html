@@ -64,14 +64,18 @@
     "@id": "{{domain_url}}/#organizatie"
    },
    "description": "Brevetul european EP 4372168 B1 protejează kitul de cofraj izolant Polistibrick. Titular și inventator: Lucian-Cristian Bouleanu. Marca Polistibrick e înregistrată la EUIPO sub nr. 018936693 (clasa 19) și nr. 019311167 (clasele 35, 37).",
-   "mainEntity": { "@id": "{{domain_url}}/despre/patent/#titular" }
+   "mainEntity": {
+    "@id": "{{domain_url}}/despre/patent/#titular"
+   }
   },
   {
    "@type": "Person",
    "@id": "{{domain_url}}/despre/patent/#titular",
    "name": "Lucian-Cristian Bouleanu",
    "jobTitle": "Fondator Polistibrick, inventator",
-   "worksFor": { "@id": "{{domain_url}}/#organizatie" },
+   "worksFor": {
+    "@id": "{{domain_url}}/#organizatie"
+   },
    "owns": [
     {
      "@type": "CreativeWork",
@@ -118,6 +122,13 @@
      "item": "{{domain_url}}/despre/patent/"
     }
    ]
+  },
+  {
+   "@type": "Organization",
+   "@id": "{{domain_url}}/#organizatie",
+   "name": "{{company.name_legal}}",
+   "url": "{{domain_url}}/",
+   "logo": "{{domain_url}}/images/logo.png"
   }
  ]
 }
