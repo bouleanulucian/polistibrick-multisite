@@ -124,6 +124,7 @@
             <li><a href="${BASE}produse/polistibrick/">{{ui.pereti_mbk}}</a></li>
             <li><a href="${BASE}produse/polistiwall/">{{ui.acoperis_tbk}}</a></li>
             <li><a href="${BASE}produse/polistisip/">{{ui.planseu_pbk}}</a></li>
+            {{ui.footer_link_acoperis}}
           </ul>
         </div>
         <div class="footer-col">
@@ -133,6 +134,7 @@
             <li><a href="${BASE}pentru/arhitecti/">{{ui.footer_arhitecti}}</a></li>
             <li><a href="${BASE}pentru/constructori/">{{ui.footer_constructori}}</a></li>
             <li><a href="${BASE}pentru/investitori/">{{ui.footer_investitori}}</a></li>
+            <li><a href="${BASE}devino-partener/">{{ui.devino_partener}}</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -142,6 +144,8 @@
             <li><a href="${BASE}proiecte/">{{ui.footer_proiecte_realizate}}</a></li>
             <li><a href="${BASE}economii/">{{ui.calc_econ}}</a></li>
             <li><a href="${BASE}resurse/faq/">{{ui.faq}}</a></li>
+            <li><a href="${BASE}montaj/">{{ui.footer_montaj}}</a></li>
+            <li><a href="${BASE}oferta/">{{ui.cere_oferta}}</a></li>
           </ul>
         </div>
         <div class="footer-col">
