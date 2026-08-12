@@ -21,6 +21,43 @@
     });
   }
 
+  var FALLBACK = {
+    RO: ["Configuratorul nu s-a putut deschide aici.", "Deschide-l într-o filă nouă"],
+    FR: ["Le configurateur n'a pas pu s'ouvrir ici.", "Ouvrir dans un nouvel onglet"],
+    EN: ["The configurator could not open here.", "Open in a new tab"],
+    IT: ["Il configuratore non si è aperto qui.", "Apri in una nuova scheda"],
+    ES: ["El configurador no pudo abrirse aquí.", "Abrir en una pestaña nueva"],
+    DE: ["Der Konfigurator konnte hier nicht geöffnet werden.", "In neuem Tab öffnen"],
+    NL: ["De configurator kon hier niet openen.", "Openen in nieuw tabblad"],
+  };
+
+  /* Dacă aplicaţia refuză să se afişeze în pagină (ex. lista frame-ancestors
+     din CSP-ul ei nu include acest domeniu), iframe-ul rămâne o casetă goală
+     şi nu produce nicio eroare pe care s-o putem prinde. Aşteptăm semnalul ei
+     de redimensionare; dacă nu vine, oferim clientului un link direct. */
+  function watchdog(frame, url, pays) {
+    var viu = false;
+    window.addEventListener("message", function (e) {
+      if (e.data && e.data.type === "pb-devis-resize") viu = true;
+    });
+    setTimeout(function () {
+      if (viu || !frame.parentNode) return;
+      var texte = FALLBACK[pays] || FALLBACK.EN;
+      var box = document.createElement("p");
+      box.className = "wm-devis-unavailable";
+      box.style.cssText = "padding:32px 24px;text-align:center;color:var(--gray,#666);font-size:14px;line-height:1.7;";
+      box.textContent = texte[0] + " ";
+      var a = document.createElement("a");
+      a.href = url;
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.textContent = texte[1];
+      a.style.cssText = "color:var(--red,#C8102E);font-weight:600;";
+      box.appendChild(a);
+      frame.replaceWith(box);
+    }, 6000);
+  }
+
   function loadFrame(frame) {
     if (!frame || frame.src) return;
 
@@ -49,8 +86,10 @@
       return;
     }
 
-    frame.src = base.replace(/\/$/, "") + "/?pays=" + encodeURIComponent(pays) + "&embed=1";
+    var url = base.replace(/\/$/, "") + "/?pays=" + encodeURIComponent(pays) + "&embed=1";
+    frame.src = url;
     attachResize(frame);
+    watchdog(frame, url, pays);
   }
 
   window.pbLoadDevisFrame = loadFrame;
