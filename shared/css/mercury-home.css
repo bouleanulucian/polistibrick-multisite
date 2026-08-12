@@ -3407,10 +3407,11 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     font-style: normal;
     line-height: 1.1;
     letter-spacing: -0.04em;
-    /* Texte creux : intérieur transparent, seul le contour rouge (demande client) */
-    color: transparent;
-    -webkit-text-stroke: 2.5px var(--red);
-    text-stroke: 2.5px var(--red);
+    /* Scris plin roşu, aceeaşi politică ca restul site-ului (decizie patron 12.08.2026;
+       înainte primul rând era gol, doar cu contur) */
+    color: var(--red);
+    -webkit-text-stroke: 0;
+    text-stroke: 0;
     text-align: left;
     text-shadow: none;
     opacity: calc(1 - min(var(--hero-progress, 0) * 2.2, 1));
@@ -5928,7 +5929,8 @@ h1 em, h2 em, h3 em, h4 em {
   color: inherit !important;
 }
 
-/* Teaser héros : 1re ligne en contour creux, 2e ligne pleine en rouge (demande client) */
+/* Ambele rânduri, scris plin roşu (regula de bază face acelaşi lucru — păstrată
+   ca să bată orice stil moştenit) */
 .hero-teaser .hero-teaser-line:last-child {
   -webkit-text-stroke: 0;
   text-stroke: 0;
