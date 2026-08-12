@@ -342,26 +342,6 @@ def inject_seo(out_dir: Path, config: dict):
         html.write_text(text, encoding="utf-8")
 
 
-def inject_analytics(out_dir: Path, config: dict) -> None:
-    """Add the Cloudflare Web Analytics beacon to every page.
-
-    Cloudflare's automatic injection does not reach responses served by
-    Pages, so the zone-level setting silently collected nothing. The manual
-    beacon is a public site tag (it ships in the HTML of every site using
-    Web Analytics) and is cookieless, so no consent gate is required.
-    """
-    tag = config.get("analytics", {}).get("cloudflare_site_tag")
-    if not tag:
-        return
-    beacon = ('<script defer src="https://static.cloudflareinsights.com/beacon.min.js" '
-              f'data-cf-beacon=\'{{"token": "{tag}"}}\'></script>\n')
-    for html in out_dir.rglob("*.html"):
-        text = html.read_text(encoding="utf-8")
-        if "cloudflareinsights" in text or "</body>" not in text:
-            continue
-        html.write_text(text.replace("</body>", beacon + "</body>", 1), encoding="utf-8")
-
-
 def generate_sitemap(out_dir: Path, config: dict):
     base = config.get("domain_url", "").rstrip("/")
     skip_files = {"polistibrick-mercury-style.html"}  # homepage canonical = /
@@ -541,9 +521,6 @@ def build_country(code: str):
 
     # 3b) Performance — async fonts, defer site.js (pages that skipped transform)
     optimize_html_files(out_dir)
-
-    # 3b-bis) beacon de statistici (Pages nu primeşte injectarea automată)
-    inject_analytics(out_dir, config)
 
     # 3c) footerul trebuie să fie identic peste tot (vezi funcția)
     check_footer_consistency(out_dir)

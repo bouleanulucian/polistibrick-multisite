@@ -81,8 +81,5 @@
     "url": "https://devis.polistibrick.ro",
     "preview_url": "https://polistibrick-configurator.vercel.app",
     "pays": "RO"
-  },
-  "analytics": {
-    "cloudflare_site_tag": "3278d2a7df4647bc838090ff8fafe4c6"
   }
 }
