@@ -53,7 +53,7 @@
     "certificari": "Certificări",
     "certificari_sub": "CE, ISO, Passivhaus, agremente",
     "fabrici": "Fabricile noastre",
-    "fabrici_sub": "Valencia (ES) și Craiova (RO)",
+    "fabrici_sub": "Valencia (ES) și Balș (RO)",
     "echipa": "Echipa",
     "echipa_sub": "Fondatori și oamenii noștri",
     "footer_tagline": "Sistemul ICF brevetat pentru case pasive premium, fără facturi de energie. Fabricat în UE.",
@@ -121,7 +121,8 @@
     "country_me": "Muntenegru",
     "country_ro": "România",
     "footer_montaj": "Ghid de montaj",
-    "footer_link_acoperis": "<li><a href=\"${BASE}produse/acoperis-tbk-sip250/\">Acoperiș TBK · SIP250</a></li>"
+    "footer_link_acoperis": "<li><a href=\"${BASE}produse/acoperis-tbk-sip250/\">Acoperiș TBK · SIP250</a></li>",
+    "footer_link_ghiduri": "<li><a href=\"${BASE}resurse/\">Ghiduri de construcție</a></li>"
   },
   "en": {
     "home_aria": "Polistibrick — home",
@@ -242,7 +243,8 @@
     "form_loading": "Sending…",
     "country_ro": "Romania",
     "footer_montaj": "Installation guide",
-    "footer_link_acoperis": ""
+    "footer_link_acoperis": "",
+    "footer_link_ghiduri": ""
   },
   "fr": {
     "home_aria": "Polistibrick — accueil",
@@ -364,7 +366,8 @@
     "form_loading": "Envoi en cours…",
     "country_ro": "Roumanie",
     "footer_montaj": "Guide de montage",
-    "footer_link_acoperis": ""
+    "footer_link_acoperis": "",
+    "footer_link_ghiduri": ""
   },
   "it": {
     "home_aria": "Polistibrick — home",
@@ -486,7 +489,8 @@
     "country_me": "Montenegro",
     "country_ro": "Romania",
     "footer_montaj": "Guida al montaggio",
-    "footer_link_acoperis": ""
+    "footer_link_acoperis": "",
+    "footer_link_ghiduri": ""
   },
   "es": {
     "home_aria": "Polistibrick — inicio",
@@ -608,7 +612,8 @@
     "email_label": "Correo electrónico",
     "country_ro": "Rumanía",
     "footer_montaj": "Guía de montaje",
-    "footer_link_acoperis": ""
+    "footer_link_acoperis": "",
+    "footer_link_ghiduri": ""
   },
   "nl": {
     "home_aria": "Polistibrick — home",
@@ -730,7 +735,8 @@
     "form_loading": "Envoi en cours…",
     "country_ro": "Roemenië",
     "footer_montaj": "Guide de montage",
-    "footer_link_acoperis": ""
+    "footer_link_acoperis": "",
+    "footer_link_ghiduri": ""
   },
   "de": {
     "home_aria": "Polistibrick — Startseite",
@@ -852,7 +858,8 @@
     "form_loading": "Envoi en cours…",
     "country_ro": "Rumänien",
     "footer_montaj": "Guide de montage",
-    "footer_link_acoperis": ""
+    "footer_link_acoperis": "",
+    "footer_link_ghiduri": ""
   },
   "cnr": {
     "home_aria": "Polistibrick — početna",
@@ -975,6 +982,7 @@
     "form_blocked_unavailable": "Formular nije dostupan. Kontakt:",
     "country_ro": "Rumunija",
     "footer_montaj": "Vodič za montažu",
-    "footer_link_acoperis": ""
+    "footer_link_acoperis": "",
+    "footer_link_ghiduri": ""
   }
 }

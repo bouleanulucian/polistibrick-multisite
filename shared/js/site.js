@@ -144,6 +144,7 @@
             <li><a href="${BASE}proiecte/">{{ui.footer_proiecte_realizate}}</a></li>
             <li><a href="${BASE}economii/">{{ui.calc_econ}}</a></li>
             <li><a href="${BASE}resurse/faq/">{{ui.faq}}</a></li>
+            {{ui.footer_link_ghiduri}}
             <li><a href="${BASE}montaj/">{{ui.footer_montaj}}</a></li>
             <li><a href="${BASE}oferta/">{{ui.cere_oferta}}</a></li>
           </ul>
