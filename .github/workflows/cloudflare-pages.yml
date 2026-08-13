@@ -30,6 +30,15 @@ jobs:
       COUNTRY: ${{ matrix.country }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Istoricul complet e necesar pentru <lastmod> din sitemap: build-ul ia
+          # data fiecărei pagini din `git log`. Cu clona implicită (un singur
+          # commit) toate paginile ies „modificate azi" — exact semnalul fals pe
+          # care lastmod ar trebui să-l evite. `filter: blob:none` aduce doar
+          # istoricul modificărilor, nu şi fişierele vechi; altfel s-ar căra
+          # 766 MB de video la fiecare publicare.
+          fetch-depth: 0
+          filter: blob:none
 
       - uses: actions/setup-python@v5
         with:
