@@ -3433,9 +3433,13 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   @media (max-width: 809px) {
     .hero-teaser.text-stilizat,
     .hero-teaser {
-      font-size: 40px;
+      /* Se potriveşte singur pe lăţimea telefonului: rândul cel mai lung („Trei
+         sisteme constructive") ieşea din ecran la 40 px. Testat 360–414 px. */
+      font-size: clamp(24px, 7.4vw, 40px);
       letter-spacing: -0.03em;
-      bottom: 26px;
+      /* Bara fixă „Sună / E-mail" (54 px + zona sigură) acoperea al doilea rând.
+         Ridicăm textul deasupra ei; pe desktop rămâne la 48 px. */
+      bottom: calc(80px + env(safe-area-inset-bottom, 0px));
       left: 26px;
       max-width: none;
     }
