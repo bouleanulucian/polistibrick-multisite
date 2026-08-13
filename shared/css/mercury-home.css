@@ -5681,6 +5681,24 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
   .conf-slide .conf-feature { margin: 0 auto; }
   .conf-feature--text .conf-vbadge::before { display: none; }
 
+  /* Pe telefon, citatul de 20 px acoperea aproape tot filmul şi ascundea butonul
+     de redare. Textul scade, iar caseta lasă imaginea să se vadă. */
+  @media (max-width: 809px) {
+    .conf-fcaption { padding: 12px 13px 13px; max-width: 100%; }
+    .conf-fcaption .conf-fquote { font-size: 13px; line-height: 1.32; margin: 0 0 7px; }
+    .conf-author { gap: 8px; }
+    .conf-author img { width: 30px; height: 30px; }
+    /* Nume, localitate şi confirmarea pe un singur rând: trei rânduri separate
+       mâncau jumătate din caseta de pe film. */
+    .conf-author .ca-name { display: inline; font-size: 11.5px; }
+    /* Rolul şi oraşul dispar pe telefon: numele firmei plus „filmat pe şantier"
+       intră pe un rând, iar cu ele se rupea în două. Pe calculator rămân. */
+    .conf-author .ca-loc { display: none; }
+    .conf-author .ca-verif { display: inline-flex; font-size: 9px; margin: 0 0 0 6px; }
+    .conf-vbadge { top: 12px; left: 12px; padding: 4px 9px; font-size: 9.5px; }
+    .conf-play { width: 56px; height: 56px; }
+  }
+
   .conf-nav { display: flex; align-items: center; justify-content: center; gap: 20px; margin-top: 30px; }
   .conf-arrow { width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--border); background: #fff; color: var(--ink);
     font-size: 22px; line-height: 1; cursor: pointer; display: inline-flex; align-items: center; justify-content: center;
@@ -5701,7 +5719,16 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
 
   @media (max-width: 760px) {
     .conf-feature { aspect-ratio: 4/3; }
-    .conf-feature-nav { bottom: 12px; }
+    /* Pe telefon, bara de navigare stătea centrată jos, fix peste numele firmei.
+       O mutăm în colţul din dreapta-jos şi o facem mică — textul rămâne liber. */
+    .conf-feature-nav { bottom: 10px; right: 10px; left: auto; transform: none;
+      gap: 6px; padding: 4px 7px; }
+    .conf-feature-nav .conf-arrow { width: 24px; height: 24px; font-size: 13px; }
+    .conf-feature-nav .conf-dot { width: 5px; height: 5px; }
+    .conf-feature-nav .conf-dot.is-active { width: 13px; }
+    /* Doar rândul de jos (nume · localitate) ocoleşte bara din colţ — citatul
+       rămâne pe toată lăţimea, altfel se rupea pe un rând în plus. */
+    .conf-author { padding-right: 104px; }
   }
 
 /* --- section --- */
