@@ -14,6 +14,7 @@ import json
 import os
 import re
 import shutil
+import subprocess
 import sys
 from pathlib import Path
 
@@ -354,7 +355,27 @@ def inject_seo(out_dir: Path, config: dict):
         html.write_text(text, encoding="utf-8")
 
 
-def generate_sitemap(out_dir: Path, config: dict):
+def _data_ultimei_modificari(sursa: Path) -> str:
+    """Data ultimei modificări a paginii, din git (aaaa-ll-zz).
+
+    Din git, nu din data fişierului: la fiecare clonare pe alt calculator sau
+    în CI, datele fişierelor devin „azi" pentru tot site-ul, iar Google ar
+    primi 36 de pagini „modificate azi" la fiecare publicare — semnal fals,
+    pe care îl ignoră după câteva runde.
+    """
+    try:
+        r = subprocess.run(
+            ["git", "log", "-1", "--format=%cs", "--", str(sursa)],
+            cwd=ROOT, capture_output=True, text=True, timeout=10)
+        data = r.stdout.strip()
+        if re.fullmatch(r"\d{4}-\d{2}-\d{2}", data):
+            return data
+    except Exception:
+        pass
+    return ""
+
+
+def generate_sitemap(out_dir: Path, config: dict, country_code: str = ""):
     base = config.get("domain_url", "").rstrip("/")
     skip_files = {"polistibrick-mercury-style.html"}  # homepage canonical = /
     urls = []
@@ -364,15 +385,21 @@ def generate_sitemap(out_dir: Path, config: dict):
             continue
         if 'name="robots" content="noindex' in html.read_text(encoding="utf-8", errors="ignore"):
             continue  # pages marked noindex stay out of the sitemap
+        # data se ia din fişierul-sursă, nu din cel construit (care e mereu nou)
+        sursa = COUNTRIES_DIR / country_code / rel if country_code else None
+        data = _data_ultimei_modificari(sursa) if sursa and sursa.exists() else ""
         if rel.endswith("/index.html"):
             rel = rel[:-10]
         elif rel == "index.html":
             rel = ""
-        urls.append(f"{base}/{rel}")
+        urls.append((f"{base}/{rel}", data))
     lines = ['<?xml version="1.0" encoding="UTF-8"?>',
              '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
-    for u in sorted(set(urls)):
-        lines.append(f"  <url><loc>{u}</loc></url>")
+    for u, data in sorted(set(urls)):
+        if data:
+            lines.append(f"  <url><loc>{u}</loc><lastmod>{data}</lastmod></url>")
+        else:
+            lines.append(f"  <url><loc>{u}</loc></url>")
     lines.append("</urlset>")
     (out_dir / "sitemap.xml").write_text("\n".join(lines), encoding="utf-8")
 
@@ -576,7 +603,7 @@ def build_country(code: str):
     check_nav_consistency(out_dir)
 
     # 4) sitemap + robots + CDN cache headers
-    generate_sitemap(out_dir, config)
+    generate_sitemap(out_dir, config, code)
     generate_robots(out_dir, config)
     generate_cache_headers(out_dir)
 
