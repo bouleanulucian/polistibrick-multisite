@@ -42,6 +42,11 @@ ASSET_VERSIONS = {
     "site.js": _asset_hash(ROOT / "shared" / "js" / "site.js"),
     "mercury-perf.js": _asset_hash(ROOT / "shared" / "js" / "mercury-perf.js"),
     "mercury-home.css": _asset_hash(ROOT / "shared" / "css" / "mercury-home.css"),
+    # site.css lipsea de aici. Consecinţă reală, 13.08.2026: după publicare
+    # mercury-home.css s-a împrospătat (URL nou), dar site.css a rămas în cache-ul
+    # Cloudflare încă ~3 ore, cu antetul max-age=14400 — deci vizitatorii primeau
+    # jumătate din stiluri vechi şi jumătate noi.
+    "site.css": _asset_hash(ROOT / "shared" / "css" / "site.css"),
 }
 
 
@@ -199,6 +204,13 @@ def optimize_html(text: str) -> str:
     text = re.sub(
         r'(<link rel="stylesheet" href="assets/css/mercury-home\.css)\?v=[^"]*(">)',
         r'\1?v=' + v_css + r'\2',
+        text,
+    )
+    # site.css e legat din toate paginile, cu prefix variabil ("../", "../../").
+    v_site_css = ASSET_VERSIONS.get("site.css", "1")
+    text = re.sub(
+        r'(<link rel="stylesheet" href="[^"]*assets/css/site\.css)(?:\?[^"]*)?(")',
+        r'\1?v=' + v_site_css + r'\2',
         text,
     )
     text = re.sub(
