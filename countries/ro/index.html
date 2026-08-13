@@ -1602,7 +1602,17 @@
     });
   }
 
-  // ===== AUTO-DETECTION BANNER =====
+  // ===== BARA DE SUGESTIE A ȚĂRII =====
+  // OPRITĂ (decizie patron 13.08.2026). Deocamdată e publicată doar România:
+  // cine intră pe polisti.ro rămâne pe România, nu e trimis în altă parte.
+  //
+  // Când se lansează celelalte țări, se repornește — DAR detecția trebuie făcută
+  // după ȚARA reală a vizitatorului (ex. antetul CF-IPCountry de la Cloudflare,
+  // disponibil pe fiecare cerere), NU după limba telefonului ca până acum:
+  // un român cu telefonul pe franceză era trimis pe polistibrick.fr.
+  const DETECTIE_TARA_PORNITA = false;
+  if (!DETECTIE_TARA_PORNITA) return;
+
   const banner = document.getElementById('countryBanner');
   if (!banner) return;
 
