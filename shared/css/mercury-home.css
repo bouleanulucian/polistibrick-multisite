@@ -5987,17 +5987,3 @@ h1 em, h2 em, h3 em, h4 em {
 .footer-legal-links a { color: #ffffff; text-decoration: none; }
 .footer-legal-links a:hover { color: var(--red); }
 
-/* Banda de identitate grup (sub hero) — cine este Polisti */
-.grup-band { background: var(--cream); padding: 26px 0; border-bottom: 1px solid var(--border); }
-.grup-band-text { max-width: 980px; margin: 0 auto; text-align: center; font-size: 15px; line-height: 1.75; color: var(--gray); }
-.grup-band-text strong { color: var(--ink); }
-/* Fără subliniere: pe telefon, patru linkuri subliniate care se rup peste rânduri
-   arătau ca un text stricat. Culoarea şi grosimea sunt de ajuns. */
-.grup-band-text a { color: var(--red); font-weight: 600; text-decoration: none; }
-.grup-band-text a:hover { text-decoration: underline; text-underline-offset: 3px; }
-@media (max-width: 809px) {
-  /* Spaţiu dedesubt: filigranul «DIFERENŢE» al secţiunii următoare urcă peste
-     marginea de sus şi acoperea ultimul rând al benzii (62 px suprapunere). */
-  .grup-band { padding: 20px 0 76px; }
-  .grup-band-text { font-size: 14px; line-height: 1.65; }
-}
