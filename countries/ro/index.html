@@ -1625,10 +1625,9 @@
       if (r === 'it') { suggestedKey = 'it'; break; }
       if (r === 'es') { suggestedKey = 'es'; break; }
       if (r === 'be') { suggestedKey = 'be'; break; }
-      if (r === 'ie') { suggestedKey = 'ie'; break; }
       if (r === 'gb' || r === 'uk') { suggestedKey = 'uk'; break; }
-      if (r === 'me') { suggestedKey = 'me'; break; }
-      if (r === 'ch') { suggestedKey = 'ch'; break; }
+      // ie / me / ch: domeniile nu răspund (verificat 13.08.2026) — vizitatorul
+      // rămâne pe polisti.ro în loc să fie trimis pe un site mort.
     }
     // Fall back to language match
     if (lang === 'ro') { suggestedKey = 'ro'; break; }
@@ -1636,8 +1635,8 @@
     if (lang === 'it') { suggestedKey = 'it'; break; }
     if (lang === 'es') { suggestedKey = 'es'; break; }
     if (lang === 'nl') { suggestedKey = 'be'; break; }
-    if (lang === 'de') { suggestedKey = 'ch'; break; }
     if (lang === 'en') { suggestedKey = 'uk'; break; }
+    // 'de' trimitea pe polistibrick.ch, care nu răspunde — scos.
   }
 
   if (!suggestedKey) return;
