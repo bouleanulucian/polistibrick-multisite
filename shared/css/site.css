@@ -328,6 +328,10 @@ p { line-height: 1.65; color: var(--gray); }
 .grid-4 { grid-template-columns: repeat(4, 1fr); }
 @media (max-width: 968px) {
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  /* Perechile de cifre rămân una lângă alta: singure pe un rând arată rupt. */
+  .grid-2.facts-row { grid-template-columns: 1fr 1fr; gap: 12px; }
+  /* Pe ecrane de 320 px eticheta lungă cade fix pe muchie; strânsă, încape. */
+  .facts-row .fact-label { font-size: 11px; letter-spacing: 0.05em; }
 }
 @media (max-width: 1100px) {
   .grid-4 { grid-template-columns: repeat(2, 1fr); }
@@ -1443,3 +1447,87 @@ html { scroll-behavior: auto !important; }
   padding: 13px 12px; border-radius: 10px; transition: background .15s ease;
 }
 .nav-drawer-direct:hover { background: rgba(255,255,255,0.55); }
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   BUTOANE PE TELEFON — o singură mărime
+   Site-ul avea 14 mărimi diferite (36–58 px înălţime, font 12–14,5 px), după
+   pagină şi variantă. Pe telefon toate arată la fel şi mai compact: 42 px
+   înălţime, font 13 px. Rămâne peste pragul de atins cu degetul.
+   Decizie patron 13.08.2026. Pe calculator nu se schimbă nimic.
+   ───────────────────────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  /* Sertarul pornea de la 78 px (76 + 2), înălţimea antetului de pe calculator.
+     Pe telefon antetul are 61 px, deci panoul plutea 17 px sub bară. */
+  .nav-drawer { top: 63px; }
+}
+
+@media (max-width: 768px) {
+  /* .nav-cta-devis (butonul „Ofertă" din bara de sus) e scos din scară:
+     regulile care îl ţin mic — liniile ~1285 şi ~1304 — n-au !important,
+     deci pierdeau, iar antetul creştea la 42 px pe telefon. */
+  .btn:not(.nav-cta-devis),
+  .btn-primary:not(.nav-cta-devis),
+  .btn-ghost,
+  .btn-red,
+  .btn-on-dark,
+  .btn-on-dark-ghost,
+  .btn-large,
+  .btn-cta-main,
+  .btn-cta-soft,
+  .btn-arrow {
+    padding: 11px 18px !important;
+    font-size: 13px !important;
+    min-height: 42px;
+    line-height: 1.2;
+  }
+  /* Butoanele din sertarul de meniu — aceeaşi mărime. Cel din bara de sus
+     rămâne mai mic intenţionat, ca antetul să nu crească. */
+  .nav-drawer-cta .btn { font-size: 13px !important; padding: 11px 18px !important; }
+  /* Săgeata din butoane scade odată cu textul */
+  .btn-arrow::after { font-size: 13px; }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   SCARA DE TEXT PE TELEFON — cinci trepte, nu paisprezece
+   Măsurat pe 13.08.2026: textul de conţinut avea 14 mărimi (11–17 px), titlurile
+   h2 trei mărimi, h3 cinci. Aici se aşază o singură scară, după rol.
+   Corpul de text CREŞTE la 15 px (era pe alocuri 11–12,5 px, prea mic de citit
+   pe telefon şi semnalat de Google ca „text too small to read"); titlurile mari
+   SCAD, ca să nu mai ocupe jumătate de ecran.
+   Excepţii lăsate intenţionat: subsolul, meniul, casetele de pe filme, tabelele
+   şi etichetele mărunte — au mărimile lor, potrivite acolo.
+   ───────────────────────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  /* !important: paginile aveau reguli proprii mai puternice, altfel scara
+     nu se aplica. Excepţiile de mai jos sunt tot cu !important, ca să câştige. */
+  .section h1, .wm-text h1, .ghid-hero h1 { font-size: 30px !important; line-height: 1.12; }
+  .section h2, .ghid-corp h2 { font-size: 22px !important; line-height: 1.18; }
+  .section h3, .ghid-corp h3 { font-size: 17px !important; line-height: 1.35; }
+
+  .section p, .section li,
+  .ghid-intro p, .ghid-corp p, .ghid-corp li,
+  .wm-text p.lead {
+    font-size: 15px !important;
+    line-height: 1.6;
+  }
+
+  /* Text mărunt, unde e potrivit să rămână mic */
+  .section .note, .section .legal, .section small,
+  .section figcaption, .section .eyebrow, .section .bubble-tag { font-size: 12.5px !important; }
+
+  /* Excepţii — text care rămâne la mărimea lui.
+     CAPCANĂ PLĂTITĂ, 13.08.2026: aici scria `font-size: revert !important`, cu
+     gândul „nu atingem". Dar font-size se moşteneşte, iar `revert` şterge şi
+     regulile proprii ale site-ului şi cade pe valoarea părintelui — 16 px.
+     Măsurat: celulele de tabel treceau de la 13,5 px la 769 px lăţime la 16 px
+     la 768 px, adică textul era MAI MARE pe telefon decât pe calculator.
+     De aceea mai jos stau valori explicite, măsurate pe calculator.
+     Ce nu e <p> sau <li> (.spec-table-cell, .stat-num, .stat-label) nu e atins
+     de scara de mai sus şi NU se trece aici — listarea era chiar cauza. */
+  .conf-fcaption p { font-size: 13px !important; }
+  .viz3d p, .viz3d li { font-size: 11.5px !important; }
+  .viz3d-legenda li { font-size: 12.5px !important; }
+  .spec-table p, .spec-table li,
+  .tabel-scroll p, .tabel-scroll li { font-size: 13.5px !important; }
+  .section p.pret-nota-mica { font-size: 13px !important; }
+}

@@ -229,7 +229,31 @@
       color: var(--ink); background: rgba(255,255,255,.94);
       border: 1px solid var(--border); font-weight: 600;
     }
+    /* Pe telefon, 3D-ul stătea într-o cutie mică în mijlocul cardului. Îl scoatem
+       pe toată lăţimea ecranului şi îl facem înalt, ca modelul să se vadă. */
+    @media (max-width: 768px) {
+      .wm-visual-wrap { margin-top: 22px; }
+      /* 3D-ul umple cardul pe toată lăţimea lui şi devine înalt. Rămâne ÎNĂUNTRU:
+         varianta care ieşea până la marginea ecranului trecea peste card. */
+      .wm-visual-wrap .wm-visual {
+        aspect-ratio: auto; height: 68vh; min-height: 360px;
+        padding: 0; box-shadow: none;
+      }
+      .wm-visual-wrap .wm-visual .viz3d-scena { border-radius: 18px; }
+      /* Legenda pe UN singur rând. Grosimile (1,5 / 15–25 / 20–25 cm) s-au mutat
+         în tabelul de specificaţii — cu ele, rândul cerea font de 9 px ca să încapă. */
+      .viz3d-legenda { padding: 0 12px; gap: 0 18px; flex-wrap: nowrap; font-size: 12.5px; }
+      .viz3d-legenda li { gap: 7px; white-space: nowrap; }
+      .viz3d-legenda span { width: 12px; height: 12px; }
+    }
     @media (max-width: 640px) { .viz3d-legenda { gap: 7px 16px; font-size: 12px; } }
+    @media (max-width: 389px) {
+      /* Cele trei poziţii („PSE interior · Beton · PSE exterior") cer 281 px.
+         La 390 px cardul are 284 şi încap pe un rând, cum s-a cerut. Mai jos
+         nu mai încap, iar rândul forţat împingea tot hero-ul peste chenar —
+         deci acolo se rup pe două rânduri, cu etichetele întregi. */
+      .viz3d-legenda { flex-wrap: wrap; }
+    }
 
     .dual-badge {
       display: inline-flex; gap: 6px; align-items: center; flex-wrap: wrap;
@@ -263,13 +287,13 @@
       font-size: 12px; font-weight: 700; letter-spacing: 0.08em;
       text-transform: uppercase; margin: 0 0 8px;
     }
-    .comp-block--coffrage .comp-block__label { color: #0F6B3A; }
+    .comp-block--cofraj .comp-block__label { color: #0F6B3A; }
     .comp-block--beton .comp-block__label { color: #5A5348; }
-    .comp-block--coffrage .spec-table {
+    .comp-block--cofraj .spec-table {
       background: #F1F7F3;
       border-color: rgba(18, 131, 63, 0.22);
     }
-    .comp-block--coffrage .spec-table-row.is-header {
+    .comp-block--cofraj .spec-table-row.is-header {
       background: rgba(18, 131, 63, 0.10);
       color: #0F6B3A;
     }
@@ -472,6 +496,15 @@
       margin: 12px 0 0; font-size: 14.5px; color: var(--gray); line-height: 1.6;
     }
     .faq-list a { color: var(--red); font-weight: 600; }
+
+    @media (max-width: 768px) {
+      /* Tabelele de compoziţie au 4 coloane şi cer 397 px într-un card de 316.
+         .spec-table are overflow: hidden din site.css, deci capul de tabel
+         „MBK 300" se pierdea şi cifrele rămâneau fără produs deasupra.
+         Acum se trage cu degetul. */
+      .comp-block .spec-table { overflow-x: auto; overflow-y: hidden; }
+      .comp-block .spec-table-row { min-width: 400px; }
+    }
 </style>
 </head>
 <body data-base="../../">
@@ -486,7 +519,7 @@
       </div>
       <div class="wm-stage">
         <div class="wm-text">
-          <h1>Cofraj izolant beton armat. <em>Casă pasivă.</em></h1>
+          <h1>Cofraj izolant, <em>finisat 80%.</em></h1>
           <p class="lead"><strong>Polistibrick</strong>: cofraj izolant cu <strong>ambele fețe din fibrociment</strong>. Exterior gata de adeziv și decorativă, interior gata de glet și vopsea. Se montează, se toarnă. Perete izolat, etanș la aer, gata de finisat. Casă pasivă / nZEB, clasă A+++.</p>
           <p class="lead" style="font-size:15px;margin-top:14px;"><strong>MBK</strong> este panoul de perete: cofraj izolant cu plăci de fibrociment pe ambele fețe, în grosimi de 38, 44 și 47 cm (U = 0,14 / 0,11 / 0,10 W/m²K). <strong>PBK</strong> este planșeul: aceleași plăci, beton armat turnat peste, deschideri până la 9 m. <strong>TBK</strong> este acoperișul: panou de 25 cm, U = 0,13. Trei coduri, o singură logică — izolația și finisajul vin din fabrică, betonul leagă totul pe șantier.</p>
           <ul class="include-list" style="margin:0 0 22px;">
@@ -775,7 +808,7 @@
           <p class="comp-block__label">Compoziție</p>
           <div class="spec-table">
             <div class="spec-table-row is-header">
-              <div class="spec-table-cell">Couche (int. → haut)</div>
+              <div class="spec-table-cell">Strat (int. → sus)</div>
               <div class="spec-table-cell">PBK 200</div>
               <div class="spec-table-cell">PBK 250</div>
               <div class="spec-table-cell">PBK 300</div>

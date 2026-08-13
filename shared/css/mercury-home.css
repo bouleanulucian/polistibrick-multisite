@@ -580,11 +580,13 @@
     text-decoration: none;
     font-size: 15px;
     font-weight: 500;
-    transition: color 0.15s ease, padding-left 0.2s ease;
+    transition: color 0.15s ease;
   }
+  /* padding-left: 8px era o glisare spre DREAPTA pe vechiul sertar, unde baza
+     era 4 px. Panoul de azi are 24 px, deci linkul sărea 16 px la STÂNGA la
+     trecerea cu mouse-ul. Scos, împreună cu animaţia lui de mai sus. */
   .nav-drawer a:hover, .nav-drawer a:focus {
     color: var(--red);
-    padding-left: 8px;
   }
   .nav-drawer a.partner-link { color: var(--red); font-weight: 600; }
   .nav-drawer-cta {
@@ -610,7 +612,10 @@
     color: white !important;
   }
   .nav-drawer-cta .btn-primary:hover { background: var(--red-dark) !important; }
-  body.nav-open { overflow: hidden; }
+  /* body.nav-open { overflow: hidden } — scos 13.08.2026. Blocarea derulării
+     e din vremea sertarului pe tot ecranul. Panoul de azi e un dropdown de
+     224 px, aşa că pe calculator îngheţa toată pagina degeaba (şi pe Windows
+     făcea conţinutul să sară lateral, odată cu bara de derulare). */
 
   @media (max-width: 1100px) {
     .nav-burger { display: inline-flex; }
@@ -3437,12 +3442,24 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
          sisteme constructive") ieşea din ecran la 40 px. Testat 360–414 px. */
       font-size: clamp(24px, 7.4vw, 40px);
       letter-spacing: -0.03em;
-      /* Bara fixă „Sună / E-mail" (54 px + zona sigură) acoperea al doilea rând.
-         Ridicăm textul deasupra ei; pe desktop rămâne la 48 px. */
-      bottom: calc(80px + env(safe-area-inset-bottom, 0px));
       left: 26px;
       max-width: none;
     }
+  }
+  @media (max-width: 768px) {
+    .hero-teaser.text-stilizat,
+    .hero-teaser {
+      /* Bara fixă „Sună / E-mail" (54 px + zona sigură) acoperea al doilea rând.
+         Ridicăm textul deasupra ei. Pragul e 768, ca al barei — era 809, iar pe
+         banda 769–809 px textul plutea cu 32 px mai sus peste o fâşie goală. */
+      bottom: calc(80px + env(safe-area-inset-bottom, 0px));
+    }
+    /* Sertarul avea top: 72 px, înălţimea antetului de pe calculator. Pe telefon
+       antetul are 61 px (57 sub 380 px), deci panoul plutea sub bară. */
+    .nav-drawer { top: 63px; }
+  }
+  @media (max-width: 380px) {
+    .nav-drawer { top: 59px; }
   }
   .hero-scroll-cue {
     position: absolute;
@@ -4460,9 +4477,12 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
       .card-header-pb, .card-header-cl { margin-bottom: 8px; gap: 8px; }
       .info-card h4, .info-card .h4-card-label { font-size: 15px; }
       .card-team, .card-materials { font-size: 11px; margin-bottom: 4px; }
-      .pane-tag { top: 6px; }
-      .pane-polistibrick .pane-tag { left: 10px; }
-      .pane-classic .pane-tag { right: 10px; }
+      /* Fundalul etichetei se întinde cu margin negativ dincolo de text, deci
+         la 10 px de margine „Clasic" ieşea 19 px din ecran şi se tăia.
+         Marginea negativă scade la 16 px, iar eticheta se trage spre interior. */
+      .pane-tag { top: 6px; padding: 10px 16px; margin: -10px -16px; }
+      .pane-polistibrick .pane-tag { left: 22px; }
+      .pane-classic .pane-tag { right: 22px; }
     }
 
 /* --- section --- */
@@ -6001,16 +6021,50 @@ h1 em, h2 em, h3 em, h4 em {
 }
 .sistem-pret-punte a:hover { opacity: .78; }
 
-/* Link direct în meniul ☰ — la acelaşi nivel cu titlurile de grup, fără acordeon */
-.nav-drawer-direct {
+/* Link direct în meniul ☰ — la acelaşi nivel cu titlurile de grup, fără acordeon.
+   Selectorul urcă pe #navDrawer ca să bată `.nav-drawer a` (regula moştenită de
+   la vechiul sertar de telefon, linia ~576); altfel „Preţuri" ieşea cu alt
+   spaţiu şi altă grosime decât „Produse" şi „Soluţii" — dar numai pe prima
+   pagină, fiindcă subpaginile nu încarcă fişierul ăsta. */
+#navDrawer .nav-drawer-direct {
   display: flex; align-items: center; justify-content: space-between;
   font-size: 15px; font-weight: 700; color: #000; text-decoration: none;
   padding: 13px 12px; border-radius: 10px; transition: background .15s ease;
 }
-.nav-drawer-direct:hover { background: rgba(255,255,255,0.55); }
+#navDrawer .nav-drawer-direct:hover { background: rgba(255,255,255,0.55); }
 
 /* Banda legală din footer — măruntă, pe un rând */
 .footer-legal-links { display: flex; flex-wrap: wrap; gap: 4px 8px; font-size: 11.5px; align-items: center; }
 .footer-legal-links a { color: #ffffff; text-decoration: none; }
 .footer-legal-links a:hover { color: var(--red); }
 
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   BUTOANE PE TELEFON — aceeaşi mărime ca pe restul site-ului
+   Prima pagină îşi are stilurile aici, cu reguli proprii (blocul „mobile text
+   scale-down") care micşorau butoanele la 12 px. Le aducem la mărimea unică:
+   42 px înălţime, font 13 px. Vezi regula pereche din site.css.
+   ───────────────────────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  /* .nav-cta-devis NU intră aici: butonul din bara de sus rămâne mic
+     intenţionat, ca antetul să nu crească pe telefon. Era listat şi umfla
+     antetul la 42 px, fix invers faţă de comentariul de mai jos. */
+  .btn:not(.nav-cta-devis),
+  .hero-actions .btn,
+  .btn-large,
+  .btn-red,
+  .btn-primary:not(.nav-cta-devis),
+  .btn-ghost,
+  .btn-on-dark,
+  .btn-on-dark-ghost,
+  .cinq-cta,
+  .presence-cta {
+    padding: 11px 18px !important;
+    font-size: 13px !important;
+    min-height: 42px;
+    line-height: 1.2;
+  }
+  /* Butoanele din sertarul de meniu — aceeaşi mărime. Cel din bara de sus
+     rămâne mai mic intenţionat, ca antetul să nu crească. */
+  .nav-drawer-cta .btn { font-size: 13px !important; padding: 11px 18px !important; }
+}

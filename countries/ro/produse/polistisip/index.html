@@ -93,11 +93,18 @@
     }
     @media (max-width: 1100px) {
       .wm-stage { grid-template-columns: 1fr; gap: 32px; padding: 36px; }
-      .wm-visual { margin-top: 0; aspect-ratio: 1 / 1; min-height: 360px; }
+      /* .wm-visual-wrap intră şi el aici: altfel decalajul optic de 10mm de la
+         linia 58 rămânea şi pe o singură coloană, adică un gol de 38 px degeaba. */
+      .wm-visual, .wm-visual-wrap { margin-top: 0; }
+      .wm-visual { aspect-ratio: 1 / 1; min-height: 360px; }
     }
     @media (max-width: 768px) {
       .wm-stage { padding: 28px 20px; }
-      .wm-visual--3d { aspect-ratio: 4 / 5; min-height: 400px; }
+      /* min-height: 400px + aspect-ratio 4/5 dădeau o LĂŢIME minimă de 320 px
+         (400 × 4/5). Cardul crem are 254 px la 360 px ecran, deci tot hero-ul
+         ieşea 45 px afară şi se tăia. Înălţimea vine acum din raport. */
+      .wm-visual-wrap { min-width: 0; margin-top: 22px; }
+      .wm-visual--3d { aspect-ratio: 4 / 5; min-height: 0; max-width: 100%; }
     }
     .fam-tabs {
       display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
@@ -756,7 +763,7 @@
       <div>
         <h2>Dimensiuni Jumbo.</h2>
         <p class="lead" style="font-size:15.5px;margin-top:12px;">Un perete de <strong>9 m</strong> dintr-o singură manevră de macara → structură <strong>50–60&nbsp;% mai rapidă</strong> decât în tradițional. Estetic curat: mai puține rosturi orizontale vizibile.</p>
-        <div class="grid grid-2" style="gap:16px;margin-top:24px;">
+        <div class="grid grid-2 facts-row" style="gap:16px;margin-top:24px;">
           <div class="fact"><span class="fact-num">50–60%</span><span class="fact-label">Mai rapid</span></div>
           <div class="fact"><span class="fact-num">9<small> m</small></span><span class="fact-label">Înălțime panou</span></div>
         </div>

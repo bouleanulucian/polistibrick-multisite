@@ -252,6 +252,9 @@
       display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 26px;
     }
     .viz3d-legenda[hidden] { display: none !important; }
+    /* Valorile de bază ale legendei stau ÎNAINTEA blocului de telefon, ca pe
+       pagina soră. Erau scrise după el şi, având aceeaşi specificitate, îi
+       anulau reglajele: spaţiul revenea la 9 px şi pastilele la 15 px. */
     .viz3d-legenda li {
       display: inline-flex; align-items: center; gap: 9px; font-size: 13.5px; color: var(--gray);
     }
@@ -259,9 +262,32 @@
       width: 15px; height: 15px; border-radius: 4px; flex: none;
       border: 1px solid rgba(0,0,0,.14);
     }
+
+    /* Pe telefon, 3D-ul stătea într-o cutie mică în mijlocul cardului. Îl scoatem
+       pe toată lăţimea ecranului şi îl facem înalt, ca modelul să se vadă. */
+    @media (max-width: 768px) {
+      .wm-visual-wrap { margin-top: 22px; }
+      /* 3D-ul umple cardul pe toată lăţimea lui şi devine înalt. Rămâne ÎNĂUNTRU:
+         varianta care ieşea până la marginea ecranului trecea peste card. */
+      .wm-visual-wrap .wm-visual {
+        aspect-ratio: auto; height: 68vh; min-height: 360px;
+        padding: 0; box-shadow: none;
+      }
+      .wm-visual-wrap .wm-visual .viz3d-scena { border-radius: 18px; }
+      /* Legenda pe UN singur rând. Grosimile (1,5 / 15–25 / 20–25 cm) s-au mutat
+         în tabelul de specificaţii — cu ele, rândul cerea font de 9 px ca să încapă. */
+      .viz3d-legenda { padding: 0 12px; gap: 0 18px; flex-wrap: nowrap; font-size: 12.5px; }
+      .viz3d-legenda li { gap: 7px; white-space: nowrap; }
+      .viz3d-legenda span { width: 12px; height: 12px; }
+    }
+
     @media (max-width: 640px) {
       .viz3d-scena canvas, .viz3d-scena img { height: 58vh; min-height: 320px; }
       .viz3d-legenda { gap: 8px 18px; font-size: 12.5px; }
+    }
+    @media (max-width: 340px) {
+      /* „Cofraj · Beton · Izolaţie" cer 244 px; sub 340 px nu mai încap. */
+      .viz3d-legenda { flex-wrap: wrap; }
     }
     .dual-badge {
       display: inline-flex; gap: 6px; align-items: center; flex-wrap: wrap;
@@ -295,13 +321,13 @@
       font-size: 12px; font-weight: 700; letter-spacing: 0.08em;
       text-transform: uppercase; margin: 0 0 8px;
     }
-    .comp-block--coffrage .comp-block__label { color: #0F6B3A; }
+    .comp-block--cofraj .comp-block__label { color: #0F6B3A; }
     .comp-block--beton .comp-block__label { color: #5A5348; }
-    .comp-block--coffrage .spec-table {
+    .comp-block--cofraj .spec-table {
       background: #F1F7F3;
       border-color: rgba(18, 131, 63, 0.22);
     }
-    .comp-block--coffrage .spec-table-row.is-header {
+    .comp-block--cofraj .spec-table-row.is-header {
       background: rgba(18, 131, 63, 0.10);
       color: #0F6B3A;
     }
@@ -533,6 +559,13 @@
       margin: 12px 0 0; font-size: 14.5px; color: var(--gray); line-height: 1.6;
     }
     .faq-list a { color: var(--red); font-weight: 600; }
+
+    @media (max-width: 768px) {
+      /* La fel ca pe pagina Polistibrick: 4 coloane într-un card de 316 px.
+         Fără asta se pierde ultima coloană, cu tot cu capul ei de tabel. */
+      .comp-block .spec-table { overflow-x: auto; overflow-y: hidden; }
+      .comp-block .spec-table-row { min-width: 400px; }
+    }
 </style>
 </head>
 <body data-base="../../">
@@ -575,13 +608,13 @@
             </div>
           </div>
           <ul class="viz3d-legenda" data-viz3d-legenda="0">
-            <li><span style="background:#6b2a20"></span>Contraplacaj 1,5</li>
-            <li><span style="background:#8e8b85"></span>Beton 15–25</li>
-            <li><span style="background:#3a3a3e"></span>Izolație 20–25</li>
+            <li><span style="background:#6b2a20"></span>Cofraj</li>
+            <li><span style="background:#8e8b85"></span>Beton</li>
+            <li><span style="background:#3a3a3e"></span>Izolație</li>
           </ul>
           <ul class="viz3d-legenda" data-viz3d-legenda="1" hidden style="display:none">
-            <li><span style="background:#8e8b85"></span>Beton 15–25</li>
-            <li><span style="background:#3a3a3e"></span>Izolație 20–25</li>
+            <li><span style="background:#8e8b85"></span>Beton</li>
+            <li><span style="background:#3a3a3e"></span>Izolație</li>
           </ul>
         </div>
       </div>
@@ -817,7 +850,7 @@
           <p class="comp-block__label">Compoziție</p>
           <div class="spec-table">
             <div class="spec-table-row is-header">
-              <div class="spec-table-cell">Couche (int. → haut)</div>
+              <div class="spec-table-cell">Strat (int. → sus)</div>
               <div class="spec-table-cell">PBK 200</div>
               <div class="spec-table-cell">PBK 250</div>
               <div class="spec-table-cell">PBK 300</div>

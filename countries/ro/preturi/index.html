@@ -230,7 +230,11 @@
     .pret-hero .lead strong { color: var(--ink); font-weight: 600; }
 
     .sis-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 12px; }
-    @media (max-width: 900px) { .sis-grid { grid-template-columns: 1fr; } }
+    /* Secţiunea „Mai avem două sisteme". Era scris style= direct în pagină,
+       iar stilul din atribut bate orice media query: pe telefon rămâneau două
+       coloane, al doilea card ieşea 85 px din ecran şi se tăia. */
+    .sis-grid--doua { grid-template-columns: repeat(2, 1fr); }
+    @media (max-width: 900px) { .sis-grid, .sis-grid--doua { grid-template-columns: 1fr; } }
     .sis {
       background: #fff; border: 1px solid var(--border); border-radius: 20px;
       padding: 28px 28px 26px; display: flex; flex-direction: column;
@@ -285,6 +289,17 @@
     .pret-faq summary::after { content: '+'; color: var(--red); font-weight: 400; font-size: 22px; line-height: 1; }
     .pret-faq details[open] summary::after { content: '–'; }
     .pret-faq p { font-size: 15px; color: var(--gray); line-height: 1.65; margin: 12px 0 0; }
+
+    @media (max-width: 768px) {
+      /* Tabelul cerea 486 px într-un ecran de 390, iar cadrul avea overflow:hidden:
+         ultima coloană de preţuri se tăia şi nu se putea ajunge la ea nicicum.
+         Blocul stă la sfârşit intenţionat — altfel îl anulează .pret-cadru de mai sus. */
+      .pret-cadru { overflow-x: auto; overflow-y: hidden; }
+      .pret-tabel { font-size: 13px; }
+      .pret-tabel th, .pret-tabel td { padding: 11px 6px; }
+      .pret-tabel th { font-size: 10px; letter-spacing: 0; }
+      .pret-tabel td.suma { font-size: 14.5px; }
+    }
   </style>
 </head>
 <body data-base="../">
@@ -553,7 +568,7 @@
     <h2 style="margin-bottom:10px;">Mai avem două sisteme</h2>
     <p style="color:var(--gray);font-size:15.5px;max-width:68ch;margin-bottom:30px;">Polistibrick are în portofoliu încă două sisteme premium, care completează gama. Toate trei fac o casă izolată la nivel de casă pasivă. Diferă prin cât primești gata făcut din fabrică.</p>
 
-    <div class="sis-grid" style="grid-template-columns:repeat(2,1fr);">
+    <div class="sis-grid sis-grid--doua">
       <article class="sis" id="polistiwall">
         <h3>Polistiwall</h3>
         <p class="rol">Cofraj izolant, fața interioară rămâne beton</p>

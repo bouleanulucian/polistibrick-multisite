@@ -106,6 +106,20 @@
     @media (max-width: 768px) {
       .wm-stage { padding: 28px 20px; }
       .comp-form-card, .comp-savings { padding: 28px; }
+      /* Tabelul rămânea pe 3 coloane late la orice lăţime. Antetul
+         („COST / CĂRĂMIDĂ / POLISTIBRICK", cu spaţiere între litere) cerea
+         310 px, cardul are 274 px — deci tot ce era în dreapta ieşea 38 px
+         din card. min-width: 0 opreşte împingerea în sus prin grilă. */
+      .comp-row { grid-template-columns: 1.35fr 1fr 1fr; gap: 8px; padding: 12px 12px; }
+      .comp-row > * { min-width: 0; }
+      .comp-row.is-header { font-size: 9px; letter-spacing: 0.02em; }
+      .comp-row .num, .comp-row.is-total { font-size: 14px; }
+    }
+    @media (max-width: 380px) {
+      /* Pe ecranele mici cardul de rezultat cerea 253 px într-o coloană de 214. */
+      .comp-grid > * { min-width: 0; }
+      .comp-form-card, .comp-savings { padding: 20px 16px; }
+      .comp-row { padding: 10px 8px; gap: 6px; }
     }
   </style>
 <!-- date-structurate -->

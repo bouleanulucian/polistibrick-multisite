@@ -119,6 +119,11 @@
     }
     @media (max-width: 640px) {
       .oferta-choices { grid-template-columns: 1fr; }
+      /* Butonul e pe un rând forţat (296 px) şi umfla coloana peste ecran:
+         cardul ieşea din pagină şi textul se tăia. Îl las să se strângă. */
+      .oferta-choices > .oferta-choice { min-width: 0; }
+      .oferta-choice { padding: 22px 18px; }
+      .oferta-choice .btn { white-space: normal; }
     }
     .oferta-choice {
       background: #fff;

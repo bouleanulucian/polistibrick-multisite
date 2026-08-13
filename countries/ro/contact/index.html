@@ -212,9 +212,17 @@
     }
     @media (max-width: 768px) {
       .wm-stage { padding: 28px 20px; }
-      .country-flags { gap: 6px; }
-      .country-flag-btn { padding: 8px 12px; font-size: 12px; }
-      .country-flag-btn span:not(.country-flag-emoji) { display: none; }
+      /* Numele ţării rămâne şi pe telefon. Fără el, rândul se reduce la steaguri
+         şi arată ca un al doilea selector de limbă, sub cel din bara de sus. */
+      .country-flags { gap: 6px; margin-top: 18px; margin-bottom: 28px; }
+      .country-flags::before {
+        content: 'Alege biroul din țara ta';
+        flex: 1 0 100%; text-align: center; margin-bottom: 12px;
+        font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+        text-transform: uppercase; color: var(--gray);
+      }
+      .country-flag-btn { padding: 7px 11px; font-size: 12px; gap: 6px; }
+      .country-flag-emoji { font-size: 15px; }
     }
   </style>
 <!-- date-structurate -->

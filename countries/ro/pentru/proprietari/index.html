@@ -991,6 +991,12 @@
     .spec-12-row .spec-table-cell { padding: 8px 6px !important; }
     .spec-12-row .pill { font-size: 10px !important; padding: 3px 7px !important; }
   }
+  @media (max-width: 768px) {
+    /* „Polistibrick" şi „Polistiwall" nu se rup în două: ca să intre în 390 px
+       ar trebui scris de 8 px. Mai bine se trage cu degetul. */
+    .comparison-expanded-inner { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .comparison-expanded-inner > .spec-table { min-width: 430px; }
+  }
 </style>
 
 <!-- ====================================================
