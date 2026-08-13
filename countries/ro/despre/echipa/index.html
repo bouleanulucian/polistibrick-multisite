@@ -23,6 +23,9 @@
     .fh { background: var(--cream); padding: clamp(52px, 7vw, 96px) 0; }
     .fh-grid { display: grid; grid-template-columns: 0.82fr 1fr; gap: clamp(32px, 5vw, 64px); align-items: center; }
     .fh-portrait { aspect-ratio: 4/5; border-radius: 24px; overflow: hidden; background: var(--cream-light); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--gray); text-align: center; font-size: 13px; padding: 24px; }
+    /* Cu poză, rama nu mai are chenar crem: fotografia umple tot cardul.
+       Padding-ul rămâne doar pentru cazul fără poză, unde ţine textul de rezervă. */
+    .fh-portrait:has(img) { padding: 0; }
     .fh-portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .fh h1 { font-family: var(--serif); font-size: clamp(40px, 6vw, 74px); font-weight: 500; color: var(--ink); line-height: 1.0; letter-spacing: -0.02em; margin: 16px 0 8px; }
     .fh-role { font-size: 12.5px; color: var(--red); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; }
@@ -129,7 +132,13 @@
   <div class="container">
     <div class="fh-grid reveal">
       <div class="fh-portrait">
-        <img src="../../images/equipe/founder1.png" alt="Lucian Bouleanu, fondatorul Polistibrick">
+        <!-- Poza reală, făcută în showroom. Înainte stătea aici o fotografie
+             de stoc, cu un om care nu e Lucian. -->
+        <picture>
+          <source srcset="../../images/equipe/fondator-lucian.webp" type="image/webp">
+          <img src="../../images/equipe/fondator-lucian.jpg" width="864" height="1080"
+               alt="Lucian Bouleanu, fondatorul Polistibrick" loading="eager">
+        </picture>
       </div>
       <div>
 <h1>Lucian<br>Bouleanu</h1>

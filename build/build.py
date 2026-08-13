@@ -491,6 +491,43 @@ def check_footer_consistency(out_dir: Path) -> None:
         raise SystemExit("Footerul trebuie să fie identic pe toate paginile.")
 
 
+def check_nav_consistency(out_dir: Path) -> None:
+    """Opreşte build-ul dacă meniul ☰ diferă de la o pagină la alta.
+
+    Aceeaşi capcană ca la subsol: prima pagină îşi ţine meniul scris în ea,
+    restul îl iau din site.js. Aşa au ajuns să existe „Fondatorul" pe prima
+    pagină şi „Echipa" pe restul, plus „Patent" vs „Patentul Polistibrick"
+    (prins de patron pe 13.08.2026). Aici se compară perechea adresă→text,
+    nu doar adresele, fiindcă tocmai textul se despărţise.
+    """
+    seen: dict[frozenset, list[str]] = {}
+    for html in out_dir.rglob("index.html"):
+        content = html.read_text(encoding="utf-8", errors="ignore")
+        m = re.search(r'<aside class="nav-drawer".*?</aside>', content, re.S)
+        if not m:
+            continue
+        perechi = set()
+        for href, text in re.findall(r'<a[^>]*href="([^"]+)"[^>]*>([^<]+)</a>', m.group(0)):
+            if href.startswith(("http", "#", "mailto", "tel")):
+                continue
+            tinta = re.sub(r"^(\.\./)+", "", href)
+            tinta = re.sub(r"^\./", "", tinta).lstrip("/")
+            perechi.add((tinta, " ".join(text.split())))
+        if perechi:
+            seen.setdefault(frozenset(perechi), []).append(
+                str(html.parent.relative_to(out_dir)) or "/")
+    if len(seen) > 1:
+        variante = sorted(seen.items(), key=lambda kv: -len(kv[1]))
+        majoritar = dict(variante[0][0])
+        print("\n  ✗ MENIU INCONSECVENT — build oprit:")
+        for perechi, pagini in variante[1:]:
+            for tinta, text in sorted(perechi):
+                if majoritar.get(tinta) != text:
+                    print(f"      {', '.join(pagini[:3])}: {tinta} scrie {text!r}, "
+                          f"restul scriu {majoritar.get(tinta)!r}")
+        raise SystemExit("Meniul trebuie să fie identic pe toate paginile.")
+
+
 def build_country(code: str):
     config = load_config(code)
     out_dir = BUILD_DIR / code
@@ -536,6 +573,7 @@ def build_country(code: str):
 
     # 3c) footerul trebuie să fie identic peste tot (vezi funcția)
     check_footer_consistency(out_dir)
+    check_nav_consistency(out_dir)
 
     # 4) sitemap + robots + CDN cache headers
     generate_sitemap(out_dir, config)
