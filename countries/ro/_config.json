@@ -50,9 +50,9 @@
   "currency_symbol": "€",
   "currency_display_format": "{value} €",
   "vat_rate": 19,
-  "form_submit_email": "contact@polistibrick.ro",
+  "form_submit_email": "contact@polisti.ro",
   "forms": {
-    "access_key": "2c1ec74f-a90b-436d-8ba4-764272610129",
+    "access_key": "91843857-b5a7-4f13-95e5-c0a7f45d821c",
     "provider": "web3forms",
     "subjects": {
       "contact": "Contact — Polistibrick România",

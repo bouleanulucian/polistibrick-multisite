@@ -146,7 +146,11 @@
       fd.append('site_url', CFG.liveDomainUrl);
     }
     if (CFG.ccEmail && CFG.ccEmail.indexOf('{{') === -1) {
-      fd.append('cc_email', CFG.ccEmail);
+      // Numele câmpului la Web3Forms e `ccemail`, fără liniuţă. Aici scria
+      // `cc_email`, iar câmpurile nerecunoscute nu rutează nimic — ajung doar
+      // ca un rând în corpul emailului. Atenţie: copia e funcţie PRO; pe plan
+      // gratuit rândul rămâne inert, oricât de corect ar fi scris numele.
+      fd.append('ccemail', CFG.ccEmail);
     }
   }
 
@@ -244,7 +248,11 @@
       const fd = new FormData();
       baseFields(fd, 'review');
       fd.append('name', nom);
-      fd.append('email', dec64('YXZpc0Bwb2xpc3RpYnJpY2suZnI=')); // avis@… (base64, anti-scraping)
+      // Recenzia nu cere emailul autorului, deci punem aici adresa ţării — la
+      // Web3Forms câmpul `email` devine reply-to. Înainte era o adresă
+      // franţuzească fixă, aşa că o recenzie de pe site-ul românesc răspundea
+      // în cutia din Franţa.
+      fd.append('email', CFG.fallbackEmail);
       fd.append('rating', String(rating));
       fd.append('role', document.getElementById('avisRole')?.value || '');
       fd.append('location', document.getElementById('avisLieu')?.value || '');

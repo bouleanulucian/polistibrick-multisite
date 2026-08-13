@@ -179,7 +179,14 @@ Cloudflare will cache assets at edge; repeat visitors load from CDN worldwide.
 Each country's forms (`/oferta/`, `/contact/`, `/devino-partener/`) post to that country's email
 (`contact.form_submit_email` in `_config.json`).
 
-- RO forms → `contact@polistibrick.ro`
+**Where the mail actually lands is decided by Web3Forms, not by this file.** Each
+`forms.access_key` belongs to a Web3Forms account, and delivery goes to that account's
+address. `form_submit_email` is documentation only — editing it routes nothing. To change
+the recipient you need a different access key (or a different recipient on the form, inside
+the Web3Forms dashboard). RO leads spent the first days after launch in the partners'
+mailbox because of exactly this; fixed 13.08.2026.
+
+- RO forms → `contact@polisti.ro` (key `91843857…`, account `contact@polisti.ro`)
 - FR forms → `contact@polistibrick.fr`
 - ES forms → `info@polistibrick.es`
 - EN/BE/CH/IT forms → fallback to `contact@polistibrick.com`

@@ -48,6 +48,7 @@ ASSET_VERSIONS = {
     # Cloudflare încă ~3 ore, cu antetul max-age=14400 — deci vizitatorii primeau
     # jumătate din stiluri vechi şi jumătate noi.
     "site.css": _asset_hash(ROOT / "shared" / "css" / "site.css"),
+    "forms.js": _asset_hash(ROOT / "shared" / "js" / "forms.js"),
 }
 
 
@@ -214,9 +215,14 @@ def optimize_html(text: str) -> str:
         r'\1?v=' + v_site_css + r'\2',
         text,
     )
+    # forms.js purta doar `defer`, fără versiune. În forms.js stă cheia Web3Forms,
+    # adică adresa unde pică leadurile: la schimbarea cheii (13.08.2026), oricine
+    # avea fişierul în cache ar fi continuat să trimită în cutia veche până expira
+    # antetul. Hash-ul din conţinut rupe cache-ul din prima.
+    v_forms = ASSET_VERSIONS.get("forms.js", "1")
     text = re.sub(
-        r'(<script\s+src="[^"]*forms\.js")(?!\s+defer)>',
-        r"\1 defer>",
+        r'(<script\s+src=")([^"]*forms\.js)(?:\?[^"]*)?(")(\s*defer)?>',
+        r'\1\2?v=' + v_forms + r'\3 defer>',
         text,
     )
     text = re.sub(
