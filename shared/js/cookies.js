@@ -28,9 +28,24 @@
     return str;
   }
 
+  // Politica de cookies promite: „Alegerea ta este salvată timp de 13 luni."
+  // Până pe 16.08.2026 alegerea se salva FĂRĂ dată, deci rămânea pe viaţă —
+  // exact genul de nepotrivire document/cod pe care îl caută un control.
+  var MAX_AGE_MS = 13 * 30 * 24 * 60 * 60 * 1000; // ~13 luni
+  var STAMP_KEY = STORAGE_KEY + '_ts';
+
   function getConsent() {
     try {
-      return localStorage.getItem(STORAGE_KEY);
+      var level = localStorage.getItem(STORAGE_KEY);
+      if (!level) return null;
+      var ts = parseInt(localStorage.getItem(STAMP_KEY), 10);
+      // Consimţămintele vechi (fără dată) expiră acum: se cere din nou acordul.
+      if (!ts || Date.now() - ts > MAX_AGE_MS) {
+        localStorage.removeItem(STORAGE_KEY);
+        localStorage.removeItem(STAMP_KEY);
+        return null;
+      }
+      return level;
     } catch (e) {
       return null;
     }
@@ -39,6 +54,7 @@
   function setConsent(level) {
     try {
       localStorage.setItem(STORAGE_KEY, level);
+      localStorage.setItem(STAMP_KEY, String(Date.now()));
     } catch (e) { /* ignore */ }
     window.dispatchEvent(new CustomEvent('pb-cookie-consent', { detail: { level: level } }));
   }
