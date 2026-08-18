@@ -52,3 +52,7 @@ countries/*/images/presence/frame*.png
 # Graphify — harta codului (generata local)
 graphify-out/
 .playwright-mcp/
+
+# Referinţe descărcate pentru reproducerea planurilor — nu se publică
+scripts/planuri/ref/
+scripts/planuri/__pycache__/
