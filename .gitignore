@@ -56,3 +56,6 @@ graphify-out/
 # Referinţe descărcate pentru reproducerea planurilor — nu se publică
 scripts/planuri/ref/
 scripts/planuri/__pycache__/
+
+# Campanii interne — nu se publică în repo public
+campanii/
