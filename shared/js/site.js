@@ -180,6 +180,26 @@
     if (navMount) navMount.innerHTML = NAV_HTML;
     if (footMount) footMount.innerHTML = FOOTER_HTML;
 
+    // Cardul ANPC-SAL, cerut de lege doar pentru România (OG 38/2015).
+    // Platforma europeană SOL a fost desființată în 2025 — nu se mai leagă.
+    if (footMount && '{{lang}}' === 'ro' && !footMount.querySelector('.footer-anpc')) {
+      const fb = footMount.querySelector('.footer-bottom');
+      if (fb) {
+        const d = document.createElement('div');
+        d.className = 'footer-anpc';
+        d.style.cssText = 'margin:20px 0 4px;';
+        d.innerHTML = '<a href="https://anpc.ro/ce-este-sal/" target="_blank" rel="noopener nofollow" style="display:inline-flex;align-items:center;gap:14px;background:#fff;border:1px solid #d9d2c7;border-radius:10px;padding:10px 16px;text-decoration:none;max-width:100%;">' +
+          '<span style="display:inline-flex;flex-direction:column;align-items:center;line-height:1;border-right:1px solid #e3ddd3;padding-right:14px;">' +
+            '<span style="font-weight:800;font-size:17px;letter-spacing:.5px;color:#123a8c;">ANPC</span>' +
+            '<span style="font-size:9px;color:#b02a2a;font-weight:600;margin-top:3px;">Te respect\u0103</span>' +
+          '</span>' +
+          '<span style="font-size:12px;font-weight:700;color:#123a8c;letter-spacing:.2px;">SOLU\u021aIONAREA<br>ALTERNATIV\u0102 A LITIGIILOR</span>' +
+          '<span style="background:#123a8c;color:#fff;font-size:11px;font-weight:700;padding:7px 14px;border-radius:18px;letter-spacing:.4px;">DETALII</span>' +
+        '</a>';
+        fb.parentNode.insertBefore(d, fb);
+      }
+    }
+
     // Mobile floating contact bar (call + email) — all pages
     if (!document.querySelector('.mobile-contact-bar')) {
       const bar = document.createElement('div');
