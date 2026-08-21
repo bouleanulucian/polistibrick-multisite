@@ -59,3 +59,7 @@ scripts/planuri/__pycache__/
 
 # Campanii interne — nu se publică în repo public
 campanii/
+
+# planse de referinta descarcate (nu se publica)
+referinte-ig/
+shared/images/case/_instagram-import/
