@@ -111,6 +111,172 @@
  ]
 }
 </script>
+<style id="hero4">
+/* ── EROU: patru carduri pe beton ───────────────────────────────────── */
+.h4{position:relative;display:flex;flex-direction:column;
+    min-height:100svh;padding-top:clamp(70px,8vh,96px);
+    background:#0E0F10;color:#F2F0EC;overflow:hidden;isolation:isolate;z-index:3}
+
+/* fundalul: beton închis, granulaţie fină + fagurele imprimat slab */
+.h4-fundal{position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:
+    /* lumina care cade de sus-stânga */
+    radial-gradient(120% 90% at 14% -8%, rgba(255,255,255,.070), transparent 62%),
+    radial-gradient(90% 70% at 92% 10%, rgba(200,16,46,.095), transparent 60%),
+    /* betonul randat: suprafaţa adevărată, nu un degrade */
+    url("images/erou/beton.webp") center/cover no-repeat,
+    #131416}
+
+/* patru carduri egale, pe toată înălţimea */
+.h4-carduri{position:relative;z-index:2;flex:1 1 auto;display:grid;
+            grid-template-columns:36.25% 2cm repeat(3,1fr);gap:0;
+            background:transparent;min-height:0}
+.h4-c{position:relative;display:flex;flex-direction:column;overflow:hidden;
+      background:transparent}
+.h4-c--mesaj{grid-column:1}
+.h4-c--brick{grid-column:3}
+.h4-c--wall {grid-column:4}
+.h4-c--sip  {grid-column:5}
+
+/* ── cardul 1: robotul şi mesajul ── */
+.h4-c--mesaj{padding:0;background:transparent}
+/* robotul: întreg, nu tăiat pe margini — imaginea n-are aer de tăiat.
+   Lumina din spate ţine cardul viu, ca să nu pară gol deasupra lui. */
+.h4-c--mesaj::before{content:"";position:absolute;inset:0;z-index:0;
+      background:radial-gradient(54% 38% at 50% 52%, rgba(255,255,255,.055), transparent 72%),
+                 radial-gradient(36% 22% at 50% 62%, rgba(200,16,46,.09), transparent 74%)}
+.h4-robot{flex:1 1 auto;position:relative;z-index:1;display:block}
+.h4-robot img{position:absolute;inset:0;width:100%;height:100%;
+              object-fit:contain;object-position:center center;
+              transform:scale(.84);
+              filter:drop-shadow(0 22px 48px rgba(0,0,0,.65))}
+
+/* ── mesajul, pe toată lăţimea, sub cele patru carduri ── */
+.h4-vorba{position:relative;z-index:2;flex:0 0 auto;
+          padding:clamp(18px,2.6vh,34px) 0 calc(clamp(20px,3vh,38px) + 1cm);
+          border-top:1px solid rgba(255,255,255,.09)}
+.h4-container{max-width:1400px;margin:0 auto;width:100%;
+              padding:0 clamp(20px,4vw,56px);
+              display:flex;align-items:flex-end;justify-content:space-between;
+              gap:clamp(24px,3.4vw,60px);flex-wrap:wrap}
+.h4-dr{flex:0 1 400px;min-width:270px}
+.h4 .h4-vorba h1{margin:0;flex:1 1 620px;font-weight:800;letter-spacing:-.022em;
+             line-height:1.05;font-size:clamp(26px,3.2vw,46px)!important;color:#fff}
+.h4 .h4-vorba h1 span{color:#9EA2A8}
+.h4-sub{margin:0;color:#B9BCC1;font-size:clamp(13px,1.05vw,16px);line-height:1.5}
+.h4-sub strong{color:#fff;font-weight:700}
+.h4-btn{display:inline-block;margin-top:14px;padding:13px 24px;border-radius:999px;
+        background:var(--red,#C8102E);color:#fff;text-decoration:none;
+        font-weight:700;font-size:14.5px;line-height:1.2;
+        box-shadow:0 10px 30px rgba(200,16,46,.32);
+        transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
+.h4-btn:hover{transform:translateY(-2px);background:#A00C24;
+              box-shadow:0 16px 40px rgba(200,16,46,.42)}
+
+/* ── cardurile 2-4: doar numele şi modelul. Nu se dă clic pe ele. ── */
+.h4-c--brick,.h4-c--wall,.h4-c--sip{
+      padding:clamp(18px,2vw,30px) clamp(16px,1.7vw,26px) 1cm;
+      justify-content:flex-end;      /* grupul nume+produs stă jos */
+      cursor:default}
+.h4-nume{flex:0 0 auto;display:block;margin:0 0 calc(3cm + 10px);font-weight:800;letter-spacing:-.02em;
+         line-height:1;font-size:clamp(21px,1.85vw,30px);color:#fff}
+.h4-nume em{font-style:normal;color:#9EA2A8}
+.h4-c--brick .h4-nume em{color:#C8102E}
+.h4-c--sip   .h4-nume em{color:#C6A06A}
+.h4-img{flex:0 0 auto;height:44%;min-height:140px;position:relative;margin:0}
+/* în repaus se vede poza; la survolare se aprinde modelul 3D, care se învârte singur.
+   Cutia 3D e la 57,2% (inset 21,4%) ca să cadă exact peste poza scalată la .572 —
+   aşa schimbul e nevăzut, iar pânza randează la rezoluţia ei, fără să se înceţoşeze. */
+.h4-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;
+           filter:drop-shadow(0 26px 50px rgba(0,0,0,.6));
+           transition:opacity .22s ease}
+.h4-viz{position:absolute;inset:-25%;opacity:0;pointer-events:none;
+        transform:translateY(-10%);
+        transition:opacity .22s ease}
+.h4-viz canvas{display:block;width:100%;height:100%;
+               filter:drop-shadow(0 26px 50px rgba(0,0,0,.6))}
+.h4-c--brick:hover .h4-viz,.h4-c--wall:hover .h4-viz,.h4-c--sip:hover .h4-viz{opacity:1}
+.h4-c--brick:hover .h4-poster,.h4-c--wall:hover .h4-poster,.h4-c--sip:hover .h4-poster{opacity:0}
+
+/* survolarea: cardul se luminează, modelul se ridică, o dungă în cap */
+.h4-nume::after{content:"";position:absolute;z-index:-1;pointer-events:none;opacity:0;
+      left:calc(-1 * clamp(16px,1.7vw,26px));right:calc(-1 * clamp(16px,1.7vw,26px));
+      top:calc(-1cm - 3px);height:100vh;
+      background:linear-gradient(180deg,
+                 rgba(255,255,255,.11) 0,
+                 rgba(255,255,255,.045) 38%,
+                 rgba(255,255,255,.012) 68%,
+                 transparent 88%);
+      transition:opacity .4s ease}
+/* dunga stă la 1 cm deasupra titlului şi se întinde cât cardul, peste padding */
+.h4-nume{position:relative}
+.h4-nume::before{content:"";position:absolute;height:3px;z-index:3;
+      left:calc(-1 * clamp(16px,1.7vw,26px));right:calc(-1 * clamp(16px,1.7vw,26px));
+      bottom:calc(100% + 1cm);background:var(--red,#C8102E);
+      transform:scaleX(0);transform-origin:0 50%;transition:transform .45s ease}
+.h4-c--brick:hover .h4-nume::after,
+.h4-c--wall:hover  .h4-nume::after,
+.h4-c--sip:hover   .h4-nume::after{opacity:1}
+.h4-c--brick:hover .h4-nume::before,
+.h4-c--wall:hover  .h4-nume::before,
+.h4-c--sip:hover   .h4-nume::before{transform:scaleX(1)}
+.h4-nume,.h4-img{position:relative;z-index:2}
+
+/* semnul că pagina continuă: „mouse-ul" cu bila care coboară, ca pe eroul vechi */
+.h4-cue{position:absolute;right:clamp(20px,3vw,44px);bottom:22px;z-index:4;
+        width:22px;height:34px;border:2px solid rgba(255,255,255,.5);
+        border-radius:11px;pointer-events:none}
+.h4-cue::before{content:"";position:absolute;left:50%;top:7px;
+        width:3px;height:7px;margin-left:-1.5px;border-radius:2px;
+        background:rgba(255,255,255,.75);
+        animation:h4-cue-bila 1.8s cubic-bezier(.4,0,.3,1) infinite}
+@keyframes h4-cue-bila{
+  0%{transform:translateY(0);opacity:0}
+  22%{opacity:1}
+  70%{transform:translateY(13px);opacity:0}
+  100%{transform:translateY(13px);opacity:0}}
+@media (prefers-reduced-motion:reduce){.h4-cue::before{animation:none;opacity:.75}}
+
+/* filigranul secţiunii următoare urca peste carduri */
+.differences-watermark{z-index:0}
+.differences-section,.differences-wrap{position:relative;z-index:1}
+
+/* ── TELEFON ŞI TABLETĂ ÎNGUSTĂ ──────────────────────────────────────
+   Robotul sus, pe toată lăţimea. Cele trei produse pe un rând sub el.
+   Textul şi butonul jos. Tot într-un singur ecran, fără derulare. */
+@media (max-width:900px){
+  .h4{padding-top:clamp(62px,7.5vh,84px)}
+  .h4-carduri{grid-template-columns:repeat(3,1fr);
+              grid-template-rows:1.55fr 1fr}
+  .h4-c--mesaj{grid-column:1 / -1;grid-row:1}
+  .h4-c--brick{grid-column:1;grid-row:2}
+  .h4-c--wall {grid-column:2;grid-row:2}
+  .h4-c--sip  {grid-column:3;grid-row:2}
+
+  /* cardurile de produs se strâng: numele mic, lipit de model */
+  .h4-c--brick,.h4-c--wall,.h4-c--sip{padding:0 6px 14px}
+  .h4-nume{font-size:clamp(11px,3.4vw,15px);margin:0 0 8px;text-align:center}
+  .h4-nume::before{left:-6px;right:-6px;bottom:calc(100% + 9px);height:2px}
+  .h4-nume::after{top:-11px;left:-6px;right:-6px}
+  .h4-img{height:auto;flex:1 1 auto;min-height:0}
+
+  /* mesajul: pe toată lăţimea, sub produse */
+  .h4-container{display:block;padding:0 clamp(18px,5vw,28px)}
+  .h4-vorba{padding:clamp(14px,2.2vh,22px) 0 calc(clamp(14px,2vh,22px) + 53px)}
+  .h4 .h4-vorba h1{font-size:clamp(23px,6.4vw,32px)!important;line-height:1.08}
+  .h4-dr{flex:none;min-width:0;margin-top:10px}
+  .h4-sub{font-size:clamp(12.5px,3.4vw,14.5px)}
+  .h4-btn{margin-top:11px;padding:12px 20px;font-size:13.5px}
+  .h4-cue{display:none}
+}
+
+/* telefon mic: robotul cedează puţin din înălţime, ca textul să încapă întreg */
+@media (max-width:420px){
+  .h4-carduri{grid-template-rows:1.35fr 1fr}
+  .h4-nume{letter-spacing:-.03em}
+}
+
+</style>
 </head>
 <body data-base="">
 
@@ -142,12 +308,12 @@
         </div>
       </div>
       <div class="nav-menu-item">
-        <a href="#" class="nav-menu-link" role="button" aria-haspopup="true" aria-expanded="false" onclick="event.preventDefault(); return false;">Soluții <span class="nav-menu-caret">▾</span></a>
+        <a href="#" class="nav-menu-link" role="button" aria-haspopup="true" aria-expanded="false" onclick="event.preventDefault(); return false;">Pentru cine <span class="nav-menu-caret">▾</span></a>
         <div class="nav-menu-dropdown">
-          <a href="pentru/proprietari/">Pentru proprietari</a>
-          <a href="pentru/arhitecti/">Pentru arhitecți</a>
-          <a href="pentru/constructori/">Pentru constructori</a>
-          <a href="pentru/investitori/">Pentru investitori</a>
+          <a href="pentru/constructori/">Constructori</a>
+          <a href="pentru/arhitecti/">Arhitecți</a>
+          <a href="pentru/investitori/">Dezvoltatori</a>
+          <a href="pentru/proprietari/">Particulari</a>
           <a href="devino-partener/" style="color:var(--red);font-weight:600;">→ Devino partener</a>
         </div>
       </div>
@@ -246,12 +412,12 @@
   <a href="preturi/" class="nav-drawer-direct">Prețuri</a>
 
   <div class="nav-drawer-group">
-    <button class="nav-drawer-title" aria-expanded="false">Soluții<span class="nd-caret">▾</span></button>
+    <button class="nav-drawer-title" aria-expanded="false">Pentru cine<span class="nd-caret">▾</span></button>
     <div class="nav-acc">
-      <a href="pentru/proprietari/">Pentru proprietari</a>
-      <a href="pentru/arhitecti/">Pentru arhitecți</a>
-      <a href="pentru/constructori/">Pentru constructori</a>
-      <a href="pentru/investitori/">Pentru investitori</a>
+      <a href="pentru/constructori/">Constructori</a>
+      <a href="pentru/arhitecti/">Arhitecți</a>
+      <a href="pentru/investitori/">Dezvoltatori</a>
+      <a href="pentru/proprietari/">Particulari</a>
       <a href="devino-partener/" class="partner-link">→ Devino partener</a>
     </div>
   </div>
@@ -308,42 +474,56 @@
   })();
 </script>
 
-<!-- HERO: case Polistibrick pe tot ecranul (stil showreel), text alb în stânga + robot în dreapta -->
-
-<div class="hero-scroll-track" id="heroScrollTrack">
-<section class="hero hero--photo" id="heroSection">
-  <div class="hero-bg" aria-hidden="true">
-    <picture class="hero-bg-poster">
-      <source type="image/webp" srcset="images/hero/hero-house-1-960.webp 960w, images/hero/hero-house-1-1600.webp 1600w, images/hero/hero-house-1.webp 2560w" sizes="100vw">
-      <img src="images/hero/hero-house-1.jpg" alt="Casă pasivă construită cu sistemul de cofraj izolant Polistibrick" width="2560" height="1440" decoding="async" fetchpriority="high">
-    </picture>
-    <video id="heroVideo" class="hero-bg-video" muted loop playsinline preload="none"
-           poster="images/hero/hero-house-1.webp"
-           data-src-desktop="images/hero/hero-houses-reel-desktop.mp4"
-           data-src-mobile="images/hero/hero-houses-reel-mobile.mp4"
-           data-src-desktop-webm="images/hero/hero-houses-reel-desktop.webm"
-           data-src-mobile-webm="images/hero/hero-houses-reel-mobile.webm"></video>
-    <div class="hero-bg-scrim"></div>
-  </div>
-  <p class="hero-teaser text-stilizat"><span class="hero-teaser-line">Grup Polistibrick</span><span class="hero-teaser-line">Trei sisteme constructive</span></p>
-  <div class="hero-scroll-cue" aria-hidden="true"></div>
-  <div class="hero-full-content">
-    <div class="container">
-      <div class="hero-text-col">
-        <picture class="hero-robot-wrap">
+<!-- HERO: patru carduri pe fundal de beton -->
+<section class="h4" id="heroSection" aria-label="Polistibrick și cele trei sisteme">
+  <div class="h4-fundal" aria-hidden="true"></div>
+  <div class="h4-carduri">
+      <div class="h4-c h4-c--mesaj">
+        <picture class="h4-robot">
           <source srcset="images/robot.webp" type="image/webp">
-          <img class="hero-robot" src="images/robot.webp" alt="Polistibrick — Construcție inteligentă" fetchpriority="low" loading="lazy" width="1500" height="1362">
+          <img src="images/robot.webp" alt="Polistibrick — construcție inteligentă" width="1500" height="1362" fetchpriority="high" decoding="async">
         </picture>
-        <h1>Construiește mai multe locuințe.<br><span class="h1-l2">Cu o singură echipă.</span></h1>
-        <p class="hero-sub">Pereți deja finișați, cu izolație de casă pasivă și rețele prevăzute.<br>Sosesc finalizați <strong>80% din fabrică</strong> — îi montăm, turnăm betonul, trecem la amenajare.</p>
-        <div class="hero-actions">
-          <a href="oferta/" class="btn btn-red btn-large">Încarcă planul, ofertă instant →</a>
-        </div>
+      </div>
+      <div class="h4-c h4-c--brick">
+        <span class="h4-nume">Polisti<em>brick</em></span>
+        <span class="h4-img">
+          <img class="h4-poster" src="images/erou/brick.webp" alt="Cofrajul Polistibrick în 3D" loading="lazy" decoding="async">
+          <span class="h4-viz" data-viz3d-poate data-stari='[{"eticheta":"Cofraj","fisier":"images/polistibrick/mbk-cofraj-v4.glb"}]'>
+            <canvas aria-hidden="true"></canvas>
+          </span>
+        </span>
+      </div>
+      <div class="h4-c h4-c--wall">
+        <span class="h4-nume">Polisti<em>wall</em></span>
+        <span class="h4-img">
+          <img class="h4-poster" src="images/erou/wall.webp" alt="Cofrajul Polistiwall în 3D" loading="lazy" decoding="async">
+          <span class="h4-viz" data-viz3d-poate data-stari='[{"eticheta":"Cofraj","fisier":"images/polistiwall/polistiwall-cofraj-v1.glb"}]'>
+            <canvas aria-hidden="true"></canvas>
+          </span>
+        </span>
+      </div>
+      <div class="h4-c h4-c--sip">
+        <span class="h4-nume">Polisti<em>SIP</em></span>
+        <span class="h4-img">
+          <img class="h4-poster" src="images/erou/sip.webp" alt="Panoul PolistiSIP în 3D" loading="lazy" decoding="async">
+          <span class="h4-viz" data-viz3d-poate data-stari='[{"eticheta":"Cofraj","fisier":"images/erou/sip.glb"}]'>
+            <canvas aria-hidden="true"></canvas>
+          </span>
+        </span>
+      </div>
+  </div>
+  <span class="h4-cue" aria-hidden="true"></span>
+  <div class="h4-vorba">
+    <div class="h4-container">
+      <h1>Construiește mai multe locuințe.<br><span>Cu o singură echipă.</span></h1>
+      <div class="h4-dr">
+        <p class="h4-sub">Trei sisteme, aceeași izolație de casă pasivă. Pereții vin finisați <strong>80% din fabrică</strong>.</p>
+        <a href="oferta/" class="h4-btn">Încarcă planul, ofertă instant →</a>
       </div>
     </div>
   </div>
 </section>
-</div>
+
 
 
 <!-- DIFERENȚE: comparație structurală perete Polistibrick vs izolație clasică -->
@@ -1173,12 +1353,12 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Soluții</h4>
+        <h4>Pentru cine</h4>
         <ul>
-          <li><a href="pentru/proprietari/">Proprietari</a></li>
-          <li><a href="pentru/arhitecti/">Arhitecți</a></li>
           <li><a href="pentru/constructori/">Constructori</a></li>
-          <li><a href="pentru/investitori/">Investitori</a></li>
+          <li><a href="pentru/arhitecti/">Arhitecți</a></li>
+          <li><a href="pentru/investitori/">Dezvoltatori</a></li>
+          <li><a href="pentru/proprietari/">Particulari</a></li>
           <li><a href="devino-partener/">→ Devino partener</a></li>
         </ul>
       </div>
@@ -1922,5 +2102,47 @@
 
 <script src="assets/js/mercury-perf.js?v=2" defer></script>
 
+<script src="assets/js/vizualizator-3d.js?v=7" defer></script>
+<script>
+/* Modelele se învârt singure, dar numai cât stă cursorul pe card.
+   Vizualizatorul roteşte doar când `rotesteSingur` e adevărat; altfel bucla lui
+   e un requestAnimationFrame gol, fără desen — deci în repaus nu costă nimic. */
+(function () {
+  var carduri = document.querySelectorAll('.h4-c--brick, .h4-c--wall, .h4-c--sip');
+  if (!carduri.length) return;
+
+  /* Pe telefon nu există survolare, deci modelele (1,16 MB) s-ar descărca degeaba.
+     Le pornesc doar unde chiar se poate survola şi unde omul n-a cerut mai puţină mişcare.
+     Marcajul data-viz3d îl pun EU, aici: scriptul acesta rulează la parsare, înaintea
+     vizualizatorului (care e `defer`), aşa că bootstrap-ul lui le găseşte la timp. */
+  var potSurvola = !window.matchMedia
+    || (window.matchMedia('(hover: hover) and (pointer: fine)').matches
+        && window.matchMedia('(min-width: 1101px)').matches
+        && !window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  if (!potSurvola) return;                       // rămâne poza, zero octeţi în plus
+  Array.prototype.forEach.call(document.querySelectorAll('[data-viz3d-poate]'), function (el) {
+    el.setAttribute('data-viz3d', '');
+  });
+
+  Array.prototype.forEach.call(carduri, function (card) {
+    var cutie = card.querySelector('.h4-viz');
+    if (!cutie) return;
+    var peCard = false;
+
+    function viz() { return cutie.viz3d || null; }
+    function seteaza(pornit) { var v = viz(); if (v) v.rotesteSingur = pornit; }
+
+    /* vizualizatorul se iniţializează singur, când cardul intră în ecran;
+       îl aştept, apoi îl las pe loc până când cineva survolează */
+    var incercari = 0;
+    var ceas = setInterval(function () {
+      if (viz() || ++incercari > 100) { clearInterval(ceas); seteaza(peCard); }
+    }, 150);
+
+    card.addEventListener('mouseenter', function () { peCard = true;  seteaza(true);  });
+    card.addEventListener('mouseleave', function () { peCard = false; seteaza(false); });
+  });
+})();
+</script>
 </body>
 </html>

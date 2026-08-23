@@ -71,10 +71,10 @@
       <div class="nav-drawer-group">
         <button class="nav-drawer-title" aria-expanded="false">{{ui.solutii}}<span class="nd-caret">▾</span></button>
         <div class="nav-acc">
-          <a href="${BASE}pentru/proprietari/">{{ui.pentru_proprietari}}</a>
-          <a href="${BASE}pentru/arhitecti/">{{ui.pentru_arhitecti}}</a>
           <a href="${BASE}pentru/constructori/">{{ui.pentru_constructori}}</a>
+          <a href="${BASE}pentru/arhitecti/">{{ui.pentru_arhitecti}}</a>
           <a href="${BASE}pentru/investitori/">{{ui.pentru_investitori}}</a>
+          <a href="${BASE}pentru/proprietari/">{{ui.pentru_proprietari}}</a>
           <a href="${BASE}devino-partener/" class="partner-link">{{ui.devino_partener}}</a>
         </div>
       </div>
@@ -130,10 +130,10 @@
         <div class="footer-col">
           <h5>{{ui.footer_h_solutii}}</h5>
           <ul>
-            <li><a href="${BASE}pentru/proprietari/">{{ui.footer_proprietari}}</a></li>
-            <li><a href="${BASE}pentru/arhitecti/">{{ui.footer_arhitecti}}</a></li>
             <li><a href="${BASE}pentru/constructori/">{{ui.footer_constructori}}</a></li>
+            <li><a href="${BASE}pentru/arhitecti/">{{ui.footer_arhitecti}}</a></li>
             <li><a href="${BASE}pentru/investitori/">{{ui.footer_investitori}}</a></li>
+            <li><a href="${BASE}pentru/proprietari/">{{ui.footer_proprietari}}</a></li>
             <li><a href="${BASE}devino-partener/">{{ui.devino_partener}}</a></li>
           </ul>
         </div>
