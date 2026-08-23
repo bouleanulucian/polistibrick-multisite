@@ -148,7 +148,7 @@
 .h4-robot{flex:1 1 auto;position:relative;z-index:1;display:block}
 .h4-robot img{position:absolute;inset:0;width:100%;height:100%;
               object-fit:contain;object-position:center center;
-              transform:scale(.84);
+              transform:translateY(-3mm) scale(.84);
               filter:drop-shadow(0 22px 48px rgba(0,0,0,.65))}
 
 /* ── mesajul, pe toată lăţimea, sub cele patru carduri ── */
@@ -195,8 +195,13 @@
         transition:opacity .22s ease}
 .h4-viz canvas{display:block;width:100%;height:100%;
                filter:drop-shadow(0 26px 50px rgba(0,0,0,.6))}
-.h4-c--brick:hover .h4-viz,.h4-c--wall:hover .h4-viz,.h4-c--sip:hover .h4-viz{opacity:1}
-.h4-c--brick:hover .h4-poster,.h4-c--wall:hover .h4-poster,.h4-c--sip:hover .h4-poster{opacity:0}
+/* Efectele de survolare merg DOAR unde există mouse adevărat.
+   Pe ecran tactil, atingerea aprinde :hover şi rămâne aprins — poza dispărea,
+   iar 3D-ul nu e pornit pe telefon, aşa că locul rămânea gol. */
+@media (hover:hover) and (pointer:fine){
+  .h4-c--brick:hover .h4-viz,.h4-c--wall:hover .h4-viz,.h4-c--sip:hover .h4-viz{opacity:1}
+  .h4-c--brick:hover .h4-poster,.h4-c--wall:hover .h4-poster,.h4-c--sip:hover .h4-poster{opacity:0}
+}
 
 /* survolarea: cardul se luminează, modelul se ridică, o dungă în cap */
 .h4-nume::after{content:"";position:absolute;z-index:-1;pointer-events:none;opacity:0;
@@ -214,12 +219,14 @@
       left:calc(-1 * clamp(16px,1.7vw,26px));right:calc(-1 * clamp(16px,1.7vw,26px));
       bottom:calc(100% + 1cm);background:var(--red,#C8102E);
       transform:scaleX(0);transform-origin:0 50%;transition:transform .45s ease}
-.h4-c--brick:hover .h4-nume::after,
-.h4-c--wall:hover  .h4-nume::after,
-.h4-c--sip:hover   .h4-nume::after{opacity:1}
-.h4-c--brick:hover .h4-nume::before,
-.h4-c--wall:hover  .h4-nume::before,
-.h4-c--sip:hover   .h4-nume::before{transform:scaleX(1)}
+@media (hover:hover) and (pointer:fine){
+  .h4-c--brick:hover .h4-nume::after,
+  .h4-c--wall:hover  .h4-nume::after,
+  .h4-c--sip:hover   .h4-nume::after{opacity:1}
+  .h4-c--brick:hover .h4-nume::before,
+  .h4-c--wall:hover  .h4-nume::before,
+  .h4-c--sip:hover   .h4-nume::before{transform:scaleX(1)}
+}
 .h4-nume,.h4-img{position:relative;z-index:2}
 
 /* semnul că pagina continuă: „mouse-ul" cu bila care coboară, ca pe eroul vechi */
@@ -266,7 +273,8 @@
   .h4 .h4-vorba h1{font-size:clamp(23px,6.4vw,32px)!important;line-height:1.08}
   .h4-dr{flex:none;min-width:0;margin-top:10px}
   .h4-sub{font-size:clamp(12.5px,3.4vw,14.5px)}
-  .h4-btn{margin-top:11px;padding:12px 20px;font-size:13.5px}
+  /* pe telefon butonul stă la mijloc, nu lipit de marginea din stânga */
+  .h4-btn{display:block;width:fit-content;margin:13px auto 0;padding:12px 22px;font-size:13.5px}
   .h4-cue{display:none}
 }
 
