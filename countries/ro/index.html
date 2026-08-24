@@ -245,6 +245,20 @@
   100%{transform:translateY(13px);opacity:0}}
 @media (prefers-reduced-motion:reduce){.h4-cue::before{animation:none;opacity:.75}}
 
+/* ── Cardurile de sistem primesc poza produsului, mică, în stânga ──
+   Poza stă absolut, iar textul e împins prin padding-left. Aşa nu ating
+   aşezarea în coloană a cardului. Regula stă aici, nu în mercury-home.css,
+   fiindcă imaginile din images/erou/ există doar pe RO. */
+.sistem-card--family{padding-left:calc(clamp(28px,2.8vw,40px) + 62px)}
+.sistem-produs{position:absolute;left:clamp(10px,1.1vw,16px);top:50%;
+  transform:translateY(-50%);height:min(52%,150px);width:auto;
+  object-fit:contain;pointer-events:none;
+  filter:drop-shadow(0 10px 22px rgba(0,0,0,.55))}
+@media (max-width:640px){
+  .sistem-card--family{padding-left:calc(20px + 50px)}
+  .sistem-produs{height:min(46%,110px);left:8px}
+}
+
 /* filigranul secţiunii următoare urca peste carduri */
 .differences-watermark{z-index:0}
 .differences-section,.differences-wrap{position:relative;z-index:1}
@@ -1001,6 +1015,7 @@
         <div class="sistem-grid sistem-grid--families">
 
           <a href="produse/polistibrick/" class="sistem-card sistem-card--family">
+            <img class="sistem-produs" src="images/erou/brick.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
             <span class="sistem-eco" aria-hidden="true" title="Ecologie">
               <svg viewBox="0 0 24 24" fill="none" focusable="false"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z" fill="#3E9B5A" stroke="#2F7A48" stroke-width="1.2" stroke-linejoin="round"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" fill="none" stroke="#1F5C32" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
               <svg viewBox="0 0 24 24" fill="none" focusable="false"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z" fill="#3E9B5A" stroke="#2F7A48" stroke-width="1.2" stroke-linejoin="round"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" fill="none" stroke="#1F5C32" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1013,6 +1028,7 @@
           </a>
 
           <a href="produse/polistiwall/" class="sistem-card sistem-card--family">
+            <img class="sistem-produs" src="images/erou/wall.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
             <span class="sistem-eco" aria-hidden="true" title="Ecologie">
               <svg viewBox="0 0 24 24" fill="none" focusable="false"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z" fill="#3E9B5A" stroke="#2F7A48" stroke-width="1.2" stroke-linejoin="round"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" fill="none" stroke="#1F5C32" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
               <svg viewBox="0 0 24 24" fill="none" focusable="false"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z" fill="#3E9B5A" stroke="#2F7A48" stroke-width="1.2" stroke-linejoin="round"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" fill="none" stroke="#1F5C32" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1025,6 +1041,7 @@
           </a>
 
           <a href="produse/polistisip/" class="sistem-card sistem-card--family">
+            <img class="sistem-produs" src="images/erou/sip.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
             <span class="sistem-eco" aria-hidden="true" title="Ecologie">
               <svg viewBox="0 0 24 24" fill="none" focusable="false"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z" fill="#3E9B5A" stroke="#2F7A48" stroke-width="1.2" stroke-linejoin="round"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" fill="none" stroke="#1F5C32" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
               <svg viewBox="0 0 24 24" fill="none" focusable="false"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z" fill="#3E9B5A" stroke="#2F7A48" stroke-width="1.2" stroke-linejoin="round"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" fill="none" stroke="#1F5C32" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
