@@ -5441,7 +5441,8 @@ nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(15, 15, 15, 0.
     .montaj-stage { padding: 60px 32px 40px; }
   }
   @media (max-width: 700px) {
-    .montaj-grid { grid-template-columns: 1fr; }
+    /* Cele patru etape stau 2×2, nu într-un şir lung de derulat. */
+    .montaj-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
     .montaj-stage { padding: 50px 20px 32px; }
     .montaj-cta { flex-direction: column; align-items: stretch; text-align: center; padding: 28px; }
     /* Boutons : centrés + même largeur sur mobile */
