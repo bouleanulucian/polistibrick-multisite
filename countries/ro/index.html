@@ -159,13 +159,14 @@
               padding:0 clamp(20px,4vw,56px);
               display:flex;align-items:flex-end;justify-content:space-between;
               gap:clamp(24px,3.4vw,60px);flex-wrap:wrap}
-.h4-dr{flex:0 1 400px;min-width:270px}
-.h4 .h4-vorba h1{margin:0;flex:1 1 620px;font-weight:800;letter-spacing:-.022em;
+.h4-stanga{flex:1 1 auto;min-width:0}
+.h4-dr{flex:0 0 auto}
+.h4 .h4-vorba h1{margin:0;font-weight:800;letter-spacing:-.022em;
              line-height:1.05;font-size:clamp(26px,3.2vw,46px)!important;color:#fff}
 .h4 .h4-vorba h1 span{color:#9EA2A8}
-.h4-sub{margin:0;color:#B9BCC1;font-size:clamp(13px,1.05vw,16px);line-height:1.5}
+.h4-sub{margin:12px 0 0;color:#B9BCC1;font-size:clamp(13px,1.05vw,16px);line-height:1.5}
 .h4-sub strong{color:#fff;font-weight:700}
-.h4-btn{display:inline-block;margin-top:14px;padding:13px 24px;border-radius:999px;
+.h4-btn{display:inline-block;margin-top:0;padding:13px 24px;border-radius:999px;
         background:var(--red,#C8102E);color:#fff;text-decoration:none;
         font-weight:700;font-size:14.5px;line-height:1.2;
         box-shadow:0 10px 30px rgba(200,16,46,.32);
@@ -523,9 +524,11 @@
   <span class="h4-cue" aria-hidden="true"></span>
   <div class="h4-vorba">
     <div class="h4-container">
-      <h1>Casa la gri în trei săptămâni.<br><span>Cu trei oameni.</span></h1>
-      <div class="h4-dr">
+      <div class="h4-stanga">
+        <h1>Casa la gri în trei săptămâni.<br><span>Cu trei oameni.</span></h1>
         <p class="h4-sub">Montezi cofrajul, torni betonul, peretele e gata. La clasic, aceleași lucrări cer <strong>șase echipe și trei-patru luni</strong>.</p>
+      </div>
+      <div class="h4-dr">
         <a href="oferta/" class="h4-btn">Încarcă planul, ofertă instant →</a>
       </div>
     </div>
