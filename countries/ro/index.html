@@ -245,6 +245,12 @@
   100%{transform:translateY(13px);opacity:0}}
 @media (prefers-reduced-motion:reduce){.h4-cue::before{animation:none;opacity:.75}}
 
+/* Titlul secţiunii celor cinci stă la limita coloanei: 716 px din 716.
+   Până se încarcă Inter, pagina desenează cu fontul de sistem, care are alte
+   lăţimi — s-ar rupe în trei rânduri şi ar sări înapoi. 38 px în loc de 40 dă
+   5% de margine, invizibil cu ochiul. */
+.cinq-overlay h2{font-size:clamp(22px,2.85vw,38px)!important}
+
 /* filigranul secţiunii următoare urca peste carduri */
 .differences-watermark{z-index:0}
 .differences-section,.differences-wrap{position:relative;z-index:1}
@@ -810,7 +816,7 @@
 <section class="cinq-section" id="cinq" aria-label="Diferența Polistibrick: cinci produse într-un singur panou">
   <div class="cinq-media">
   <div class="cinq-overlay">
-    <h2 class="reveal">Foc, apă, zgomot, seism, fixare.<br><em>La alții le cumperi separat.</em></h2>
+    <h2 class="reveal">Alt sistem nu le are.<br><em>Dacă le vrei, le cumperi separat.</em></h2>
     <a href="oferta/" class="btn btn-red cinq-cta reveal">Ofertă gratuită →</a>
   </div>
     <video class="cinq-video lazy-video" muted loop playsinline preload="none"
