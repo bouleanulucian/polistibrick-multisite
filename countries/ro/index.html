@@ -245,18 +245,18 @@
   100%{transform:translateY(13px);opacity:0}}
 @media (prefers-reduced-motion:reduce){.h4-cue::before{animation:none;opacity:.75}}
 
-/* ── Cardurile de sistem primesc poza produsului, mică, în stânga ──
-   Poza stă absolut, iar textul e împins prin padding-left. Aşa nu ating
+/* ── Cardurile de sistem primesc poza produsului, mică, în dreapta ──
+   Poza stă absolut, iar textul e împins prin padding-right. Aşa nu ating
    aşezarea în coloană a cardului. Regula stă aici, nu în mercury-home.css,
    fiindcă imaginile din images/erou/ există doar pe RO. */
-.sistem-card--family{padding-left:calc(clamp(28px,2.8vw,40px) + 62px)}
-.sistem-produs{position:absolute;left:clamp(10px,1.1vw,16px);top:50%;
+.sistem-card--family{padding-right:calc(clamp(28px,2.8vw,40px) + 62px)}
+.sistem-produs{position:absolute;right:clamp(10px,1.1vw,16px);top:50%;
   transform:translateY(-50%);height:min(52%,150px);width:auto;
   object-fit:contain;pointer-events:none;
   filter:drop-shadow(0 10px 22px rgba(0,0,0,.55))}
 @media (max-width:640px){
-  .sistem-card--family{padding-left:calc(20px + 50px)}
-  .sistem-produs{height:min(46%,110px);left:8px}
+  .sistem-card--family{padding-right:calc(20px + 50px)}
+  .sistem-produs{height:min(46%,110px);right:8px}
 }
 
 /* filigranul secţiunii următoare urca peste carduri */
