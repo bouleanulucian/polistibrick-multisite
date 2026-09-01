@@ -3,8 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact · Polistibrick — 9 pays européens</title>
-  <meta name="description" content="Contactez l'équipe Polistibrick de votre pays. Sélectionnez le drapeau du pays où vous construisez et recevez le contact direct.">
+  <title>Contact · Polistibrick – 9 pays européens</title>
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+  <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+  <meta name="description" content="Contactez l'équipe Polistibrick de votre pays. Sélectionnez le drapeau du pays où vous construisez et obtenez le contact direct.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contact · Polistibrick – 9 pays européens">
+  <meta property="og:description" content="Contactez l'équipe Polistibrick de votre pays. Sélectionnez le drapeau du pays où vous construisez et obtenez le contact direct.">
+  <meta property="og:image" content="https://polistibrick.fr/images/hero/hero-house-1.jpg">
+  <meta property="og:url" content="https://polistibrick.fr/contact/">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -203,11 +212,83 @@
     }
     @media (max-width: 768px) {
       .wm-stage { padding: 28px 20px; }
-      .country-flags { gap: 6px; }
-      .country-flag-btn { padding: 8px 12px; font-size: 12px; }
-      .country-flag-btn span:not(.country-flag-emoji) { display: none; }
+      /* Le nom du pays reste aussi sur mobile. Sans lui, la rangée se réduit aux drapeaux
+         et ressemble à un second sélecteur de langue, sous celui de la barre du haut. */
+      .country-flags { gap: 6px; margin-top: 18px; margin-bottom: 28px; }
+      .country-flags::before {
+        content: 'Choisissez le bureau de votre pays';
+        flex: 1 0 100%; text-align: center; margin-bottom: 12px;
+        font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+        text-transform: uppercase; color: var(--gray);
+      }
+      .country-flag-btn { padding: 7px 11px; font-size: 12px; gap: 6px; }
+      .country-flag-emoji { font-size: 15px; }
     }
   </style>
+<!-- données structurées -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "WebPage",
+    "ContactPage"
+   ],
+   "@id": "{{domain_url}}/contact/#page",
+   "url": "{{domain_url}}/contact/",
+   "name": "Contact",
+   "inLanguage": "{{lang}}",
+   "isPartOf": {
+    "@id": "{{domain_url}}/#site"
+   },
+   "publisher": {
+    "@id": "{{domain_url}}/#organisation"
+   },
+   "description": "Contactez l'équipe Polistibrick de votre pays. Sélectionnez le drapeau du pays où vous construisez et obtenez le contact direct."
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "{{country_name}}",
+     "item": "{{domain_url}}/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Contact",
+     "item": "{{domain_url}}/contact/"
+    }
+   ]
+  },
+  {
+   "@type": "Organization",
+   "@id": "{{domain_url}}/#organisation",
+   "name": "{{company.name_legal}}",
+   "alternateName": "Polistibrick",
+   "url": "{{domain_url}}/",
+   "logo": "{{domain_url}}/images/logo.png",
+   "telephone": "{{contact.phone}}",
+   "email": "{{contact.email_general}}",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "{{company.address_street}}",
+    "addressLocality": "{{company.address_city}}",
+    "postalCode": "{{company.address_zip}}",
+    "addressCountry": "{{country}}"
+   },
+   "sameAs": [
+    "https://worldwide.espacenet.com/patent/search?q=pn%3DEP4372168",
+    "https://euipo.europa.eu/eSearch/#details/trademarks/018936693",
+    "https://euipo.europa.eu/eSearch/#details/trademarks/019311167"
+   ]
+  }
+ ]
+}
+</script>
 </head>
 <body data-base="../">
 
@@ -223,7 +304,7 @@
 
       <div class="wm-stage">
 
-        <!-- FLAGS ROW SELECTOR -->
+        <!-- RANGÉE DE DRAPEAUX / SÉLECTEUR -->
         <div class="country-flags" role="tablist" aria-label="Sélectionnez le pays">
           <button class="country-flag-btn" data-country="RO" role="tab"><span class="country-flag-emoji">🇷🇴</span><span>Roumanie</span></button>
           <button class="country-flag-btn" data-country="ES" role="tab"><span class="country-flag-emoji">🇪🇸</span><span>Espagne</span></button>
@@ -236,20 +317,20 @@
 
         <div class="wm-content">
 
-          <!-- LEFT -->
+          <!-- GAUCHE -->
           <div class="wm-text">
-<h2>Des spécialistes <em>à un clic.</em></h2>
-            <p>Nous répondons à vos questions techniques, préparons des devis personnalisés et offrons un conseil gratuit pour tout projet.</p>
-            <p>Sélectionnez le pays où vous construisez pour voir le contact de l'équipe locale et lui envoyer votre message directement.</p>
+<h1>Des spécialistes <em>à un clic.</em></h1>
+            <p>Nous répondons à vos questions techniques, préparons des devis personnalisés et vous conseillons gratuitement sur chaque projet.</p>
+            <p>Sélectionnez le pays où vous construisez pour voir le contact de l'équipe locale et lui écrire directement.</p>
 
             <div class="country-office-card" id="activeOfficeCard"></div>
           </div>
 
-          <!-- RIGHT -->
+          <!-- DROITE -->
           <div class="wm-form-card">
             <div class="wm-form-target">
               <span id="formTargetFlag">🇫🇷</span>
-              <span>Message à <strong id="formTargetCountry">France</strong></span>
+              <span>Message pour l'équipe <strong id="formTargetCountry">France</strong></span>
             </div>
             <h3>Écrivez-nous directement.</h3>
             <p>Votre message arrive directement à l'équipe du pays sélectionné.</p>
@@ -293,8 +374,8 @@
                 <select class="form-select" id="csubject" name="subject">
                   <option>Question technique</option>
                   <option>Demande de documentation</option>
-                  <option>Support produit</option>
-                  <option>Devenez partenaire</option>
+                  <option>Assistance produit</option>
+                  <option>Devenir partenaire</option>
                   <option>Demande de devis</option>
                   <option>Presse / Médias</option>
                   <option>Autre</option>
@@ -306,14 +387,14 @@
                 <textarea class="form-textarea" id="cmsg" name="message" required placeholder="Comment pouvons-nous vous aider ?"></textarea>
               </div>
 
-<!-- Ataşamentele cer planul Web3Forms Pro — blocul se restaurează de aici când se face upgrade:
+<!-- Les pièces jointes nécessitent le plan Web3Forms Pro ; le bloc se restaure d'ici lors de la mise à niveau :
               <div class="form-row">
                 <label class="form-label">Pièces jointes (facultatif)</label>
                 <label class="form-file-drop" for="cfiles" id="fileDropZone">
                   <span class="form-file-icon">📎</span>
                   <div class="form-file-text">
-                    <strong>Joignez plans, croquis ou documents</strong>
-                    <span>PDF · DWG · DXF · JPG · PNG · ZIP — max 10 Mo / fichier</span>
+                    <strong>Joignez vos plans, croquis ou documents</strong>
+                    <span>PDF · DWG · DXF · JPG · PNG · ZIP · max 10 Mo / fichier</span>
                   </div>
                   <input type="file" id="cfiles" name="files" accept=".pdf,.dwg,.dxf,.jpg,.jpeg,.png,.zip" multiple style="display:none;">
                 </label>
@@ -331,11 +412,11 @@
                 </label>
               </div>
 
-              <p style="font-size:11.5px;color:var(--gray);text-align:center;margin-top:12px;">Nous répondons sous 24 heures ouvrées maximum.</p>
+              <p style="font-size:11.5px;color:var(--gray);text-align:center;margin-top:12px;">Nous répondons sous 24 heures ouvrées.</p>
 
               <div class="pb-form-thanks" hidden>
                 <h3>Message envoyé ✓</h3>
-                <p>Merci ! Notre équipe vous répond sous 24 heures ouvrées.</p>
+                <p>Merci ! Notre équipe vous répondra sous 24 heures ouvrées.</p>
               </div>
             </form>
           </div>
@@ -354,13 +435,13 @@
   //   photo: 'images/equipe/NOM-FICHIER.jpg', contact: 'Prénom Nom'
   // (sans photo, un cercle avec le drapeau s'affiche par défaut)
   const COUNTRIES = {
-    RO: { flag: '🇷🇴', name: 'Roumanie', city: 'Craiova', phone: '+40 371 550 550', phoneRaw: '+40371550550', email: null, address: 'Prelungirea Ghencea 281,<br>sector 6, Bucarest', site: 'polisti.ro', langs: 'RO · EN', badge: 'Siège RO' },
-    ES: { flag: '🇪🇸', name: 'Espagne', city: 'Valencia', phone: '+34 642 777 216', phoneRaw: '+34642777216', email: null, address: 'Pol. 24, 106,<br>Santa Eulalia del Rio', site: 'polistibrick.es', langs: 'ES · EN', badge: 'Siège ES' },
-    FR: { flag: '🇫🇷', name: 'France', city: 'Croissy-sur-Seine', phone: '+33 1 61 30 40 09', phoneRaw: '+33161304009', email: null, address: '4 Rue Hans List,<br>78290 Croissy-sur-Seine', site: 'polistibrick.fr', langs: 'FR · EN', badge: 'Siège FR' },
+    RO: { flag: '🇷🇴', name: 'Roumanie', city: 'Bucarest', phone: '+40 31 630 81 15', phoneRaw: '+40316308115', email: null, address: 'Prelungirea Ghencea 281,<br>sector 6, București', site: 'polisti.ro', langs: 'RO · EN', badge: 'Siège RO' },
+    ES: { flag: '🇪🇸', name: 'Espagne', city: 'Valence', phone: '+34 642 777 216', phoneRaw: '+34642777216', email: null, address: 'Pol. 24, 106,<br>Santa Eulalia del Rio', site: 'polistibrick.es', langs: 'ES · EN', badge: 'Siège ES' },
+    FR: { flag: '🇫🇷', name: 'France', city: 'Croissy-sur-Seine', phone: '+33 1 61 30 40 09', phoneRaw: '+33161304009', email: null, address: 'Croissy-sur-Seine (Yvelines),<br>Île-de-France', site: 'polistibrick.fr', langs: 'FR · EN', badge: 'Siège FR' },
     BE: { flag: '🇧🇪', name: 'Belgique', city: 'Lessines', phone: '+32 471 693 531', phoneRaw: '+32471693531', email: null, address: 'Profond Chemin 2,<br>7860 Lessines', site: 'polistibrick.be', langs: 'FR · NL · EN', badge: 'Siège BE' },
     IT: { flag: '🇮🇹', name: 'Italie', city: "Città Sant'Angelo", phone: '+39 328 164 8085', phoneRaw: '+393281648085', email: null, address: "Città Sant'Angelo (PE),<br>Via Magliano del Gioco 16", site: 'polistibrick.it', langs: 'IT · EN', badge: 'Siège IT' },
-    AT: { flag: '🇦🇹', name: 'Autriche', city: '—', phone: null, phoneRaw: null, email: null, address: 'Contact via formulaire en ligne<br>ou via polistibrick.at', site: 'polistibrick.at', langs: 'DE · EN', badge: 'En ligne' },
-    GB: { flag: '🇬🇧', name: 'Royaume-Uni', city: 'Servi depuis la Roumanie', phone: '+40 371 550 550', phoneRaw: '+40371550550', email: null, address: 'Contact via polistibrick.uk<br>ou directement depuis la Roumanie', site: 'polistibrick.uk', langs: 'EN', badge: 'En ligne · Support RO' },
+    AT: { flag: '🇦🇹', name: 'Autriche', city: '—', phone: null, phoneRaw: null, email: null, address: 'Contact via le formulaire en ligne<br>ou via polistibrick.at', site: 'polistibrick.at', langs: 'DE · EN', badge: 'En ligne' },
+    GB: { flag: '🇬🇧', name: 'Royaume-Uni', city: 'Desservi depuis la Roumanie', phone: '+40 31 630 81 15', phoneRaw: '+40316308115', email: null, address: 'Contact via polistibrick.uk<br>ou directement depuis la Roumanie', site: 'polistibrick.uk', langs: 'EN', badge: 'En ligne · Assistance RO' },
   };
 
   const FALLBACK_MAP = {
@@ -452,8 +533,8 @@
     if (e.detail && e.detail.level === 'accepted') runContactGeo();
   });
 
-  // === File upload handling ===
-  const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10 MB
+  // === Gestion des pièces jointes ===
+  const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10 Mo
   const filesInput = document.getElementById('cfiles');
   const filesList = document.getElementById('filesList');
   const fileDropZone = document.getElementById('fileDropZone');
@@ -466,12 +547,12 @@
       const item = document.createElement('div');
       item.className = 'form-file-item';
       item.innerHTML = `
-        <span class="form-file-item-name">📄 ${file.name} <small>${sizeMB} MB</small></span>
+        <span class="form-file-item-name">📄 ${file.name} <small>${sizeMB} Mo</small></span>
         <button type="button" class="form-file-item-remove" data-idx="${idx}" aria-label="Supprimer">×</button>
       `;
       filesList.appendChild(item);
     });
-    // Sync to input (using DataTransfer)
+    // Synchronisation vers l'input (via DataTransfer)
     const dt = new DataTransfer();
     selectedFiles.forEach(f => dt.items.add(f));
     filesInput.files = dt.files;
@@ -483,7 +564,7 @@
         alert(`Le fichier "${file.name}" est trop volumineux (${(file.size/1024/1024).toFixed(1)} Mo). Maximum 10 Mo par fichier.`);
         return;
       }
-      // Avoid duplicates
+      // Évite les doublons
       if (!selectedFiles.some(f => f.name === file.name && f.size === file.size)) {
         selectedFiles.push(file);
       }
@@ -503,7 +584,7 @@
     }
   });
 
-  // Drag & drop
+  // Glisser-déposer
   ['dragenter', 'dragover'].forEach(evt => {
     fileDropZone.addEventListener(evt, (e) => {
       e.preventDefault(); e.stopPropagation();
@@ -522,7 +603,7 @@
     }
   });
 
-  /* === PRÉ-REMPLISSAGE du formulaire à partir des paramètres d'URL ===
+  /* === Pré-remplissage du formulaire depuis les paramètres d'URL ===
      Exemple d'URL appelée depuis /pour/architectes/ :
        ?subject=Demande+document+:+CAD+DWG&role=architecte-bet&doc=CAD+DWG&type=document */
   (function prefillFromURL() {
@@ -532,13 +613,13 @@
     var doc = params.get('doc');
     var type = params.get('type');
 
-    // Pré-sélection du rôle (Architecte / BET / etc.)
+    // Présélection du rôle (architecte / BET / etc.)
     var roleSelect = document.getElementById('crole');
     if (role && roleSelect) {
       var roleMap = {
         'architecte': 'architecte',
         'bet': 'bet',
-        'architecte-bet': 'architecte', // default to architecte if both
+        'architecte-bet': 'architecte', // par défaut « architecte » si les deux
         'constructeur': 'constructeur',
         'particulier': 'particulier',
         'promoteur': 'promoteur'
@@ -547,11 +628,11 @@
       if (mappedRole) roleSelect.value = mappedRole;
     }
 
-    // Pre-select sujet — try to match existing option
+    // Présélectionne le sujet, si l'option existe
     var subjectSelect = document.getElementById('csubject');
     if (subjectSelect) {
       if (type === 'document' || (subject && subject.toLowerCase().indexOf('document') !== -1)) {
-        // Force "Demande de documentation"
+        // Force « Demande de documentation »
         for (var i = 0; i < subjectSelect.options.length; i++) {
           if (subjectSelect.options[i].text === 'Demande de documentation') {
             subjectSelect.selectedIndex = i;
@@ -559,7 +640,7 @@
           }
         }
       } else if (subject) {
-        // Try to find exact match
+        // Cherche une correspondance exacte
         for (var j = 0; j < subjectSelect.options.length; j++) {
           if (subjectSelect.options[j].text === subject) {
             subjectSelect.selectedIndex = j;
@@ -569,7 +650,7 @@
       }
     }
 
-    // Pre-fill message based on params
+    // Pré-remplit le message selon les paramètres
     var msgField = document.getElementById('cmsg');
     if (msgField && (doc || subject)) {
       var roleText = '';
@@ -581,7 +662,7 @@
       var msg = '';
       if (doc) {
         if (roleText) {
-          msg = 'Bonjour,\n\nEn tant que ' + roleText + ', je souhaite recevoir le document suivant :\n\n• ' + doc + '\n\nMerci d\'avance.';
+          msg = 'Bonjour,\n\nProfil : ' + roleText + '.\n\nJe souhaite recevoir le document suivant :\n\n• ' + doc + '\n\nMerci d\'avance.';
         } else {
           msg = 'Bonjour,\n\nJe souhaite recevoir le document suivant :\n\n• ' + doc + '\n\nMerci d\'avance.';
         }
@@ -591,7 +672,7 @@
       msgField.value = msg;
     }
 
-    // Auto-scroll to form on page load if any param present
+    // Fait défiler jusqu'au formulaire au chargement si un paramètre est présent
     if (subject || role || doc || type) {
       setTimeout(function(){
         var formCard = document.querySelector('.wm-form-card');

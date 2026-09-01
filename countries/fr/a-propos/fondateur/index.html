@@ -4,7 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Le fondateur de Polistibrick · Lucian Bouleanu</title>
-  <meta name="description" content="Lucian Bouleanu, fondateur de Polistibrick — d'une famille de maçons à l'invention du système ICF 5-en-1. Son histoire, et sa promesse.">
+  <link rel="icon" type="image/png" href="../../images/favicon.png">
+  <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
+  <meta name="description" content="Lucian Bouleanu, fondateur de Polistibrick : d'une famille de maçons à l'invention du système ICF 5-en-1. Son histoire et sa promesse.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Le fondateur de Polistibrick · Lucian Bouleanu">
+  <meta property="og:description" content="Lucian Bouleanu, fondateur de Polistibrick : d'une famille de maçons à l'invention du système ICF 5-en-1. Son histoire et sa promesse.">
+  <meta property="og:image" content="https://polistibrick.fr/images/hero/hero-house-1.jpg">
+  <meta property="og:url" content="https://polistibrick.fr/a-propos/fondateur/">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -14,10 +23,13 @@
     .fh { background: var(--cream); padding: clamp(52px, 7vw, 96px) 0; }
     .fh-grid { display: grid; grid-template-columns: 0.82fr 1fr; gap: clamp(32px, 5vw, 64px); align-items: center; }
     .fh-portrait { aspect-ratio: 4/5; border-radius: 24px; overflow: hidden; background: var(--cream-light); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--gray); text-align: center; font-size: 13px; padding: 24px; }
+    /* Avec une photo, le cadre n'a plus de bordure crème : la photographie remplit toute la carte.
+       Le padding ne reste que pour le cas sans photo, où il retient le texte de secours. */
+    .fh-portrait:has(img) { padding: 0; }
     .fh-portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .fh h1 { font-family: var(--serif); font-size: clamp(40px, 6vw, 74px); font-weight: 500; color: var(--ink); line-height: 1.0; letter-spacing: -0.02em; margin: 16px 0 8px; }
     .fh-role { font-size: 12.5px; color: var(--red); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; }
-    .fh-hook { font-family: var(--serif); font-style: italic; font-size: clamp(21px, 2.4vw, 30px); color: var(--ink-soft); line-height: 1.45; margin-top: 30px; max-width: 540px; }
+    .fh-hook { font-family: var(--serif); font-style: italic; font-size: clamp(16px, 1.6vw, 20px); color: var(--ink-soft); line-height: 1.6; margin-top: 30px; max-width: 560px; }
     @media (max-width: 900px) { .fh-grid { grid-template-columns: 1fr; gap: 32px; } .fh-portrait { max-width: 340px; } }
 
     /* ===== NARROW PROSE ===== */
@@ -26,7 +38,7 @@
     .prose p:last-child { margin-bottom: 0; }
     .prose strong { color: var(--ink); font-weight: 600; }
 
-    /* ===== DÉFAUTS (flaw cards) ===== */
+    /* ===== DÉFAUTS (cartes) ===== */
     .flaws { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 900px; margin: 0 auto; }
     .flaw { background: var(--cream-light); border: 1px solid var(--border); border-radius: 16px; padding: 26px 28px; }
     .flaw h4 { font-size: 16px; color: var(--ink); margin-bottom: 8px; }
@@ -50,6 +62,66 @@
     .fclose { max-width: 760px; margin: 0 auto; text-align: center; font-size: clamp(19px, 2.2vw, 24px); line-height: 1.6; color: var(--ink); }
     .fclose em { font-style: italic; color: var(--red); }
   </style>
+<!-- données structurées -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebPage",
+   "@id": "{{domain_url}}/a-propos/fondateur/#page",
+   "url": "{{domain_url}}/a-propos/fondateur/",
+   "name": "Le fondateur de Polistibrick",
+   "inLanguage": "{{lang}}",
+   "isPartOf": {
+    "@id": "{{domain_url}}/#site"
+   },
+   "publisher": {
+    "@id": "{{domain_url}}/#organisation"
+   },
+   "description": "Lucian Bouleanu, fondateur de Polistibrick : d'une famille de maçons à l'invention du système ICF 5-en-1. Son histoire et sa promesse."
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "{{country_name}}",
+     "item": "{{domain_url}}/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "À propos",
+     "item": "{{domain_url}}/a-propos/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Le fondateur de Polistibrick",
+     "item": "{{domain_url}}/a-propos/fondateur/"
+    }
+   ]
+  },
+  {
+   "@type": "Person",
+   "name": "Lucian Bouleanu",
+   "jobTitle": "Fondateur",
+   "worksFor": {
+    "@id": "{{domain_url}}/#organisation"
+   }
+  },
+  {
+   "@type": "Organization",
+   "@id": "{{domain_url}}/#organisation",
+   "name": "{{company.name_legal}}",
+   "url": "{{domain_url}}/",
+   "logo": "{{domain_url}}/images/logo.png"
+  }
+ ]
+}
+</script>
 </head>
 <body data-base="../../">
 
@@ -60,77 +132,70 @@
   <div class="container">
     <div class="fh-grid reveal">
       <div class="fh-portrait">
-        <img src="../../images/equipe/founder1.png" alt="Lucian Bouleanu, fondateur de Polistibrick">
+        <!-- La vraie photo, prise dans le showroom. Avant, il y avait ici une photo
+             de banque d'images, avec un homme qui n'est pas Lucian. -->
+        <picture>
+          <source srcset="../../images/equipe/fondator-lucian.webp" type="image/webp">
+          <img src="../../images/equipe/fondator-lucian.jpg" width="864" height="1080"
+               alt="Lucian Bouleanu, fondateur de Polistibrick" loading="eager">
+        </picture>
       </div>
       <div>
 <h1>Lucian<br>Bouleanu</h1>
         <div class="fh-role">Fondateur &amp; CEO · Inventeur du système Polistibrick</div>
-        <p class="fh-hook">« J'ai grandi sur les chantiers. J'ai passé ma carrière à résoudre ce que personne d'autre n'avait résolu. »</p>
+        <p class="fh-hook">« Je viens d'une famille de constructeurs. Je suis sur les chantiers depuis l'âge de 8 ans, et mes études ont suivi la même direction. Aujourd'hui, je conçois et j'invente des systèmes qui simplifient un mode de construction resté trop compliqué. Après Polistibrick, deux autres ont suivi, Polistiwall et PolistiSIP : vous les trouverez dans notre portefeuille. Nous avons inventé par nécessité, pas pour inventer. »</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== 2. LES RACINES ===== -->
-<section class="section">
-  <div class="container">
-    <div class="reveal" style="text-align:center;max-width:700px;margin:0 auto 36px;">
-      <h2>Tout commence <em>sur le chantier.</em></h2>
-    </div>
-    <div class="prose reveal">
-      <p>Je viens d'une famille de maçons. J'ai posé le pied dans ce monde à huit ans. À douze, je passais déjà mes étés sur les chantiers, aux côtés de mon grand-père, <strong>Valică Bouleanu</strong> — qui me payait comme un ouvrier qualifié.</p>
-      <p>Au fil de ma carrière, j'ai construit avec tous les systèmes : du bois à la pierre, ICF compris. J'ai toujours su que l'ICF était une voie d'avenir. Mais il ne résout qu'un seul problème — l'isolation. Et personne ne veut payer plus cher pour rien de plus.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 3. LE CONSTAT (défauts ICF) ===== -->
+<!-- ===== 3. LE CONSTAT (les défauts de l'ICF) ===== -->
 <section class="section section--cream">
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:700px;margin:0 auto 44px;">
       <h2>Alors j'ai étudié <em>chaque défaut.</em></h2>
-      <p class="lead" style="margin-top:14px;">J'ai relevé, un à un, les limites de chaque système ICF du marché.</p>
+      <p class="lead" style="margin-top:14px;">J'ai noté, une à une, les limites de chaque système ICF du marché.</p>
     </div>
     <div class="flaws reveal">
       <div class="flaw">
         <h4>Ils se fissurent</h4>
-        <p>Certains coffrages cèdent sous la pression du béton au moment du coulage.</p>
+        <p>Certains coffrages cèdent sous la pression du béton pendant le coulage.</p>
       </div>
       <div class="flaw">
         <h4>Impossibles à armer</h4>
-        <p>D'autres n'acceptent pas d'armature en acier — une limite structurelle majeure.</p>
+        <p>D'autres n'acceptent aucun ferraillage acier, une limite structurelle majeure.</p>
       </div>
       <div class="flaw">
         <h4>Coulage limité en hauteur</h4>
-        <p>D'autres ne tiennent pas les coulages en hauteur et imposent de couler en plusieurs fois.</p>
+        <p>D'autres ne résistent pas au coulage en hauteur et imposent de couler en plusieurs passes.</p>
       </div>
       <div class="flaw">
-        <h4>Lourds à monter</h4>
-        <p>Et les plus robustes sont lents et pénibles à assembler sur le chantier.</p>
+        <h4>Difficiles à assembler</h4>
+        <p>Et les plus robustes sont lents et difficiles à assembler sur place.</p>
       </div>
     </div>
     <p class="flaws-note reveal">Et tous, sans exception, ne sont que de l'isolation.</p>
   </div>
 </section>
 
-<!-- ===== 4. LA RÉPONSE + METRICS ===== -->
+<!-- ===== 4. LA RÉPONSE + LES CHIFFRES ===== -->
 <section class="section">
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 36px;">
       <h2>Six ans. Six versions. <em>Un seul système.</em></h2>
     </div>
     <div class="prose reveal">
-      <p>Aujourd'hui, je peux vous dire une chose : Polistibrick réunit toutes les étapes d'une construction passive. C'est de là que vient son nom — <strong>5 en 1</strong> — là où les systèmes ICF ne sont qu'un <strong>2 en 1</strong> : maçonnerie et isolation.</p>
+      <p>Aujourd'hui, je peux vous dire une chose : Polistibrick réunit toutes les étapes d'une construction passive. D'où son nom : <strong>5 en 1</strong>. Les systèmes ICF classiques ne sont que du <strong>2 en 1</strong> : maçonnerie et isolation.</p>
       <p>Polistibrick est né des erreurs des autres. Et je m'engage à réinvestir chaque année dans la recherche, comme je l'ai toujours fait.</p>
     </div>
     <div class="fmetrics reveal">
       <div class="fmetric">
         <div class="n">8<em>ans</em></div>
-        <div class="l">sur les chantiers, dès l'enfance.</div>
+        <div class="l">sur les chantiers, depuis l'enfance.</div>
       </div>
       <div class="fmetric">
         <div class="n">+90<em>%</em></div>
-        <div class="l">des coffrages ICF du marché, éprouvés.</div>
+        <div class="l">des coffrages ICF du marché, testés.</div>
       </div>
       <div class="fmetric">
         <div class="n">6<em>versions</em></div>
@@ -144,27 +209,19 @@
   </div>
 </section>
 
-<!-- ===== 5. CITATION ===== -->
-<section class="fquote reveal">
-  <div class="container">
-    <p class="q">« Je ne crée pas une entreprise. Je crée un système pour l'avenir. »</p>
-    <div class="sig">Lucian Bouleanu — Fondateur de Polistibrick</div>
-  </div>
-</section>
-
-<!-- ===== 6. CLÔTURE + CTA ===== -->
+<!-- ===== 6. LA CONCLUSION + CTA ===== -->
 <section class="section">
   <div class="container">
-    <p class="fclose reveal">Et si demain un système meilleur et plus performant devait voir le jour, c'est encore Polistibrick qui le créera — <em>parce que la construction est l'air que je respire.</em></p>
+    <p class="fclose reveal">Et si demain un système meilleur et plus efficace voyait le jour, c'est encore Polistibrick qui le créerait, <em>parce que la construction est l'air que je respire.</em></p>
   </div>
 </section>
 
 <section class="section section--tight">
   <div class="cta-band reveal">
     <h2>Une question, <em>un projet ?</em></h2>
-    <p>Écrivez-nous — l'équipe Polistibrick du pays où vous construisez vous répond directement.</p>
+    <p>Écrivez-nous : l'équipe Polistibrick du pays où vous construisez vous répondra directement.</p>
     <div class="cta-band-actions">
-      <a href="../../contact/" class="btn btn-on-dark btn-large btn-arrow">Nous contacter</a>
+      <a href="../../contact/" class="btn btn-on-dark btn-large btn-arrow">Contactez-nous</a>
     </div>
   </div>
 </section>

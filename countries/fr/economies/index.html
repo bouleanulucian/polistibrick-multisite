@@ -3,8 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calculateur d'économies · Combien économisez-vous avec Polistibrick — 25 ans</title>
-  <meta name="description" content="Calculateur dynamique qui montre combien vous économisez avec Polistibrick par rapport à la brique classique sur 25 ans. Saisissez les m², le climat, le prix de l'énergie et visualisez la différence réelle.">
+  <title>Calculateur d'économies : le chauffage de la maison sur 25 ans</title>
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+  <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+  <meta name="description" content="Calculez combien vous économisez en chauffage et en climatisation sur 25 ans, par rapport à une maison classique. Avec le prix de l'énergie en France, à jour.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Calculateur d'économies : le chauffage de la maison sur 25 ans">
+  <meta property="og:description" content="Calculez combien vous économisez en chauffage et en climatisation sur 25 ans, par rapport à une maison classique. Avec le prix de l'énergie en France, à jour.">
+  <meta property="og:image" content="https://polistibrick.fr/images/hero/hero-house-1.jpg">
+  <meta property="og:url" content="https://polistibrick.fr/economies/">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -40,7 +49,7 @@
     .wm-intro h2 em { font-style: italic; color: var(--red); font-weight: 400; }
     .wm-intro p { font-size: 15px; color: var(--gray); line-height: 1.65; }
 
-    /* Comparator grid */
+    /* Grille du comparateur */
     .comp-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 36px; align-items: start; }
     .comp-form-card {
       background: white; border: 1px solid var(--border); border-radius: 20px;
@@ -97,8 +106,68 @@
     @media (max-width: 768px) {
       .wm-stage { padding: 28px 20px; }
       .comp-form-card, .comp-savings { padding: 28px; }
+      /* Le tableau restait sur 3 colonnes larges à toute largeur. L'en-tête
+         (« COÛT / BRIQUE / POLISTIBRICK », avec espacement des lettres) demandait
+         310 px, la carte en fait 274 : tout ce qui se trouvait à droite sortait
+         donc de 38 px de la carte. min-width: 0 stoppe la poussée via la grille. */
+      .comp-row { grid-template-columns: 1.35fr 1fr 1fr; gap: 8px; padding: 12px 12px; }
+      .comp-row > * { min-width: 0; }
+      .comp-row.is-header { font-size: 9px; letter-spacing: 0.02em; }
+      .comp-row .num, .comp-row.is-total { font-size: 14px; }
+    }
+    @media (max-width: 380px) {
+      /* Sur les petits écrans, la carte de résultat demandait 253 px dans une colonne de 214. */
+      .comp-grid > * { min-width: 0; }
+      .comp-form-card, .comp-savings { padding: 20px 16px; }
+      .comp-row { padding: 10px 8px; gap: 6px; }
     }
   </style>
+<!-- données structurées -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebPage",
+   "@id": "{{domain_url}}/economies/#page",
+   "url": "{{domain_url}}/economies/",
+   "name": "Calculateur d'économies",
+   "inLanguage": "{{lang}}",
+   "isPartOf": {
+    "@id": "{{domain_url}}/#site"
+   },
+   "publisher": {
+    "@id": "{{domain_url}}/#organisation"
+   },
+   "description": "Calculateur dynamique qui montre combien vous économisez avec Polistibrick par rapport à la brique classique sur 25 ans. Entrez les m², le climat, le prix de l'énergie et voyez la différence réelle."
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "{{country_name}}",
+     "item": "{{domain_url}}/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Calculateur d'économies",
+     "item": "{{domain_url}}/economies/"
+    }
+   ]
+  },
+  {
+   "@type": "Organization",
+   "@id": "{{domain_url}}/#organisation",
+   "name": "{{company.name_legal}}",
+   "url": "{{domain_url}}/",
+   "logo": "{{domain_url}}/images/logo.png"
+  }
+ ]
+}
+</script>
 </head>
 <body data-base="../">
 
@@ -116,8 +185,9 @@
       <div class="wm-stage">
 
         <div class="wm-intro">
-<h2>Polistibrick vs brique : <em>vos chiffres.</em></h2>
-          <p>Calculateur dynamique qui vous montre EXACTEMENT combien vous économisez sur l'énergie, l'entretien et les coûts totaux sur 25 ans, pour la maison que vous souhaitez construire. Saisissez vos chiffres, visualisez le résultat en temps réel.</p>
+<h1>Polistibrick vs brique : <em>vos chiffres.</em></h1>
+          <p>Un calculateur dynamique qui vous montre EXACTEMENT combien vous économisez en énergie, en entretien et en coûts totaux sur 25 ans, pour la maison que vous voulez faire construire. Entrez vos chiffres, le résultat s'affiche en temps réel.</p>
+          <p style="margin-top:14px;font-size:15px;"><strong>Exemple calculé</strong>, à 0,20 €/kWh : une maison de 120 m² en brique (100–180 kWh/m²/an) paie 2 400–4 320 € par an en chauffage et climatisation. La même maison en Polistibrick (25–45 kWh/m²/an) paie 600–1 080 €. Sur 25 ans, au milieu des fourchettes, la différence dépasse 60 000 € sans aucune hausse de prix, et 100 000 € avec la hausse historique de l'énergie d'environ 4 % par an. Voir aussi <a href="../ressources/maison-passive/" style="color:var(--red);">ce qu'est une maison passive et combien elle coûte en France</a>.</p>
         </div>
 
         <div class="comp-grid">
@@ -147,32 +217,32 @@
             <div class="form-row">
               <label class="form-label" for="cClimate">Climat</label>
               <select class="form-select" id="cClimate">
-                <option value="cold" data-brick-energy="180" data-poli-energy="45">Froid (zones montagneuses, nord — &lt; 8 °C en moyenne)</option>
-                <option value="temperate" data-brick-energy="130" data-poli-energy="35" selected>Tempéré (Europe centrale — 8-14 °C en moyenne)</option>
-                <option value="warm" data-brick-energy="100" data-poli-energy="25">Chaud (sud, méditerranéen — &gt; 14 °C en moyenne)</option>
+                <option value="cold" data-brick-energy="180" data-poli-energy="45">Froid (zones de montagne, nord, &lt; 8 °C en moyenne)</option>
+                <option value="temperate" data-brick-energy="130" data-poli-energy="35" selected>Tempéré (Europe centrale, 8–14 °C en moyenne)</option>
+                <option value="warm" data-brick-energy="100" data-poli-energy="25">Chaud (sud, méditerranéen, &gt; 14 °C en moyenne)</option>
               </select>
-              <p style="font-size:11px;color:var(--gray);margin-top:6px;">Le calcul inclut à la fois le chauffage (hiver) et la climatisation (été).</p>
+              <p style="font-size:11px;color:var(--gray);margin-top:6px;">Le calcul comprend le chauffage (hiver) et la climatisation (été).</p>
             </div>
 
             <div class="form-row">
               <label class="form-label" for="cEnergyPrice">Prix moyen de l'énergie (€/kWh)</label>
               <input class="form-input" type="number" id="cEnergyPrice" value="0.22" min="0.05" max="0.60" step="0.01">
-              <p style="font-size:11px;color:var(--gray);margin-top:6px;">Utilisez la moyenne pour votre pays (RO ~0,18, FR ~0,25, DE ~0,32, ES ~0,20).</p>
+              <p style="font-size:11px;color:var(--gray);margin-top:6px;">Utilisez la moyenne de votre pays (FR ~0.25, DE ~0.32, ES ~0.20, RO ~0.18).</p>
             </div>
 
             <div class="form-row">
-              <label class="form-label" for="cEnergyInflation">Augmentation annuelle du prix de l'énergie (%)</label>
+              <label class="form-label" for="cEnergyInflation">Hausse annuelle du prix de l'énergie (%)</label>
               <select class="form-select" id="cEnergyInflation">
-                <option value="0">0 % — prix constant (optimiste)</option>
-                <option value="2">2 % — inflation stable</option>
-                <option value="4" selected>4 % — réaliste (moyenne UE 2010-2024)</option>
-                <option value="6">6 % — pessimiste (crise énergétique)</option>
+                <option value="0">0 % : prix constant (optimiste)</option>
+                <option value="2">2 % : inflation stable</option>
+                <option value="4" selected>4 % : réaliste (moyenne UE 2010–2024)</option>
+                <option value="6">6 % : pessimiste (crise énergétique)</option>
               </select>
             </div>
 
             <hr style="border:0;border-top:1px solid var(--border);margin:20px 0;">
 
-            <p style="font-size:12.5px;color:var(--gray);margin-bottom:12px;">💡 Le calcul inclut :</p>
+            <p style="font-size:12.5px;color:var(--gray);margin-bottom:12px;">💡 Le calcul comprend :</p>
             <ul style="display:flex;flex-direction:column;gap:5px;font-size:12.5px;color:var(--ink-soft);padding-left:4px;list-style:none;">
               <li>✓ Coût de construction (panneaux + main-d'œuvre, hors finitions)</li>
               <li>✓ Coût de l'énergie sur les années sélectionnées</li>
@@ -215,7 +285,7 @@
                 <span class="num" id="poliBuild">— €</span>
               </div>
               <div class="comp-row">
-                <span>Énergie (cumulé)</span>
+                <span>Énergie (cumulée)</span>
                 <span class="num" id="brickEnergy">— €</span>
                 <span class="num num-good" id="poliEnergy">— €</span>
               </div>
@@ -231,7 +301,7 @@
               </div>
             </div>
 
-            <a href="../devis/" class="btn btn-primary btn-large btn-arrow" style="width:100%;justify-content:center;margin-top:18px;">Demander un devis personnalisé</a>
+            <a href="../devis/" class="btn btn-primary btn-large btn-arrow" style="width:100%;justify-content:center;margin-top:18px;">Demandez un devis personnalisé</a>
 
           </div>
 
@@ -249,19 +319,19 @@
     <div class="grid grid-2 reveal" style="max-width:980px;margin:0 auto;">
       <div class="card">
         <h4 style="margin-bottom:12px;">Coût de construction</h4>
-        <p style="font-size:14px;line-height:1.6;">Brique : ~1 000 €/m² en standard non conforme. Polistibrick : ~1 050 €/m² (+5 %) pour une maison passive A+++. Inclut les matériaux et la main-d'œuvre, hors finitions intérieures ou extérieures.</p>
+        <p style="font-size:14px;line-height:1.6;">Brique : ~1 000 €/m² en standard non conforme RE2020. Polistibrick : ~1 050 €/m² (+5 %) pour une maison passive A+++. Matériaux et main-d'œuvre compris, hors finitions intérieures et extérieures.</p>
       </div>
       <div class="card">
         <h4 style="margin-bottom:12px;">Coût de l'énergie</h4>
-        <p style="font-size:14px;line-height:1.6;">Basé sur la consommation typique par climat : la brique consomme en moyenne 100-180 kWh/m²/an pour le chauffage et la climatisation. Polistibrick (passive) consomme 25-45 kWh/m²/an. Réduction moyenne de 70 %.</p>
+        <p style="font-size:14px;line-height:1.6;">Basé sur la consommation typique par climat : la brique consomme en moyenne 100–180 kWh/m²/an en chauffage et climatisation. Polistibrick (passif) consomme 25–45 kWh/m²/an. Réduction moyenne de 70 %.</p>
       </div>
       <div class="card">
         <h4 style="margin-bottom:12px;">Entretien sur 25 ans</h4>
-        <p style="font-size:14px;line-height:1.6;">Brique : rénovation de l'isolation thermique à 15 ans (~5 000 €), réparations dues à l'humidité, ravalement de façade. Polistibrick : rien de tout cela — l'EPS n'absorbe pas l'eau, ne se dégrade pas, la structure monolithique ne se fissure pas.</p>
+        <p style="font-size:14px;line-height:1.6;">Brique : réfection de l'isolation thermique à 15 ans (~5 000 €), réparations dues à l'humidité, ravalement de façade. Polistibrick : rien de tout cela. Le PSE n'absorbe pas l'eau, ne se dégrade pas, la structure monolithique ne se fissure pas.</p>
       </div>
       <div class="card">
         <h4 style="margin-bottom:12px;">Inflation énergétique</h4>
-        <p style="font-size:14px;line-height:1.6;">Au cours des 14 dernières années, le prix de l'électricité dans l'UE a augmenté d'environ 4 % par an. Notre calcul intègre la capitalisation annuelle — l'économie réelle sur 25 ans est supérieure à la différence d'aujourd'hui × 25.</p>
+        <p style="font-size:14px;line-height:1.6;">Sur les 14 dernières années, le prix de l'électricité dans l'UE a augmenté d'environ 4 % par an. Notre calcul inclut la capitalisation annuelle : l'économie réelle sur 25 ans dépasse la différence d'aujourd'hui × 25.</p>
       </div>
     </div>
   </div>
@@ -270,10 +340,11 @@
 <section class="section section--tight">
   <div class="cta-band reveal">
     <h2>Convaincu par <em>vos chiffres ?</em></h2>
-    <p>Demandez un devis personnalisé Polistibrick — un calcul précis pour votre projet, sans engagement, sans coûts cachés.</p>
+    <p>Demandez un devis personnalisé Polistibrick : un calcul précis pour votre projet, sans engagement, sans coûts cachés.</p>
     <div class="cta-band-actions">
-      <a href="../devis/" class="btn btn-on-dark btn-large btn-arrow">Demander un devis personnalisé</a>
-      <a href="../contact/" class="btn btn-on-dark-ghost btn-large">Parler à un spécialiste</a>
+      <a href="../devis/" class="btn btn-on-dark btn-large btn-arrow">Demandez un devis personnalisé</a>
+      <a href="../prix/" class="btn btn-on-dark-ghost btn-large">Combien coûte la construction</a>
+        <a href="../contact/" class="btn btn-on-dark-ghost btn-large">Parlez à un spécialiste</a>
     </div>
   </div>
 </section>

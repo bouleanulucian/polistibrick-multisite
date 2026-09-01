@@ -4,7 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Politique de confidentialité · RGPD · Polistibrick</title>
-  <meta name="description" content="Comment nous collectons, utilisons et protégeons vos données personnelles conformément au RGPD. Vos droits et comment les exercer auprès de nous.">
+  <link rel="icon" type="image/png" href="../../images/favicon.png">
+  <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
+  <meta name="description" content="Comment nous collectons, utilisons et protégeons vos données personnelles conformément au RGPD. Vos droits et la manière de les exercer auprès de nous.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Politique de confidentialité · RGPD · Polistibrick">
+  <meta property="og:description" content="Comment nous collectons, utilisons et protégeons vos données personnelles conformément au RGPD. Vos droits et la manière de les exercer auprès de nous.">
+  <meta property="og:image" content="https://polistibrick.fr/images/hero/hero-house-1.jpg">
+  <meta property="og:url" content="https://polistibrick.fr/legal/confidentialite/">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -31,6 +40,58 @@
     }
     @media (max-width: 768px) { .wm-stage { padding: 28px 20px; } }
   </style>
+<!-- données structurées -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebPage",
+   "@id": "{{domain_url}}/legal/confidentialite/#page",
+   "url": "{{domain_url}}/legal/confidentialite/",
+   "name": "Politique de confidentialité",
+   "inLanguage": "{{lang}}",
+   "isPartOf": {
+    "@id": "{{domain_url}}/#site"
+   },
+   "publisher": {
+    "@id": "{{domain_url}}/#organisation"
+   },
+   "description": "Comment nous collectons, utilisons et protégeons vos données personnelles conformément au RGPD. Vos droits et la manière de les exercer auprès de nous."
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "{{country_name}}",
+     "item": "{{domain_url}}/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Légal",
+     "item": "{{domain_url}}/legal/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Politique de confidentialité",
+     "item": "{{domain_url}}/legal/confidentialite/"
+    }
+   ]
+  },
+  {
+   "@type": "Organization",
+   "@id": "{{domain_url}}/#organisation",
+   "name": "{{company.name_legal}}",
+   "url": "{{domain_url}}/",
+   "logo": "{{domain_url}}/images/logo.png"
+  }
+ ]
+}
+</script>
 </head>
 <body data-base="../../">
 
@@ -47,7 +108,7 @@
         <div class="wm-content">
           <div class="wm-text">
           <h1>Politique de confidentialité (RGPD)</h1>
-            <p>Comment nous collectons, utilisons et protégeons vos données personnelles. Conforme au Règlement UE 2016/679 (RGPD). Dernière mise à jour : 3 juillet 2026.</p>
+            <p>Comment nous collectons, utilisons et protégeons vos données personnelles. Conformément au Règlement (UE) 2016/679 (RGPD). Dernière mise à jour : 16 août 2026.</p>
           </div>
           <div class="wm-visual" style="background: linear-gradient(135deg, #1f2022 0%, #111213 100%); display: flex; flex-direction: column; gap: 20px; align-items: center; justify-content: center; border: none; color: #fff; box-shadow: var(--shadow-lg); padding: 24px; box-sizing: border-box;">
             <svg width="80" height="96" viewBox="0 0 80 96" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -66,8 +127,8 @@
               </defs>
             </svg>
             <div style="text-align: center;">
-              <div style="font-family: var(--serif); font-size: 20px; font-weight: 500; margin-bottom: 6px; letter-spacing: -0.01em;">Données Sécurisées</div>
-              <div style="font-size: 11px; color: rgba(255,255,255,0.60); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600;">Conforme RGPD</div>
+              <div style="font-family: var(--serif); font-size: 20px; font-weight: 500; margin-bottom: 6px; letter-spacing: -0.01em;">Données protégées</div>
+              <div style="font-size: 11px; color: rgba(255,255,255,0.60); text-traniform: uppercase; letter-spacing: 0.08em; font-weight: 600;">Conforme au RGPD</div>
             </div>
           </div>
         </div>
@@ -80,37 +141,40 @@
   <div class="container container--narrow">
     <div class="reveal">
       <h2 style="margin:32px 0 12px;">Responsable du traitement</h2>
-      <p style="font-size:15px;margin-bottom:14px;">Le responsable du traitement est la société <strong>{{company.name_legal}}</strong>, {{company.address_street}}, {{company.address_zip}} {{company.address_city}}, France. Contact RGPD : <a href="#" data-m64="{{legal.privacy_contact_email|b64}}" style="color:var(--red);">Email</a>.</p>
+      <p style="font-size:15px;margin-bottom:14px;">Le responsable du traitement est la société <strong>{{company.name_legal}}</strong>, {{company.address_street}}, {{company.address_city}}, {{company.address_zip}}, {{company.address_country}}. Contact RGPD : <a href="#" data-m64="{{legal.privacy_contact_email|b64}}" style="color:var(--red);">Email</a>.</p>
 
       <h2 style="margin:32px 0 12px;">Données collectées</h2>
-      <p style="font-size:15px;margin-bottom:14px;">Via nos formulaires : identité (nom, email, téléphone), informations projet (localisation, surface, type de construction), pièces jointes que vous choisissez d'envoyer. Via le site (avec votre consentement cookies) : pays approximatif dérivé de l'adresse IP (service ipapi.co), préférence de consentement cookies (stockée localement dans votre navigateur). Nous ne collectons pas de données sensibles au sens de l'article 9 du RGPD.</p>
+      <p style="font-size:15px;margin-bottom:14px;">Via nos formulaires : identité (nom, email, téléphone), informations sur le projet (localisation, surface, type de construction), fichiers que vous choisissez de nous envoyer. Via le générateur de devis : les plans que vous téléversez (convertis en images directement dans votre navigateur) et les coordonnées que vous renseignez. Via le site (avec votre consentement aux cookies) : pays approximatif déterminé à partir de l'adresse IP (service ipapi.co), préférence de consentement aux cookies (stockée localement dans votre navigateur). Nous ne collectons aucune donnée sensible au sens de l'article 9 du RGPD.</p>
 
-      <h2 style="margin:32px 0 12px;">Finalités et bases légales</h2>
-      <p style="font-size:15px;margin-bottom:14px;">(1) <strong>Répondre à vos demandes</strong> (contact, devis, partenariat, avis) — exécution de mesures précontractuelles ou intérêt légitime (art. 6.1.b et 6.1.f). (2) <strong>Suivi commercial et relation client</strong> — intérêt légitime ou consentement lorsque requis (art. 6.1.f / 6.1.a). (3) <strong>Amélioration du site</strong> (géolocalisation pays pour pré-sélectionner le bureau local) — consentement via la bannière cookies (art. 6.1.a).</p>
+      <h2 style="margin:32px 0 12px;">Finalités et bases juridiques</h2>
+      <p style="font-size:15px;margin-bottom:14px;">(1) <strong>Répondre à vos demandes</strong> (contact, devis, partenariat, avis) : exécution de mesures précontractuelles ou intérêt légitime (art. 6.1.b et 6.1.f). (2) <strong>Suivi commercial et relation client</strong> : intérêt légitime ou consentement lorsque celui-ci est requis (art. 6.1.f / 6.1.a). (3) <strong>Amélioration du site</strong> (géolocalisation du pays pour présélectionner le bureau local) : consentement via le bandeau cookies (art. 6.1.a).</p>
 
       <h2 style="margin:32px 0 12px;">Sous-traitants et destinataires</h2>
       <p style="font-size:15px;margin-bottom:14px;">Vos données ne sont pas vendues. Nous faisons appel aux prestataires suivants, strictement pour les finalités indiquées :</p>
       <ul style="font-size:15px;margin:0 0 14px 20px;color:var(--gray);line-height:1.7;">
-        <li><strong>Web3Forms</strong> — transmission sécurisée des messages des formulaires vers nos boîtes email.</li>
-        <li><strong>ipapi.co</strong> — détection du pays à partir de l'IP (uniquement si vous acceptez les cookies non essentiels).</li>
-        <li><strong>Google Fonts</strong> — chargement des polices typographiques (requête vers les serveurs Google ; voir <a href="../cookies/" style="color:var(--red);">politique cookies</a>).</li>
-        <li><strong>{{legal.hosting_provider}}</strong> — hébergement et diffusion du site (CDN).</li>
+        <li><strong>Web3Forms</strong> : transmission sécurisée des messages des formulaires vers nos boîtes e-mail.</li>
+        <li><strong>Anthropic, PBC</strong> (États-Unis) : lecture automatique des plans téléversés dans le générateur de devis, par un service d'intelligence artificielle qui mesure les surfaces. Les plans ne sont utilisés à aucune autre fin.</li>
+        <li><strong>Resend, Inc.</strong> (États-Unis) : envoi des e-mails contenant les devis générés (à vous et à notre équipe).</li>
+        <li><strong>Vercel, Inc.</strong> (États-Unis) : hébergement technique du générateur de devis.</li>
+        <li><strong>ipapi.co</strong> : détection du pays à partir de l'adresse IP (uniquement si vous acceptez les cookies non essentiels).</li>
+        <li><strong>Google Fonts</strong> : chargement des polices de caractères (requête vers les serveurs de Google ; voir la <a href="../cookies/" style="color:var(--red);">politique de cookies</a>).</li>
+        <li><strong>{{legal.hosting_provider}}</strong> : hébergement et distribution du site (CDN).</li>
       </ul>
-      <p style="font-size:15px;margin-bottom:14px;">Nous partageons également vos données avec les partenaires constructeurs certifiés lorsque cela est nécessaire à l'exécution de votre projet, et uniquement avec votre accord explicite.</p>
+      <p style="font-size:15px;margin-bottom:14px;">Nous partageons également vos données avec des partenaires fabricants certifiés lorsque cela est nécessaire à la réalisation de votre projet, et uniquement avec votre accord explicite.</p>
 
       <h2 style="margin:32px 0 12px;">Transferts hors UE</h2>
-      <p style="font-size:15px;margin-bottom:14px;">Certains prestataires (Google, Cloudflare, ipapi.co) peuvent traiter des données aux États-Unis ou dans d'autres pays. Leurs garanties contractuelles (clauses types, certifications) sont décrites dans leurs politiques respectives.</p>
+      <p style="font-size:15px;margin-bottom:14px;">Certains prestataires (Anthropic, Resend, Vercel, Google, Cloudflare, ipapi.co) traitent des données aux États-Unis. Ces transferts reposent sur les clauses contractuelles types approuvées par la Commission européenne, conclues avec chaque prestataire, ou, pour les prestataires certifiés, sur la décision d'adéquation UE–États-Unis (EU-US Data Privacy Framework). Vous pouvez demander une copie des garanties à l'adresse de contact ci-dessous.</p>
 
       <h2 style="margin:32px 0 12px;">Durée de conservation</h2>
-      <p style="font-size:15px;margin-bottom:14px;">Demandes via formulaire : 5 ans pour les clients, 12 mois pour les prospects non convertis. Consentement cookies : 13 mois maximum (renouvelable). Sur demande, suppression anticipée possible (droit à l'effacement).</p>
+      <p style="font-size:15px;margin-bottom:14px;">Demandes via formulaire : 5 ans pour les clients, 12 mois pour les prospects non convertis. Les plans téléversés dans le générateur de devis ne sont pas stockés sur nos serveurs : ils sont traités en mémoire et supprimés dès que le devis est généré ; les devis envoyés par e-mail sont conservés dans notre boîte tant que dure la relation commerciale. Consentement aux cookies : 13 mois au maximum (renouvelable). Sur demande, une suppression anticipée est possible (droit à l'effacement).</p>
 
       <h2 style="margin:32px 0 12px;">Vos droits</h2>
-      <p style="font-size:15px;margin-bottom:14px;">Accès, rectification, effacement, limitation, portabilité, opposition, retrait du consentement. Contact : <a href="#" data-m64="{{legal.privacy_contact_email|b64}}" style="color:var(--red);">Email</a>. Réponse sous 30 jours maximum.</p>
+      <p style="font-size:15px;margin-bottom:14px;">Accès, rectification, effacement, limitation, portabilité, opposition, retrait du consentement. Contact : <a href="#" data-m64="{{legal.privacy_contact_email|b64}}" style="color:var(--red);">Email</a>. Réponse sous 30 jours au maximum.</p>
 
       <h2 style="margin:32px 0 12px;">Réclamations</h2>
-      <p style="font-size:15px;margin-bottom:14px;">Vous pouvez introduire une réclamation auprès de la <a href="https://www.cnil.fr" style="color:var(--red);" rel="noopener" target="_blank">CNIL</a> (3 Place de Fontenoy, 75007 Paris) ou de l'autorité de contrôle de votre pays de résidence.</p>
+      <p style="font-size:15px;margin-bottom:14px;">Vous pouvez déposer une réclamation auprès de la <a href="https://www.cnil.fr" style="color:var(--red);" rel="noopener" target="_blank">CNIL</a> (Commission Nationale de l'Informatique et des Libertés, 3 place de Fontenoy, TSA 80715, 75334 Paris Cedex 07) ou auprès de l'autorité de contrôle de votre pays de résidence.</p>
 
-      <p style="font-size:14px;margin-top:28px;color:var(--gray);">Voir aussi nos <a href="../mentions-legales/" style="color:var(--red);">mentions légales</a> et notre <a href="../cookies/" style="color:var(--red);">politique de cookies</a>.</p>
+      <p style="font-size:14px;margin-top:28px;color:var(--gray);">Voir aussi les <a href="../mentions-legales/" style="color:var(--red);">mentions légales</a> et la <a href="../cookies/" style="color:var(--red);">politique de cookies</a>.</p>
     </div>
   </div>
 </section>
