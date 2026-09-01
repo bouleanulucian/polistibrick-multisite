@@ -44,6 +44,16 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Creare zona polistibrick.fr (temporar, o folosință)
+        # Formularul de onboarding din dashboard pică («Error checking domains»);
+        # zona se creează prin API. Idempotent: dacă există deja, doar raportează.
+        if: env.COUNTRY == 'fr'
+        env:
+          CF_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CF_ACC: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          curl -sS -X POST https://api.cloudflare.com/client/v4/zones             -H "Authorization: Bearer $CF_TOKEN" -H "Content-Type: application/json"             --data "{\"name\":\"polistibrick.fr\",\"account\":{\"id\":\"$CF_ACC\"},\"type\":\"full\"}"           | python3 -c 'import json,sys; d=json.load(sys.stdin); print("success:", d["success"]); print("errors:", d["errors"]); r=d.get("result") or {}; print("zone_id:", r.get("id")); print("nameservers:", r.get("name_servers"))'
+
       - name: Build site
         run: python3 build/build.py "$COUNTRY"
 
