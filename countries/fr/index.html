@@ -502,7 +502,9 @@
 .cinq-overlay h1 { font-family: var(--serif); font-size: clamp(30px, 4vw, 58px); font-weight: 500; color: var(--ink); letter-spacing: -0.02em; line-height: 1.05; margin: 0 0 14px; max-width: 760px; }
 .cinq-overlay h1 em { font-style: normal; color: #C8102E; }
 .cinq-sub { font-size: clamp(15px, 1.25vw, 18px); line-height: 1.5; color: #4a4a4a; max-width: 620px; margin: 0 0 22px; }
-.cinq-replica { display: inline-block; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; color: #C8102E; margin: 0 0 14px; padding: 7px 12px 7px 10px; border: 1.5px solid #C8102E; border-radius: 999px; background: rgba(255,255,255,.85); transition: opacity .35s; }
+.cinq-replica { position: absolute; right: clamp(20px, 4vw, 64px); bottom: clamp(40px, 7vh, 80px); z-index: 4; display: inline-block; font-size: clamp(12px, 1vw, 14px); letter-spacing: .14em; text-transform: uppercase; font-weight: 700; color: #C8102E; margin: 0; padding: 9px 14px 9px 12px; border: 1.5px solid #C8102E; border-radius: 999px; background: rgba(255,255,255,.9); box-shadow: 0 6px 20px rgba(0,0,0,.08); transition: opacity .35s; max-width: min(60vw, 520px); }
+.cinq-media .cinq-overlay { top: 50%; bottom: auto; transform: translateY(-50%); }
+@media (max-width: 700px) { .cinq-replica { right: 10px; bottom: 10px; font-size: 10.5px; letter-spacing: .1em; padding: 7px 10px; } }
 .cinq-replica::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #C8102E; margin: 0 8px 1px 0; animation: cinqPuls 1.4s ease-in-out infinite; }
 @keyframes cinqPuls { 0%,100% { opacity: 1; } 50% { opacity: .25; } }
 .cinq-replica.schimba { opacity: 0; }
@@ -541,7 +543,6 @@ document.addEventListener('DOMContentLoaded', function () {
 <section class="cinq-section" id="cinq" aria-label="Le mur complet Polistibrick, testé au feu, à l'eau, au gel et au bruit">
   <div class="cinq-media">
   <div class="cinq-overlay">
-    <p class="cinq-replica" id="cinqReplica" data-t="0">Cinq couches. Un seul panneau.</p>
     <h1>Le seul coffrage<br><em>qui livre le mur complet.</em></h1>
     <p class="cinq-sub">Béton armé, isolation graphitée des deux côtés, fibres-ciment A1, gaines en place. Un ICF classique s'arrête au polystyrène.</p>
     <a href="devis/" class="btn btn-red cinq-cta">Envoyez votre plan, devis instantané →</a>
@@ -553,6 +554,7 @@ document.addEventListener('DOMContentLoaded', function () {
            aria-label="Le panneau Polistibrick testé : assemblage, feu, eau, impact, gel, bruit. Intact à chaque essai">
       <source src="images/bundle/bundle-test.mp4?v=3" type="video/mp4">
     </video>
+    <p class="cinq-replica" id="cinqReplica">Cinq couches. Un seul panneau.</p>
   </div>
   <div class="cinq-legend">
       <div class="cinq-item">
