@@ -564,14 +564,7 @@
 .cinq-overlay h2 em { font-style: normal; color: #C8102E; }
 .cinq-replica { position: absolute; right: clamp(20px, 4vw, 64px); bottom: clamp(150px, 22vh, 230px); z-index: 4; display: inline-block; white-space: nowrap; font-size: clamp(12px, 1vw, 14px); letter-spacing: .14em; text-transform: uppercase; font-weight: 700; color: #C8102E; margin: 0; padding: 9px 14px 9px 12px; border: 1.5px solid #C8102E; border-radius: 999px; background: rgba(255,255,255,.92); box-shadow: 0 6px 20px rgba(0,0,0,.10); transition: opacity .35s; }
 @media (min-width: 701px) { .cinq-media .cinq-overlay { top: 50%; bottom: auto; transform: translateY(-50%); } }
-@media (max-width: 700px) {
-  .cinq-replica { position: static; display: block; width: max-content; max-width: calc(100% - 32px); white-space: normal; margin: 12px 16px 0 auto; font-size: 10.5px; letter-spacing: .1em; padding: 7px 10px; }
-  .cinq-media { display: flex; flex-direction: column; position: relative !important; top: auto !important; }
-  .cinq-video { transform: none !important; margin: 0 !important; clip-path: none !important; width: 100% !important; height: auto !important; }
-  .cinq-section { height: auto !important; min-height: 0 !important; }
-  .cinq-media .cinq-overlay { position: static !important; transform: none !important; order: -1; padding: 18px 20px 6px !important; max-width: none; pointer-events: auto; }
-  .cinq-overlay h2 { font-size: clamp(26px, 8vw, 34px); }
-}
+@media (max-width: 700px) { .cinq-replica { display: none; } } /* pe telefon aranjarea originală: video cu zoom, textul peste el jos; eticheta doar pe desktop */
 .cinq-replica::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #C8102E; margin: 0 8px 1px 0; animation: cinqPuls 1.4s ease-in-out infinite; }
 @keyframes cinqPuls { 0%,100% { opacity: 1; } 50% { opacity: .25; } }
 .cinq-replica.schimba { opacity: 0; }
