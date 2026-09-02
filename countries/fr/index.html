@@ -549,6 +549,164 @@
 </section>
 
 
+<!-- MUR COMPLET : ce qu'un ICF classique n'a pas — la différence face à la concurrence ICF -->
+<section class="murcomplet" id="mur-complet" aria-label="Le mur complet Polistibrick, couche par couche">
+<style>
+.murcomplet { padding: clamp(60px, 8vw, 100px) 0; background: #14140f; color: #F7F4ED; overflow: hidden; }
+.murcomplet .mc-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.murcomplet .mc-eyebrow { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: #E8564F; font-weight: 700; margin-bottom: 14px; }
+.murcomplet h2 { font-size: clamp(26px, 3.6vw, 40px); line-height: 1.15; letter-spacing: -.02em; margin: 0 0 10px; max-width: 24ch; }
+.murcomplet h2 em { font-style: normal; color: #E8564F; }
+.murcomplet .mc-lead { color: #b9b6ac; font-size: 17px; max-width: 62ch; margin-bottom: 34px; }
+.mc-scene { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(24px, 3.5vw, 56px); align-items: center; }
+.mc-stage { position: relative; aspect-ratio: 1500 / 1700; max-width: 640px; margin: 0 auto; width: 100%; }
+.mc-l { position: absolute; inset: 0; width: 100%; height: auto; display: block; transform: translate(0, 0); transition: transform 1.4s cubic-bezier(.22,.9,.24,1); will-change: transform; }
+.mc-stage.desfacut .mc-l { transform: translate(calc(var(--dx, 0px) * var(--off)), calc(var(--dy, 0px) * var(--off))); }
+.mc-lunette { position: absolute; left: 50%; top: 50%; width: 96px; height: 96px; margin: -48px 0 0 -48px; opacity: 0; transition: left .85s cubic-bezier(.3,.7,.25,1), top .85s cubic-bezier(.3,.7,.25,1), opacity .5s; pointer-events: none; }
+.mc-stage.viseaza .mc-lunette { opacity: 1; }
+.mc-lunette svg { width: 100%; height: 100%; display: block; }
+.mc-lunette .puls { transform-origin: 50% 50%; animation: mcPuls 1.8s ease-out infinite; }
+@keyframes mcPuls { 0% { transform: scale(.55); opacity: .9; } 70% { transform: scale(1.15); opacity: 0; } 100% { transform: scale(1.15); opacity: 0; } }
+.mc-legenda { font-size: 12.5px; color: #8f8c82; text-align: center; margin-top: 10px; }
+.mc-pasi { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.mc-pasi li { border: 1px solid rgba(247,244,237,.14); border-radius: 14px; overflow: hidden; background: rgba(247,244,237,.03); }
+.mc-pasi button { display: grid; grid-template-columns: 34px 1fr; gap: 12px; align-items: center; width: 100%; text-align: left; padding: 13px 16px; background: none; border: 0; color: inherit; font: inherit; font-weight: 600; font-size: 15.5px; cursor: pointer; }
+.mc-pasi .n { width: 34px; height: 34px; border-radius: 50%; border: 1.5px solid rgba(247,244,237,.35); color: #F7F4ED; font-weight: 700; font-size: 14px; display: flex; align-items: center; justify-content: center; transition: background .3s, border-color .3s; }
+.mc-pasi p { margin: 0; padding: 0 16px; max-height: 0; overflow: hidden; color: #b9b6ac; font-size: 14.5px; line-height: 1.55; transition: max-height .5s ease, padding .5s ease; }
+.mc-pasi li.activ { border-color: #E8564F; background: rgba(232,86,79,.08); }
+.mc-pasi li.activ .n { background: #E8564F; border-color: #E8564F; }
+.mc-pasi li.activ p { max-height: 150px; padding: 0 16px 14px 62px; }
+.mc-tbl { margin-top: 54px; border: 1px solid rgba(247,244,237,.12); border-radius: 16px; overflow: hidden; background: rgba(247,244,237,.03); }
+.mc-tbl table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.mc-tbl th, .mc-tbl td { padding: 13px 18px; text-align: left; border-top: 1px solid rgba(247,244,237,.08); }
+.mc-tbl thead th { border-top: 0; background: rgba(247,244,237,.06); color: #F7F4ED; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
+.mc-tbl thead th:last-child { color: #E8564F; }
+.mc-tbl td:nth-child(2), .mc-tbl td:nth-child(3), .mc-tbl th:nth-child(2), .mc-tbl th:nth-child(3) { text-align: center; width: 21%; }
+.mc-nu { color: #6f6c63; font-weight: 700; }
+.mc-da { color: #7fd28a; font-weight: 700; }
+.mc-note { font-size: 13px; color: #8f8c82; padding: 12px 18px 16px; }
+.mc-cta { margin-top: 30px; display: flex; gap: 14px; flex-wrap: wrap; }
+.mc-cta a { display: inline-block; padding: 13px 26px; border-radius: 999px; font-weight: 600; font-size: 15px; text-decoration: none; }
+.mc-cta .pri { background: #C8102E; color: #fff; }
+.mc-cta .sec { border: 1.5px solid #F7F4ED; color: #F7F4ED; }
+@media (max-width: 900px) { .mc-scene { grid-template-columns: 1fr; } .mc-stage { max-width: 460px; } .mc-tbl { overflow-x: auto; } .mc-tbl table { min-width: 560px; } }
+@media (prefers-reduced-motion: reduce) { .mc-l, .mc-lunette { transition: none; } .mc-lunette .puls { animation: none; } }
+</style>
+  <div class="mc-inner">
+    <div class="mc-eyebrow">Le mur complet, couche par couche</div>
+    <h2>Un ICF classique vous donne l'isolation.<br><em>Polistibrick livre le mur complet.</em></h2>
+    <p class="mc-lead">Le panneau se déplie sous vos yeux : tout ce qui fait un mur de maison passive premium sort de l'usine dans le même coffrage.</p>
+    <div class="mc-scene">
+      <div>
+        <div class="mc-stage" id="mcStage">
+          <img class="mc-l" style="--off:-0.40" src="images/mur/fibro-int.webp" alt="" width="1500" height="1700" loading="lazy" decoding="async">
+          <img class="mc-l" style="--off:-0.30" src="images/mur/folie-int.webp" alt="" width="1500" height="1700" loading="lazy" decoding="async">
+          <img class="mc-l" style="--off:-0.20" src="images/mur/pse-int.webp" alt="" width="1500" height="1700" loading="lazy" decoding="async">
+          <img class="mc-l" style="--off:0" src="images/mur/beton.webp" alt="Coupe du mur Polistibrick MBK : noyau en béton armé avec ferraillage apparent" width="1500" height="1700" loading="lazy" decoding="async">
+          <img class="mc-l" style="--off:0.20" src="images/mur/pse-ext.webp" alt="Isolation extérieure en polystyrène expansé de 14 cm du panneau Polistibrick" width="1500" height="1700" loading="lazy" decoding="async">
+          <img class="mc-l" style="--off:0.32" src="images/mur/folie-ext.webp" alt="Barrière de vapeur entre la plaque de fibres-ciment et l'isolant" width="1500" height="1700" loading="lazy" decoding="async">
+          <img class="mc-l" style="--off:0.42" src="images/mur/fibro-ext.webp" alt="Plaque de fibres-ciment extérieure du panneau Polistibrick, classée A1 au feu" width="1500" height="1700" loading="lazy" decoding="async">
+          <div class="mc-lunette" id="mcLunette" aria-hidden="true">
+            <svg viewBox="0 0 96 96" fill="none">
+              <circle class="puls" cx="48" cy="48" r="44" stroke="#E8564F" stroke-width="1.5"/>
+              <circle cx="48" cy="48" r="34" stroke="#E8564F" stroke-width="2.5"/>
+              <line x1="48" y1="2" x2="48" y2="26" stroke="#E8564F" stroke-width="2"/>
+              <line x1="48" y1="70" x2="48" y2="94" stroke="#E8564F" stroke-width="2"/>
+              <line x1="2" y1="48" x2="26" y2="48" stroke="#E8564F" stroke-width="2"/>
+              <line x1="70" y1="48" x2="94" y2="48" stroke="#E8564F" stroke-width="2"/>
+              <circle cx="48" cy="48" r="3.5" fill="#E8564F"/>
+            </svg>
+          </div>
+        </div>
+        <p class="mc-legenda">Coupe réelle du panneau MBK 210 — 38 cm, U = 0,14 W/m²K.</p>
+      </div>
+      <ol class="mc-pasi" id="mcPasi">
+        <li><button type="button"><span class="n">1</span>Structure antisismique</button><p>Béton armé monolithe, coulé sur place dans le coffrage : un seul bloc du sol au toit, calculé selon les Eurocodes 2 et 8.</p></li>
+        <li><button type="button"><span class="n">2</span>Isolation de maison passive premium</button><p>PSE 14 cm à l'extérieur + 7 cm à l'intérieur, U = 0,14 W/m²K — le niveau passif, sans isolation rapportée.</p></li>
+        <li><button type="button"><span class="n">3</span>Plaques de fibres-ciment sur les deux faces</button><p>Résistantes aux chocs violents — une cuisine se fixe avec une simple vis. Classées A1 au feu, hydrofuges pour toute la maison, avec un vrai gain phonique.</p></li>
+        <li><button type="button"><span class="n">4</span>Barrière de vapeur intégrée</button><p>Entre la plaque de fibres-ciment et le polystyrène, une barrière de vapeur continue, des deux côtés du mur.</p></li>
+        <li><button type="button"><span class="n">5</span>Étanchéité à l'air</button><p>Entre le béton et l'isolation, rien ne passe : le noyau coulé scelle chaque mur en une enveloppe monolithe, étanche à l'air.</p></li>
+      </ol>
+    </div>
+    <div class="mc-tbl">
+      <table>
+        <thead><tr><th>Ce que contient le mur</th><th>ICF classique</th><th>Polistibrick</th></tr></thead>
+        <tbody>
+          <tr><td>Structure béton armé monolithe</td><td class="mc-da">✓</td><td class="mc-da">✓</td></tr>
+          <tr><td>Isolation extérieure</td><td class="mc-da">✓</td><td class="mc-da">✓</td></tr>
+          <tr><td>Isolation intérieure intégrée</td><td class="mc-nu">—</td><td class="mc-da">✓</td></tr>
+          <tr><td>Parement dur en fibres-ciment, A1 au feu, sur les deux faces</td><td class="mc-nu">—</td><td class="mc-da">✓</td></tr>
+          <tr><td>Hydrofuge et phonique compris dans le panneau</td><td class="mc-nu">—</td><td class="mc-da">✓</td></tr>
+          <tr><td>Gaines électriques et sanitaires posées avant fermeture</td><td class="mc-nu">—</td><td class="mc-da">✓</td></tr>
+          <tr><td>Support de finition prêt (enduit dehors, plaque dure dedans)</td><td class="mc-nu">—</td><td class="mc-da">✓</td></tr>
+        </tbody>
+      </table>
+      <div class="mc-note">« ICF classique » : coffrage isolant à faces en polystyrène, sans parement intégré. Comparaison sur la composition du panneau tel qu'il sort de l'usine.</div>
+    </div>
+    <div class="mc-cta">
+      <a class="pri" href="produits/polistibrick/">Voir le mur en détail</a>
+      <a class="sec" href="devis/">Chiffrer votre maison</a>
+    </div>
+  </div>
+<script>
+(function () {
+  var stage = document.getElementById('mcStage');
+  var lunette = document.getElementById('mcLunette');
+  var pasi = document.getElementById('mcPasi');
+  if (!stage || !lunette || !pasi) return;
+  var butoane = pasi.querySelectorAll('li');
+  // proiecția axei de desfacere pe ecran (cameră ortografică: 1 m pe Y = aceste fracțiuni din cadru)
+  var DX = 0.3459, DY = 0.0930;
+  // țintele lunetei în stare desfăcută (fracțiuni din cadru)
+  var tinte = [
+    [0.260, 0.460],  // 1 beton — fâșia vizibilă a nucleului armat
+    [0.360, 0.560],  // 2 PSE exterior — izolația
+    [0.710, 0.530],  // 3 fibrociment exterior — fața mare
+    [0.420, 0.500],  // 4 bariera de vapori — folia dintre straturi
+    [0.160, 0.600]   // 5 etanșeitate — muchia beton/izolație interioară
+  ];
+  function dimensiuni() {
+    var r = stage.getBoundingClientRect();
+    stage.style.setProperty('--dx', (r.width * DX) + 'px');
+    stage.style.setProperty('--dy', (r.height * DY) + 'px');
+  }
+  dimensiuni();
+  addEventListener('resize', dimensiuni);
+  var pas = -1, timer = null, pauza = 0;
+  function alege(i, manual) {
+    pas = i;
+    var t = tinte[i];
+    lunette.style.left = (t[0] * 100) + '%';
+    lunette.style.top = (t[1] * 100) + '%';
+    stage.classList.add('viseaza');
+    butoane.forEach(function (li, j) { li.classList.toggle('activ', i === j); });
+    if (manual) pauza = Date.now() + 12000;
+  }
+  butoane.forEach(function (li, i) {
+    li.querySelector('button').addEventListener('click', function () { alege(i, true); });
+  });
+  function pornit() {
+    if (timer) return;
+    timer = setInterval(function () {
+      if (Date.now() < pauza) return;
+      alege((pas + 1) % tinte.length, false);
+    }, 3200);
+  }
+  function oprit() { clearInterval(timer); timer = null; }
+  var obs = new IntersectionObserver(function (e) {
+    e.forEach(function (x) {
+      if (x.isIntersecting) {
+        dimensiuni();
+        stage.classList.add('desfacut');
+        setTimeout(function () { if (pas < 0) alege(0, false); pornit(); }, 1500);
+      } else { oprit(); }
+    });
+  }, { threshold: 0.35 });
+  obs.observe(stage);
+})();
+</script>
+</section>
+
 
 <!-- DIFFÉRENCES : comparaison structurelle mur Polistibrick vs isolation classique -->
 
@@ -869,7 +1027,7 @@
 <section class="reach-section presence-section" id="reach" aria-label="Présence : deux usines, neuf pays">
     <picture class="media-poster presence-poster" aria-hidden="true">
     <source type="image/webp" srcset="images/presence/presence-factory.webp">
-    <img src="images/presence/presence-factory.jpg" alt="" loading="lazy" decoding="async">
+    <img src="images/presence/presence-factory.jpg" alt="L'usine Polistibrick près de Balș, en Roumanie : lignes de production des panneaux de coffrage isolant" loading="lazy" decoding="async">
   </picture>
   <video class="presence-bg lazy-video" loop muted playsinline preload="none"
          poster="images/presence/presence-factory.jpg"
@@ -1068,7 +1226,7 @@
 
 <section class="montaj-section">
     <picture class="media-poster montaj-poster" aria-hidden="true">
-    <img src="images/montaj/montage-houses-poster.webp" alt="" loading="lazy" decoding="async">
+    <img src="images/montaj/montage-houses-poster.webp" alt="Montage des panneaux Polistibrick sur chantier : une équipe de trois personnes assemble les murs d'une maison" loading="lazy" decoding="async">
   </picture>
   <div class="montaj-scrim" aria-hidden="true"></div>
   <div class="montaj-watermark" aria-hidden="true">

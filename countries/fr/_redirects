@@ -11,13 +11,13 @@
 /conditions-generales /legal/conditions/ 301
 /qui-sommes-nous/ /a-propos/ 301
 /qui-sommes-nous /a-propos/ 301
-/la-presse/ /a-propos/ 301
-/la-presse /a-propos/ 301
+/la-presse/ /a-propos/presse/ 301
+/la-presse /a-propos/presse/ 301
 /produits/mur/ /produits/polistibrick/ 301
 /produits/mur /produits/polistibrick/ 301
 /produits/plancher/ /produits/polistibrick/ 301
 /produits/plancher /produits/polistibrick/ 301
 /produits/toit/ /produits/toit-tbk-sip250/ 301
 /produits/toit /produits/toit-tbk-sip250/ 301
-# articolele de presă vechi (Batimat, Madrid, Imperiul Leilor…) → despre companie
-/polistibrick-* /a-propos/ 301
+# articolele de presă vechi (Batimat, Madrid, Imperiul Leilor…) există acum
+# la adresele lor originale — nu mai e nevoie de redirect.
