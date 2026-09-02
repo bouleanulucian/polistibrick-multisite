@@ -1,0 +1,46 @@
+<svg viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <pattern id="bChaud" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+    <rect width="8" height="8" fill="#f7cfd0"/><line x1="0" y1="0" x2="0" y2="8" stroke="#e0787d" stroke-width="1.05"/>
+  </pattern>
+  <pattern id="bEps" width="15" height="15" patternUnits="userSpaceOnUse">
+    <rect width="15" height="15" fill="#f4efd9"/><circle cx="7.5" cy="7.5" r="5.4" fill="none" stroke="#ded5ad" stroke-width="1.1"/>
+  </pattern>
+  <filter id="bCool" x="-70%" y="-70%" width="240%" height="240%">
+    <feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <style>
+    .bS{font:400 13px Inter,Helvetica,sans-serif;fill:#6f6a62}
+    .bL{font:600 14px Inter,Helvetica,sans-serif;fill:#3d3931}
+    .bR{font:700 14px Inter,Helvetica,sans-serif;fill:#b3282e}
+    .bG{font:700 14px Inter,Helvetica,sans-serif;fill:#15682f}
+    .bD{font:400 12px Inter,Helvetica,sans-serif;fill:#918b81}
+    .bSide{font:700 11px Inter,Helvetica,sans-serif;fill:#a09a90;letter-spacing:.12em}
+    .bGood{font:800 16px Inter,Helvetica,sans-serif;fill:#1a7d3a}
+  </style>
+</defs>
+<rect width="640" height="480" fill="#f7f5f1"/>
+<rect x="40" y="28" width="4"  height="350" fill="#a8a49c"/>
+<rect x="44" y="28" width="77" height="350" fill="url(#bEps)"/>
+<rect x="121" y="28" width="82" height="350" fill="url(#bChaud)"/>
+<rect x="121" y="160" width="264" height="110" fill="url(#bChaud)"/>
+<g><rect x="203" y="28" width="39" height="132" fill="url(#bEps)"/><rect x="242" y="28" width="7" height="132" fill="#a8a49c"/></g>
+<g><rect x="203" y="270" width="39" height="108" fill="url(#bEps)"/><rect x="242" y="270" width="7" height="108" fill="#a8a49c"/></g>
+<g filter="url(#bCool)" opacity=".9"><rect x="44" y="28" width="77" height="350" fill="#1a7d3a" opacity=".16"/></g>
+<rect x="44" y="28" width="77" height="350" fill="none" stroke="#1a7d3a" stroke-width="2.6"/>
+<g stroke="#1a7d3a" fill="none" stroke-linecap="round">
+  <g stroke-width="2.7"><path d="M188 187 q-28 -8 -56 0"/><path d="M188 215 q-28 -8 -56 0"/><path d="M188 243 q-28 -8 -56 0"/></g>
+  <g stroke-width="3.8"><path d="M127 179 L127 195"/><path d="M127 207 L127 223"/><path d="M127 235 L127 251"/></g>
+</g>
+<g fill="none" stroke="#5c574e" stroke-width="1.15">
+  <path d="M121 28 H203 V160 H385 V270 H203 V378 H121 Z"/>
+</g>
+<text x="400" y="70" class="bG">PSE 14 cm, neÓntrerupt</text>
+<text x="400" y="108" class="bR">beton 15 cm, cald</text>
+<text x="400" y="146" class="bL">PSE 7 cm + fibrociment</text>
+<text x="248" y="222" class="bR">planeu turnat cu peretele</text>
+<text x="40" y="400" class="bSide">ê EXTERIOR</text>
+<text x="600" y="400" class="bSide" text-anchor="end">INTERIOR í</text>
+<text x="40" y="434" class="bGood">Cldura rm‚ne Ónuntru</text>
+<text x="40" y="456" class="bS">PSE-ul exterior trece prin faa planeului.</text>
+</svg>

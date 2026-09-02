@@ -1,0 +1,21 @@
+diff --git a/countries/ro/index.html b/countries/ro/index.html
+index ea2c2eb..75e0536 100644
+--- a/countries/ro/index.html
++++ b/countries/ro/index.html
+@@ -344,6 +344,7 @@
+         <a href="#" class="nav-menu-link" role="button" aria-haspopup="true" aria-expanded="false" onclick="event.preventDefault(); return false;">Proiecte <span class="nav-menu-caret">▾</span></a>
+         <div class="nav-menu-dropdown">
+           <a href="proiecte/">Toate proiectele</a>
++          <a href="parteneri/">Constructor partener</a>
+         </div>
+       </div>
+       <div class="nav-menu-item">
+@@ -452,6 +453,8 @@
+     </div>
+   </div>
+ 
++  <a href="parteneri/" class="nav-drawer-direct">Constructor partener</a>
++
+   <div class="nav-drawer-group">
+     <button class="nav-drawer-title" aria-expanded="false">Resurse<span class="nd-caret">▾</span></button>
+     <div class="nav-acc">

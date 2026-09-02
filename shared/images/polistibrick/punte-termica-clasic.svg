@@ -1,0 +1,54 @@
+<svg viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <pattern id="aChaud" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+    <rect width="8" height="8" fill="#f7cfd0"/><line x1="0" y1="0" x2="0" y2="8" stroke="#e0787d" stroke-width="1.05"/>
+  </pattern>
+  <pattern id="aBloc" width="28" height="17" patternUnits="userSpaceOnUse">
+    <rect width="28" height="17" fill="#dedad2"/>
+    <rect x="2.5" y="3" width="9.5" height="11" fill="#f4f2ee" stroke="#b4aea4" stroke-width="1"/>
+    <rect x="15" y="3" width="9.5" height="11" fill="#f4f2ee" stroke="#b4aea4" stroke-width="1"/>
+  </pattern>
+  <pattern id="aLaine" width="13" height="11" patternUnits="userSpaceOnUse">
+    <rect width="13" height="11" fill="#f7efe7"/>
+    <path d="M0 5.5 q3.25 -4.5 6.5 0 t6.5 0" fill="none" stroke="#e0cfbc" stroke-width="1.1"/>
+  </pattern>
+  <filter id="aHot" x="-70%" y="-70%" width="240%" height="240%">
+    <feGaussianBlur stdDeviation="11" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <marker id="aHead" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <path d="M0 0 L10 5 L0 10 z" fill="#e23e44"/>
+  </marker>
+  <style>
+    .aS{font:400 13px Inter,Helvetica,sans-serif;fill:#6f6a62}
+    .aL{font:600 14px Inter,Helvetica,sans-serif;fill:#3d3931}
+    .aR{font:700 14px Inter,Helvetica,sans-serif;fill:#b3282e}
+    .aD{font:400 12px Inter,Helvetica,sans-serif;fill:#918b81}
+    .aSide{font:700 11px Inter,Helvetica,sans-serif;fill:#a09a90;letter-spacing:.12em}
+    .aBad{font:800 16px Inter,Helvetica,sans-serif;fill:#e23e44}
+  </style>
+</defs>
+<rect width="640" height="480" fill="#f7f5f1"/>
+<g><rect x="40" y="28" width="8" height="132" fill="#c8c3ba"/><rect x="48" y="28" width="110" height="132" fill="url(#aBloc)"/>
+   <rect x="158" y="28" width="55" height="132" fill="url(#aLaine)"/><rect x="213" y="28" width="7" height="132" fill="#efece7"/></g>
+<g><rect x="40" y="270" width="8" height="108" fill="#c8c3ba"/><rect x="48" y="270" width="110" height="108" fill="url(#aBloc)"/>
+   <rect x="158" y="270" width="55" height="108" fill="url(#aLaine)"/><rect x="213" y="270" width="7" height="108" fill="#efece7"/></g>
+<rect x="48" y="160" width="337" height="110" fill="url(#aChaud)"/>
+<rect x="40" y="160" width="8" height="110" fill="#e8b5b6"/>
+<g filter="url(#aHot)" opacity=".85"><rect x="40" y="160" width="180" height="110" fill="#e23e44" opacity=".22"/></g>
+<g stroke="#e23e44" stroke-width="2.7" fill="none" stroke-linecap="round" marker-end="url(#aHead)">
+  <path d="M134 187 q-30 -9 -58 0 t-64 0"/><path d="M134 215 q-30 -9 -58 0 t-64 0"/><path d="M134 243 q-30 -9 -58 0 t-64 0"/>
+</g>
+<g fill="none" stroke="#5c574e" stroke-width="1.15">
+  <rect x="40" y="28" width="180" height="132"/><rect x="40" y="270" width="180" height="108"/>
+  <rect x="40" y="160" width="8" height="110"/><rect x="48" y="160" width="337" height="110"/>
+</g>
+<text x="400" y="78" class="aL">crmid 20 cm</text>
+<text x="400" y="98" class="aD">Ón afara izolaiei</text>
+<text x="400" y="138" class="aL">EPS 10 cm</text>
+<text x="400" y="158" class="aD">tiat de planeu</text>
+<text x="232" y="222" class="aR">planeu cald, p‚n la faad</text>
+<text x="40" y="400" class="aSide">ê EXTERIOR</text>
+<text x="600" y="400" class="aSide" text-anchor="end">INTERIOR í</text>
+<text x="40" y="434" class="aBad">Cldura iese</text>
+<text x="40" y="456" class="aS">Betonul cald atinge peretele rece. Nimic nu-l oprete.</text>
+</svg>
