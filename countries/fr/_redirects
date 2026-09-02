@@ -1,0 +1,23 @@
+# Adresele site-ului VECHI polistibrick.fr (WordPress-ul firmei) → paginile noi.
+# 301 = permanent: Google mută istoricul vechilor pagini pe cele noi, vizitatorii
+# cu linkuri vechi nu cad în 404. Inventarul vechi complet: 18 adrese (sitemap, 02.09.2026).
+/architecte/ /pour/architectes/ 301
+/architecte /pour/architectes/ 301
+/structuriste/ /pour/architectes/ 301
+/structuriste /pour/architectes/ 301
+/installations/ /montage/ 301
+/installations /montage/ 301
+/conditions-generales/ /legal/conditions/ 301
+/conditions-generales /legal/conditions/ 301
+/qui-sommes-nous/ /a-propos/ 301
+/qui-sommes-nous /a-propos/ 301
+/la-presse/ /a-propos/ 301
+/la-presse /a-propos/ 301
+/produits/mur/ /produits/polistibrick/ 301
+/produits/mur /produits/polistibrick/ 301
+/produits/plancher/ /produits/polistibrick/ 301
+/produits/plancher /produits/polistibrick/ 301
+/produits/toit/ /produits/toit-tbk-sip250/ 301
+/produits/toit /produits/toit-tbk-sip250/ 301
+# articolele de presă vechi (Batimat, Madrid, Imperiul Leilor…) → despre companie
+/polistibrick-* /a-propos/ 301
