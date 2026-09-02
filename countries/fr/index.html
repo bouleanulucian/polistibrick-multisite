@@ -228,6 +228,13 @@
   .h4-c--sip:hover   .h4-nume::before{transform:scaleX(1)}
 }
 .h4-nume,.h4-img{position:relative;z-index:2}
+/* decizia patronului (02.09): cardurile de produs NU se schimbă la survol */
+@media (hover:hover) and (pointer:fine){
+  .h4-c:hover .h4-viz{opacity:0!important}
+  .h4-c:hover .h4-poster{opacity:1!important}
+  .h4-c:hover .h4-nume::after{opacity:0!important}
+  .h4-c:hover .h4-nume::before{transform:scaleX(0)!important}
+}
 
 /* le signe que la page continue : la « souris » avec la bille qui descend, comme sur l'ancien héros */
 .h4-cue{position:absolute;right:clamp(20px,3vw,44px);bottom:22px;z-index:4;
@@ -511,7 +518,7 @@
         <span class="h4-nume">Polisti<em>brick</em></span>
         <span class="h4-img">
           <img class="h4-poster" src="images/erou/brick.webp" alt="Le coffrage Polistibrick en 3D" loading="lazy" decoding="async">
-          <span class="h4-viz" data-viz3d-poate data-stari='[{"eticheta":"Coffrage","fisier":"images/polistibrick/mbk-cofraj-v4.glb"}]'>
+          <span class="h4-viz" data-stari='[{"eticheta":"Coffrage","fisier":"images/polistibrick/mbk-cofraj-v4.glb"}]'>
             <canvas aria-hidden="true"></canvas>
           </span>
         </span>
@@ -520,7 +527,7 @@
         <span class="h4-nume">Polisti<em>wall</em></span>
         <span class="h4-img">
           <img class="h4-poster" src="images/erou/wall.webp" alt="Le coffrage Polistiwall en 3D" loading="lazy" decoding="async">
-          <span class="h4-viz" data-viz3d-poate data-stari='[{"eticheta":"Coffrage","fisier":"images/polistiwall/polistiwall-cofraj-v1.glb"}]'>
+          <span class="h4-viz" data-stari='[{"eticheta":"Coffrage","fisier":"images/polistiwall/polistiwall-cofraj-v1.glb"}]'>
             <canvas aria-hidden="true"></canvas>
           </span>
         </span>
@@ -529,7 +536,7 @@
         <span class="h4-nume">Polisti<em>SIP</em></span>
         <span class="h4-img">
           <img class="h4-poster" src="images/erou/sip.webp" alt="Le panneau PolistiSIP en 3D" loading="lazy" decoding="async">
-          <span class="h4-viz" data-viz3d-poate data-stari='[{"eticheta":"Coffrage","fisier":"images/erou/sip.glb"}]'>
+          <span class="h4-viz" data-stari='[{"eticheta":"Coffrage","fisier":"images/erou/sip.glb"}]'>
             <canvas aria-hidden="true"></canvas>
           </span>
         </span>
@@ -540,7 +547,7 @@
     <div class="h4-container">
       <div class="h4-stanga">
         <h1>Le seul coffrage<br><span>qui livre le mur complet.</span></h1>
-        <p class="h4-sub">Structure en béton armé, isolation graphitée des deux côtés, plaques fibres-ciment A1, gaines déjà en place. <strong>Un ICF classique s'arrête au polystyrène.</strong></p>
+        <p class="h4-sub"><strong>Vous le montez, c'est fini.</strong> Le reste a déjà été fait en usine : béton armé, isolation graphitée des deux côtés, plaques fibres-ciment A1, gaines en place.</p>
       </div>
       <div class="h4-dr">
         <a href="devis/" class="h4-btn">Envoyez votre plan, devis instantané →</a>
