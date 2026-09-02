@@ -511,7 +511,7 @@
 .cinq-watermark .wm-bottom { top: auto; }
 </style>
 <script>
-(function () {
+document.addEventListener('DOMContentLoaded', function () {
   var v = document.getElementById('cinqVideo'), r = document.getElementById('cinqReplica');
   if (!v || !r) return;
   // replicile, una pe scenă (tăieturile măsurate în video: 4,4 · 6,6 · 8,8 · 11,0 s)
@@ -531,7 +531,7 @@
     setTimeout(function () { r.textContent = scene[i][1]; r.classList.remove('schimba'); }, 180);
   });
   v.play && v.play().catch(function(){});
-})();
+});
 </script>
 <div class="cinq-wrap">
   <div class="cinq-watermark" aria-hidden="true">
