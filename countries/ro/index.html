@@ -229,6 +229,14 @@
   .h4-c--sip:hover   .h4-nume::before{transform:scaleX(1)}
 }
 .h4-nume,.h4-img{position:relative;z-index:2}
+.h4 .h4-kicker{margin:0 0 12px;font-size:13px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--red,#C8102E)}
+/* decizia patronului (02.09): cardurile de produs NU se schimbă la survol */
+@media (hover:hover) and (pointer:fine){
+  .h4-c:hover .h4-viz{opacity:0!important}
+  .h4-c:hover .h4-poster{opacity:1!important}
+  .h4-c:hover .h4-nume::after{opacity:0!important}
+  .h4-c:hover .h4-nume::before{transform:scaleX(0)!important}
+}
 
 /* semnul că pagina continuă: „mouse-ul" cu bila care coboară, ca pe eroul vechi */
 .h4-cue{position:absolute;right:clamp(20px,3vw,44px);bottom:22px;z-index:4;
@@ -511,7 +519,7 @@
         <span class="h4-nume">Polisti<em>brick</em></span>
         <span class="h4-img">
           <img class="h4-poster" src="images/erou/brick.webp" alt="Cofrajul Polistibrick în 3D" loading="lazy" decoding="async">
-          <span class="h4-viz" data-viz3d-poate data-stari='[{"eticheta":"Cofraj","fisier":"images/polistibrick/mbk-cofraj-v4.glb"}]'>
+          <span class="h4-viz" data-stari='[{"eticheta":"Cofraj","fisier":"images/polistibrick/mbk-cofraj-v4.glb"}]'>
             <canvas aria-hidden="true"></canvas>
           </span>
         </span>
@@ -520,7 +528,7 @@
         <span class="h4-nume">Polisti<em>wall</em></span>
         <span class="h4-img">
           <img class="h4-poster" src="images/erou/wall.webp" alt="Cofrajul Polistiwall în 3D" loading="lazy" decoding="async">
-          <span class="h4-viz" data-viz3d-poate data-stari='[{"eticheta":"Cofraj","fisier":"images/polistiwall/polistiwall-cofraj-v1.glb"}]'>
+          <span class="h4-viz" data-stari='[{"eticheta":"Cofraj","fisier":"images/polistiwall/polistiwall-cofraj-v1.glb"}]'>
             <canvas aria-hidden="true"></canvas>
           </span>
         </span>
@@ -529,7 +537,7 @@
         <span class="h4-nume">Polisti<em>SIP</em></span>
         <span class="h4-img">
           <img class="h4-poster" src="images/erou/sip.webp" alt="Panoul PolistiSIP în 3D" loading="lazy" decoding="async">
-          <span class="h4-viz" data-viz3d-poate data-stari='[{"eticheta":"Cofraj","fisier":"images/erou/sip.glb"}]'>
+          <span class="h4-viz" data-stari='[{"eticheta":"Cofraj","fisier":"images/erou/sip.glb"}]'>
             <canvas aria-hidden="true"></canvas>
           </span>
         </span>
@@ -539,8 +547,8 @@
   <div class="h4-vorba">
     <div class="h4-container">
       <div class="h4-stanga">
-        <h1>Casa la gri cu trei oameni.<br><span>Restul s-a făcut în fabrică.</span></h1>
-        <p class="h4-sub">Zidăria, tencuiala și izolația vin cu sistemul. Pe șantier rămân <strong>montajul și turnarea</strong>.</p>
+        <p class="h4-kicker">Un singur sistem</p>
+        <h1>Îl montezi, atât.<br><span>Restul e făcut deja în fabrică.</span></h1>
       </div>
       <div class="h4-dr">
         <a href="oferta/" class="h4-btn">Încarcă planul, ofertă instant →</a>
@@ -548,6 +556,94 @@
     </div>
   </div>
 </section>
+
+<style>
+/* eroul continuă închis sub buton (+1 cm), iar «În perete» călărește granița */
+.h4 { padding-bottom: clamp(48px, 6vh, 84px) !important; }
+.cinq-overlay h2 { margin: 0 0 14px; }
+.cinq-overlay h2 em { font-style: normal; color: #C8102E; }
+.cinq-replica { position: absolute; right: clamp(20px, 4vw, 64px); bottom: clamp(150px, 22vh, 230px); z-index: 4; display: inline-block; white-space: nowrap; font-size: clamp(12px, 1vw, 14px); letter-spacing: .14em; text-transform: uppercase; font-weight: 700; color: #C8102E; margin: 0; padding: 9px 14px 9px 12px; border: 1.5px solid #C8102E; border-radius: 999px; background: rgba(255,255,255,.92); box-shadow: 0 6px 20px rgba(0,0,0,.10); transition: opacity .35s; }
+@media (min-width: 701px) { .cinq-media .cinq-overlay { top: 50%; bottom: auto; transform: translateY(-50%); } }
+@media (max-width: 700px) {
+  .cinq-replica { position: static; display: block; width: max-content; max-width: calc(100% - 32px); white-space: normal; margin: 12px 16px 0 auto; font-size: 10.5px; letter-spacing: .1em; padding: 7px 10px; }
+  .cinq-media { display: flex; flex-direction: column; position: relative !important; top: auto !important; }
+  .cinq-video { transform: none !important; margin: 0 !important; clip-path: none !important; width: 100% !important; height: auto !important; }
+  .cinq-section { height: auto !important; min-height: 0 !important; }
+  .cinq-media .cinq-overlay { position: static !important; transform: none !important; order: -1; padding: 18px 20px 6px !important; max-width: none; pointer-events: auto; }
+  .cinq-overlay h2 { font-size: clamp(26px, 8vw, 34px); }
+}
+.cinq-replica::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #C8102E; margin: 0 8px 1px 0; animation: cinqPuls 1.4s ease-in-out infinite; }
+@keyframes cinqPuls { 0%,100% { opacity: 1; } 50% { opacity: .25; } }
+.cinq-replica.schimba { opacity: 0; }
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var v = document.getElementById('cinqVideo'), r = document.getElementById('cinqReplica');
+  if (!v || !r) return;
+  // replicile, una pe scenă (tăieturile măsurate în video: 2,2 · 4,4 · 6,6 · 8,8 · 11,0 s)
+  var scene = [
+    [0,     'Cinci straturi. Un singur panou.'],
+    [2.15,  'Focul nu prinde — fibrociment A1.'],
+    [4.35,  'Apa nu intră — hidrofug 100 %.'],
+    [6.55,  'Șocul nu lasă urme — bucătăria se prinde cu șurub.'],
+    [8.75,  'Frigul rămâne afară — U = 0,14, casă pasivă.'],
+    [10.95, 'Zgomotul rămâne afară — 65 dB.']
+  ];
+  var curent = -1;
+  v.addEventListener('timeupdate', function () {
+    var i = 0; for (var k = 0; k < scene.length; k++) if (v.currentTime >= scene[k][0]) i = k;
+    if (i === curent) return;
+    curent = i;
+    r.classList.add('schimba');
+    setTimeout(function () { r.textContent = scene[i][1]; r.classList.remove('schimba'); }, 180);
+  });
+  v.play && v.play().catch(function(){});
+});
+</script>
+<div class="cinq-wrap">
+  <div class="cinq-watermark" aria-hidden="true">
+    <span class="wm-half wm-top">În perete</span>
+    <span class="wm-half wm-bottom">În perete</span>
+  </div>
+<section class="cinq-section" id="cinq" aria-label="Diferența Polistibrick: cinci produse într-un singur panou">
+  <div class="cinq-media">
+  <div class="cinq-overlay">
+    <h2>Alt sistem nu le are.<br><em>La noi sunt standard.</em></h2>
+    <a href="oferta/" class="btn btn-red cinq-cta">Ofertă gratuită →</a>
+  </div>
+    <video class="cinq-video" id="cinqVideo" muted loop playsinline autoplay preload="auto"
+           poster="images/bundle/bundle-test-poster.jpg?v=3"
+           data-src-mobile="images/bundle/bundle-test-mobile.mp4?v=3"
+           data-poster-mobile="images/bundle/bundle-test-mobile-poster.jpg?v=1"
+           aria-label="Panoul Polistibrick testat: asamblare, foc, apă, impact, îngheț, zgomot — intact la fiecare probă">
+      <source src="images/bundle/bundle-test.mp4?v=3" type="video/mp4">
+    </video>
+    <p class="cinq-replica" id="cinqReplica">Cinci straturi. Un singur panou.</p>
+  </div>
+  <div class="cinq-legend">
+      <div class="cinq-item">
+        <div class="ci-name">Securitate la foc integrată</div>
+        <div class="ci-val">Fibrociment A1 + beton armat.</div>
+      </div>
+      <div class="cinq-item">
+        <div class="ci-name">Etanș peste tot</div>
+        <div class="ci-val">Hidrofug 100%, fără plăci verzi.</div>
+      </div>
+      <div class="cinq-item">
+        <div class="ci-name">Liniște</div>
+        <div class="ci-val">Fonoizolație ≥ 65 dB.</div>
+      </div>
+      <div class="cinq-item">
+        <div class="ci-name">Structură antiseismică</div>
+        <div class="ci-val">Beton armat monolitic durabil pe viață.</div>
+      </div>
+      <div class="cinq-item">
+        <div class="ci-name">Fixare directă</div>
+        <div class="ci-val">Înșurubezi direct, fără dibluri și fără bormașină.</div>
+      </div>
+  </div>
+</section>
+</div>
 
 
 
@@ -816,49 +912,6 @@
 
 <!-- CINCI-ÎN-UNU: panoul testat (video pe tot ecranul, registru morph) -->
 
-<div class="cinq-wrap">
-  <div class="cinq-watermark" aria-hidden="true">
-    <span class="wm-half wm-top">În perete</span>
-    <span class="wm-half wm-bottom">În perete</span>
-  </div>
-<section class="cinq-section" id="cinq" aria-label="Diferența Polistibrick: cinci produse într-un singur panou">
-  <div class="cinq-media">
-  <div class="cinq-overlay">
-    <h2 class="reveal">Alt sistem nu le are.<br><em>La noi sunt standard.</em></h2>
-    <a href="oferta/" class="btn btn-red cinq-cta reveal">Ofertă gratuită →</a>
-  </div>
-    <video class="cinq-video lazy-video" muted loop playsinline preload="none"
-           poster="images/bundle/bundle-test-poster.jpg?v=3"
-           data-src-mobile="images/bundle/bundle-test-mobile.mp4?v=3"
-           data-poster-mobile="images/bundle/bundle-test-mobile-poster.jpg?v=1"
-           aria-label="Panoul Polistibrick testat: asamblare, foc, apă, impact, îngheț, zgomot — intact la fiecare probă">
-      <source data-src="images/bundle/bundle-test.mp4?v=3" type="video/mp4">
-    </video>
-  </div>
-  <div class="cinq-legend">
-      <div class="cinq-item">
-        <div class="ci-name">Securitate la foc integrată</div>
-        <div class="ci-val">Fibrociment A1 + beton armat.</div>
-      </div>
-      <div class="cinq-item">
-        <div class="ci-name">Etanș peste tot</div>
-        <div class="ci-val">Hidrofug 100%, fără plăci verzi.</div>
-      </div>
-      <div class="cinq-item">
-        <div class="ci-name">Liniște</div>
-        <div class="ci-val">Fonoizolație ≥ 65 dB.</div>
-      </div>
-      <div class="cinq-item">
-        <div class="ci-name">Structură antiseismică</div>
-        <div class="ci-val">Beton armat monolitic durabil pe viață.</div>
-      </div>
-      <div class="cinq-item">
-        <div class="ci-name">Fixare directă</div>
-        <div class="ci-val">Înșurubezi direct, fără dibluri și fără bormașină.</div>
-      </div>
-  </div>
-</section>
-</div>
 
 <!-- PREZENȚĂ: două fabrici, nouă țări; foto fabrică + hartă (overlay de date) -->
 
