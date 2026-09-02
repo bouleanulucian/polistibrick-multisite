@@ -497,258 +497,88 @@
 </script>
 
 <!-- HERO : quatre cartes sur fond de béton -->
-<section class="h4" id="heroSection" aria-label="Polistibrick et les trois systèmes">
-  <div class="h4-fundal" aria-hidden="true"></div>
-  <div class="h4-carduri">
-      <div class="h4-c h4-c--mesaj">
-        <picture class="h4-robot">
-          <source srcset="images/robot.webp" type="image/webp">
-          <img src="images/robot.webp" alt="Polistibrick, construction intelligente" width="1500" height="1362" fetchpriority="high" decoding="async">
-        </picture>
-      </div>
-      <div class="h4-c h4-c--brick">
-        <span class="h4-nume">Polisti<em>brick</em></span>
-        <span class="h4-img">
-          <img class="h4-poster" src="images/erou/brick.webp" alt="Le coffrage Polistibrick en 3D" loading="lazy" decoding="async">
-          <span class="h4-viz" data-viz3d-poate data-stari='[{"eticheta":"Coffrage","fisier":"images/polistibrick/mbk-cofraj-v4.glb"}]'>
-            <canvas aria-hidden="true"></canvas>
-          </span>
-        </span>
-      </div>
-      <div class="h4-c h4-c--wall">
-        <span class="h4-nume">Polisti<em>wall</em></span>
-        <span class="h4-img">
-          <img class="h4-poster" src="images/erou/wall.webp" alt="Le coffrage Polistiwall en 3D" loading="lazy" decoding="async">
-          <span class="h4-viz" data-viz3d-poate data-stari='[{"eticheta":"Coffrage","fisier":"images/polistiwall/polistiwall-cofraj-v1.glb"}]'>
-            <canvas aria-hidden="true"></canvas>
-          </span>
-        </span>
-      </div>
-      <div class="h4-c h4-c--sip">
-        <span class="h4-nume">Polisti<em>SIP</em></span>
-        <span class="h4-img">
-          <img class="h4-poster" src="images/erou/sip.webp" alt="Le panneau PolistiSIP en 3D" loading="lazy" decoding="async">
-          <span class="h4-viz" data-viz3d-poate data-stari='[{"eticheta":"Coffrage","fisier":"images/erou/sip.glb"}]'>
-            <canvas aria-hidden="true"></canvas>
-          </span>
-        </span>
-      </div>
-  </div>
-  <span class="h4-cue" aria-hidden="true"></span>
-  <div class="h4-vorba">
-    <div class="h4-container">
-      <div class="h4-stanga">
-        <h1>Le seul coffrage<br><span>qui livre le mur complet.</span></h1>
-        <p class="h4-sub">Structure en béton armé, isolation graphitée des deux côtés, plaques fibres-ciment A1, gaines déjà en place. <strong>Un ICF classique s'arrête au polystyrène.</strong></p>
-      </div>
-      <div class="h4-dr">
-        <a href="devis/" class="h4-btn">Envoyez votre plan, devis instantané →</a>
-      </div>
-    </div>
-  </div>
-</section>
 
-
-<!-- EUX / NOUS : la différence dite en clair, avant toute explication -->
-<section class="euxnous" id="eux-nous" aria-label="Ce que les autres coffrages isolants ne font pas">
 <style>
-.euxnous { background: #F7F4ED; color: #1A1A1A; padding: clamp(54px, 7vw, 92px) 0; }
-.euxnous .en-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-.euxnous .en-eyebrow { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: #C8102E; font-weight: 700; margin-bottom: 12px; }
-.euxnous h2 { font-size: clamp(26px, 3.6vw, 40px); line-height: 1.12; letter-spacing: -.02em; margin: 0 0 34px; max-width: 22ch; }
-.en-tabel { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); border-top: 1px solid rgba(15,15,15,.12); }
-.en-cap { padding: 12px 18px 12px 0; font-size: 12.5px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700; color: #8a8782; border-bottom: 1px solid rgba(15,15,15,.12); }
-.en-cap.nous { color: #C8102E; padding-left: 22px; border-left: 2px solid #C8102E; }
-.en-eux, .en-nous { padding: 18px 18px 18px 0; border-bottom: 1px solid rgba(15,15,15,.1); font-size: clamp(15.5px, 1.35vw, 18px); line-height: 1.45; }
-.en-eux { color: #7d7a74; }
-.en-nous { padding-left: 22px; border-left: 2px solid #C8102E; font-weight: 600; }
-.en-nous b { color: #C8102E; font-weight: 800; }
-.en-fin { margin-top: 26px; display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
-.en-fin a { display: inline-block; padding: 13px 26px; border-radius: 999px; font-weight: 600; font-size: 15px; text-decoration: none; background: #C8102E; color: #fff; }
-.en-fin span { color: #6B6B6B; font-size: 14px; }
-@media (max-width: 700px) { .en-tabel { grid-template-columns: 1fr; } .en-cap.eux { display: none; } .en-cap.nous { border-left: 0; padding-left: 0; } .en-eux { padding-bottom: 6px; border-bottom: 0; font-size: 14.5px; } .en-eux::before { content: "Eux : "; font-weight: 700; } .en-nous { padding-left: 0; border-left: 0; padding-top: 4px; } .en-nous::before { content: "Nous : "; color: #C8102E; font-weight: 800; } }
+.cinq-overlay h1 { font-family: var(--serif); font-size: clamp(30px, 4vw, 58px); font-weight: 500; color: var(--ink); letter-spacing: -0.02em; line-height: 1.05; margin: 0 0 14px; max-width: 760px; }
+.cinq-overlay h1 em { font-style: normal; color: #C8102E; }
+.cinq-sub { font-size: clamp(15px, 1.25vw, 18px); line-height: 1.5; color: #4a4a4a; max-width: 620px; margin: 0 0 22px; }
+.cinq-replica { display: inline-block; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; color: #C8102E; margin: 0 0 14px; padding: 7px 12px 7px 10px; border: 1.5px solid #C8102E; border-radius: 999px; background: rgba(255,255,255,.85); transition: opacity .35s; }
+.cinq-replica::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #C8102E; margin: 0 8px 1px 0; animation: cinqPuls 1.4s ease-in-out infinite; }
+@keyframes cinqPuls { 0%,100% { opacity: 1; } 50% { opacity: .25; } }
+.cinq-replica.schimba { opacity: 0; }
+.cinq-section { padding-top: 72px; }
 </style>
-  <div class="en-inner">
-    <div class="en-eyebrow">Dit en clair</div>
-    <h2>Ce que les autres coffrages isolants ne font pas.</h2>
-    <div class="en-tabel">
-      <div class="en-cap eux">Un ICF classique</div>
-      <div class="en-cap nous">Polistibrick</div>
-      <div class="en-eux">De l'isolant à remplir de béton.</div>
-      <div class="en-nous">Un <b>mur fini</b>, coulé monolithe, <b>antisismique</b>.</div>
-      <div class="en-eux">Du polystyrène apparent, à protéger.</div>
-      <div class="en-nous"><b>Fibres-ciment A1</b> sur les deux faces : la cuisine se visse dedans, le feu ne prend pas.</div>
-      <div class="en-eux">De l'isolation d'un seul côté.</div>
-      <div class="en-nous"><b>Graphité dehors et dedans</b>, U = 0,14 : le niveau maison passive, sans rajout.</div>
-      <div class="en-eux">Des saignées pour l'électricité et la plomberie.</div>
-      <div class="en-nous">Les <b>gaines posées avant fermeture</b>, comme dans une cloison.</div>
-      <div class="en-eux">Pare-vapeur et étanchéité à l'air à faire sur chantier.</div>
-      <div class="en-nous"><b>Déjà dans le panneau</b> : barrière de vapeur et enveloppe étanche à l'air.</div>
-    </div>
-    <div class="en-fin">
-      <a href="devis/">Envoyez votre plan, devis instantané →</a>
-      <span>Et pour voir le mur se déplier, couche par couche : juste en dessous.</span>
-    </div>
-  </div>
-</section>
-
-<!-- MUR COMPLET : ce qu'un ICF classique n'a pas — la différence face à la concurrence ICF -->
-<section class="murcomplet" id="mur-complet" aria-label="Le mur complet Polistibrick, couche par couche">
-<style>
-.murcomplet { padding: clamp(60px, 8vw, 100px) 0; background: #14140f; color: #F7F4ED; overflow: hidden; }
-.murcomplet .mc-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-.murcomplet .mc-eyebrow { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: #E8564F; font-weight: 700; margin-bottom: 14px; }
-.murcomplet h2 { font-size: clamp(26px, 3.6vw, 40px); line-height: 1.15; letter-spacing: -.02em; margin: 0 0 10px; max-width: 24ch; }
-.murcomplet h2 em { font-style: normal; color: #E8564F; }
-.murcomplet .mc-lead { color: #b9b6ac; font-size: 17px; max-width: 62ch; margin-bottom: 34px; }
-.mc-scene { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(24px, 3.5vw, 56px); align-items: center; }
-.mc-stage { position: relative; aspect-ratio: 1500 / 1700; max-width: 640px; margin: 0 auto; width: 100%; }
-.mc-l { position: absolute; inset: 0; width: 100%; height: auto; display: block; transform: translate(0, 0); transition: transform 1.4s cubic-bezier(.22,.9,.24,1); will-change: transform; }
-.mc-stage.desfacut .mc-l { transform: translate(calc(var(--dx, 0px) * var(--off)), calc(var(--dy, 0px) * var(--off))); }
-.mc-lunette { position: absolute; left: 50%; top: 50%; width: 96px; height: 96px; margin: -48px 0 0 -48px; opacity: 0; transition: left .85s cubic-bezier(.3,.7,.25,1), top .85s cubic-bezier(.3,.7,.25,1), opacity .5s; pointer-events: none; }
-.mc-stage.viseaza .mc-lunette { opacity: 1; }
-.mc-lunette svg { width: 100%; height: 100%; display: block; }
-.mc-lunette .puls { transform-origin: 50% 50%; animation: mcPuls 1.8s ease-out infinite; }
-@keyframes mcPuls { 0% { transform: scale(.55); opacity: .9; } 70% { transform: scale(1.15); opacity: 0; } 100% { transform: scale(1.15); opacity: 0; } }
-.mc-legenda { font-size: 12.5px; color: #8f8c82; text-align: center; margin-top: 10px; }
-.mc-pasi { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
-.mc-pasi li { border: 1px solid rgba(247,244,237,.14); border-radius: 14px; overflow: hidden; background: rgba(247,244,237,.03); }
-.mc-pasi button { display: grid; grid-template-columns: 34px 1fr; gap: 12px; align-items: center; width: 100%; text-align: left; padding: 13px 16px; background: none; border: 0; color: inherit; font: inherit; font-weight: 600; font-size: 15.5px; cursor: pointer; }
-.mc-pasi .n { width: 34px; height: 34px; border-radius: 50%; border: 1.5px solid rgba(247,244,237,.35); color: #F7F4ED; font-weight: 700; font-size: 14px; display: flex; align-items: center; justify-content: center; transition: background .3s, border-color .3s; }
-.mc-pasi p { margin: 0; padding: 0 16px; max-height: 0; overflow: hidden; color: #b9b6ac; font-size: 14.5px; line-height: 1.55; transition: max-height .5s ease, padding .5s ease; }
-.mc-pasi li.activ { border-color: #E8564F; background: rgba(232,86,79,.08); }
-.mc-pasi li.activ .n { background: #E8564F; border-color: #E8564F; }
-.mc-pasi li.activ p { max-height: 150px; padding: 0 16px 14px 62px; }
-.mc-tbl { margin-top: 54px; border: 1px solid rgba(247,244,237,.12); border-radius: 16px; overflow: hidden; background: rgba(247,244,237,.03); }
-.mc-tbl table { width: 100%; border-collapse: collapse; font-size: 15px; }
-.mc-tbl th, .mc-tbl td { padding: 13px 18px; text-align: left; border-top: 1px solid rgba(247,244,237,.08); }
-.mc-tbl thead th { border-top: 0; background: rgba(247,244,237,.06); color: #F7F4ED; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
-.mc-tbl thead th:last-child { color: #E8564F; }
-.mc-tbl td:nth-child(2), .mc-tbl td:nth-child(3), .mc-tbl th:nth-child(2), .mc-tbl th:nth-child(3) { text-align: center; width: 21%; }
-.mc-nu { color: #6f6c63; font-weight: 700; }
-.mc-da { color: #7fd28a; font-weight: 700; }
-.mc-note { font-size: 13px; color: #8f8c82; padding: 12px 18px 16px; }
-.mc-cta { margin-top: 30px; display: flex; gap: 14px; flex-wrap: wrap; }
-.mc-cta a { display: inline-block; padding: 13px 26px; border-radius: 999px; font-weight: 600; font-size: 15px; text-decoration: none; }
-.mc-cta .pri { background: #C8102E; color: #fff; }
-.mc-cta .sec { border: 1.5px solid #F7F4ED; color: #F7F4ED; }
-@media (max-width: 900px) { .mc-scene { grid-template-columns: 1fr; } .mc-stage { max-width: 460px; } .mc-tbl { overflow-x: auto; } .mc-tbl table { min-width: 560px; } }
-@media (prefers-reduced-motion: reduce) { .mc-l, .mc-lunette { transition: none; } .mc-lunette .puls { animation: none; } }
-</style>
-  <div class="mc-inner">
-    <div class="mc-eyebrow">La preuve, couche par couche</div>
-    <h2>Le mur complet, <em>tel qu'il sort de l'usine.</em></h2>
-    <p class="mc-lead">Le panneau se déplie sous vos yeux : chaque point de la liste ci-dessus a sa couche dans le coffrage.</p>
-    <div class="mc-scene">
-      <div>
-        <div class="mc-stage" id="mcStage">
-          <img class="mc-l" style="--off:-0.40" src="images/mur/fibro-int.webp" alt="" width="1500" height="1700" loading="lazy" decoding="async">
-          <img class="mc-l" style="--off:-0.30" src="images/mur/folie-int.webp" alt="" width="1500" height="1700" loading="lazy" decoding="async">
-          <img class="mc-l" style="--off:-0.20" src="images/mur/pse-int.webp" alt="" width="1500" height="1700" loading="lazy" decoding="async">
-          <img class="mc-l" style="--off:0" src="images/mur/beton.webp" alt="Coupe du mur Polistibrick MBK : noyau en béton armé avec ferraillage apparent" width="1500" height="1700" loading="lazy" decoding="async">
-          <img class="mc-l" style="--off:0.20" src="images/mur/pse-ext.webp" alt="Isolation extérieure en polystyrène graphité de 14 cm du panneau Polistibrick" width="1500" height="1700" loading="lazy" decoding="async">
-          <img class="mc-l" style="--off:0.32" src="images/mur/folie-ext.webp" alt="Barrière de vapeur entre la plaque de fibres-ciment et l'isolant" width="1500" height="1700" loading="lazy" decoding="async">
-          <img class="mc-l" style="--off:0.42" src="images/mur/fibro-ext.webp" alt="Plaque de fibres-ciment extérieure du panneau Polistibrick, classée A1 au feu" width="1500" height="1700" loading="lazy" decoding="async">
-          <div class="mc-lunette" id="mcLunette" aria-hidden="true">
-            <svg viewBox="0 0 96 96" fill="none">
-              <circle class="puls" cx="48" cy="48" r="44" stroke="#E8564F" stroke-width="1.5"/>
-              <circle cx="48" cy="48" r="34" stroke="#E8564F" stroke-width="2.5"/>
-              <line x1="48" y1="2" x2="48" y2="26" stroke="#E8564F" stroke-width="2"/>
-              <line x1="48" y1="70" x2="48" y2="94" stroke="#E8564F" stroke-width="2"/>
-              <line x1="2" y1="48" x2="26" y2="48" stroke="#E8564F" stroke-width="2"/>
-              <line x1="70" y1="48" x2="94" y2="48" stroke="#E8564F" stroke-width="2"/>
-              <circle cx="48" cy="48" r="3.5" fill="#E8564F"/>
-            </svg>
-          </div>
-        </div>
-        <p class="mc-legenda">Coupe réelle du panneau MBK 210 — 38 cm, U = 0,14 W/m²K.</p>
-      </div>
-      <ol class="mc-pasi" id="mcPasi">
-        <li><button type="button"><span class="n">1</span>Structure antisismique</button><p>Béton armé monolithe, coulé sur place dans le coffrage : un seul bloc du sol au toit, calculé selon les Eurocodes 2 et 8.</p></li>
-        <li><button type="button"><span class="n">2</span>Isolation de maison passive premium</button><p>PSE graphité 14 cm à l'extérieur + 7 cm à l'intérieur, U = 0,14 W/m²K — le niveau passif, sans isolation rapportée.</p></li>
-        <li><button type="button"><span class="n">3</span>Plaques de fibres-ciment sur les deux faces</button><p>Résistantes aux chocs violents — une cuisine se fixe avec une simple vis. Classées A1 au feu, hydrofuges pour toute la maison, avec un vrai gain phonique.</p></li>
-        <li><button type="button"><span class="n">4</span>Barrière de vapeur intégrée</button><p>Entre la plaque de fibres-ciment et le polystyrène, une barrière de vapeur continue, des deux côtés du mur.</p></li>
-        <li><button type="button"><span class="n">5</span>Étanchéité à l'air</button><p>Entre le béton et l'isolation, rien ne passe : le noyau coulé scelle chaque mur en une enveloppe monolithe, étanche à l'air.</p></li>
-      </ol>
-    </div>
-    <div class="mc-tbl">
-      <table>
-        <thead><tr><th>Ce que contient le mur</th><th>ICF classique</th><th>Polistibrick</th></tr></thead>
-        <tbody>
-          <tr><td>Structure béton armé monolithe</td><td class="mc-da">✓</td><td class="mc-da">✓</td></tr>
-          <tr><td>Isolation extérieure</td><td class="mc-da">✓</td><td class="mc-da">✓</td></tr>
-          <tr><td>Isolation intérieure intégrée</td><td class="mc-nu">—</td><td class="mc-da">✓</td></tr>
-          <tr><td>Parement dur en fibres-ciment, A1 au feu, sur les deux faces</td><td class="mc-nu">—</td><td class="mc-da">✓</td></tr>
-          <tr><td>Hydrofuge et phonique compris dans le panneau</td><td class="mc-nu">—</td><td class="mc-da">✓</td></tr>
-          <tr><td>Gaines électriques et sanitaires posées avant fermeture</td><td class="mc-nu">—</td><td class="mc-da">✓</td></tr>
-          <tr><td>Support de finition prêt (enduit dehors, plaque dure dedans)</td><td class="mc-nu">—</td><td class="mc-da">✓</td></tr>
-        </tbody>
-      </table>
-      <div class="mc-note">« ICF classique » : coffrage isolant à faces en polystyrène, sans parement intégré. Comparaison sur la composition du panneau tel qu'il sort de l'usine.</div>
-    </div>
-    <div class="mc-cta">
-      <a class="pri" href="produits/polistibrick/">Voir le mur en détail</a>
-      <a class="sec" href="devis/">Chiffrer votre maison</a>
-    </div>
-  </div>
 <script>
 (function () {
-  var stage = document.getElementById('mcStage');
-  var lunette = document.getElementById('mcLunette');
-  var pasi = document.getElementById('mcPasi');
-  if (!stage || !lunette || !pasi) return;
-  var butoane = pasi.querySelectorAll('li');
-  // proiecția axei de desfacere pe ecran (cameră ortografică: 1 m pe Y = aceste fracțiuni din cadru)
-  var DX = 0.3459, DY = 0.0930;
-  // țintele lunetei în stare desfăcută (fracțiuni din cadru)
-  var tinte = [
-    [0.260, 0.460],  // 1 beton — fâșia vizibilă a nucleului armat
-    [0.360, 0.560],  // 2 PSE exterior — izolația
-    [0.710, 0.530],  // 3 fibrociment exterior — fața mare
-    [0.420, 0.500],  // 4 bariera de vapori — folia dintre straturi
-    [0.160, 0.600]   // 5 etanșeitate — muchia beton/izolație interioară
+  var v = document.getElementById('cinqVideo'), r = document.getElementById('cinqReplica');
+  if (!v || !r) return;
+  // replicile, una pe scenă (tăieturile măsurate în video: 4,4 · 6,6 · 8,8 · 11,0 s)
+  var scene = [
+    [0,     'Cinq couches. Un seul panneau.'],
+    [4.35,  'Le feu ne prend pas — fibres-ciment A1.'],
+    [6.55,  'L\'eau ne rentre pas — hydrofuge à 100 %.'],
+    [8.75,  'Le froid reste dehors — U = 0,14, maison passive.'],
+    [10.95, 'Le bruit reste dehors — 65 dB.']
   ];
-  function dimensiuni() {
-    var r = stage.getBoundingClientRect();
-    stage.style.setProperty('--dx', (r.width * DX) + 'px');
-    stage.style.setProperty('--dy', (r.height * DY) + 'px');
-  }
-  dimensiuni();
-  addEventListener('resize', dimensiuni);
-  var pas = -1, timer = null, pauza = 0;
-  function alege(i, manual) {
-    pas = i;
-    var t = tinte[i];
-    lunette.style.left = (t[0] * 100) + '%';
-    lunette.style.top = (t[1] * 100) + '%';
-    stage.classList.add('viseaza');
-    butoane.forEach(function (li, j) { li.classList.toggle('activ', i === j); });
-    if (manual) pauza = Date.now() + 12000;
-  }
-  butoane.forEach(function (li, i) {
-    li.querySelector('button').addEventListener('click', function () { alege(i, true); });
+  var curent = -1;
+  v.addEventListener('timeupdate', function () {
+    var i = 0; for (var k = 0; k < scene.length; k++) if (v.currentTime >= scene[k][0]) i = k;
+    if (i === curent) return;
+    curent = i;
+    r.classList.add('schimba');
+    setTimeout(function () { r.textContent = scene[i][1]; r.classList.remove('schimba'); }, 180);
   });
-  function pornit() {
-    if (timer) return;
-    timer = setInterval(function () {
-      if (Date.now() < pauza) return;
-      alege((pas + 1) % tinte.length, false);
-    }, 3200);
-  }
-  function oprit() { clearInterval(timer); timer = null; }
-  var obs = new IntersectionObserver(function (e) {
-    e.forEach(function (x) {
-      if (x.isIntersecting) {
-        dimensiuni();
-        stage.classList.add('desfacut');
-        setTimeout(function () { if (pas < 0) alege(0, false); pornit(); }, 1500);
-      } else { oprit(); }
-    });
-  }, { threshold: 0.35 });
-  obs.observe(stage);
+  v.play && v.play().catch(function(){});
 })();
 </script>
+<div class="cinq-wrap">
+  <div class="cinq-watermark" aria-hidden="true">
+    <span class="wm-half wm-top">Dans le mur</span>
+    <span class="wm-half wm-bottom">Dans le mur</span>
+  </div>
+<section class="cinq-section" id="cinq" aria-label="Le mur complet Polistibrick, testé au feu, à l'eau, au gel et au bruit">
+  <div class="cinq-media">
+  <div class="cinq-overlay">
+    <p class="cinq-replica" id="cinqReplica" data-t="0">Cinq couches. Un seul panneau.</p>
+    <h1>Le seul coffrage<br><em>qui livre le mur complet.</em></h1>
+    <p class="cinq-sub">Béton armé, isolation graphitée des deux côtés, fibres-ciment A1, gaines en place. Un ICF classique s'arrête au polystyrène.</p>
+    <a href="devis/" class="btn btn-red cinq-cta">Envoyez votre plan, devis instantané →</a>
+  </div>
+    <video class="cinq-video" id="cinqVideo" muted loop playsinline autoplay preload="auto"
+           poster="images/bundle/bundle-test-poster.jpg?v=3"
+           data-src-mobile="images/bundle/bundle-test-mobile.mp4?v=3"
+           data-poster-mobile="images/bundle/bundle-test-mobile-poster.jpg?v=1"
+           aria-label="Le panneau Polistibrick testé : assemblage, feu, eau, impact, gel, bruit. Intact à chaque essai">
+      <source src="images/bundle/bundle-test.mp4?v=3" type="video/mp4">
+    </video>
+  </div>
+  <div class="cinq-legend">
+      <div class="cinq-item">
+        <div class="ci-name">Sécurité incendie intégrée</div>
+        <div class="ci-val">Plaque de fibres-ciment A1 + béton armé.</div>
+      </div>
+      <div class="cinq-item">
+        <div class="ci-name">Étanche partout</div>
+        <div class="ci-val">Hydrofuge à 100 %, sans plaques vertes.</div>
+      </div>
+      <div class="cinq-item">
+        <div class="ci-name">Silence</div>
+        <div class="ci-val">Isolation phonique ≥ 65 dB.</div>
+      </div>
+      <div class="cinq-item">
+        <div class="ci-name">Structure parasismique</div>
+        <div class="ci-val">Béton armé monolithique, durable à vie.</div>
+      </div>
+      <div class="cinq-item">
+        <div class="ci-name">Fixation directe</div>
+        <div class="ci-val">Vous vissez directement, sans chevilles ni perceuse.</div>
+      </div>
+  </div>
 </section>
+</div>
+
+
+<!-- MUR COMPLET : ce qu'un ICF classique n'a pas — la différence face à la concurrence ICF -->
 
 
 <!-- DIFFÉRENCES : comparaison structurelle mur Polistibrick vs isolation classique -->
@@ -1016,49 +846,6 @@
 
 <!-- CINQ-EN-UN : le panneau testé (vidéo plein écran, registre morph) -->
 
-<div class="cinq-wrap">
-  <div class="cinq-watermark" aria-hidden="true">
-    <span class="wm-half wm-top">Dans le mur</span>
-    <span class="wm-half wm-bottom">Dans le mur</span>
-  </div>
-<section class="cinq-section" id="cinq" aria-label="La différence Polistibrick : cinq produits dans un seul panneau">
-  <div class="cinq-media">
-  <div class="cinq-overlay">
-    <h2 class="reveal">Aucun autre système ne les a.<br><em>Chez nous, c'est le standard.</em></h2>
-    <a href="devis/" class="btn btn-red cinq-cta reveal">Devis gratuit →</a>
-  </div>
-    <video class="cinq-video lazy-video" muted loop playsinline preload="none"
-           poster="images/bundle/bundle-test-poster.jpg?v=3"
-           data-src-mobile="images/bundle/bundle-test-mobile.mp4?v=3"
-           data-poster-mobile="images/bundle/bundle-test-mobile-poster.jpg?v=1"
-           aria-label="Le panneau Polistibrick testé : assemblage, feu, eau, impact, gel, bruit. Intact à chaque essai">
-      <source data-src="images/bundle/bundle-test.mp4?v=3" type="video/mp4">
-    </video>
-  </div>
-  <div class="cinq-legend">
-      <div class="cinq-item">
-        <div class="ci-name">Sécurité incendie intégrée</div>
-        <div class="ci-val">Plaque de fibres-ciment A1 + béton armé.</div>
-      </div>
-      <div class="cinq-item">
-        <div class="ci-name">Étanche partout</div>
-        <div class="ci-val">Hydrofuge à 100 %, sans plaques vertes.</div>
-      </div>
-      <div class="cinq-item">
-        <div class="ci-name">Silence</div>
-        <div class="ci-val">Isolation phonique ≥ 65 dB.</div>
-      </div>
-      <div class="cinq-item">
-        <div class="ci-name">Structure parasismique</div>
-        <div class="ci-val">Béton armé monolithique, durable à vie.</div>
-      </div>
-      <div class="cinq-item">
-        <div class="ci-name">Fixation directe</div>
-        <div class="ci-val">Vous vissez directement, sans chevilles ni perceuse.</div>
-      </div>
-  </div>
-</section>
-</div>
 
 <!-- PRÉSENCE : deux usines, neuf pays ; photo usine + carte (overlay de données) -->
 
