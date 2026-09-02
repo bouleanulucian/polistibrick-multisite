@@ -498,9 +498,60 @@
 
 <!-- HERO : quatre cartes sur fond de béton -->
 
+<section class="h4" id="heroSection" aria-label="Polistibrick et les trois systèmes">
+  <div class="h4-fundal" aria-hidden="true"></div>
+  <div class="h4-carduri">
+      <div class="h4-c h4-c--mesaj">
+        <picture class="h4-robot">
+          <source srcset="images/robot.webp" type="image/webp">
+          <img src="images/robot.webp" alt="Polistibrick, construction intelligente" width="1500" height="1362" fetchpriority="high" decoding="async">
+        </picture>
+      </div>
+      <div class="h4-c h4-c--brick">
+        <span class="h4-nume">Polisti<em>brick</em></span>
+        <span class="h4-img">
+          <img class="h4-poster" src="images/erou/brick.webp" alt="Le coffrage Polistibrick en 3D" loading="lazy" decoding="async">
+          <span class="h4-viz" data-viz3d-poate data-stari='[{"eticheta":"Coffrage","fisier":"images/polistibrick/mbk-cofraj-v4.glb"}]'>
+            <canvas aria-hidden="true"></canvas>
+          </span>
+        </span>
+      </div>
+      <div class="h4-c h4-c--wall">
+        <span class="h4-nume">Polisti<em>wall</em></span>
+        <span class="h4-img">
+          <img class="h4-poster" src="images/erou/wall.webp" alt="Le coffrage Polistiwall en 3D" loading="lazy" decoding="async">
+          <span class="h4-viz" data-viz3d-poate data-stari='[{"eticheta":"Coffrage","fisier":"images/polistiwall/polistiwall-cofraj-v1.glb"}]'>
+            <canvas aria-hidden="true"></canvas>
+          </span>
+        </span>
+      </div>
+      <div class="h4-c h4-c--sip">
+        <span class="h4-nume">Polisti<em>SIP</em></span>
+        <span class="h4-img">
+          <img class="h4-poster" src="images/erou/sip.webp" alt="Le panneau PolistiSIP en 3D" loading="lazy" decoding="async">
+          <span class="h4-viz" data-viz3d-poate data-stari='[{"eticheta":"Coffrage","fisier":"images/erou/sip.glb"}]'>
+            <canvas aria-hidden="true"></canvas>
+          </span>
+        </span>
+      </div>
+  </div>
+  <span class="h4-cue" aria-hidden="true"></span>
+  <div class="h4-vorba">
+    <div class="h4-container">
+      <div class="h4-stanga">
+        <h1>Hors d'eau hors d'air à trois personnes.<br><span>Le reste est fait en usine.</span></h1>
+        <p class="h4-sub">La maçonnerie, l'enduit et l'isolation viennent avec le système. Sur le chantier, il reste <strong>le montage et le coulage</strong>.</p>
+      </div>
+      <div class="h4-dr">
+        <a href="devis/" class="h4-btn">Envoyez votre plan, devis instantané →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <style>
-.cinq-overlay h1 { font-family: var(--serif); font-size: clamp(30px, 4vw, 58px); font-weight: 500; color: var(--ink); letter-spacing: -0.02em; line-height: 1.05; margin: 0 0 14px; max-width: 760px; }
-.cinq-overlay h1 em { font-style: normal; color: #C8102E; }
+.cinq-overlay h2 { margin: 0 0 14px; }
+.cinq-overlay h2 em { font-style: normal; color: #C8102E; }
 .cinq-sub { font-size: clamp(15px, 1.25vw, 18px); line-height: 1.5; color: #4a4a4a; max-width: 620px; margin: 0 0 22px; }
 .cinq-replica { position: absolute; right: clamp(20px, 4vw, 64px); bottom: clamp(150px, 22vh, 230px); z-index: 4; display: inline-block; white-space: nowrap; font-size: clamp(12px, 1vw, 14px); letter-spacing: .14em; text-transform: uppercase; font-weight: 700; color: #C8102E; margin: 0; padding: 9px 14px 9px 12px; border: 1.5px solid #C8102E; border-radius: 999px; background: rgba(255,255,255,.92); box-shadow: 0 6px 20px rgba(0,0,0,.10); transition: opacity .35s; }
 @media (min-width: 701px) { .cinq-media .cinq-overlay { top: 50%; bottom: auto; transform: translateY(-50%); } }
@@ -510,16 +561,13 @@
   .cinq-media { display: flex; flex-direction: column; position: relative !important; top: auto !important; }
   .cinq-video { transform: none !important; margin: 0 !important; clip-path: none !important; width: 100% !important; height: auto !important; }
   .cinq-section { height: auto !important; min-height: 0 !important; }
-  .cinq-section { padding-top: 84px !important; } /* sub bara de meniu fixă */
   .cinq-media .cinq-overlay { position: static !important; transform: none !important; order: -1; padding: 18px 20px 6px !important; max-width: none; pointer-events: auto; }
-  .cinq-overlay h1 { font-size: clamp(26px, 8vw, 34px); }
+  .cinq-overlay h2 { font-size: clamp(26px, 8vw, 34px); }
   .cinq-sub { font-size: 15px; margin-bottom: 16px; }
 }
 .cinq-replica::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #C8102E; margin: 0 8px 1px 0; animation: cinqPuls 1.4s ease-in-out infinite; }
 @keyframes cinqPuls { 0%,100% { opacity: 1; } 50% { opacity: .25; } }
 .cinq-replica.schimba { opacity: 0; }
-.cinq-section { padding-top: 72px; }
-.cinq-watermark { display: none; } /* pe primul ecran filigranul intra sub meniu */
 </style>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
@@ -553,7 +601,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <section class="cinq-section" id="cinq" aria-label="Le mur complet Polistibrick, testé au feu, à l'eau, au gel et au bruit">
   <div class="cinq-media">
   <div class="cinq-overlay">
-    <h1>Le seul coffrage<br><em>qui livre le mur complet.</em></h1>
+    <h2>Le seul coffrage<br><em>qui livre le mur complet.</em></h2>
     <p class="cinq-sub">Béton armé, isolation graphitée des deux côtés, fibres-ciment A1, gaines en place. Un ICF classique s'arrête au polystyrène.</p>
     <a href="devis/" class="btn btn-red cinq-cta">Envoyez votre plan, devis instantané →</a>
   </div>
