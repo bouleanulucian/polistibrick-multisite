@@ -3554,7 +3554,10 @@
     <p>Prețul afișat este pentru <b>kitul de construcție complet</b> al sistemului ales: panourile de cofraj și tot ce livrăm noi din fabrică pentru ridicarea casei.</p>
     <p class="nota-nu"><b>Nu sunt incluse:</b> fundația, fierul și betonul (după caz) sau acoperișul, după caz.</p>
     <p>Polistibrick este fabricant de sisteme de construcție pasive premium. Nu putem estima cât va costa fierul sau betonul decât după ce proiectul este făcut și un inginer de structură calculează cantitățile — ele variază în funcție de locul unde se construiește casa și de zona seismică, dacă este cazul.</p>
-    <a class="nota-btn" href="../oferta/">Cere o ofertă pe planul tău →</a>
+    <div class="nota-btns">
+      <a class="nota-btn" href="../oferta/">Cere o ofertă pe planul tău →</a>
+      <button type="button" class="nota-btn nota-btn--sec" data-nota-vezi>Vezi proiectul →</button>
+    </div>
   </div>
 </div>
 <style>
@@ -3568,11 +3571,24 @@
 .nota-cutie p { font-size: 15px; line-height: 1.55; color: #3a3a3a; margin: 0 0 12px; }
 .nota-nu { padding: 10px 14px; border-left: 3px solid #C8102E; background: #fff5f6; border-radius: 0 10px 10px 0; color: #1A1A1A !important; }
 .nota-btn { display: inline-block; margin-top: 8px; padding: 12px 22px; border-radius: 999px; background: #C8102E; color: #fff; font-weight: 600; font-size: 15px; text-decoration: none; }
+.nota-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+.nota-btn--sec { background: #fff; color: #C8102E; border: 1.5px solid #C8102E; cursor: pointer; font-family: inherit; }
+.nota-btn--sec:hover { background: #fff5f6; }
 </style>
 <script>
 (function () {
   var m = document.getElementById('notaModal'); if (!m) return;
-  function deschide(e) { e.preventDefault(); m.hidden = false; document.body.style.overflow = 'hidden'; }
+  var cardCurent = null;
+  function deschide(e) { e.preventDefault(); cardCurent = e.currentTarget.closest('.case-card'); m.hidden = false; document.body.style.overflow = 'hidden'; }
+  var vezi = m.querySelector('[data-nota-vezi]');
+  if (vezi) vezi.addEventListener('click', function () {
+    inchide();
+    if (!cardCurent) return;
+    var d = document.getElementById('detail-' + cardCurent.dataset.model);
+    if (d && d.classList.contains('open')) { d.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); return; }
+    var foto = cardCurent.querySelector('.case-photo') || cardCurent;
+    foto.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+  });
   function inchide() { m.hidden = true; document.body.style.overflow = ''; }
   document.querySelectorAll('[data-nota-deschide]').forEach(function (a) { a.addEventListener('click', deschide); });
   m.querySelectorAll('[data-nota-inchide]').forEach(function (b) { b.addEventListener('click', inchide); });
