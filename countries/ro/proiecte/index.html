@@ -40,6 +40,10 @@
 
     /* cele trei variante de sistem, în interiorul cardului */
     .var-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin: 0 0 14px; }
+    .var-nota { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: -6px 0 14px; padding: 7px 12px; border: 1px solid #C8102E; border-radius: 999px; background: #fff5f6; color: #1A1A1A; font-size: 12px; line-height: 1.3; text-decoration: none; }
+    .var-nota b { color: #C8102E; font-weight: 700; white-space: nowrap; font-size: 12px; }
+    .var-nota:hover { background: #ffe9ec; }
+    @media (max-width: 600px) { .var-nota { flex-direction: column; align-items: flex-start; gap: 3px; border-radius: 12px; } }
     .var { padding: 8px 6px; border: 1px solid var(--border); border-radius: 9px; text-align: center; }
     .var-name { display: block; font-weight: 700; font-size: 11px; letter-spacing: .01em; }
     .var-desc { display: none; }
@@ -378,6 +382,7 @@
             <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">28.940 €</span></div>
             <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">41.120 €</span></div>
           </div>
+          <a class="var-nota" href="../preturi/"><span>Preț doar pentru sistemul de construcție — nu casa finită</span><b>Detalii →</b></a>
         </div>
       </article>
 
@@ -437,6 +442,7 @@
             <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">25.536 €</span></div>
             <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">36.569 €</span></div>
           </div>
+          <a class="var-nota" href="../preturi/"><span>Preț doar pentru sistemul de construcție — nu casa finită</span><b>Detalii →</b></a>
         </div>
       </article>
 
@@ -496,6 +502,7 @@
             <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">32.643 €</span></div>
             <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">46.974 €</span></div>
           </div>
+          <a class="var-nota" href="../preturi/"><span>Preț doar pentru sistemul de construcție — nu casa finită</span><b>Detalii →</b></a>
         </div>
       </article>
 
@@ -555,6 +562,7 @@
             <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">32.755 €</span></div>
             <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">46.029 €</span></div>
           </div>
+          <a class="var-nota" href="../preturi/"><span>Preț doar pentru sistemul de construcție — nu casa finită</span><b>Detalii →</b></a>
         </div>
       </article>
 
@@ -614,6 +622,7 @@
             <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">28.123 €</span></div>
             <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">40.326 €</span></div>
           </div>
+          <a class="var-nota" href="../preturi/"><span>Preț doar pentru sistemul de construcție — nu casa finită</span><b>Detalii →</b></a>
         </div>
       </article>
 
@@ -673,6 +682,7 @@
             <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">33.244 €</span></div>
             <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">46.107 €</span></div>
           </div>
+          <a class="var-nota" href="../preturi/"><span>Preț doar pentru sistemul de construcție — nu casa finită</span><b>Detalii →</b></a>
         </div>
       </article>
 
@@ -732,6 +742,7 @@
             <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">37.919 €</span></div>
             <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">55.179 €</span></div>
           </div>
+          <a class="var-nota" href="../preturi/"><span>Preț doar pentru sistemul de construcție — nu casa finită</span><b>Detalii →</b></a>
         </div>
       </article>
 
@@ -791,6 +802,7 @@
             <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">35.177 €</span></div>
             <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">47.848 €</span></div>
           </div>
+          <a class="var-nota" href="../preturi/"><span>Preț doar pentru sistemul de construcție — nu casa finită</span><b>Detalii →</b></a>
         </div>
       </article>
 
@@ -850,6 +862,7 @@
             <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">34.933 €</span></div>
             <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">47.294 €</span></div>
           </div>
+          <a class="var-nota" href="../preturi/"><span>Preț doar pentru sistemul de construcție — nu casa finită</span><b>Detalii →</b></a>
         </div>
       </article>
 
@@ -909,6 +922,7 @@
             <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">41.263 €</span></div>
             <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">60.667 €</span></div>
           </div>
+          <a class="var-nota" href="../preturi/"><span>Preț doar pentru sistemul de construcție — nu casa finită</span><b>Detalii →</b></a>
         </div>
       </article>
 
@@ -968,6 +982,7 @@
             <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">38.448 €</span></div>
             <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">57.149 €</span></div>
           </div>
+          <a class="var-nota" href="../preturi/"><span>Preț doar pentru sistemul de construcție — nu casa finită</span><b>Detalii →</b></a>
         </div>
       </article>
 
@@ -1027,6 +1042,7 @@
             <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">36.966 €</span></div>
             <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">52.424 €</span></div>
           </div>
+          <a class="var-nota" href="../preturi/"><span>Preț doar pentru sistemul de construcție — nu casa finită</span><b>Detalii →</b></a>
         </div>
       </article>
 
@@ -1086,6 +1102,7 @@
             <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">39.481 €</span></div>
             <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">59.198 €</span></div>
           </div>
+          <a class="var-nota" href="../preturi/"><span>Preț doar pentru sistemul de construcție — nu casa finită</span><b>Detalii →</b></a>
         </div>
       </article>
 
@@ -1145,6 +1162,7 @@
             <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">45.246 €</span></div>
             <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">63.765 €</span></div>
           </div>
+          <a class="var-nota" href="../preturi/"><span>Preț doar pentru sistemul de construcție — nu casa finită</span><b>Detalii →</b></a>
         </div>
       </article>
 
@@ -1204,6 +1222,7 @@
             <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">22.464 €</span></div>
             <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">31.454 €</span></div>
           </div>
+          <a class="var-nota" href="../preturi/"><span>Preț doar pentru sistemul de construcție — nu casa finită</span><b>Detalii →</b></a>
         </div>
       </article>
 
@@ -1263,6 +1282,7 @@
             <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">46.223 €</span></div>
             <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">68.826 €</span></div>
           </div>
+          <a class="var-nota" href="../preturi/"><span>Preț doar pentru sistemul de construcție — nu casa finită</span><b>Detalii →</b></a>
         </div>
       </article>
 
@@ -1322,6 +1342,7 @@
             <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">39.098 €</span></div>
             <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">55.074 €</span></div>
           </div>
+          <a class="var-nota" href="../preturi/"><span>Preț doar pentru sistemul de construcție — nu casa finită</span><b>Detalii →</b></a>
         </div>
       </article>
 
@@ -1381,6 +1402,7 @@
             <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">42.680 €</span></div>
             <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">61.392 €</span></div>
           </div>
+          <a class="var-nota" href="../preturi/"><span>Preț doar pentru sistemul de construcție — nu casa finită</span><b>Detalii →</b></a>
         </div>
       </article>
 
@@ -1440,6 +1462,7 @@
             <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">21.947 €</span></div>
             <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">31.600 €</span></div>
           </div>
+          <a class="var-nota" href="../preturi/"><span>Preț doar pentru sistemul de construcție — nu casa finită</span><b>Detalii →</b></a>
         </div>
       </article>
 
@@ -1499,6 +1522,7 @@
             <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">50.044 €</span></div>
             <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">77.384 €</span></div>
           </div>
+          <a class="var-nota" href="../preturi/"><span>Preț doar pentru sistemul de construcție — nu casa finită</span><b>Detalii →</b></a>
         </div>
       </article>
 
@@ -1556,6 +1580,7 @@
             <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">27.030 €</span></div>
             <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">39.387 €</span></div>
           </div>
+          <a class="var-nota" href="../preturi/"><span>Preț doar pentru sistemul de construcție — nu casa finită</span><b>Detalii →</b></a>
         </div>
       </article>
 
@@ -1615,6 +1640,7 @@
             <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">23.469 €</span></div>
             <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">33.599 €</span></div>
           </div>
+          <a class="var-nota" href="../preturi/"><span>Preț doar pentru sistemul de construcție — nu casa finită</span><b>Detalii →</b></a>
         </div>
       </article>
 
@@ -1675,6 +1701,7 @@
             <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">32.804 €</span></div>
             <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">46.590 €</span></div>
           </div>
+          <a class="var-nota" href="../preturi/"><span>Preț doar pentru sistemul de construcție — nu casa finită</span><b>Detalii →</b></a>
         </div>
       </article>
 
@@ -1734,6 +1761,7 @@
             <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">41.430 €</span></div>
             <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">59.741 €</span></div>
           </div>
+          <a class="var-nota" href="../preturi/"><span>Preț doar pentru sistemul de construcție — nu casa finită</span><b>Detalii →</b></a>
         </div>
       </article>
 
@@ -1795,6 +1823,7 @@
             <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">18.788 €</span></div>
             <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">26.121 €</span></div>
           </div>
+          <a class="var-nota" href="../preturi/"><span>Preț doar pentru sistemul de construcție — nu casa finită</span><b>Detalii →</b></a>
         </div>
       </article>
 
@@ -1854,6 +1883,7 @@
             <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">21.588 €</span></div>
             <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">30.976 €</span></div>
           </div>
+          <a class="var-nota" href="../preturi/"><span>Preț doar pentru sistemul de construcție — nu casa finită</span><b>Detalii →</b></a>
         </div>
       </article>
 
@@ -1913,6 +1943,7 @@
             <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">15.901 €</span></div>
             <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">21.560 €</span></div>
           </div>
+          <a class="var-nota" href="../preturi/"><span>Preț doar pentru sistemul de construcție — nu casa finită</span><b>Detalii →</b></a>
         </div>
       </article>
 
@@ -1972,6 +2003,7 @@
             <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">14.923 €</span></div>
             <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">20.040 €</span></div>
           </div>
+          <a class="var-nota" href="../preturi/"><span>Preț doar pentru sistemul de construcție — nu casa finită</span><b>Detalii →</b></a>
         </div>
       </article>
 
@@ -2031,6 +2063,7 @@
             <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">19.304 €</span></div>
             <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">26.493 €</span></div>
           </div>
+          <a class="var-nota" href="../preturi/"><span>Preț doar pentru sistemul de construcție — nu casa finită</span><b>Detalii →</b></a>
         </div>
       </article>
 
@@ -2094,6 +2127,7 @@
             <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">23.469 €</span></div>
             <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">32.901 €</span></div>
           </div>
+          <a class="var-nota" href="../preturi/"><span>Preț doar pentru sistemul de construcție — nu casa finită</span><b>Detalii →</b></a>
         </div>
       </article>
 
@@ -2153,6 +2187,7 @@
             <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">27.690 €</span></div>
             <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">39.063 €</span></div>
           </div>
+          <a class="var-nota" href="../preturi/"><span>Preț doar pentru sistemul de construcție — nu casa finită</span><b>Detalii →</b></a>
         </div>
       </article>
 
@@ -2212,6 +2247,7 @@
             <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">20.582 €</span></div>
             <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">28.727 €</span></div>
           </div>
+          <a class="var-nota" href="../preturi/"><span>Preț doar pentru sistemul de construcție — nu casa finită</span><b>Detalii →</b></a>
         </div>
       </article>
 
@@ -2271,6 +2307,7 @@
             <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">32.129 €</span></div>
             <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">44.093 €</span></div>
           </div>
+          <a class="var-nota" href="../preturi/"><span>Preț doar pentru sistemul de construcție — nu casa finită</span><b>Detalii →</b></a>
         </div>
       </article>
 
@@ -2330,6 +2367,7 @@
             <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">38.120 €</span></div>
             <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">53.569 €</span></div>
           </div>
+          <a class="var-nota" href="../preturi/"><span>Preț doar pentru sistemul de construcție — nu casa finită</span><b>Detalii →</b></a>
         </div>
       </article>
 
@@ -2389,6 +2427,7 @@
             <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">36.350 €</span></div>
             <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">51.990 €</span></div>
           </div>
+          <a class="var-nota" href="../preturi/"><span>Preț doar pentru sistemul de construcție — nu casa finită</span><b>Detalii →</b></a>
         </div>
       </article>
 
@@ -2448,6 +2487,7 @@
             <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">36.350 €</span></div>
             <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">51.990 €</span></div>
           </div>
+          <a class="var-nota" href="../preturi/"><span>Preț doar pentru sistemul de construcție — nu casa finită</span><b>Detalii →</b></a>
         </div>
       </article>
 
@@ -2507,6 +2547,7 @@
             <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">30.824 €</span></div>
             <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">42.394 €</span></div>
           </div>
+          <a class="var-nota" href="../preturi/"><span>Preț doar pentru sistemul de construcție — nu casa finită</span><b>Detalii →</b></a>
         </div>
       </article>
 
@@ -2566,6 +2607,7 @@
             <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">31.801 €</span></div>
             <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">43.286 €</span></div>
           </div>
+          <a class="var-nota" href="../preturi/"><span>Preț doar pentru sistemul de construcție — nu casa finită</span><b>Detalii →</b></a>
         </div>
       </article>
 
@@ -2625,6 +2667,7 @@
             <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">31.096 €</span></div>
             <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">43.278 €</span></div>
           </div>
+          <a class="var-nota" href="../preturi/"><span>Preț doar pentru sistemul de construcție — nu casa finită</span><b>Detalii →</b></a>
         </div>
       </article>
 
@@ -2685,6 +2728,7 @@
             <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">36.121 €</span></div>
             <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">51.596 €</span></div>
           </div>
+          <a class="var-nota" href="../preturi/"><span>Preț doar pentru sistemul de construcție — nu casa finită</span><b>Detalii →</b></a>
         </div>
       </article>
 
@@ -2744,6 +2788,7 @@
             <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">39.769 €</span></div>
             <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">59.444 €</span></div>
           </div>
+          <a class="var-nota" href="../preturi/"><span>Preț doar pentru sistemul de construcție — nu casa finită</span><b>Detalii →</b></a>
         </div>
       </article>
 
@@ -2803,6 +2848,7 @@
             <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">26.053 €</span></div>
             <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">36.624 €</span></div>
           </div>
+          <a class="var-nota" href="../preturi/"><span>Preț doar pentru sistemul de construcție — nu casa finită</span><b>Detalii →</b></a>
         </div>
       </article>
 
@@ -2862,6 +2908,7 @@
             <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">32.423 €</span></div>
             <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">46.261 €</span></div>
           </div>
+          <a class="var-nota" href="../preturi/"><span>Preț doar pentru sistemul de construcție — nu casa finită</span><b>Detalii →</b></a>
         </div>
       </article>
 
@@ -2921,6 +2968,7 @@
             <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">52.037 €</span></div>
             <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">78.275 €</span></div>
           </div>
+          <a class="var-nota" href="../preturi/"><span>Preț doar pentru sistemul de construcție — nu casa finită</span><b>Detalii →</b></a>
         </div>
       </article>
 
@@ -2980,6 +3028,7 @@
             <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">43.495 €</span></div>
             <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">64.817 €</span></div>
           </div>
+          <a class="var-nota" href="../preturi/"><span>Preț doar pentru sistemul de construcție — nu casa finită</span><b>Detalii →</b></a>
         </div>
       </article>
 
@@ -3038,6 +3087,7 @@
             <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">30.490 €</span></div>
             <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">42.366 €</span></div>
           </div>
+          <a class="var-nota" href="../preturi/"><span>Preț doar pentru sistemul de construcție — nu casa finită</span><b>Detalii →</b></a>
         </div>
       </article>
 
@@ -3097,6 +3147,7 @@
             <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">45.506 €</span></div>
             <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">68.231 €</span></div>
           </div>
+          <a class="var-nota" href="../preturi/"><span>Preț doar pentru sistemul de construcție — nu casa finită</span><b>Detalii →</b></a>
         </div>
       </article>
 
@@ -3156,6 +3207,7 @@
             <div class="var" title="Structură beton, izolație"><span class="var-name">Polistiwall</span><span class="var-price">22.160 €</span></div>
             <div class="var var--wood" title="Structură lemn, izolație"><span class="var-name">PolistiSIP<svg class="ic-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16c0-7 5-11 12-11 0 7-4 11-12 11z"/><path d="M4 16c3-3 6-5 9-6"/></svg></span><span class="var-price">32.217 €</span></div>
           </div>
+          <a class="var-nota" href="../preturi/"><span>Preț doar pentru sistemul de construcție — nu casa finită</span><b>Detalii →</b></a>
         </div>
       </article>
 
