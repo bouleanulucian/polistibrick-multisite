@@ -560,7 +560,9 @@
 <!-- CE QUE VOUS RECEVEZ : le livrable, dit en clair, avant la preuve (vidéo) -->
 <section class="livrable" id="livrable" aria-label="Un seul coffrage, une seule équipe : la maison finie">
 <style>
-.livrable { background: linear-gradient(#FBF9F4 0, #FBF9F4 calc(100% - 96px), #0E0F10 calc(100% - 96px), #0E0F10 100%); color: #1A1A1A; padding: clamp(56px, 7vw, 96px) 0 calc(96px + 40px); }
+.livrable { position: relative; isolation: isolate; background: linear-gradient(#FBF9F4 0, #FBF9F4 calc(100% - 96px), #0E0F10 calc(100% - 96px), #0E0F10 100%); color: #1A1A1A; padding: clamp(56px, 7vw, 96px) 0 calc(96px + 40px); }
+/* le même béton que le héros, en version blanche : la surface rendue, pas un aplat */
+.livrable::before { content: ""; position: absolute; left: 0; right: 0; top: 0; bottom: 96px; z-index: -1; pointer-events: none; background: url("images/erou/beton-alb.webp") center/cover no-repeat, #F4F1EA; }
 .livrable .lv-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 .livrable .lv-eyebrow { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: #C8102E; font-weight: 700; margin-bottom: 12px; }
 .livrable h2 { font-size: clamp(28px, 3.8vw, 44px); line-height: 1.1; letter-spacing: -.02em; margin: 0 0 12px; max-width: 24ch; }
