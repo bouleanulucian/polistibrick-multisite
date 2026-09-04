@@ -570,6 +570,9 @@
 .lv-card .n { width: 34px; height: 34px; border-radius: 50%; background: #C8102E; color: #fff; font-weight: 700; font-size: 14px; display: flex; align-items: center; justify-content: center; }
 .lv-card b { font-size: 17px; line-height: 1.2; letter-spacing: -.01em; }
 .lv-card span { font-size: 14px; line-height: 1.5; color: #555; }
+.lv-specs { list-style: none; margin: 4px 0 0; padding: 10px 0 0; border-top: 1px solid rgba(15,15,15,.08); display: grid; gap: 6px; }
+.lv-specs li { font-size: 13.5px; line-height: 1.45; color: #444; }
+.lv-specs li b { font-size: 13.5px; color: #C8102E; }
 .lv-fin { margin-top: 22px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 18px; align-items: center; background: #1A1A1A; color: #F7F4ED; border-radius: 18px; padding: 22px 26px; }
 .lv-fin b { font-size: clamp(17px, 1.6vw, 21px); line-height: 1.3; letter-spacing: -.01em; }
 .lv-fin b em { font-style: normal; color: #ffb3bf; }
@@ -585,7 +588,7 @@
     <div class="lv-grid">
       <div class="lv-card"><span class="n">1</span><b>La maçonnerie</b><span>Béton armé monolithe, coulé dans le coffrage. Un seul bloc du sol au toit, antisismique.</span></div>
       <div class="lv-card"><span class="n">2</span><b>L’isolation, intérieure et extérieure</b><span>PSE graphité des deux côtés du béton, jusqu’à U = 0,10 W/m²K. Le niveau maison passive, sans isolation rapportée.</span></div>
-      <div class="lv-card"><span class="n">3</span><b>Les plaques de doublage</b><span>Fibres-ciment sur les deux faces, extrêmement résistantes aux chocs : une cuisine se visse dedans. A1 au feu, hydrofuges.</span></div>
+      <div class="lv-card lv-card--plaques"><span class="n">3</span><b>Les plaques de doublage</b><span>Fibres-ciment, sur les deux faces.</span><ul class="lv-specs"><li><b>Dureté</b> : résistent aux chocs comme 7 plaques de BA13. Une cuisine se visse dedans.</li><li><b>Hydrofuges</b> : dans toute la maison, salle de bains comprise.</li><li><b>Phoniques</b> : 64 dB.</li><li><b>Feu</b> : classées A1, incombustibles.</li></ul></div>
       <div class="lv-card"><span class="n">4</span><b>La barrière de vapeur</b><span>Intégrée entre la plaque de fibres-ciment et l’isolant, sur toute la maison.</span></div>
       <div class="lv-card"><span class="n">5</span><b>L’étanchéité à l’air</b><span>Le béton coulé entre les deux isolants scelle chaque mur : une enveloppe monolithe, étanche à l’air.</span></div>
     </div>
@@ -664,7 +667,7 @@ document.addEventListener('DOMContentLoaded', function () {
       </div>
       <div class="cinq-item">
         <div class="ci-name">Silence</div>
-        <div class="ci-val">Isolation phonique ≥ 65 dB.</div>
+        <div class="ci-val">Isolation phonique 64 dB.</div>
       </div>
       <div class="cinq-item">
         <div class="ci-name">Structure parasismique</div>
