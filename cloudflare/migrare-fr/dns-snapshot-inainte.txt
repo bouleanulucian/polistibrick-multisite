@@ -1,0 +1,26 @@
+# Zona DNS polistibrick.fr — fotografiată 2026-09-01 înainte de mutarea pe Cloudflare
+# Nameservere vechi: ns01.one.com / ns02.one.com · Registrar: One.com (expiră 30.01.2027)
+# ÎNTOARCEREA din orice problemă: la One.com se pun înapoi nameserverele de mai sus; zona asta există acolo neatinsă.
+
+polistibrick.fr                               A      49.12.212.73
+polistibrick.fr                               MX     30 alt2.aspmx.l.google.com.
+polistibrick.fr                               MX     20 alt1.aspmx.l.google.com.
+polistibrick.fr                               MX     10 aspmx.l.google.com.
+polistibrick.fr                               MX     40 alt3.aspmx.l.google.com.
+polistibrick.fr                               MX     50 alt4.aspmx.l.google.com.
+polistibrick.fr                               TXT    "v=spf1 include:_spf.google.com ~all"
+www.polistibrick.fr                           A      polistibrick.fr.
+www.polistibrick.fr                           A      49.12.212.73
+www.polistibrick.fr                           AAAA   polistibrick.fr.
+www.polistibrick.fr                           CNAME  polistibrick.fr.
+www.polistibrick.fr                           MX     polistibrick.fr.
+www.polistibrick.fr                           MX     20 alt1.aspmx.l.google.com.
+www.polistibrick.fr                           MX     30 alt2.aspmx.l.google.com.
+www.polistibrick.fr                           MX     50 alt4.aspmx.l.google.com.
+www.polistibrick.fr                           MX     10 aspmx.l.google.com.
+www.polistibrick.fr                           MX     40 alt3.aspmx.l.google.com.
+www.polistibrick.fr                           TXT    polistibrick.fr.
+www.polistibrick.fr                           TXT    "v=spf1 include:_spf.google.com ~all"
+_dmarc.polistibrick.fr                        TXT    "v=DMARC1; p=none; rua=mailto:dmarc_agg@vali.email"
+
+# Site vechi: 49.12.212.73 (Hetzner, Apache/Ubuntu) — NEATINS, rămâne plasă de siguranță.

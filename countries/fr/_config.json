@@ -14,7 +14,8 @@
     "address_street": "2-4 Parc Claude Monet, 4 Rue Hans List",
     "address_city": "Croissy-sur-Seine",
     "address_zip": "78290",
-    "address_country": "France"
+    "address_country": "France",
+    "capital": "6 000 €"
   },
   "contact": {
     "phone": "+33 1 61 30 40 09",
@@ -78,7 +79,7 @@
     "hreflang": "fr-FR"
   },
   "devis_app": {
-    "url": "https://devis.polistibrick.fr",
+    "url": "https://polistibrick-configurator.vercel.app",
     "preview_url": "https://polistibrick-configurator.vercel.app",
     "pays": "FR"
   }

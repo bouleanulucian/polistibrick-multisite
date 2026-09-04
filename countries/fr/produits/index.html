@@ -3,8 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Produits · Trois systèmes pour construire — Polistibrick</title>
-  <meta name="description" content="Polistibrick (béton + finitions), PolistiSIP (structure bois sandwich), Polistiwall (comme Polistibrick sans face intérieure, 25 cm d’isolation extérieure).">
+  <title>Produits · Trois systèmes de construction — Polistibrick</title>
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+  <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+  <meta name="description" content="Polistibrick (béton + finitions), PolistiSIP (structure sandwich bois), Polistiwall (comme Polistibrick, sans face intérieure, 25 cm d'isolation extérieure).">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Produits · Trois systèmes de construction — Polistibrick">
+  <meta property="og:description" content="Polistibrick (béton + finitions), PolistiSIP (structure sandwich bois), Polistiwall (comme Polistibrick, sans face intérieure, 25 cm d'isolation extérieure).">
+  <meta property="og:image" content="https://polistibrick.fr/images/hero/hero-house-1.jpg">
+  <meta property="og:url" content="https://polistibrick.fr/produits/">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -91,7 +100,7 @@
       font-size: 13.5px; color: var(--ink); line-height: 1.5;
     }
 
-  
+
     .diff-strip {
       display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
       border: 1px solid var(--border); border-radius: 20px; overflow: hidden;
@@ -144,6 +153,52 @@
     }
     .compare-callout strong { color: var(--red); }
 </style>
+<!-- données structurées -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebPage",
+   "@id": "{{domain_url}}/produits/#page",
+   "url": "{{domain_url}}/produits/",
+   "name": "Produits",
+   "inLanguage": "{{lang}}",
+   "isPartOf": {
+    "@id": "{{domain_url}}/#site"
+   },
+   "publisher": {
+    "@id": "{{domain_url}}/#organisation"
+   },
+   "description": "Polistibrick (béton + finitions), PolistiSIP (structure sandwich bois), Polistiwall (comme Polistibrick, sans face intérieure, 25 cm d'isolation extérieure)."
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "{{country_name}}",
+     "item": "{{domain_url}}/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Produits",
+     "item": "{{domain_url}}/produits/"
+    }
+   ]
+  },
+  {
+   "@type": "Organization",
+   "@id": "{{domain_url}}/#organisation",
+   "name": "{{company.name_legal}}",
+   "url": "{{domain_url}}/",
+   "logo": "{{domain_url}}/images/logo.png"
+  }
+ ]
+}
+</script>
 </head>
 <body data-base="../">
 <header class="nav" data-include="nav"></header>
@@ -158,7 +213,7 @@
       <div class="wm-stage" style="grid-template-columns:1fr;">
         <div class="wm-text" style="max-width:820px;padding:0;">
 <h1>Trois produits. <em>Trois façons de construire.</em></h1>
-          <p class="lead">Choisissez d’abord le système. Ensuite seulement les dimensions. La toiture est le même panneau partout — <strong>TBK</strong> chez Polistibrick, <strong>SIP250</strong> chez PolistiSIP.</p>
+          <p class="lead">Choisissez d'abord le système. Puis seulement les dimensions. La toiture est le même panneau partout - <strong>TBK</strong> chez Polistibrick, <strong>SIP250</strong> chez PolistiSIP.</p>
         </div>
         <div class="diff-strip reveal">
           <article>
@@ -170,13 +225,13 @@
           <article>
             <div class="ds-label">Béton · sans face intérieure</div>
             <h3>Polistiwall</h3>
-            <p>Comme Polistibrick, <strong>sans la partie intérieure</strong>. À l’extérieur : <strong>25 cm d’isolation</strong>.</p>
-            <span class="ds-one">→ Vous finissez l’intérieur</span>
+            <p>Comme Polistibrick, <strong>sans la face intérieure</strong>. À l'extérieur : <strong>25 cm d'isolation</strong>.</p>
+            <span class="ds-one">→ Vous finissez l'intérieur</span>
           </article>
           <article>
-            <div class="ds-label">Bois sandwich · SIP</div>
+            <div class="ds-label">Sandwich bois · SIP</div>
             <h3>PolistiSIP</h3>
-            <p>Maison en <strong>structure sandwich bois</strong> (SIP). Légère, mince, très isolée — pas de béton dans le mur.</p>
+            <p>Maison à <strong>structure sandwich bois</strong> (SIP). Des murs légers, minces, très isolés, sans béton dans le mur.</p>
             <span class="ds-one">→ Ossature bois</span>
           </article>
         </div>
@@ -194,13 +249,13 @@
         <span style="color:var(--red);font-weight:600;font-size:13px;">Voir Polistibrick →</span>
       </a>
       <a href="polistiwall/" class="card card-hover" style="text-decoration:none;color:inherit;">
-        <h3 style="margin-bottom:10px;">Comme Brick, sans intérieur</h3>
-        <p style="font-size:14.5px;margin-bottom:14px;">Même logique béton, sans face intérieure. 25 cm d’isolation à l’extérieur.</p>
+        <h3 style="margin-bottom:10px;">Comme la brique, sans face intérieure</h3>
+        <p style="font-size:14.5px;margin-bottom:14px;">La même logique en béton, sans face intérieure. 25 cm d'isolation à l'extérieur.</p>
         <span style="color:var(--red);font-weight:600;font-size:13px;">Voir Polistiwall →</span>
       </a>
       <a href="polistisip/" class="card card-hover" style="text-decoration:none;color:inherit;">
         <h3 style="margin-bottom:10px;">Structure sandwich bois</h3>
-        <p style="font-size:14.5px;margin-bottom:14px;">1 mur · 1 plancher · toiture SIP250. Pour ceux qui veulent construire en bois / SIP.</p>
+        <p style="font-size:14.5px;margin-bottom:14px;">1 mur · 1 plancher · toiture SIP250. Pour ceux qui veulent une maison en bois / SIP.</p>
         <span style="color:var(--red);font-weight:600;font-size:13px;">Voir PolistiSIP →</span>
       </a>
     </div>
@@ -210,15 +265,57 @@
   </div>
 </section>
 
+
+<!-- COMPARATEUR : quel système vous correspond -->
+<section class="section">
+  <div class="container">
+    <div class="reveal">
+      <h2 style="margin-bottom:14px;">Quel système vous correspond ?</h2>
+      <p style="max-width:720px;margin-bottom:22px;">Les trois font la même maison, avec la même isolation. Ce qui change : la structure, la face intérieure et le prix. Si vous ne savez pas par où commencer, lisez d'abord <a href="../ressources/coffrage-isolant/">ce qu'est le coffrage isolant et comment il se compare à la maçonnerie</a>. Les prix ci-dessous concernent le coffrage, selon la surface de la maison — <a href="../prix/">voir tous les prix, y compris hors d'eau hors d'air et clé en main</a>.</p>
+      <div style="overflow-x:auto;">
+      <table style="width:100%;border-collapse:collapse;font-size:14.5px;min-width:640px;">
+        <thead><tr style="border-bottom:2px solid var(--ink);text-align:left;">
+          <th style="padding:10px 14px 10px 0;">Système</th><th style="padding:10px 14px;">Structure</th><th style="padding:10px 14px;">Faces</th><th style="padding:10px 14px;">Prix coffrage</th><th style="padding:10px 0 10px 14px;">Pour qui</th>
+        </tr></thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:12px 14px 12px 0;"><a href="polistibrick/" style="font-weight:600;color:var(--red);">Polistibrick</a></td>
+            <td style="padding:12px 14px;">Béton armé dans un coffrage isolant</td>
+            <td style="padding:12px 14px;">Fibres-ciment sur les deux faces, prêt à finir</td>
+            <td style="padding:12px 14px;white-space:nowrap;">205–280 €/m²</td>
+            <td style="padding:12px 0 12px 14px;">Maison passive clé en main, avec le moins d'opérations sur chantier</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:12px 14px 12px 0;"><a href="polistiwall/" style="font-weight:600;color:var(--red);">Polistiwall</a></td>
+            <td style="padding:12px 14px;">Béton armé 15–25 cm</td>
+            <td style="padding:12px 14px;">Isolation uniquement à l'extérieur ; l'intérieur reste en béton</td>
+            <td style="padding:12px 14px;white-space:nowrap;">157–205 €/m²</td>
+            <td style="padding:12px 0 12px 14px;">Budget plus serré, finition intérieure au choix</td>
+          </tr>
+          <tr>
+            <td style="padding:12px 14px 12px 0;"><a href="polistisip/" style="font-weight:600;color:var(--red);">PolistiSIP</a></td>
+            <td style="padding:12px 14px;">Bois : OSB/3 + PSE + I-Joist STEICO</td>
+            <td style="padding:12px 14px;">Panneau sandwich, sans béton coulé</td>
+            <td style="padding:12px 14px;white-space:nowrap;">229–287 €/m²</td>
+            <td style="padding:12px 0 12px 14px;">Chantier sec, le montage le plus rapide</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section section--tight">
   <div class="cta-band reveal">
-    <h2>Pas sûr duquel choisir ?</h2>
-    <p>Envoyez le plan. On vous dit quel produit correspond à votre projet.</p>
+    <h2>Vous hésitez encore entre les trois ?</h2>
+    <p>Envoyez votre plan. Nous vous disons quel produit correspond à votre projet.</p>
     <div class="cta-band-actions">
       <a href="../devis/" class="btn btn-on-dark btn-cta-main btn-arrow">Demander un devis</a>
       <a href="polistibrick/" class="btn btn-on-dark-ghost btn-cta-soft">Voir Polistibrick</a>
       <a href="polistiwall/" class="btn btn-on-dark-ghost btn-cta-soft">Voir Polistiwall</a>
       <a href="polistisip/" class="btn btn-on-dark-ghost btn-cta-soft">Voir PolistiSIP</a>
+        <a href="../prix/" class="btn btn-on-dark-ghost btn-cta-soft">Le prix de chaque système</a>
     </div>
   </div>
 </section>

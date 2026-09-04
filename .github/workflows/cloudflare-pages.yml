@@ -65,4 +65,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          # Prima lansare a unei țări: proiectul poate lipsi din cont. Crearea e
+          # idempotentă — dacă există, comanda pică și deploy-ul merge mai departe.
+          preCommands: wrangler pages project create ${{ steps.cfg.outputs.project }} --production-branch=main || true
           command: pages deploy build/${{ env.COUNTRY }} --project-name=${{ steps.cfg.outputs.project }} --branch=main

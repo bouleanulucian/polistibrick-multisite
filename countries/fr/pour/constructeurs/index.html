@@ -3,14 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pour les constructeurs · Programme Partenaire Polistibrick</title>
-  <meta name="description" content="Polistibrick pour constructeurs : système 5-en-1 = marges jusqu'à 50 % (une équipe = 5 équipes), gros œuvre 4-6 semaines, formation certifiante gratuite, leads transmis. Devenez Constructeur Certifié Polistibrick.">
+  <title>Polistibrick pour les constructeurs : une équipe, cinq métiers</title>
+  <link rel="icon" type="image/png" href="../../images/favicon.png">
+  <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
+  <meta name="description" content="Une équipe Polistibrick fait le travail de cinq équipes classiques. Structure, isolation et finitions en une seule pose, sans grue. Formation incluse.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Polistibrick pour les constructeurs : une équipe, cinq métiers">
+  <meta property="og:description" content="Une équipe Polistibrick fait le travail de cinq équipes classiques. Structure, isolation et finitions en une seule pose, sans grue. Formation incluse.">
+  <meta property="og:image" content="https://polistibrick.fr/images/hero/hero-house-1.jpg">
+  <meta property="og:url" content="https://polistibrick.fr/pour/constructeurs/">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../assets/css/site.css">
   <style>
-    /* Light Premium & Airy (aligné architectes / investisseurs) */
+    /* Light Premium & Airy (aligné avec les pages architectes / investisseurs) */
     html, body {
       background: var(--cream);
       color: var(--ink-soft);
@@ -842,8 +851,8 @@
       box-shadow: 0 15px 35px rgba(255,255,255,0.25);
     }
 
-    /* — calculateur de l'équipe (adapté depuis investisseurs) — */
-    /* CALCULATEUR ROI ensemble — star section */
+    /* Calculateur équipe (adapté de la page investisseurs) */
+    /* Calculator ROI */
     .roi-section { background: white; padding: 80px 0; }
     .roi-intro { max-width: 760px; margin: 0 auto 40px; text-align: center; }
     .roi-stage { max-width: 1100px; margin: 0 auto; background: linear-gradient(135deg, var(--cream) 0%, var(--cream-light) 100%); border: 1px solid var(--border); border-radius: 24px; padding: 48px; }
@@ -867,8 +876,66 @@
       .roi-stage { padding: 28px 18px; }
       .roi-results { grid-template-columns: 1fr; }
       .roi-card-value { font-size: 26px; }
+      /* La carte restait sur deux colonnes même sur téléphone : le bouton, qui ne
+         passe pas sur deux lignes, débordait de 113 px hors de l'écran. */
+      .cta-cert-section { padding: 48px 20px 0; }
+      .cta-cert-card { grid-template-columns: 1fr; gap: 28px; padding: 44px 26px; }
+      .cta-cert-action { justify-self: stretch; }
+      .cta-cert-action .btn-circle { width: 100%; padding: 16px 22px; }
     }
   </style>
+<!-- données structurées -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebPage",
+   "@id": "{{domain_url}}/pour/constructeurs/#page",
+   "url": "{{domain_url}}/pour/constructeurs/",
+   "name": "Pour les constructeurs",
+   "inLanguage": "{{lang}}",
+   "isPartOf": {
+    "@id": "{{domain_url}}/#site"
+   },
+   "publisher": {
+    "@id": "{{domain_url}}/#organisation"
+   },
+   "description": "Polistibrick pour les constructeurs : système 5-en-1 = des marges jusqu'à 50 % (une équipe = 5 équipes), structure en 4-6 semaines, formation certifiante offerte, leads transmis. Devenez constructeur certifié Polistibrick."
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "{{country_name}}",
+     "item": "{{domain_url}}/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Pour",
+     "item": "{{domain_url}}/pour/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Pour les constructeurs",
+     "item": "{{domain_url}}/pour/constructeurs/"
+    }
+   ]
+  },
+  {
+   "@type": "Organization",
+   "@id": "{{domain_url}}/#organisation",
+   "name": "{{company.name_legal}}",
+   "url": "{{domain_url}}/",
+   "logo": "{{domain_url}}/images/logo.png"
+  }
+ ]
+}
+</script>
 </head>
 <body data-base="../../">
 
@@ -882,60 +949,61 @@
 <section class="hero-builders">
   <div class="hero-builders-inner">
     <div class="hero-builders-text">
-      <span class="hero-builders-tag">Pour les constructeurs et entrepreneurs</span>
-      <h1 class="hero-builders-title">Vous savez poser du BA13 ? <br><em>Vous savez construire avec Polistibrick.</em></h1>
-      <p class="hero-builders-desc">C'est un <strong>coffrage classique</strong> : on le mesure, on le découpe, on le fixe — exactement comme n'importe quel autre système de coffrage. Le seul véritable impératif sur le chantier : <strong>être précis dans les mesures</strong> et ne pas couper la plaque 5 cm trop courte. Le reste n'est que de la pose guidée.</p>
-      <p class="hero-builders-desc">Grâce au système structurel 5-en-1, <strong>une seule équipe effectue le travail de 5 corps de métier</strong> (gros œuvre, isolation, étanchéité, acoustique et finitions). Vos marges opérationnelles peuvent atteindre <strong>50 %</strong> par projet en récupérant la valeur auparavant sous-traitée.</p>
-      
+      <span class="hero-builders-tag">Pour les constructeurs et les entrepreneurs</span>
+      <h1 class="hero-builders-title">Vous savez poser du placo ? <br><em>Vous savez construire en Polistibrick.</em></h1>
+      <p class="hero-builders-desc">C'est un <strong>coffrage classique</strong> : vous le mesurez, vous le coupez, vous le fixez, exactement comme n'importe quel autre système de coffrage. La seule vraie exigence sur le chantier : <strong>mesurer avec précision</strong>, pour ne pas couper la plaque 5 cm trop court. Le reste, c'est de la pose guidée.</p>
+      <p class="hero-builders-desc">Grâce au système structurel 5-en-1, <strong>une seule équipe fait le travail de 5 métiers</strong> (structure, isolation, étanchéité, acoustique et finitions). Vos marges peuvent atteindre <strong>50 %</strong> par projet, en récupérant la valeur autrefois sous-traitée.</p>
+
       <div class="hero-builders-cta">
-        <a href="../../devenir-partenaire/" class="btn btn-primary btn-arrow">Postuler maintenant</a>
+        <a href="../../devenir-partenaire/" class="btn btn-primary btn-arrow">Devenez partenaire</a>
+        <a href="../../prix/" class="btn btn-ghost btn-arrow">Prix du coffrage au m²</a>
       </div>
     </div>
-    
+
     <div class="hero-builders-visual">
-      <img src="../../images/personas/pour-constructeur.jpg" alt="Chantier Polistibrick : coulage du béton dans un lotissement de maisons" loading="eager">
+      <img src="../../images/personas/pour-constructeur.jpg" alt="Chantier Polistibrick : coulage du béton sur un lotissement de maisons" loading="eager">
     </div>
   </div>
 </section>
 
-<!-- 2. PROBLÈMES / INQUIÉTUDES -->
+<!-- 2. Craintes / objections -->
 <section class="pains-section">
   <div class="section-intro">
-    <h2 class="section-title">Ce qui vous retient d'adopter <em>un nouveau procédé.</em></h2>
-    <p class="section-desc">Nous avons conçu notre programme pour éliminer les risques inhérents à l'adoption d'un système constructif innovant.</p>
+    <h2 class="section-title">Qu'est-ce qui vous freine face à <em>un nouveau procédé ?</em></h2>
+    <p class="section-desc">Nous avons conçu notre programme pour éliminer les risques liés à l'adoption d'un système de construction innovant.</p>
   </div>
 
   <div class="pains-grid">
     <div class="pain-card">
-      <h3 class="pain-q">« Je crains de perdre de l'argent le temps que mon équipe apprenne. »</h3>
-      <p class="pain-a">Formation technique de <strong>2 à 3 jours offerte en usine</strong> + <strong>assistance technique directe sur votre premier chantier</strong>. Votre équipe est productive dès le premier jour de pose.</p>
+      <h3 class="pain-q">« Je crains de perdre de l'argent pendant que mon équipe apprend. »</h3>
+      <p class="pain-a">Formation technique de <strong>2-3 jours, assurée à l'usine</strong> + <strong>assistance technique directe sur votre premier chantier</strong>. Votre équipe est productive dès le premier jour de pose.</p>
     </div>
-    
+
     <div class="pain-card">
-      <h3 class="pain-q">« Si un problème survient, je serai seul face au maître d'ouvrage. »</h3>
-      <p class="pain-a">Nos ingénieurs structurels <strong>répondent sous 24 heures</strong> à toute question technique. La garantie décennale classique couvre vos travaux, appuyée par la garantie fabricant Polistibrick.</p>
+      <h3 class="pain-q">« En cas de problème, je serai seul face au maître d'ouvrage. »</h3>
+      <p class="pain-a">Nos ingénieurs structure <strong>répondent sous 24 heures</strong> à toute question technique. La garantie décennale couvre votre ouvrage, appuyée par la garantie fabricant Polistibrick.</p>
     </div>
-    
+
     <div class="pain-card">
-      <h3 class="pain-q">« Les retards de livraison sur le chantier me coûteront cher. »</h3>
-      <p class="pain-a">Avec nos 2 usines de production, nous expédions le gros œuvre complet d'une maison en <strong>1 à 2 camions seulement</strong>. Les délais sont fermes et garantis contractuellement.</p>
+      <h3 class="pain-q">« Les retards de livraison sur le chantier vont me coûter cher. »</h3>
+      <p class="pain-a">Avec nos 2 usines, nous livrons la structure complète d'une maison en <strong>seulement 1-2 camions</strong>. Les délais sont fermes et garantis par contrat.</p>
     </div>
-    
+
     <div class="pain-card">
       <h3 class="pain-q">« Comment convaincre les clients et trouver de nouveaux projets ? »</h3>
-      <p class="pain-a">Nous vous <strong>transmettons des leads qualifiés</strong> d'architectes et de particuliers dans votre département. Vous bénéficiez en plus du co-branding sur nos supports régionaux.</p>
+      <p class="pain-a">Nous vous <strong>transmettons des leads qualifiés</strong> venant d'architectes et de clients particuliers de votre secteur. Vous bénéficiez aussi du co-branding dans notre communication régionale.</p>
     </div>
   </div>
 </section>
 
-<!-- 3. ATOUTS UNIQUES -->
+<!-- 3. Atouts uniques -->
 <section class="atouts-section">
   <div class="section-intro">
-    <h2 class="section-title">Ce que cela change <em>pour vos performances financières.</em></h2>
+    <h2 class="section-title">Ce qui change <em>pour votre performance financière.</em></h2>
   </div>
 
   <div class="atouts-grid">
-    <!-- Atout 1: Marges -->
+    <!-- Atout 1 : marges -->
     <article class="atout-card">
       <div class="atout-icon">
         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -945,11 +1013,11 @@
           <path d="M10 11H22" stroke="currentColor" stroke-width="1.2" opacity="0.5"/>
         </svg>
       </div>
-      <h3>Marges <em>jusqu'à 50 %</em></h3>
-      <p>Intégrez dans votre propre structure la valeur ajoutée de l'isolation par l'extérieur, de la finition et de l'acoustique. Vous maximisez les gains par mètre carré bâti.</p>
+      <h3>Des marges <em>jusqu'à 50 %</em></h3>
+      <p>Intégrez la valeur ajoutée de l'isolation extérieure, des finitions et de l'acoustique dans votre propre structure. Maximisez vos gains par mètre carré construit.</p>
     </article>
 
-    <!-- Atout 2: Vitesse -->
+    <!-- Atout 2 : vitesse -->
     <article class="atout-card">
       <div class="atout-icon">
         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -957,11 +1025,11 @@
           <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1" opacity="0.3"/>
         </svg>
       </div>
-      <h3>La maison à 80 % en <em>4 à 6 semaines</em></h3>
-      <p>Une exécution de 2 à 3 fois plus rapide que la maçonnerie traditionnelle. Vous enchaînez plus de projets sur l'année sans augmenter la taille de vos équipes.</p>
+      <h3>La maison prête à 80 % en <em>4 à 6 semaines</em></h3>
+      <p>Une exécution 2 à 3 fois plus rapide que la maçonnerie traditionnelle. Menez plus de projets dans l'année sans agrandir vos équipes.</p>
     </article>
 
-    <!-- Atout 3: Fiabilité -->
+    <!-- Atout 3 : fiabilité -->
     <article class="atout-card">
       <div class="atout-icon">
         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -970,19 +1038,19 @@
         </svg>
       </div>
       <h3>Zéro sinistre, <em>zéro stress</em></h3>
-      <p>La technologie solide du béton armé banché dans un coffrage isolant calibré en usine. Les risques d'erreurs de coupe et de malfaçons thermiques sont neutralisés.</p>
+      <p>La technologie éprouvée du béton armé, coulé dans des coffrages isolants calibrés en usine. Les risques d'erreurs de coupe et de défauts thermiques sont neutralisés.</p>
     </article>
   </div>
 </section>
 
-<!-- 4. PROGRAMME PARTENAIRE — déplacé sur /devenir-partenaire/ -->
+<!-- 4. Programme partenaire : déplacé sur /devenir-partenaire/ -->
 
 
-<!-- 5. LE MONTAGE EN 4 ÉTAPES -->
+<!-- 5. Le montage en 4 étapes -->
 <section class="process-section" id="montaj">
   <div class="section-intro">
     <h2 class="section-title">Le montage, en <em>4 étapes.</em></h2>
-    <p class="section-desc">De la fondation à la structure coulée, avec 2 à 3 personnes sur le chantier. Sans grue, sans mortier, sans temps de séchage entre les étapes.</p>
+    <p class="section-desc">Des fondations jusqu'à la structure coulée, avec 2–3 personnes sur le chantier. Sans grue, sans mortier, sans temps de séchage entre les étapes.</p>
   </div>
 
   <div class="process-timeline">
@@ -991,7 +1059,7 @@
         <span class="process-num">1</span>
       </div>
       <h4>Coffrage</h4>
-      <p>Les murs EPS sont dressés et fixés sur la fondation avec des étaiements latéraux en bois. Assemblage à sec : sans mortier, sans perte d'isolation.</p>
+      <p>Les murs en PSE sont levés et fixés sur les fondations avec des étais latéraux en bois. Assemblage à sec : sans mortier, sans perte d'isolation.</p>
       <span class="step-duration">Manuel, sans grue</span>
     </div>
 
@@ -1000,7 +1068,7 @@
         <span class="process-num">2</span>
       </div>
       <h4>Plancher</h4>
-      <p>Les panneaux PBK se posent horizontalement — couches EPS-Graphite + fibrociment, prêtes à recevoir l'armature.</p>
+      <p>Les panneaux PBK sont posés à l'horizontale : PSE graphité + couches de fibres-ciment, prêts à recevoir le ferraillage.</p>
       <span class="step-duration">Pose horizontale</span>
     </div>
 
@@ -1008,8 +1076,8 @@
       <div class="process-num-wrap">
         <span class="process-num">3</span>
       </div>
-      <h4>Armature</h4>
-      <p>Les treillis d'acier se posent entre les nervures EPS-Graphite. C'est ce qui crée la liaison monolithique entre les murs et le plancher.</p>
+      <h4>Ferraillage</h4>
+      <p>Les treillis d'acier sont posés entre les nervures en PSE graphité. C'est ce qui crée la liaison monolithique entre les murs et le plancher.</p>
       <span class="step-duration">Sans soudure</span>
     </div>
 
@@ -1048,7 +1116,7 @@
         </div>
         <div style="text-align:center;">
           <div style="font-family:var(--serif);font-size:clamp(30px,3.4vw,44px);color:var(--red);line-height:1;margin-bottom:8px;">24 h</div>
-          <div style="font-size:13.5px;color:var(--gray);">jusqu'à devenir monolithique</div>
+          <div style="font-size:13.5px;color:var(--gray);">pour devenir monolithique</div>
         </div>
       </div>
     </div>
@@ -1059,7 +1127,7 @@
   <div class="container">
     <div class="roi-intro reveal">
       <h2 style="font-family:var(--serif);font-size:clamp(28px,3.2vw,42px);font-weight:500;color:var(--ink);letter-spacing:-0.02em;margin-bottom:14px;">Combien vous gagnez en plus, <em style="font-style:italic;color:var(--red);font-weight:400;">par an.</em></h2>
-      <p style="font-size:15.5px;color:var(--gray);line-height:1.65;">Une équipe Polistibrick fait le travail de 5 équipes. Dites-nous combien de maisons vous construisez par an — nous calculons ce qui reste dans l'entreprise au lieu de partir chez les sous-traitants.</p>
+      <p style="font-size:15.5px;color:var(--gray);line-height:1.65;">Une équipe Polistibrick fait le travail de 5 équipes. Dites-nous combien de maisons vous construisez par an : nous calculons ce qui reste dans l'entreprise au lieu de partir chez les sous-traitants.</p>
     </div>
 
     <div class="roi-stage reveal">
@@ -1072,12 +1140,12 @@
 
       <div class="roi-results">
         <div class="roi-card roi-card--highlight">
-          <div class="roi-card-label">Gain supplémentaire par an</div>
+          <div class="roi-card-label">Gains supplémentaires par an</div>
           <div class="roi-card-value" id="cc-profit">+120 000 €</div>
-          <div class="roi-card-unit">40 % de la main-d'œuvre des 5 corps de métier</div>
+          <div class="roi-card-unit">40 % de la main-d'œuvre des 5 métiers</div>
         </div>
         <div class="roi-card">
-          <div class="roi-card-label">Main-d'œuvre gardée dans l'entreprise</div>
+          <div class="roi-card-label">Main-d'œuvre conservée dans l'entreprise</div>
           <div class="roi-card-value" id="cc-labor">300 000 €</div>
           <div class="roi-card-unit">au lieu de partir chez les sous-traitants</div>
         </div>
@@ -1089,16 +1157,16 @@
       </div>
 
       <div class="roi-summary">
-        <div class="roi-summary-text">À <strong id="cc-units-display">5 maisons</strong> par an, <strong>le gain supplémentaire estimé</strong> avec Polistibrick : <strong id="cc-total">~120 000 €</strong> par rapport au travail avec 5 équipes.</div>
+        <div class="roi-summary-text">À <strong id="cc-units-display">5 maisons</strong> par an, le <strong>gain supplémentaire estimé</strong> avec Polistibrick : <strong id="cc-total">~120 000 €</strong> par rapport au travail avec 5 équipes.</div>
       </div>
     </div>
 
-    <p class="roi-note">Estimation sur des hypothèses standard : 150 m²/maison, main-d'œuvre totale des 5 corps de métier 400 €/m², dont 40 % restent en gain dans l'entreprise. Pour des chiffres sur votre entreprise, contactez-nous.</p>
+    <p class="roi-note">Estimation fondée sur des hypothèses standard : 150 m² par maison, main-d'œuvre totale des 5 métiers à 400 €/m², dont 40 % restent en gain dans l'entreprise. Pour des chiffres calculés sur votre entreprise, contactez-nous.</p>
   </div>
 </section>
 
 <script>
-// CALCULATEUR ÉQUIPE CONSTRUCTEUR
+// Calculateur équipe constructeur
 (function(){
   var unitsInput = document.getElementById('cc-units');
   var unitsSlider = document.getElementById('cc-slider');
@@ -1109,7 +1177,7 @@
   if (!unitsInput) return;
 
   var SURFACE = 150;        // m² par maison (moyenne)
-  var LABOR_PER_M2 = 400;   // €/m², main-d'œuvre des 5 corps de métier
+  var LABOR_PER_M2 = 400;   // €/m², main-d'œuvre des 5 métiers
   var KEPT = 0.40;          // la part qui reste en gain dans l'entreprise
 
   function fmt(n) { return Math.round(n).toLocaleString('fr-FR') + ' €'; }
@@ -1136,18 +1204,18 @@
 })();
 </script>
 
-<!-- 6. TÉMOIGNAGES RÉELS -->
+<!-- 6. Témoignages réels -->
 <section class="testim-section" id="testimoniale-reale" style="display:none;">
   <div class="container">
     <div id="testim-lista" style="display:grid;gap:28px;"></div>
     <div style="text-align:center;margin-top:40px;">
-      <a href="../../temoignages/" class="btn btn-ghost btn-arrow">Consulter les témoignages</a>
+      <a href="../../#videouri" class="btn btn-ghost btn-arrow">Voir les témoignages vidéo</a>
     </div>
   </div>
 </section>
 
 <script>
-// TÉMOIGNAGES RÉELS — lus depuis la page de témoignages (publiés via le studio).
+// Témoignages réels, lus depuis la page des témoignages (publiés via le studio).
 // Tant qu'il n'y en a aucun, la section reste masquée.
 (function(){
   var sec = document.getElementById('testimoniale-reale');
@@ -1208,20 +1276,20 @@
     });
 
     sec.style.display = '';
-  }).catch(function(){ /* reste masquée */ });
+  }).catch(function(){ /* la section reste masquée */ });
 })();
 </script>
 
-<!-- 7. CTA PARTENARIAT -->
+<!-- 7. CTA partenariat -->
 <section class="cta-cert-section" style="margin-top: 60px;">
   <div class="cta-cert-card">
     <div>
-      <h2 class="cta-cert-title">Prêt à transformer vos chantiers ?</h2>
-      <p class="cta-cert-desc">Devenez Constructeur Certifié Polistibrick. Accédez à nos formations techniques offertes, bénéficiez de leads qualifiés dans votre région et maximisez vos marges opérationnelles.</p>
+      <h2 class="cta-cert-title">Êtes-vous prêt à transformer vos chantiers ?</h2>
+      <p class="cta-cert-desc">Devenez constructeur certifié Polistibrick. Accédez à la formation technique offerte, recevez des prospects qualifiés dans votre région et maximisez vos marges opérationnelles.</p>
     </div>
     <div class="cta-cert-action">
       <a href="../../devenir-partenaire/" class="btn-circle" style="white-space: nowrap;">
-        Devenir partenaire
+        Devenez partenaire
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M2.5 7H11.5M11.5 7L8 3.5M11.5 7L8 10.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>

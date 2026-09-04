@@ -3,8 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PolistiSIP · Maison structure sandwich bois (SIP) — Polistibrick</title>
-  <meta name="description" content="PolistiSIP : mur SIP300 (U=0,11, 30 cm, 23 kg/m², déphasage 11,3 h) et SIP250 toiture/plancher (U=0,13, 25 cm, 22 kg/m², déphasage 7,3 h).">
+  <title>Polistisip : maison à structure SIP en bois</title>
+  <link rel="icon" type="image/png" href="../../images/favicon.png">
+  <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
+  <meta name="description" content="Panneau sandwich en bois avec isolation intégrée. Mur SIP 300, plancher et toiture SIP 250. Montage rapide, sans béton coulé sur le chantier.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Polistisip : maison à structure SIP en bois">
+  <meta property="og:description" content="Panneau sandwich en bois avec isolation intégrée. Mur SIP 300, plancher et toiture SIP 250. Montage rapide, sans béton coulé sur le chantier.">
+  <meta property="og:image" content="https://polistibrick.fr/images/hero/hero-house-1.jpg">
+  <meta property="og:url" content="https://polistibrick.fr/produits/polistisip/">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -84,11 +93,18 @@
     }
     @media (max-width: 1100px) {
       .wm-stage { grid-template-columns: 1fr; gap: 32px; padding: 36px; }
-      .wm-visual { margin-top: 0; aspect-ratio: 1 / 1; min-height: 360px; }
+      /* .wm-visual-wrap entre ici lui aussi : sinon le décalage optique de 10mm de la
+         ligne 58 restait aussi en une seule colonne, soit un vide de 38 px pour rien. */
+      .wm-visual, .wm-visual-wrap { margin-top: 0; }
+      .wm-visual { aspect-ratio: 1 / 1; min-height: 360px; }
     }
     @media (max-width: 768px) {
       .wm-stage { padding: 28px 20px; }
-      .wm-visual--3d { aspect-ratio: 4 / 5; min-height: 400px; }
+      /* min-height: 400px + aspect-ratio 4/5 donnaient une LARGEUR minimale de 320 px
+         (400 × 4/5). La carte crème fait 254 px sur un écran de 360 px, donc tout le hero
+         débordait de 45 px et se faisait couper. La hauteur vient maintenant du ratio. */
+      .wm-visual-wrap { min-width: 0; margin-top: 22px; }
+      .wm-visual--3d { aspect-ratio: 4 / 5; min-height: 0; max-width: 100%; }
     }
     .fam-tabs {
       display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
@@ -322,6 +338,104 @@
       #produits-sip .sip-products .spec-table-cell--value { white-space: normal; }
     }
 </style>
+<!-- données structurées -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebPage",
+   "@id": "{{domain_url}}/produits/polistisip/#page",
+   "url": "{{domain_url}}/produits/polistisip/",
+   "name": "PolistiSIP",
+   "inLanguage": "{{lang}}",
+   "isPartOf": {
+    "@id": "{{domain_url}}/#site"
+   },
+   "publisher": {
+    "@id": "{{domain_url}}/#organisation"
+   },
+   "description": "PolistiSIP : mur SIP300 (U=0,11, 30 cm, 23 kg/m², déphasage 11,3 h) et SIP250 toiture/plancher (U=0,13, 25 cm, 22 kg/m², déphasage 7,3 h)."
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "{{country_name}}",
+     "item": "{{domain_url}}/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Produits",
+     "item": "{{domain_url}}/produits/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "PolistiSIP",
+     "item": "{{domain_url}}/produits/polistisip/"
+    }
+   ]
+  },
+  {
+   "@type": "Product",
+   "name": "PolistiSIP : maison à structure SIP en bois",
+   "description": "Panneau sandwich en bois avec isolation intégrée : OSB/3 Structural 15 mm + PSE graphité + I-Joist STEICO. Mur SIP 300, plancher et toiture SIP 250. Montage rapide, sans béton coulé sur le chantier.",
+   "brand": {
+    "@type": "Brand",
+    "name": "PolistiSIP"
+   },
+   "category": "Panneaux SIP",
+   "material": "OSB/3 Structural, PSE graphité, I-Joist STEICO",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "Mur",
+     "value": "SIP 300"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "Plancher et toiture",
+     "value": "SIP 250, U=0,13 W/m²K"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "Montage",
+     "value": "Sans béton coulé sur le chantier"
+    }
+   ],
+   "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "EUR",
+    "lowPrice": "201",
+    "highPrice": "242",
+    "unitText": "m²",
+    "url": "https://polistibrick.fr/prix/",
+    "areaServed": {
+     "@type": "Country",
+     "name": "France"
+    },
+    "availability": "https://schema.org/InStock",
+    "priceSpecification": {
+     "@type": "PriceSpecification",
+     "priceCurrency": "EUR",
+     "valueAddedTaxIncluded": false
+    }
+   }
+  },
+  {
+   "@type": "Organization",
+   "@id": "{{domain_url}}/#organisation",
+   "name": "{{company.name_legal}}",
+   "url": "{{domain_url}}/",
+   "logo": "{{domain_url}}/images/logo.png"
+  }
+ ]
+}
+</script>
 </head>
 <body data-base="../../">
 <header class="nav" data-include="nav"></header>
@@ -335,10 +449,10 @@
       </div>
       <div class="wm-stage">
         <div class="wm-text">
-          <h1>On construit aujourd’hui <em>les maisons de demain.</em></h1>
-          <p class="lead"><strong>PolistiSIP</strong> n’est pas un coffrage béton. C’est un système de maisons en <strong>panneaux sandwich bois (SIP)</strong> avec âme isolante et structure <strong>I-Joist STEICO</strong> — ponts thermiques éliminés, montage rapide, prêt Passivhaus.</p>
+          <h1>Maison en panneaux SIP à structure bois. <em>Passive dès l'usine.</em></h1>
+          <p class="lead"><strong>PolistiSIP</strong> n'est pas un coffrage béton. C'est un système de maisons en <strong>panneaux sandwich bois (SIP)</strong> avec un cœur isolant et une ossature <strong>I-Joist STEICO</strong> : ponts thermiques éliminés, montage rapide, prêt Passivhaus.</p>
           <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
-            <a href="../../devis/" class="btn btn-primary btn-arrow">Demander un devis</a>
+            <a href="../../devis/" class="btn btn-primary btn-arrow">Demandez un devis</a>
             <a href="#video" class="btn btn-ghost">Voir la vidéo</a>
           </div>
         </div>
@@ -347,7 +461,7 @@
             <span class="sip-live3d" aria-hidden="true">Live 3D</span>
             <model-viewer
               src="../../images/polistisip/perete-polistisip-v3.glb"
-              alt="Panneau mur PolistiSIP — modèle 3D rotatif, OSB et EPS graphité avec I-Joist STEICO"
+              alt="Panneau de mur PolistiSIP, modèle 3D rotatif : OSB et PSE graphité avec I-Joist STEICO"
               camera-controls
               auto-rotate
               rotation-per-second="30deg"
@@ -363,7 +477,7 @@
           </div>
           <ul class="viz3d-legenda">
             <li><span style="background:#c4b49a"></span>OSB/3 15&nbsp;mm</li>
-            <li><span style="background:#3a3a3e"></span>EPS graphité 220 + 50&nbsp;mm</li>
+            <li><span style="background:#3a3a3e"></span>PSE graphité 220 + 50&nbsp;mm</li>
             <li><span style="background:#8b7355"></span>I-Joist STEICO</li>
           </ul>
         </div>
@@ -377,7 +491,7 @@
     <div class="grid grid-4 reveal">
       <div class="fact"><span class="fact-num">0,11</span><span class="fact-label">U mur SIP300</span></div>
       <div class="fact"><span class="fact-num">11,3<small> h</small></span><span class="fact-label">Déphasage mur</span></div>
-      <div class="fact"><span class="fact-num">23<small> kg/m²</small></span><span class="fact-label">Poids mur</span></div>
+      <div class="fact"><span class="fact-num">23<small> kg/m²</small></span><span class="fact-label">Poids du mur</span></div>
       <div class="fact"><span class="fact-num">7–10<small> j</small></span><span class="fact-label">Structure 100–150 m²</span></div>
     </div>
   </div>
@@ -387,20 +501,20 @@
   <div class="container">
     <div class="grid grid-2 reveal" style="gap:48px;align-items:center;">
       <div>
-        <h2>Pourquoi les maisons perdent de la chaleur ?</h2>
-        <p class="lead" style="font-size:15.5px;margin-top:14px;">La plupart perdent de l’énergie par les <strong>ponts thermiques</strong> — là où le bois massif traverse l’isolation. PolistiSIP corrige ce point faible avec la technologie <strong>I-Joist STEICO</strong> : barrière thermique continue, jusqu’à <strong>40&nbsp;% d’efficacité thermique en plus</strong>.</p>
+        <h2>Pourquoi les maisons perdent-elles de la chaleur ?</h2>
+        <p class="lead" style="font-size:15.5px;margin-top:14px;">La plupart perdent de l'énergie par les <strong>ponts thermiques</strong>, là où le bois massif traverse l'isolation. PolistiSIP corrige ce point faible avec la technologie <strong>I-Joist STEICO</strong> : barrière thermique continue, <strong>jusqu'à 40 % d'efficacité thermique en plus</strong>.</p>
         <ul class="include-list">
-          <li><span class="ok">✓</span><span><strong>Structure bois sandwich (SIP)</strong> — pas de béton coulé dans le mur</span></li>
-          <li><span class="ok">✓</span><span><strong>I-Joist STEICO</strong> — contact minimal entre les peaux du panneau</span></li>
-          <li><span class="ok">✓</span><span><strong>Mur SIP300</strong> — 30 cm, U=0,11, déphasage 11,3 h, 23 kg/m²</span></li>
-          <li><span class="ok">✓</span><span><strong>Plancher + toiture SIP250</strong> — 25 cm, U=0,13 (= TBK)</span></li>
+          <li><span class="ok">✓</span><span><strong>Structure bois sandwich (SIP)</strong> : sans béton coulé dans le mur</span></li>
+          <li><span class="ok">✓</span><span><strong>I-Joist STEICO</strong> : contact minimal entre les faces du panneau</span></li>
+          <li><span class="ok">✓</span><span><strong>Mur SIP300</strong> : 30 cm, U=0,11, déphasage 11,3 h, 23 kg/m²</span></li>
+          <li><span class="ok">✓</span><span><strong>Plancher + toiture SIP250</strong> : 25 cm, U=0,13 (= TBK)</span></li>
         </ul>
         <div class="compare-callout">
-          Ce n’est <strong>pas</strong> Polistibrick. Si vous voulez du béton armé → <a href="../polistibrick/" style="color:var(--red);font-weight:600;">Polistibrick</a> ou <a href="../polistiwall/" style="color:var(--red);font-weight:600;">Polistiwall</a>.
+          Ce n'est pas <strong>Polistibrick</strong>. Si vous voulez du béton armé → <a href="../polistibrick/" style="color:var(--red);font-weight:600;">Polistibrick</a> ou <a href="../polistiwall/" style="color:var(--red);font-weight:600;">Polistiwall</a>.
         </div>
       </div>
       <div class="media-frame">
-        <img src="../../images/polistisip/energy_joist.webp" alt="Comparaison pont thermique — I-Joist STEICO vs structure traditionnelle">
+        <img src="../../images/polistisip/energy_joist.webp?v=2" alt="PolistiSIP face au SIP classique : le pont thermique à la jonction des panneaux">
       </div>
     </div>
   </div>
@@ -409,28 +523,28 @@
 <section class="section section--cream">
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:760px;margin:0 auto 36px;">
-      <h2>Précision d’usine. <em>Vitesse chantier.</em></h2>
-      <p class="lead" style="margin-top:12px;">Panneaux pré-découpés, kit complet, structure montée en jours — pas en mois.</p>
+      <h2>Précision d'usine. <em>Vitesse sur chantier.</em></h2>
+      <p class="lead" style="margin-top:12px;">Panneaux prédécoupés, kit complet, structure montée en jours, pas en mois.</p>
     </div>
     <div class="step-grid reveal">
       <article class="step-card">
         <div class="num">01</div>
         <h3 style="margin-bottom:8px;">Préfabrication millimétrique</h3>
-        <p style="font-size:14.5px;color:var(--gray);line-height:1.55;margin:0;">Murs, planchers et toiture arrivent <strong>pre-cut</strong>, y compris les ouvertures. Chaque élément est codé et vérifié numériquement. Tolérance ±2&nbsp;mm.</p>
+        <p style="font-size:14.5px;color:var(--gray);line-height:1.55;margin:0;">Murs, planchers et toiture arrivent <strong>prédécoupés</strong>, ouvertures comprises. Chaque élément est codé et vérifié numériquement. Tolérance ±2&nbsp;mm.</p>
       </article>
       <article class="step-card">
         <div class="num">02</div>
         <h3 style="margin-bottom:8px;">Kit complet livré</h3>
-        <p style="font-size:14.5px;color:var(--gray);line-height:1.55;margin:0;">Panneaux structurels, fixations, membranes d’étanchéité, notices — tout étiqueté pour un montage sans improvisation.</p>
+        <p style="font-size:14.5px;color:var(--gray);line-height:1.55;margin:0;">Panneaux structurels, fixations, membranes d'étanchéité, instructions : tout est étiqueté pour un montage sans improvisation.</p>
       </article>
       <article class="step-card">
         <div class="num">03</div>
         <h3 style="margin-bottom:8px;">Exécution rapide</h3>
-        <p style="font-size:14.5px;color:var(--gray);line-height:1.55;margin:0;">Structure d’une maison 100–150&nbsp;m² en <strong>7–10 jours ouvrés</strong>. Moins de main-d’œuvre, moins d’exposition aux intempéries.</p>
+        <p style="font-size:14.5px;color:var(--gray);line-height:1.55;margin:0;">La structure d'une maison de 100–150&nbsp;m² en <strong>7 à 10 jours ouvrés</strong>. Moins de main-d'œuvre, moins d'exposition aux intempéries.</p>
       </article>
     </div>
     <div class="media-frame reveal" style="margin-top:36px;max-width:1100px;margin-left:auto;margin-right:auto;">
-      <img src="../../images/polistisip/precizie-uzina.webp" alt="Préfabrication usine PolistiSIP — précision et vitesse chantier">
+      <img src="../../images/polistisip/precizie-uzina.webp" alt="Préfabrication en usine PolistiSIP : précision et vitesse sur chantier">
     </div>
   </div>
 </section>
@@ -438,21 +552,21 @@
 <section class="section" id="anatomie">
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:760px;margin:0 auto 36px;">
-      <h2>Anatomie du panneau <em>« Premium Passive »</em></h2>
-      <p class="lead" style="margin-top:12px;">Explorez chaque couche. Épaisseur totale mur ≈ <strong>30 cm</strong>.</p>
+      <h2>L'anatomie du panneau <em>« Premium Passive »</em></h2>
+      <p class="lead" style="margin-top:12px;">Explorez chaque couche. Épaisseur totale du mur ≈ <strong>30 cm</strong>.</p>
     </div>
     <div class="anatomy-grid reveal" data-anatomy>
       <div class="anatomy-left">
-        <div class="anatomy-pills" aria-label="Couches du panneau">
+        <div class="anatomy-pills" aria-label="Les couches du panneau">
           <button type="button" class="anatomy-pill" data-layer="1" aria-pressed="false"><span class="dot">1</span> OSB/3 Structural 15mm</button>
-          <button type="button" class="anatomy-pill" data-layer="2" aria-pressed="false"><span class="dot">2</span> EPS Graphité 220mm</button>
+          <button type="button" class="anatomy-pill" data-layer="2" aria-pressed="false"><span class="dot">2</span> PSE graphité 220mm</button>
           <button type="button" class="anatomy-pill" data-layer="3" aria-pressed="false"><span class="dot">3</span> OSB/3 Structural 15mm</button>
-          <button type="button" class="anatomy-pill" data-layer="4" aria-pressed="false"><span class="dot">4</span> EPS Graphité 50mm</button>
+          <button type="button" class="anatomy-pill" data-layer="4" aria-pressed="false"><span class="dot">4</span> PSE graphité 50mm</button>
           <button type="button" class="anatomy-pill" data-layer="5" aria-pressed="false"><span class="dot">5</span> I-Joist STEICO</button>
         </div>
 
         <div class="anatomy-map">
-          <img src="../../images/polistisip/anatomy_image.webp" alt="Coupe panneau PolistiSIP — OSB, EPS graphité, I-Joist STEICO" width="1030" height="970">
+          <img src="../../images/polistisip/anatomy_image.webp" alt="Coupe du panneau PolistiSIP : OSB, PSE graphité, I-Joist STEICO" width="1030" height="970">
           <button type="button" class="anatomy-hotspot" data-layer="1" style="left:40%;top:55%;" aria-pressed="false" aria-label="Couche 1">1</button>
           <button type="button" class="anatomy-hotspot" data-layer="2" style="left:70%;top:74%;" aria-pressed="false" aria-label="Couche 2">2</button>
           <button type="button" class="anatomy-hotspot" data-layer="3" style="left:80%;top:55%;" aria-pressed="false" aria-label="Couche 3">3</button>
@@ -460,12 +574,12 @@
           <button type="button" class="anatomy-hotspot" data-layer="5" style="left:21%;top:40%;" aria-pressed="false" aria-label="Couche 5">5</button>
         </div>
 
-        <div class="anatomy-hint" data-anatomy-hint>Sélectionnez une couche sur l’image</div>
+        <div class="anatomy-hint" data-anatomy-hint>Sélectionnez une couche sur l'image</div>
 
         <article class="anatomy-card" data-layer-panel="1" hidden>
           <div class="n">1</div>
           <div>
-            <h4>Peau extérieure</h4>
+            <h4>Face extérieure</h4>
             <div class="spec">OSB/3 Structural 15 mm</div>
             <p>Rigidité supérieure au standard 10–12 mm. Protection mécanique et stabilité dimensionnelle.</p>
           </div>
@@ -474,27 +588,27 @@
         <article class="anatomy-card" data-layer-panel="2" hidden>
           <div class="n">2</div>
           <div>
-            <h4>Noyau thermique structurel</h4>
-            <div class="spec">EPS graphité 220 mm</div>
-            <p>Haute densité, λ réduit. Jusqu’à 20&nbsp;% mieux que l’EPS classique (λ = 0,031 W/mK).</p>
+            <h4>Cœur thermique structurel</h4>
+            <div class="spec">PSE graphité 220 mm</div>
+            <p>Densité élevée, λ réduit. Jusqu'à 20&nbsp;% mieux que le PSE classique (λ = 0,031 W/mK).</p>
           </div>
           <button type="button" class="anatomy-close" data-anatomy-close aria-label="Fermer">×</button>
         </article>
         <article class="anatomy-card" data-layer-panel="3" hidden>
           <div class="n">3</div>
           <div>
-            <h4>Peau intérieure</h4>
+            <h4>Face intérieure</h4>
             <div class="spec">OSB/3 Structural 15 mm</div>
-            <p>Surface idéale pour finitions intérieures. Contribue à la capacité portante du panneau.</p>
+            <p>Surface idéale pour les finitions intérieures. Elle contribue à la capacité portante du panneau.</p>
           </div>
           <button type="button" class="anatomy-close" data-anatomy-close aria-label="Fermer">×</button>
         </article>
         <article class="anatomy-card" data-layer-panel="4" hidden>
           <div class="n">4</div>
           <div>
-            <h4>Strat de continuité</h4>
-            <div class="spec">EPS graphité 50 mm</div>
-            <p>Rupture de pont thermique. Scelle les jonctions et élimine les points faibles.</p>
+            <h4>Couche de continuité</h4>
+            <div class="spec">PSE graphité 50 mm</div>
+            <p>Rupture de pont thermique. Elle scelle les jonctions et élimine les points faibles.</p>
           </div>
           <button type="button" class="anatomy-close" data-anatomy-close aria-label="Fermer">×</button>
         </article>
@@ -502,8 +616,8 @@
           <div class="n">5</div>
           <div>
             <h4>I-Joist STEICO</h4>
-            <div class="spec">Structure porteuse · Élimination des ponts thermiques</div>
-            <p>Poutre en I à âme composite — −40&nbsp;% de transfert thermique vs montants bois massif.</p>
+            <div class="spec">Ossature porteuse · Suppression des ponts thermiques</div>
+            <p>Poutre en I à âme composite : −40% de transfert thermique par rapport aux montants en bois massif.</p>
           </div>
           <button type="button" class="anatomy-close" data-anatomy-close aria-label="Fermer">×</button>
         </article>
@@ -518,10 +632,10 @@
 
         <div class="anatomy-panel" data-tab-panel="struct" role="tabpanel">
           <h3>Robustesse structurelle</h3>
-          <p>L’innovation thermique s’appuie sur les I-Joist STEICO — un élément d’ingénierie supérieur au bois massif.</p>
-          <div class="anatomy-stat"><div><div class="label">Capacité portante murs</div><div class="value">&gt; 45 kN/m</div></div></div>
-          <div class="anatomy-stat"><div><div class="label">Capacité portante planchers</div><div class="value">&gt; 6 kNm/m</div></div></div>
-          <div class="anatomy-stat"><div><div class="label">Cisaillement toiture</div><div class="value">&gt; 15 kN/m</div></div></div>
+          <p>L'innovation thermique repose sur l'I-Joist STEICO, un élément d'ingénierie supérieur au bois massif.</p>
+          <div class="anatomy-stat"><div><div class="label">Capacité portante des murs</div><div class="value">&gt; 45 kN/m</div></div></div>
+          <div class="anatomy-stat"><div><div class="label">Capacité portante des planchers</div><div class="value">&gt; 6 kNm/m</div></div></div>
+          <div class="anatomy-stat"><div><div class="label">Effort tranchant toiture</div><div class="value">&gt; 15 kN/m</div></div></div>
         </div>
 
         <div class="anatomy-panel" data-tab-panel="therm" role="tabpanel" hidden>
@@ -537,14 +651,14 @@
         <div class="anatomy-panel" data-tab-panel="cert" role="tabpanel" hidden>
           <h3>Passive House Ready</h3>
           <p>* Données complètes dans le manifeste technique du produit.</p>
-          <div class="anatomy-stat"><div><div class="value" style="font-family:inherit;font-size:14px;">✓ EN 13501 — Réaction au feu</div></div></div>
-          <div class="anatomy-stat"><div><div class="value" style="font-family:inherit;font-size:14px;">✓ EN 14509 — Panneaux sandwich</div></div></div>
-          <div class="anatomy-stat"><div><div class="value" style="font-family:inherit;font-size:14px;">✓ Passive House Institute — nZEB</div></div></div>
+          <div class="anatomy-stat"><div><div class="value" style="font-family:inherit;font-size:14px;">✓ EN 13501 · Réaction au feu B-s1, d0</div></div></div>
+          <div class="anatomy-stat"><div><div class="value" style="font-family:inherit;font-size:14px;">✓ EN 14509 · Panneaux sandwich</div></div></div>
+          <div class="anatomy-stat"><div><div class="value" style="font-family:inherit;font-size:14px;">✓ Passive House Institute · RE2020</div></div></div>
         </div>
 
         <div class="anatomy-ready">
           <strong>Fiches Ubakus</strong>
-          <p>Mur SIP300 et panneau SIP250 (toiture / plancher) — PDF téléchargeables ci-dessous.</p>
+          <p>Mur SIP300 et panneau SIP250 (toiture / plancher) : PDF téléchargeables plus bas.</p>
         </div>
       </aside>
     </div>
@@ -605,37 +719,37 @@
     <div class="sip-products reveal">
       <article class="card" id="mur">
         <h3 style="margin-bottom:8px;">Mur SIP300</h3>
-        <p style="font-size:14px;color:var(--gray);line-height:1.45;margin-bottom:18px;">OSB + EPS graphité + I-Joist STEICO</p>
+        <p style="font-size:14px;color:var(--gray);line-height:1.45;margin-bottom:18px;">OSB + PSE graphité + I-Joist STEICO</p>
         <div class="spec-table" style="border-radius:12px;">
           <div class="spec-table-row"><div class="spec-table-cell">U <span style="display:block;font-size:12px;color:var(--gray);font-weight:400;">performance thermique</span></div><div class="spec-table-cell spec-table-cell--value">0,11 W/m²K</div></div>
           <div class="spec-table-row"><div class="spec-table-cell">Épaisseur <span style="display:block;font-size:12px;color:var(--gray);font-weight:400;">totale</span></div><div class="spec-table-cell spec-table-cell--value">30 cm</div></div>
           <div class="spec-table-row"><div class="spec-table-cell">Poids <span style="display:block;font-size:12px;color:var(--gray);font-weight:400;">léger vs béton</span></div><div class="spec-table-cell spec-table-cell--value">23 kg/m²</div></div>
-          <div class="spec-table-row"><div class="spec-table-cell">Déphasage <span style="display:block;font-size:12px;color:var(--gray);font-weight:400;">confort d’été</span></div><div class="spec-table-cell spec-table-cell--value">11,3 h</div></div>
-          <div class="spec-table-row"><div class="spec-table-cell">Composition <span style="display:block;font-size:12px;color:var(--gray);font-weight:400;">ce qu’il y a dans le mur</span></div><div class="spec-table-cell spec-table-cell--value">15 + 220 + 15 + 50 mm</div></div>
+          <div class="spec-table-row"><div class="spec-table-cell">Déphasage <span style="display:block;font-size:12px;color:var(--gray);font-weight:400;">confort d'été</span></div><div class="spec-table-cell spec-table-cell--value">11,3 h</div></div>
+          <div class="spec-table-row"><div class="spec-table-cell">Composition <span style="display:block;font-size:12px;color:var(--gray);font-weight:400;">ce qu'il y a dans le mur</span></div><div class="spec-table-cell spec-table-cell--value">15 + 220 + 15 + 50 mm</div></div>
         </div>
         <p style="margin-top:18px;"><a href="../../downloads/SIP300.pdf" target="_blank" rel="noopener" style="color:var(--red);font-weight:600;">Fiche PDF SIP300 ↓</a></p>
       </article>
       <article class="card" id="plancher">
         <h3 style="margin-bottom:8px;">Plancher SIP250</h3>
-        <p style="font-size:14px;color:var(--gray);line-height:1.45;margin-bottom:18px;">OSB + EPS graphité + I-Joist STEICO</p>
+        <p style="font-size:14px;color:var(--gray);line-height:1.45;margin-bottom:18px;">OSB + PSE graphité + I-Joist STEICO</p>
         <div class="spec-table" style="border-radius:12px;">
           <div class="spec-table-row"><div class="spec-table-cell">U <span style="display:block;font-size:12px;color:var(--gray);font-weight:400;">performance thermique</span></div><div class="spec-table-cell spec-table-cell--value">0,13 W/m²K</div></div>
           <div class="spec-table-row"><div class="spec-table-cell">Épaisseur <span style="display:block;font-size:12px;color:var(--gray);font-weight:400;">totale</span></div><div class="spec-table-cell spec-table-cell--value">25 cm</div></div>
           <div class="spec-table-row"><div class="spec-table-cell">Poids <span style="display:block;font-size:12px;color:var(--gray);font-weight:400;">léger vs béton</span></div><div class="spec-table-cell spec-table-cell--value">22 kg/m²</div></div>
-          <div class="spec-table-row"><div class="spec-table-cell">Déphasage <span style="display:block;font-size:12px;color:var(--gray);font-weight:400;">confort d’été</span></div><div class="spec-table-cell spec-table-cell--value">7,3 h</div></div>
-          <div class="spec-table-row"><div class="spec-table-cell">Composition <span style="display:block;font-size:12px;color:var(--gray);font-weight:400;">ce qu’il y a dans le plancher</span></div><div class="spec-table-cell spec-table-cell--value">15 + 220 + 15 mm</div></div>
+          <div class="spec-table-row"><div class="spec-table-cell">Déphasage <span style="display:block;font-size:12px;color:var(--gray);font-weight:400;">confort d'été</span></div><div class="spec-table-cell spec-table-cell--value">7,3 h</div></div>
+          <div class="spec-table-row"><div class="spec-table-cell">Composition <span style="display:block;font-size:12px;color:var(--gray);font-weight:400;">ce qu'il y a dans le plancher</span></div><div class="spec-table-cell spec-table-cell--value">15 + 220 + 15 mm</div></div>
         </div>
         <p style="margin-top:18px;"><a href="../../downloads/SIP250.pdf" target="_blank" rel="noopener" style="color:var(--red);font-weight:600;">Fiche PDF SIP250 ↓</a></p>
       </article>
       <article class="card" id="toiture">
         <h3 style="margin-bottom:8px;">Toiture SIP250</h3>
-        <p style="font-size:14px;color:var(--gray);line-height:1.45;margin-bottom:18px;">OSB + EPS graphité + I-Joist STEICO</p>
+        <p style="font-size:14px;color:var(--gray);line-height:1.45;margin-bottom:18px;">OSB + PSE graphité + I-Joist STEICO</p>
         <div class="spec-table" style="border-radius:12px;">
           <div class="spec-table-row"><div class="spec-table-cell">U <span style="display:block;font-size:12px;color:var(--gray);font-weight:400;">performance thermique</span></div><div class="spec-table-cell spec-table-cell--value">0,13 W/m²K</div></div>
           <div class="spec-table-row"><div class="spec-table-cell">Épaisseur <span style="display:block;font-size:12px;color:var(--gray);font-weight:400;">totale</span></div><div class="spec-table-cell spec-table-cell--value">25 cm</div></div>
           <div class="spec-table-row"><div class="spec-table-cell">Poids <span style="display:block;font-size:12px;color:var(--gray);font-weight:400;">léger vs béton</span></div><div class="spec-table-cell spec-table-cell--value">22 kg/m²</div></div>
-          <div class="spec-table-row"><div class="spec-table-cell">Déphasage <span style="display:block;font-size:12px;color:var(--gray);font-weight:400;">confort d’été</span></div><div class="spec-table-cell spec-table-cell--value">7,3 h</div></div>
-          <div class="spec-table-row"><div class="spec-table-cell">Composition <span style="display:block;font-size:12px;color:var(--gray);font-weight:400;">ce qu’il y a dans la toiture</span></div><div class="spec-table-cell spec-table-cell--value">15 + 220 + 15 mm</div></div>
+          <div class="spec-table-row"><div class="spec-table-cell">Déphasage <span style="display:block;font-size:12px;color:var(--gray);font-weight:400;">confort d'été</span></div><div class="spec-table-cell spec-table-cell--value">7,3 h</div></div>
+          <div class="spec-table-row"><div class="spec-table-cell">Composition <span style="display:block;font-size:12px;color:var(--gray);font-weight:400;">ce qu'il y a dans la toiture</span></div><div class="spec-table-cell spec-table-cell--value">15 + 220 + 15 mm</div></div>
         </div>
         <p style="margin-top:18px;"><a href="../../downloads/SIP250.pdf" target="_blank" rel="noopener" style="color:var(--red);font-weight:600;">Fiche PDF SIP250 ↓</a></p>
       </article>
@@ -648,14 +762,14 @@
     <div class="grid grid-2 reveal" style="gap:40px;align-items:center;">
       <div>
         <h2>Dimensions Jumbo.</h2>
-        <p class="lead" style="font-size:15.5px;margin-top:12px;">Un mur de <strong>9 m</strong> en une seule manœuvre de grue → structure <strong>50–60&nbsp;% plus rapide</strong> qu’en traditionnel. Esthétique propre : moins de joints horizontaux visibles.</p>
-        <div class="grid grid-2" style="gap:16px;margin-top:24px;">
+        <p class="lead" style="font-size:15.5px;margin-top:12px;">Un mur de <strong>9 m</strong> en une seule manœuvre de grue → structure <strong>50–60&nbsp;% plus rapide</strong> qu'en traditionnel. Esthétique propre : moins de joints horizontaux visibles.</p>
+        <div class="grid grid-2 facts-row" style="gap:16px;margin-top:24px;">
           <div class="fact"><span class="fact-num">50–60%</span><span class="fact-label">Plus rapide</span></div>
-          <div class="fact"><span class="fact-num">9<small> m</small></span><span class="fact-label">Hauteur panneau</span></div>
+          <div class="fact"><span class="fact-num">9<small> m</small></span><span class="fact-label">Hauteur de panneau</span></div>
         </div>
       </div>
       <div class="media-frame">
-        <img src="../../images/polistisip/jumbo.webp" alt="Comparaison dimensions Jumbo PolistiSIP">
+        <img src="../../images/polistisip/jumbo.webp" alt="Comparaison des dimensions Jumbo PolistiSIP">
       </div>
     </div>
   </div>
@@ -664,18 +778,18 @@
 <section class="section section--cream">
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 32px;">
-      <h2>Avantages clés.</h2>
+      <h2>Bénéfices clés.</h2>
     </div>
     <div class="grid grid-3 reveal" style="gap:18px;">
-      <article class="card"><h3 style="margin-bottom:8px;">Étanchéité à l’air</h3><p style="font-size:14px;color:var(--gray);margin:0;line-height:1.5;">Contrôle de l’air intérieur et efficacité maximale de la VMC.</p></article>
-      <article class="card"><h3 style="margin-bottom:8px;">Vitesse de construction</h3><p style="font-size:14px;color:var(--gray);margin:0;line-height:1.5;">Projets plus courts, coûts de main-d’œuvre réduits.</p></article>
-      <article class="card"><h3 style="margin-bottom:8px;">Acoustique</h3><p style="font-size:14px;color:var(--gray);margin:0;line-height:1.5;">Atténuation jusqu’à Rw 55 dB (standard).</p></article>
-      <article class="card"><h3 style="margin-bottom:8px;">Soutenabilité</h3><p style="font-size:14px;color:var(--gray);margin:0;line-height:1.5;">Empreinte carbone réduite, déchets chantier minimaux.</p></article>
-      <article class="card"><h3 style="margin-bottom:8px;">Liberté architecturale</h3><p style="font-size:14px;color:var(--gray);margin:0;line-height:1.5;">Grandes portées, peu de contraintes structurelles.</p></article>
-      <article class="card"><h3 style="margin-bottom:8px;">Résistance sismique</h3><p style="font-size:14px;color:var(--gray);margin:0;line-height:1.5;">Structure rigide et légère — absorbe les chocs sans fissures.</p></article>
+      <article class="card"><h3 style="margin-bottom:8px;">Étanchéité à l'air</h3><p style="font-size:14px;color:var(--gray);margin:0;line-height:1.5;">Contrôle de l'air intérieur et efficacité maximale de la VMC.</p></article>
+      <article class="card"><h3 style="margin-bottom:8px;">Vitesse de construction</h3><p style="font-size:14px;color:var(--gray);margin:0;line-height:1.5;">Des chantiers plus courts, des coûts de main-d'œuvre réduits.</p></article>
+      <article class="card"><h3 style="margin-bottom:8px;">Acoustique</h3><p style="font-size:14px;color:var(--gray);margin:0;line-height:1.5;">Atténuation jusqu'à Rw 55 dB (standard).</p></article>
+      <article class="card"><h3 style="margin-bottom:8px;">Durabilité</h3><p style="font-size:14px;color:var(--gray);margin:0;line-height:1.5;">Empreinte carbone réduite, déchets minimes sur le chantier.</p></article>
+      <article class="card"><h3 style="margin-bottom:8px;">Liberté architecturale</h3><p style="font-size:14px;color:var(--gray);margin:0;line-height:1.5;">Grandes ouvertures, peu de contraintes structurelles.</p></article>
+      <article class="card"><h3 style="margin-bottom:8px;">Résistance sismique</h3><p style="font-size:14px;color:var(--gray);margin:0;line-height:1.5;">Structure rigide et légère : elle absorbe les chocs sans fissures.</p></article>
     </div>
     <div class="reveal" style="margin-top:28px;text-align:center;">
-      <p style="font-size:13.5px;color:var(--gray);">Certifications : EN 13501 · EN 14509 · Passive House / nZEB ready</p>
+      <p style="font-size:13.5px;color:var(--gray);">Certifications : EN 13501 · EN 14509 · Passive House / RE2020 ready</p>
     </div>
   </div>
 </section>
@@ -683,8 +797,8 @@
 <section class="section" id="video">
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:760px;margin:0 auto 28px;">
-      <h2>La construction PolistiSIP <em>en action.</em></h2>
-      <p class="lead" style="margin-top:12px;">Flux complet : préfabrication, montage rapide et finitions sur chantier. Durée ≈ 1:15.</p>
+      <h2>PolistiSIP <em>en action.</em></h2>
+      <p class="lead" style="margin-top:12px;">Flux complet : préfabrication, montage rapide et finitions sur le chantier. Durée ≈ 1:15.</p>
     </div>
     <div class="sip-video-wrap reveal">
       <video
@@ -692,22 +806,40 @@
         playsinline
         preload="none"
         poster="../../images/polistisip/video-poster.jpg"
-        title="Construction PolistiSIP — du préfabriqué à la clé">
+        title="Construction PolistiSIP : du préfabriqué au clé en main">
         <source src="../../images/polistisip/video_polistisip_final.mp4" type="video/mp4">
       </video>
     </div>
-    <p class="reveal" style="text-align:center;margin-top:14px;font-size:13.5px;color:var(--gray);font-style:italic;">Processus complet — de la fondation à la clé. Le film se charge uniquement au clic Play.</p>
+    <p class="reveal" style="text-align:center;margin-top:14px;font-size:13.5px;color:var(--gray);font-style:italic;">Processus complet, des fondations au clé en main. La vidéo ne se charge qu'au clic sur Play.</p>
   </div>
 </section>
 
 <section class="section section--tight">
+
+<!-- LES OBJECTIONS CLASSIQUES AU SIP -->
+<section class="section section--cream">
+  <div class="container">
+    <div class="reveal">
+      <h2 style="margin-bottom:14px;">Les objections classiques aux panneaux SIP. <em>Et ce qui change ici.</em></h2>
+      <p style="font-size:15px;margin-bottom:4px;">Les mêmes questions reviennent aussi à propos du coffrage en polystyrène. Nous les avons toutes reprises, une par une, dans le guide <a href="../../ressources/maison-polystyrene-avis/" style="color:var(--red);">avis sur les maisons en polystyrène : mythes et faits</a>.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:24px;">
+        <article class="card"><h3 style="margin-bottom:8px;">« L'OSB brûle. »</h3><p style="font-size:14.5px;color:var(--gray);margin:0;line-height:1.6;">Sur un SIP classique, l'OSB reste la face du mur. Le panneau PolistiSIP est classé au feu B-s1, d0 : pas incombustible, et nous préférons le dire. La face exposée vers l'extérieur, elle, est la plaque de fibres-ciment, classe A1, incombustible.</p></article>
+        <article class="card"><h3 style="margin-bottom:8px;">« L'OSB gonfle à l'eau. »</h3><p style="font-size:14.5px;color:var(--gray);margin:0;line-height:1.6;">La plaque de fibres-ciment n'absorbe pas l'eau et protège l'OSB structurel. La pluie pendant le montage n'est pas un drame, c'est une journée normale de chantier.</p></article>
+        <article class="card"><h3 style="margin-bottom:8px;">« Ça sonne creux, comme le placo. »</h3><p style="font-size:14.5px;color:var(--gray);margin:0;line-height:1.6;">Atténuation acoustique jusqu'à Rw 55 dB. Les fibres-ciment sont denses : le mur sonne comme un mur, pas comme une boîte.</p></article>
+        <article class="card"><h3 style="margin-bottom:8px;">« Une maison à ossature bois se revend mal. »</h3><p style="font-size:14.5px;color:var(--gray);margin:0;line-height:1.6;">Le système est breveté au niveau européen, avec un fabricant identifiable, des fiches techniques et une ossature STEICO certifiée : exactement les documents que demande l'expert de la banque.</p></article>
+      </div>
+    </div>
+  </div>
+</section>
+
   <div class="cta-band reveal">
-    <h2>Construire en PolistiSIP.</h2>
-    <p>Devis pour ce système, ou un coup d’œil aux deux autres.</p>
+    <h2>Devis PolistiSIP</h2>
+    <p>Un devis pour ce système, ou jetez un œil aux deux autres.</p>
     <div class="cta-band-actions">
-      <a href="../../devis/" class="btn btn-on-dark btn-cta-main btn-arrow">Demander un devis</a>
+      <a href="../../devis/" class="btn btn-on-dark btn-cta-main btn-arrow">Demandez un devis</a>
       <a href="../polistibrick/" class="btn btn-on-dark-ghost btn-cta-soft">Voir Polistibrick</a>
       <a href="../polistiwall/" class="btn btn-on-dark-ghost btn-cta-soft">Voir Polistiwall</a>
+        <a href="../../prix/" class="btn btn-on-dark-ghost btn-cta-soft">Prix PolistiSIP au m²</a>
     </div>
   </div>
 </section>
