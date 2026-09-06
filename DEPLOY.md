@@ -1,3 +1,5 @@
+> **Referință din 04.07.2026.** Procesul actual de publicare e în `map/processes/publica.md` (RO automat la push pe `main`, FR prin `gh workflow run`). Secțiunea 2 privește app-ul de devize, care e alt repo (`polistibrick-devis-app`). Portul 8080 / `dev-local.sh` nu se mai folosesc — vezi `map/objects/previzualizare-locala.md`.
+
 # Polistibrick — Ghid deploy (pentru cine publică)
 
 Proiectul constă din **două părți** create local de dezvoltator. Ambele trebuie publicate.
@@ -107,4 +109,4 @@ Config Cursor: `.cursor/mcp.json` (deja în repo).
 
 - Site: structură `countries/[cod]/`, build `build/build.py`
 - App: README în `polistibrick-devis-app/README.md`
-- Integrare: `shared/js/devis-embed.js`, `apps/README.md`
+- Integrare: `shared/js/devis-embed.js`, `_archive/pre-multisite/apps/README.md`

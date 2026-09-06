@@ -1,222 +1,68 @@
-# 🌍 Polistibrick Multi-site
+# Polistibrick multisite
 
-Multi-country, multi-language website system for Polistibrick.
-**One source repo → 7 country sites deployed to 7 domains.**
+Sursa unică a site-urilor Polistibrick pe țări. Un repo → un folder de țară → un build → un proiect Cloudflare Pages.
 
----
+| | |
+|---|---|
+| **Live** | polisti.ro (RO) · polistibrick-fr.pages.dev (FR — domeniul polistibrick.fr așteaptă mutarea nameserverelor de la One.com) |
+| **În rezervă** | en, it, es, nl, de, ie, me — seed-uite din FR pe 11.08.2026, se construiesc, nu se publică |
+| **Harta** | `map/` — ce e fiecare lucru și ce mai mișcă dacă îl schimbi. Agenții intră prin `CLAUDE.md` / `AGENTS.md` |
+| **Arhiva** | `_archive/` — ce nu mai e pe drumul principal (`_archive/README.md`) |
 
-## 📁 Structure
+## Structura
 
 ```
-polistibrick-multisite/
-│
-├── shared/                       ← COMMON: edit once, applied to all countries
-│   ├── css/site.css              ← Shared CSS
-│   ├── js/site.js                ← Shared JS (nav, gallery, etc.)
-│   └── images/                   ← Shared images (logo, robot, products, etc.)
-│
-├── countries/                    ← Per-country sites (translated HTML)
-│   ├── ro/                       → polistibrick.ro    (Romanian, current canonical)
-│   ├── en/                       → polistibrick.com   (English — UK + EU)
-│   ├── fr/                       → polistibrick.fr    (French)
-│   ├── it/                       → polistibrick.it    (Italian)
-│   ├── es/                       → polistibrick.es    (Spanish)
-│   ├── nl/                       → polistibrick.be    (Dutch — Belgium)
-│   └── de/                       → polistibrick.ch    (German — Switzerland)
-│
-│   Each country folder contains:
-│   - _config.json                ← Country-specific data (phone, email, address, team)
-│   - index.html, polistibrick-mercury-style.html, etc.
-│   - All site pages (despre/, produse/, etc.)
-│
-├── translations/                 ← (Future) Language translation files
-│
-├── build/                        ← OUTPUT — auto-generated, ready to deploy
-│   ├── ro/                       → Upload to polistibrick.ro hosting
-│   ├── en/                       → Upload to polistibrick.com hosting
-│   └── ...
-│
-└── build/build.py                ← Build script
+countries/<cod>/        paginile HTML ale țării + _config.json (firmă, contact, formulare, domeniu)
+shared/                 css, js (nav + footer în js/site.js), images (case/ = cele 48 de modele), downloads
+build/build.py          fabrica: config → placeholders → nav/footer → SEO → sitemap → build/<cod>/
+translations/           fluxul de țară nouă (WORKFLOW.md), path_maps.py + ui_strings.json (citite de build)
+cloudflare/             projects.json (țară → proiect Pages → domeniu), jurnalul migrării FR
+.github/workflows/      deployul: push pe main = doar RO; alte țări prin workflow_dispatch
+scripts/planuri/        planul și prețul fiecărui model de casă (un .py pe casă, cofraj.py)
+campanii/               reclamele video pe modele (2,4 GB, neurmărit în git)
+media/ tools/ mcp/      video sursă, unelte (blog, studio testimoniale), MCP-ul lui Cursor
+map/ _archive/          harta sistemului · arhiva
 ```
 
----
+## Construiește
 
-## 🚀 Build & Deploy
-
-### Build all countries
 ```bash
-python3 build/build.py
+python3 build/build.py fr        # o țară → build/fr/
+python3 build/build.py ro fr     # două
+python3 build/build.py           # toate cele 9 (lent)
 ```
 
-### Build single country
-```bash
-python3 build/build.py ro
-python3 build/build.py ro en fr
-```
+Build-ul: citește `countries/<cod>/_config.json`, copiază `shared/` și paginile, umple `{{placeholders}}`, lipește nav-ul și footer-ul din `shared/js/site.js`, rescrie căile RO în limba țării (`translations/path_maps.py`), injectează canonical/hreflang, verifică că nav-ul și footer-ul sunt identice pe toate paginile, scrie `sitemap.xml` (lastmod din git), `robots.txt`, `_headers`. `build/` e ignorat în git.
 
-### What happens
-1. Reads `countries/[country]/_config.json` for country data
-2. Copies country HTML → `build/[country]/`
-3. Copies `shared/` assets → `build/[country]/assets/` + `images/`
-4. Replaces `{{placeholders}}` in HTML with config values
-5. Generates `sitemap.xml` + `robots.txt`
-6. Generates `_headers` + `.htaccess` for CDN caching
+## Vezi pe local
 
----
+Serverele stau în proiectul vecin `RO CMR/.claude/launch.json` (`site-ro` 4700, `site-fr` 4710), servite fără cache. După fiecare build, serverul se repornește (build-ul recreează folderul). Detalii: `map/processes/previzualizeaza.md`.
 
-## 🎨 Placeholder syntax
+## Publică
 
-Anywhere in HTML, you can use `{{key.subkey}}` to inject config values.
+- **RO**: `git push origin main` → GitHub Actions construiește și urcă pe Cloudflare Pages automat (`.github/workflows/cloudflare-pages.yml`).
+- **FR** (și orice altă țară): `gh workflow run cloudflare-pages.yml --ref main -f country=fr`, apoi `gh run watch`.
+- Nimic nu se publică până patronul nu a văzut pe local. Pașii: `map/processes/publica.md`.
 
-Examples:
-```html
-<a href="tel:{{contact.phone_raw}}">{{contact.phone_display}}</a>
-<a href="mailto:{{contact.email_general}}">{{contact.email_general}}</a>
-<address>{{company.address_street}}, {{company.address_city}}</address>
-```
+Secretele GitHub: `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`. Proiectele: `cloudflare/projects.json`.
 
-Build script replaces these per country. RO build gets RO config, EN gets EN config, etc.
+## Placeholders
 
----
+Oriunde în HTML: `{{cheie.subcheie}}` din `_config.json` al țării — `{{contact.phone_display}}`, `{{company.address_street}}`, `{{devis_app.url}}`.
 
-## 🌐 Domain mapping
+## Formulare
 
-| Country | Folder | Domain | Languages spoken |
-|---|---|---|---|
-| 🇷🇴 România | `countries/ro/` | polistibrick.ro | RO, EN |
-| 🇬🇧 UK | `countries/en/` | polistibrick.com | EN |
-| 🇫🇷 France | `countries/fr/` | polistibrick.fr | FR, EN |
-| 🇮🇹 Italy | `countries/it/` | polistibrick.it | IT, EN |
-| 🇪🇸 Spain | `countries/es/` | polistibrick.es | ES, EN |
-| 🇧🇪 Belgium | `countries/nl/` | polistibrick.be | NL, FR, EN |
-| 🇨🇭 Switzerland | `countries/de/` | polistibrick.ch | DE, FR, IT, EN |
+Formularele (`/oferta/`, `/contact/`, `/devino-partener/` și echivalentele FR) merg prin Web3Forms cu `forms.access_key` din `_config.json`.
 
----
+**Unde ajunge mailul decide cheia, nu `form_submit_email`** (câmp documentar). Ca să schimbi destinatarul îți trebuie altă cheie sau alt destinatar în panoul Web3Forms. Lead-urile RO au picat la asociați în primele zile după lansare din exact cauza asta; reparat pe 13.08.2026.
 
-## 📝 Adding a new country
+- RO → `contact@polisti.ro` (cheia `91843857…`, cont `contact@polisti.ro`)
+- FR → `contact@polistibrick.fr`
 
-1. Create folder: `countries/[code]/`
-2. Copy `_config.json` from another country, fill in:
-   - `lang`, `country`, `country_name`, `domain`, `domain_url`
-   - `company.*` (legal name, VAT, address)
-   - `contact.*` (phone, email, hours)
-   - `team[]` (managers per country)
-3. Copy HTML files from `countries/ro/` and translate text
-4. Run: `python3 build/build.py [code]`
-5. Upload `build/[code]/` to the country's domain hosting
+## Țară nouă
 
----
+`translations/WORKFLOW.md` (seed din FR, dicționar, localizarea slugurilor, build). Cele 7 țări de rezervă sunt copii vechi: o relansare = re-seed din FR-ul de azi, nu peticire.
 
-## 🔄 Updating shared assets
+## Stack
 
-Edit `shared/css/site.css`, `shared/js/site.js`, or `shared/images/*`.
-
-Run `python3 build/build.py` → changes appear in **all 7 country builds**.
-
----
-
-## 🌍 Deployment options
-
-### Option D: Cloudflare CDN + Pages (recommended for speed)
-
-Every build now includes **`_headers`** (Cloudflare Pages / Netlify) and **`.htaccess`** (Apache/FTP behind Cloudflare) with cache rules:
-
-| Asset | Browser cache | CDN cache |
-|---|---|---|
-| CSS, JS (`/assets/`) | 7 days | 7 days + stale-while-revalidate |
-| Images, video (`/images/`) | 30 days | 30 days |
-| HTML pages | 1 hour | 1 hour (always fresh after edits) |
-
-#### A) Cloudflare Pages (auto-deploy from GitHub)
-
-1. **Cloudflare dashboard** → Pages → Create project → Connect GitHub repo
-2. Or use the included GitHub Action (`.github/workflows/cloudflare-pages.yml`)
-3. Add GitHub secrets:
-   - `CLOUDFLARE_API_TOKEN` — [Create token](https://dash.cloudflare.com/profile/api-tokens) with *Cloudflare Pages Edit*
-   - `CLOUDFLARE_ACCOUNT_ID` — found in Cloudflare dashboard URL
-4. Create a Pages project per country (e.g. `polistibrick-fr`) — names in `cloudflare/projects.json`
-5. **Custom domain**: Pages → project → Custom domains → add `polistibrick.fr`
-6. **DNS**: point domain to Cloudflare (nameservers orange-cloud)
-
-Manual deploy (after build):
-```bash
-python3 build/build.py fr
-python3 build/deploy_cloudflare.py fr
-```
-
-#### B) FTP / existing host + Cloudflare proxy
-
-1. Upload `build/[country]/` via FTP (includes `.htaccess`)
-2. Add domain to Cloudflare → set nameservers
-3. DNS: A/CNAME record → your host IP, **Proxied** (orange cloud)
-4. Cloudflare → **Caching** → Configuration:
-   - Caching level: **Standard**
-   - Browser Cache TTL: **Respect Existing Headers**
-   - Auto Minify: HTML, CSS, JS ✓
-   - Brotli ✓
-
-Cloudflare will cache assets at edge; repeat visitors load from CDN worldwide.
-
-### Option A: Netlify (recommended)
-- 1 Netlify site per country
-- Each site's "base directory" = `build/[country]/`
-- Each site's custom domain = country's domain (.ro, .fr, .it, etc.)
-- Deploy on git push automatically
-
-### Option B: GitHub Pages
-- 1 GitHub repo per country
-- Push `build/[country]/` to that repo's `gh-pages` branch
-- Configure CNAME for custom domain
-
-### Option C: Traditional FTP/SFTP
-- Upload `build/[country]/` to country's web host
-- Update on each change via FTP
-
----
-
-## 🤝 Forms routing
-
-Each country's forms (`/oferta/`, `/contact/`, `/devino-partener/`) post to that country's email
-(`contact.form_submit_email` in `_config.json`).
-
-**Where the mail actually lands is decided by Web3Forms, not by this file.** Each
-`forms.access_key` belongs to a Web3Forms account, and delivery goes to that account's
-address. `form_submit_email` is documentation only — editing it routes nothing. To change
-the recipient you need a different access key (or a different recipient on the form, inside
-the Web3Forms dashboard). RO leads spent the first days after launch in the partners'
-mailbox because of exactly this; fixed 13.08.2026.
-
-- RO forms → `contact@polisti.ro` (key `91843857…`, account `contact@polisti.ro`)
-- FR forms → `contact@polistibrick.fr`
-- ES forms → `info@polistibrick.es`
-- EN/BE/CH/IT forms → fallback to `contact@polistibrick.com`
-
-CC always to `info@polistibrick.eu` for central tracking.
-
----
-
-## 📚 Next steps
-
-- [ ] Fill in real contact info in each `_config.json` (currently placeholders)
-- [ ] Translate `countries/en/` HTML files from RO → EN
-- [ ] Translate `countries/fr/`, `it/`, `es/`, `nl/`, `de/`
-- [ ] Connect forms to backend (Netlify Forms, Formspree, etc.)
-- [ ] Set up DNS for each domain to point to its hosting
-- [ ] Add Google Analytics + Search Console per country
-- [ ] (Optional) Add CMS for content editing (Decap CMS)
-- [ ] (Optional) Build SEO agents (separate project)
-
----
-
-## 🛠️ Tech stack
-
-- **HTML/CSS/JS** static (no framework, no build step beyond placeholders)
-- **Python 3** build script (zero dependencies, uses stdlib only)
-- **Netlify** or **GitHub Pages** hosting (free)
-- **DNS** per domain (Cloudflare, OVH, GoDaddy, etc.)
-
----
-
-## 📞 Support
-
-For questions about this setup, see `docs/` folder (TBD) or contact the developer.
+HTML/CSS/JS static, un script Python fără dependențe, Cloudflare Pages, GitHub Actions. Restructurat pe metoda ICM pe 06.09.2026 (harta în `map/`).

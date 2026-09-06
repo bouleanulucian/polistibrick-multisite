@@ -26,9 +26,6 @@ venv/
 .env
 .env.local
 
-# Local masters (4K sources — never deploy)
-masters/
-
 # Duplicate / dev-only folders
 countries/fr 2/
 drafts/
@@ -47,10 +44,7 @@ countries/*/images/presence/presence_frame*.png
 countries/*/images/presence/factory-*.png
 countries/*/images/presence/frame*.png
 .gh-pages-worktree/
-.tmp/
 
-# Graphify — harta codului (generata local)
-graphify-out/
 .playwright-mcp/
 
 # Referinţe descărcate pentru reproducerea planurilor — nu se publică
@@ -60,6 +54,7 @@ scripts/planuri/__pycache__/
 # Campanii interne — nu se publică în repo public
 campanii/
 
-# planse de referinta descarcate (nu se publica)
-referinte-ig/
 shared/images/case/_instagram-import/
+
+# Arhiva neurmărită: surse video 4K, referințe descărcate, harta graphify (mutate 06.09.2026)
+_archive/_neurmarite/
