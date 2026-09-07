@@ -20,3 +20,24 @@ RĂMAS — UN SINGUR PAS, AL PATRONULUI (One.com cere parola lui):
 
 ÎNTOARCEREA din orice problemă: la One.com se pun înapoi ns01.one.com + ns02.one.com —
 site-ul vechi de pe Hetzner (49.12.212.73) e neatins și totul revine ca înainte.
+
+## 07.09.2026 — procedura reluată de la cap (Claude)
+- Stare: NEschimbat. AFNIC: nserver ns01/ns02.one.com, last-update 28.02.2026. Cloudflare: zona `pending`
+  (anita/owen), cele 9 înregistrări DNS puse (MX Google ×5, SPF, DMARC, apex+www → pages.dev), domeniile
+  Pages `pending`. polistibrick.fr servește încă site-ul vechi de pe Hetzner (49.12.212.73).
+- Panoul One.com, verificat din nou în Chrome-ul patronului: planul e «Domaine uniquement»; pagina DNS a
+  domeniului arată DOAR «Mettre à niveau pour créer une redirection» — fără tab de nameservere. Deci
+  ruta din panou (Paramètres avancés → Configuration DNS → Serveurs de noms) NU există pentru acest plan.
+- Ruta oficială One.com când panoul nu oferă opțiunea: formularul PDF «Request to change name servers»
+  (help.one.com, articolul 360000841638), semnat CU PIXUL de registrant (Lucian Bouleanu), scanat, trimis
+  la sales@one.com. Răspuns în 24 h, procesare până la 3 zile lucrătoare. Formularul completat:
+  scratchpad-ul sesiunii + trimis patronului pe 07.09.
+- De ce a picat încercarea din panou din 02.09: One.com trimite un e-mail de aprobare REGISTRANTULUI când
+  datele lui diferă de ale abonatului — iar e-mailul registrantului e proxy-ul Wix
+  (polistibrick.fr@wix-domains.com). Formularul semnat ocolește acest e-mail.
+- CAPCANĂ găsită: domeniul are DNSSEC activ la AFNIC (DS 63650 13 2 …). Dacă nameserverele s-ar schimba
+  fără scoaterea DS-ului, site + poștă ar da SERVFAIL. One.com documentează că DNSSEC se dezactivează
+  automat la trecerea pe nameservere externe; în e-mailul către One.com se cere explicit și scoaterea DS.
+  După schimbare, verificare obligatorie: `dig +short DS polistibrick.fr @8.8.8.8` trebuie să fie GOL
+  (apoi, opțional, DNSSEC se reactivează din Cloudflare, cu DS pus la One.com — tab «DS Records»).
+- Zona veche mai are `sel1._domainkey` → CNAME Wix (DKIM vechi, inutil): nu se reproduce.
