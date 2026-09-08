@@ -24,3 +24,19 @@ www.polistibrick.fr                           TXT    "v=spf1 include:_spf.google
 _dmarc.polistibrick.fr                        TXT    "v=DMARC1; p=none; rua=mailto:dmarc_agg@vali.email"
 
 # Site vechi: 49.12.212.73 (Hetzner, Apache/Ubuntu) — NEATINS, rămâne plasă de siguranță.
+
+# COMPLETARE 08.09.2026 — găsite în jurnalul de activitate One.com și confirmate cu dig @ns01.one.com.
+# Fotografia de mai sus le-a RATAT (a întrebat doar apex/www/_dmarc). Primele 3 = Resend (Amazon SES),
+# prin care aplicația de devize trimite ofertele de pe @polistibrick.fr — fără ele, după mutare, Resend
+# ar fi picat verificarea domeniului și e-mailurile cu oferte s-ar fi oprit.
+send.polistibrick.fr                          TXT    "v=spf1 include:amazonses.com ~all"                      (adăugat 19.06.2026)
+send.polistibrick.fr                          MX     10 feedback-smtp.eu-west-1.amazonses.com.               (adăugat 19.06.2026)
+resend._domainkey.polistibrick.fr             TXT    "p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC5OPdvvYFUN/zR99jdUxieT2ie1Wk8zpUHH1GJOf7TemC30BGmD0o/q4VnY1Hlj6GIm2L5bE7cimsXqpC8SeRRo7NkF3o0HVF2dZBe26RnLtgKJbne3dfZAQ4/TPnv2Ig76KP1CZE8N5ZTM0mRDuyRpCG8rIH+KP088p00SMT0OwIDAQAB"  (adăugat 19.06.2026)
+em6259.polistibrick.fr                        CNAME  u45831699.wl200.sendgrid.net.                             (SendGrid, 30.08.2024)
+45831699.polistibrick.fr                      CNAME  sendgrid.net.                                             (SendGrid, 30.08.2024)
+s1._domainkey.polistibrick.fr                 CNAME  s1.domainkey.u45831699.wl200.sendgrid.net.                (SendGrid DKIM, 30.08.2024)
+s2._domainkey.polistibrick.fr                 CNAME  s2.domainkey.u45831699.wl200.sendgrid.net.                (SendGrid DKIM, 30.08.2024)
+sel1._domainkey.polistibrick.fr               CNAME  sel1._domainkey.polistibrick.fr.s012.ascendbywix.com.     (DKIM Wix vechi, 30.08.2024)
+# Verificat că NU există: AAAA, CAA, google._domainkey, mail., devis., crm., app., ftp., webmail.
+# Jurnalul One.com are 52 de intrări; cele 10 vizibile acoperă tot din 30.08.2024 încoace (restul nu se
+# extind prin click din extensie). Intrările din 19.06.2026 vin de la un IP francez (colegul), cu contul bouleanu.lc@gmail.com.
