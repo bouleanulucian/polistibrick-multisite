@@ -187,7 +187,7 @@
         <div class="wm-intro">
 <h1>Polistibrick vs brique : <em>vos chiffres.</em></h1>
           <p>Un calculateur dynamique qui vous montre EXACTEMENT combien vous économisez en énergie, en entretien et en coûts totaux sur 25 ans, pour la maison que vous voulez faire construire. Entrez vos chiffres, le résultat s'affiche en temps réel.</p>
-          <p style="margin-top:14px;font-size:15px;"><strong>Exemple calculé</strong>, à 0,20 €/kWh : une maison de 120 m² en brique (100–180 kWh/m²/an) paie 2 400–4 320 € par an en chauffage et climatisation. La même maison en Polistibrick (25–45 kWh/m²/an) paie 600–1 080 €. Sur 25 ans, au milieu des fourchettes, la différence dépasse 60 000 € sans aucune hausse de prix, et 100 000 € avec la hausse historique de l'énergie d'environ 4 % par an. Voir aussi <a href="../ressources/maison-passive/" style="color:var(--red);">ce qu'est une maison passive et combien elle coûte en France</a>.</p>
+          <p style="margin-top:14px;font-size:15px;"><strong>Exemple calculé</strong>, à 0,29 €/kWh (moyenne française, Eurostat) : une maison de 120 m² en brique (100–180 kWh/m²/an) paie 3 480–6 260 € par an en chauffage et climatisation. La même maison en Polistibrick (25–45 kWh/m²/an) paie 870–1 570 €. Sur 25 ans, au milieu des fourchettes, la différence dépasse 90 000 € sans aucune hausse de prix, et 150 000 € avec la hausse historique de l'énergie d'environ 4 % par an. Voir aussi <a href="../ressources/maison-passive/" style="color:var(--red);">ce qu'est une maison passive et combien elle coûte en France</a>.</p>
         </div>
 
         <div class="comp-grid">
@@ -226,8 +226,8 @@
 
             <div class="form-row">
               <label class="form-label" for="cEnergyPrice">Prix moyen de l'énergie (€/kWh)</label>
-              <input class="form-input" type="number" id="cEnergyPrice" value="0.22" min="0.05" max="0.60" step="0.01">
-              <p style="font-size:11px;color:var(--gray);margin-top:6px;">Utilisez la moyenne de votre pays (FR ~0.25, DE ~0.32, ES ~0.20, RO ~0.18).</p>
+              <input class="form-input" type="number" id="cEnergyPrice" value="0.29" min="0.05" max="0.60" step="0.01">
+              <p style="font-size:11px;color:var(--gray);margin-top:6px;">Moyenne française : 0,29 €/kWh (Eurostat, 2e semestre 2025). Remplacez-la par le tarif de votre contrat.</p>
             </div>
 
             <div class="form-row">
@@ -319,7 +319,7 @@
     <div class="grid grid-2 reveal" style="max-width:980px;margin:0 auto;">
       <div class="card">
         <h4 style="margin-bottom:12px;">Coût de construction</h4>
-        <p style="font-size:14px;line-height:1.6;">Brique : ~1 000 €/m² en standard non conforme RE2020. Polistibrick : ~1 050 €/m² (+5 %) pour une maison passive A+++. Matériaux et main-d'œuvre compris, hors finitions intérieures et extérieures.</p>
+        <p style="font-size:14px;line-height:1.6;">Marché français : 1 914 €/m² en moyenne pour une maison individuelle neuve clé en main (enquête EPTB 2024 du ministère, hors terrain). Nous retenons le même coût de construction pour les deux : en France, le mur Polistibrick revient à 182 €/m² de mur contre 329 €/m² pour la maçonnerie isolée par l'extérieur, donc l'hypothèse est prudente. L'écart calculé ici ne vient que de l'énergie.</p>
       </div>
       <div class="card">
         <h4 style="margin-bottom:12px;">Coût de l'énergie</h4>
@@ -375,11 +375,11 @@
       const climOpt = f.climate.options[f.climate.selectedIndex];
       const brickEnergyKwh = parseFloat(climOpt.dataset.brickEnergy);
       const poliEnergyKwh = parseFloat(climOpt.dataset.poliEnergy);
-      const energyPrice = parseFloat(f.energyPrice.value) || 0.20;
+      const energyPrice = parseFloat(f.energyPrice.value) || 0.29;
       const inflation = parseFloat(f.energyInflation.value) / 100 || 0;
 
-      const brickBuildPerSqm = 1000;
-      const poliBuildPerSqm = 1050;
+      const brickBuildPerSqm = 1914;
+      const poliBuildPerSqm = 1914;
 
       const brickBuild = surface * brickBuildPerSqm;
       const poliBuild = surface * poliBuildPerSqm;
