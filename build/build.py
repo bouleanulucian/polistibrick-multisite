@@ -18,6 +18,10 @@ import subprocess
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))   # build/ — pentru citibil.py și fapte.py
+from citibil import (injecteaza_organization, injecteaza_og_locale, genereaza_llms,
+                     check_fapte, check_organization)
+
 ROOT = Path(__file__).resolve().parent.parent
 COUNTRIES_DIR = ROOT / "countries"
 SHARED_DIR = ROOT / "shared"
@@ -612,6 +616,15 @@ def build_country(code: str):
     generate_sitemap(out_dir, config, code)
     generate_robots(out_dir, config)
     generate_cache_headers(out_dir)
+
+    # 5) citibil de AI (vezi build/citibil.py): un singur Organization pe tot site-ul,
+    #    dateModified din git, og:locale, llms.txt + llms-full.txt GENERATE din pagini,
+    #    și două verificări care opresc build-ul dacă faptele nu concordă.
+    injecteaza_og_locale(out_dir, config)
+    injecteaza_organization(out_dir, config, code, _data_ultimei_modificari, COUNTRIES_DIR)
+    check_organization(out_dir)
+    genereaza_llms(out_dir, config, code)
+    check_fapte(out_dir, code)
 
     pages = sum(1 for _ in out_dir.rglob("*.html"))
     print(f"✓ {code:3} ({config.get('country_name','?')}) → {out_dir.relative_to(ROOT)} ({pages} pages)")

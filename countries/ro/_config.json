@@ -25,10 +25,10 @@
     "email_press": "parteneri@polisti.ro",
     "hours": "L–V 09:00–18:00 EET",
     "social": {
-      "facebook": "",
-      "instagram": "",
-      "linkedin": "",
-      "youtube": "",
+      "facebook": "https://www.facebook.com/polistibrik/",
+      "instagram": "https://www.instagram.com/polistibrick.ro/",
+      "linkedin": "https://www.linkedin.com/company/polistibrick/",
+      "youtube": "https://www.youtube.com/@Polistibrick",
       "tiktok": ""
     }
   },

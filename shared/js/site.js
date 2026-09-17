@@ -162,7 +162,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <span>{{ui.footer_copyright}}</span>
+        <span>{{ui.footer_copyright}}<br><span class="footer-firma">{{company.name_legal}} · {{company.vat}} · {{company.registration}} · {{company.address_street}}, {{company.address_zip}} {{company.address_city}} · {{contact.phone_display}}</span></span>
         <div class="footer-bottom-links">
           <a href="${BASE}legal/mentiuni-legale/">{{ui.footer_mentions}}</a>
           <a href="${BASE}legal/termeni/">{{ui.footer_termeni}}</a>

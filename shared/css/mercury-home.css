@@ -6069,3 +6069,6 @@ h1 em, h2 em, h3 em, h4 em {
      rămâne mai mic intenţionat, ca antetul să nu crească. */
   .nav-drawer-cta .btn { font-size: 13px !important; padding: 11px 18px !important; }
 }
+
+/* rândul cu firma din subsolul primei pagini (17.09.2026) */
+.footer-firma { display:block; margin-top:6px; font-size:11.5px; opacity:.72; line-height:1.5; }
