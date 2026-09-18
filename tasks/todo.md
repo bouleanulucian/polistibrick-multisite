@@ -28,7 +28,7 @@ Spec: `docs/superpowers/specs/2026-09-17-ai-citibil-ro-design.md`
 - [x] Build verde (toate check-urile), 43 blocuri JSON-LD parsabile
 - [x] Testul „10 întrebări": citabile 2 → 13 din 14; Organization complet 1 → 14; dateModified 7 → 14
 - [x] Previzualizare locală: blocul (poziție, stil), subsolul, cardul, llms.txt 200 text/plain, fără erori în consolă
-- [x] Diff citit; nimic publicat (ramură locală, necomisă încă)
+- [x] Diff citit; PUBLICAT 17.09.2026, commit a64c6b8, verificat live (llms.txt 48 modele, blocuri, Organization, ISO)
 
 ## Review — ce s-a adăugat (pentru patron)
 - 2 module de build, 2 scripturi, 1 stil `.raspuns`, 1 rând în subsol, 11 blocuri de text, 2 date, 3 alinieri de cifre, 1 U pe prima pagină
