@@ -329,48 +329,13 @@
       <img src="images/logo.png" alt="Polistibrick" class="logo-img">
     </a>
     <div class="nav-menu" aria-label="Navigation du site">
-      <div class="nav-menu-item">
-        <a href="#" class="nav-menu-link" role="button" aria-haspopup="true" aria-expanded="false" onclick="event.preventDefault(); return false;">Produits <span class="nav-menu-caret">▾</span></a>
-        <div class="nav-menu-dropdown">
-          <a href="produits/polistibrick/">Polistibrick</a>
-          <a href="produits/polistiwall/">Polistiwall</a>
-          <a href="produits/polistisip/">PolistiSIP</a>
-        </div>
-      </div>
-      <div class="nav-menu-item">
-        <a href="#" class="nav-menu-link" role="button" aria-haspopup="true" aria-expanded="false" onclick="event.preventDefault(); return false;">Pour qui <span class="nav-menu-caret">▾</span></a>
-        <div class="nav-menu-dropdown">
-          <a href="pour/constructeurs/">Pour les constructeurs</a>
-          <a href="pour/architectes/">Pour les architectes</a>
-          <a href="pour/investisseurs/">Pour les investisseurs</a>
-          <a href="pour/proprietaires/">Pour les propriétaires</a>
-          <a href="devenir-partenaire/" style="color:var(--red);font-weight:600;">→ Devenez partenaire</a>
-        </div>
-      </div>
-      <div class="nav-menu-item">
-        <a href="#" class="nav-menu-link" role="button" aria-haspopup="true" aria-expanded="false" onclick="event.preventDefault(); return false;">Projets <span class="nav-menu-caret">▾</span></a>
-        <div class="nav-menu-dropdown">
-          <a href="projets/">Tous les projets</a>
-        </div>
-      </div>
-      <div class="nav-menu-item">
-        <a href="#" class="nav-menu-link" role="button" aria-haspopup="true" aria-expanded="false" onclick="event.preventDefault(); return false;">Ressources <span class="nav-menu-caret">▾</span></a>
-        <div class="nav-menu-dropdown">
-          <a href="prix/">Prix</a>
-            <a href="ressources/faq/">Questions fréquentes</a>
-          <a href="economies/">Calculateur d’économies</a>
-        </div>
-      </div>
-      <div class="nav-menu-item">
-        <a href="#" class="nav-menu-link" role="button" aria-haspopup="true" aria-expanded="false" onclick="event.preventDefault(); return false;">À propos <span class="nav-menu-caret">▾</span></a>
-        <div class="nav-menu-dropdown">
-          <a href="a-propos/">L’entreprise</a>
-          <a href="a-propos/brevet/">Le brevet Polistibrick</a>
-          <a href="a-propos/certifications/">Certifications</a>
-          <a href="a-propos/usines/">Nos usines</a>
-          <a href="a-propos/fondateur/">L’équipe</a>
-        </div>
-      </div>
+      <div class="nav-menu-item"><a href="systeme/" class="nav-menu-link">Le système</a></div>
+      <div class="nav-menu-item"><a href="prix/" class="nav-menu-link">Prix</a></div>
+      <div class="nav-menu-item"><a href="chantier/" class="nav-menu-link">Chantier</a></div>
+      <div class="nav-menu-item"><a href="assureur/" class="nav-menu-link">Votre assureur</a></div>
+      <div class="nav-menu-item"><a href="references/" class="nav-menu-link">Références</a></div>
+      <div class="nav-menu-item"><a href="devenir-partenaire/" class="nav-menu-link">Partenaire</a></div>
+      <div class="nav-menu-item"><a href="contact/" class="nav-menu-link">Contact</a></div>
     </div>
     <div class="nav-cta">
       <!-- COUNTRY SELECTOR -->
@@ -413,8 +378,8 @@
         </div>
       </div>
       <!-- /COUNTRY SELECTOR -->
-      <a href="contact/" class="btn btn-ghost">Contact</a>
-      <a href="devis/" class="btn btn-primary nav-cta-devis">Devis gratuit</a>
+      <a href="tel:{{contact.phone_raw}}" class="btn btn-ghost">Appeler</a>
+      <a href="{{devis_app.url}}?pays=FR" class="btn btn-primary nav-cta-devis" rel="noopener">Chiffrer mon plan</a>
       <button class="nav-burger" id="navBurger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navDrawer">
         <span></span><span></span><span></span>
       </button>
@@ -429,60 +394,17 @@
   <button class="nav-drawer-close" id="navDrawerClose" aria-label="Fermer le menu">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
   </button>
-
-  <div class="nav-drawer-group">
-    <button class="nav-drawer-title" aria-expanded="false">Produits<span class="nd-caret">▾</span></button>
-    <div class="nav-acc">
-      <a href="produits/polistibrick/">Polistibrick</a>
-      <a href="produits/polistiwall/">Polistiwall</a>
-      <a href="produits/polistisip/">PolistiSIP</a>
-    </div>
-  </div>
-
-  <a href="prix/" class="nav-drawer-direct">Prix</a>
-
-  <div class="nav-drawer-group">
-    <button class="nav-drawer-title" aria-expanded="false">Pour qui<span class="nd-caret">▾</span></button>
-    <div class="nav-acc">
-      <a href="pour/constructeurs/">Pour les constructeurs</a>
-      <a href="pour/architectes/">Pour les architectes</a>
-      <a href="pour/investisseurs/">Pour les investisseurs</a>
-      <a href="pour/proprietaires/">Pour les propriétaires</a>
-      <a href="devenir-partenaire/" class="partner-link">→ Devenez partenaire</a>
-    </div>
-  </div>
-
-  <div class="nav-drawer-group">
-    <button class="nav-drawer-title" aria-expanded="false">Projets<span class="nd-caret">▾</span></button>
-    <div class="nav-acc">
-      <a href="projets/">Tous les projets</a>
-    </div>
-  </div>
-
-  <div class="nav-drawer-group">
-    <button class="nav-drawer-title" aria-expanded="false">Ressources<span class="nd-caret">▾</span></button>
-    <div class="nav-acc">
-      <a href="ressources/faq/">Questions fréquentes</a>
-      <a href="economies/">Calculateur d’économies</a>
-    </div>
-  </div>
-
-  <div class="nav-drawer-group">
-    <button class="nav-drawer-title" aria-expanded="false">À propos<span class="nd-caret">▾</span></button>
-    <div class="nav-acc">
-      <a href="a-propos/">L’entreprise</a>
-      <a href="a-propos/brevet/">Le brevet Polistibrick</a>
-      <a href="a-propos/certifications/">Certifications</a>
-      <a href="a-propos/usines/">Nos usines</a>
-      <a href="a-propos/fondateur/">L’équipe</a>
-    </div>
-  </div>
-
+  <a href="systeme/" class="nav-drawer-direct" style="display:block;padding:13px 12px;font-size:15px;font-weight:700;color:#000;text-decoration:none;border-radius:10px;border-bottom:1px solid rgba(15,15,15,0.08)">Le système</a>
+  <a href="prix/" class="nav-drawer-direct" style="display:block;padding:13px 12px;font-size:15px;font-weight:700;color:#000;text-decoration:none;border-radius:10px;border-bottom:1px solid rgba(15,15,15,0.08)">Prix</a>
+  <a href="chantier/" class="nav-drawer-direct" style="display:block;padding:13px 12px;font-size:15px;font-weight:700;color:#000;text-decoration:none;border-radius:10px;border-bottom:1px solid rgba(15,15,15,0.08)">Chantier</a>
+  <a href="assureur/" class="nav-drawer-direct" style="display:block;padding:13px 12px;font-size:15px;font-weight:700;color:#000;text-decoration:none;border-radius:10px;border-bottom:1px solid rgba(15,15,15,0.08)">Votre assureur</a>
+  <a href="references/" class="nav-drawer-direct" style="display:block;padding:13px 12px;font-size:15px;font-weight:700;color:#000;text-decoration:none;border-radius:10px;border-bottom:1px solid rgba(15,15,15,0.08)">Références</a>
+  <a href="devenir-partenaire/" class="nav-drawer-direct" style="display:block;padding:13px 12px;font-size:15px;font-weight:700;color:#000;text-decoration:none;border-radius:10px;border-bottom:1px solid rgba(15,15,15,0.08)">Partenaire</a>
+  <a href="contact/" class="nav-drawer-direct" style="display:block;padding:13px 12px;font-size:15px;font-weight:700;color:#000;text-decoration:none;border-radius:10px;border-bottom:1px solid rgba(15,15,15,0.08)">Contact</a>
   <div class="nav-drawer-cta">
-    <a href="contact/" class="btn btn-ghost">Contact</a>
-    <a href="devis/" class="btn btn-primary">Demander un devis</a>
+    <a href="tel:{{contact.phone_raw}}" class="btn btn-ghost">Appeler {{contact.phone_display}}</a>
+    <a href="{{devis_app.url}}?pays=FR" class="btn btn-primary" rel="noopener">Chiffrer mon plan</a>
   </div>
-
 </aside>
 
 <!-- MENU style ZURU : barre minimale + ☰ à droite, panneau déroulant avec accordéon -->
@@ -1454,9 +1376,8 @@ document.addEventListener('DOMContentLoaded', function () {
         <span class="trust-item"><span class="trust-icon">ISO</span>14001</span>
         <span class="trust-item"><span class="trust-icon">ISO</span>45001</span>
         <span class="trust-item"><span class="trust-icon">EP</span>Brevet européen EP 4372168 B1</span>
-        <span class="trust-item"><span class="trust-icon">AT</span>Avis technique</span>
-        <span class="trust-item"><span class="trust-icon">CE</span>Norme européenne</span>
-        <span class="trust-item"><span class="trust-icon">A+</span>Maison passive</span>
+                <span class="trust-item"><span class="trust-icon">CE</span>Norme européenne</span>
+        <span class="trust-item"><span class="trust-icon">U</span>0,10–0,14 W/m²K</span>
       </div>
     </div>
     <div class="footer-grid">
@@ -1464,54 +1385,51 @@ document.addEventListener('DOMContentLoaded', function () {
         <a href="./" class="logo" aria-label="Polistibrick">
           <img src="images/logo.png" alt="Polistibrick" class="logo-img">
         </a>
-        <p class="footer-tagline">Le système ICF qui construit des maisons plus performantes, plus rapides et plus durables. Fabriqué dans l'UE.</p>
+        <p class="footer-tagline">Bloc coffrant isolant à parement fibre-ciment, livré en kit sur votre plan. Pour les entreprises qui posent avec leur équipe.</p>
       </div>
       <div class="footer-col">
-        <h4>Produits</h4>
+        <h4>Le système</h4>
         <ul>
+          <li><a href="systeme/">Le bloc coffrant isolant</a></li>
           <li><a href="produits/polistibrick/">Polistibrick</a></li>
           <li><a href="produits/polistiwall/">Polistiwall</a></li>
           <li><a href="produits/polistisip/">PolistiSIP</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Pour qui</h4>
+        <h4>Pour votre entreprise</h4>
         <ul>
-          <li><a href="pour/constructeurs/">Pour les constructeurs</a></li>
-          <li><a href="pour/architectes/">Pour les architectes</a></li>
-          <li><a href="pour/investisseurs/">Pour les investisseurs</a></li>
-          <li><a href="pour/proprietaires/">Pour les propriétaires</a></li>
-          <li><a href="devenir-partenaire/">→ Devenez partenaire</a></li>
+          <li><a href="prix/">Prix</a></li>
+          <li><a href="chantier/">Chantier</a></li>
+          <li><a href="assureur/">Votre assureur</a></li>
+          <li><a href="references/">Références</a></li>
+          <li><a href="devenir-partenaire/">Partenaire</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Ressources</h4>
         <ul>
-          <li><a href="prix/">Prix</a></li>
-          <li><a href="projets/">Projets</a></li>
-          <li><a href="economies/">Calculateur d’économies</a></li>
+          <li><a href="ressources/">Guides techniques</a></li>
           <li><a href="ressources/faq/">Questions fréquentes</a></li>
-          <li><a href="ressources/">Guides de construction</a></li>
-          <li><a href="montage/">Guide de montage</a></li>
-          <li><a href="devis/">Demander un devis</a></li>
+          <li><a href="projets/">48 maisons chiffrées</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Entreprise</h4>
         <ul>
-          <li><a href="a-propos/">À propos</a></li>
-          <li><a href="a-propos/brevet/">Le brevet Polistibrick</a></li>
+          <li><a href="a-propos/">Qui fabrique</a></li>
+          <li><a href="a-propos/brevet/">Le brevet</a></li>
           <li><a href="a-propos/certifications/">Certifications</a></li>
-          <li><a href="a-propos/usines/">Nos usines</a></li>
+          <li><a href="a-propos/usines/">Les usines</a></li>
           <li><a href="contact/">Contact</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-mediation" style="margin:20px 0 4px;font-size:11.5px;line-height:1.7;color:rgba(255,255,255,.62);max-width:820px;">
-            Médiation de la consommation : conformément aux articles L616-1 et R616-1 du Code de la consommation, l'entité de médiation désignée est <strong style="font-weight:600;color:#fff;">CM2C</strong> (Centre de la Médiation de la Consommation de Conciliateurs de Justice), 49 rue de Ponthieu, 75008 Paris — <a href="https://www.cm2c.net" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline;">cm2c.net</a>. En cas de litige non résolu avec notre service client, vous pouvez y déposer votre réclamation. <a href="legal/mentions-legales/" style="color:#fff;text-decoration:underline;">Détails</a>
+            Médiation de la consommation : conformément aux articles L616-1 et R616-1 du Code de la consommation, l'entité de médiation désignée est <strong style="font-weight:600;color:#fff;">CM2C</strong> (Centre de la Médiation de la Consommation de Conciliateurs de Justice), 49 rue de Ponthieu, 75008 Paris — <a href="https://www.cm2c.net" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline;">cm2c.net</a>.
           </div>
     <div class="footer-bottom">
-      <div>© 2026 Polistibrick. Tous droits réservés. Système breveté.</div>
+      <div>© 2026 Polistibrick. Tous droits réservés. Système breveté.<br><span class="footer-firma">{{company.name_legal}} · {{company.vat}} · {{company.registration}} · {{company.address_street}}, {{company.address_zip}} {{company.address_city}} · {{contact.phone_display}}</span></div>
       <div class="footer-legal-links">
         <a href="legal/mentions-legales/">Mentions légales</a> ·
         <a href="legal/conditions/">Conditions</a> ·
