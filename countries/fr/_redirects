@@ -1,23 +1,43 @@
 # Adresele site-ului VECHI polistibrick.fr (WordPress-ul firmei) → paginile noi.
 # 301 = permanent: Google mută istoricul vechilor pagini pe cele noi, vizitatorii
 # cu linkuri vechi nu cad în 404. Inventarul vechi complet: 18 adrese (sitemap, 02.09.2026).
-/architecte/ /pour/architectes/ 301
-/architecte /pour/architectes/ 301
-/structuriste/ /pour/architectes/ 301
-/structuriste /pour/architectes/ 301
-/installations/ /montage/ 301
-/installations /montage/ 301
+/architecte/ /assureur/ 301
+/architecte /assureur/ 301
+/structuriste/ /assureur/ 301
+/structuriste /assureur/ 301
+/installations/ /chantier/ 301
+/installations /chantier/ 301
 /conditions-generales/ /legal/conditions/ 301
 /conditions-generales /legal/conditions/ 301
 /qui-sommes-nous/ /a-propos/ 301
 /qui-sommes-nous /a-propos/ 301
-/la-presse/ /a-propos/presse/ 301
-/la-presse /a-propos/presse/ 301
+/la-presse/ /a-propos/ 301
+/la-presse /a-propos/ 301
 /produits/mur/ /produits/polistibrick/ 301
 /produits/mur /produits/polistibrick/ 301
 /produits/plancher/ /produits/polistibrick/ 301
 /produits/plancher /produits/polistibrick/ 301
 /produits/toit/ /produits/toit-tbk-sip250/ 301
 /produits/toit /produits/toit-tbk-sip250/ 301
-# articolele de presă vechi (Batimat, Madrid, Imperiul Leilor…) există acum
-# la adresele lor originale — nu mai e nevoie de redirect.
+
+# Refacerea B2B din 21.09.2026 — vechile adrese ale site-ului tradus din RO → paginile pentru constructori
+/montage/ /chantier/ 301
+/pour/proprietaires/ /vous-faites-construire/ 301
+/pour/constructeurs/ / 301
+/pour/architectes/ /assureur/ 301
+/pour/investisseurs/ /devenir-partenaire/ 301
+/economies/ /prix/ 301
+/a-propos/presse/ /a-propos/ 301
+/polistibrick-conquiert-madrid-le-futur-de-la-construction-est-arrive/ /a-propos/ 301
+/polistibrick-innovation-et-durabilite-a-paris-batimat-2025/ /a-propos/ 301
+/polistibrick-innovation-et-efficacite-au-ideal-home-show-irlande-edition-2025/ /a-propos/ 301
+/polistibrick-participation-au-construct-ambient-expo-2024-le-debut-dune-vision-constructive/ /a-propos/ 301
+/polistibrick-presente-a-imperiul-leilor-la-technologie-roumaine-primee-qui-redefinit-la-construction-durable/ /a-propos/ 301
+/polistibrick-validation-et-innovation-au-construct-ambient-expo-edition-2025/ /a-propos/ 301
+/ressources/bloc-coffrant-decennale-avis-technique/ /assureur/ 301
+/ressources/coffrage-isolant/ /ressources/bloc-coffrant-isolant/ 301
+/ressources/polistibrick-vs-icf-classique/ /ressources/polistibrick-vs-bloc-coffrant-classique/ 301
+/ressources/combien-coute-une-maison/ /ressources/prix-bloc-coffrant-isolant/ 301
+/ressources/maison-passive/ /ressources/re2020/ 301
+/ressources/beton-cellulaire-ou-brique/ /ressources/bloc-coffrant-isolant/ 301
+/ressources/maison-polystyrene-avis/ /ressources/bloc-coffrant-isolant/ 301
