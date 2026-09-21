@@ -306,9 +306,9 @@
 
         <!-- RANGÉE DE DRAPEAUX / SÉLECTEUR -->
         <div class="country-flags" role="tablist" aria-label="Sélectionnez le pays">
+          <button class="country-flag-btn" data-country="FR" role="tab"><span class="country-flag-emoji">🇫🇷</span><span>France</span></button>
           <button class="country-flag-btn" data-country="RO" role="tab"><span class="country-flag-emoji">🇷🇴</span><span>Roumanie</span></button>
           <button class="country-flag-btn" data-country="ES" role="tab"><span class="country-flag-emoji">🇪🇸</span><span>Espagne</span></button>
-          <button class="country-flag-btn" data-country="FR" role="tab"><span class="country-flag-emoji">🇫🇷</span><span>France</span></button>
           <button class="country-flag-btn" data-country="BE" role="tab"><span class="country-flag-emoji">🇧🇪</span><span>Belgique</span></button>
           <button class="country-flag-btn" data-country="IT" role="tab"><span class="country-flag-emoji">🇮🇹</span><span>Italie</span></button>
           <button class="country-flag-btn" data-country="AT" role="tab"><span class="country-flag-emoji">🇦🇹</span><span>Autriche</span></button>
@@ -438,7 +438,7 @@
   const COUNTRIES = {
     RO: { flag: '🇷🇴', name: 'Roumanie', city: 'Bucarest', phone: '+40 31 630 81 15', phoneRaw: '+40316308115', email: null, address: 'Prelungirea Ghencea 281,<br>sector 6, București', site: 'polisti.ro', langs: 'RO · EN', badge: 'Siège RO' },
     ES: { flag: '🇪🇸', name: 'Espagne', city: 'Valence', phone: '+34 642 777 216', phoneRaw: '+34642777216', email: null, address: 'Pol. 24, 106,<br>Santa Eulalia del Rio', site: 'polistibrick.es', langs: 'ES · EN', badge: 'Siège ES' },
-    FR: { flag: '🇫🇷', name: 'France', city: 'Croissy-sur-Seine', phone: '+33 1 61 30 40 09', phoneRaw: '+33161304009', email: null, address: 'Croissy-sur-Seine (Yvelines),<br>Île-de-France', site: 'polistibrick.fr', langs: 'FR · EN', badge: 'Siège FR' },
+    FR: { flag: '🇫🇷', name: 'France', city: 'Croissy-sur-Seine', phone: '+33 1 61 30 40 09', phoneRaw: '+33161304009', email: null, address: '4 Rue Hans List,<br>78290 Croissy-sur-Seine', site: 'polistibrick.fr', langs: 'FR · EN', badge: 'Siège FR' },
     BE: { flag: '🇧🇪', name: 'Belgique', city: 'Lessines', phone: '+32 471 693 531', phoneRaw: '+32471693531', email: null, address: 'Profond Chemin 2,<br>7860 Lessines', site: 'polistibrick.be', langs: 'FR · NL · EN', badge: 'Siège BE' },
     IT: { flag: '🇮🇹', name: 'Italie', city: "Città Sant'Angelo", phone: '+39 328 164 8085', phoneRaw: '+393281648085', email: null, address: "Città Sant'Angelo (PE),<br>Via Magliano del Gioco 16", site: 'polistibrick.it', langs: 'IT · EN', badge: 'Siège IT' },
     AT: { flag: '🇦🇹', name: 'Autriche', city: '—', phone: null, phoneRaw: null, email: null, address: 'Contact via le formulaire en ligne<br>ou via polistibrick.at', site: 'polistibrick.at', langs: 'DE · EN', badge: 'En ligne' },
@@ -529,10 +529,8 @@
       }
     });
   }
-  runContactGeo();
-  window.addEventListener('pb-cookie-consent', (e) => {
-    if (e.detail && e.detail.level === 'accepted') runContactGeo();
-  });
+  // FR : le site est français, la France reste sélectionnée. Pas de détection par IP
+  // (elle basculait sur le pays du visiteur et marquait la Roumanie d'une étoile).
 
   // === Gestion des pièces jointes ===
   const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10 Mo
