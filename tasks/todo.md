@@ -56,3 +56,10 @@ Spec: `docs/superpowers/specs/2026-09-21-site-fr-b2b-design.md` · Plan: `docs/s
 ## Review
 - Nepublicat: la «publică» → merge `site-fr-b2b` în `main`, push (publică doar ro, neschimbat), apoi `gh workflow run cloudflare-pages.yml --ref main -f country=fr`.
 - Rămân la patron: condițiile de partener FR (propunere PDG), prețurile din `/projets/` vs grila `/prix/`, certificatul Passivhaus / ETE când există.
+
+## Validat de patron, 21.09.2026 seara — «bun, gata, asta așa rămâne»
+- Meniu: Le système · Produits ▸ (3 fișe) · Références · Le brevet · Certifications · Les usines · Partenaire · Prix · Chantier · Votre assureur · Questions fréquentes · Le fondateur · Contact
+- Subsol: 4 coloane complete (+ Toit TBK, Chiffrer mon plan, Vous faites construire ?, Le fondateur)
+- Acasă: cardurile Maçonnerie/ITE și bilanțul în vocea firmei; «5 avantages premium, directement de l'usine»; carusel 6,5 s; «Deux usines en Europe. Livré sur chantier.»; adresa 4 Rue Hans List; buton Contactez-nous
+- Contact: Franța prima, fără detecție IP · /systeme/ și /prix/ fără dubluri · /references/ video portret
+- Deschis: /chantier/ (cifrele patronului) · publicarea (la comanda lui)
