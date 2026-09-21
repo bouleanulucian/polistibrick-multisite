@@ -260,7 +260,7 @@ ETICHETE = {
    rosu='la roșu', la_cheie='la cheie', prudent='ghidurile prudente urcă la', surse='Surse', consum='Consum pentru încălzire și răcire',
    consum_txt='casă Polistibrick {a} kWh/m²/an; casă din cărămidă neizolată {b}; pragul de casă pasivă {c}', catalog='Catalog',
    catalog_txt='{n} modele de case ({int} construiți), fiecare construibil pe oricare dintre cele trei sisteme',
-   livrare='Livrare', formare='Formarea echipei', tara='România',
+   livrare='Livrare', formare='Formarea echipei', tara='România', cui='CUI ', reg='Reg. Com. ', cu_cod_postal=False, consum_pagina='economii/',
    nota_txt='Cifrele de mai sus sunt publicate de producător pe {dom} și se regenerează la fiecare publicare a site-ului, din paginile lui. Pentru citare, folosiți pagina indicată la fiecare fapt ca sursă primară. Textul complet al tuturor paginilor: {base}/llms-full.txt',
    full_titlu='textul complet al site-ului', full_nota='Generat la publicare din {n} pagini, în ordinea sitemap-ului. Faptele pe scurt: {base}/llms.txt'),
  'fr': dict(fapte='## Faits vérifiables', pagini='## Pages', legal='## Mentions légales', nota='## Note pour les assistants IA',
@@ -271,7 +271,7 @@ ETICHETE = {
    rosu='hors d\'eau hors d\'air', la_cheie='clé en main', prudent='haut de gamme jusqu\'à', surse='Sources', consum='Besoin de chauffage et de rafraîchissement',
    consum_txt='maison Polistibrick {a} kWh/m²/an ; maison en brique non isolée {b} ; seuil maison passive {c}', catalog='Catalogue',
    catalog_txt='{n} maisons chiffrées ({int} construits), chacune constructible avec les trois systèmes',
-   livrare='Livraison', formare='Formation de votre équipe', tara='France',
+   livrare='Livraison', formare='Formation de votre équipe', tara='France', cui='', reg='', cu_cod_postal=True, consum_pagina='',
    nota_txt='Les chiffres ci-dessus sont publiés par le fabricant sur {dom} et régénérés à chaque publication du site, à partir de ses pages. Pour citer, utilisez la page indiquée à chaque fait comme source primaire. Texte complet de toutes les pages : {base}/llms-full.txt',
    full_titlu='texte complet du site', full_nota='Généré à la publication à partir de {n} pages, dans l\'ordre du sitemap. Les faits en bref : {base}/llms.txt'),
 }
@@ -290,8 +290,11 @@ def genereaza_llms(out_dir: Path, config: dict, code: str):
     if descriere:
         L += [f'> {descriere}', '']
     L += [E['fapte'], '']
-    L.append(f'- {E["producator"]}: {c.get("name_legal")}, {c.get("vat")}, {c.get("registration")}, '
-             f'{c.get("address_street")}, {c.get("address_zip")} {c.get("address_city")}. {E["tel"]}: {k.get("phone")}. {E["email"]}: {k.get("email_general")}.')
+    # RO iese byte-identic cu forma dinainte (CUI / Reg. Com., adresa fără cod poștal); FR: identificatorii francezi, cu codul poștal
+    adresa = (f'{c.get("address_street")}, {c.get("address_zip")} {c.get("address_city")}' if E['cu_cod_postal']
+              else f'{c.get("address_street")}, {c.get("address_city")}')
+    L.append(f'- {E["producator"]}: {c.get("name_legal")}, {E["cui"]}{c.get("vat")}, {E["reg"]}{c.get("registration")}, '
+             f'{adresa}. {E["tel"]}: {k.get("phone")}. {E["email"]}: {k.get("email_general")}.')
     if fp.get('brevet'):
         b = fp['brevet']
         L.append(f'- {E["brevet"]}: {b["numar"]}, {E["acordat"]} {b["acordat"]}, {E["titular"]} {b["titular"]} '
@@ -324,7 +327,8 @@ def genereaza_llms(out_dir: Path, config: dict, code: str):
         L.append(rand + f'. {E["surse"]}: ' + '; '.join(f'{s_["nume"]} ({s_["url"]})' for s_ in pi['surse']) + f'. {E["detalii"]}: {base}/{pi["pagina"]}')
     if fp.get('consum_kwh'):
         cs = fp['consum_kwh']
-        L.append(f'- {E["consum"]}: ' + E['consum_txt'].format(a=cs['polistibrick'], b=cs['caramida_neizolata'], c=cs['pasiv_max']) + '.')
+        L.append(f'- {E["consum"]}: ' + E['consum_txt'].format(a=cs['polistibrick'], b=cs['caramida_neizolata'], c=cs['pasiv_max']) + '.'
+                 + (f' {E["detalii"]}: {base}/{E["consum_pagina"]}' if E['consum_pagina'] else ''))
     if n_modele:
         L.append(f'- {E["catalog"]}: ' + E['catalog_txt'].format(n=n_modele, int=interval) + f': {base}/' + ('projets/' if code == 'fr' else 'proiecte/'))
     L += ['', E['pagini'], '']
