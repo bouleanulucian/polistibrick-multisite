@@ -52,7 +52,8 @@ def main():
     for f in sorted(B.rglob('*.html')):
         h = f.read_text(encoding='utf-8'); t = text(h)
         for w in INTERZISE:
-            n = t.count(w)
+            # fără majuscule/minuscule («Devis gratuit» = «devis gratuit»), dar pe cuvânt întreg («ICF» nu prinde «spécificf»)
+            n = len(re.findall(r'(?<!\w)' + re.escape(w) + r'(?!\w)', t, flags=re.I))
             if n:
                 erori.append(f'{f.relative_to(B).as_posix():62} «{w}» ×{n}')
         if '{{' in h:
