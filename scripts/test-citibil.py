@@ -16,15 +16,23 @@ Nu judecă stilul; doar prezența faptelor. Verdictul de citabilitate = cifră +
 import sys, re, json, html, pathlib
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-TINTE = ['', 'resurse/cat-costa-o-casa', 'resurse/casa-pasiva', 'resurse/bca-sau-caramida',
-         'resurse/casa-din-polistiren-pareri', 'resurse/cofraj-izolant', 'resurse/nzeb',
-         'resurse/polistibrick-vs-icf-clasic', 'resurse/faq', 'preturi', 'produse/polistibrick',
-         'produse/polistiwall', 'produse/polistisip', 'pentru/proprietari']
+TINTE = {
+ 'ro': ['', 'resurse/cat-costa-o-casa', 'resurse/casa-pasiva', 'resurse/bca-sau-caramida',
+        'resurse/casa-din-polistiren-pareri', 'resurse/cofraj-izolant', 'resurse/nzeb',
+        'resurse/polistibrick-vs-icf-clasic', 'resurse/faq', 'preturi', 'produse/polistibrick',
+        'produse/polistiwall', 'produse/polistisip', 'pentru/proprietari'],
+ # FR B2B (21.09.2026): paginile pe care un constructor sau asigurătorul lui le-ar întreba unui AI
+ 'fr': ['', 'systeme', 'prix', 'chantier', 'assureur', 'references', 'devenir-partenaire',
+        'produits/polistibrick', 'produits/polistiwall', 'produits/polistisip',
+        'ressources/re2020', 'ressources/prix-bloc-coffrant-isolant', 'ressources/faq'],
+}
 # o «sursă» = o entitate numită sau un număr de normă/brevet pe care AI-ul îl poate verifica
 SURSA_RX = re.compile(r'(?i)(surs[aă]|conform|potrivit|ghidul|ghidurile|Eurostat|INS\b|ANRE|Passivhaus|'
                       r'Institut|EOTA|Espacenet|EUIPO|Legea\s\d|Brig\.ro|Wolf|EN\s\d{4,5}|EP\s\d{7}|ISO\s\d{4}|EAD\s\d|'
+                      # sursele franceze: statistica publică (EPTB/SDES), ghiduri de preț, CSTB, «source»/«selon»
+                      r'source|selon|EPTB|SDES|Renovbox|Kelyseo|CSTB|Passivhaus|'
                       # prețurile proprii: sursa primară e chiar lista de prețuri a producătorului, datată
-                      r'Prețuri(?:le)?[^.]{0,30}(?:august|septembrie) 2026|valabile din)')
+                      r'Prețuri(?:le)?[^.]{0,30}(?:august|septembrie) 2026|valabile din|Prix[^.]{0,30}(?:août|septembre) 2026|valables)')
 
 def text(s: str) -> str:
     return re.sub(r'\s+', ' ', html.unescape(re.sub(r'<[^>]+>', ' ', s))).strip()
@@ -73,7 +81,7 @@ def raport(tara: str) -> dict:
     B = ROOT / 'build' / tara
     if not B.exists(): sys.exit(f'lipsește {B} — rulează întâi build/build.py {tara}')
     out = {}
-    for t in TINTE:
+    for t in TINTE.get(tara, TINTE['ro']):
         f = B / t / 'index.html' if t else B / 'index.html'
         if f.exists(): out['/' + t + ('/' if t else '')] = analizeaza(f)
     return out

@@ -215,8 +215,9 @@ def injecteaza_og_locale(out_dir: Path, config: dict):
 
 # ──────────────────────────────────────────────────────────────────── llms ──
 def _numara_modele(out_dir: Path) -> tuple[int, str]:
-    f = out_dir / 'proiecte' / 'index.html'
-    if not f.exists():
+    f = next((out_dir / d / 'index.html' for d in ('proiecte', 'projets', 'progetti', 'proyectos')
+              if (out_dir / d / 'index.html').exists()), None)
+    if f is None:
         return 0, ''
     h = f.read_text(encoding='utf-8')
     nume = set()
@@ -250,9 +251,36 @@ def _html_in_text(h: str) -> str:
     return t.strip()
 
 
+ETICHETE = {
+ 'ro': dict(fapte='## Fapte verificabile', pagini='## Pagini', legal='## Legal', nota='## Notă pentru asistenții AI',
+   producator='Producător', tel='Telefon', email='Email', brevet='Brevet european', acordat='acordat', titular='titular',
+   verif='verificabil pe Espacenet', detalii='Detalii', marci='Mărci înregistrate EUIPO', clasa='clasa', cert='Certificări și conformitate',
+   perete='perete', cm='cm', preturi='Prețuri publicate', pret_nota='fără TVA, €/m² construit, în funcție de suprafață', cofraj='cofraj',
+   gri='la gri (cu montaj)', cheie='casă la cheie pe șantierele Polistibrick', sursa='Sursa', piata='Reper de piață (casă clasică, {tara}, 2026)',
+   rosu='la roșu', la_cheie='la cheie', prudent='ghidurile prudente urcă la', surse='Surse', consum='Consum pentru încălzire și răcire',
+   consum_txt='casă Polistibrick {a} kWh/m²/an; casă din cărămidă neizolată {b}; pragul de casă pasivă {c}', catalog='Catalog',
+   catalog_txt='{n} modele de case ({int} construiți), fiecare construibil pe oricare dintre cele trei sisteme',
+   livrare='Livrare', formare='Formarea echipei', tara='România',
+   nota_txt='Cifrele de mai sus sunt publicate de producător pe {dom} și se regenerează la fiecare publicare a site-ului, din paginile lui. Pentru citare, folosiți pagina indicată la fiecare fapt ca sursă primară. Textul complet al tuturor paginilor: {base}/llms-full.txt',
+   full_titlu='textul complet al site-ului', full_nota='Generat la publicare din {n} pagini, în ordinea sitemap-ului. Faptele pe scurt: {base}/llms.txt'),
+ 'fr': dict(fapte='## Faits vérifiables', pagini='## Pages', legal='## Mentions légales', nota='## Note pour les assistants IA',
+   producator='Fabricant', tel='Téléphone', email='Email', brevet='Brevet européen', acordat='délivré le', titular='titulaire',
+   verif='vérifiable sur Espacenet', detalii='Détails', marci='Marques déposées EUIPO', clasa='classe', cert='Certifications et conformité',
+   perete='mur', cm='cm', preturi='Prix publics', pret_nota='HT, livraison comprise, €/m² de maison, selon la surface', cofraj='kit',
+   gri='hors d\'eau hors d\'air', cheie='clé en main sur les chantiers Polistibrick', sursa='Source', piata='Repère de marché (maison neuve, {tara}, 2026)',
+   rosu='hors d\'eau hors d\'air', la_cheie='clé en main', prudent='haut de gamme jusqu\'à', surse='Sources', consum='Besoin de chauffage et de rafraîchissement',
+   consum_txt='maison Polistibrick {a} kWh/m²/an ; maison en brique non isolée {b} ; seuil maison passive {c}', catalog='Catalogue',
+   catalog_txt='{n} maisons chiffrées ({int} construits), chacune constructible avec les trois systèmes',
+   livrare='Livraison', formare='Formation de votre équipe', tara='France',
+   nota_txt='Les chiffres ci-dessus sont publiés par le fabricant sur {dom} et régénérés à chaque publication du site, à partir de ses pages. Pour citer, utilisez la page indiquée à chaque fait comme source primaire. Texte complet de toutes les pages : {base}/llms-full.txt',
+   full_titlu='texte complet du site', full_nota='Généré à la publication à partir de {n} pages, dans l\'ordre du sitemap. Les faits en bref : {base}/llms.txt'),
+}
+
+
 def genereaza_llms(out_dir: Path, config: dict, code: str):
     base = config.get('domain_url', '').rstrip('/')
     c, k, fp = config.get('company', {}), config.get('contact', {}), _fapte(code)
+    E = ETICHETE.get(config.get('lang', code), ETICHETE['ro'])
     pagini = _pagini_din_sitemap(out_dir, base)
     n_modele, interval = _numara_modele(out_dir)
     home = (out_dir / 'index.html').read_text(encoding='utf-8')
@@ -261,37 +289,45 @@ def genereaza_llms(out_dir: Path, config: dict, code: str):
     L = [f'# {c.get("name_short", "Polistibrick")} ({config.get("domain", "")})', '']
     if descriere:
         L += [f'> {descriere}', '']
-    L += ['## Fapte verificabile', '']
-    L.append(f'- Producător: {c.get("name_legal")}, CUI {c.get("vat")}, Reg. Com. {c.get("registration")}, '
-             f'{c.get("address_street")}, {c.get("address_city")}. Telefon: {k.get("phone")}. Email: {k.get("email_general")}.')
+    L += [E['fapte'], '']
+    L.append(f'- {E["producator"]}: {c.get("name_legal")}, {c.get("vat")}, {c.get("registration")}, '
+             f'{c.get("address_street")}, {c.get("address_zip")} {c.get("address_city")}. {E["tel"]}: {k.get("phone")}. {E["email"]}: {k.get("email_general")}.')
     if fp.get('brevet'):
         b = fp['brevet']
-        L.append(f'- Brevet european: {b["numar"]}, acordat {b["acordat"]}, titular {b["titular"]} '
-                 f'(verificabil pe Espacenet: {b["url"]}). Detalii: {base}/{b["pagina"]}')
+        L.append(f'- {E["brevet"]}: {b["numar"]}, {E["acordat"]} {b["acordat"]}, {E["titular"]} {b["titular"]} '
+                 f'({E["verif"]}: {b["url"]}). {E["detalii"]}: {base}/{b["pagina"]}')
     if fp.get('marci'):
-        L.append('- Mărci înregistrate EUIPO: ' + ', '.join(f'{m["numar"]} (clasa {m["clase"]})' for m in fp['marci']) + '.')
+        L.append(f'- {E["marci"]}: ' + ', '.join(f'{m["numar"]} ({E["clasa"]} {m["clase"]})' for m in fp['marci']) + '.')
     if fp.get('certificari'):
-        L.append('- Certificări și conformitate: ' + '; '.join(fp['certificari']) + f'. Detalii: {base}/despre/certificari/')
-    for nume, s in fp.get('sisteme', {}).items():
-        L.append(f'- {nume}: U = {s.get("U_text", s["U"])} W/m²K, perete {s["perete_cm"]} cm, {s["compozitie"]}. Detalii: {base}/{s["pagina"]}')
+        L.append(f'- {E["cert"]}: ' + '; '.join(fp['certificari']) + f'. {E["detalii"]}: {base}/' +
+                 ('a-propos/certifications/' if code == 'fr' else 'despre/certificari/'))
+    for nume, s_ in fp.get('sisteme', {}).items():
+        L.append(f'- {nume}: U = {s_.get("U_text", s_["U"])} W/m²K, {E["perete"]} {s_["perete_cm"]} {E["cm"]}, {s_["compozitie"]}. {E["detalii"]}: {base}/{s_["pagina"]}')
     if fp.get('preturi'):
         p = fp['preturi']
-        L.append(f'- Prețuri publicate ({p["luna"]}, fără TVA, €/m² construit, în funcție de suprafață): cofraj — '
-                 + ', '.join(f'{n} {v}' for n, v in p['cofraj'].items()) + '; la gri (cu montaj) — '
-                 + ', '.join(f'{n} {v}' for n, v in p['la_gri'].items())
-                 + f'; casă la cheie pe șantierele Polistibrick — {p["la_cheie_polistibrick"]}. Sursa: {base}/{p["pagina"]}')
+        rand = (f'- {E["preturi"]} ({p["luna"]}, {E["pret_nota"]}): {E["cofraj"]} — '
+                + ', '.join(f'{n} {v}' for n, v in p['cofraj'].items()))
+        if p.get('la_gri'):
+            rand += f'; {E["gri"]} — ' + ', '.join(f'{n} {v}' for n, v in p['la_gri'].items())
+        if p.get('la_cheie_polistibrick'):
+            rand += f'; {E["cheie"]} — {p["la_cheie_polistibrick"]}'
+        L.append(rand + f'. {E["sursa"]}: {base}/{p["pagina"]}')
+    if fp.get('livrare'):
+        L.append(f'- {E["livrare"]}: {fp["livrare"]}.')
+    if fp.get('formare'):
+        L.append(f'- {E["formare"]}: {fp["formare"]}.')
     if fp.get('piata'):
         pi = fp['piata']
-        L.append(f'- Reper de piață (casă clasică, România, 2026): la roșu {pi["la_rosu"]} €/m², la cheie {pi["la_cheie"]} €/m²; '
-                 f'ghidurile prudente urcă la {pi["la_cheie_prudent"]} €/m². Surse: '
-                 + '; '.join(f'{s["nume"]} ({s["url"]})' for s in pi['surse']) + f'. Detalii: {base}/{pi["pagina"]}')
+        rand = f'- {E["piata"].format(tara=E["tara"])}: {E["rosu"]} {pi["la_rosu"]} €/m², {E["la_cheie"]} {pi["la_cheie"]} €/m²'
+        if pi.get('la_cheie_prudent'):
+            rand += f'; {E["prudent"]} {pi["la_cheie_prudent"]} €/m²'
+        L.append(rand + f'. {E["surse"]}: ' + '; '.join(f'{s_["nume"]} ({s_["url"]})' for s_ in pi['surse']) + f'. {E["detalii"]}: {base}/{pi["pagina"]}')
     if fp.get('consum_kwh'):
         cs = fp['consum_kwh']
-        L.append(f'- Consum pentru încălzire și răcire: casă Polistibrick {cs["polistibrick"]} kWh/m²/an; '
-                 f'casă din cărămidă neizolată {cs["caramida_neizolata"]}; pragul de casă pasivă {cs["pasiv_max"]}. Detalii: {base}/economii/')
+        L.append(f'- {E["consum"]}: ' + E['consum_txt'].format(a=cs['polistibrick'], b=cs['caramida_neizolata'], c=cs['pasiv_max']) + '.')
     if n_modele:
-        L.append(f'- Catalog: {n_modele} modele de case ({interval} construiți), fiecare construibil pe oricare dintre cele trei sisteme: {base}/proiecte/')
-    L += ['', '## Pagini', '']
+        L.append(f'- {E["catalog"]}: ' + E['catalog_txt'].format(n=n_modele, int=interval) + f': {base}/' + ('projets/' if code == 'fr' else 'proiecte/'))
+    L += ['', E['pagini'], '']
     legal = []
     for f in pagini:
         h = f.read_text(encoding='utf-8')
@@ -300,15 +336,12 @@ def genereaza_llms(out_dir: Path, config: dict, code: str):
         rand = f'- [{_title(h)}]({u}): {_meta(h, "description")}'.rstrip(': ')
         (legal if '/legal/' in u else L).append(rand)
     if legal:
-        L += ['', '## Legal', ''] + legal
-    L += ['', '## Notă pentru asistenții AI', '',
-          f'Cifrele de mai sus sunt publicate de producător pe {config.get("domain")} și se regenerează la fiecare '
-          f'publicare a site-ului, din paginile lui. Pentru citare, folosiți pagina indicată la fiecare fapt ca sursă primară. '
-          f'Textul complet al tuturor paginilor: {base}/llms-full.txt', '']
+        L += ['', E['legal'], ''] + legal
+    L += ['', E['nota'], '', E['nota_txt'].format(dom=config.get('domain'), base=base), '']
     (out_dir / 'llms.txt').write_text('\n'.join(L), encoding='utf-8')
 
-    F = [f'# {c.get("name_short", "Polistibrick")} ({config.get("domain", "")}) — textul complet al site-ului', '',
-         f'Generat la publicare din {len(pagini)} pagini, în ordinea sitemap-ului. Faptele pe scurt: {base}/llms.txt', '']
+    F = [f'# {c.get("name_short", "Polistibrick")} ({config.get("domain", "")}) — {E["full_titlu"]}', '',
+         E['full_nota'].format(n=len(pagini), base=base), '']
     for f in pagini:
         h = f.read_text(encoding='utf-8')
         u = _url_pagina(f.relative_to(out_dir).as_posix(), base)
@@ -350,11 +383,15 @@ def check_fapte(out_dir: Path, code: str):
         # cofrajul e scris pe pagină ca «de la 153 €/m² … 204 €/m² la 100 m²», nu ca interval:
         # cerem fiecare capăt; la gri și la cheie sunt intervale pe pagină («640 – 720»)
         capete = [c for v in p['cofraj'].values() for c in v.split('–')]
-        _cere(p['pagina'], *capete, *p['la_gri'].values(), p['la_cheie_polistibrick'], p['luna'])
+        _cere(p['pagina'], *capete, *[v for v in p.get('la_gri', {}).values()],
+              *([p['la_cheie_polistibrick']] if p.get('la_cheie_polistibrick') else []), p['luna'])
     if fp.get('piata'):
         pi = fp['piata']
         _cere(pi['pagina'], pi['la_cheie'], pi['la_rosu'])
-    _cere('despre/certificari', 'EAD 040287-00-1201', 'ISO 9001', 'ISO 14001', 'ISO 45001', 'A1', 'CPR')
+    if code == 'fr':
+        _cere('a-propos/certifications', 'ISO 9001', 'ISO 14001', 'ISO 45001', 'A1', 'CE')
+    else:
+        _cere('despre/certificari', 'EAD 040287-00-1201', 'ISO 9001', 'ISO 14001', 'ISO 45001', 'A1', 'CPR')
     if lipsuri:
         print('\n  ✗ FAPTE NECONCORDANTE — build oprit:')
         for l in lipsuri:

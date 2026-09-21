@@ -94,6 +94,50 @@ FAPTE = {
 }
 
 
+FAPTE["fr"] = {
+    # ── Franța, site B2B (21.09.2026). Aceleași reguli: doar cifre care există pe pagina numită.
+    "organization": {
+        "alternateName": ["Polistibrick", "Polistibrick France"],
+        "description": ("Polistibrick fabrique un bloc coffrant isolant à parement fibre-ciment (EPS graphité, "
+                        "béton armé coulé sur chantier), livré en kit sur le plan de la maison, pour les entreprises "
+                        "de construction. Brevet européen EP 4372168 B1."),
+    },
+    "brevet": {"numar": "EP 4372168 B1", "acordat": "2025-10-15", "titular": "Lucian-Cristian Bouleanu",
+               "url": "https://worldwide.espacenet.com/patent/search?q=pn%3DEP4372168", "pagina": "a-propos/brevet/"},
+    "marci": [
+        {"numar": "018936693", "clase": "19", "url": "https://euipo.europa.eu/eSearch/#details/trademarks/018936693"},
+        {"numar": "019311167", "clase": "35, 37", "url": "https://euipo.europa.eu/eSearch/#details/trademarks/019311167"},
+    ],
+    # exact ce afirmă /a-propos/certifications/ (ISO 14001/45001 puse pe pagină la cererea patronului)
+    "certificari": ["Marquage CE", "ISO 9001", "ISO 14001", "ISO 45001",
+                    "Réaction au feu Euroclasse A1 (EN 13501-1) du parement fibre-ciment"],
+    "sisteme": {
+        "Polistibrick": {"U": "0,10–0,14", "perete_cm": "38–47",
+                         "compozitie": "parement fibre-ciment sur les deux faces, EPS graphité, béton armé coulé dans le coffrage",
+                         "pagina": "produits/polistibrick/"},
+        "Polistiwall":  {"U": "0,12–0,15", "U_text": "0,15 (Wall 200) / 0,12 (Wall 250)", "perete_cm": "35–40",
+                         "compozitie": "isolation EPS de 20 ou 25 cm à l'extérieur seulement, face intérieure béton",
+                         "pagina": "produits/polistiwall/"},
+        "PolistiSIP":   {"U": "0,11", "perete_cm": "30",
+                         "compozitie": "panneau sandwich OSB/3 + EPS graphité + I-Joist STEICO, sans béton coulé",
+                         "pagina": "produits/polistisip/"},
+    },
+    "preturi": {"luna": "août 2026",
+                "cofraj": {"Polistibrick": "205–280", "Polistiwall": "157–205", "PolistiSIP": "229–287"},
+                "la_gri": {}, "la_cheie_polistibrick": "", "pagina": "prix/"},
+    "livrare": "30 à 45 jours après commande confirmée",
+    "formare": "2 à 3 jours sur votre premier chantier, avec un spécialiste Polistibrick",
+    # reperul pieței franceze: clé en main 1 700–2 200 (EPTB 2024: 1 914 €/m²), hors d'eau hors d'air 1 000–1 400
+    "piata": {"la_cheie": "1 700–2 200", "la_cheie_prudent": "", "la_rosu": "1 000–1 400",
+              "surse": [{"nume": "EPTB/SDES 2024, ministère de la Transition écologique — 1 914 €/m² en moyenne",
+                         "url": "https://www.statistiques.developpement-durable.gouv.fr/le-prix-des-terrains-et-du-bati-pour-les-maisons-individuelles-en-2024"},
+                        {"nume": "Renovbox 2026, hors d'eau hors d'air",
+                         "url": "https://renovbox.fr/prix/construction-maison/hors-d-eau-hors-d-air/"}],
+              "pagina": "ressources/re2020/"},
+    "consum_kwh": {"polistibrick": "25–45", "caramida_neizolata": "100–180", "pasiv_max": "15"},
+}
+
+
 def fapte(tara: str) -> dict:
     """Faptele unei țări; țările fără intrare proprie nu primesc nimic (nu se moștenește:
     prețurile și piața diferă de la o țară la alta)."""
