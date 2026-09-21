@@ -164,6 +164,8 @@ SHARED_SKIP_NAMES = {
 def should_skip_asset(rel: Path) -> bool:
     if rel.name in SHARED_SKIP_NAMES:
         return True
+    if rel.name in ("_nav.html", "_footer.html"):   # șabloanele per țară nu sunt pagini
+        return True
     if "presence" in rel.parts:
         return rel.name not in PRESENCE_KEEP_FILES
     return False
@@ -277,9 +279,23 @@ def load_shared_templates() -> dict[str, str]:
     return _SHARED_TEMPLATES
 
 
-def prerender_includes(content: str, rel: Path) -> str:
-    """Replace empty data-include mounts with the shared nav/footer markup."""
-    tpl = load_shared_templates()
+def templates_for(country_code: str) -> dict[str, str]:
+    """Șabloanele nav/footer ale unei țări: cele comune din site.js sau, DACĂ există
+    countries/<cod>/_nav.html și/sau _footer.html, ale țării. Fișier lipsă = nimic nu
+    se schimbă pentru țara aia (celelalte țări rămân octet cu octet la fel).
+    Prima folosire: Franța, 21.09.2026 — meniul constructorului, diferit de cel comun."""
+    tpl = dict(load_shared_templates())
+    if country_code:
+        for name, fn in (("NAV_HTML", "_nav.html"), ("FOOTER_HTML", "_footer.html")):
+            f = COUNTRIES_DIR / country_code / fn
+            if f.exists():
+                tpl[name] = f.read_text(encoding="utf-8")
+    return tpl
+
+
+def prerender_includes(content: str, rel: Path, country_code: str = "") -> str:
+    """Replace empty data-include mounts with the nav/footer markup (per-country if overridden)."""
+    tpl = templates_for(country_code)
     nav_marker = '<header class="nav" data-include="nav"></header>'
     foot_marker = '<footer class="site-footer" data-include="footer"></footer>'
     if tpl.get("NAV_HTML") and nav_marker in content:
@@ -309,8 +325,15 @@ def copy_tree(src: Path, dst: Path, transform: bool, config: dict, country_code:
         if transform and item.suffix.lower() in {".html", ".css", ".js", ".xml", ".txt", ".json"}:
             try:
                 content = item.read_text(encoding="utf-8")
+                if item.name == "site.js" and country_code:
+                    # meniul/subsolul țării intră și în JS-ul ei: runtime-ul re-injectează același markup
+                    tpl = templates_for(country_code)
+                    for name in ("NAV_HTML", "FOOTER_HTML"):
+                        content = re.sub(rf"(const {name} = `)(.*?)(`;)",
+                                         lambda m, n=name: m.group(1) + tpl[n] + m.group(3),
+                                         content, count=1, flags=re.S)
                 if item.suffix.lower() == ".html":
-                    content = prerender_includes(content, rel)
+                    content = prerender_includes(content, rel, country_code)
                 content = apply_placeholders(content, config)
                 if item.suffix.lower() == ".html" and "${BASE}" in content:
                     # depth-relative prefix for the pre-rendered nav/footer links
