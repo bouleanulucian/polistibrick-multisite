@@ -33,3 +33,26 @@ Spec: `docs/superpowers/specs/2026-09-17-ai-citibil-ro-design.md`
 ## Review — ce s-a adăugat (pentru patron)
 - 2 module de build, 2 scripturi, 1 stil `.raspuns`, 1 rând în subsol, 11 blocuri de text, 2 date, 3 alinieri de cifre, 1 U pe prima pagină
 - Rămân la patron: emailul în clar da/nu · `priceValidUntil` la prețuri · răspunsul dublat în FAQ-ul de pe /preturi/ · prezența în afara site-ului (GBP, LinkedIn firmă, Wikidata)
+
+# polistibrick.fr B2B — plan (21.09.2026, ramura `site-fr-b2b`, NEPUBLICAT)
+
+Spec: `docs/superpowers/specs/2026-09-21-site-fr-b2b-design.md` · Plan: `docs/superpowers/plans/2026-09-21-site-fr-b2b.md`
+
+- [x] T1 plase: `scripts/amprente.sh` (amprenta celor 8 țări), `scripts/verif-fr.py` (cuvinte interzise, 48 URL-uri vechi, placeholder-e)
+- [x] T2 build: meniu/subsol pe țară (`countries/<cod>/_nav.html`, `_footer.html`), activ doar dacă fișierul există
+- [x] T3 meniu FR: Le système · Prix · Chantier · Votre assureur · Références · Partenaire · Contact + «Chiffrer mon plan»
+- [x] T4 `build/fapte.py` FR, llms.txt în franceză, testul de citibilitate pe FR, ISO 14001/45001 pe certificări
+- [x] T5 structură: 5 mutări, 16 ștergeri, 21 redirecturi 301; 35 pagini în loc de 49
+- [x] T6 acasă: aceeași grafică, vocea firmei care pune (73 înlocuiri de text)
+- [x] T7 `/systeme/` + 3 fișe produs cu răspuns-întâi
+- [x] T8 `/prix/` (răspuns-întâi, reperul EPTB), `/projets/` (48 case, carduri pe un rând)
+- [x] T9 `/chantier/`: livrare, echipă, 4 pași, gaine, formarea 2–3 zile
+- [x] T10 `/assureur/`: dosarul, fără ATEx/Avis Technique/technique courante
+- [x] T11 `/references/`: MBK, CS BTP, Sainte-Hilaire — video + citate din transcrieri
+- [x] T12 partener (condițiile §5, mărturia falsă ștearsă), contact, devis, `/vous-faites-construire/`
+- [x] T13 ressources doar pro (ICF → bloc coffrant isolant, FAQ 20→17), à propos
+- [x] T14 verificare: build verde · verif-fr ✓ · 10/13 citabile · amprente identice (RO byte-identic cu main) · JSON-LD parsabil · previzualizare 1440/390
+
+## Review
+- Nepublicat: la «publică» → merge `site-fr-b2b` în `main`, push (publică doar ro, neschimbat), apoi `gh workflow run cloudflare-pages.yml --ref main -f country=fr`.
+- Rămân la patron: condițiile de partener FR (propunere PDG), prețurile din `/projets/` vs grila `/prix/`, certificatul Passivhaus / ETE când există.
