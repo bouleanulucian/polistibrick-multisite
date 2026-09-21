@@ -64,3 +64,14 @@ Adăugarea lor prin API a fost BLOCATĂ de clasificatorul de permisiuni (scriere
 cerut acordul patronului; lista gata de rulat: scratchpad `onecom-ns/inregistrari-lipsa-cloudflare.json`.
 Concluzia auditului: «a transferat tot» = transferul registrarului (Wix → One.com, februarie). Schimbarea
 nameserverelor e o operațiune separată care nu a fost făcută niciodată; singura cale = formularul PDF semnat.
+
+## 21.09.2026, 22:40–23:49 — MIGRAREA FĂCUTĂ (site-ul B2B nou e LIVE pe polistibrick.fr)
+- 22:40 site-ul FR B2B publicat pe Pages (main dce127c, apoi retușurile patronului până la 0f? — vezi git log).
+- Pregătire API: domeniile Pages relegate (erau «deactivated»), cele 7 înregistrări Resend/SendGrid copiate în zonă (16 total).
+- One.com, în Chrome-ul patronului: Configuration DNS → tabul «Serveurs de noms» (EXISTĂ; notele vechi greșeau) →
+  DNSSEC «Désactiver» 22:50 → DS scos la AFNIC 23:04 → nameservere personalizate anita/owen 23:05 → aprobare cerută
+  registrantului (proxy Wix) → e-mailul a ajuns în Gmail bouleanu.lc → «approve here» 23:20 → AFNIC 23:22 → publicat 23:35
+  → zona «active» → certificat Google Trust Services 23:49 → domenii Pages «active».
+- Verificat live 23:50: acasă/systeme/references/prix/llms.txt 200 (site nou), 301-urile vechi, www 200, http→https, MX+SPF
+  Google intacte, DS gol.
+- Întoarcere: One.com → Serveurs de noms → «one.com (par défaut)». Hetzner 49.12.212.73 rămâne neatins deocamdată.
