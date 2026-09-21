@@ -820,7 +820,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <!-- PERSONAS : carrousel plein écran (style showreel), un écran par rôle -->
 
-<style>/* FR : la barre des points suit le minuteur de 8 s */ .personas-section .persona-dot.active .pd-fill { animation-duration: 8s; }</style>
+<style>/* FR : la barre des points suit le minuteur de 8 s */ .personas-section .persona-dot.active .pd-fill { animation-duration: 6.5s; }</style>
 <div class="personas-wrap">
   <div class="personas-watermark" aria-hidden="true">
     <span class="wm-half wm-top">Vous recevez</span>
@@ -1625,7 +1625,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function restart() {
       if (timer) clearInterval(timer);
       timer = null;
-      if (!reduced && inView) { timer = setInterval(next, 8000); syncBar(); }   // FR : 8 s par écran, le temps de lire (RO reste à 3 s)
+      if (!reduced && inView) { timer = setInterval(next, 6500); syncBar(); }   // FR : 6,5 s par écran, le temps de lire (RO reste à 3 s)
     }
 
     dots.forEach((d, k) => d.addEventListener('click', () => { show(k); restart(); }));
